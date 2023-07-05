@@ -154,7 +154,7 @@
         </div>
     </div>
      <!-- Header -->
-     <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow">
+     <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow" style="padding-top:0px !important;padding-bottom: 0px !important;">
         <div class="container d-flex justify-content-between align-items-center">
             <a class="navbar-brand h1" href="index.html">
                 <i class='bx bx-buildings bx-sm text-dark'></i>
@@ -168,19 +168,19 @@
                 <div class="flex-fill mx-xl-5 mb-2">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="index.html">Chuyên khoa <br> <span class="text-12">Tìm bác sĩ theo chuyên khoa</span> </a>
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="index.html"> <span class="text-menu-header">Chuyên khoa </span> <br> <span class="text-12">Tìm bác sĩ theo chuyên khoa</span> </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="about.html">Cơ sở y tế <br> <span class="text-12">Chọn bệnh viện phòng khám</span> </a>
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="about.html"> <span class="text-menu-header">Cơ sở y tế</span> <br> <span class="text-12">Chọn bệnh viện phòng khám</span> </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="work.html">Bác sĩ <br> <span class="text-12">Chọn bác sĩ giỏi</span></a>
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="work.html"> <span class="text-menu-header">Bác sĩ </span> <br> <span class="text-12">Chọn bác sĩ giỏi</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="pricing.html">Gói khám <br> <span class="text-12">Khám sức khỏe tổng quát</span></a>
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="pricing.html"> <span class="text-menu-header">Gói khám </span> <br> <span class="text-12">Khám sức khỏe tổng quát</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="contact.html">Đánh giá <br> <span class="text-12">Đánh giá dịch vụ</span></a>
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="contact.html"> <span class="text-menu-header">Đánh giá </span> <br> <span class="text-12">Đánh giá dịch vụ</span></a>
                         </li>
                     </ul>
                 </div>

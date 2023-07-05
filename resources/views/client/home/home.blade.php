@@ -30,67 +30,116 @@
                     <div class="carousel-item active list-hispital-home">
                         <div class=" row d-flex align-items-center">
                             <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-left pb-5">
-                                <!-- <p class="banner-body text-muted py-3 mx-0 px-0">
-                                    Purple Buzz is a corporate HTML template with Bootstrap 5 Beta 1. This CSS template is 100% free to download provided by <a rel="nofollow" href="https://templatemo.com/page/1" target="_parent">TemplateMo</a>. Total 6 HTML pages included in this template. Icon fonts by <a rel="nofollow" href="https://boxicons.com/" target="_blank">Boxicons</a>. Photos are from <a rel="nofollow" href="https://unsplash.com/" target="_blank">Unsplash</a> and <a rel="nofollow" href="https://icons8.com/" target="_blank">Icons 8</a>.
-                              </p> -->
-                              <div class="row g-lg-5 mb-4">
-                                <!-- Start Recent Work -->
-                                <div class="col-md-4 mb-3">
-                                    <a href="#" class="recent-work card border-0 shadow-lg overflow-hidden">
-                                        <img class="recent-work-img card-img" src="../../clients/img/bookingcare-cover-4.jpg" alt="Card image">
-                                        <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                                            <div class="recent-work-content text-start mb-3 ml-3 text-dark">
-                                                <h3 class="card-title light-300">Bệnh viện đa khoa Bạch mai</h3>
-                                                <p class="card-text">xem</p>
+                                <div class="row g-lg-5 mb-4">
+                                    <!-- Start Recent Work -->
+                                    <div class="col-md-3 mb-3">
+                                        <a href="#" class="recent-work card border-0 shadow-lg overflow-hidden">
+                                            <img class="recent-work-img card-img" src="../../clients/img/quany.jpg" alt="Card image">
+                                            <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                                                <div class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                                    <h3 class="card-title light-300">Bệnh viện đa khoa Bạch Mai</h3>
+                                                    <p class="card-text">xem</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </a>
-                                </div><!-- End Recent Work -->
+                                        </a>
+                                    </div><!-- End Recent Work -->
 
-                                <!-- Start Recent Work -->
-                                <div class="col-md-4 mb-3">
-                                    <a href="#" class="recent-work card border-0 shadow-lg overflow-hidden">
-                                        <img class="recent-work-img card-img" src="../../clients/img/bookingcare-cover-4.jpg" alt="Card image">
-                                        <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                                            <div class="recent-work-content text-start mb-3 ml-3 text-dark">
-                                                <h3 class="card-title light-300">Bệnh viện đa khoa Việt Đức</h3>
-                                                <p class="card-text">xem</p>
+                                    <!-- Start Recent Work -->
+                                    <div class="col-md-3 mb-3">
+                                        <a href="#" class="recent-work card border-0 shadow-lg overflow-hidden">
+                                            <img class="recent-work-img card-img" src="../../clients/img/vietduc.jpg" alt="Card image">
+                                            <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                                                <div class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                                    <h3 class="card-title light-300">Bệnh viện đa khoa Việt Đức</h3>
+                                                    <p class="card-text">xem</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </a>
-                                </div><!-- End Recent Work -->
+                                        </a>
+                                    </div><!-- End Recent Work -->
 
-                                <!-- Start Recent Work -->
-                                <div class="col-md-4 mb-3">
-                                    <a href="#" class="recent-work card border-0 shadow-lg overflow-hidden">
-                                        <img class="recent-work-img card-img" src="../../clients/img/bookingcare-cover-4.jpg" alt="Card image">
-                                        <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                                            <div class="recent-work-content text-start mb-3 ml-3 text-dark">
-                                                <h3 class="card-title light-300">Bệnh viện Qân Y 108</h3>
-                                                <p class="card-text">xem</p>
+                                    <!-- Start Recent Work -->
+                                    <div class="col-md-3 mb-3">
+                                        <a href="#" class="recent-work card border-0 shadow-lg overflow-hidden">
+                                            <img class="recent-work-img card-img" src="../../clients/img/quany.jpg" alt="Card image">
+                                            <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                                                <div class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                                    <h3 class="card-title light-300">Bệnh viện Qân Y 108</h3>
+                                                    <p class="card-text">xem</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </a>
-                                </div><!-- End Recent Work -->
+                                        </a>
+                                    </div><!-- End Recent Work -->
+
+                                    <!-- Start Recent Work -->
+                                    <div class="col-md-3 mb-3">
+                                        <a href="#" class="recent-work card border-0 shadow-lg overflow-hidden">
+                                            <img class="recent-work-img card-img" src="../../clients/img/quany.jpg" alt="Card image">
+                                            <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                                                <div class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                                    <h3 class="card-title light-300">Bệnh viện đa khoa Bạch Mai</h3>
+                                                    <p class="card-text">xem</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div><!-- End Recent Work -->
+
+                                    <!-- Start Recent Work -->
+                                    <div class="col-md-3 mb-3">
+                                        <a href="#" class="recent-work card border-0 shadow-lg overflow-hidden">
+                                            <img class="recent-work-img card-img" src="../../clients/img/vietduc.jpg" alt="Card image">
+                                            <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                                                <div class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                                    <h3 class="card-title light-300">Bệnh viện đa khoa Việt Đức</h3>
+                                                    <p class="card-text">xem</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div><!-- End Recent Work -->
+
+                                    <!-- Start Recent Work -->
+                                    <div class="col-md-3 mb-3">
+                                        <a href="#" class="recent-work card border-0 shadow-lg overflow-hidden">
+                                            <img class="recent-work-img card-img" src="../../clients/img/quany.jpg" alt="Card image">
+                                            <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                                                <div class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                                    <h3 class="card-title light-300">Bệnh viện Qân Y 108</h3>
+                                                    <p class="card-text">xem</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div><!-- End Recent Work -->
+
+                                     <!-- Start Recent Work -->
+                                     <div class="col-md-3 mb-3">
+                                        <a href="#" class="recent-work card border-0 shadow-lg overflow-hidden">
+                                            <img class="recent-work-img card-img" src="../../clients/img/vietduc.jpg" alt="Card image">
+                                            <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                                                <div class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                                    <h3 class="card-title light-300">Bệnh viện đa khoa Việt Đức</h3>
+                                                    <p class="card-text">xem</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div><!-- End Recent Work -->
+
+                                    <!-- Start Recent Work -->
+                                    <div class="col-md-3 mb-3">
+                                        <a href="#" class="recent-work card border-0 shadow-lg overflow-hidden">
+                                            <img class="recent-work-img card-img" src="../../clients/img/quany.jpg" alt="Card image">
+                                            <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                                                <div class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                                    <h3 class="card-title light-300">Bệnh viện Qân Y 108</h3>
+                                                    <p class="card-text">xem</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div><!-- End Recent Work -->
+                                </div>
                             </div>
-                                <a class="banner-button btn rounded-pill btn-outline-primary btn-lg px-4" href="#" role="button">Get Started</a>
-                            </div>
-                            
                         </div>
                     </div>
-                   
                 </div>
-                <!-- <a class="carousel-control-prev text-decoration-none" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
-                    <i class='bx bx-chevron-left'></i>
-                    <span class="visually-hidden">Previous</span>
-                </a>
-                <a class="carousel-control-next text-decoration-none" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
-                    <i class='bx bx-chevron-right'></i>
-                    <span class="visually-hidden">Next</span>
-                </a> -->
             </div>
-            <!-- End slider -->
-
         </div>
     </div>
     <!-- End Banner Hero -->

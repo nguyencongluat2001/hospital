@@ -208,3 +208,7 @@ footer a.text-light:hover {
     padding-top: 30px;
     padding-bottom: 20px;
 }
+.text-menu-header{
+  font-weight: 500;
+  color: #3d6c7e;
+}
