@@ -1,5 +1,5 @@
  <!-- Start Footer -->
- <footer class="bg-secondary pt-4">
+ <footer class=" pt-4" style="background:#8cbeff!important">
         <div class="container">
             <div class="row py-4">
 
@@ -101,7 +101,7 @@
             </div>
         </div>
 
-        <div class="w-100 bg-primary py-3">
+        <div class="w-100 py-3" style="background:#afc4ff!important">
             <div class="container">
                 <div class="row pt-2">
                     <div class="col-lg-6 col-sm-12">
