@@ -1,5 +1,5 @@
  <!-- Start Footer -->
- <footer class=" pt-4" style="background:#8cbeff!important">
+ <footer class=" pt-4" style="background:#24354c!important">
         <div class="container">
             <div class="row py-4">
 

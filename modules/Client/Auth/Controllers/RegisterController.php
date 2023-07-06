@@ -64,7 +64,7 @@ class RegisterController extends Controller
             $params['created_at'] = date('Y-m-d H:i:s');
             RegisterModel::insert($params);
         }
-        $otp = $this->userService->sent_OTP($params);
+        // $otp = $this->userService->sent_OTP($params);
         //gui otp mail ca nhan
         return view('auth.register.tab3');
     }

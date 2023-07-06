@@ -8,19 +8,29 @@
                 <!-- <ol class="carousel-indicators">
                     <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
                 </ol> -->
-                <div class="carousel-inner active" >
+                <div class="carousel-inner active pt-5" >
                      <!-- Start Contact -->
                      <div class="list-hispital-home-one pt-5">
                         <section class="banner-bg">
-                            <span class="text-title-home "><center> NỀN TẢNG Y TẾ <br>CHĂM SÓC SỨC KHỎE TOÀN DIỆN</center></span>
+                        <!-- style="animation: lights 4s 750ms linear infinite;" -->
+                            <span  class="text-title-home "><center> ĐẶT LỊCH KHÁM NHANH <br>TẠI CÁC TUYẾN TRUNG ƯƠNG</center></span>
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-lg-4 mx-auto my-4 p-3">
+                                    <div class="col-lg-4 mx-auto ">
                                         <form action="#" method="get">
-                                        <div class="input-group">
-                                            <input name="email" style="background:#ffe000" type="text" class="form-control form-control-lg rounded-pill rounded" id="email" placeholder="Từ khóa" aria-label="Từ khóa">
+                                        <div class="input-group pt-2 box">
+                                        <!-- <div class="box">
+                                            <form name="search">
+                                                <input type="text" class="input " placeholder="Từ khóa" aria-label="Từ khóa" name="txt">
+                                            </form>
+                                            <i class="fas fa-search"></i>
+                                        </div> -->
+                                            <input name="email" style="background:#ffffffb5" type="text" class="input form-control form-control-lg rounded-pill rounded" id="email" placeholder="Từ khóa tìm kiếm..." aria-label="Từ khóa tìm kiếm..">
+                                            <i class="fas fa-search"></i>
+
                                         </div>
                                         </form>
+
                                     </div>
                                 </div>
                             </div>
@@ -37,7 +47,7 @@
                                             <img class="recent-work-img card-img" src="../../clients/img/quany.jpg" alt="Card image">
                                             <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                                 <div style="background: radial-gradient(#000000c2, transparent);border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                                                    <h3 class="card-title">Bệnh viện đa khoa Bạch Mai</h3>
+                                                    <h3 class="card-title">Bệnh viện - Bạch Mai</h3>
                                                     <span style="color: #ffd100" class="btn btn-outline-light rounded-pill">Thăm khám</span>
                                                 </div>
                                             </div>
@@ -50,7 +60,7 @@
                                             <img class="recent-work-img card-img" src="../../clients/img/vietduc.jpg" alt="Card image">
                                             <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                                 <div style="background: radial-gradient(#000000c2, transparent);border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                                                    <h3 class="card-title">Bệnh viện đa khoa Việt Đức</h3>
+                                                    <h3 class="card-title">Bệnh viện - Việt Đức</h3>
                                                     <span style="color: #ffd100" class="btn btn-outline-light rounded-pill">Thăm khám</span>
                                                 </div>
                                             </div>
@@ -63,26 +73,27 @@
                                             <img class="recent-work-img card-img" src="../../clients/img/quany.jpg" alt="Card image">
                                             <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                                 <div style="background: radial-gradient(#000000c2, transparent);border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                                                    <h3 class="card-title">Bệnh viện Qân Y 108</h3>
+                                                    <h3 class="card-title">Bệnh viện - Qân Y 108</h3>
                                                     <span style="color: #ffd100" class="btn btn-outline-light rounded-pill">Thăm khám</span>
                                                 </div>
                                             </div>
                                         </a>
                                     </div><!-- End Recent Work -->
 
-                                    <!-- Start Recent Work -->
-                                    <div class="col-md-3 mb-3">
+                                     <!-- Start Recent Work -->
+                                     <div class="col-md-3 mb-3">
                                         <a href="#" class="recent-work card border-0 shadow-lg overflow-hidden">
                                             <img class="recent-work-img card-img" src="../../clients/img/quany.jpg" alt="Card image">
                                             <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                                 <div style="background: radial-gradient(#000000c2, transparent);border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                                                    <h3 class="card-title">Bệnh viện Qân Y 108</h3>
+                                                    <h3 class="card-title">Bệnh viện - Qân Y 108</h3>
                                                     <span style="color: #ffd100" class="btn btn-outline-light rounded-pill">Thăm khám</span>
                                                 </div>
                                             </div>
                                         </a>
                                     </div><!-- End Recent Work -->
-                                    <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-center py-2 pb-2 pt-5">
+                                    
+                                    <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-center py-2 pb-2">
                                     <a class="banner-button btn rounded-pill btn-outline-primary btn-lg px-4 " href="#" role="button">Xem thêm</a>
 
                                     </div>
@@ -100,18 +111,11 @@
     <section class="service-wrapper py-3">
         <div class="container-fluid pb-3">
             <div class="row">
-               <h2 class="h2 text-center col-12 py-5 semi-bold-600">Vai trò của Booking</h2>
+               <h2 class="h2 text-center col-12 py-2 semi-bold-600">Vai trò của Booking</h2>
             </div>
-            <p class=" col-10 offset-1 col-lg-9 text-start pb-3 text-muted px-2">
-                1. BookingCare giúp bệnh nhân dễ dàng lựa chọn đúng bác sĩ từ mạng lưới bác sĩ chuyên khoa giỏi, với thông tin đã xác thực và đặt lịch nhanh chóng. <br>
-
-                2. Bác sĩ chuyên khoa giỏi, được nhiều bệnh nhân tin tưởng, đồng nghiệp đánh giá cao, có uy tín trong ngành. <br>
-
-                3. Các bác sĩ đã, đang công tác tại các bệnh viện hàng đầu như: Bệnh viện Bạch Mai, Bệnh Viện Việt Đức, Bệnh viện TW Quân đội 108, Bệnh viện Quân Y 103, Bệnh viện Nhi TW, Bệnh viện Tai Mũi Họng TW, Viện Tim mạch Việt Nam, Bệnh viện Chợ Rẫy, Bệnh viện Đại học Y dược TP.HCM, Bệnh viện Nhân dân 115… <br>
-
-                4. Các bác sĩ có lịch khám tại các bệnh viện công lớn hoặc phòng khám tư nhân uy tín, được chọn lọc kỹ lưỡng tại Hà Nội và TP.HCM. <br>
-
-                5. Bên cạnh đó, hệ thống ghi nhận ý kiến đánh giá phản hồi của bệnh nhân sau khi đi khám và phương án điều trị của từng bác sĩ. Từ đó chúng tôi có thêm thông tin để giới thiệu trên hệ thống những bác sĩ uy tín, chuyên môn cao. <br>
+            <p class=" col-10 offset-1 col-lg-10 text-start pb-3 text-muted px-2">
+            &nbsp; &nbsp;&nbsp; BookingCare giúp bệnh nhân dễ dàng lựa chọn đúng bác sĩ từ mạng lưới bác sĩ chuyên khoa giỏi, với thông tin đã xác thực và đặt lịch nhanh chóng. Bác sĩ chuyên khoa giỏi, được nhiều bệnh nhân tin tưởng, đồng nghiệp đánh giá cao, có uy tín trong ngành. Các bác sĩ đã, đang công tác tại các bệnh viện hàng đầu như: Bệnh viện Bạch Mai, Bệnh Viện Việt Đức, Bệnh viện TW Quân đội 108, Bệnh viện Quân Y 103, Bệnh viện Nhi TW, Bệnh viện Tai Mũi Họng TW, Viện Tim mạch Việt Nam, Bệnh viện Chợ Rẫy, Bệnh viện Đại học Y dược TP.HCM, Bệnh viện Nhân dân 115… 
+                  .Các bác sĩ có lịch khám tại các bệnh viện công lớn hoặc phòng khám tư nhân uy tín, được chọn lọc kỹ lưỡng tại Hà Nội và TP.HCM. Bên cạnh đó, hệ thống ghi nhận ý kiến đánh giá phản hồi của bệnh nhân sau khi đi khám và phương án điều trị của từng bác sĩ. Từ đó chúng tôi có thêm thông tin để giới thiệu trên hệ thống những bác sĩ uy tín, chuyên môn cao. <br>
             </p>
         </div>
     </section>

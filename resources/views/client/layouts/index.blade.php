@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <title>BOOKING</title>
+    <title>BOOKING CALENDAR</title>
     <meta charset="utf-8">
     <base href="{{ asset('') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="../clients/img/apple-icon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="../clients/img/LogoFinTop_red.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../clients/img/logo.png">
     <!-- Load Require CSS -->
     {{-- @yield('css') --}}
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
@@ -153,41 +153,7 @@
             <div class="loader"><img src="../assets/images/loading.gif" alt="#" /></div>
         </div>
     </div>
-     <!-- Header -->
-     <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow" style="padding-top:0px !important;padding-bottom: 0px !important;">
-        <div class="container d-flex justify-content-between align-items-center">
-            <a class="navbar-brand h1" href="index.html">
-                <i class='bx bx-buildings bx-sm text-dark'></i>
-                <span class="text-dark h4">booking</span> <span class="text-primary h4">Buzz</span>
-            </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="navbar-toggler-success">
-                <div class="flex-fill mx-xl-5">
-                    <ul class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
-                        <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill" href="index.html"> <span class="text-menu-header">Chuyên khoa </span> <br> <span class="text-12">Tìm bác sĩ theo chuyên khoa</span> </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill" href="about.html"> <span class="text-menu-header">Cơ sở y tế</span> <br> <span class="text-12">Chọn bệnh viện phòng khám</span> </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill" href="work.html"> <span class="text-menu-header">Bác sĩ </span> <br> <span class="text-12">Chọn bác sĩ giỏi</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill" href="pricing.html"> <span class="text-menu-header">Gói khám </span> <br> <span class="text-12">Khám sức khỏe tổng quát</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill" href="contact.html"> <span class="text-menu-header">Đánh giá </span> <br> <span class="text-12">Đánh giá dịch vụ</span></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-     </nav>
-    <!-- Close Header -->
+    @include('client.layouts.menu')
     @yield('body-client')
     <!-- Start Footer -->
     @include('client.layouts.footer')
