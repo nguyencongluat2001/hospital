@@ -21,17 +21,23 @@ return [
         'a'    => 'nav-link link-category',
         'href' => '/system/category/index',
     ],
+    'hospital' => [
+        'name' => 'Quản trị bệnh viện',
+        'icon' => 'fas fa-users',
+        'a'    => 'nav-link link-user',
+        'href' => '/system/hospital/index',
+    ],
     'blog' => [
         'name' => 'Quản trị bài viết',
         'icon' => 'far fa-calendar-alt',
         'a'    => 'nav-link link-blog',
         'href' => '/system/blog/index',
     ],
-    'handbook' => [
+    'Hospital' => [
         'name' => 'Cẩm nang',
         'icon' => 'fas fa-medkit',
-        'a'    => 'nav-link link-handbook',
-        'href' => '/system/handbook/index',
+        'a'    => 'nav-link link-Hospital',
+        'href' => '/system/Hospital/index',
     ],
     'report' => [
         'name' => 'Báo cáo KPI',

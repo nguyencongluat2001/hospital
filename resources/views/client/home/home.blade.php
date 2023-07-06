@@ -25,7 +25,7 @@
                                             </form>
                                             <i class="fas fa-search"></i>
                                         </div> -->
-                                            <input name="email" style="background:#ffffffb5" type="text" class="input form-control form-control-lg rounded-pill rounded" id="email" placeholder="Từ khóa tìm kiếm..." aria-label="Từ khóa tìm kiếm..">
+                                            <input style="background:#ffffffb5" type="text" class="input form-control form-control-lg rounded-pill rounded" id="email" placeholder="Từ khóa tìm kiếm..." aria-label="Từ khóa tìm kiếm..">
                                             <i class="fas fa-search"></i>
 
                                         </div>
@@ -41,57 +41,20 @@
                         <div class=" row d-flex align-items-center">
                             <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-left ">
                                 <div class="row g-lg-5 mb-4">
+                                @foreach ($datas as $key => $data)
                                     <!-- Start Recent Work -->
                                     <div class="col-md-3 mb-3">
                                         <a href="#" class="recent-work card border-0 shadow-lg overflow-hidden">
-                                            <img class="recent-work-img card-img" src="../../clients/img/quany.jpg" alt="Card image">
+                                            <img class="recent-work-img card-img" style="height: 150px;width: 300px;object-fit: cover;" src="{{url('/file-image-client/avatar-hospital/')}}/{{ !empty($data->avatar)?$data->avatar:'' }}" alt="Card image">
                                             <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                                 <div style="background: radial-gradient(#000000c2, transparent);border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                                                    <h3 class="card-title">Bệnh viện - Bạch Mai</h3>
-                                                    <span style="color: #ffd100" class="btn btn-outline-light rounded-pill">Thăm khám</span>
+                                                    <h3 class="card-title">{{$data->name_hospital}}</h3>
+                                                    <span style="color: #ffd100" class="btn btn-outline-light rounded-pill">Đặt lịch khám</span>
                                                 </div>
                                             </div>
                                         </a>
                                     </div><!-- End Recent Work -->
-
-                                    <!-- Start Recent Work -->
-                                    <div class="col-md-3 mb-3">
-                                        <a href="#" class="recent-work card border-0 shadow-lg overflow-hidden">
-                                            <img class="recent-work-img card-img" src="../../clients/img/vietduc.jpg" alt="Card image">
-                                            <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                                                <div style="background: radial-gradient(#000000c2, transparent);border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                                                    <h3 class="card-title">Bệnh viện - Việt Đức</h3>
-                                                    <span style="color: #ffd100" class="btn btn-outline-light rounded-pill">Thăm khám</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div><!-- End Recent Work -->
-
-                                    <!-- Start Recent Work -->
-                                    <div class="col-md-3 mb-3">
-                                        <a href="#" class="recent-work card border-0 shadow-lg overflow-hidden">
-                                            <img class="recent-work-img card-img" src="../../clients/img/quany.jpg" alt="Card image">
-                                            <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                                                <div style="background: radial-gradient(#000000c2, transparent);border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                                                    <h3 class="card-title">Bệnh viện - Qân Y 108</h3>
-                                                    <span style="color: #ffd100" class="btn btn-outline-light rounded-pill">Thăm khám</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div><!-- End Recent Work -->
-
-                                     <!-- Start Recent Work -->
-                                     <div class="col-md-3 mb-3">
-                                        <a href="#" class="recent-work card border-0 shadow-lg overflow-hidden">
-                                            <img class="recent-work-img card-img" src="../../clients/img/quany.jpg" alt="Card image">
-                                            <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                                                <div style="background: radial-gradient(#000000c2, transparent);border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                                                    <h3 class="card-title">Bệnh viện - Qân Y 108</h3>
-                                                    <span style="color: #ffd100" class="btn btn-outline-light rounded-pill">Thăm khám</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div><!-- End Recent Work -->
+                                @endforeach
                                     
                                     <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-center py-2 pb-2">
                                     <a class="banner-button btn rounded-pill btn-outline-primary btn-lg px-4 " href="#" role="button">Xem thêm</a>
@@ -122,14 +85,8 @@
     <!-- Start Banner Hero -->
     <div class="banner-wrapper">
         <div class="banner-vertical-center-index container-fluid">
-
             <!-- Start slider -->
-            <div id="carouselExampleIndicators1" class="carousel slide" data-bs-ride="carousel">
-                <ol class="carousel-indicators">
-                    <!-- <li data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="0" class="active"></li> -->
-                    <!-- <li data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="1"></li>
-                    <li data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="2"></li> -->
-                </ol>
+            <div id="carouselExampleIndicators1" class="carousel slide">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="row">
@@ -137,71 +94,8 @@
                         </div>
                         <div class=" row d-flex align-items-center">
                             <div class="banner-content col-lg-10 col-10 offset-1 m-lg-auto text-left py-5 pb-5">
-                            <!-- <div class="row projects gx-lg-5">
-                                <a href="work-single.html" class="col-sm-6 col-lg-3 text-decoration-none project marketing social business">
-                                    <div class="service-work overflow-hidden card m-sm-0">
-                                        <img class="card-img-top" src="../../clients/img/quany.jpg" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title light-300 text-dark">Digital Marketing</h5>
-                                            <p class="card-text light-300 text-dark">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                                sed do eiusmod tempor incididunt ut labore et dolor.
-                                            </p>
-                                            <span class="text-decoration-none text-primary light-300">
-                                                Read more <i class='bx bxs-hand-right ms-1'></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="work-single.html" class="col-sm-6 col-lg-3 text-decoration-none project graphic social">
-                                    <div class="service-work overflow-hidden card  mx-sm-0 ">
-                                        <img class="card-img-top" src="../../clients/img/quany.jpg" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title light-300 text-dark">Corporate Branding</h5>
-                                            <p class="card-text light-300 text-dark">
-                                                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                                laboris nisi ut aliquip ex ea commodo consequat.
-                                            </p>
-                                            <span class="text-decoration-none text-primary light-300">
-                                                Read more <i class='bx bxs-hand-right ms-1'></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="work-single.html" class="col-sm-6 col-lg-3 text-decoration-none project marketing graphic business">
-                                    <div class="service-work overflow-hidden card  mx-sm-0 ">
-                                        <img class="card-img-top" src="../../clients/img/quany.jpg" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title light-300 text-dark">Leading Digital Solution</h5>
-                                            <p class="card-text light-300 text-dark">
-                                                Duis aute irure dolor in reprehenderit in voluptate velit
-                                                esse cillum dolore eu fugiatdolore eu fugiat nulla pariatur.
-                                            </p>
-                                            <span class="text-decoration-none text-primary light-300">
-                                                Read more <i class='bx bxs-hand-right ms-1'></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="work-single.html" class="col-sm-6 col-lg-3 text-decoration-none project marketing graphic business">
-                                    <div class="service-work overflow-hidden card  mx-sm-0 ">
-                                        <img class="card-img-top" src="../../clients/img/quany.jpg" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title light-300 text-dark">Leading Digital Solution</h5>
-                                            <p class="card-text light-300 text-dark">
-                                                Duis aute irure dolor in reprehenderit in voluptate velit
-                                                esse cillum dolore eu fugiatdolore eu fugiat nulla pariatur.
-                                            </p>
-                                            <span class="text-decoration-none text-primary light-300">
-                                                Read more <i class='bx bxs-hand-right ms-1'></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div> -->
-                            <div id="table-blog-container"></div>
-
-                            <div class="row">
+                                 <div id="table-blog-container"></div>
+                            </div>
                         </div>
                     </div>
                 </div>

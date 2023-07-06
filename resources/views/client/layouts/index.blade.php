@@ -223,11 +223,11 @@
             case 6:
                 day_name = "Thứ bảy";
         }
-        setInterval(() => {
-            a = new Date();
-            time = day_name + ', ngày ' + date + ' ' + a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
-            document.getElementById('time').innerHTML = time;
-        }, 1000);
+        // setInterval(() => {
+        //     a = new Date();
+        //     time = day_name + ', ngày ' + date + ' ' + a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+        //     document.getElementById('time').innerHTML = time;
+        // }, 1000);
     </script>
     <script type="text/jscript" src="../assets/chosen/chosen.min.js"></script>
     <link rel="stylesheet" href="../assets/css/sweetalert2.min.css" />

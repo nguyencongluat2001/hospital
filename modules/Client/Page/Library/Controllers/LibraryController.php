@@ -4,7 +4,7 @@ namespace Modules\Client\Page\Library\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Modules\System\Dashboard\Handbook\Services\HandbookService;
+use Modules\System\Dashboard\Hospital\Services\HospitalService;
 use Modules\System\Dashboard\Category\Services\CategoryService;
 use Modules\System\Dashboard\Category\Services\CateService;
 use Illuminate\Support\Facades\Http;
@@ -21,11 +21,11 @@ class LibraryController extends Controller
     public function __construct(
         CateService $cateService,
         CategoryService $categoryService,
-        HandbookService $handbookService
+        HospitalService $HospitalService
     ){
         $this->cateService = $cateService;
         $this->categoryService = $categoryService;
-        $this->handbookService = $handbookService;
+        $this->HospitalService = $HospitalService;
     }
 
     /**
@@ -55,7 +55,7 @@ class LibraryController extends Controller
         }
         $data = array();
         $param = $arrInput;
-        $objResult = $this->handbookService->filter($param);
+        $objResult = $this->HospitalService->filter($param);
         $data['datas'] = $objResult;
         $data['param'] = $param;
         return view("client.Library.loadlist",  $data)->render();
@@ -70,7 +70,7 @@ class LibraryController extends Controller
     public function loadListTap1(Request $request)
     { 
         $arrInput = $request->input();
-        $data = $this->handbookService->loadList($arrInput);
+        $data = $this->HospitalService->loadList($arrInput);
         return view("client.Library.loadlist-tap1", $data);
     }
      /**
@@ -83,7 +83,7 @@ class LibraryController extends Controller
     public function seeVideo(Request $request)
     {
         $input = $request->all();
-        $data = $this->handbookService->where('id',$input['id'])->first();
+        $data = $this->HospitalService->where('id',$input['id'])->first();
         return view('client.Library.video',compact('data'));
     }
 }

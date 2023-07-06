@@ -15,7 +15,7 @@ use Modules\System\Dashboard\Category\Controllers\CateController;
 use Modules\System\Dashboard\Category\Controllers\CategoryController;
 use Modules\System\Dashboard\DataFinancial\Controllers\DataFinancialController;
 use Modules\System\Dashboard\Effective\Controllers\EffectiveController;
-use Modules\System\Dashboard\Handbook\Controllers\HandbookController;
+use Modules\System\Dashboard\Hospital\Controllers\HospitalController;
 use Modules\System\Dashboard\Home\Controllers\HomeController;
 use Modules\System\Dashboard\Recommended\Controllers\RecommendedController;
 use Modules\System\Dashboard\Signal\Controllers\SignalController;
@@ -73,31 +73,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
             Route::get('/changePass', [UserController::class,'changePass'])->name('changePass');
             Route::post('/updatePass', [UserController::class,'updatePass'])->name('updatePass');
         });
-         //dữ liệu chứng khoán
-        Route::prefix('/system/datafinancial')->group(function () {
-            //Handbook
-            Route::get('/index', [DataFinancialController::class, 'index']);
-            Route::get('/loadList',[DataFinancialController::class,'loadList']);
-            Route::post('/createForm',[DataFinancialController::class,'createForm']);
-            Route::post('/create',[DataFinancialController::class,'create']);
-            Route::get('/changeUpdate',[DataFinancialController::class,'changeUpdate']);
-            Route::post('/edit',[DataFinancialController::class,'edit']);
-            Route::post('/delete',[DataFinancialController::class,'delete']);
-            Route::post('/updateDataFinancial',[DataFinancialController::class,'updateDataFinancial']);
-            Route::post('/upNdown',[DataFinancialController::class,'upNdown']);
-        });
-         //Quản trị quyền sủ dụng quản trị
-         Route::prefix('/system/permision')->group(function () {
-            //Handbook
-            Route::get('/index', [PermisionController::class, 'index']);
-            Route::get('/loadList',[PermisionController::class,'loadList']);
-            Route::post('/createForm',[PermisionController::class,'createForm']);
-            Route::post('/create',[PermisionController::class,'create']);
-            Route::get('/changeUpdate',[PermisionController::class,'changeUpdate']);
-            Route::post('/edit',[PermisionController::class,'edit']);
-            Route::post('/delete',[PermisionController::class,'delete']);
-            Route::post('/updateDataFinancial',[PermisionController::class,'updateDataFinancial']);
-        });
     });
     Route::prefix('/system')->group(function () {
         Route::get('/userInfo/changePass', [UserController::class,'changePass'])->name('changePass');
@@ -124,29 +99,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
             Route::post('/updateCategoryCate',[CategoryController::class,'updateCategoryCate']);
             Route::post('/changeStatusCategoryCate',[CategoryController::class,'changeStatusCategoryCate']);
         });
-        // quản trị danh mục khuyến nghị
-        Route::prefix('/recommended')->group(function () {
-            //Danh mục khuyến nghị
-            Route::get('/index', [RecommendedController::class, 'index']);
-            Route::post('/add',[RecommendedController::class,'add']);
-            Route::post('/create',[RecommendedController::class,'create']);
-            Route::post('/edit',[RecommendedController::class,'edit']);
-            Route::post('/delete',[RecommendedController::class,'delete']);
-            Route::get('/loadList',[RecommendedController::class,'loadList']);
-            Route::post('/updateColumn',[RecommendedController::class,'updateColumn']);
-            Route::post('/changeStatus',[RecommendedController::class,'changeStatus']);
-        });
-        Route::prefix('/effectiveness')->group(function () {
-            // Hiệu quả danh mục
-            Route::get('/index', [EffectiveController::class, 'index']);
-            Route::post('/add',[EffectiveController::class,'add']);
-            Route::post('/create',[EffectiveController::class,'create']);
-            Route::post('/edit',[EffectiveController::class,'edit']);
-            Route::post('/delete',[EffectiveController::class,'delete']);
-            Route::get('/loadList',[EffectiveController::class,'loadList']);
-            Route::post('/updateColumn',[EffectiveController::class,'updateColumn']);
-            Route::post('/changeStatus',[EffectiveController::class,'changeStatus']);
-        });
         //bài viết 
         Route::prefix('/blog')->group(function () {
             Route::get('/index', [BlogController::class, 'index']);
@@ -171,15 +123,15 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
             Route::get('/realTimeData',[HomeController::class,'realTimeData'])->name('realTimeData');
         });
         //Cẩm nâng
-        Route::prefix('/handbook')->group(function () {
-            //Handbook
-            Route::get('/index', [HandbookController::class, 'index']);
-            Route::get('/loadList',[HandbookController::class,'loadList'])->name('loadList');
-            Route::post('/createForm',[HandbookController::class,'createForm']);
-            Route::post('/create',[HandbookController::class,'create'])->name('create');
-            Route::post('/edit',[HandbookController::class,'edit'])->name('edit');
-            Route::post('/delete',[HandbookController::class,'delete'])->name('delete');
-            Route::get('/seeVideo',[HandbookController::class,'seeVideo'])->name('seeVideo');
+        Route::prefix('/hospital')->group(function () {
+            //Hospital
+            Route::get('/index', [HospitalController::class, 'index']);
+            Route::get('/loadList',[HospitalController::class,'loadList'])->name('loadList');
+            Route::post('/createForm',[HospitalController::class,'createForm']);
+            Route::post('/create',[HospitalController::class,'create'])->name('create');
+            Route::post('/edit',[HospitalController::class,'edit'])->name('edit');
+            Route::post('/delete',[HospitalController::class,'delete'])->name('delete');
+            Route::get('/seeVideo',[HospitalController::class,'seeVideo'])->name('seeVideo');
         });
         //Tín hiệu mua
         Route::prefix('signal')->group(function(){
