@@ -137,7 +137,7 @@
                         </div>
                         <div class=" row d-flex align-items-center">
                             <div class="banner-content col-lg-10 col-10 offset-1 m-lg-auto text-left py-5 pb-5">
-                            <div class="row projects gx-lg-5">
+                            <!-- <div class="row projects gx-lg-5">
                                 <a href="work-single.html" class="col-sm-6 col-lg-3 text-decoration-none project marketing social business">
                                     <div class="service-work overflow-hidden card m-sm-0">
                                         <img class="card-img-top" src="../../clients/img/quany.jpg" alt="...">
@@ -198,7 +198,9 @@
                                         </div>
                                     </div>
                                 </a>
-                            </div>
+                            </div> -->
+                            <div id="table-blog-container"></div>
+
                             <div class="row">
                         </div>
                     </div>
@@ -392,7 +394,6 @@
         </div>
     </section>
     <!-- End Service -->
-    
 <div class="modal" id="reader" role="dialog"></div>
 <!-- End Recent Work -->
 <script type="text/javascript" src="{{ URL::asset('dist/js/backend/client/JS_About.js') }}"></script>

@@ -99,10 +99,10 @@ class HomeController extends Controller
         $arrInput = $request->input();
         $data = array();
         $param = $arrInput;
-        if($param['category'] == '' || $param['category'] == null){
-            unset($param['category']);
-        }
-        $objResult = $this->blogService->filter($param);
+        // if($param['category'] == '' || $param['category'] == null){
+        //     unset($param['category']);
+        // }
+        $objResult = $this->blogService->where('status',1)->get()->take(4);
         foreach($objResult as $key => $value){
             $category = $this->categoryService->where('code_category', $value->code_category)->first();
             if(!empty($category)){

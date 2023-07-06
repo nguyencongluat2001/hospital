@@ -1,9 +1,12 @@
 /.phpunit.cache
+/storage/*.key
 /node_modules
+/public/file-image
+/public/uploads
+/public/file-image-client
 /public/build
 /public/hot
 /public/storage
-/storage/*.key
 /vendor
 .env
 .env.backup

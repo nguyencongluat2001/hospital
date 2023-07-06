@@ -1,46 +1,35 @@
 @php
 use Carbon\Carbon;
 @endphp
-<div class="card h-100" style="background: #0c1223d9 !important;">
-    <div class="card-header pb-0 px-3">
-        <!-- <div class="row">
-            <div class="col-md-6">
-            <h6 class="mb-0" style="color:">Bài viết </h6>
+<style>
+     .blogReader {
+        width: 100%;
+        max-height: 100px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+    }
+</style>
+<div class="row projects gx-lg-5">
+     @foreach ($datas as $key => $data)
+        @php Carbon::setLocale('vi');$now = Carbon::now(); $created_at = Carbon::create($data->created_at) @endphp
+        <a href="work-single.html" class="col-sm-6 col-lg-3 text-decoration-none">
+            <div class="service-work overflow-hidden card m-sm-0">
+                <img class="card-img-top" style="height: 150px;width: 300px;object-fit: cover;" src="{{url('/file-image-client/blogs/')}}/{{ !empty($data->imageBlog[0]->name_image)?$data->imageBlog[0]->name_image:'' }}" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title light-300 text-dark">{{ $data->detailBlog->title }}</h5>
+                    <span>{{(isset($data['cate_name']) ? $data['cate_name'] . ' - ' : '') . $created_at->diffForHumans($now)}}</span>
+                    <!-- <div class="card-title light-300 blogReader">
+                    {!! $data->detailBlog->decision !!}
+                    </div> -->
+                    <br>
+                    <span class="text-decoration-none text-primary light-300">
+                        Đọc thêm <i class='bx bxs-hand-right ms-1'></i>
+                    </span>
+                </div>
             </div>
-            <div class="col-md-6 d-flex justify-content-end align-items-center">
-            </div>
-        </div> -->
-        </div>
-        <div class="scrollbar" id="style-1" style="padding-right:10px;height:900px !important">
-          <div class="card-body pt-4 p-3">
-              <ul class="list-group">
-                    @foreach ($datas as $key => $data)
-                    @php Carbon::setLocale('vi');$now = Carbon::now(); $created_at = Carbon::create($data->created_at) @endphp
-                        <a href="{{url('client/about/reader') . '/' . $data->id}}" class="col-sm-6 col-lg-12 text-decoration-none {{ $data->code_category }}" onclick="JS_About.reader('{{$data->id}}')">
-                            <div class="pb-3 d-lg-flex gx-5">
-                                <div class="col-lg-4 ">
-                                    <img class="card-img-top" src="{{url('/file-image-client/blogs/')}}/{{ !empty($data->imageBlog[0]->name_image)?$data->imageBlog[0]->name_image:'' }}" style="height: 150px;width: 250px;object-fit: cover;" alt="...">
-                                </div>
-                                <div class="col-lg-1 "></div>
-                                <div class="col-lg-7">
-                                    <h5 class="card-title light-600" style="color:#ffdd61">{{ $data->detailBlog->title }}</h5>
-                                    <p style="color: #fff;">{{(isset($data['cate_name']) ? $data['cate_name'] . ' - ' : '') . $created_at->diffForHumans($now)}}</p>
-                                    <div style="color:#e1ffed" class="light-300 blogReader">
-                                        {!! $data->detailBlog->decision !!}
-                                    </div>
-                                    <span style="color:#e1ffed" class="text-decoration-none light-300">
-                                        Đọc thêm <i class='bx bxs-hand-right ms-1'></i>
-                                    </span>
-                                </div>
-                            </div>
-                            <div style="height:1px;background:#00000040">
-                            </div>
-                            <br>
-                        </a>
-                    @endforeach
-              </ul>
-          </div>
-        </div>
-    </div>
+        </a>
+    @endforeach
 </div>
 
