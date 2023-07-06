@@ -2,16 +2,16 @@
  <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow" style="top:0;padding-top:0px !important;padding-bottom: 0px !important;background:#243649!important;position: fixed;width: 100%;z-index: 1000;">
         <div class="container d-flex justify-content-between align-items-center">
             <a class="" style="width: 7%;" href="{{url('/')}}">
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon text-white"><i class="fa fa-bars"></i></span>
-                </button>
+                </button> -->
                 <img class="card-img " src="../clients/img/logo.png" alt="Card image">
             </a>
             <a class="navbar-brand h1" href="index.html">
                 <!-- <i class='bx bx-buildings bx-sm text-dark'></i> -->
                 <span style="color: #ffbc00!important;" class="text-dark h5">Booking</span> <sup style="color:#32a5c2">Fast</sup>
             </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button style="background: #ffea71" class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -37,9 +37,9 @@
                 </div>
             </div>
             <a class="" style="width: 4%;" href="{{url('/')}}">
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon text-white"><i class="fa fa-bars"></i></span>
-                </button>
+                </button> -->
                 <img class="card-img " src="../clients/img/support.jpg" alt="Card image">
             </a>
             <span style="color:#ffd979">&nbsp;+84.386.358.006</span>
