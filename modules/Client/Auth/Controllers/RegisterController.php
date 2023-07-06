@@ -71,8 +71,8 @@ class RegisterController extends Controller
     public function tab4(Request $request)
     {
         $arrInput = $request->all();
-        $AuthenticationOTP = AuthenticationOTPModel::where('phone', $arrInput['phone'])->where('otp', $arrInput['otp'])->first();
-        if(!empty($AuthenticationOTP)){
+        // $AuthenticationOTP = AuthenticationOTPModel::where('phone', $arrInput['phone'])->where('otp', $arrInput['otp'])->first();
+        // if(!empty($AuthenticationOTP)){
             $arrData = [
                 'name'=> $arrInput['name'],
                 'address'=> $arrInput['address'],
@@ -106,8 +106,8 @@ class RegisterController extends Controller
                 $this->userInfoService->insert($arrInfo);
             }
             return view('auth.register.tab4');
-        }else{
-            return array('success' => false, 'message' => 'Mã xác nhận không chính xác!');
-        }
+        // }else{
+        //     return array('success' => false, 'message' => 'Mã xác nhận không chính xác!');
+        // }
     }
 }

@@ -69,7 +69,7 @@ p, a {font-weight: 400;}
 }
 #index_banner .carousel-inner {
   height: 80vh;
-  background: #7fa6b157;
+  background: #1d363d9e;
 }
 #index_banner .carousel-indicators li,
 #index_banner .carousel-indicators.active {
@@ -194,7 +194,7 @@ footer a.text-light:hover {
 }
 .text-12{
   font-size: 12px;
-  color: antiquewhite;
+  color: #fff2de;
 }
 .text-title-home{
   font-size: 33px;
@@ -212,7 +212,7 @@ footer a.text-light:hover {
 }
 .text-menu-header{
   font-weight: 500;
-  color: #96e2ff;
+  color: #c1efff;
 }
 .famous-saying{
   font-size: 20px;
