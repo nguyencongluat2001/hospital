@@ -19,10 +19,10 @@
                 <div class="flex-fill mx-xl-2">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-xl-2 text-center text-dark">
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-dark rounded-pill" href="{{ url('/') }}"> <span class="text-menu-header">Chuyên khoa </span> <br> <span class="text-12">Tìm bác sĩ theo chuyên khoa</span> </a>
+                            <a class="nav-link link-home btn-outline-dark rounded-pill" href="{{ url('/') }}"> <span class="text-menu-header">Chuyên khoa </span> <br> <span class="text-12">Tìm bác sĩ theo chuyên khoa</span> </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-dark rounded-pill" href="about.html"> <span class="text-menu-header">Cơ sở y tế</span> <br> <span class="text-12">Chọn bệnh viện phòng khám</span> </a>
+                            <a class="nav-link link-facilities btn-outline-dark rounded-pill" href="{{ url('/facilities') }}"> <span class="text-menu-header">Cơ sở y tế</span> <br> <span class="text-12">Chọn bệnh viện phòng khám</span> </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link btn-outline-dark rounded-pill" href="work.html"> <span class="text-menu-header">Bác sĩ </span> <br> <span class="text-12">Chọn bác sĩ giỏi</span></a>

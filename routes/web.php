@@ -5,6 +5,7 @@ use Modules\Client\Page\Home\Controllers\HomeController as ClientHomeController;
 
 use App\Http\Controllers\Auth\LoginController;
 use Modules\Client\Auth\Controllers\RegisterController;
+use Modules\Client\Page\Facilities\Controllers\FacilitiesController;
 
 
 //Dashboard
@@ -122,7 +123,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
             Route::get('/loadListTap1',[HomeController::class,'loadListTap1'])->name('loadListTap1');
             Route::get('/realTimeData',[HomeController::class,'realTimeData'])->name('realTimeData');
         });
-        //Cẩm nâng
+        //Cẩm nang
         Route::prefix('/hospital')->group(function () {
             //Hospital
             Route::get('/index', [HospitalController::class, 'index']);
@@ -161,26 +162,31 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 });
 // Auth::routes();
 
-
-
-
+// Trang chủ
+Route::get('/', [ClientHomeController::class, 'index']);
+// Trang chủ cơ sở bệnh viện
+Route::get('/facilities', [FacilitiesController::class, 'index']);
 // route phía người dùng
 Route::prefix('/client')->group(function () {
-    $arrModules = config('menuClient');
-        $this->arrModules = $arrModules;
-    view()->composer('*', function ($view) {
-        $view->with('menuItems', $this->arrModules);
-    });
-   
-    // Trang chủ client
-    Route::get('/home/index', [ClientHomeController::class, 'index']);
-    Route::get('/home/loadList',[ClientHomeController::class,'loadList']);
-    Route::get('/home/loadListBlog',[ClientHomeController::class,'loadListBlog']);
-    Route::get('/home/loadListTap1',[ClientHomeController::class,'loadListTap1']);
-    Route::get('/home/loadListTop',[ClientHomeController::class,'loadListTop']);
-    Route::get('/home/loadListChartNen',[ClientHomeController::class,'loadListChartNen']);
-    // Route::middleware('permissionCheckLoginClient')->group(function () {
-        Route::get('introduce/index', [IntroduceController::class, 'index']);
+        $arrModules = config('menuClient');
+            $this->arrModules = $arrModules;
+        view()->composer('*', function ($view) {
+            $view->with('menuItems', $this->arrModules);
+        });
+        // Trang chủ client
+        Route::prefix('home')->group(function(){
+            Route::get('/loadList',[ClientHomeController::class,'loadList']);
+            Route::get('/loadListBlog',[ClientHomeController::class,'loadListBlog']);
+            Route::get('/loadListTap1',[ClientHomeController::class,'loadListTap1']);
+            Route::get('/loadListTop',[ClientHomeController::class,'loadListTop']);
+        });
+        // Trang chủ cơ sở bệnh viện
+        Route::prefix('facilities')->group(function(){
+            Route::get('/loadList',[FacilitiesController::class,'loadList']);
+            Route::get('/loadListBlog',[FacilitiesController::class,'loadListBlog']);
+            Route::get('/loadListTap1',[FacilitiesController::class,'loadListTap1']);
+            Route::get('/loadListTop',[FacilitiesController::class,'loadListTop']);
+        });
         Route::prefix('infor')->group(function(){
             Route::get('/index', [InforController::class, 'index']);
             Route::post('update', [InforController::class, 'update']);
@@ -189,29 +195,7 @@ Route::prefix('/client')->group(function () {
             Route::get('/changePass', [UserController::class,'changePass']);
             Route::post('/updatePass', [UserController::class,'updatePass']);
         });
-        // Route::middleware('checkloginDatafinancial')->group(function () {
-            Route::prefix('datafinancial')->group(function () {
-                // Tra cứu cổ phiếu
-                Route::get('/index', [ClientDataFinancialController::class, 'index']);
-                Route::post('/loadData', [ClientDataFinancialController::class, 'loadData']);
-                Route::post('/fireAntChart', [ClientDataFinancialController::class, 'fireAntChart']);
-                Route::post('/searchDataCP', [ClientDataFinancialController::class, 'searchDataCP']);
-                Route::get('/noteTaFa', [ClientDataFinancialController::class, 'noteTaFa']);
-                // tín hiệu mua
-                Route::get('/signalIndex', [ClientDataFinancialController::class, 'signalIndex']);
-                Route::post('/loadList_signal', [ClientDataFinancialController::class, 'loadList_signal']);
-                // khuyến nghị vip
-                Route::get('/recommendationsIndex', [ClientDataFinancialController::class, 'recommendationsIndex']);
-                Route::post('/loadList_recommendations', [ClientDataFinancialController::class, 'loadList_recommendations']);
-            
-                // Danh mục Fintop
-                Route::get('/categoryFintopIndex', [ClientDataFinancialController::class, 'categoryFintopIndex']);
-                Route::post('/loadList_categoryFintop_vip', [ClientDataFinancialController::class, 'loadList_categoryFintop_vip']);
-                Route::post('/loadList_categoryFintop_basic', [ClientDataFinancialController::class, 'loadList_categoryFintop_basic']);
-            });
-        // });
         Route::prefix('about')->group(function () {
-            // Tra cứu cổ phiếu
             Route::get('/index', [AboutController::class, 'index']);
             Route::get('/loadListTHTT', [AboutController::class, 'loadListTHTT']);
             Route::prefix('/session')->group(function(){
@@ -228,21 +212,8 @@ Route::prefix('/client')->group(function () {
             });
             Route::get('/reader/{id}', [AboutController::class, 'reader']);
         });
-        // Thư viện đầu tư
-        Route::get('/library/index', [LibraryController::class, 'index']);
-        Route::post('/library/loadList',[LibraryController::class,'loadList']);
-        Route::get('/library/seeVideo',[LibraryController::class,'seeVideo']);
-        // Đặc quyền hội viên
-        Route::get('/privileges/index', [PrivilegesController::class, 'index']);
-
-        // Nâng cấp tk 
-        Route::get('/upgradeAcc/index', [UpgradeAccController::class, 'index']);
-        Route::get('/upgradeAcc/viewForm', [UpgradeAccController::class, 'registerVip']);
-        Route::post('/upgradeAcc/updateVip', [UpgradeAccController::class, 'updateVip']);
-
         // Đọc thông báo
         Route::get('readNotification', [ReadNotificationController::class, 'readNotification']);
-    // });
     
     Route::prefix('des')->group(function () {
         Route::get('index', [DesController::class, 'index']);
