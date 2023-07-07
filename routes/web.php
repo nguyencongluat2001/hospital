@@ -182,6 +182,7 @@ Route::prefix('/client')->group(function () {
         });
         // Trang chủ cơ sở bệnh viện
         Route::prefix('facilities')->group(function(){
+            Route::get('/index',[FacilitiesController::class,'index']);
             Route::get('/loadList',[FacilitiesController::class,'loadList']);
             Route::get('/loadListBlog',[FacilitiesController::class,'loadListBlog']);
             Route::get('/loadListTap1',[FacilitiesController::class,'loadListTap1']);
