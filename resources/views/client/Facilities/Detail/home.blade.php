@@ -20,19 +20,19 @@
                                         <div class="card-header pb-0 px-3">
                                             <div class="">
                                                 <ul class="list-group">
-                                                    <a class="col-sm-6 col-lg-12 text-decoration-none">
+                                                    <div  class="col-sm-6 col-lg-12 text-decoration-none">
                                                         <div class="pb-3 d-lg-flex gx-5">
                                                             <div class="col-lg-4 ">
                                                                 <img class="card-img-top" src="{{url('/file-image-client/avatar-hospital/')}}/{{ !empty($datas->avatar)?$datas->avatar:'' }}" style="height: 150px;object-fit: cover;" alt="...">
                                                             </div>
                                                             <div class="col-lg-1 "></div>
                                                             <div class="col-lg-7 ">
-                                                                <h5 style="color:#ffb559;font-size: 35px;font-family: serif;font-weight: 600;">{{ !empty($datas->name_hospital)?$datas->name_hospital:'' }}</h5>   <br>
-                                                                <button type="submit" class="btn rounded-pill btn-success text-light px-4 light-300">Đặt lịch khám</button>
+                                                                <h5 style="color:#ffd877;font-size: 40px;font-family: serif;font-weight: 600;">{{ !empty($datas->name_hospital)?$datas->name_hospital:'' }}</h5>   <br>
+                                                                <a href="{{url('/schedule')}}/{{$datas->code}}"  class="btn rounded-pill btn-success text-light px-4 light-300">Đặt lịch khám</a>
                                                              
                                                             </div>
                                                         </div>
-                                                    </a>
+                                                    </div>
                                                 </ul>
                                             </div>
                                         </div>
@@ -49,7 +49,7 @@
     </div>
     <div class="banner-vertical-center-work container d-flex justify-content-center align-items-center">
         <div class="banner-content col-lg-10 col-10 m-lg-auto text-left">
-            <div style="color:#264451" class="light-300 blogReader">
+            <div style="color:#264451" class="light-300">
                     {!! $datas->decision !!} 
             </div>
         </div>

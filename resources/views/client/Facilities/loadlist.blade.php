@@ -1,6 +1,6 @@
 
 @foreach ($datas as $key => $data)
-  <a class="col-sm-6 col-lg-4 text-decoration-none project marketing social business" style="padding:10px">
+  <a href="{{url('/facilities')}}/{{$data->code}}" class="col-sm-6 col-lg-4 text-decoration-none project marketing social business" style="padding:10px">
     <div class="service-work overflow-hidden card  m-sm-0">
         <img class="card-img-top" style="height: 150px;object-fit: cover;" src="{{url('/file-image-client/avatar-hospital/')}}/{{ !empty($data->avatar)?$data->avatar:'' }}" alt="...">
         <div class="card-body">
@@ -9,9 +9,10 @@
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                 sed do eiusmod tempor incididunt ut labore et dolor.
             </p> -->
-            <span class="text-decoration-none text-primary light-300">
+            <!-- <span class="text-decoration-none text-primary light-300">
                 Đặt lịch khám <i class='bx bxs-hand-right ms-1'></i>
-            </span>
+            </span> -->
+            <span style="background:#7e0000;color: #ffd100" class="btn btn-outline-light rounded-pill">Đặt lịch khám</span>
         </div>
     </div>
   </a>

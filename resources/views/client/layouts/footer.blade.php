@@ -101,17 +101,17 @@
             </div>
         </div>
 
-        <div class="w-100 py-3" style="background:#afc4ff!important">
+        <div class="w-100 py-3" style="background:#424e5e !important">
             <div class="container">
                 <div class="row pt-2">
                     <div class="col-lg-6 col-sm-12">
                         <p class="text-lg-start text-center text-light light-300">
-                            © Copyright 2021 Purple Buzz Company. All Rights Reserved.
+                            © Bản quyền @2023 , Công ty TNHH dịch vụ & sức khỏe BOOKING
                         </p>
                     </div>
                     <div class="col-lg-6 col-sm-12">
                         <p class="text-lg-end text-center text-light light-300">
-                            Designed by <a rel="sponsored" class="text-decoration-none text-light" href="https://templatemo.com/" target="_blank"><strong>TemplateMo</strong></a>
+                            Phát triển bởi <a rel="sponsored" class="text-decoration-none text-light" href="https://templatemo.com/" target="_blank"><strong>Nguyễn Công Luật</strong></a>
                         </p>
                     </div>
                 </div>

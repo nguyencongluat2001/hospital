@@ -167,7 +167,7 @@ Route::get('/', [ClientHomeController::class, 'index']);
 // Trang chủ cơ sở bệnh viện
 Route::get('/facilities', [FacilitiesController::class, 'index']);
 Route::get('/facilities/{code}', [FacilitiesController::class, 'detailIndex']);
-
+Route::get('/schedule/{code}', [FacilitiesController::class, 'schedule']);
 // route phía người dùng
 Route::prefix('/client')->group(function () {
         $arrModules = config('menuClient');

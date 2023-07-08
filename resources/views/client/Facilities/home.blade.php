@@ -4,8 +4,8 @@
     <form action="" method="GET" id="frmHospital">
     <input style="display:none" type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
         <div class="banner-wrapper bg-light" >
-            <!-- <div id="index_banner" class="banner-vertical-center-index"> -->
-            <div class="banner-vertical-center-index" style="background:#163048d4">
+            <div id="index_banner" class="banner-vertical-center-index">
+            <!-- <div class="banner-vertical-center-index" style="background:#163048d4"> -->
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner active pt-5" >
                         <div class="list-hispital-home-one pt-5">

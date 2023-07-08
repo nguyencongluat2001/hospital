@@ -95,5 +95,18 @@ class FacilitiesController extends Controller
         $datas['datas'] = $this->hospitalService->where('code',$code)->first();
         return view('client.Facilities.Detail.home',$datas);
     }
+     /// chi tiết cơ sơ bệnh viện 
+     /**
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function schedule(Request $request ,$code)
+    {
+        $input = $request->all();
+        $datas['datas'] = $this->hospitalService->where('code',$code)->first();
+        return view('client.Facilities.Schedule.home',$datas);
+    }
     
 }
