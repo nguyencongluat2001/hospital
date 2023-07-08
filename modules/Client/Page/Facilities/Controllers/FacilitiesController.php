@@ -42,22 +42,9 @@ class FacilitiesController extends Controller
      */
     public function index(Request $request)
     {
-        // $objResult = $this->hospitalService->where('current_status',1)->get()->take(8);
-        // foreach($objResult as $key => $value){
-        //     $category = $this->categoryService->where('code_category', $value->code_category)->first();
-        //     if(!empty($category)){
-        //         $objResult[$key]->cate_name = $category->name_category;
-        //     }
-        // }
-        // dd($objResult);
-        // $datas['datas']= $objResult;
-        // $cate = $this->cateService->where('code_cate','DM_BLOG')->first();
-        // if(!empty($cate)){
-        //     $category = $this->categoryService->select('code_category','name_category')->where('cate',$cate->code_cate)->get()->toArray();
-        // }
-        // $datas['category'] = isset($category) ? $category : [];
-        $datas = [];
-        return view('client.Facilities.home',$datas);
+        $objResult = $this->hospitalService->where('current_status','1')->get();
+        $data['datas'] = $objResult;
+        return view('client.Facilities.home',$data)->render();
     }
      /**
      * load màn hình danh sách lấy chỉ số thị trường

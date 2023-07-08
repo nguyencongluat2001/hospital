@@ -23,9 +23,15 @@ return [
     ],
     'hospital' => [
         'name' => 'Quản trị bệnh viện',
-        'icon' => 'fas fa-users',
-        'a'    => 'nav-link link-user',
+        'icon' => 'fas fa-home',
+        'a'    => 'nav-link link-hospital',
         'href' => '/system/hospital/index',
+    ],
+    'specialty' => [
+        'name' => 'Quản trị chuyên khoa',
+        'icon' => 'fas fa-home',
+        'a'    => 'nav-link link-specialty',
+        'href' => '/system/specialty/index',
     ],
     'blog' => [
         'name' => 'Quản trị bài viết',

@@ -16,6 +16,7 @@ class FacilitiesModel extends Model
         'code',
         'decision',
         'avatar',
+        'address',
         'current_status'
     ];
 

@@ -6,6 +6,8 @@ use Modules\Client\Page\Home\Controllers\HomeController as ClientHomeController;
 use App\Http\Controllers\Auth\LoginController;
 use Modules\Client\Auth\Controllers\RegisterController;
 use Modules\Client\Page\Facilities\Controllers\FacilitiesController;
+use Modules\Client\Page\Specialty\Controllers\SpecialtyController;
+
 
 
 //Dashboard
@@ -17,6 +19,9 @@ use Modules\System\Dashboard\Category\Controllers\CategoryController;
 use Modules\System\Dashboard\DataFinancial\Controllers\DataFinancialController;
 use Modules\System\Dashboard\Effective\Controllers\EffectiveController;
 use Modules\System\Dashboard\Hospital\Controllers\HospitalController;
+use Modules\System\Dashboard\Specialty\Controllers\SpecialtyController as SystemSpecialtyController;
+
+
 use Modules\System\Dashboard\Home\Controllers\HomeController;
 use Modules\System\Dashboard\Recommended\Controllers\RecommendedController;
 use Modules\System\Dashboard\Signal\Controllers\SignalController;
@@ -134,28 +139,15 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
             Route::post('/delete',[HospitalController::class,'delete'])->name('delete');
             Route::get('/seeVideo',[HospitalController::class,'seeVideo'])->name('seeVideo');
         });
-        //Tín hiệu mua
-        Route::prefix('signal')->group(function(){
-            Route::get('index', [SignalController::class, 'index']);
-            Route::post('loadList', [SignalController::class, 'loadList']);
-            Route::get('create', [SignalController::class, 'create']);
-            Route::get('edit', [SignalController::class, 'edit']);
-            Route::post('update', [SignalController::class, 'update']);
-            Route::post('delete', [SignalController::class, 'delete']);
-            Route::post('updateSignal', [SignalController::class, 'updateSignal']);
-            Route::post('changeStatusSignal', [SignalController::class, 'changeStatusSignal']);
-        });
-        //Tín hiệu mua
-        Route::prefix('approvepayment')->group(function(){
-            Route::get('index', [ApprovePaymentController::class, 'index']);
-            Route::post('loadList', [ApprovePaymentController::class, 'loadList']);
-            Route::get('create', [ApprovePaymentController::class, 'create']);
-            Route::get('edit', [ApprovePaymentController::class, 'edit']);
-            Route::post('update', [ApprovePaymentController::class, 'update']);
-            Route::post('delete', [ApprovePaymentController::class, 'delete']);
-            Route::post('updateApprovePayment', [ApprovePaymentController::class, 'updateApprovePayment']);
-            Route::post('changeStatusApprovePayment', [ApprovePaymentController::class, 'changeStatusApprovePayment']);
-            Route::get('getUserVIP', [ApprovePaymentController::class, 'getUserVIP']);
+         //Chuyên khoa
+         Route::prefix('/specialty')->group(function () {
+            //Hospital
+            Route::get('/index', [SystemSpecialtyController::class, 'index']);
+            Route::get('/loadList',[SystemSpecialtyController::class,'loadList'])->name('loadList');
+            Route::post('/createForm',[SystemSpecialtyController::class,'createForm']);
+            Route::post('/create',[SystemSpecialtyController::class,'create'])->name('create');
+            Route::post('/edit',[SystemSpecialtyController::class,'edit'])->name('edit');
+            Route::post('/delete',[SystemSpecialtyController::class,'delete'])->name('delete');
         });
        
     });
@@ -168,6 +160,9 @@ Route::get('/', [ClientHomeController::class, 'index']);
 Route::get('/facilities', [FacilitiesController::class, 'index']);
 Route::get('/facilities/{code}', [FacilitiesController::class, 'detailIndex']);
 Route::get('/schedule/{code}', [FacilitiesController::class, 'schedule']);
+// chuyên khoa
+Route::get('/specialty', [SpecialtyController::class, 'index']);
+
 // route phía người dùng
 Route::prefix('/client')->group(function () {
         $arrModules = config('menuClient');
@@ -198,6 +193,22 @@ Route::prefix('/client')->group(function () {
                 Route::get('/loadListTop',[FacilitiesController::class,'loadListTop']);
             });
         });
+         // chuyên khoa
+         Route::prefix('specialty')->group(function(){
+            Route::get('/loadList',[SpecialtyController::class,'loadList']);
+            Route::get('/loadListBlog',[SpecialtyController::class,'loadListBlog']);
+            Route::get('/loadListTap1',[SpecialtyController::class,'loadListTap1']);
+            Route::get('/loadListTop',[SpecialtyController::class,'loadListTop']);
+        });
+
+
+
+
+
+
+
+
+
         Route::prefix('infor')->group(function(){
             Route::get('/index', [InforController::class, 'index']);
             Route::post('update', [InforController::class, 'update']);

@@ -1,8 +1,8 @@
-function JS_Hospital(baseUrl, module, controller) {
+function JS_Specialty(baseUrl, module, controller) {
     this.module = module;
     this.baseUrl = baseUrl;
     this.controller = controller;
-    NclLib.active('.link-hospital');
+    NclLib.active('.link-specialty');
     this.urlPath = baseUrl + '/' + module + '/' + controller;
 }
 
@@ -11,10 +11,10 @@ function JS_Hospital(baseUrl, module, controller) {
  *
  * @return void
  */
-JS_Hospital.prototype.loadIndex = function () {
+JS_Specialty.prototype.loadIndex = function () {
     var myClass = this;
     // $('.chzn-select').chosen({ height: '100%', width: '100%' });
-    var oForm = 'form#frmHospital_index';
+    var oForm = 'form#frmSpecialty_index';
     var oFormCreate = 'form#frmAdd';
     myClass.loadList(oForm);
 
@@ -46,7 +46,7 @@ JS_Hospital.prototype.loadIndex = function () {
         myClass.delete(oForm)
     });
 }
-JS_Hospital.prototype.loadevent = function (oForm) {
+JS_Specialty.prototype.loadevent = function (oForm) {
     var myClass = this;
     $('form#frmAdd').find('#btn_create').click(function () {
         myClass.store('form#frmAdd');
@@ -62,7 +62,7 @@ JS_Hospital.prototype.loadevent = function (oForm) {
  *
  * @return void
  */
-JS_Hospital.prototype.add = function (oForm) {
+JS_Specialty.prototype.add = function (oForm) {
     var url = this.urlPath + '/createForm';
     var myClass = this;
     var data = $(oForm).serialize();
@@ -86,28 +86,28 @@ JS_Hospital.prototype.add = function (oForm) {
  *
  * @return void
  */
-JS_Hospital.prototype.store = function (oFormCreate) {
+JS_Specialty.prototype.store = function (oFormCreate) {
     var url = this.urlPath + '/create';
     var myClass = this;
     var data = $(oFormCreate).serialize();
     var formdata = new FormData();
 
-    if ($("#name_hospital").val() == '') {
-        var nameMessage = 'Tên bệnh viện không được để trống!';
+    if ($("#name_specialty").val() == '') {
+        var nameMessage = 'Tên chuyên khoa không được để trống!';
         var icon = 'warning';
         var color = '#f5ae67';
         NclLib.alerMesage(nameMessage,icon,color);
         return false;
     }
     if ($("#code").val() == '') {
-        var nameMessage = 'Mã bệnh viện không được để trống!';
+        var nameMessage = 'Mã chuyên khoa không được để trống!';
         var icon = 'warning';
         var color = '#f5ae67';
         NclLib.alerMesage(nameMessage,icon,color);
         return false;
     }
-    if ($("#address").val() == '') {
-        var nameMessage = 'Địa chỉ bệnh viện không được để trống!';
+    if ($("#order").val() == '') {
+        var nameMessage = 'Số thứ tự không được để trống!';
         var icon = 'warning';
         var color = '#f5ae67';
         NclLib.alerMesage(nameMessage,icon,color);
@@ -119,10 +119,10 @@ JS_Hospital.prototype.store = function (oFormCreate) {
     });
     formdata.append('_token', $("#_token").val());
     formdata.append('id', $("#id").val());
-    formdata.append('name_hospital', $("#name_hospital").val());
+    formdata.append('name_specialty', $("#name_specialty").val());
     formdata.append('code', $("#code").val());
     formdata.append('decision', CKEDITOR.instances.decision.getData());
-    formdata.append('address', $("#address").val());
+    formdata.append('order', $("#order").val());
     formdata.append('is_checkbox_status', status);
     $('form#frmAdd input[type=file]').each(function () {
         var count = $(this)[0].files.length;
@@ -169,7 +169,7 @@ JS_Hospital.prototype.store = function (oFormCreate) {
  *
  * @return void
  */
-JS_Hospital.prototype.loadList = function (oForm, numberPage = 1, perPage = 15) {
+JS_Specialty.prototype.loadList = function (oForm, numberPage = 1, perPage = 15) {
     var myClass = this;
     // var loadding = NclLib.loadding();
     var url = this.urlPath + '/loadList';
@@ -207,7 +207,7 @@ JS_Hospital.prototype.loadList = function (oForm, numberPage = 1, perPage = 15) 
  *
  * @return void
  */
-JS_Hospital.prototype.edit = function (oForm) {
+JS_Specialty.prototype.edit = function (oForm) {
     var url = this.urlPath + '/edit';
     var myClass = this;
     var data = $(oForm).serialize();
@@ -252,7 +252,7 @@ JS_Hospital.prototype.edit = function (oForm) {
     });
 }
 // Xoa mot doi tuong
-JS_Hospital.prototype.delete = function (oForm) {
+JS_Specialty.prototype.delete = function (oForm) {
     var myClass = this;
     var listitem = '';
     var p_chk_obj = $('#table-data').find('input[name="chk_item_id"]');
@@ -280,7 +280,7 @@ JS_Hospital.prototype.delete = function (oForm) {
     var data = $(oForm).serialize();
     var url = this.urlPath + '/delete';
     Swal.fire({
-        title: 'Bạn có chắc chắn xóa vĩnh viễn người dùng này không?',
+        title: 'Bạn có chắc chắn xóa vĩnh viễn chuyên khoa này không?',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#34bd57',
@@ -331,7 +331,7 @@ JS_Hospital.prototype.delete = function (oForm) {
  *
  * @return void
  */
-JS_Hospital.prototype.seeVideo = function (id) {
+JS_Specialty.prototype.seeVideo = function (id) {
     var url = this.urlPath + '/seeVideo';
     var myClass = this;
     var data = 'id=' + id;

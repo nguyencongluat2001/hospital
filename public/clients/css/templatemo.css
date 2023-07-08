@@ -54,7 +54,23 @@ p, a {font-weight: 400;}
   background-image: url('../../clients/img/bookingcare-cover-3.jpg');
   background-position: center center; background-size: cover;
   height: 100%;
-  min-height: 60vh;
+  /* min-height: 60vh; */
+  width: 100%;
+  /* opacity: 0.5; */
+}
+#index_banner_detail{
+  background-image: url('../../clients/img/pexels-photo-3938022.webp');
+  background-position: center center; background-size: cover;
+  height: 100%;
+  /* min-height: 60vh; */
+  width: 100%;
+  /* opacity: 0.5; */
+}
+#index_banner_facilities{
+  background-image: url('../../clients/img/pexels-photo-6129111.webp');
+  background-position: center center; background-size: cover;
+  height: 100%;
+  /* min-height: 60vh; */
   width: 100%;
   /* opacity: 0.5; */
 }

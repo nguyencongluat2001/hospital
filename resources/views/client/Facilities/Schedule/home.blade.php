@@ -29,7 +29,7 @@
                                         <div class="row g-lg-5 mb-4">
                                             <div class="banner-wrapper w-100 py-3" style="background:#15283dd6">
                                                 <div class="list-group wrapper pb-0 px-3">
-                                                    <a class="col-sm-6 col-lg-12 text-decoration-none">
+                                                    <a class="col-sm-6 col-lg-12 text-decoration-none text-light">
                                                         <div class="d-lg-flex gx-5">
                                                             <div class="col-lg-3">
                                                                 <img class="card-img-top" src="{{url('/file-image-client/avatar-hospital/')}}/{{ !empty($datas->avatar)?$datas->avatar:'' }}" style="object-fit: cover;" alt="...">
@@ -38,7 +38,7 @@
                                                             <div class="col-lg-8 ">
                                                             <span  class="text-title-home" style="color:#ff9300"><center> ĐẶT LỊCH KHÁM TẠI</center></span>
                                                             <center><h5  style="font-size: 40px;font-family: serif;font-weight: 600; animation: lights 4s 750ms linear infinite;">{{ !empty($datas->name_hospital)?$datas->name_hospital:'' }}</h5></center>                                                     
-                                                            <span style="color: #bad1ff;font-size: 20px;"><center>Số 16-18 Phủ Doãn - Hoàn Kiếm - Hà Nội</center></span>
+                                                            <span style="color: #bad1ff;font-size: 20px;"><center>{{ !empty($datas->address)?$datas->address:'' }}</center></span>
                                                             </div>
                                                         </div>
                                                     </a>

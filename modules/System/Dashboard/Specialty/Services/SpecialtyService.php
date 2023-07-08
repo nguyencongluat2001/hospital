@@ -1,37 +1,37 @@
 <?php
 
-namespace Modules\System\Dashboard\Hospital\Services;
+namespace Modules\System\Dashboard\Specialty\Services;
 
 use Illuminate\Support\Facades\Hash;
 use Modules\Base\Service;
-use Modules\System\Dashboard\Hospital\Repositories\HospitalRepository;
+use Modules\System\Dashboard\Specialty\Repositories\SpecialtyRepository;
 use Str;
 use Modules\Base\Library;
 
 
-class HospitalService extends Service
+class SpecialtyService extends Service
 {
 
     public function __construct(
-        HospitalRepository $HospitalRepository
+        SpecialtyRepository $SpecialtyRepository
         )
     {
-        $this->HospitalRepository = $HospitalRepository;
-        $this->baseDis = public_path("file-image-client/avatar-hospital") . "/";
+        $this->SpecialtyRepository = $SpecialtyRepository;
+        $this->baseDis = public_path("file-image-client/avatar-specialty") . "/";
         parent::__construct();
     }
 
     public function repository()
     {
-        return HospitalRepository::class;
+        return SpecialtyRepository::class;
     }
 
     public function store($input,$file){
-        //lấy mã bài viết
+        //lấy mã khoa
         $random = Library::_get_randon_number();
         $image_old = null;
         if($input['id'] != ''){
-            $hospital = $this->HospitalRepository->where('id',$input['id'])->first();
+            $hospital = $this->SpecialtyRepository->where('id',$input['id'])->first();
             $image_old = !empty($hospital->avatar)?$hospital->avatar:'';
         }
         if(isset($file) && $file != []){
@@ -39,20 +39,20 @@ class HospitalService extends Service
         }
 
         $arrData = [
-            'name_hospital'=>$input['name_hospital'],
+            'name_specialty'=>$input['name_specialty'],
             'code'=>$input['code'],
             'decision'=>$input['decision'],
-            'address'=>$input['address'],
+            'order'=>$input['order'],
             'current_status'=> !empty($input['is_checkbox_status'])?$input['is_checkbox_status']:0,
         ];
         if(isset($arrFile[0])){
             $arrData['avatar'] = $arrFile[0];
         }
         if($input['id'] != ''){
-            $create = $this->HospitalRepository->where('id',$input['id'])->update($arrData);
+            $create = $this->SpecialtyRepository->where('id',$input['id'])->update($arrData);
         }else{
             $arrData['id'] = (string)Str::uuid();
-            $create = $this->HospitalRepository->create($arrData);
+            $create = $this->SpecialtyRepository->create($arrData);
         }
         
         return $create;

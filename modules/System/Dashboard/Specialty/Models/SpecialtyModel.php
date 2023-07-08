@@ -1,22 +1,22 @@
 <?php
 
-namespace Modules\System\Dashboard\Hospital\Models;
+namespace Modules\System\Dashboard\Specialty\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class HospitalModel extends Model
+class SpecialtyModel extends Model
 {
-    protected $table = 'hospitals';
+    protected $table = 'specialtys';
     public $incrementing = false;
     public $timestamps = false;
 
     protected $fillable = [
         'id',
-        'name_hospital',
+        'name_specialty',
         'code',
         'decision',
         'avatar',
-        'address',
+        'order',
         'current_status'
     ];
 
@@ -27,11 +27,11 @@ class HospitalModel extends Model
                 $this->value = $value;
                 // dd($this->value);
                 return $query->where(function ($query) {
-                    $query->where('name_hospital', 'like', '%' . $this->value . '%');
+                    $query->where('name_specialty', 'like', '%' . $this->value . '%');
                 });
                 return $query;
             // case 'cate':
-            //     $query->where('category_Hospital', $value);
+            //     $query->where('category_Specialty', $value);
             //     return $query;
             default:
                 return $query;

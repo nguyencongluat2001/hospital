@@ -43,9 +43,9 @@
                                 <div class="row g-lg-5 mb-4">
                                 @foreach ($datas as $key => $data)
                                     <!-- Start Recent Work -->
-                                    <div class="col-md-3 mb-3">
+                                    <div class="col-md-4 mb-4">
                                         <a href="{{url('/facilities')}}/{{$data->code}}" class="recent-work card border-0 shadow-lg overflow-hidden">
-                                            <img class="recent-work-img card-img" style="height: 150px;width: 300px;object-fit: cover;" src="{{url('/file-image-client/avatar-hospital/')}}/{{ !empty($data->avatar)?$data->avatar:'' }}" alt="Card image">
+                                            <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/file-image-client/avatar-hospital/')}}/{{ !empty($data->avatar)?$data->avatar:'' }}" alt="Card image">
                                             <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                                 <div style="background: radial-gradient(#000000c2, transparent);border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
                                                     <h3 class="card-title">{{$data->name_hospital}}</h3>
@@ -75,12 +75,13 @@
             <div class="row">
                <h2 class="h2 text-center col-12 py-2 semi-bold-600">Vai trò của Booking</h2>
             </div>
-            <p class=" col-10 offset-1 col-lg-10 text-start pb-3 text-muted px-2">
+            <p class="col-10 offset-2 col-lg-8 text-start pb-3 text-muted px-2">
             &nbsp; &nbsp;&nbsp; BookingCare giúp bệnh nhân dễ dàng lựa chọn đúng bác sĩ từ mạng lưới bác sĩ chuyên khoa giỏi, với thông tin đã xác thực và đặt lịch nhanh chóng. Bác sĩ chuyên khoa giỏi, được nhiều bệnh nhân tin tưởng, đồng nghiệp đánh giá cao, có uy tín trong ngành. Các bác sĩ đã, đang công tác tại các bệnh viện hàng đầu như: Bệnh viện Bạch Mai, Bệnh Viện Việt Đức, Bệnh viện TW Quân đội 108, Bệnh viện Quân Y 103, Bệnh viện Nhi TW, Bệnh viện Tai Mũi Họng TW, Viện Tim mạch Việt Nam, Bệnh viện Chợ Rẫy, Bệnh viện Đại học Y dược TP.HCM, Bệnh viện Nhân dân 115… 
                   .Các bác sĩ có lịch khám tại các bệnh viện công lớn hoặc phòng khám tư nhân uy tín, được chọn lọc kỹ lưỡng tại Hà Nội và TP.HCM. Bên cạnh đó, hệ thống ghi nhận ý kiến đánh giá phản hồi của bệnh nhân sau khi đi khám và phương án điều trị của từng bác sĩ. Từ đó chúng tôi có thêm thông tin để giới thiệu trên hệ thống những bác sĩ uy tín, chuyên môn cao. <br>
             </p>
         </div>
     </section>
+    
     <!-- Start Banner Hero -->
     <div class="banner-wrapper">
         <div class="banner-vertical-center-index container-fluid">
@@ -88,9 +89,9 @@
             <div id="carouselExampleIndicators1" class="carousel slide">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <div class="row">
+                        <!-- <div class="row">
                              <h2 class="h2 text-center col-12 semi-bold-600">Bài viết nổi bật</h2>
-                        </div>
+                        </div> -->
                         <div class=" row d-flex align-items-center">
                             <div class="banner-content col-lg-10 col-10 offset-1 m-lg-auto text-left py-5 pb-5">
                                  <div id="table-blog-container"></div>

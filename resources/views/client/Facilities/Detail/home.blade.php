@@ -2,7 +2,7 @@
 @section('body-client')
     <!-- Start Banner Hero -->
     <div class="banner-wrapper bg-light" >
-        <div id="index_banner" class="banner-vertical-center-index">
+        <div id="index_banner_detail" class="banner-vertical-center-index">
             <!-- Start slider -->
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner active pt-5" >
@@ -27,7 +27,8 @@
                                                             </div>
                                                             <div class="col-lg-1 "></div>
                                                             <div class="col-lg-7 ">
-                                                                <h5 style="color:#ffd877;font-size: 40px;font-family: serif;font-weight: 600;">{{ !empty($datas->name_hospital)?$datas->name_hospital:'' }}</h5>   <br>
+                                                                <h5 style="color:#ffd877;font-size: 40px;font-family: serif;font-weight: 600;">{{ !empty($datas->name_hospital)?$datas->name_hospital:'' }}</h5>
+                                                                <span style="color:#11222a;font-size:20px">{{!empty($datas->address)?$datas->address:'' }}</span> <br> <br>
                                                                 <a href="{{url('/schedule')}}/{{$datas->code}}"  class="btn rounded-pill btn-success text-light px-4 light-300">Đặt lịch khám</a>
                                                              
                                                             </div>

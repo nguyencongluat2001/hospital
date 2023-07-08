@@ -37,8 +37,10 @@
 }
 </style>
 
+
+
     <!-- Start Banner Hero -->
-    <form action="" method="GET" id="frmHospital">
+    <form action="" method="GET" id="frmSpecialty">
     <input style="display:none" type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
         <div class="banner-wrapper bg-light" >
             <div id="index_banner_facilities" class="banner-vertical-center-index">
@@ -47,33 +49,21 @@
                     <div class="carousel-inner active pt-5" >
                         <div class="list-hispital-home-one pt-5">
                             <section class="banner-bg">
-                                <span  class="text-title-home "><center> BỆNH VIỆN PHÒNG KHÁM <br>TẠI CÁC TUYẾN TRUNG ƯƠNG</center></span>
+                                <span  class="text-title-home "><center> CHUYÊN KHOA -  PHÒNG KHÁM</center></span>
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-4 mx-auto " style="display:flex">
                                             <div class="input-group pt-2 box">
-                                                  <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg rounded-pill rounded" placeholder="Từ kiếm tên chuyên khoa..." aria-label="Từ kiếm tên chuyên khoa..">
+                                                <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg rounded-pill rounded" placeholder="Từ kiếm tên chuyên khoa..." aria-label="Từ kiếm tên chuyên khoa..">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </section>
                         </div>
-                        <!-- <div class="carousel-item active list-hispital-home pt-5">
-                            <div class=" row d-flex align-items-center">
-                                <div class="banner-content col-lg-10 col-10 offset-1 m-lg-auto text-left ">
-                                        <section class="container">
-                                            <div class="row gx-lg-5">
-                                                 <div class="row" id="table-container" style="padding-top:10px">
-                                                </div>
-                                            </div>
-                                        </section>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
+
                         <div class="carousel-item active list-hispital-home pt-5">
-                            <div class=" row d-flex ">
+                            <div class=" row d-flex align-items-center">
                                 <div class="banner-content col-lg-10 col-10 m-lg-auto text-left ">
                                         <!-- Start Our Work -->
                                         <section class="container">
@@ -82,17 +72,10 @@
                                                     @foreach ($datas as $key => $data)
                                                         <tr>
                                                             <td style="background: #ffffffeb;width:30%;vertical-align: middle;" align="center">
-                                                                <img  src="{{url('/file-image-client/avatar-hospital/')}}/{{ !empty($data->avatar)?$data->avatar:'' }}" alt="Image" style="height: 150px;width: 250px;object-fit: cover;">
+                                                                <img  src="{{url('/file-image-client/avatar-specialty/')}}/{{ !empty($data->avatar)?$data->avatar:'' }}" alt="Image" style="height: 150px;width: 250px;object-fit: cover;">
+                                                                <span style="padding-left:10px;font-size: 40px;font-family: -webkit-body;color: #1d3952;">{{ $key + 1 }}.&nbsp;{{$data->name_specialty}}</span>
                                                             </td>
-                                                            <td style="background: #ffffffeb;width:70%;vertical-align: middle;" align="center">
-                                                                <span style="padding-left:10px;font-size: 40px;font-family: -webkit-body;color: #1d3952;">{{ $key + 1 }}.&nbsp;{{$data->name_hospital}}</span> <br>
-                                                                <span style="padding-left:10px;font-size: 20px;font-family: -webkit-body;color: #1d3952;"><i style="color:#8b0000" class="fas fa-hotel"></i> Địa chỉ: {{$data->address}}</span><br>
-                                                                <a  href="{{url('/facilities')}}/{{$data->code}}">
-                                                                    <span style="background: #ff9e02;color: #004c4b;" class="btn btn-outline-light rounded-pill">Đặt lịch khám</span>
-                                                                </a>
-                                                            </td>
-                                                            
-                                                        </tr> 
+                                                        </tr>
                                                     @endforeach
                                                 </tbody>
                                             </table>
@@ -118,7 +101,7 @@ function myFunction() {
   table = document.getElementById("myTable");
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[1];
+    td = tr[i].getElementsByTagName("td")[0];
     if (td) {
       txtValue = td.textContent || td.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -130,17 +113,16 @@ function myFunction() {
   }
 }
 </script>
-<script type="text/javascript" src="{{ URL::asset('dist/js/backend/client/JS_About.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('dist/js/backend/client/JS_Facilities.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('dist/js/backend/client/JS_Specialty.js') }}"></script>
 <script src='../assets/js/jquery.js'></script>
 <script type="text/javascript">
     var baseUrl = "{{ url('') }}";
-    var JS_About = new JS_About(baseUrl, 'client', 'about', 'home');
-    var JS_Facilities = new JS_Facilities(baseUrl, 'client', 'facilities');
+    var JS_Specialty = new JS_Specialty(baseUrl, 'client', 'specialty');
     $(document).ready(function($) {
-        JS_Facilities.loadIndex(baseUrl);
+        JS_Specialty.loadIndex(baseUrl);
     })
 </script>
+
 <!-- <script type="text/javascript" src="{{ URL::asset('dist\js\backend\pages\JS_System_Security.js') }}"></script>
 <script>
       var JS_System_Security = new JS_System_Security();

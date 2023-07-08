@@ -5,7 +5,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content card">
             <div class="modal-header">
-                <h5 class="modal-title">Cập nhật bệnh viện</h5>
+                <h5 class="modal-title">Cập nhật chuyên khoa</h5>
                 <button type="button" class="btn btn-sm" data-bs-dismiss="modal">
                     X
                 </button>
@@ -13,26 +13,18 @@
             <div class="modal-body" style="padding:15px">
                 <!-- tên -->
                 <div class="row form-group" id="div_hinhthucgiai">
-                    <span class="col-md-3 control-label required">Tên bệnh viện</span>
+                    <span class="col-md-3 control-label required">Tên chuyên khoa</span>
                     <div class="col-md-8">
-                        <input class="form-control" type="text" value="{{!empty($data['detail']['name_hospital'])?$data['detail']['name_hospital']:''}}" name="name_hospital" id="name_hospital"
+                        <input class="form-control" type="text" value="{{!empty($data['detail']['name_specialty'])?$data['detail']['name_specialty']:''}}" name="name_specialty" id="name_specialty"
                             placeholder="Nhập tên bệnh viện..." />
                     </div>
                 </div>
                  <!-- tên -->
                  <div class="row form-group" id="div_hinhthucgiai">
-                    <span class="col-md-3 control-label required">Mã bệnh viện</span>
+                    <span class="col-md-3 control-label required">Mã chuyên khoa</span>
                     <div class="col-md-8">
                         <input class="form-control" type="text" value="{{!empty($data['detail']['code'])?$data['detail']['code']:''}}" name="code" id="code"
-                            placeholder="Nhập tên bệnh viện..." />
-                    </div>
-                </div>
-                 <!-- địa chỉ -->
-                 <div class="row form-group" id="div_hinhthucgiai">
-                    <span class="col-md-3 control-label required">Địa chỉ</span>
-                    <div class="col-md-8">
-                        <input class="form-control" type="text" value="{{!empty($data['detail']['address'])?$data['detail']['address']:''}}" name="address" id="address"
-                            placeholder="Nhập địa chỉ bệnh viện..." />
+                            placeholder="Nhập mã chuyên khoa..." />
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -41,7 +33,7 @@
                         <input type="file" hidden name="upload_image" id="upload_image" onchange="readURL(this)">
                         <br>
                         @if(!empty($data['image']))
-                        <img id="show_img" src="{{url('/file-image-client/blogs/')}}/{{$data['image'][0]->name_image}}" alt="Image" style="width:150px">
+                        <img id="show_img" src="{{url('/file-image-client/avatar-specialty/')}}/{{$data['image'][0]->name_image}}" alt="Image" style="width:150px">
                         @else
                         <img id="show_img" hidden alt="Image" style="width:150px">
                         @endif
@@ -56,6 +48,14 @@
                     </div>
                 </div>
                 <div class="preview"></div>
+                 <!-- tên -->
+                 <div class="row form-group" id="div_hinhthucgiai">
+                    <span class="col-md-3 control-label required">Số thứ tự</span>
+                    <div class="col-md-8">
+                        <input class="form-control" type="number" value="{{!empty($data['detail']['order'])?$data['detail']['order']:''}}" name="order" id="order"
+                            placeholder="Nhập số thứ tự..." />
+                    </div>
+                </div>
                 {{-- trạng thái --}}
                 <div class="row form-group" id="div_hinhthucgiai">
                     <span class="col-md-3 control-label">Trạng thái</span>

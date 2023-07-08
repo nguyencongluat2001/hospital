@@ -37,9 +37,8 @@ use Modules\System\Recordtype\Helpers\WorkflowHelper;
                 <td align="center"><input type="checkbox" name="chk_all_item_id"
                         onclick="checkbox_all_item_id(document.forms[0].chk_item_id);"></td>
                 <td align="center"><b>STT</b></td>
-                <td align="center"><b>Mã bệnh viện</b></td>
-                <td align="center"><b>Tên bệnh viện</b></td>
-                <td align="center"><b>Địa chỉ</b></td>
+                <td align="center"><b>Mã chuyên khoa</b></td>
+                <td align="center"><b>Tên chuyên khoa</b></td>
                 <td align="center"><b>Avatar</b></td>
             </tr>
         </thead>
@@ -54,12 +53,9 @@ use Modules\System\Recordtype\Helpers\WorkflowHelper;
                        {{$data->code}}
                     </td>
                     <td style="padding-top: 20px;white-space: inherit;vertical-align: middle;" ondblclick="" onclick="{select_row(this);}">
-                       {{$data->name_hospital}}
+                       {{$data->name_specialty}}
                     </td>
-                    <td style="padding-top: 20px;white-space: inherit;vertical-align: middle;" ondblclick="" onclick="{select_row(this);}">
-                       {{$data->address}}
-                    </td>
-                    <td style="width:20%;vertical-align: middle;" align="center"><img  src="{{url('/file-image-client/avatar-hospital/')}}/{{ !empty($data->avatar)?$data->avatar:'' }}" alt="Image" style="height: 150px;width: 150px;object-fit: cover;"></td>
+                    <td style="width:20%;vertical-align: middle;" align="center"><img  src="{{url('/file-image-client/avatar-specialty/')}}/{{ !empty($data->avatar)?$data->avatar:'' }}" alt="Image" style="height: 150px;width: 150px;object-fit: cover;"></td>
                 </tr>
             @endforeach
         </tbody>
