@@ -44,7 +44,7 @@
                                 @foreach ($datas as $key => $data)
                                     <!-- Start Recent Work -->
                                     <div class="col-md-3 mb-3">
-                                        <a href="#" class="recent-work card border-0 shadow-lg overflow-hidden">
+                                        <a href="{{url('/facilities')}}/{{$data->code}}" class="recent-work card border-0 shadow-lg overflow-hidden">
                                             <img class="recent-work-img card-img" style="height: 150px;width: 300px;object-fit: cover;" src="{{url('/file-image-client/avatar-hospital/')}}/{{ !empty($data->avatar)?$data->avatar:'' }}" alt="Card image">
                                             <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                                 <div style="background: radial-gradient(#000000c2, transparent);border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
@@ -57,8 +57,7 @@
                                 @endforeach
                                     
                                     <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-center py-2 pb-2">
-                                    <a class="banner-button btn rounded-pill btn-outline-primary btn-lg px-4 " href="#" role="button">Xem thêm</a>
-
+                                        <a class="banner-button btn rounded-pill btn-outline-primary btn-lg px-4 " href="{{url('/facilities')}}" role="button">Xem thêm</a>
                                     </div>
                                 </div>
                                 <!-- <center><span class="famous-saying">"Chỉ khi người giàu ốm họ mới thực hiểu sự bất lực của giàu sang"</span></center> -->
@@ -288,21 +287,16 @@
         </div>
     </section>
     <!-- End Service -->
-<div class="modal" id="reader" role="dialog"></div>
-<!-- End Recent Work -->
-<script type="text/javascript" src="{{ URL::asset('dist/js/backend/client/JS_About.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('dist/js/backend/client/JS_Home.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('dist/js/backend/client/JS_Facilities.js') }}"></script>
 <script src='../assets/js/jquery.js'></script>
 <script type="text/javascript">
     var baseUrl = "{{ url('') }}";
-    var JS_About = new JS_About(baseUrl, 'client', 'about', 'home');
     var JS_Home = new JS_Home(baseUrl, 'client', 'home');
     $(document).ready(function($) {
         JS_Home.loadIndex(baseUrl);
     })
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-
 
 <!-- <script type="text/javascript" src="{{ URL::asset('dist\js\backend\pages\JS_System_Security.js') }}"></script>
 <script>

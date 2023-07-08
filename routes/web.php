@@ -166,6 +166,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 Route::get('/', [ClientHomeController::class, 'index']);
 // Trang chủ cơ sở bệnh viện
 Route::get('/facilities', [FacilitiesController::class, 'index']);
+Route::get('/facilities/{code}', [FacilitiesController::class, 'detailIndex']);
+
 // route phía người dùng
 Route::prefix('/client')->group(function () {
         $arrModules = config('menuClient');
@@ -182,11 +184,19 @@ Route::prefix('/client')->group(function () {
         });
         // Trang chủ cơ sở bệnh viện
         Route::prefix('facilities')->group(function(){
-            Route::get('/index',[FacilitiesController::class,'index']);
+            // Route::get('/index',[FacilitiesController::class,'index']);
             Route::get('/loadList',[FacilitiesController::class,'loadList']);
             Route::get('/loadListBlog',[FacilitiesController::class,'loadListBlog']);
             Route::get('/loadListTap1',[FacilitiesController::class,'loadListTap1']);
             Route::get('/loadListTop',[FacilitiesController::class,'loadListTop']);
+             // Trang chủ chi tiết cơ sở bệnh viện
+            Route::prefix('detail')->group(function(){
+                Route::get('/index',[FacilitiesController::class,'detailIndex']);
+                Route::get('/loadList',[FacilitiesController::class,'loadList']);
+                Route::get('/loadListBlog',[FacilitiesController::class,'loadListBlog']);
+                Route::get('/loadListTap1',[FacilitiesController::class,'loadListTap1']);
+                Route::get('/loadListTop',[FacilitiesController::class,'loadListTop']);
+            });
         });
         Route::prefix('infor')->group(function(){
             Route::get('/index', [InforController::class, 'index']);

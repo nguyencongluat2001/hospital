@@ -42,7 +42,7 @@ class FacilitiesController extends Controller
      */
     public function index(Request $request)
     {
-        $objResult = $this->hospitalService->where('current_status',1)->get()->take(8);
+        // $objResult = $this->hospitalService->where('current_status',1)->get()->take(8);
         // foreach($objResult as $key => $value){
         //     $category = $this->categoryService->where('code_category', $value->code_category)->first();
         //     if(!empty($category)){
@@ -50,13 +50,13 @@ class FacilitiesController extends Controller
         //     }
         // }
         // dd($objResult);
-        $datas['datas']= $objResult;
+        // $datas['datas']= $objResult;
         // $cate = $this->cateService->where('code_cate','DM_BLOG')->first();
         // if(!empty($cate)){
         //     $category = $this->categoryService->select('code_category','name_category')->where('cate',$cate->code_cate)->get()->toArray();
         // }
         // $datas['category'] = isset($category) ? $category : [];
-        // $datas = [];
+        $datas = [];
         return view('client.Facilities.home',$datas);
     }
      /**
@@ -74,6 +74,26 @@ class FacilitiesController extends Controller
         $objResult = $this->hospitalService->filter($param);
         $data['datas'] = $objResult;
         $data['param'] = $param;
+        // dd($arrInput,$data);
         return view("client.Facilities.loadlist", $data)->render();
     }
+
+
+
+
+
+    /// chi tiết cơ sơ bệnh viện 
+     /**
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function detailIndex(Request $request ,$code)
+    {
+        $input = $request->all();
+        $datas['datas'] = $this->hospitalService->where('code',$code)->first();
+        return view('client.Facilities.Detail.home',$datas);
+    }
+    
 }

@@ -1,8 +1,8 @@
 
 @foreach ($datas as $key => $data)
   <a class="col-sm-6 col-lg-4 text-decoration-none project marketing social business" style="padding:10px">
-    <div class="service-work overflow-hidden card mb-5 mx-5 m-sm-0">
-        <img class="card-img-top" style="height: 150px;width: 300px;object-fit: cover;" src="{{url('/file-image-client/avatar-hospital/')}}/{{ !empty($data->avatar)?$data->avatar:'' }}" alt="...">
+    <div class="service-work overflow-hidden card  m-sm-0">
+        <img class="card-img-top" style="height: 150px;object-fit: cover;" src="{{url('/file-image-client/avatar-hospital/')}}/{{ !empty($data->avatar)?$data->avatar:'' }}" alt="...">
         <div class="card-body">
             <h5 class="card-title light-300 text-dark">{{$data->name_hospital}}</h5>
             <!-- <p class="card-text light-300 text-dark">

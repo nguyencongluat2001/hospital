@@ -208,137 +208,23 @@ JS_Home.prototype.loadListTap1 = function (oForm, numberPage = 1, perPage = 15) 
     });
 }
 /**
- * Hàm hiển thị modal edit
+ * Load màn hình danh sách
  *
  * @param oForm (tên form)
  *
  * @return void
  */
-JS_Home.prototype.edit = function (oForm) {
-    var url = this.urlPath + '/edit';
+JS_Home.prototype.inFor = function (id) {
     var myClass = this;
-    var data = $(oForm).serialize();
-    var listitem = '';
-    var i = 0;
-    var p_chk_obj = $('#table-data').find('input[name="chk_item_id"]');
-    $(p_chk_obj).each(function () {
-        if ($(this).is(':checked')) {
-            if (listitem !== '') {
-                listitem += ',' + $(this).val();
-            } else {
-                listitem = $(this).val();
-            }
-            i++;
-        }
-    });
-    if (listitem == '') {
-        // EfyLib.alertMessage('danger', "Chưa chọn hồ sơ để chuyển xử lý");
-        Swal.fire({
-            position: 'top-start',
-            icon: 'warning',
-            title: 'Bạn chưa chọn đối tượng!',
-            color: '#f5ae67',
-            showConfirmButton: false,
-            width:'30%',
-            timer: 2500
-          })
-        return false;
-    }
-    if (i > 1) {
-        Swal.fire({
-            position: 'top-start',
-            icon: 'warning',
-            title: 'Bạn chỉ được chọn một đối tượng!',
-            color: '#f5ae67',
-            showConfirmButton: false,
-            width:'30%',
-            timer: 2500
-          })
-        return false;
-    }
+    console.log(id)
+    var url = this.urlPath + '/inForFacilities';
     $.ajax({
         url: url,
-        type: "POST",
-        //cache: true,
-        data: data,
+        type: "GET",
+        cache: true,
+        data: id,
         success: function (arrResult) {
-            $('#editmodal').html(arrResult);
-            $('#editmodal').modal('show');
-            myClass.loadevent(oForm);
-
+            $("#table-container").html(arrResult);
         }
     });
-}
-// Xoa mot doi tuong
-JS_Home.prototype.delete = function (oForm) {
-    var myClass = this;
-    var listitem = '';
-    var p_chk_obj = $('#table-data').find('input[name="chk_item_id"]');
-    $(p_chk_obj).each(function () {
-        if ($(this).is(':checked')) {
-            if (listitem !== '') {
-                listitem += ',' + $(this).val();
-            } else {
-                listitem = $(this).val();
-            }
-        }
-    });
-    if (listitem == '') {
-        Swal.fire({
-            position: 'top-start',
-            icon: 'warning',
-            title: 'Bạn chưa chọn đối tượng để xóa!',
-            color: '#f5ae67',
-            showConfirmButton: false,
-            width:'30%',
-            timer: 2500
-          })
-        return false;
-    }
-    var data = $(oForm).serialize();
-    var url = this.urlPath + '/delete';
-    Swal.fire({
-        title: 'Bạn có chắc chắn xóa vĩnh viễn người dùng này không?',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#34bd57',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Xác nhận'
-      }).then((result) => {
-        if(result.isConfirmed == true){
-            $.ajax({
-                url: url,
-                type: "POST",
-                dataType: 'json',
-                data: {
-                    _token: $('#_token').val(),
-                    listitem: listitem,
-                },
-                success: function (arrResult) {
-                    if (arrResult['success'] == true) {
-                        if (result.isConfirmed) {
-                            Swal.fire({
-                                position: 'top-start',
-                                icon: 'success',
-                                title: 'Xóa thành công',
-                                showConfirmButton: false,
-                                timer: 3000
-                              })
-                              myClass.loadList(oForm);
-                          }
-                    } else {
-                        if (result.isConfirmed) {
-                            Swal.fire({
-                                position: 'top-start',
-                                icon: 'error',
-                                title: 'Quá trình xóa đã xảy ra lỗi',
-                                showConfirmButton: false,
-                                timer: 3000
-                              })
-                          }
-                    }
-                }
-            });
-        }
-      })
 }

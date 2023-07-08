@@ -22,14 +22,13 @@ class FacilitiesModel extends Model
     public function filter($query, $param, $value)
     {
         switch ($param) {
-            // case 'search':
-            //     $this->value = $value;
-            //     // dd($this->value);
-            //     return $query->where(function ($query) {
-            //         $query->where('name_Hospital', 'like', '%' . $this->value . '%')
-            //               ->orWhere('decision', 'like', '%' . $this->value . '%');
-            //     });
-            //     return $query;
+            case 'search':
+                $this->value = $value;
+                // dd($this->value);
+                return $query->where(function ($query) {
+                    $query->where('name_hospital', 'like', '%' . $this->value . '%');
+                });
+                return $query;
             // case 'cate':
             //     $query->where('category_Hospital', $value);
             //     return $query;
