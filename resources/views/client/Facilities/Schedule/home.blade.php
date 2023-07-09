@@ -23,7 +23,7 @@
                     <!-- End Contact -->
                     <div class="carousel-item active list-hispital-home" >
                         <div class=" row d-flex align-items-center">
-                            <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-left ">
+                            <div class="banner-content col-lg-10 col-10 offset-1 m-lg-auto text-left ">
                                 <div class="row g-lg-5 mb-4">
                                     <div class="banner-wrapper w-100" style="background:#ffffffba;color:black">
                                         <div class="row g-lg-5 mb-4">

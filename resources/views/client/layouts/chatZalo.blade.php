@@ -1,20 +1,9 @@
-{{-- @php
-    use Modules\Frontend\Models\QuestionModel;
-    $getQuestion = QuestionModel::select('c_tencauhoi')->get();
-    if (!empty($getQuestion)) {
-        $getQuestion = $getQuestion;
-    } else {
-        $getQuestion = [
-            'c_tencauhoi' => '',
-        ];
-    }
-@endphp --}}
 <div id="form_chat">
     <input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
     <section class="icon">
         <div>
             <label for="checkbox1">
-                <img width="" height="90px" style="background-color: none"
+                <img width="" height="50px" style="background-color: none"
                     src="../clients/img/zalo.png" alt="">
             </label>
         </div>

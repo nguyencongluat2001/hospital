@@ -206,7 +206,7 @@
     <script src="../assets/js/plugins/chartjs.min.js"></script>
 
     <script src="https://js.pusher.com/4.4/pusher.min.js"></script>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         var pusher = new Pusher("{{ env('PUSHER_APP_KEY', '0141c9557203d59309b9') }}", {
             encrypted: true,
             cluster: "ap1"
@@ -266,7 +266,7 @@
                 }
             });
         }
-    </script>
+    </script> -->
 </body>
 
 </html>
