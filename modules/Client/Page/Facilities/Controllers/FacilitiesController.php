@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Http;
 use DB;
 use Modules\System\Dashboard\Hospital\Services\HospitalService;
 use Modules\System\Dashboard\Specialty\Models\UnitsModel;
-
+use Modules\System\Dashboard\Specialty\Services\SpecialtyService;
 /**
  * Phân quyền người dùng 
  *
@@ -23,12 +23,14 @@ class FacilitiesController extends Controller
 {
 
     public function __construct(
+        SpecialtyService $SpecialtyService,
         CateService $cateService,
         CategoryService $categoryService,
         FacilitiesService $FacilitiesService,
         BlogService $blogService,
         HospitalService $hospitalService
     ){
+        $this->SpecialtyService = $SpecialtyService;
         $this->cateService = $cateService;
         $this->categoryService = $categoryService;
         $this->blogService = $blogService;
@@ -94,6 +96,7 @@ class FacilitiesController extends Controller
     {
         $input = $request->all();
         $datas['datas'] = $this->hospitalService->where('code',$code)->first();
+        $datas['khoa'] =  $this->SpecialtyService->where('current_status',1)->get();
         $datas['tinh'] =  UnitsModel::whereNull('code_huyen')->get();
         return view('client.Facilities.Schedule.home',$datas);
     }

@@ -55,36 +55,45 @@
                                                 <div class="row">
                                                     <div class="form-wrapper col-md-12">
                                                         <label for="">Chuyên khoa khám <span class="request_star">*</span></label>
-                                                        <select class="form-control input-sm chzn-select" name="code_category" id="code_category">
+                                                        <select class="form-control input-sm chzn-select" name="code_specialty" id="code_specialty">
                                                             <option value="">--Chọn khoa khám bệnh--</option>
-                                                           {{-- @foreach($category as $key => $value) --}}
-                                                            <option value="">1</option>
-                                                            {{-- @endforeach --}}
+                                                            @foreach($khoa as $key => $values) 
+                                                                <option value="{{$values->code}}">{{$values->name_specialty}}</option>
+                                                            @endforeach 
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="form-wrapper col-md-6">
                                                         <label for="">Họ và tên bệnh nhân <span class="request_star">*</span></label>
-                                                        <input placeholder="Nhập tên..." id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" autofocus>
+                                                        <input placeholder="Nhập tên..." id="name" type="text" class="form-control" name="name" value="" autofocus>
                                                         @error('name') <span style="color: red">{{$message}}</span> @enderror
                                                     </div>
                                                     <div class="form-wrapper col-md-6">
                                                         <label for="">Số điện thoại <span class="request_star">*</span></label>
-                                                        <input onchange="JS_Register.getFonmPhone()" placeholder="Số điện thoại..." id="phone" type="phone" class="form-control" name="phone" value="{{ old('phone') }}">
+                                                        <input onchange="JS_Register.getFonmPhone()" placeholder="Số điện thoại..." id="phone" type="phone" class="form-control" name="phone" value="">
                                                         @error('phone') <span style="color: red">{{$message}}</span> @enderror
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="form-wrapper col-md-6">
+                                                        <label for="">Số bảo hiểm y tế <span class="request_star">*</span></label>
+                                                        <input placeholder="Nhập bảo hiểm y tế..." id="code_insurance" type="text" class="form-control" name="code_insurance" value="">
+                                                    </div>
+                                                    <div class="form-wrapper col-md-6">
+                                                        <label for="">Giới tính <span class="request_star">*</span></label>
+                                                        <input type="radio" value="SALE_ADMIN" name="role" id="role_sale_admin" {{!empty($data['role']) && $data['role'] == 'SALE_ADMIN' ? 'checked' : ''}} />  <span style="padding-left:5px" >Nam</span>&emsp;
+                                                        <input  type="radio" value="SALE_BASIC" name="role" id="role_Sale" {{!empty($data['role']) && $data['role'] == 'SALE_BASIC' ? 'checked' : ''}} /> <span style="padding-left:5px" >Nữ</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-wrapper col-md-6">
                                                         <label for="">Địa chỉ Email <span class="request_star">*</span></label>
-                                                        <input placeholder="Nhập tên..." id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" autofocus>
-                                                        @error('name') <span style="color: red">{{$message}}</span> @enderror
+                                                        <input placeholder="Nhập email..." id="email" type="email" class="form-control" name="email" value="">
                                                     </div>
                                                     <div class="form-wrapper col-md-6">
                                                         <label for="">Năm sinh <span class="request_star">*</span></label>
-                                                        <input onchange="JS_Register.getFonmPhone()" placeholder="Số điện thoại..." id="phone" type="date" class="form-control" name="phone" value="{{ old('phone') }}">
-                                                        @error('phone') <span style="color: red">{{$message}}</span> @enderror
+                                                        <input onchange="JS_Register.getFonmPhone()" placeholder="Số điện thoại..." id="date_of_brith" type="date" class="form-control" name="date_of_brith" value="">
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -101,9 +110,6 @@
                                                         <label for="">Quận huyện <span class="request_star">*</span></label>
                                                         <select class="form-control input-sm chzn-select" name="code_huyen" id="code_huyen">
                                                             <option value="">--Chọn quận huyện--</option>
-                                                           {{-- @foreach($category as $key => $value) --}}
-                                                            <option value="">1</option>
-                                                            {{-- @endforeach --}}
                                                         </select>
                                                     </div>
                                                     <div id="iss_xa" class="form-wrapper col-md-4">
@@ -116,7 +122,7 @@
                                                 <div class="row">
                                                     <div class="form-wrapper">
                                                         <label for="">Địa chỉ chi tiết <span class="request_star">*</span></label>
-                                                        <input placeholder="Nhập địa chỉ chi tiết..." id="birth" type="text" class="form-control" name="birth" value="{{ old('birth') }}">
+                                                        <input placeholder="Nhập địa chỉ chi tiết..." id="address" type="text" class="form-control" name="address" value="{{ old('birth') }}">
                                                     </div>
                                                 </div>
                                                 <!-- <div class="row">
@@ -151,7 +157,7 @@
                                                 <div class="row">
                                                     <div class="form-wrapper">
                                                         <label for="">Lý do khám <span class="request_star">*</span></label>
-                                                        <textarea class="form-control"  id="w3review" name="w3review" rows="4" cols="50"></textarea>
+                                                        <textarea name="reason" id="reason" class="form-control"  rows="4" cols="50"></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="checkbox">
