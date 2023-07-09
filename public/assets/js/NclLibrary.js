@@ -59,13 +59,13 @@ function checkallper(obj, name) {
     $('input[name="' + name + '"]').prop('checked', false);
   }
 }
-$(window).scroll(function() {
-  if ($(this).scrollTop() > 20) {
-      $('#goTop').fadeIn();
-  } else {
-      $('#goTop').fadeOut();
-  }
-});
+// $(window).scroll(function() {
+//   if ($(this).scrollTop() > 20) {
+//       $('#goTop').fadeIn();
+//   } else {
+//       $('#goTop').fadeOut();
+//   }
+// });
 function gotop(){
   $("html, body").animate({scrollTop: 0}, 100);
 }

@@ -56,7 +56,7 @@
         <div class="sidenav-header">
         <i class="fas fa-times cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
         <!-- target="_blank" -->
-        <a class="navbar-brand m-0" href="{{url('/client/home/index')}}">
+        <a class="navbar-brand m-0" href="{{url('/')}}">
             <img src="../clients\img\logo.png" class="navbar-brand-imgh-120" alt="main_logo" style="width:80%;padding-left:20%">
             <span class="ms-1 font-weight-bold"></span>
         </a>
@@ -75,24 +75,6 @@
                         </li>
                     @endforeach
                 @endif
-                    <!-- <li class="nav-item">
-                        <a style="color:white" class="nav-link " href="../pages/billing.html">
-                            <i class="fas fa-user-cog"></i>
-                            <span class="nav-link-text ms-1">Quản trị mã khuyến mại </span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a style="color:white" class="nav-link " href="../pages/virtual-reality.html">
-                            <i class="fas fa-money-check-alt"></i>
-                            <span class="nav-link-text ms-1">Quản trị doanh thu</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a style="color:white" class="nav-link " href="../pages/rtl.html">
-                            <i class="fas fa-hand-holding-usd"></i>
-                            <span class="nav-link-text ms-1">Báo cáo</span>
-                        </a>
-                    </li> -->
             </ul>
         </div>
     </aside>
@@ -193,7 +175,7 @@
                                         <a class="dropdown-item border-radius-md" href="javascript:;">
                                             <div class="d-flex py-1">
                                                 <div class="my-auto">
-                                                    <img src="../assets/img/team-2.jpg" class="avatar avatar-sm  me-3 ">
+                                                    <img src="" class="avatar avatar-sm  me-3 ">
                                                 </div>
                                                 <div class="d-flex flex-column justify-content-center">
                                                     <h6 class="text-sm font-weight-normal mb-1">
@@ -211,7 +193,7 @@
                                         <a class="dropdown-item border-radius-md" href="javascript:;">
                                             <div class="d-flex py-1">
                                                 <div class="my-auto">
-                                                    <img src="../assets/img/small-logos/logo-spotify.svg"
+                                                    <img src=""
                                                         class="avatar avatar-sm bg-gradient-dark  me-3 ">
                                                 </div>
                                                 <div class="d-flex flex-column justify-content-center">
@@ -317,7 +299,6 @@
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-    {{--<script src="../assets/js/dashboard.min.js?v=2.0.4"></script>--}}
     <!-- <script src="../assets/js/argon-dashboard.js"></script> -->
     <script type="text/jscript" src="../assets/chosen/chosen.min.js"></script>
     <script type="text/jscript" src="../assets/datepicker/bootstrap-datepicker.min.js"></script>

@@ -15,7 +15,7 @@
         <div class="row justify-content-center">
             <div class="col-md-7" style="height:400px">
                 <div class="card" style="background:#3f5d79;">
-                    <div class="wrapper" style="background-image: url('images/bg-registration-form-2.jpg'); display: flex; justify-content: center;">
+                    <div class="wrapper" style=" display: flex; justify-content: center;">
                         <!-- <div class="inner"> -->
                             <form method="POST" action="{{ route('checkLogin') }}" autocomplete="off">
                                 <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">

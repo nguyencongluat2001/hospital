@@ -12,6 +12,7 @@ use Modules\System\Dashboard\Category\Services\CateService;
 use Illuminate\Support\Facades\Http;
 use DB;
 use Modules\System\Dashboard\Hospital\Services\HospitalService;
+use Modules\System\Dashboard\Specialty\Models\UnitsModel;
 
 /**
  * Phân quyền người dùng 
@@ -93,7 +94,42 @@ class FacilitiesController extends Controller
     {
         $input = $request->all();
         $datas['datas'] = $this->hospitalService->where('code',$code)->first();
+        $datas['tinh'] =  UnitsModel::whereNull('code_huyen')->get();
         return view('client.Facilities.Schedule.home',$datas);
+    }
+     /// Danh sách huyện
+     /**
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function getHuyen(Request $request)
+    {
+        $input = $request->all();
+        $datas['huyen'] =  UnitsModel::where('code_tinh',$input['codeTinh'])->whereNull('code_xa')->select('code_huyen','name')->get()->toArray();
+        
+        return response()->json([
+            'data' => $datas,
+            'status' => true
+        ]);
+    }
+     /// Danh sách phường xã
+     /**
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function getXa(Request $request)
+    {
+        $input = $request->all();
+        $datas['xa'] =  UnitsModel::where('code_huyen',$input['codeHuyen'])->select('code_xa','name')->get()->toArray();
+        
+        return response()->json([
+            'data' => $datas,
+            'status' => true
+        ]);
     }
     
 }

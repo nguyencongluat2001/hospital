@@ -48,7 +48,7 @@
                                         <div class=" pb-0 px-3">
                                         <span  class="text-title-home" style="color:#226c28c9" ><center> Thông tin đăng ký</center></span>
 
-                                        <div class="wrapper" style="background-image: url('images/bg-registration-form-2.jpg'); display: flex; justify-content: center;">
+                                        <div class="wrapper" style="display: flex; justify-content: center;">
                                             <form id="frmSend_Otp" method="POST" action="{{ route('register') }}" autocomplete="off">
                                                 @csrf
                                                 <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
@@ -88,22 +88,28 @@
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="form-wrapper col-md-6">
+                                                    <div class="form-wrapper col-md-4">
                                                         <label for="">Tỉnh thành <span class="request_star">*</span></label>
-                                                        <select class="form-control input-sm chzn-select" name="code_category" id="code_category">
+                                                        <select onchange="JS_Facilities.getHuyen(this.value)"  class="form-control input-sm chzn-select" name="code_tinh" id="code_tinh">
                                                             <option value="">--Chọn tỉnh thành--</option>
+                                                            @foreach($tinh as $key => $value) 
+                                                               <option  value="{{$value->code_tinh}}">{{$value->name}}</option>
+                                                             @endforeach 
+                                                        </select>
+                                                    </div>
+                                                    <div id="iss" class="form-wrapper col-md-4">
+                                                        <label for="">Quận huyện <span class="request_star">*</span></label>
+                                                        <select class="form-control input-sm chzn-select" name="code_huyen" id="code_huyen">
+                                                            <option value="">--Chọn quận huyện--</option>
                                                            {{-- @foreach($category as $key => $value) --}}
                                                             <option value="">1</option>
                                                             {{-- @endforeach --}}
                                                         </select>
                                                     </div>
-                                                    <div class="form-wrapper col-md-6">
-                                                        <label for="">Quận huyện <span class="request_star">*</span></label>
-                                                        <select class="form-control input-sm chzn-select" name="code_category" id="code_category">
-                                                            <option value="">--Chọn quận huyện--</option>
-                                                           {{-- @foreach($category as $key => $value) --}}
-                                                            <option value="">1</option>
-                                                            {{-- @endforeach --}}
+                                                    <div id="iss_xa" class="form-wrapper col-md-4">
+                                                        <label for="">Phường xã <span class="request_star">*</span></label>
+                                                        <select class="form-control input-sm chzn-select" name="code_xa" id="code_xa">
+                                                            <option value="">--Chọn phường xã--</option>
                                                         </select>
                                                     </div>
                                                 </div>

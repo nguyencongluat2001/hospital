@@ -30,39 +30,14 @@ JS_Home.prototype.loadIndex = function () {
     NclLib.menuActive('.link-home');
     $('.chzn-select').chosen({ height: '100%', width: '100%' });
 
-    // myClass.loadListChartNen();
-    //lấy 4 chỉ số đứng top
-    myClass.loadListTop();
     //lấy tất cả chỉ số theo tiêu thức lọc
     myClass.loadList();
-    //lấy danh sách bà viết
+    //lấy danh sách bài viết
     myClass.loadListBlog(oFormBlog);
-    //lấy chỉ số chứng khoán ngân hàng
-    // myClass.loadListTap1(oForm);
-
     
     $('form#frmAdd').find('#btn_create').click(function () {
         myClass.store('form#frmAdd');
     })
-     // form load
-     $('form#frmLoadlist_list').find('#type_code').change(function () {
-        myClass.loadList();
-    });
-     // form load
-     $('form#frmLoadlist_list').find('#limit').change(function () {
-        myClass.loadList();
-    });
-     // form load
-     $('form#frmLoadlist_Bank').find('#type_code').change(function () {
-        myClass.loadListTap1();
-    });
-    // form load
-    $(oFormBlog).find('#category').change(function () {
-        myClass.loadListBlog(oFormBlog);
-    });
-    $('form#frmLoadlist_list').find('#txt_search').click(function () {
-            myClass.loadList();
-    });
 }
 JS_Home.prototype.loadevent = function (oForm) {
     var myClass = this;

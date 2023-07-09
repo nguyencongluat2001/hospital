@@ -28,7 +28,7 @@
     <div class="row justify-content-center">
         <div class="col-md-7">
             <div class="card" style="background:#000000d6;">
-                <div class="wrapper" style="background-image: url('images/bg-registration-form-2.jpg'); display: flex; justify-content: center;">
+                <div class="wrapper" style=" display: flex; justify-content: center;">
                     <form id="frmSend_Otp" method="POST" action="{{ route('register') }}" autocomplete="off">
                         @csrf
                         <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">

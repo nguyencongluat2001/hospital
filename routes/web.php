@@ -162,6 +162,7 @@ Route::get('/facilities/{code}', [FacilitiesController::class, 'detailIndex']);
 Route::get('/schedule/{code}', [FacilitiesController::class, 'schedule']);
 // chuyên khoa
 Route::get('/specialty', [SpecialtyController::class, 'index']);
+Route::get('/specialty/{code}', [SpecialtyController::class, 'specialty']);
 
 // route phía người dùng
 Route::prefix('/client')->group(function () {
@@ -184,6 +185,9 @@ Route::prefix('/client')->group(function () {
             Route::get('/loadListBlog',[FacilitiesController::class,'loadListBlog']);
             Route::get('/loadListTap1',[FacilitiesController::class,'loadListTap1']);
             Route::get('/loadListTop',[FacilitiesController::class,'loadListTop']);
+            Route::get('/getHuyen',[FacilitiesController::class,'getHuyen']);
+            Route::get('/getXa',[FacilitiesController::class,'getXa']);
+
              // Trang chủ chi tiết cơ sở bệnh viện
             Route::prefix('detail')->group(function(){
                 Route::get('/index',[FacilitiesController::class,'detailIndex']);

@@ -37,6 +37,19 @@ class SpecialtyController extends Controller
         return view("client.Specialty.home", $data)->render();
         // return view('client.Specialty.home',$datas);
     }
+     /// chi tiết chuyên khoa 
+     /**
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function specialty(Request $request ,$code)
+    {
+        $input = $request->all();
+        $datas['datas'] = $this->SpecialtyService->where('code',$code)->first();
+        return view('client.Specialty.Detail.home',$datas);
+    }
      /**
      * load màn hình danh sách lấy chỉ số thị trường
      *

@@ -117,18 +117,8 @@
                 </div>
             </div>
         </div>
-
     </footer>
     <!-- End Footer -->
-
-
-    <!-- Bootstrap -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <!-- Templatemo -->
-    <script src="assets/js/templatemo.js"></script>
-    <!-- Custom -->
-    <script src="assets/js/custom.js"></script>
-
 </body>
 
 </html>

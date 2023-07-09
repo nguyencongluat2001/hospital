@@ -36,7 +36,6 @@
                     <div id="tab3-register"></div>
                     <div id="tab4-register"></div>
                 </form>
-                <!-- <div class="wrapper" style="background-image: url('images/bg-registration-form-2.jpg'); display: flex; justify-content: center;"></div> -->
             </div>
             <div class="col-md-12">
             @include('auth.register.step')

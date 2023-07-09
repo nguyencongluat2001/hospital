@@ -109,3 +109,64 @@ JS_Facilities.prototype.loadList = function (oForm) {
 //         }
 //     });
 // }
+/**
+ * Load màn hình danh sách huyện
+ *
+ * @param oForm (tên form)
+ *
+ * @return void
+ */
+JS_Facilities.prototype.getHuyen = function (codeTinh) {
+    console.log(codeTinh)
+    var myClass = this;
+    var url = this.urlPath + '/getHuyen';
+     var data = '&codeTinh=' + codeTinh;
+    $.ajax({
+        url: url,
+        type: "GET",
+        cache: true,
+        data: data,
+        success: function (arrResult) {
+            $('.chzn-select').chosen({ height: '100%', width: '100%' });
+            var html = '<label for="">Quận huyện <span class="request_star">*</span></label>'
+            html += `<select onchange="JS_Facilities.getXa(this.value)" class="form-control input-sm chzn-select" name="code_huyen" id="code_huyen">`
+            html += `<option value="">--Chọn quận huyện--</option>`
+            $(arrResult.data.huyen).each(function(index,el) {
+                 html += `<option value="`+ el.code_huyen +`">`+ el.name +`</option>`
+             });
+             html += `</select>`
+            $("#iss").html(html);
+        }
+    });
+
+}
+/**
+ * Load màn hình danh sách phường xã
+ *
+ * @param oForm (tên form)
+ *
+ * @return void
+ */
+JS_Facilities.prototype.getXa = function (codeHuyen) {
+    console.log(codeHuyen)
+    var myClass = this;
+    var url = this.urlPath + '/getXa';
+     var data = '&codeHuyen=' + codeHuyen;
+    $.ajax({
+        url: url,
+        type: "GET",
+        cache: true,
+        data: data,
+        success: function (arrResult) {
+            var html = '<label for="">Phường xã <span class="request_star">*</span></label>'
+            html += `<select class="form-control input-sm chzn-select" name="code_xa" id="code_xa">`
+            html += `<option value="">--Chọn phường xã--</option>`
+            $(arrResult.data.xa).each(function(index,el) {
+                 html += `<option value="`+ el.code_xa +`">`+ el.name +`</option>`
+             });
+             html += `</select>`
+            $("#iss_xa").html(html);
+        }
+    });
+
+}

@@ -52,7 +52,7 @@
                                     <div class="row">
                                         <div class="col-lg-4 mx-auto " style="display:flex">
                                             <div class="input-group pt-2 box">
-                                                  <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg rounded-pill rounded" placeholder="Từ kiếm tên chuyên khoa..." aria-label="Từ kiếm tên chuyên khoa..">
+                                                  <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg rounded-pill rounded" placeholder="Từ kiếm tên bệnh viện..." aria-label="Từ kiếm tên bệnh viện..">
                                             </div>
                                         </div>
                                     </div>
@@ -88,7 +88,7 @@
                                                                 <span style="padding-left:10px;font-size: 40px;font-family: -webkit-body;color: #1d3952;">{{ $key + 1 }}.&nbsp;{{$data->name_hospital}}</span> <br>
                                                                 <span style="padding-left:10px;font-size: 20px;font-family: -webkit-body;color: #1d3952;"><i style="color:#8b0000" class="fas fa-hotel"></i> Địa chỉ: {{$data->address}}</span><br>
                                                                 <a  href="{{url('/facilities')}}/{{$data->code}}">
-                                                                    <span style="background: #ff9e02;color: #004c4b;" class="btn btn-outline-light rounded-pill">Đặt lịch khám</span>
+                                                                    <span style="background: #32870b;color: #ffffff;" class="btn btn-outline-light rounded-pill">Xem chi tiết</span>
                                                                 </a>
                                                             </td>
                                                             
