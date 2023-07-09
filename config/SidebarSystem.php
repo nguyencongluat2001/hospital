@@ -15,6 +15,12 @@ return [
         'a'    => 'nav-link link-user',
         'href' => '/system/user/index',
     ],
+    'customerCare' => [
+        'name' => 'Chăm sóc khách hàng',
+        'icon' => 'fas fa-headset',
+        'a'    => 'nav-link link-customerCare',
+        'href' => '/system/customerCare/index',
+    ],
     'category' => [
         'name' => 'Quản trị danh mục',
         'icon' => 'far fa-calendar-alt',

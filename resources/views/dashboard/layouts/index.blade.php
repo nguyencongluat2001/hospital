@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="../assets/css/toast.min.css">
     @yield('css')
 
+    <script src='../assets/js/jquery.js'></script>
     <script src="../assets/js/croppie.js"></script>
     <script rel="stylesheet" src="../assets/css/croppie.css"></script>
     <script src="../assets/js/croppie.min.js"></script>
@@ -259,7 +260,6 @@
             @yield('body')
         </main>
     <!--   Core JS Files   -->
-    <script src='../assets/js/jquery.js'></script>
     <script type="text/javascript" src="{{ URL::asset('..\assets\js\Js_Main.js') }}"></script>
         @if($_SESSION["color_view"] == 1)
         <script type="text/javascript">
