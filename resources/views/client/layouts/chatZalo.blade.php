@@ -14,8 +14,8 @@
     <section class="icon">
         <div>
             <label for="checkbox1">
-                <img width="90px" height="90px" style="background-color: none"
-                    src="https://vcdn.subiz-cdn.com/file/fiqtarohdurccuocnccb-27.png" alt="">
+                <img width="" height="90px" style="background-color: none"
+                    src="../clients/img/zalo.png" alt="">
             </label>
         </div>
         <div>
