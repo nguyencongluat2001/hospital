@@ -18,6 +18,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- Load Tempalte CSS -->
     <link rel="stylesheet" href="../clients/css/templatemo.css">
+    <link rel="stylesheet" href="../clients/css/chat.css">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../clients/css/custom.css">
     <link rel="stylesheet" href="../assets/chosen/chosen.min.css">
@@ -125,7 +127,6 @@
 </style>
 <script src="../clients/js/jquery.min.js"></script>
 <script type="text/javascript" src="{{ URL::asset('assets\js\NclLibrary.js') }}"></script>
-
 <script type="text/javascript">
     $('.button').click(function() {
         $('.menu .items span').toggleClass('active');
@@ -155,7 +156,12 @@
     </div>
     @include('client.layouts.menu')
     @yield('body-client')
+    <!-- zalo chat -->
+    <!-- <div class="zalo-chat-widget" data-oaid="1299585831202016907" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="0" data-width="300" data-height="300"> </div> 
+    <script src="https://sp.zalo.me/plugins/sdk.js"> </script>  -->
     <!-- Start Footer -->
+    @include('client.layouts.chatZalo')
+
     @include('client.layouts.footer')
     <!-- End Footer -->
     <!-- Bootstrap -->
@@ -189,45 +195,6 @@
         setTimeout(() => {
             $('#imageLoading').addClass("loader_bg_of");
         }, 2000)
-    </script>
-    <script type="text/javascript" charset="utf-8">
-        let a;
-        let time;
-        var date = new Date().toLocaleDateString()
-        var dayvn = new Date();
-        // Lấy số thứ tự của ngày hiện tại
-        var current_day = dayvn.getDay();
-        // Biến lưu tên của thứ
-        var day_name = '';
-
-        // Lấy tên thứ của ngày hiện tại
-        switch (current_day) {
-            case 0:
-                day_name = "Chủ nhật";
-                break;
-            case 1:
-                day_name = "Thứ hai";
-                break;
-            case 2:
-                day_name = "Thứ ba";
-                break;
-            case 3:
-                day_name = "Thứ tư";
-                break;
-            case 4:
-                day_name = "Thứ năm";
-                break;
-            case 5:
-                day_name = "Thứ sau";
-                break;
-            case 6:
-                day_name = "Thứ bảy";
-        }
-        // setInterval(() => {
-        //     a = new Date();
-        //     time = day_name + ', ngày ' + date + ' ' + a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
-        //     document.getElementById('time').innerHTML = time;
-        // }, 1000);
     </script>
     <script type="text/jscript" src="../assets/chosen/chosen.min.js"></script>
     <link rel="stylesheet" href="../assets/css/sweetalert2.min.css" />

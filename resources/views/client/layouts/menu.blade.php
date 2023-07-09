@@ -7,7 +7,7 @@
                 </button> -->
                 <img class="card-img " src="../clients/img/logo.png" alt="Card image">
             </a>
-            <a class="navbar-brand h1" href="index.html">
+            <a class="navbar-brand h1" href="{{ url('/') }}">
                 <!-- <i class='bx bx-buildings bx-sm text-dark'></i> -->
                 <span style="color: #ffbc00!important;" class="text-dark h5">Booking</span> <sup style="color:#32a5c2">Fast</sup>
             </a>
@@ -27,9 +27,9 @@
                         <li class="nav-item">
                             <a class="nav-link link-facilities btn-outline-dark rounded-pill" href="{{ url('/facilities') }}"> <span class="text-menu-header">Cơ sở y tế</span> <br> <span class="text-12">Chọn bệnh viện phòng khám</span> </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link btn-outline-dark rounded-pill" href="work.html"> <span class="text-menu-header">Bác sĩ </span> <br> <span class="text-12">Chọn bác sĩ giỏi</span></a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link btn-outline-dark rounded-pill" href="pricing.html"> <span class="text-menu-header">Gói khám </span> <br> <span class="text-12">Khám sức khỏe tổng quát</span></a>
                         </li>
