@@ -15,6 +15,8 @@ use Modules\System\Dashboard\Recommended\Controllers\RecommendedController;
 use Modules\System\Dashboard\Signal\Controllers\SignalController;
 use Modules\System\Dashboard\Users\Controllers\UserController;
 use Modules\System\Dashboard\Permision\Controllers\PermisionController;
+use Modules\System\Dashboard\Specialty\Controllers\SpecialtyController;
+
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::middleware('checkloginAdmin')->group(function () {
@@ -94,12 +96,12 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
          //Chuyên khoa
          Route::prefix('/specialty')->group(function () {
             //Hospital
-            Route::get('/index', [SystemSpecialtyController::class, 'index']);
-            Route::get('/loadList',[SystemSpecialtyController::class,'loadList'])->name('loadList');
-            Route::post('/createForm',[SystemSpecialtyController::class,'createForm']);
-            Route::post('/create',[SystemSpecialtyController::class,'create'])->name('create');
-            Route::post('/edit',[SystemSpecialtyController::class,'edit'])->name('edit');
-            Route::post('/delete',[SystemSpecialtyController::class,'delete'])->name('delete');
+            Route::get('/index', [SpecialtyController::class, 'index']);
+            Route::get('/loadList',[SpecialtyController::class,'loadList'])->name('loadList');
+            Route::post('/createForm',[SpecialtyController::class,'createForm']);
+            Route::post('/create',[SpecialtyController::class,'create'])->name('create');
+            Route::post('/edit',[SpecialtyController::class,'edit'])->name('edit');
+            Route::post('/delete',[SpecialtyController::class,'delete'])->name('delete');
         });
         // customerCare
         Route::prefix('customerCare')->group(function(){
