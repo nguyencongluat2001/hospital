@@ -41,7 +41,8 @@
     <script type="text/jscript" src="../assets/js/CoreTable.js"></script>
     <script type="text/javascript" src="{{ URL::asset('assets\js\NclLibrary.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('dist\js\backend\pages\JS_System_Security.js') }}"></script>
-
+    <script src="//js.pusher.com/3.1/pusher.min.js"></script>
+    
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
 </head>

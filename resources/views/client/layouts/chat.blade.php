@@ -68,58 +68,60 @@ use Modules\Client\Page\Notification\Models\NotificationModel;
         }
     }
 </style>
-<form action="" method="POST" id="frmLoadlist_box">
-    <div id="form_chat">
-        <input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
-        <span class="form-group input-group" style="align-items: center;">
-            {{--@if(isset($notification))
-            <div id="alertNotifi" class="form-control alertNotifi" @if(count($notification) <= 0) hidden @endif>
-                <span>Bạn có {{count($notification)}} thông báo mới</span>
-            </div>
-            @ --}}
-            <div class="input-group-btn" onclick="readNotification()">
-                <label class="icon" for="checkbox1" style="border-radius:50px;background:#25aa33e8;">
-                    <i style="color:#ffd00f;padding:13px" id="icon-bell" class="far fa-bell fa-3x py-2 @if(isset($notification) && count($notification) > 0) animate @endif "></i>
-                </label>
-            </div>
-            <!-- <div>
-                <input hidden type="checkbox" id="checkbox1" checked />
-            </div> -->
-        </span>
-        
-        <section class="avenue-messenger " id="pDetails">
-            <div class="menu">
-                <div class="button" style="padding-right: 15px;padding-top: 5px;">
-                    <div>
-                        <label for="checkbox1">
-                            <i class="fa fa-window-close fa-xs" aria-hidden="true" 
-                                style="color: rgb(255, 255, 255);"></i>
-                        </label>
-                    </div>
-                    <div>
-                        <input hidden type="checkbox" id="checkbox1" checked />
-                    </div>
+<div>
+    <form action="" method="POST" id="frmLoadlist_box">
+        <div id="customerCare">
+            <input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
+            <span class="form-group input-group" style="align-items: center;">
+                @if(isset($notification))
+                <div id="alertNotifi" class="form-control alertNotifi" @if(count($notification) <= 0) hidden @endif>
+                    <span>Bạn có {{count($notification)}} thông báo mới</span>
                 </div>
-                <!-- <div class="agent-face">
-                    <div class="half">
-                        <img class="agent circle"
-                            src="https://vcdn.subiz-cdn.com/widget-v4/public/assets/img/default_avatar.5b74dc1.png"
-                            alt="Jesse Tino">
-                    </div>
+                @endif
+                <div class="input-group-btn" onclick="readNotification()">
+                    <label class="icon" for="checkbox1" style="border-radius:50px;background:#25aa33e8;">
+                        <i style="color:#ffd00f;padding:13px" id="icon-bell" class="far fa-bell fa-3x py-2 @if(isset($notification) && count($notification) > 0) animate @endif "></i>
+                    </label>
+                </div>
+                <!-- <div>
+                    <input hidden type="checkbox" id="checkbox1" checked />
                 </div> -->
-            </div>
-            <div class="chat">
-                <div class="chat-title">
-                    <span style="color: #ffd2c4;font-size: 17px;letter-spacing: 1px;font-family: Trocchi, serif;">Khuyến nghị VIP</span>
+            </span>
+            
+            <section class="avenue-messenger transform" id="pDetails">
+                <div class="menu">
+                    <div class="button" style="padding-right: 15px;padding-top: 5px;">
+                        <div>
+                            <label for="checkbox1">
+                                <i class="fa fa-window-close fa-xs" aria-hidden="true" 
+                                    style="color: rgb(255, 255, 255);"></i>
+                            </label>
+                        </div>
+                        <div>
+                            <input hidden type="checkbox" id="checkbox1" checked />
+                        </div>
+                    </div>
+                    <!-- <div class="agent-face">
+                        <div class="half">
+                            <img class="agent circle"
+                                src="https://vcdn.subiz-cdn.com/widget-v4/public/assets/img/default_avatar.5b74dc1.png"
+                                alt="Jesse Tino">
+                        </div>
+                    </div> -->
                 </div>
-                <!-- Màn hình danh sách -->
-                <div class="table-responsive">
-                    <div id="table-container-box"></div>
-                </div> 
-            </div>
-        </section>
-    </div>
-</form>
+                <div class="chat">
+                    <div class="chat-title">
+                        <span style="color: #ffd2c4;font-size: 17px;letter-spacing: 1px;font-family: Trocchi, serif;">Khuyến nghị VIP</span>
+                    </div>
+                    <!-- Màn hình danh sách -->
+                    <div class="table-responsive">
+                        <div id="table-container-box"></div>
+                    </div> 
+                </div>
+            </section>
+        </div>
+    </form>
+</div>
 <script type="text/javascript" src="{{ URL::asset('dist\js\backend\client\DataFinancial\JS_Recommendations.js') }}"></script>
 <script>
       var baseUrl = '{{ url('') }}';
