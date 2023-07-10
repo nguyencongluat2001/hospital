@@ -74,7 +74,7 @@
                         </div> -->
                         <div class="carousel-item active list-hispital-home pt-5">
                             <div class=" row d-flex ">
-                                <div class="banner-content col-lg-10 col-10 m-lg-auto text-left ">
+                                <div class="banner-content col-lg-12 col-12 m-lg-auto text-left ">
                                         <!-- Start Our Work -->
                                         <section class="container">
                                             <table id="myTable" class="table  table-bordered table-striped table-condensed dataTable no-footer">
