@@ -42,7 +42,7 @@ class SpecialtyController extends Controller
             // dd($value);
             // tỉnh
             $codeTinh = $value['code'];
-            if($codeTinh < 75){
+            if($codeTinh < 85){
                 $check = UnitsModel::where('code_tinh',$codeTinh)->first();
                 if(!isset($check)){
                     if(isset($value['districts'])){
