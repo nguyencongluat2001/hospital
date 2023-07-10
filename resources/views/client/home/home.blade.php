@@ -48,7 +48,7 @@
                                             <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/file-image-client/avatar-hospital/')}}/{{ !empty($data->avatar)?$data->avatar:'' }}" alt="Card image">
                                             <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                                 <div style="background: radial-gradient(#000000c2, transparent);border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                                                    <h3 class="card-title">{{$data->name_hospital}}</h3>
+                                                    <h3 class="card-title" style="font-size: 23 !important;">{{$data->name_hospital}}</h3>
                                                     <span style="color: #ffd100" class="btn btn-outline-light rounded-pill">Đặt lịch khám</span>
                                                 </div>
                                             </div>
@@ -252,34 +252,33 @@
                                     <div class="team-member col-md-3">
                                         <img style="width:300px;height:300px;object-fit: cover;" class="team-member-img img-fluid rounded-circle p-4" src="./../clients/img/carousel-1.jpg" alt="Card image">
                                         <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
-                                            <li class="name_cg"> (Ông) Lê Văn Long</li>
+                                            <li class="name_cg"> (Ông) Lê Văn A</li>
                                             <li>Chuyên gia phân tích - Giám đốc tư vấn đầu tư</li>
-                                            <li>Công ty cổ phần chứng khoán VPS</li>
+                                            <li>Công ty cổ phần bảo hiểm GTF</li>
                                         </ul>
                                     </div>
                                     <div class="team-member col-md-3">
                                         <img style="width:300px;height:300px;object-fit: cover;" class="team-member-img img-fluid rounded-circle p-4" src="./../clients/img/carousel-1.jpg" alt="Card image">
                                         <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
-                                            <li class="name_cg">(Ông) Nguyễn Đình Hải</li>
-                                            <li>Chief executive officier (CEO) & Founder FinTop</li>
-                                            <li>Dữ liệu chứng khoán FinTop.data</li>
+                                            <li class="name_cg">(Ông) Nguyễn Van C</li>
+                                            <li>Chief executive officier (CEO) & Founder DHY</li>
+                                            <li>Chuyên gia phân tích y học</li>
                                         </ul>
                                     </div>
                                     <div class="team-member col-md-3">
                                         <img style="width:300px;height:300px;object-fit: cover;" class="team-member-img img-fluid rounded-circle p-4" src="./../clients/img/carousel-1.jpg" alt="Card image">
                                         <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
-                                            <li class="name_cg">(Ông) Nguyễn Mạnh Tuấn</li>
-                                            <li>Chief executive officier (CEO) & Founder FinTop</li>
-                                            <li>Dữ liệu chứng khoán FinTop.data</li>
+                                            <li class="name_cg">(Ông) Nguyễn Van A</li>
+                                            <li>Chief executive officier (CEO) & Founder JYT</li>
+                                            <li>Dữ liệu mẫu xét nghiệm </li>
                                         </ul>
                                     </div>
                                     <div class="team-member col-md-3">
                                         <img style="width:300px;height:300px;object-fit: cover;" class="team-member-img img-fluid rounded-circle p-4" src="./../clients/img/carousel-1.jpg" alt="Card image">
                                         <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
-                                            <li class="name_cg">(Ông) Trần Khánh Linh</li>
+                                            <li class="name_cg">(Ông) Trần Văn G</li>
                                             <li>Chuyên gia phân tích</li>
-                                            <li>Cán bộ đào tạo & phát triển</li>
-                                            <li>Năng lực tư vấn đầu tư FinTop</li>
+                                            <li>Cán bộ đào tạo & phát triển đại học y</li>
                                         </ul>
                                     </div>
                                 </div>
