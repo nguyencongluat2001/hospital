@@ -6,6 +6,11 @@
     <title>BOOKING CALENDAR</title>
     <meta charset="utf-8">
     <base href="{{ asset('') }}">
+    @if(request()->isSecure())
+    <span></span>
+@else
+<span></span>
+@endif
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="../clients/img/apple-icon.png">
     <link rel="shortcut icon" type="image/x-icon" href="../clients/img/logo.png">
@@ -28,6 +33,7 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     
 </head>
+
 <style>
     b,
     span,
@@ -150,11 +156,6 @@
 </script>
 
 <body style="position: relative;">
-@if(request()->isSecure())
-    <span></span>
-@else
-<span></span>
-@endif
     <div id="imageLoading" class="loader_bg_of">
         <div class="loader_bg">
             <div class="loader"><img src="../assets/images/loading.gif" alt="#" /></div>
