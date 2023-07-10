@@ -10,7 +10,7 @@
                 </ol> -->
                 <div class="carousel-inner active pt-5" >
                      <!-- Start Contact -->
-                     <div class="list-hispital-home-one pt-5">
+                     <div class="list-hispital-home-one pt-4">
                         <section class="banner-bg">
                         <!-- style="animation: lights 4s 750ms linear infinite;" -->
                             <span  class="text-title-home "><center> ĐẶT LỊCH KHÁM NHANH <br>TẠI CÁC TUYẾN TRUNG ƯƠNG</center></span>
