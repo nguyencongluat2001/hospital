@@ -84,8 +84,8 @@
                                                             <td style="background: #ffffffeb;width:30%;vertical-align: middle;" align="center">
                                                                 <a class="pb-5" style="text-decoration: none" href="{{url('/facilities')}}/{{$data->code}}">
                                                                     <img  src="{{url('/file-image-client/avatar-hospital/')}}/{{ !empty($data->avatar)?$data->avatar:'' }}" alt="Image" style="height: 150px;width: 250px;object-fit: cover;">
-                                                                    <span style="padding-left:10px;font-size: 40px;font-family: -webkit-body;color: #1d3952;">{{ $key + 1 }}.&nbsp;{{$data->name_hospital}}</span> <br>
-                                                                    <span style="padding-left:10px;font-size: 20px;font-family: -webkit-body;color: #1d3952;"><i style="color:#8b0000" class="fas fa-hotel"></i> Địa chỉ: {{$data->address}}</span><br>
+                                                                    <span style="padding-left:10px;font-size: 40px;font-family: -webkit-body;color: #1d3952;">{{ $key + 1 }}.&nbsp;{{$data->name_hospital}}</span>
+                                                                    <span style="padding-left:10px;font-size: 20px;font-family: -webkit-body;color: #1d3952;">( {{$data->address}} )</span><br>
                                                                     <!-- <a  href="{{url('/facilities')}}/{{$data->code}}">
                                                                         <span style="background: #32870b;color: #ffffff;" class="btn btn-outline-light rounded-pill">Xem chi tiết</span>
                                                                     </a> -->
