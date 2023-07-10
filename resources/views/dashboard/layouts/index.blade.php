@@ -1,3 +1,9 @@
+@if(request()->isSecure())
+    <!-- <p>Trang web đang được truy cập qua giao thức HTTPS.</p> -->
+@else
+    <!-- <p>Trang web đang được truy cập qua giao thức HTTP.</p> -->
+
+@endif
 <!DOCTYPE html>
 <html lang="en">
 
