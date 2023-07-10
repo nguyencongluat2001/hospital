@@ -1,6 +1,4 @@
 @if(request()->isSecure())
-    <span></span>
-@else
 <!DOCTYPE html>
 <html lang="en">
 
@@ -273,4 +271,7 @@
 </body>
 
 </html>
+@else
+<span></span>
+
 @endif
