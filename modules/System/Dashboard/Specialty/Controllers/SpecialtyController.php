@@ -35,58 +35,58 @@ class SpecialtyController extends Controller
      */
     public function index(Request $request)
     {
-        // $response = Http::get('https://provinces.open-api.vn/api/?depth=3');
-        // $response = $response->getBody()->getContents();
-        // $response = json_decode($response,true);
-        // foreach($response as $value){
-        //     // dd($value);
-        //     // tỉnh
-        //     $codeTinh = $value['code'];
-        //     if($codeTinh < 135){
-        //         $check = UnitsModel::where('code_tinh',$codeTinh)->first();
-        //         if(!isset($check)){
-        //             if(isset($value['districts'])){
-        //                 $dataTinh = [
-        //                     'id'=> (string)Str::uuid(),
-        //                     'code_tinh'=> $codeTinh,
-        //                     'code_huyen'=> null,
-        //                     'code_xa'=> null,
-        //                     'name'=> $value['name'],
-        //                     'name_type' => $value['division_type']
-        //                 ];
-        //                 $createTinh = UnitsModel::insert($dataTinh);
-        //             }
-        //             // huuyeen
-        //             if(isset($value['districts'])){
-        //                 foreach($value['districts'] as $valueHuyen){
-        //                     $dataHuyen = [
-        //                         'id'=> (string)Str::uuid(),
-        //                         'code_tinh'=> $codeTinh,
-        //                         'code_huyen'=> $valueHuyen['code'],
-        //                         'code_xa'=> null,
-        //                         'name'=> $valueHuyen['name'],
-        //                         'name_type' => $valueHuyen['division_type']
-        //                     ];
-        //                     $createHuyen = UnitsModel::insert($dataHuyen);
-        //                     // xa
-        //                         foreach($valueHuyen['wards'] as $valueXa){
-        //                             $dataXa = [
-        //                                 'id'=> (string)Str::uuid(),
-        //                                 'code_tinh'=> $codeTinh,
-        //                                 'code_huyen'=> $valueHuyen['code'],
-        //                                 'code_xa'=> $valueXa['code'],
-        //                                 'name'=> $valueXa['name'],
-        //                                 'name_type' => $valueXa['division_type']
-        //                             ];
-        //                             $createXa = UnitsModel::insert($dataXa);
-        //                         }
-        //                 }
-        //             }
-        //         }
-        //     }
+        $response = Http::get('https://provinces.open-api.vn/api/?depth=3');
+        $response = $response->getBody()->getContents();
+        $response = json_decode($response,true);
+        foreach($response as $value){
+            // dd($value);
+            // tỉnh
+            $codeTinh = $value['code'];
+            if($codeTinh < 15){
+                $check = UnitsModel::where('code_tinh',$codeTinh)->first();
+                if(!isset($check)){
+                    if(isset($value['districts'])){
+                        $dataTinh = [
+                            'id'=> (string)Str::uuid(),
+                            'code_tinh'=> $codeTinh,
+                            'code_huyen'=> null,
+                            'code_xa'=> null,
+                            'name'=> $value['name'],
+                            'name_type' => $value['division_type']
+                        ];
+                        $createTinh = UnitsModel::insert($dataTinh);
+                    }
+                    // huuyeen
+                    if(isset($value['districts'])){
+                        foreach($value['districts'] as $valueHuyen){
+                            $dataHuyen = [
+                                'id'=> (string)Str::uuid(),
+                                'code_tinh'=> $codeTinh,
+                                'code_huyen'=> $valueHuyen['code'],
+                                'code_xa'=> null,
+                                'name'=> $valueHuyen['name'],
+                                'name_type' => $valueHuyen['division_type']
+                            ];
+                            $createHuyen = UnitsModel::insert($dataHuyen);
+                            // xa
+                                foreach($valueHuyen['wards'] as $valueXa){
+                                    $dataXa = [
+                                        'id'=> (string)Str::uuid(),
+                                        'code_tinh'=> $codeTinh,
+                                        'code_huyen'=> $valueHuyen['code'],
+                                        'code_xa'=> $valueXa['code'],
+                                        'name'=> $valueXa['name'],
+                                        'name_type' => $valueXa['division_type']
+                                    ];
+                                    $createXa = UnitsModel::insert($dataXa);
+                                }
+                        }
+                    }
+                }
+            }
            
-        // }
-        // dd('ok');
+        }
+        dd('ok');
         $getCategory = $this->categoryService->where('cate','CNK_001')->get()->toArray();
         $data['category'] = $getCategory;
         return view('dashboard.specialty.index',compact('data'));
