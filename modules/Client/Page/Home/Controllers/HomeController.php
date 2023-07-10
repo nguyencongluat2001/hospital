@@ -42,7 +42,7 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        $objResult = $this->hospitalService->where('current_status',1)->get()->take(9);
+        $objResult = $this->hospitalService->where('current_status',1)->get()->take(6);
         // foreach($objResult as $key => $value){
         //     $category = $this->categoryService->where('code_category', $value->code_category)->first();
         //     if(!empty($category)){
