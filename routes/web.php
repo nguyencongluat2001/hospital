@@ -60,9 +60,10 @@ Route::get('/schedule/{code}', [FacilitiesController::class, 'schedule']);
 Route::get('/specialty', [SpecialtyController::class, 'index']);
 Route::get('/specialty/{code}', [SpecialtyController::class, 'specialty']);
 
-Route::prefix('chat')->name('client.chat.')->group(function () {
+Route::prefix('chat')->group(function () {
     Route::get('', 'Client\ChatController@index')->name('index');
     Route::post('/broadcast', [ChatController::class, 'broadcast'])->name('broadcast');
+    Route::post('/receive', [ChatController::class, 'receive'])->name('receive');
     
 });
 // route phía người dùng

@@ -109,7 +109,7 @@
                             <input type="text" name="txt-message" id="txt-message" class="form-control">
                         </div>
                         <div class="col-md-2">
-                            <button type="button" id="sendMessage" class="btn btn-primary"><i class="fas fa-paper-plane"></i></button>
+                            <button type="submit" id="sendMessage" class="btn btn-primary"><i class="fas fa-paper-plane"></i></button>
                         </div>
                     </div>
                 </div>
@@ -117,3 +117,89 @@
         </form>
     </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/8.2.0/pusher.min.js"></script>
+<script>
+    
+    $(document).ready(function() {
+        $(".chatZaloClose").click(function() {
+            if($(".messageCustomer").hasClass('hidden')){
+                $(".messageCustomer").toggleClass('transform');
+                $('.messageCustomer').toggleClass("hidden");
+            }
+            $(".chatZalo").toggleClass('transform');
+            $('.chatZalo').toggleClass("hidden");
+        });
+
+        $(".messageClose").click(function() {
+            if($(".chatZalo").hasClass('hidden')){
+                $(".chatZalo").toggleClass('transform');
+                $('.chatZalo').toggleClass("hidden");
+            }
+            $(".messageCustomer").toggleClass('transform');
+            $('.messageCustomer').toggleClass("hidden");
+        });
+
+        $("#start").click(function(){
+            if($("#frmChat_box #phone").val() == ''){
+                $(".errorPhone").html('<span style="color:red;">Số điện thoại không được để trống!</span>');
+                $("#frmChat_box #phone").focus();
+                $("#frmChat_box #phone").attr('style', 'border: 1px solid red');
+                return false;
+            }
+            $("#table-container-box").hide();
+            $(".sendMessage").show();
+            $(".start").hide();
+            $("#body-message").append(`<div class="left-message"><div class="text">
+                                            <p>Xin chào</p>
+                                        </div></div>
+                                        <div class="right-message"><div class="response"><div class="text">
+                                            <p>Xin chào</p>
+                                        </div></div></div>`);
+        });
+
+        // chat ng dung
+        const pusher = new Pusher('0141c9557203d59309b9', {
+            cluster: 'ap1'
+        });
+        const chanel = pusher.subscribe('0987654321');
+
+        chanel.bind('chat', function(data) {
+            console.log(123);
+            $.ajax({
+                url: '/chat/receive',
+                type: 'POST',
+                data: {
+                    _token: '{{csrf_token()}}',
+                    message: data.message
+                },
+                success: function(res) {
+                    $(".message > .message").last().after(res);
+                    $(document).scrollTop($(document).height());
+                }
+            });
+        });
+
+
+        $('#sendMessage').click(function(event) {
+        // $('form').submit(function(event) {
+            event.preventDefault();
+            $.ajax({
+                url: '/chat/broadcast',
+                method: 'POST',
+                headers: {
+                    'X-Socket-Id': pusher.connection.socket_id
+                },
+                data: {
+                    _token: '{{csrf_token()}}',
+                    message: $("#frmChat_box #txt-message").val()
+                },
+                success: function(res) {
+                    $("#body-message").append(res);
+                    $("#frmChat_box #txt-message").val('');
+                }
+            });
+        });
+    });
+</script>

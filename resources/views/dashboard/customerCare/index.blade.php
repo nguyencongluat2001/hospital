@@ -1,6 +1,7 @@
 @extends('dashboard.layouts.index')
 @section('body')
 <script type="text/javascript" src="{{ URL::asset('dist\js\backend\pages\JS_CustomerCare.js') }}"></script>
+<script src="https://js.pusher.com/4.4/pusher.min.js"></script>
 <style>
     .menu {
         float: left;
@@ -344,16 +345,41 @@
     })
 </script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/8.2.0/pusher.min.js"></script>
 <script>
-    var pusher = new Pusher('your_app_key', {
-        cluster: "your_app_cluster"
-    });
+    // var pusher = new Pusher('your_app_key', {
+    //     cluster: "your_app_cluster"
+    // });
 
-    var channel = pusher.subscribe('chat-with-admin');
+    // var channel = pusher.subscribe('chat-with-admin');
 
-    channel.bind('App\\Events\\Client\\Chat', function (data) {
-        $(".messages").animate({scrollTop: $(document).height()}, "fast");
-        $('<li class="replies"><img src="http://emilcarlsson.se/assets/mikeross.png" alt="" /><p>' + data.message + '</p></li>').appendTo($('.messages ul'));
+    // channel.bind('App\\Events\\Client\\Chat', function (data) {
+    //     $(".messages").animate({scrollTop: $(document).height()}, "fast");
+    //     $('<li class="replies"><img src="http://emilcarlsson.se/assets/mikeross.png" alt="" /><p>' + data.message + '</p></li>').appendTo($('.messages ul'));
+    // });
+
+    
+    // chat ng dung
+    const pusher = new Pusher('0141c9557203d59309b9', {
+        cluster: 'ap1'
     });
+    const chanel = pusher.subscribe('0987654321');
+
+    chanel.bind('chat', function(data) {
+        $.ajax({
+            url: '/receive',
+            type: 'POST',
+            data: {
+                _token: '{{csrf_token()}}',
+                message: data.message
+            },
+            success: function(res) {
+                $("#frmCustomerCare_index .messages-chat").last().after(res);
+                $(document).scrollTop($(document).height());
+            }
+        });
+    });
+    
 </script>
 @endsection

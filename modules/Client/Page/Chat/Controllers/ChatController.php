@@ -14,7 +14,7 @@ class ChatController extends Controller
     }
     public function broadcast(Request $request)
     {
-        broadcast(new PusherBroadcast('0366178611', $request->get('message')))->toOthers();
+        broadcast(new PusherBroadcast('0987654321', $request->get('message')))->toOthers();
         $arrInput = $request->all();
         if(isset($arrInput['message']) && !empty($arrInput['message'])){
             $html = '<div class="right-message">';
@@ -28,6 +28,6 @@ class ChatController extends Controller
 
     public function receive(Request $request)
     {
-        return view('receive', ['message' => $request->get('message')]);
+        return $request->get('message');
     }
 }
