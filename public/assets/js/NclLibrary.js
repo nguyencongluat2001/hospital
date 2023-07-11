@@ -23,8 +23,21 @@ NclLib.prototype.alerMesage = function(nameMessage,icon,color){
       title: nameMessage,
       color: color,
       showConfirmButton: false,
-      width:'30%',
-      timer: 2500
+      // width:'30%',
+      timer: 2666500
+    })
+}
+// alerMesage thông báo sau khi có sự kiện
+NclLib.prototype.alerMesageClient = function(nameMessage,icon,color,background){
+  Swal.fire({
+      position: 'top-start',
+      icon: icon,
+      title: nameMessage,
+      color: color,
+      background:background,
+      showConfirmButton: false,
+      // width:'30%',
+      timer: 2666500
     })
 }
 NclLib.prototype.alertMessageBackend = function(type, label, message, s = 30000) {

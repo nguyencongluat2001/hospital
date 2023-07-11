@@ -57,6 +57,10 @@ Route::get('/facilities', [FacilitiesController::class, 'index']);
 Route::get('/facilities/{code}', [FacilitiesController::class, 'detailIndex']);
 Route::get('/schedule/{code}', [FacilitiesController::class, 'schedule']);
 Route::get('/client/schedule/createForm', [FacilitiesController::class,'createForm']);
+Route::get('/client/schedule/loadList', [FacilitiesController::class,'loadList']);
+Route::get('/client/schedule/getHuyen',[FacilitiesController::class,'getHuyen']);
+Route::get('/client/schedule/getXa',[FacilitiesController::class,'getXa']);
+
 
 // chuyên khoa
 Route::get('/specialty', [SpecialtyController::class, 'index']);

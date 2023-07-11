@@ -96,7 +96,89 @@ JS_Schedule.prototype.loadList = function (oForm) {
 JS_Schedule.prototype.add = function (oForm) {
     var url = this.urlPath + '/createForm';
     var myClass = this;
+    var oForm = 'form#frmSendSchedule';
     var data = $(oForm).serialize();
+    if ($("#code_specialty").val() == '') {
+        var nameMessage = 'Chưa chọn khoa khám bệnh!';
+        var icon = 'warning';
+        var color = '#ffd200';
+        var background = 'rgb(33 41 68)';
+        NclLib.alerMesageClient(nameMessage,icon,color,background);
+        return false;
+    }
+    if ($("#name").val() == '') {
+        var nameMessage = 'Tên bệnh nhân không được để trống!';
+        var icon = 'warning';
+        var color = '#ffd200';
+        var background = 'rgb(33 41 68)';
+        NclLib.alerMesageClient(nameMessage,icon,color,background);
+        return false;
+    }
+    if ($("#phone").val() == '') {
+        var nameMessage = 'Số điện thoại không được để trống!';
+        var icon = 'warning';
+        var color = '#ffd200';
+        var background = 'rgb(33 41 68)';
+        NclLib.alerMesageClient(nameMessage,icon,color,background);
+        return false;
+    }
+    if ($("#sex").val() == '') {
+        var nameMessage = 'Giới tính không được để trống!';
+        var icon = 'warning';
+        var color = '#ffd200';
+        var background = 'rgb(33 41 68)';
+        NclLib.alerMesageClient(nameMessage,icon,color,background);
+        return false;
+    }
+    if ($("#date_of_brith").val() == '') {
+        var nameMessage = 'Ngày sinh không được để trống!';
+        var icon = 'warning';
+        var color = '#ffd200';
+        var background = 'rgb(33 41 68)';
+        NclLib.alerMesageClient(nameMessage,icon,color,background);
+        return false;
+    }
+    if ($("#code_tinh").val() == '') {
+        var nameMessage = 'Tỉnh thành không được để trống!';
+        var icon = 'warning';
+        var color = '#ffd200';
+        var background = 'rgb(33 41 68)';
+        NclLib.alerMesageClient(nameMessage,icon,color,background);
+        return false;
+    }
+    if ($("#code_huyen").val() == '') {
+        var nameMessage = 'Quận , huyện không được để trống!';
+        var icon = 'warning';
+        var color = '#ffd200';
+        var background = 'rgb(33 41 68)';
+        NclLib.alerMesageClient(nameMessage,icon,color,background);
+        return false;
+    }
+    if ($("#code_xa").val() == '') {
+        var nameMessage = 'Phường , xã không được để trống!';
+        var icon = 'warning';
+        var color = '#ffd200';
+        var background = 'rgb(33 41 68)';
+        NclLib.alerMesageClient(nameMessage,icon,color,background);
+        return false;
+    }
+    if ($("#address").val() == '') {
+        var nameMessage = 'Địa chỉ chi tiết không được để trống!';
+        var icon = 'warning';
+        var color = '#ffd200';
+        var background = 'rgb(33 41 68)';
+        NclLib.alerMesageClient(nameMessage,icon,color,background);
+        return false;
+    }
+    if ($("#reason").val() == '') {
+        var nameMessage = 'Bạn chưa nêu lý do khám!';
+        var icon = 'warning';
+        var color = '#ffd200';
+        var background = 'rgb(33 41 68)';
+        NclLib.alerMesageClient(nameMessage,icon,color,background);
+        return false;
+    }
+    console.log(data)
     $.ajax({
         url: url,
         type: "GET",
@@ -130,4 +212,63 @@ JS_Schedule.prototype.getTypeBank = function (type) {
         $('#bank').addClass("hiddel");
         $('#momo').addClass("show");
     }
+}
+/**
+ * Load màn hình danh sách huyện
+ *
+ * @param oForm (tên form)
+ *
+ * @return void
+ */
+JS_Schedule.prototype.getHuyen = function (codeTinh) {
+    var myClass = this;
+    var url = this.urlPath + '/getHuyen';
+     var data = '&codeTinh=' + codeTinh;
+    $.ajax({
+        url: url,
+        type: "GET",
+        cache: true,
+        data: data,
+        success: function (arrResult) {
+            $('.chzn-select').chosen({ height: '100%', width: '100%' });
+            var html = '<label for="">Quận huyện <span class="request_star">*</span></label>'
+            html += `<select onchange="JS_Schedule.getXa(this.value)" class="form-control input-sm chzn-select" name="code_huyen" id="code_huyen">`
+            html += `<option value="">--Chọn quận huyện--</option>`
+            $(arrResult.data.huyen).each(function(index,el) {
+                 html += `<option value="`+ el.code_huyen +`">`+ el.name +`</option>`
+             });
+             html += `</select>`
+            $("#iss").html(html);
+        }
+    });
+
+}
+/**
+ * Load màn hình danh sách phường xã
+ *
+ * @param oForm (tên form)
+ *
+ * @return void
+ */
+JS_Schedule.prototype.getXa = function (codeHuyen) {
+    var myClass = this;
+    var url = this.urlPath + '/getXa';
+     var data = '&codeHuyen=' + codeHuyen;
+    $.ajax({
+        url: url,
+        type: "GET",
+        cache: true,
+        data: data,
+        success: function (arrResult) {
+            var html = '<label for="">Phường xã <span class="request_star">*</span></label>'
+            html += `<select class="form-control input-sm chzn-select" name="code_xa" id="code_xa">`
+            html += `<option value="">--Chọn phường xã--</option>`
+            $(arrResult.data.xa).each(function(index,el) {
+                 html += `<option value="`+ el.code_xa +`">`+ el.name +`</option>`
+             });
+             html += `</select>`
+            $("#iss_xa").html(html);
+        }
+    });
+
 }

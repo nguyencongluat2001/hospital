@@ -6,7 +6,6 @@
     }
 </style>
 <link rel="stylesheet" href="../clients/css/style.css">
-
     <!-- Start Banner Hero -->
     <div class="banner-wrapper bg-light" >
         <div id="index_banner" class="banner-vertical-center-index">
@@ -49,11 +48,11 @@
                                         <span  class="text-title-home" style="color:#226c28c9" ><center> Thông tin đăng ký</center></span>
 
                                         <div class="wrapper" style="display: flex; justify-content: center;">
-                                            <form id="frmSend_Otp" method="POST" action="{{ route('register') }}" autocomplete="off">
+                                            <form id="frmSendSchedule" method="POST"  autocomplete="off">
                                                 @csrf
                                                 <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
                                                 <div class="row">
-                                                    <div class="form-wrapper col-md-12">
+                                                    <div class="form-wrapper col-md-6">
                                                         <label for="">Chuyên khoa khám <span class="request_star">*</span></label>
                                                         <select class="form-control input-sm chzn-select" name="code_specialty" id="code_specialty">
                                                             <option value="">--Chọn khoa khám bệnh--</option>
@@ -62,44 +61,50 @@
                                                             @endforeach 
                                                         </select>
                                                     </div>
+                                                    <div class="form-wrapper col-md-6">
+                                                        <label for="">Số tiền khám <span class="request_star">*</span></label>
+                                                        <input placeholder="Nhập số tiền..." id="money" type="text" class="form-control" name="money" value="">
+                                                    </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="form-wrapper col-md-6">
                                                         <label for="">Họ và tên bệnh nhân <span class="request_star">*</span></label>
-                                                        <input placeholder="Nhập tên..." id="name" type="text" class="form-control" name="name" value="" autofocus>
-                                                        @error('name') <span style="color: red">{{$message}}</span> @enderror
+                                                        <input placeholder="Nhập tên..." id="c" type="text" class="form-control" name="name" value="" autofocus>
                                                     </div>
                                                     <div class="form-wrapper col-md-6">
                                                         <label for="">Số điện thoại <span class="request_star">*</span></label>
-                                                        <input onchange="JS_Register.getFonmPhone()" placeholder="Số điện thoại..." id="phone" type="phone" class="form-control" name="phone" value="">
-                                                        @error('phone') <span style="color: red">{{$message}}</span> @enderror
+                                                        <input placeholder="Số điện thoại..." id="phone" type="phone" class="form-control" name="phone" value="">
                                                     </div>
                                                 </div>
                                                 <div class="row">
+                                                    <!-- <div class="form-wrapper col-md-4">
+                                                        <label for="">Số tiền khám <span class="request_star">*</span></label>
+                                                        <input placeholder="Nhập số tiền..." id="money" type="text" class="form-control" name="money" value="">
+                                                    </div> -->
                                                     <div class="form-wrapper col-md-6">
-                                                        <label for="">Số bảo hiểm y tế <span class="request_star">*</span></label>
-                                                        <input placeholder="Nhập bảo hiểm y tế..." id="code_insurance" type="text" class="form-control" name="code_insurance" value="">
+                                                        <label for="">Số bảo hiểm y tế</label>
+                                                        <input placeholder="Nhập bảo hiểm y tế..." id="money" type="text" class="form-control" name="code_insurance" value="">
                                                     </div>
                                                     <div class="form-wrapper col-md-6">
                                                         <label for="">Giới tính <span class="request_star">*</span></label>
-                                                        <input type="radio" value="SALE_ADMIN" name="role" id="role_sale_admin" {{!empty($data['role']) && $data['role'] == 'SALE_ADMIN' ? 'checked' : ''}} />  <span style="padding-left:5px" >Nam</span>&emsp;
-                                                        <input  type="radio" value="SALE_BASIC" name="role" id="role_Sale" {{!empty($data['role']) && $data['role'] == 'SALE_BASIC' ? 'checked' : ''}} /> <span style="padding-left:5px" >Nữ</span>
+                                                        <input type="radio" value="1" name="sex" id="sex" />  <span style="padding-left:5px" >Nam</span>&emsp;
+                                                        <input  type="radio" value="2" name="sex" id="sex"  /> <span style="padding-left:5px" >Nữ</span>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="form-wrapper col-md-6">
-                                                        <label for="">Địa chỉ Email <span class="request_star">*</span></label>
+                                                        <label for="">Địa chỉ Email</label>
                                                         <input placeholder="Nhập email..." id="email" type="email" class="form-control" name="email" value="">
                                                     </div>
                                                     <div class="form-wrapper col-md-6">
-                                                        <label for="">Năm sinh <span class="request_star">*</span></label>
+                                                        <label for="">Ngày sinh <span class="request_star">*</span></label>
                                                         <input placeholder="Số điện thoại..." id="date_of_brith" type="date" class="form-control" name="date_of_brith" value="">
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="form-wrapper col-md-4">
                                                         <label for="">Tỉnh thành <span class="request_star">*</span></label>
-                                                        <select onchange="JS_Facilities.getHuyen(this.value)"  class="form-control input-sm chzn-select" name="code_tinh" id="code_tinh">
+                                                        <select onchange="JS_Schedule.getHuyen(this.value)"  class="form-control input-sm chzn-select" name="code_tinh" id="code_tinh">
                                                             <option value="">--Chọn tỉnh thành--</option>
                                                             @foreach($tinh as $key => $value) 
                                                                <option  value="{{$value->code_tinh}}">{{$value->name}}</option>
@@ -141,7 +146,7 @@
                                                     </div>
                                                 </div> -->
                                                 <div class="form-group" style="display:flex">
-                                                    <div class="form-wrapper">
+                                                    <div class="form-wrapper col-md-6">
                                                         <label for="">Mã cộng tác viên</label>
                                                         @if(isset($data['user_introduce_name']))
                                                         <input style="color:red" disabled onchange="JS_Register.getUser()" placeholder="Mã nhân viên giới thiệu..." id="code_introduce" type="text" class="form-control" name="code_introduce" value="{{isset($data['user_introduce_id']) ? $data['user_introduce_id'] : ''}}">
@@ -149,7 +154,7 @@
                                                         <input style="color:red"  onchange="JS_Register.getUser()" placeholder="Mã nhân viên giới thiệu..." id="code_introduce" type="text" class="form-control" name="code_introduce" value="{{isset($data['user_introduce_id']) ? $data['user_introduce_id'] : ''}}">
                                                         @endif
                                                     </div>
-                                                    <div class="form-wrapper" id="iss">
+                                                    <div class="form-wrapper col-md-6" id="iss">
                                                         <label for="">Tên cộng tác viên</label>
                                                         <input style="color:red"  disabled placeholder="Tên nhân viên giới thiệu..."  type="text" class="form-control"  value="{{isset($data['user_introduce_name']) ? $data['user_introduce_name'] : ''}}">
                                                     </div>
@@ -189,6 +194,7 @@
 
 <div id="dialogconfirm"></div>
     <!-- End Service -->
+<script type="text/javascript" src="{{ URL::asset('dist/js/backend/client/JS_Facilities.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('dist/js/backend/client/JS_Schedule.js') }}"></script>
 <script src='../assets/js/jquery.js'></script>
 <script type="text/javascript">

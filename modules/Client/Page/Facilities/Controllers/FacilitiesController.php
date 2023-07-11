@@ -144,7 +144,9 @@ class FacilitiesController extends Controller
     public function createForm(Request $request)
     {
         $input = $request->all();
-        return view('client.Facilities.Schedule.edit');
+        // dd($input);
+        $data['datas'] = $input;
+        return view('client.Facilities.Schedule.edit',$data);
     }
     
 }

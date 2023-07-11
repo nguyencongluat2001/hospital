@@ -33,21 +33,21 @@
                 <div class="row form-group pt-2" id="div_hinhthucgiai">
                     <span class="col-md-3 control-label required">Số tiền thanh toán</span>
                     <div class="col-md-8">
-                        <input class="form-control" type="text" value="{{isset($datas->code_cate) ? $datas->code_cate : ''}}" name="code_cate" id="code_cate"/>
+                        <input class="form-control" type="text" value="{{isset($datas['money']) ? $datas['money'] : ''}}" name="money" id="money"/>
                     </div>
                 </div>
                 {{-- Tên --}}
                 <div class="row form-group pt-2" id="div_hinhthucgiai">
                     <span class="col-md-3 control-label required">Họ tên</span>
                     <div class="col-md-8">
-                        <input class="form-control" type="text" value="{{isset($datas->name) ? $datas->name : ''}}" name="name" id="name"/>
+                        <input class="form-control" type="text" value="{{isset($datas['name']) ? $datas['name'] : ''}}" name="name" id="name"/>
                     </div>
                 </div>
                 {{-- điện thoại --}}
                 <div class="row form-group pt-2" id="div_hinhthucgiai">
                     <span class="col-md-3 control-label required">Sô điện thoại</span>
                     <div class="col-md-8">
-                        <input class="form-control" type="text" value="{{isset($datas->name) ? $datas->name : ''}}" name="name" id="name"/>
+                        <input class="form-control" type="text" value="{{isset($datas['phone']) ? $datas['phone'] : ''}}" name="phone" id="phone"/>
                     </div>
                 </div>
                 {{--  Mô tả --}}
