@@ -93,7 +93,7 @@
                                                     </div>
                                                     <div class="form-wrapper col-md-6">
                                                         <label for="">Năm sinh <span class="request_star">*</span></label>
-                                                        <input onchange="JS_Register.getFonmPhone()" placeholder="Số điện thoại..." id="date_of_brith" type="date" class="form-control" name="date_of_brith" value="">
+                                                        <input placeholder="Số điện thoại..." id="date_of_brith" type="date" class="form-control" name="date_of_brith" value="">
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -167,7 +167,7 @@
                                                     </label>
                                                 </div>
                                                 <div class="pt-3 mb-3">
-                                                    <button type="submit" class=" btn-primary" id="btn_register" style="background-color: slategrey">
+                                                    <button type="button" onclick="JS_Schedule.add()" class=" btn-primary" id="btn_register" style="background-color: slategrey">
                                                         {{ __('Đăng ký') }}
                                                     </button>
                                                 </div>
@@ -179,20 +179,23 @@
                             </div>
                         </div>
                     </div>
-                    
                     <!-- Start Banner Hero -->
                 </div>
             </div>
         </div>
     </div>
+<div class="modal fade" id="editmodal" role="dialog"></div>
+<div class="modal " id="addfile" role="dialog"></div>
+
+<div id="dialogconfirm"></div>
     <!-- End Service -->
-<script type="text/javascript" src="{{ URL::asset('dist/js/backend/client/JS_Facilities.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('dist/js/backend/client/JS_Schedule.js') }}"></script>
 <script src='../assets/js/jquery.js'></script>
 <script type="text/javascript">
     var baseUrl = "{{ url('') }}";
-    var JS_Facilities = new JS_Facilities(baseUrl, 'client', 'facilities');
+    var JS_Schedule = new JS_Schedule(baseUrl, 'client', 'schedule');
     $(document).ready(function($) {
-        JS_Facilities.loadIndex(baseUrl);
+        JS_Schedule.loadIndex(baseUrl);
     })
 </script>
 <!-- <script type="text/javascript" src="{{ URL::asset('dist\js\backend\pages\JS_System_Security.js') }}"></script>

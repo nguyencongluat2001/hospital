@@ -56,6 +56,8 @@ Route::get('/', [ClientHomeController::class, 'index']);
 Route::get('/facilities', [FacilitiesController::class, 'index']);
 Route::get('/facilities/{code}', [FacilitiesController::class, 'detailIndex']);
 Route::get('/schedule/{code}', [FacilitiesController::class, 'schedule']);
+Route::get('/client/schedule/createForm', [FacilitiesController::class,'createForm']);
+
 // chuyên khoa
 Route::get('/specialty', [SpecialtyController::class, 'index']);
 Route::get('/specialty/{code}', [SpecialtyController::class, 'specialty']);

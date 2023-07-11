@@ -22,7 +22,7 @@
         <section class="">
             <div id="chatZalo" class="chatZaloClose">
                 <label for="checkbox1">
-                <img width="" height="70px" style="background-color: none"
+                <img width="" height="50px" style="background-color: none"
                     src="../clients/img/zalo.png" alt="">
                 </label>
             </div>
@@ -75,7 +75,7 @@
                 @endif
                 <div class="input-group-btn messageClose" id="messageCustomer">
                     <label class="" for="message">
-                        <img width="90px" height="90px" style="background-color: none" src="https://vcdn.subiz-cdn.com/file/fiqtarohdurccuocnccb-27.png" alt="">
+                        <img width="70px" height="70px" style="background-color: none" src="https://vcdn.subiz-cdn.com/file/fiqtarohdurccuocnccb-27.png" alt="">
                     </label>
                 </div>
             </span>

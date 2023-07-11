@@ -117,7 +117,6 @@ JS_Facilities.prototype.loadList = function (oForm) {
  * @return void
  */
 JS_Facilities.prototype.getHuyen = function (codeTinh) {
-    console.log(codeTinh)
     var myClass = this;
     var url = this.urlPath + '/getHuyen';
      var data = '&codeTinh=' + codeTinh;
