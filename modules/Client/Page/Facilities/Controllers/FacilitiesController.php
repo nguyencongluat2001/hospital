@@ -134,5 +134,19 @@ class FacilitiesController extends Controller
             'status' => true
         ]);
     }
+     /**
+     * Load màn hình them thông tin người dùng
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function createForm(Request $request)
+    {
+        $input = $request->all();
+        // dd($input);
+        $data['datas'] = $input;
+        return view('client.Facilities.Schedule.edit',$data);
+    }
     
 }
