@@ -8,7 +8,7 @@ use Modules\Client\Auth\Controllers\RegisterController;
 use Modules\Client\Page\Chat\Controllers\ChatController;
 use Modules\Client\Page\Facilities\Controllers\FacilitiesController;
 use Modules\Client\Page\Specialty\Controllers\SpecialtyController;
-
+use Modules\Client\Page\Package\Controllers\PackageController;
 //Dashboard
 use Modules\System\Dashboard\Users\Controllers\UserController;
 
@@ -56,11 +56,9 @@ Route::get('/', [ClientHomeController::class, 'index']);
 Route::get('/facilities', [FacilitiesController::class, 'index']);
 Route::get('/facilities/{code}', [FacilitiesController::class, 'detailIndex']);
 Route::get('/schedule/{code}', [FacilitiesController::class, 'schedule']);
-Route::get('/client/schedule/createForm', [FacilitiesController::class,'createForm']);
-Route::get('/client/schedule/loadList', [FacilitiesController::class,'loadList']);
-Route::get('/client/schedule/getHuyen',[FacilitiesController::class,'getHuyen']);
-Route::get('/client/schedule/getXa',[FacilitiesController::class,'getXa']);
 
+// Trang chủ cơ sở bệnh viện
+Route::get('/package', [PackageController::class, 'index']);
 
 // chuyên khoa
 Route::get('/specialty', [SpecialtyController::class, 'index']);
@@ -102,6 +100,26 @@ Route::prefix('/client')->group(function () {
                 Route::get('/loadListBlog',[FacilitiesController::class,'loadListBlog']);
                 Route::get('/loadListTap1',[FacilitiesController::class,'loadListTap1']);
                 Route::get('/loadListTop',[FacilitiesController::class,'loadListTop']);
+            });
+        });
+        route::prefix('schedule')->group(function(){
+            Route::get('/createForm', [FacilitiesController::class,'createForm']);
+            Route::get('/loadList', [FacilitiesController::class,'loadList']);
+            Route::get('/getHuyen',[FacilitiesController::class,'getHuyen']);
+            Route::get('/getXa',[FacilitiesController::class,'getXa']);
+        });
+        // gói khám
+        Route::prefix('package')->group(function(){
+            // Route::get('/index',[FacilitiesController::class,'index']);
+            Route::get('/loadList',[PackageController::class,'loadList']);
+            Route::get('/loadListBlog',[PackageController::class,'loadListBlog']);
+             // Trang chủ chi tiết cơ sở bệnh viện
+            Route::prefix('detail')->group(function(){
+                Route::get('/index',[PackageController::class,'detailIndex']);
+                Route::get('/loadList',[PackageController::class,'loadList']);
+                Route::get('/loadListBlog',[PackageController::class,'loadListBlog']);
+                Route::get('/loadListTap1',[PackageController::class,'loadListTap1']);
+                Route::get('/loadListTop',[PackageController::class,'loadListTop']);
             });
         });
          // chuyên khoa
