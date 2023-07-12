@@ -5,7 +5,7 @@ use Modules\Client\Page\Home\Controllers\HomeController as ClientHomeController;
 
 use App\Http\Controllers\Auth\LoginController;
 use Modules\Client\Auth\Controllers\RegisterController;
-use Modules\Client\Page\Chat\Controllers\ChatController;
+use Modules\Client\Page\Chat\Controllers\ChatClientController;
 use Modules\Client\Page\Facilities\Controllers\FacilitiesController;
 use Modules\Client\Page\Specialty\Controllers\SpecialtyController;
 use Modules\Client\Page\Package\Controllers\PackageController;
@@ -64,10 +64,9 @@ Route::get('/package', [PackageController::class, 'index']);
 Route::get('/specialty', [SpecialtyController::class, 'index']);
 Route::get('/specialty/{code}', [SpecialtyController::class, 'specialty']);
 
-Route::prefix('chat')->name('client.chat.')->group(function () {
-    Route::get('', 'Client\ChatController@index')->name('index');
-    Route::post('/broadcast', [ChatController::class, 'broadcast'])->name('broadcast');
-    
+Route::prefix('chat')->group(function () {
+    Route::post('/broadcast', [ChatClientController::class, 'broadcast'])->name('broadcast');
+    Route::post('/receive', [ChatClientController::class, 'receive'])->name('receive');
 });
 // route phía người dùng
 Route::prefix('/client')->group(function () {

@@ -74,10 +74,35 @@ JS_CustomerCare.prototype.message = function(phone){
             $("#message").html(arrResult);
             $(".discussion").removeClass('message-active');
             $("#active_" + phone).addClass('message-active');
+            $("#message").attr('class', 'chat col-md-9 active_' + phone);
+            $("#sendMessage").attr('onclick', "JS_CustomerCare.broadcast('" + phone + "')");
             NclLib.successLoadding();
         }, error: function(e){
             console.log(e);
             NclLib.successLoadding();
+        }
+    });
+}
+/**
+ * 
+ */
+JS_CustomerCare.prototype.broadcast = function(phone){
+    $.ajax({
+        url: '/system/customerCare/broadcast',
+        method: 'POST',
+        headers: {
+            'X-Socket-Id': pusher.connection.socket_id
+        },
+        data: {
+            _token: $("#_token").val(),
+            message: $("#txt-message").val(),
+            phone: phone,
+        },
+        success: function(res) {
+            // $(".response-time").html('');
+            // $(".response-time").removeClass('response-time');
+            $(".messages-chat").append(res);
+            $("#txt-message").val('');
         }
     });
 }

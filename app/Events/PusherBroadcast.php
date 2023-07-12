@@ -10,13 +10,17 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class PusherBroadcast
+class PusherBroadcast implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
+
     public $message;
     public $phone;
+
     /**
      * Create a new event instance.
+     *
+     * @return void
      */
     public function __construct($phone, $message)
     {
@@ -27,11 +31,11 @@ class PusherBroadcast
     /**
      * Get the channels the event should broadcast on.
      *
-     * @return array<int, \Illuminate\Broadcasting\Channel>
+     * @return \Illuminate\Broadcasting\Channel|array
      */
     public function broadcastOn()
     {
-        return [$this->phone];
+        return ['public'];
     }
     public function broadcastAs()
     {
