@@ -2,7 +2,7 @@
 
 //Dashboard
 
-use Modules\Client\Page\Chat\Controllers\ChatController;
+use Modules\Client\Page\Chat\Controllers\ChatAdminController;
 use Modules\System\Dashboard\ApprovePayment\Controllers\ApprovePaymentController;
 use Modules\System\Dashboard\Dashboards\Controllers\DashboardController;
 use Modules\System\Dashboard\Blog\Controllers\BlogController;
@@ -20,7 +20,6 @@ use Modules\System\Dashboard\Permision\Controllers\PermisionController;
 use Modules\System\Dashboard\Specialty\Controllers\SpecialtyController;
 
 
-Route::post('/receive', [ChatController::class, 'receive'])->name('receive');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::middleware('checkloginAdmin')->group(function () {
@@ -112,6 +111,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
             Route::get('index', [CustomerCareController::class, 'index']);
             Route::get('loadList', [CustomerCareController::class, 'loadList']);
             Route::post('message', [CustomerCareController::class, 'message']);
+            Route::post('broadcast', [ChatAdminController::class, 'broadcast'])->name('broadcast');
+            Route::post('receive', [ChatAdminController::class, 'receive'])->name('receive');
         });
         
     });

@@ -43,7 +43,7 @@
         color: #cfe5ff;
     }
     
-    .discussions {
+    #discussions {
         height: 700px;
         overflow: hidden;
         background-color: #fff;
@@ -52,7 +52,7 @@
         padding-right: 0;
     }
 
-    .discussions .discussion {
+    #discussions .discussion {
         width: 100%;
         height: 90px;
         background-color: #fff;
@@ -62,14 +62,14 @@
         cursor: pointer;
     }
 
-    .discussions .search {
+    #discussions .search {
         display: flex;
         align-items: center;
         justify-content: center;
         color: #E0E0E0;
     }
 
-    .discussions .search .searchbar {
+    #discussions .search .searchbar {
         height: 40px;
         background-color: #FFF;
         width: 70%;
@@ -81,7 +81,7 @@
         cursor: pointer;
     }
 
-    .discussions .search .searchbar input {
+    #discussions .search .searchbar input {
         margin-left: 15px;
         height: 38px;
         width: 100%;
@@ -89,23 +89,23 @@
         font-family: 'Montserrat', sans-serif;
     }
 
-    .discussions .search .searchbar *::-webkit-input-placeholder {
+    #discussions .search .searchbar *::-webkit-input-placeholder {
         color: #E0E0E0;
     }
 
-    .discussions .search .searchbar input *:-moz-placeholder {
+    #discussions .search .searchbar input *:-moz-placeholder {
         color: #E0E0E0;
     }
 
-    .discussions .search .searchbar input *::-moz-placeholder {
+    #discussions .search .searchbar input *::-moz-placeholder {
         color: #E0E0E0;
     }
 
-    .discussions .search .searchbar input *:-ms-input-placeholder {
+    #discussions .search .searchbar input *:-ms-input-placeholder {
         color: #E0E0E0;
     }
 
-    .discussions .message-active {
+    #discussions .message-active {
         height: 90px;
         background-color: #e5efff;
         border-right: 5px solid #273fc1;
@@ -130,14 +130,14 @@
         text-overflow: ellipsis;
     }
 
-    .discussions .discussion .name {
+    #discussions .discussion .name {
         margin: 0 0 0 20px;
         font-family: 'Montserrat', sans-serif;
         font-size: 11pt;
         color: #515151;
     }
 
-    .discussions .discussion .message {
+    #discussions .discussion .message {
         margin: 6px 0 0 20px;
         font-family: 'Montserrat', sans-serif;
         font-size: 9pt;
@@ -184,12 +184,14 @@
 
     .chat .messages-chat {
         padding: 25px 35px;
+        margin-bottom: 70px;
     }
 
     .chat .messages-chat .message {
         display: flex;
         align-items: center;
         margin-bottom: 8px;
+        clear: right;
     }
 
     .chat .messages-chat .text {
@@ -276,7 +278,7 @@
         right: 40px;
     }
 
-    .write-message {
+    .txt-message {
         border: none !important;
         width: 80%;
         height: 50px;
@@ -346,37 +348,45 @@
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/8.2.0/pusher.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/8.2.0/pusher.min.js"></script>
 <script>
-    // var pusher = new Pusher('your_app_key', {
-    //     cluster: "your_app_cluster"
-    // });
-
-    // var channel = pusher.subscribe('chat-with-admin');
-
-    // channel.bind('App\\Events\\Client\\Chat', function (data) {
-    //     $(".messages").animate({scrollTop: $(document).height()}, "fast");
-    //     $('<li class="replies"><img src="http://emilcarlsson.se/assets/mikeross.png" alt="" /><p>' + data.message + '</p></li>').appendTo($('.messages ul'));
-    // });
-
-    
     // chat ng dung
     const pusher = new Pusher('0141c9557203d59309b9', {
         cluster: 'ap1'
     });
-    const chanel = pusher.subscribe('0987654321');
+    const chanel = pusher.subscribe('public');
 
     chanel.bind('chat', function(data) {
         $.ajax({
-            url: '/receive',
+            url: '/system/customerCare/receive',
             type: 'POST',
             data: {
                 _token: '{{csrf_token()}}',
-                message: data.message
+                message: data.message,
+                phone: data.phone
             },
             success: function(res) {
-                $("#frmCustomerCare_index .messages-chat").last().after(res);
-                $(document).scrollTop($(document).height());
+                $("#frmCustomerCare_index .active_" + data.phone + " .messages-chat").append(res);
+                var html = '';
+                if($("#discussions #active_" + data.phone).html() == undefined
+                || $("#discussions #active_" + data.phone).html() == ''){
+                    html += '<div class="discussion" id="active_' + data.phone + '" onclick="JS_CustomerCare.message(\'' + data.phone + '\')" style="cursor: pointer;">';
+                }
+                html += '<div class="desc-contact">';
+                html += '<p class="name">' + data.phone + '</p>';
+                html += '<p class="message">';
+                html += '<b style="color: red">' + data.message + '</b>';
+                html += '</p>';
+                html += '</div>';
+                html += '<div class="timer">' +  + '</div>';
+                console.log($("#discussions #active_" + data.phone).html());
+                if($("#discussions #active_" + data.phone).html() !== undefined
+                && $("#discussions #active_" + data.phone).html() !== ''){
+                    $("#active_" + data.phone).html(html);
+                }else{
+                    html += '</div>';
+                    $("#discussions").append(html);
+                }
             }
         });
     });

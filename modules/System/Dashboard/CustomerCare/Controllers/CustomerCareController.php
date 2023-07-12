@@ -54,6 +54,7 @@ class CustomerCareController extends Controller
         $arrInput = $request->all();
         $customerCare = $this->customerCareService->select('*')->where('phone', $arrInput['phone'])->get();
         $data['message'] = $customerCare;
+        $this->customerCareService->select('*')->whereNotNull('id')->update(['view' => 1]);
         return view("dashboard.customerCare.message", $data);
     }
 }

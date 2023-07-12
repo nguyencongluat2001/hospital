@@ -163,20 +163,19 @@
         const pusher = new Pusher('0141c9557203d59309b9', {
             cluster: 'ap1'
         });
-        const chanel = pusher.subscribe('0987654321');
+        const chanel = pusher.subscribe('public');
 
         chanel.bind('chat', function(data) {
-            console.log(123);
             $.ajax({
                 url: '/chat/receive',
                 type: 'POST',
                 data: {
                     _token: '{{csrf_token()}}',
-                    message: data.message
+                    message: data.message,
+                    phone: data.phone,
                 },
                 success: function(res) {
-                    $(".message > .message").last().after(res);
-                    $(document).scrollTop($(document).height());
+                    $("#body-message").append(res);
                 }
             });
         });
@@ -193,7 +192,8 @@
                 },
                 data: {
                     _token: '{{csrf_token()}}',
-                    message: $("#frmChat_box #txt-message").val()
+                    message: $("#frmChat_box #txt-message").val(),
+                    phone: $("#frmChat_box #phone").val(),
                 },
                 success: function(res) {
                     $("#body-message").append(res);

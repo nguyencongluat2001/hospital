@@ -35,7 +35,7 @@ class PusherBroadcast implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return [$this->phone];
+        return ['public'];
     }
     public function broadcastAs()
     {

@@ -2,7 +2,7 @@
 use Carbon\Carbon;
 @endphp
 
-<section class="discussions col-md-3">
+<section id="discussions" class="col-md-3">
     @if(isset($datas) && count($datas) > 0)
     @foreach($datas as $data)
         <div class="discussion" id="active_{{$data->phone}}" onclick="JS_CustomerCare.message('{{$data->phone}}')" style="cursor: pointer;">
@@ -26,7 +26,7 @@ use Carbon\Carbon;
                     $now = Carbon::now();
                     $created_at = Carbon::create($data->created_at);
                 @endphp
-                {{ $now->diffForHumans($created_at) }}
+                {{ $created_at->diffForHumans($now) }}
             </div>
         </div>
     @endforeach
