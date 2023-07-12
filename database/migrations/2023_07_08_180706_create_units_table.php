@@ -13,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('units', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('code_tinh');
-            $table->string('code_huyen')->nullable();
-            $table->string('code_xa')->nullable();
-            $table->string('name')->nullable();
-            $table->string('name_type')->nullable();
+            $table->uuid('user_id');
+            $table->string('code_blog');
+            $table->string('code_category');
+            $table->string('status',5);
             $table->timestamps();
         });
     }

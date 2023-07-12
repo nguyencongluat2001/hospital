@@ -109,6 +109,18 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
             Route::get('loadList', [CustomerCareController::class, 'loadList']);
             Route::post('message', [CustomerCareController::class, 'message']);
         });
+         //Tín hiệu mua
+         Route::prefix('approvepayment')->group(function(){
+            Route::get('index', [ApprovePaymentController::class, 'index']);
+            Route::post('loadList', [ApprovePaymentController::class, 'loadList']);
+            Route::get('create', [ApprovePaymentController::class, 'create']);
+            Route::get('edit', [ApprovePaymentController::class, 'edit']);
+            Route::post('update', [ApprovePaymentController::class, 'update']);
+            Route::post('delete', [ApprovePaymentController::class, 'delete']);
+            Route::post('updateApprovePayment', [ApprovePaymentController::class, 'updateApprovePayment']);
+            Route::post('changeStatusApprovePayment', [ApprovePaymentController::class, 'changeStatusApprovePayment']);
+            Route::get('getUserVIP', [ApprovePaymentController::class, 'getUserVIP']);
+        });
        
     });
 });

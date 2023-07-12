@@ -107,7 +107,9 @@ Route::prefix('/client')->group(function () {
             Route::get('/loadList', [FacilitiesController::class,'loadList']);
             Route::get('/getHuyen',[FacilitiesController::class,'getHuyen']);
             Route::get('/getXa',[FacilitiesController::class,'getXa']);
+            Route::post('/sendPayment',[FacilitiesController::class,'sendPayment']);
         });
+        
         // gói khám
         Route::prefix('package')->group(function(){
             // Route::get('/index',[FacilitiesController::class,'index']);

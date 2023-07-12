@@ -34,6 +34,9 @@
                             <a class="nav-link link-package btn-outline-dark rounded-pill" href="{{ url('/package') }}"> <span class="text-menu-header">Gói khám </span> <br> <span class="text-12">Khám sức khỏe tổng quát</span></a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link link-package btn-outline-dark rounded-pill" href="{{ url('/package') }}"> <span class="text-menu-header">Tra cứu </span> <br> <span class="text-12">Tra cứu lịch hẹn đã đặt</span></a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link btn-outline-dark rounded-pill" href="contact.html"> <span class="text-menu-header">Đánh giá </span> <br> <span class="text-12">Đánh giá dịch vụ</span></a>
                         </li>
                     </ul>

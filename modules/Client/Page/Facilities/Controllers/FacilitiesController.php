@@ -14,6 +14,7 @@ use DB;
 use Modules\System\Dashboard\Hospital\Services\HospitalService;
 use Modules\System\Dashboard\Specialty\Models\UnitsModel;
 use Modules\System\Dashboard\Specialty\Services\SpecialtyService;
+use Modules\Client\Page\Facilities\Services\ScheduleService;
 /**
  * Phân quyền người dùng 
  *
@@ -23,6 +24,7 @@ class FacilitiesController extends Controller
 {
 
     public function __construct(
+        ScheduleService $scheduleService,
         SpecialtyService $SpecialtyService,
         CateService $cateService,
         CategoryService $categoryService,
@@ -30,6 +32,7 @@ class FacilitiesController extends Controller
         BlogService $blogService,
         HospitalService $hospitalService
     ){
+        $this->scheduleService = $scheduleService;
         $this->SpecialtyService = $SpecialtyService;
         $this->cateService = $cateService;
         $this->categoryService = $categoryService;
@@ -147,6 +150,22 @@ class FacilitiesController extends Controller
         // dd($input);
         $data['datas'] = $input;
         return view('client.Facilities.Schedule.edit',$data);
+    }
+     /**
+     * dat lich
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function sendPayment(Request $request)
+    {
+        $input = $request->all();
+        $file = $_FILES;
+        $sendPayment =  $this->scheduleService->sendPayment($input,$file);
+        return response()->json([
+            'status' => $sendPayment
+        ]);
     }
     
 }

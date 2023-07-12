@@ -9,20 +9,31 @@ use Modules\System\Helpers\NclLibraryHelper;
 
 class ApprovePaymentModel extends Model
 {
-    protected $table = 'approve_payment';
+    protected $table = 'schedule';
     public $incrementing = false;
-    public $sortable = ['order'];
 
     protected $fillable = [
         'id',
-        'user_id',
-        'user_id_introduce',
-        'role_client',
-        'image',
-        'order',
+        'code_schedule',
+        'code_hospital',
+        'code_specialty',
+        'money',
+        'name',
+        'phone',
+        'code_insurance',
+        'sex',
+        'email',
+        'date_of_brith',
+        'code_tinh',
+        'code_huyen',
+        'code_xa',
+        'address',
+        'code_introduce',
+        'reason',
+        'name_image',
         'status',
         'created_at',
-        'updated_at',
+        'updates_at'
     ];
 
     public function filter($query, $param, $value)
@@ -34,17 +45,18 @@ class ApprovePaymentModel extends Model
             case 'search':
                 if(!empty($value)){
                     $query->where(function($sql) use($value){
-                        $sql->where('title', 'like', "$value")
-                        ->orWhere('target', 'like', "$value")
-                        ->orWhere('stop_loss', 'like', "$value");
+                        $sql->where('code_schedule', 'like', "$value")
+                        ->orWhere('phone', 'like', "$value")
+                        ->orWhere('email', 'like', "$value")
+                        ->orWhere('address', 'like', "$value");
                     });
                 }
                 return $query;
-            case 'type':
-                if(!empty($value)){
-                    $query->where('type', $value);
-                }
-                return $query;
+            // case 'type':
+            //     if(!empty($value)){
+            //         $query->where('type', $value);
+            //     }
+            //     return $query;
             case 'fromdate':
                 if(!empty($value)){
                     $query->where('created_at', '>=', date('Y-m-d H:i:s', strtotime(NclLibraryHelper::_ddmmyyyyToyyyymmdd($value, 3))));
@@ -58,15 +70,6 @@ class ApprovePaymentModel extends Model
             default: 
                 return $query;
         }
-    }
-
-    public function users()
-    {
-        return $this->hasOne(UserModel::class, 'id', 'user_id');
-    }
-    public function categorys()
-    {
-        return $this->hasOne(CategoryModel::class, 'code_category', 'role_client');
     }
     
 }
