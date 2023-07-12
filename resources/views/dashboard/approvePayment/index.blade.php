@@ -13,16 +13,18 @@
         <form id="frmApprovePayment_index">
             <input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
             <div class="row">
+                @if(Auth::user()->role == 'ADMIN')
                 <div class="col-md-2">
                     <button type="button" class="btn btn-success shadow-sm" id="btn_add"><i class="fas fa-plus"></i></button>
                     <button type="button" class="btn btn-danger shadow-sm" id="btn_delete"><i class="fas fa-trash-alt"></i></button>
                 </div>
+                @endif
                 <div class="col-md-10 row">
                     <div class="col-md-3">
                         <select name="type" id="type" class="form-control chzn-select">
-                            <option value="">--Chọn loại tín hiệu--</option>
-                            <option value="MUA">Mua</option>
-                            <option value="BAN">Bán</option>
+                            <option value="">--Chọn loại giao dịch--</option>
+                            <option value="BANK">Chuyển khoản qua ngân hàng</option>
+                            <option value="MOMO">Momo</option>
                         </select>
                     </div>
                     <div class="col-md-2">

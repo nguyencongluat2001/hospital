@@ -114,6 +114,18 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
             Route::post('broadcast', [ChatAdminController::class, 'broadcast'])->name('broadcast');
             Route::post('receive', [ChatAdminController::class, 'receive'])->name('receive');
         });
-        
+         //Tín hiệu mua
+         Route::prefix('approvepayment')->group(function(){
+            Route::get('index', [ApprovePaymentController::class, 'index']);
+            Route::post('loadList', [ApprovePaymentController::class, 'loadList']);
+            Route::get('create', [ApprovePaymentController::class, 'create']);
+            Route::get('edit', [ApprovePaymentController::class, 'edit']);
+            Route::post('update', [ApprovePaymentController::class, 'update']);
+            Route::post('delete', [ApprovePaymentController::class, 'delete']);
+            Route::post('updateApprovePayment', [ApprovePaymentController::class, 'updateApprovePayment']);
+            Route::post('changeStatusApprovePayment', [ApprovePaymentController::class, 'changeStatusApprovePayment']);
+            Route::get('getUserVIP', [ApprovePaymentController::class, 'getUserVIP']);
+        });
+       
     });
 });

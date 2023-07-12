@@ -36,7 +36,7 @@ class UserService extends Service
      * cập nhật người dùng
      */
     public function store($input,$file){
-        $password = 'fintop123';
+        $password = '123';
         //check quyền chỉnh sửa
         if(isset($input['role']) && $_SESSION['role'] != 'ADMIN' && $_SESSION['role'] != 'MANAGE' && $_SESSION['role'] != 'CV_ADMIN'){
             if($input['role'] == 'ADMIN' || $input['role'] == 'MANAGE' || $input['role'] == 'CV_ADMIN'){

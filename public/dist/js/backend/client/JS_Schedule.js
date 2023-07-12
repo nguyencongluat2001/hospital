@@ -60,9 +60,9 @@ JS_Schedule.prototype.loadIndex = function () {
 }
 JS_Schedule.prototype.loadevent = function (oForm) {
     var myClass = this;
-    $('form#frmAdd').find('#btn_create').click(function () {
-        myClass.store('form#frmAdd');
-    })
+    // $('form#frmAdd').find('#btn_create').click(function () {
+    //     myClass.store('form#frmAdd');
+    // })
 }
 /**
  * Load màn hình danh sách
@@ -106,78 +106,78 @@ JS_Schedule.prototype.add = function (oForm) {
         NclLib.alerMesageClient(nameMessage,icon,color,background);
         return false;
     }
-    if ($("#name").val() == '') {
-        var nameMessage = 'Tên bệnh nhân không được để trống!';
-        var icon = 'warning';
-        var color = '#ffd200';
-        var background = 'rgb(33 41 68)';
-        NclLib.alerMesageClient(nameMessage,icon,color,background);
-        return false;
-    }
-    if ($("#phone").val() == '') {
-        var nameMessage = 'Số điện thoại không được để trống!';
-        var icon = 'warning';
-        var color = '#ffd200';
-        var background = 'rgb(33 41 68)';
-        NclLib.alerMesageClient(nameMessage,icon,color,background);
-        return false;
-    }
-    if ($("#sex").val() == '') {
-        var nameMessage = 'Giới tính không được để trống!';
-        var icon = 'warning';
-        var color = '#ffd200';
-        var background = 'rgb(33 41 68)';
-        NclLib.alerMesageClient(nameMessage,icon,color,background);
-        return false;
-    }
-    if ($("#date_of_brith").val() == '') {
-        var nameMessage = 'Ngày sinh không được để trống!';
-        var icon = 'warning';
-        var color = '#ffd200';
-        var background = 'rgb(33 41 68)';
-        NclLib.alerMesageClient(nameMessage,icon,color,background);
-        return false;
-    }
-    if ($("#code_tinh").val() == '') {
-        var nameMessage = 'Tỉnh thành không được để trống!';
-        var icon = 'warning';
-        var color = '#ffd200';
-        var background = 'rgb(33 41 68)';
-        NclLib.alerMesageClient(nameMessage,icon,color,background);
-        return false;
-    }
-    if ($("#code_huyen").val() == '') {
-        var nameMessage = 'Quận , huyện không được để trống!';
-        var icon = 'warning';
-        var color = '#ffd200';
-        var background = 'rgb(33 41 68)';
-        NclLib.alerMesageClient(nameMessage,icon,color,background);
-        return false;
-    }
-    if ($("#code_xa").val() == '') {
-        var nameMessage = 'Phường , xã không được để trống!';
-        var icon = 'warning';
-        var color = '#ffd200';
-        var background = 'rgb(33 41 68)';
-        NclLib.alerMesageClient(nameMessage,icon,color,background);
-        return false;
-    }
-    if ($("#address").val() == '') {
-        var nameMessage = 'Địa chỉ chi tiết không được để trống!';
-        var icon = 'warning';
-        var color = '#ffd200';
-        var background = 'rgb(33 41 68)';
-        NclLib.alerMesageClient(nameMessage,icon,color,background);
-        return false;
-    }
-    if ($("#reason").val() == '') {
-        var nameMessage = 'Bạn chưa nêu lý do khám!';
-        var icon = 'warning';
-        var color = '#ffd200';
-        var background = 'rgb(33 41 68)';
-        NclLib.alerMesageClient(nameMessage,icon,color,background);
-        return false;
-    }
+    // if ($("#name").val() == '') {
+    //     var nameMessage = 'Tên bệnh nhân không được để trống!';
+    //     var icon = 'warning';
+    //     var color = '#ffd200';
+    //     var background = 'rgb(33 41 68)';
+    //     NclLib.alerMesageClient(nameMessage,icon,color,background);
+    //     return false;
+    // }
+    // if ($("#phone").val() == '') {
+    //     var nameMessage = 'Số điện thoại không được để trống!';
+    //     var icon = 'warning';
+    //     var color = '#ffd200';
+    //     var background = 'rgb(33 41 68)';
+    //     NclLib.alerMesageClient(nameMessage,icon,color,background);
+    //     return false;
+    // }
+    // if ($("#sex").val() == '') {
+    //     var nameMessage = 'Giới tính không được để trống!';
+    //     var icon = 'warning';
+    //     var color = '#ffd200';
+    //     var background = 'rgb(33 41 68)';
+    //     NclLib.alerMesageClient(nameMessage,icon,color,background);
+    //     return false;
+    // }
+    // if ($("#date_of_brith").val() == '') {
+    //     var nameMessage = 'Ngày sinh không được để trống!';
+    //     var icon = 'warning';
+    //     var color = '#ffd200';
+    //     var background = 'rgb(33 41 68)';
+    //     NclLib.alerMesageClient(nameMessage,icon,color,background);
+    //     return false;
+    // }
+    // if ($("#code_tinh").val() == '') {
+    //     var nameMessage = 'Tỉnh thành không được để trống!';
+    //     var icon = 'warning';
+    //     var color = '#ffd200';
+    //     var background = 'rgb(33 41 68)';
+    //     NclLib.alerMesageClient(nameMessage,icon,color,background);
+    //     return false;
+    // }
+    // if ($("#code_huyen").val() == '') {
+    //     var nameMessage = 'Quận , huyện không được để trống!';
+    //     var icon = 'warning';
+    //     var color = '#ffd200';
+    //     var background = 'rgb(33 41 68)';
+    //     NclLib.alerMesageClient(nameMessage,icon,color,background);
+    //     return false;
+    // }
+    // if ($("#code_xa").val() == '') {
+    //     var nameMessage = 'Phường , xã không được để trống!';
+    //     var icon = 'warning';
+    //     var color = '#ffd200';
+    //     var background = 'rgb(33 41 68)';
+    //     NclLib.alerMesageClient(nameMessage,icon,color,background);
+    //     return false;
+    // }
+    // if ($("#address").val() == '') {
+    //     var nameMessage = 'Địa chỉ chi tiết không được để trống!';
+    //     var icon = 'warning';
+    //     var color = '#ffd200';
+    //     var background = 'rgb(33 41 68)';
+    //     NclLib.alerMesageClient(nameMessage,icon,color,background);
+    //     return false;
+    // }
+    // if ($("#reason").val() == '') {
+    //     var nameMessage = 'Bạn chưa nêu lý do khám!';
+    //     var icon = 'warning';
+    //     var color = '#ffd200';
+    //     var background = 'rgb(33 41 68)';
+    //     NclLib.alerMesageClient(nameMessage,icon,color,background);
+    //     return false;
+    // }
     console.log(data)
     $.ajax({
         url: url,
@@ -270,5 +270,68 @@ JS_Schedule.prototype.getXa = function (codeHuyen) {
             $("#iss_xa").html(html);
         }
     });
+}
+    /**
+ * Load màn hình danh sách phường xã
+ *
+ * @param oForm (tên form)
+ *
+ * @return void
+ */
+JS_Schedule.prototype.sendPayment = function (data) {
+    var myClass = this;
+    var url = this.urlPath + '/sendPayment';
+    // var oForm = 'form#frmSendSchedule';
+    var formdata = new FormData();
+    formdata.append('_token', $("#_token").val());
+    formdata.append('code_hospital', $("#code_hospital").val());
+    formdata.append('code_specialty', $("#code_specialty").val());
+    formdata.append('money', $("#money").val());
+    formdata.append('name', $("#name").val());
+    formdata.append('phone', $("#phone").val());
+    formdata.append('code_insurance', $("#code_insurance").val());
+    formdata.append('sex', $("#sex").val());
+    formdata.append('email', $("#email").val());
+    formdata.append('date_of_brith', $("#date_of_brith").val());
+    formdata.append('code_tinh', $("#code_tinh").val());
+    formdata.append('code_huyen', $("#code_huyen").val());
+    formdata.append('code_xa', $("#code_xa").val());
+    formdata.append('address', $("#address").val());
+    formdata.append('code_introduce', $("#code_introduce").val());
+    formdata.append('reason', $("#reason").val());
 
+    $('form#frmAdd input[type=file]').each(function () {
+        var count = $(this)[0].files.length;
+        for (var i = 0; i < count; i++) {
+            formdata.append('file-attack-' + i, $(this)[0].files[i]);
+        }
+    });
+    console.log(formdata)
+
+    //  var data = '&codeHuyen=' + codeHuyen;
+    $.ajax({
+        url: url,
+        type: "POST",
+        data: formdata,
+        dataType: 'json',
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function (arrResult) {
+            if (arrResult['status'] == true) {
+                var nameMessage = 'Thông báo , Đặt lịch thành công, nhân viên sẽ liên hệ với quý khách trong vòng 1 giờ tới';
+                var icon = 'success';
+                var color = '#344767';
+                NclLib.alerMesage(nameMessage,icon,color);
+                $('#editmodal').modal('hide');
+                myClass.loadList();
+                console.log(999)
+            } else {
+                var nameMessage = 'Đặt lịch thất bại';
+                var icon = 'warning';
+                var color = '#344767';
+                NclLib.alerMesage(nameMessage,icon,color);
+            }
+        }
+    });
 }

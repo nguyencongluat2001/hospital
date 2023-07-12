@@ -50,6 +50,7 @@
                                         <div class="wrapper" style="display: flex; justify-content: center;">
                                             <form id="frmSendSchedule" method="POST"  autocomplete="off">
                                                 @csrf
+                                                <input type="hidden" id="code_hospital" name="code_hospital" value="{{ !empty($datas->code)?$datas->code:'' }}">
                                                 <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
                                                 <div class="row">
                                                     <div class="form-wrapper col-md-6">
@@ -69,7 +70,7 @@
                                                 <div class="row">
                                                     <div class="form-wrapper col-md-6">
                                                         <label for="">Họ và tên bệnh nhân <span class="request_star">*</span></label>
-                                                        <input placeholder="Nhập tên..." id="c" type="text" class="form-control" name="name" value="" autofocus>
+                                                        <input placeholder="Nhập tên..." id="name" type="text" class="form-control" name="name" value="" autofocus>
                                                     </div>
                                                     <div class="form-wrapper col-md-6">
                                                         <label for="">Số điện thoại <span class="request_star">*</span></label>
@@ -83,7 +84,7 @@
                                                     </div> -->
                                                     <div class="form-wrapper col-md-6">
                                                         <label for="">Số bảo hiểm y tế</label>
-                                                        <input placeholder="Nhập bảo hiểm y tế..." id="money" type="text" class="form-control" name="code_insurance" value="">
+                                                        <input placeholder="Nhập bảo hiểm y tế..." id="code_insurance" type="text" class="form-control" name="code_insurance" value="">
                                                     </div>
                                                     <div class="form-wrapper col-md-6">
                                                         <label for="">Giới tính <span class="request_star">*</span></label>

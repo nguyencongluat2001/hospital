@@ -9,7 +9,7 @@
         display: block;
     }
 </style>
-<form id="frmAdd" role="form" action="" method="POST">
+<form id="frmAdd" role="form" action="" method="POST"  enctype="multipart/form-data">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <input type="hidden" name="id" id="id" value="{{!empty($datas->id) ? $datas->id : ''}}">
     <div class="modal-dialog modal-lg">
@@ -23,12 +23,12 @@
             <div class="modal-body">
                 <label style="font-size:20px;font-family: math;" for="">Thông tin <span class="request_star">*</span></label> <br>
                 {{-- Mã --}}
-                <div class="row form-group pt-2" id="div_hinhthucgiai">
+                <!-- <div class="row form-group pt-2" id="div_hinhthucgiai">
                     <span class="col-md-3 control-label required">Mã đặt lịch</span>
                     <div class="col-md-8">
                         <input class="form-control" type="text" value="{{isset($datas->code_cate) ? $datas->code_cate : ''}}" name="code_cate" id="code_cate"/>
                     </div>
-                </div>
+                </div> -->
                 {{-- Mã --}}
                 <div class="row form-group pt-2" id="div_hinhthucgiai">
                     <span class="col-md-3 control-label required">Số tiền thanh toán</span>
@@ -88,9 +88,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-6">
+                        <span class="col-md-3 control-label required">Chọn ảnh đại diện</span><br>
+                        <label for="upload_image" class="label-upload">Chọn ảnh</label>
+                        <input type="file" hidden name="upload_image" id="upload_image" onchange="readURL(this)">
+                        <br>
+                        <img id="show_img" hidden alt="Image" style="width:150px">
+                </div>
                 <div class="modal-footer pt-2">
                     <span id="btupdate">
-                        <button style="background:#ffa200" id='btn_create' type="button">
+                        <button style="background:#ffa200" onclick="JS_Schedule.sendPayment()" id='btn_create' type="button">
                             Thanh Toán
                         </button>
                     </span>
@@ -102,3 +109,23 @@
         </div>
     </div>
 </form>
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('#show_img').attr('src', e.target.result).width(150);
+            };
+            $("#show_img").removeAttr('hidden');
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    // CKEDITOR.replace('decision', {
+    //     filebrowserBrowseUrl: 'filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
+    //     filebrowserUploadUrl: 'filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
+    //     filebrowserImageBrowseUrl: 'filemanager/dialog.php?type=1&editor=ckeditor&fldr=',
+    // });
+</script>
+
