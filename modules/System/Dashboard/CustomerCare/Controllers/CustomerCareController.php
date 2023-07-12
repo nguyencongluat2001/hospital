@@ -44,7 +44,7 @@ class CustomerCareController extends Controller
             $customerCare[$key] = $this->customerCareService->select('*')->where('phone', $value->phone)->orderBy('created_at', 'desc')->first();
         }
         $data['datas'] = $customerCare;
-        return view("dashboard.customerCare.loadlist", $data)->render();
+        return view("dashboard.customerCare.loadList", $data)->render();
     }
     /**
      * Show message
