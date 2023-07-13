@@ -33,6 +33,7 @@ JS_SearchSchedule.prototype.loadevent = function (oForm) {
  * @return void
  */
 JS_SearchSchedule.prototype.loadList = function (value) {
+    NclLib.loadding();
     var myClass = this;
     var url = this.urlPath + '/loadList';
     var oForm = 'form#frmSearch';

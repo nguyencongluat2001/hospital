@@ -10,7 +10,7 @@
                     <div class="carousel-inner active pt-5" >
                         <div class="list-hispital-home-one pt-4">
                             <section class="banner-bg" style="padding-top: 30px">
-                                <span  class="text-title-home "><center> TRA CỨU LỊCH ĐẶT</center></span>
+                                <span  class="text-title-home "><center> TRA CỨU ĐẶT LỊCH </center></span>
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-4 mx-auto " style="display:flex">
