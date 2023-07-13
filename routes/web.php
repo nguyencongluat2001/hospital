@@ -10,6 +10,8 @@ use Modules\Client\Page\Facilities\Controllers\FacilitiesController;
 use Modules\Client\Page\Contact\Controllers\ContactController;
 use Modules\Client\Page\Specialty\Controllers\SpecialtyController;
 use Modules\Client\Page\Package\Controllers\PackageController;
+use Modules\Client\Page\SearchSchedule\Controllers\SearchScheduleController;
+
 //Dashboard
 use Modules\System\Dashboard\Users\Controllers\UserController;
 
@@ -71,6 +73,9 @@ Route::prefix('chat')->group(function () {
 });
 // Trang chủ contact
 Route::get('/contact', [ContactController::class, 'index']);
+// trang chủ tra cứu
+Route::get('/searchschedule',[SearchScheduleController::class,'index']);
+
 Route::prefix('chat')->name('client.chat.')->group(function () {
     Route::get('', 'Client\ChatController@index')->name('index');
     Route::post('/broadcast', [ChatController::class, 'broadcast'])->name('broadcast');
@@ -148,6 +153,18 @@ Route::prefix('/client')->group(function () {
             Route::get('/loadListTap1',[SpecialtyController::class,'loadListTap1']);
             Route::get('/loadListTop',[SpecialtyController::class,'loadListTop']);
         });
+        //tra cứu gói khám
+        Route::prefix('searchschedule')->group(function(){
+            Route::get('/index',[SearchScheduleController::class,'index']);
+            Route::get('/loadList',[SearchScheduleController::class,'loadList']);
+            Route::get('/loadListBlog',[SearchScheduleController::class,'loadListBlog']);
+        });
+
+
+
+
+
+
 
         Route::prefix('infor')->group(function(){
             Route::get('/index', [InforController::class, 'index']);

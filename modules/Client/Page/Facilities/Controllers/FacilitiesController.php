@@ -138,7 +138,7 @@ class FacilitiesController extends Controller
         ]);
     }
      /**
-     * Load màn hình them thông tin người dùng
+     * modal giao dich thanh toan
      *
      * @param Request $request
      *
