@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\LoginController;
 use Modules\Client\Auth\Controllers\RegisterController;
 use Modules\Client\Page\Chat\Controllers\ChatController;
 use Modules\Client\Page\Facilities\Controllers\FacilitiesController;
+use Modules\Client\Page\Contact\Controllers\ContactController;
 use Modules\Client\Page\Specialty\Controllers\SpecialtyController;
 use Modules\Client\Page\Package\Controllers\PackageController;
 //Dashboard
@@ -63,7 +64,8 @@ Route::get('/package', [PackageController::class, 'index']);
 // chuyên khoa
 Route::get('/specialty', [SpecialtyController::class, 'index']);
 Route::get('/specialty/{code}', [SpecialtyController::class, 'specialty']);
-
+// Trang chủ contact
+Route::get('/contact', [ContactController::class, 'index']);
 Route::prefix('chat')->name('client.chat.')->group(function () {
     Route::get('', 'Client\ChatController@index')->name('index');
     Route::post('/broadcast', [ChatController::class, 'broadcast'])->name('broadcast');
@@ -107,6 +109,16 @@ Route::prefix('/client')->group(function () {
             Route::get('/loadList', [FacilitiesController::class,'loadList']);
             Route::get('/getHuyen',[FacilitiesController::class,'getHuyen']);
             Route::get('/getXa',[FacilitiesController::class,'getXa']);
+        });
+        // Trang chủ cơ sở bệnh viện
+        Route::prefix('contact')->group(function(){
+            // Route::get('/index',[FacilitiesController::class,'index']);
+            Route::get('/loadList',[ContactController::class,'loadList']);
+            Route::get('/loadListBlog',[ContactController::class,'loadListBlog']);
+            Route::get('/loadListTap1',[ContactController::class,'loadListTap1']);
+            Route::get('/loadListTop',[ContactController::class,'loadListTop']);
+            Route::get('/getHuyen',[ContactController::class,'getHuyen']);
+            Route::get('/getXa',[ContactController::class,'getXa']);
         });
         // gói khám
         Route::prefix('package')->group(function(){
