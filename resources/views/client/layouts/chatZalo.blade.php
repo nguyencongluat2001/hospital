@@ -44,7 +44,7 @@
             </div>
             <div class="chat">
                 <div class="chat-title">
-                    <span style="color: white;font-weight: 600;font-size: 20px;letter-spacing: 1px;font-family: Trocchi, serif;">ZALO CHAT</span> <br>
+                    <span style="color: #fff;font-weight: 600;font-size: 20px;letter-spacing: 1px;font-family: Trocchi, serif;">ZALO CHAT</span> <br>
                     <span style="text-transform:none;color: yellow;">Quét mã QR zalo của nhân viên tư vấn!</span>
                 </div>
 
@@ -52,7 +52,7 @@
                     <center>
                     <div class="">
                         <div id="messages-content"></div>
-                        <img class="card-img " style="width:200px;height:250px;" src="../clients/img/QRZalo.jpg" alt="Card image">
+                        <img class="card-img " src="../clients/img/QRZalo.jpg" alt="Card image">
 
                     </div>
                     </center>
@@ -86,7 +86,7 @@
                 <div class="chat">
                     <div class="chat-title-customer">
                         <span class="title-header">
-                            <span class="text-uppercase" style="color: #ffd2c4;font-size: 18px;letter-spacing: 1px;font-family: Trocchi, serif;">Chào mừng bạn đã đến với Booking Fast</span>
+                            <span class="text-uppercase" style="color: #fff;font-size: 18px;letter-spacing: 1px;font-family: Trocchi, serif;">Chào mừng bạn đã đến với Booking Fast</span>
                             <p class="text-capitalize mb-0">Nhập số điện thoại để liên hệ Dịch vụ Khách hàng, chúng tôi luôn túc trực 24/7</p>
                         </span>
                         <span class="messageClose">
@@ -171,7 +171,7 @@
                                             <p>Chào mừng bạn đến với trang web của chúng tôi, hãy gửi tin nhắn để được trợ giúp.</p>
                                         </div></div>
                                         `);
-            $(".title-header").html('<span class="text-uppercase" style="color: #ffd2c4;font-size: 18px;letter-spacing: 1px;font-family: Trocchi, serif;">Chat Booking Fast</span>');
+            $(".title-header").html('<span class="text-uppercase" style="color: #fff;font-size: 18px;letter-spacing: 1px;font-family: Trocchi, serif;">Chat Booking Fast</span>');
         });
         // Check số điện thoại
         function isVietnamesePhoneNumber(number) {

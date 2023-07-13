@@ -612,25 +612,31 @@
   #frmChat_box #phone{
     box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.2);
   }
+  #form_chat .card-img{
+    width:200px;
+    height:250px;
+  }
   
   @media only screen and (max-device-width: 667px), screen and (max-width: 450px) {
     .avenue-messenger {
       z-index: 2147483001 !important;
       width: 100% !important;
       height: 100% !important;
-      max-height: none !important;
-      top: 0 !important;
+      max-height: 95vh !important;
+      top: 50px !important;
       left: 0 !important;
       right: 0 !important;
       bottom: 0 !important;
       border-radius: 0 !important;
       background: #fff;
     }
+    
+    #form_chat .card-img{
+      width: 70%;
+      height: 100%;
+    }
     #body-message{
       max-height: 70vh;
-    }
-    #frmChat_box .chat{
-      max-height: 50px !important;
     }
     #frmChat_box .avenue-messenger {
       max-height: 95vh !important;
@@ -823,9 +829,11 @@
 
   .start{
     display: flex;
+    justify-content: center;
     position: absolute;
     bottom: 10px;
-    justify-content: center;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   .left-message{
     display: flex;
