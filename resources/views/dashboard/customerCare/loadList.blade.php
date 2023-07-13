@@ -7,14 +7,10 @@ use Carbon\Carbon;
     @foreach($datas as $data)
         <div class="discussion" id="active_{{$data->phone}}" onclick="JS_CustomerCare.message('{{$data->phone}}')" style="cursor: pointer;">
             <div class="desc-contact">
-                <p class="name">{{ $data->phone }}</p>
-                <p class="message">
+                <p class="name {{!empty($data->question) && $data->view != 1 ? 'font-bold' : ''}}">{{ $data->phone }}</p>
+                <p class="message {{!empty($data->question) && $data->view != 1 ? 'font-bold' : ''}}">
                     @if(!empty($data->question))
-                        @if($data->view == 1)
-                        <b style="color: red">{{ $data->question }}</b>
-                        @else
                         {{ $data->question }}
-                        @endif
                     @elseif(!empty($data->reply))
                         {{ $data->reply }}
                     @endif

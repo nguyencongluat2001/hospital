@@ -67,7 +67,7 @@
         </section>
     </div>
     <div id="customerCare">
-        <form action="" method="POST" id="frmChat_box">
+        <form action="" method="POST" id="frmChat_box" autocomplete="off">
             <input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
             <span class="form-group input-group" style="align-items: center;">
                 @if(isset($notification))
@@ -85,7 +85,10 @@
             <section class="avenue-messenger messageCustomer transform" id="">
                 <div class="chat">
                     <div class="chat-title-customer">
-                        <span style="color: #ffd2c4;font-size: 17px;letter-spacing: 1px;font-family: Trocchi, serif;">CHAT</span>
+                        <span class="title-header">
+                            <span class="text-uppercase" style="color: #ffd2c4;font-size: 18px;letter-spacing: 1px;font-family: Trocchi, serif;">Chào mừng bạn đã đến với Booking Fast</span>
+                            <p class="text-capitalize mb-0">Nhập số điện thoại để liên hệ Dịch vụ Khách hàng, chúng tôi luôn túc trực 24/7</p>
+                        </span>
                         <span class="messageClose">
                             <i class="fa fa-window-close fa-xs" aria-hidden="true" style="color: rgb(255, 255, 255);font-size: 22px;"></i>
                         </span>
@@ -95,8 +98,7 @@
                 <div class="table-responsive">
                     <div id="table-container-box">
                         <div class="form-group">
-                            <label for="">Số điện thoại</label>
-                            <input type="text" name="phone" id="phone" class="form-control">
+                            <input type="text" name="phone" id="phone" class="form-control" placeholder="Nhập số điện thoại">
                             <p class="errorPhone"></p>
                         </div>
                     </div>
@@ -132,6 +134,8 @@
             }
             $(".chatZalo").toggleClass('transform');
             $('.chatZalo').toggleClass("hidden");
+            $("#customerCare").attr('style', 'z-index:9;transition: ease .4s;');
+            $("#form_chat").attr('style', 'z-index:10;transition: ease .4s;');
         });
 
         $(".messageClose").click(function() {
@@ -141,11 +145,21 @@
             }
             $(".messageCustomer").toggleClass('transform');
             $('.messageCustomer').toggleClass("hidden");
+            $("#customerCare").attr('style', 'z-index:10;transition: linear .4s;');
+            $("#form_chat").attr('style', 'z-index:9;transition: linear .4s;');
         });
 
         $("#start").click(function(){
-            if($("#frmChat_box #phone").val() == ''){
-                $(".errorPhone").html('<span style="color:red;">Số điện thoại không được để trống!</span>');
+            var phone = $("#frmChat_box #phone").val();
+            if(phone == ''){
+                $(".errorPhone").html('<span style="color:red;">Mời bạn nhập số điện thoại!</span>');
+                $("#frmChat_box #phone").focus();
+                $("#frmChat_box #phone").attr('style', 'border: 1px solid red');
+                return false;
+            }
+            var check = isVietnamesePhoneNumber(phone);
+            if(check == false){
+                $(".errorPhone").html('<span style="color:red;">Số điện thoại không đúng định dạng!</span>');
                 $("#frmChat_box #phone").focus();
                 $("#frmChat_box #phone").attr('style', 'border: 1px solid red');
                 return false;
@@ -154,15 +168,17 @@
             $(".sendMessage").show();
             $(".start").hide();
             $("#body-message").append(`<div class="left-message"><div class="text">
-                                            <p>Xin chào</p>
+                                            <p>Chào mừng bạn đến với trang web của chúng tôi, hãy gửi tin nhắn để được trợ giúp.</p>
                                         </div></div>
-                                        <div class="right-message"><div class="response"><div class="text">
-                                            <p>Xin chào</p>
-                                        </div></div></div>`);
+                                        `);
+            $(".title-header").html('<span class="text-uppercase" style="color: #ffd2c4;font-size: 18px;letter-spacing: 1px;font-family: Trocchi, serif;">Chat Booking Fast</span>');
         });
-
+        // Check số điện thoại
+        function isVietnamesePhoneNumber(number) {
+            return /(03|05|07|08|09|01[2|6|8|9])+([0-9]{8})\b/.test(number);
+        }
         // chat ng dung
-        const pusher = new Pusher('0141c9557203d59309b9', {
+        const pusher = new Pusher("{{config('chat.pusher.key')}}", {
             cluster: 'ap1'
         });
         const chanel = pusher.subscribe('public');
