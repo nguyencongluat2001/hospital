@@ -45,16 +45,18 @@
             <div class="chat">
                 <div class="chat-title">
                     <span style="color: white;font-weight: 600;font-size: 20px;letter-spacing: 1px;font-family: Trocchi, serif;">ZALO CHAT</span> <br>
-                    <span style="text-transform:none;color: yellow;">Quét mã QR zalo của nhân viên tư vấn để giải đáp thắc mắc, nhu cầu khách hàng!</span>
+                    <span style="text-transform:none;color: yellow;">Quét mã QR zalo của nhân viên tư vấn!</span>
                 </div>
 
                 <div class="testsss">
-
+                    <center>
                     <div class="">
                         <div id="messages-content"></div>
-                        <img class="card-img " src="../clients/img/QRZalo.jpg" alt="Card image">
+                        <img class="card-img " style="width:200px;height:250px;" src="../clients/img/QRZalo.jpg" alt="Card image">
 
                     </div>
+                    </center>
+                   
                 </div>
             </div>
             <div id="message-alert" class="content">
