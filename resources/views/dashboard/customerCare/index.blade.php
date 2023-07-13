@@ -6,7 +6,6 @@
     .menu {
         float: left;
         height: 700px;
-        ;
         width: 70px;
         background: #4768b5;
         background: -webkit-linear-gradient(#4768b5, #35488e);
@@ -44,12 +43,22 @@
     }
     
     #discussions {
-        height: 700px;
+        height: 600px;
         overflow: hidden;
         background-color: #fff;
         display: inline-block;
         padding-left: 0;
         padding-right: 0;
+        overflow-y: scroll;
+    }
+
+    #discussions::-webkit-scrollbar{
+        width: .4rem;
+    }
+
+    #discussions::-webkit-scrollbar-thumb{
+        background: #bdc7ff;
+        border: .2rem;
     }
 
     #discussions .discussion {
@@ -108,7 +117,7 @@
     #discussions .message-active {
         height: 90px;
         background-color: #e5efff;
-        border-right: 5px solid #273fc1;
+        /* border-right: 5px solid #273fc1; */
     }
 
     .online {
@@ -133,7 +142,7 @@
     #discussions .discussion .name {
         margin: 0 0 0 20px;
         font-family: 'Montserrat', sans-serif;
-        font-size: 11pt;
+        font-size: 12pt;
         color: #515151;
     }
 
@@ -142,6 +151,9 @@
         font-family: 'Montserrat', sans-serif;
         font-size: 9pt;
         color: #515151;
+    }
+    .font-bold{
+        font-weight: bold;
     }
 
     .timer {
@@ -318,7 +330,7 @@
             <section class="content-wrapper">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <div class="row form-group">
+                        {{--<div class="row form-group">
                             <div class="col-md-3">
                                 <button class="btn btn-success shadow-sm" id="btn_add" type="button" data-toggle="tooltip" data-original-title="Thêm cổ phiếu"><i class="fas fa-plus"></i></button>
                                 <button class="btn btn-danger shadow-sm" id="btn_delete" type="button" data-toggle="tooltip" data-original-title="Xóa cổ phiếu"><i class="fas fa-trash-alt"></i></button>
@@ -328,7 +340,7 @@
                             </div>
                             <button style="width:5%" id="txt_search" name="txt_search" type="button" class="btn btn-dark"><i class="fas fa-search"></i></button>
 
-                        </div>
+                        </div>--}}
                         <!-- Màn hình danh sách -->
                         <div class="row" id="table-container" style="padding-top:10px"></div>
                     </div>
@@ -351,7 +363,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/8.2.0/pusher.min.js"></script>
 <script>
     // chat ng dung
-    const pusher = new Pusher('0141c9557203d59309b9', {
+    const pusher = new Pusher("{{config('chat.pusher.key')}}", {
         cluster: 'ap1'
     });
     const chanel = pusher.subscribe('public');
@@ -373,10 +385,8 @@
                     html += '<div class="discussion" id="active_' + data.phone + '" onclick="JS_CustomerCare.message(\'' + data.phone + '\')" style="cursor: pointer;">';
                 }
                 html += '<div class="desc-contact">';
-                html += '<p class="name">' + data.phone + '</p>';
-                html += '<p class="message">';
-                html += '<b style="color: red">' + data.message + '</b>';
-                html += '</p>';
+                html += '<p class="name font-bold">' + data.phone + '</p>';
+                html += '<p class="message font-bold">' + data.message + '</p>';
                 html += '</div>';
                 html += '<div class="timer">' +  + '</div>';
                 console.log($("#discussions #active_" + data.phone).html());

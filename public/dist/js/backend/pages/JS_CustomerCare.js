@@ -76,6 +76,8 @@ JS_CustomerCare.prototype.message = function(phone){
             $("#active_" + phone).addClass('message-active');
             $("#message").attr('class', 'chat col-md-9 active_' + phone);
             $("#sendMessage").attr('onclick', "JS_CustomerCare.broadcast('" + phone + "')");
+            $("#active_" + phone + " .name").removeClass('font-bold');
+            $("#active_" + phone + " .message").removeClass('font-bold');
             NclLib.successLoadding();
         }, error: function(e){
             console.log(e);
