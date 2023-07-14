@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('question')->nullable();
             $table->string('reply')->nullable();
+            $table->tinyInteger('view')->nullable();
             $table->timestamps();
         });
     }
