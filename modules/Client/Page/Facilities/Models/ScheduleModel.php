@@ -15,6 +15,7 @@ class ScheduleModel extends Model
            'code_schedule',
            'code_hospital',
            'code_specialty',
+           'type_payment',
            'money',
            'name',
            'phone',

@@ -1,7 +1,7 @@
 /.phpunit.cache
 /storage/*.key
 /node_modules
-/public/file-image
+# /public/file-image
 /public/uploads
 /public/file-image-client
 /public/build

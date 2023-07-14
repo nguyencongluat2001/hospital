@@ -1,23 +1,23 @@
 <div class="table-responsive pmd-card pmd-z-depth ">
     <table id="table-data" class="table  table-bordered table-striped table-condensed dataTable no-footer">
         <colgroup>
-            <col width="15%">
-            <col width="15%">
-            <col width="15%">
-            <col width="10%">
-            <col width="15%">
+            <col width="14%">
+            <col width="14%">
+            <col width="14%">
+            <col width="14%">
+            <col width="14%">
             <col width="25%">
             <col width="5%">
         </colgroup>
         <thead>
             <tr style="background: #243649;color: #ffa700;">
-                <td align="center"><b>Mã khám bệnh</b></td>
-                <td align="center"><b>Tên khách hàng</b></td>
-                <td align="center"><b>Số điện thoại</b></td>
-                <td align="center"><b>Số tiền chuyển</b></td>
-                <td align="center"><b>Loại banking</b></td>
-                <td align="center"><b>Trạng thái</b></td>
-                <td align="center"><b>#</b></td>
+                <td style="white-space: inherit;vertical-align: middle;" align="center"><b>Mã khám bệnh</b></td>
+                <td style="white-space: inherit;vertical-align: middle;" align="center"><b>Tên khách hàng</b></td>
+                <td style="white-space: inherit;vertical-align: middle;" align="center"><b>Số điện thoại</b></td>
+                <td style="white-space: inherit;vertical-align: middle;" align="center"><b>Số tiền chuyển</b></td>
+                <td style="white-space: inherit;vertical-align: middle;" align="center"><b>Loại banking</b></td>
+                <td style="white-space: inherit;vertical-align: middle;" align="center"><b>Trạng thái</b></td>
+                <td style="white-space: inherit;vertical-align: middle;" align="center"><b>#</b></td>
             </tr>
         </thead>
         <tbody id="body_data">

@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('customers_care', function (Blueprint $table) {
-            $table->string('view')->nullable(); // thuws tuwj
+        Schema::table('schedule', function (Blueprint $table) {
+            $table->string('type_payment')->nullable();
         });
     }
 
@@ -21,7 +21,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('customers_care', function (Blueprint $table) {
+        Schema::table('schedule', function (Blueprint $table) {
             //
         });
     }

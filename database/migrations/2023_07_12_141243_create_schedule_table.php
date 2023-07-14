@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('code_schedule');
             $table->string('code_hospital')->nullable();
             $table->string('code_specialty')->nullable();
+            $table->string('type_payment')->nullable();
             $table->string('money')->nullable();
             $table->string('name')->nullable();
             $table->string('phone')->nullable();

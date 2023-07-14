@@ -62,7 +62,7 @@ class UserService extends Service
                 'dateBirth'=> $input['dateBirth'],
                 'role'=> isset($input['role']) ? $input['role'] : (isset($user) ? $user->role : 'USERS'),
                 'id_personnel'=> isset($input['id_personnel'])?$input['id_personnel']:'YE07',
-                "status" => isset($input['status']) ? 1 : 0,
+                'status' => isset($input['status']) ? 1 : 0,
             ];
              // nếu có ảnh mới thì cập nhật
              if(!empty($arrFile)){
@@ -73,7 +73,7 @@ class UserService extends Service
                 'company'=> $input['company'], 
                 'position'=> $input['position'], 
                 'date_join'=> $input['date_join'], 
-                'color_view'=> 1,
+                'color_view'=> 2,
                 'created_at'=> date("Y/m/d")
             ];
             if($input['id'] != ''){

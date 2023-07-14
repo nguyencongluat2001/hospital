@@ -46,6 +46,7 @@ class ScheduleService extends Service
                 'code_schedule' => $code_schedule, 
                 'code_hospital' => isset($input['code_hospital'])?$input['code_hospital']:'', 
                 'code_specialty' => isset($input['code_specialty'])?$input['code_specialty']:'', 
+                'type_payment' => isset($input['type_payment'])?$input['type_payment']:'', 
                 'money' => isset($input['money'])?$input['money']:'', 
                 'name' => isset($input['name'])?$input['name']:'', 
                 'phone' => isset($input['phone'])?$input['phone']:'', 
@@ -88,4 +89,5 @@ class ScheduleService extends Service
             }
             return $arrImage;
     }
+   
 }

@@ -17,6 +17,7 @@ class ApprovePaymentModel extends Model
         'code_schedule',
         'code_hospital',
         'code_specialty',
+        'type_payment',
         'money',
         'name',
         'phone',
@@ -52,11 +53,11 @@ class ApprovePaymentModel extends Model
                     });
                 }
                 return $query;
-            // case 'type':
-            //     if(!empty($value)){
-            //         $query->where('type', $value);
-            //     }
-            //     return $query;
+            case 'type_payment':
+                if(!empty($value)){
+                    $query->where('type_payment', $value);
+                }
+                return $query;
             case 'fromdate':
                 if(!empty($value)){
                     $query->where('created_at', '>=', date('Y-m-d H:i:s', strtotime(NclLibraryHelper::_ddmmyyyyToyyyymmdd($value, 3))));

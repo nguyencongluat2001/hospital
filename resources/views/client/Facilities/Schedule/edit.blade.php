@@ -58,7 +58,7 @@
                        
                     </div>
                 </div>
-                <input type="radio" onchange="JS_Schedule.getTypeBank(this.value)" value="BANK" name="role" id="type_bank"/>  <span style="padding-left:5px" >Chuyển khoản ngân hàng</span><br>
+                <input type="radio" onchange="JS_Schedule.getTypeBank(this.value)" value="BANK" name="type_bank" id="type_bank"/>  <span style="padding-left:5px" >Chuyển khoản ngân hàng</span><br>
                 <!-- <div id="bank"></div> -->
                 <div id="bank" class="hiddel">
                     <div class="row" style="background: #ffc686;">
@@ -68,14 +68,14 @@
                         <div class="form-wrapper col-md-9 pt-3">
                             <span>Số Tài khoản: 097871279812</span><br>
                             <span>Tên chủ Tài khoản: Công ty Cổ phần Công nghệ Booking</span><br>
-                            <span>Ngân Hàng: Ngân hàng Thương maiij cổ phần kỹ Thương Việt Nam (techcombank)</span><br>
+                            <span>Ngân Hàng: Ngân hàng Thương mại cổ phần kỹ Thương Việt Nam (techcombank)</span><br>
                             <span>Chi nhánh: Hội sở chính</span><br>
                             <span>Nội dung thanh toán:Tên khách hàng - số điện thoại - mã đặt lịch</span><br>
                         </div>
                     </div>
                 </div>
                
-                 <input  type="radio" onchange="JS_Schedule.getTypeBank(this.value)" value="MOMO" name="role" id="type_bank"/> <span style="padding-left:5px" >Thanh toán ví điện tử MoMo</span>
+                 <input  type="radio" onchange="JS_Schedule.getTypeBank('momo')" value="MOMO" name="type_bank" id="type_bank"/> <span style="padding-left:5px" >Thanh toán ví điện tử MoMo</span>
                  <div id="momo" class="hiddel">
                     <div class="row" style="background:#e00085d9">
                         <div class="form-wrapper col-md-3 pt-3">
@@ -88,12 +88,17 @@
                         </div>
                     </div>
                 </div>
+                {{--  Mô tả --}}
+                <div class="row form-group pt-4" id="div_hinhthucgiai">
+                    <div class="col-md-12" >
+                        <label style="font-size:20px;font-family: math;" for="">Ảnh xác thực thanh toán thành công <span class="request_star">*</span></label> <br>
+                    </div>
+                </div>
                 <div class="col-md-6">
-                        <span class="col-md-3 control-label required">Chọn ảnh đại diện</span><br>
-                        <label for="upload_image" class="label-upload">Chọn ảnh</label>
-                        <input type="file" hidden name="upload_image" id="upload_image" onchange="readURL(this)">
-                        <br>
-                        <img id="show_img" hidden alt="Image" style="width:150px">
+                    <label for="upload_image" class="label-upload">Chọn ảnh</label>
+                    <input type="file" hidden name="upload_image" id="upload_image" onchange="readURL(this)">
+                    <br>
+                    <img id="show_img" hidden alt="Image" style="width:150px">
                 </div>
                 <div class="modal-footer pt-2">
                     <span id="btupdate">

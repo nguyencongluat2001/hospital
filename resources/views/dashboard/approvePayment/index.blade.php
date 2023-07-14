@@ -14,14 +14,15 @@
             <input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
             <div class="row">
                 @if(Auth::user()->role == 'ADMIN')
-                <div class="col-md-2">
-                    <button type="button" class="btn btn-success shadow-sm" id="btn_add"><i class="fas fa-plus"></i></button>
-                    <button type="button" class="btn btn-danger shadow-sm" id="btn_delete"><i class="fas fa-trash-alt"></i></button>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-success shadow-sm" id="btn_add"><i class="fas fa-plus"></i> Thêm</button>
+                    <button type="button" class="btn btn-danger shadow-sm" id="btn_delete"><i class="fas fa-trash-alt"></i> Xóa</button>
+                    <button type="button" class="btn btn-warning shadow-sm" id="btn_delete"><i class="fas fa-trash-alt"></i> Xuất danh sách</button>
                 </div>
                 @endif
                 <div class="col-md-10 row">
                     <div class="col-md-3">
-                        <select name="type" id="type" class="form-control chzn-select">
+                        <select name="type_payment" id="type_payment" class="form-control chzn-select">
                             <option value="">--Chọn loại giao dịch--</option>
                             <option value="BANK">Chuyển khoản qua ngân hàng</option>
                             <option value="MOMO">Momo</option>
@@ -33,7 +34,6 @@
                     <div class="col-md-2">
                         <input type="text" class="form-control datepicker" name="todate" id="todate" placeholder="Đến ngày">
                     </div>
-                    <br>
                     <div class="col-md-5 row">
                         <div class="form-search form-group input-group">
                             <input type="text" class="form-control" name="search" id="search" style="height:40px" placeholder="Từ khóa tìm kiếm..." onkeydown="if (event.key == 'Enter'){JS_ApprovePayment.search();return false;}">

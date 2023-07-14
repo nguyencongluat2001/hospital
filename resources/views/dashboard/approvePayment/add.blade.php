@@ -1,69 +1,119 @@
+<style>
+.form-control:disabled{
+    background-color:#ffffff
+}
+</style>
 <div class="modal-dialog modal-lg">
     <div class="modal-content card">
         <div class="modal-header">
-            <h5 class="modal-title">Cập nhật phê duyệt thanh toán</h5>
+            <h5 class="modal-title">Thông tin đặt lịch khách hàng</h5>
             <button type="button" class="btn btn-sm" data-bs-dismiss="modal">
                 X
             </button>
         </div>
         <div class="modal-body">
-            <form id="frmAdd">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <input type="hidden" name="_id" id="_id" value="{{!empty($datas->id) ? $datas->id : ''}}">
-                <div class="row form-group" id="div_hinhthucgiai">
-                    <span class="col-md-3 control-label required">Loại VIP</span>
-                    <div class="col-md-8">
-                        <select name="role_client" id="role_client" class="form-control chzn-select">
-                            <option value="">--Chọn loại VIP--</option>
-                            @foreach($roles as $role)
-                            <option @if(isset($datas->role_client) && $datas->role_client == $role->code_category) selected @endif value="{{$role->code_category}}">{{$role->name_category}}</option>
-                            @endforeach
-                        </select>
+             <!-- <div class="wrapper" style="display: flex; justify-content: center;"> -->
+                <form id="" method="POST"  autocomplete="off">
+                    @csrf
+                    <input type="hidden" id="code_hospital" name="code_hospital" value="{{ !empty($datas->code)?$datas->code:'' }}">
+                    <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
+                    <div class="row">
+                        <div class="form-wrapper col-md-6">
+                            <label for="">Chuyên khoa khám</label>
+                            <input disabled type="text" class="form-control" value="{{!empty($datas['code_specialty']) ? $datas['code_specialty'] : ''}}">
+                        </div>
+                        <div class="form-wrapper col-md-6">
+                            <label for="">Số tiền khám</label>
+                            <input disabled type="text" class="form-control" value="{{!empty($datas['money']) ? $datas['money'] : ''}}">
+                        </div>
                     </div>
-                </div>
-                <div class="row form-group" id="div_hinhthucgiai">
-                    <span class="col-md-3 control-label required">Khách hàng</span>
-                    <div class="col-md-8">
-                        <select name="user_id" id="user_id" class="form-control chzn-select">
-                            <option value="">--Chọn khách hàng--</option>
-                            @if(isset($users))
-                            @foreach($users as $user)
-                            <option @if(isset($datas->user_id) && $datas->user_id == $user->id) selected @endif 
-                                    value="{{$user->id}}">{{$user->name}}</option>
-                            @endforeach
+                    <div class="row">
+                        <div class="form-wrapper col-md-6">
+                            <label for="">Họ và tên bệnh nhân</label>
+                            <input disabled type="text" class="form-control" value="{{!empty($datas['name']) ? $datas['name'] : ''}}" autofocus>
+                        </div>
+                        <div class="form-wrapper col-md-6">
+                            <label for="">Số điện thoại</label>
+                            <input disabled type="phone" class="form-control" value="{{!empty($datas['phone']) ? $datas['phone'] : ''}}">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-wrapper col-md-6">
+                            <label for="">Số bảo hiểm y tế</label>
+                            <input disabled type="text" class="form-control" value="{{!empty($datas['code_insurance']) ? $datas['code_insurance'] : ''}}">
+                        </div>
+                        <div class="form-wrapper col-md-6">
+                            <label for="">Giới tính</label> <br>
+                            <input disabled type="text" class="form-control" value="{{!empty($datas['sex']) ? $datas['sex'] : ''}}">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-wrapper col-md-6">
+                            <label for="">Địa chỉ Email</label>
+                            <input disabled type="email" class="form-control" value="{{!empty($datas['email']) ? $datas['email'] : ''}}">
+                        </div>
+                        <div class="form-wrapper col-md-6">
+                            <label for="">Ngày sinh</label>
+                            <input disabled type="text" class="form-control" value="{{!empty($datas['date_of_brith']) ? $datas['date_of_brith'] : ''}}">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-wrapper col-md-4">
+                            <label for="">Tỉnh thành</label>
+                            <input disabled type="text" class="form-control" value="{{!empty($datas['code_tinh']) ? $datas['code_tinh'] : ''}}">
+                        </div>
+                        <div id="iss" class="form-wrapper col-md-4">
+                            <label for="">Quận huyện</label>
+                            <input disabled type="text" class="form-control" value="{{!empty($datas['code_huyen']) ? $datas['code_huyen'] : ''}}">
+                        </div>
+                        <div id="iss_xa" class="form-wrapper col-md-4">
+                            <label for="">Phường xã</label>
+                            <input disabled type="text" class="form-control" value="{{!empty($datas['code_xa']) ? $datas['code_xa'] : ''}}">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-wrapper">
+                            <label for="">Địa chỉ chi tiết</label>
+                            <input disabled type="text" class="form-control" value="{{!empty($datas['address']) ? $datas['address'] : ''}}">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-wrapper col-md-6">
+                            <label for="">Mã cộng tác viên</label>
+                            <input disabled type="text" class="form-control" value="{{!empty($datas['code_introduce']) ? $datas['code_introduce'] : ''}}">
+                        </div>
+                        <div class="form-wrapper col-md-6">
+                            <label for="">Tên cộng tác viên</label>
+                            <input disabled type="text" class="form-control" name="date_of_brith" value="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-wrapper">
+                            <label for="">Lý do khám</label>
+                            <textarea disabled name="reason" id="reason" class="form-control"  rows="3" cols="30">{{!empty($datas['reason']) ? $datas['reason'] : ''}}</textarea>
+                        </div>
+                    </div>
+                    <div class="row pt-5">
+                        <div class="form-wrapper col-md-6">
+                            <label for="">Ảnh giao dịch thành công đến: 
+                                @if($datas['type_payment'] == 'BANK')
+                                <span style="color:#2831c7">Ngân hàng</span>
+                                @else
+                                <span style="color:#dc0088">MoMo</span>
+                                @endif
+                            </label>
+                            @if(!empty($datas['name_image']))
+                            <img class="form-control" id="show_img" src="{{url('/file-payment/')}}/{{$datas['name_image']}}" alt="Image" style="width:200px">
                             @endif
-                        </select>
+                        </div>
                     </div>
-                </div>
-                <div class="row form-group" id="div_hinhthucgiai">
-                    <span class="col-md-3 control-label">Người giới thiệu</span>
-                    <div class="col-md-8">
-                        <input class="form-control" type="text" value="{{isset($datas->user_id_introduce) ? $datas->user_id_introduce : ''}}" name="user_id_introduce" id="user_id_introduce" placeholder="Email hoặc Số điện thoại" />
+                    <div class="pt-5 mb-3">
+                        <button style="background:#ffd900" type="button" class="btn btn-sm" data-bs-dismiss="modal">
+                            Đóng
+                        </button>
                     </div>
-                </div>
-                <div class="row form-group" id="div_hinhthucgiai">
-                    <span class="col-md-3 control-label">Thứ tự</span>
-                    <div class="col-md-8">
-                        <input class="form-control" type="text" value="{{isset($datas->order) ? $datas->order : $order}}" name="order" id="order" placeholder="Nhập thứ tự" />
-                    </div>
-                </div>
-                <div class="row form-group" id="div_hinhthucgiai">
-                    <span class="col-md-3 control-label">Trạng thái</span>
-                    <div class="col-md-8">
-                        <label for="status">
-                            <input type="checkbox" name="status" id="status" {{isset($datas->status) && $datas->status == 1 ? 'checked' : ''}} /> Hoạt động
-                        </label>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button id='btn_create' class="btn btn-primary btn-sm" type="button">
-                        Cập nhật
-                    </button>
-                    <button type="button" class="btn btn-default btn-sm" data-bs-dismiss="modal">
-                        Đóng
-                    </button>
-                </div>
-            </form>
+                </form>
+            <!-- </div> -->
         </div>
     </div>
 </div>

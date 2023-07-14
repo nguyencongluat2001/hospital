@@ -102,18 +102,20 @@
                             <span style="width:60%">
                             <marquee>
                                 <span>
-                                Chúng ta có thể gặp nhiều thất bại nhưng chúng ta không được bị đánh bại – Maya Angelou.
+                                Sức khỏe không phải là thứ chúng ta có thể mua. Tuy nhiên, nó có thể là một tài khoản tiết kiệm cực kỳ giá trị.
                                 </span> 
                                 <span style="padding-left:200px">
-                                Chúng ta có thể gặp nhiều thất bại nhưng chúng ta không được bị đánh bại – Maya Angelou.1
+                                Một thân thể không ốm đau, một tinh thần không loạn: đó là hạnh phúc.
                                 </span> 
                                 <span style="padding-left:200px">
-                                Chúng ta có thể gặp nhiều thất bại nhưng chúng ta không được bị đánh bại – Maya Angelou.2
+                                Thời hạn của cuộc đời tùy thuộc sức khỏe, còn sức khỏe thì do cách sống quyết định.
                                 </span> 
                                 <span style="padding-left:200px">
-                                Chúng ta có thể gặp nhiều thất bại nhưng chúng ta không được bị đánh bại – Maya Angelou.3
+                                Sức khỏe là lựa chọn, không phải điều bí ẩn của sự ngẫu nhiên.
                                 </span> 
-                                
+                                <span style="padding-left:200px">
+                                Sức khỏe là thứ mà ta không nhìn thấy được, là yếu tố sống còn của mỗi con người. Hãy nâng niu quý trọng sức khỏe, đừng để khi mất rồi mới thấy hối tiếc.
+                                </span> 
                             </marquee>
                             </span>
 

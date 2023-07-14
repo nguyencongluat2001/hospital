@@ -34,27 +34,7 @@ class ApprovePaymentController extends Controller
         $input = $request->input();
         $data = array();
         $input['sort'] = 'created_at';
-        // $input['sortType'] = 1;
         $objResult = $this->approvePaymentService->filter($input);
-        // foreach($objResult as $key => $value){
-        //     $users = $this->userService->where('id', $value->user_id)->first();
-        //     $objResult[$key]->user_name = isset($users->name) ? $users->name : '';
-        //     $role_name = 'Người dùng'; 
-        //     if($value->role_client == 'VIP1'){
-        //         $role_name = 'Vip 1';
-        //     }else if($value->role_client == 'VIP2'){
-        //         $role_name = 'Vip 2';
-        //     }
-        //     $objResult[$key]->role = $role_name;
-
-        //     if($value->status == '0'){
-        //         $status_name = 'Chờ phê duyệt';
-        //     }else if($value->status == '1'){
-        //         $status_name = 'Đã phê duyệt';
-        //     }
-        //     $objResult[$key]->status_name = $status_name;
-
-        // }
         $data['datas'] = $objResult;
         return view('dashboard.approvePayment.loadList', $data)->render();
     }
@@ -73,11 +53,7 @@ class ApprovePaymentController extends Controller
     public function edit(Request $request)
     {
         $input = $request->all();
-        $approvePayment = $this->approvePaymentService->where('id', $input['id'])->first();
-        $data['users'] = $this->userService->where('role', $approvePayment->role_client)->get();
-        $data['datas'] = $approvePayment;
-        $data['roles'] = $this->categoryService->where('cate', 'DM_VIP')->orderBy('order')->get();
-        $data['order'] = $this->approvePaymentService->select('id')->count() + 1;
+        $data = $this->approvePaymentService->edit($input); 
         return view('dashboard.approvePayment.add', $data);
     }
     /**

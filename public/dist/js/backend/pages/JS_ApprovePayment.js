@@ -28,7 +28,7 @@ JS_ApprovePayment.prototype.loadIndex = function() {
         myClass.edit(oForm);
     });
     // form load
-    $(oForm).find('#type').change(function() {
+    $(oForm).find('#type_payment').change(function() {
         var page = $(oForm).find('#limit').val();
         var perPage = $(oForm).find('#cbo_nuber_record_page').val();
         myClass.loadList(oForm, page, perPage);
@@ -163,7 +163,7 @@ JS_ApprovePayment.prototype.loadList = function(oForm, numberPage = 1, perPage =
     var url = this.urlPath + '/loadList';
     var data = '_token=' + $("#_token").val();
     data += '&search=' + $("#search").val();
-    data += '&type=' + $("#type").val();
+    data += '&type_payment=' + $("#type_payment").val();
     data += '&fromdate=' + $("#fromdate").val();
     data += '&todate=' + $("#todate").val();
     data += '&offset=' + numberPage;

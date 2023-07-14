@@ -13,7 +13,7 @@
                                 <span  class="text-title-home "><center> TRA CỨU ĐẶT LỊCH </center></span>
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-lg-4 mx-auto " style="display:flex">
+                                        <div class="col-lg-6 mx-auto " style="display:flex">
                                             <div class="input-group pt-2 box">
                                                   <input name="search" id="search" style="background:#ffffffb5" type="text" class="input form-control form-control-lg rounded-pill rounded" placeholder="Tìm kiếm theo số điện thoại hoặc mã đặt lịch..." aria-label="Tìm kiếm theo số điện thoại hoặc mã đặt lịch..">
                                             </div>

@@ -212,6 +212,7 @@ JS_Schedule.prototype.getTypeBank = function (type) {
         $('#bank').addClass("hiddel");
         $('#momo').addClass("show");
     }
+    this.type_bank = type;
 }
 /**
  * Load màn hình danh sách huyện
@@ -281,11 +282,19 @@ JS_Schedule.prototype.getXa = function (codeHuyen) {
 JS_Schedule.prototype.sendPayment = function (data) {
     var myClass = this;
     var url = this.urlPath + '/sendPayment';
-    // var oForm = 'form#frmSendSchedule';
+    if(this.type_bank == '' || this.type_bank == undefined){
+        var nameMessage = 'Chưa chọn hình thức thanh toán!';
+        var icon = 'warning';
+        var color = '#ffd200';
+        var background = 'rgb(33 41 68)';
+        NclLib.alerMesageClient(nameMessage,icon,color,background);
+        return false;
+    }
     var formdata = new FormData();
     formdata.append('_token', $("#_token").val());
     formdata.append('code_hospital', $("#code_hospital").val());
-    formdata.append('code_specialty', $("#code_specialty").val());
+    formdata.append('type_payment', this.type_bank);
+    formdata.append('money', $("#money").val());
     formdata.append('money', $("#money").val());
     formdata.append('name', $("#name").val());
     formdata.append('phone', $("#phone").val());
@@ -302,13 +311,19 @@ JS_Schedule.prototype.sendPayment = function (data) {
 
     $('form#frmAdd input[type=file]').each(function () {
         var count = $(this)[0].files.length;
+        console.log(count);
+        if (count == 0) {
+            var nameMessage = 'Chưa tải ảnh giao dịch!';
+            var icon = 'warning';
+            var color = '#ffd200';
+            var background = 'rgb(33 41 68)';
+            NclLib.alerMesageClient(nameMessage,icon,color,background);
+            return false;
+        }
         for (var i = 0; i < count; i++) {
             formdata.append('file-attack-' + i, $(this)[0].files[i]);
         }
     });
-    console.log(formdata)
-
-    //  var data = '&codeHuyen=' + codeHuyen;
     $.ajax({
         url: url,
         type: "POST",

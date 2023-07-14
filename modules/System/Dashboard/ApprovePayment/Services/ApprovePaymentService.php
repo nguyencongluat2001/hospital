@@ -4,82 +4,20 @@ namespace Modules\System\Dashboard\ApprovePayment\Services;
 
 use Modules\Base\Service;
 use Modules\System\Dashboard\ApprovePayment\Repositories\ApprovePaymentRepository;
-
+use Modules\System\Dashboard\Specialty\Services\SpecialtyService;
 class ApprovePaymentService extends Service
 {
     public function __construct(
-
+        SpecialtyService $specialtyService
     ){
         parent::__construct();
+        $this->specialtyService = $specialtyService;
     }
     public function repository()
     {
         return ApprovePaymentRepository::class;
     }
     /**
-     * Cập nhật tín hiệu mua
-     */
-    public function store($input)
-    {
-        $approvePayments = $this->repository->select('*')->get();
-        $params = [
-            "user_id" => isset($input['user_id']) ? $input['user_id'] : '',
-            "user_id_introduce" => isset($input['user_id_introduce']) ? $input['user_id_introduce'] : '',
-            "role_client" => isset($input['role_client']) ? $input['role_client'] : '',
-            "order" => isset($input['order']) ? $input['order'] : count($approvePayments) + 1,
-            "status" => isset($input['status']) ? 1 : 0,
-        ];
-        if(isset($input['_id']) && !empty($input['_id'])){
-            $params['updated_at'] = date('Y-m-d H:i:s');
-            $this->repository->where('id',$input['_id'])->update($params);
-            return array('success' => true, 'message' => 'Cập nhật thành công!');
-        }else{
-            $params['id'] = (string)\Str::uuid();
-            $params['created_at'] = date('Y-m-d H:i:s');
-            $this->repository->insert($params);
-            return array('success' => true, 'message' => 'Thêm mới thành công!');
-        }
-    }
-    /**
-     * Cập nhật và thêm mới màn hình danh sách
-     */
-    public function _updateSignal($input, $id)
-    {
-        if(isset($input['order']) && !empty($input['order'])){
-            $this->updateOrder($input);
-        }
-        $approvePaymentSingle = $this->repository->where('id', $id)->first();
-        $approvePayments = $this->repository->select('*')->get();
-        $title = !empty($approvePaymentSingle) ? $approvePaymentSingle->title : '';
-        $type = !empty($approvePaymentSingle) ? $approvePaymentSingle->type : '';
-        $target = !empty($approvePaymentSingle) ? $approvePaymentSingle->target : '';
-        $stop_loss = !empty($approvePaymentSingle) ? $approvePaymentSingle->stop_loss : '';
-        $status = isset($approvePaymentSingle->status) && $approvePaymentSingle->status !== null ? $approvePaymentSingle->status : 1;
-        $order = isset($approvePaymentSingle) && !empty($approvePaymentSingle->order) ? $approvePaymentSingle->order : count($approvePayments) + 1;
-        $param = [
-            'user_id' => $_SESSION['id'],
-            'title' => isset($input['title']) ? $input['title'] : $title,
-            'type' => isset($input['type']) ? $input['type'] : $type,
-            'target' => isset($input['target']) ? $input['target'] : $target,
-            'stop_loss' => isset($input['stop_loss']) ? $input['stop_loss'] : $stop_loss,
-            'order' => isset($input['order']) ? $input['order'] : $order,
-            'status' => isset($input['status']) ? 1 : $status,
-        ];
-        foreach($approvePayments as $value){
-            if(isset($input['code_category']) && $input['code_category'] === $value->code_category){
-                return array('success' => false, 'message' => 'Mã đối tượng đã tồn tại!');
-            }
-        }
-        if(isset($approvePaymentSingle) && !empty($approvePaymentSingle)){
-            $this->repository->where('id',$id)->update($param);
-            return array('success' => true, 'message' => 'Cập nhật thành công!');
-        }else{
-            $param['id'] = $id;
-            // $param['status'] = 1;
-            $this->repository->insert($param);
-            return array('success' => true, 'message' => 'Thêm mới thành công!');
-        }
-    }/**
      * Cập nhật thứ tự
      */
     public function updateOrder($input)
@@ -97,5 +35,37 @@ class ApprovePaymentService extends Service
             }
 
         }
+    }
+      /**
+     * Form show chi tiết lịch khám
+     */
+    public function edit($input)
+    {
+        $approvePayment = $this->repository->where('id', $input['id'])->first();
+        $code_specialty = $this->specialtyService->where('code',$approvePayment['code_specialty'])->first();
+        $data = [
+            'code_schedule' => isset($approvePayment['code_schedule'])?$approvePayment['code_schedule']:'', 
+            'code_hospital' => isset($approvePayment['code_hospital'])?$approvePayment['code_hospital']:'', 
+            'code_specialty' => isset($code_specialty->name_specialty)?$code_specialty->name_specialty:'', 
+            'type_payment' => isset($approvePayment['type_payment'])?$approvePayment['type_payment']:'', 
+            'money' => isset($approvePayment['money'])?$approvePayment['money']:'', 
+            'name' => isset($approvePayment['name'])?$approvePayment['name']:'', 
+            'phone' => isset($approvePayment['phone'])?$approvePayment['phone']:'', 
+            'code_insurance' => isset($approvePayment['code_insurance'])?$approvePayment['code_insurance']:'', 
+            'sex' => isset($approvePayment['sex'])?$approvePayment['sex']:'', 
+            'email' => isset($approvePayment['email'])?$approvePayment['email']:'', 
+            'date_of_brith' => isset($approvePayment['date_of_brith'])?$approvePayment['date_of_brith']:'', 
+            'code_tinh' => isset($approvePayment['code_tinh'])?$approvePayment['code_tinh']:'', 
+            'code_huyen' => isset($approvePayment['code_huyen'])?$approvePayment['code_huyen']:'', 
+            'code_xa' => isset($approvePayment['code_xa'])?$approvePayment['code_xa']:'', 
+            'address' => isset($approvePayment['address'])?$approvePayment['address']:'', 
+            'code_introduce' => isset($approvePayment['code_introduce'])?$approvePayment['code_introduce']:'', 
+            'reason' => isset($approvePayment['reason'])?$approvePayment['reason']:'', 
+            'name_image' => isset($approvePayment['name_image'])?$approvePayment['name_image']:'', 
+            // 'created_at' => isset($approvePayment['created_at'])?$approvePayment['created_at']:'', 
+            // 'update_at' => isset($approvePayment['update_at'])?$approvePayment['update_at']:'', 
+        ];
+        $data['datas'] = $data;
+        return $data;
     }
 }
