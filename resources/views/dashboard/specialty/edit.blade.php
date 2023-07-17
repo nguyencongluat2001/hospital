@@ -43,8 +43,7 @@
                 <div class="row form-group" id="div_hinhthucgiai">
                     <span class="col-md-3 control-label">Mô tả</span>
                     <div class="col-md-8">
-                        <input class="form-control" type="text" value="{{!empty($data['detail']['decision'])?$data['detail']['decision']:''}}" name="decision" id="decision"
-                            placeholder="Nhập mô tả..." />
+                        <textarea name="decision" id="decision" cols="30" rows="10">{!! !empty($data['detail']['decision']) ? $data['detail']['decision'] : '' !!}</textarea>
                     </div>
                 </div>
                 <div class="preview"></div>
