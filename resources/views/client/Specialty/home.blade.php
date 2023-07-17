@@ -46,8 +46,8 @@
             <div id="index_banner_facilities" class="banner-vertical-center-index">
             <!-- <div class="banner-vertical-center-index" style="background:#163048d4"> -->
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner active pt-5" >
-                        <div class="list-hispital-home-one pt-4">
+                    <div class="carousel-inner active pt-4" >
+                        <div class="list-hispital-home-one pt-5">
                             <section class="banner-bg">
                                 <span  class="text-title-home "><center> CHUYÊN KHOA -  PHÒNG KHÁM</center></span>
                                 <div class="container">
