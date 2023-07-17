@@ -19,25 +19,25 @@
                 <div class="flex-fill mx-xl-2">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-xl-2 text-center text-dark">
                         <li class="nav-item">
-                            <a class="nav-link link-home btn-outline-dark rounded-pill" href="{{ url('/') }}"> <span class="text-menu-header">Trang chủ </span> <br> <span class="text-12">Hạng mục nổi bật</span> </a>
+                            <a class="nav-link link-home btn-outline-dark rounded-pill" href="{{ url('/') }}"> <span class="text-menu-header"> <i class="fas fa-home"></i> Trang chủ </span> <br> <span class="text-12">Hạng mục nổi bật</span> </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link link-specialty btn-outline-dark rounded-pill" href="{{ url('/specialty') }}"> <span class="text-menu-header">Chuyên khoa </span> <br> <span class="text-12">Tìm theo chuyên khoa</span> </a>
+                            <a class="nav-link link-specialty btn-outline-dark rounded-pill" href="{{ url('/specialty') }}"> <span class="text-menu-header"><i class="fas fa-suitcase"></i> Chuyên khoa </span> <br> <span class="text-12">Tìm theo chuyên khoa</span> </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link link-facilities btn-outline-dark rounded-pill" href="{{ url('/facilities') }}"> <span class="text-menu-header">Cơ sở y tế</span> <br> <span class="text-12">Chọn bệnh viện</span> </a>
+                            <a class="nav-link link-facilities btn-outline-dark rounded-pill" href="{{ url('/facilities') }}"> <span class="text-menu-header"><i class="fas fa-clinic-medical"></i> Cơ sở y tế</span> <br> <span class="text-12">Chọn bệnh viện</span> </a>
                         </li>
                         <!-- <li class="nav-item">
                             <a class="nav-link btn-outline-dark rounded-pill" href="work.html"> <span class="text-menu-header">Bác sĩ </span> <br> <span class="text-12">Chọn bác sĩ giỏi</span></a>
                         </li> -->
                         <li class="nav-item">
-                            <a class="nav-link link-package btn-outline-dark rounded-pill" href="{{ url('/package') }}"> <span class="text-menu-header">Gói khám </span> <br> <span class="text-12">Khám sức khỏe tổng quát</span></a>
+                            <a class="nav-link link-package btn-outline-dark rounded-pill" href="{{ url('/package') }}"> <span class="text-menu-header"><i class="fas fa-file-medical"></i> Gói khám </span> <br> <span class="text-12">Khám sức khỏe tổng quát</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link link-searchschedule btn-outline-dark rounded-pill" href="{{ url('/searchschedule') }}"> <span class="text-menu-header">Tra cứu </span> <br> <span class="text-12">Tra cứu lịch hẹn</span></a>
+                            <a class="nav-link link-searchschedule btn-outline-dark rounded-pill" href="{{ url('/searchschedule') }}"> <span class="text-menu-header"><i class="fas fa-search-plus"></i> Tra cứu </span> <br> <span class="text-12">Tra cứu lịch hẹn</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link link-contact btn-outline-dark rounded-pill" href="{{ url('/contact') }}"> <span class="text-menu-header">Đánh giá </span> <br> <span class="text-12">Đánh giá dịch vụ</span></a>
+                            <a class="nav-link link-contact btn-outline-dark rounded-pill" href="{{ url('/contact') }}"> <span class="text-menu-header"><i class="fas fa-comment-medical"></i> Đánh giá </span> <br> <span class="text-12">Đánh giá dịch vụ</span></a>
                         </li>
                     </ul>
                 </div>
