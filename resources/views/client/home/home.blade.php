@@ -18,9 +18,9 @@
                 <!-- <ol class="carousel-indicators">
                     <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
                 </ol> -->
-                <div class="carousel-inner active pt-5" >
+                <div class="carousel-inner active pt-4" >
                      <!-- Start Contact -->
-                     <div class="list-hispital-home-one pt-4">
+                     <div class="list-hispital-home-one pt-5">
                         <section class="banner-bg">
                         <!-- style="animation: lights 4s 750ms linear infinite;" -->
                             <span  class="text-title-home "><center> ĐẶT LỊCH KHÁM NHANH <br>TẠI CÁC TUYẾN TRUNG ƯƠNG</center></span>
