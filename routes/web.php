@@ -11,6 +11,7 @@ use Modules\Client\Page\Contact\Controllers\ContactController;
 use Modules\Client\Page\Specialty\Controllers\SpecialtyController;
 use Modules\Client\Page\Package\Controllers\PackageController;
 use Modules\Client\Page\SearchSchedule\Controllers\SearchScheduleController;
+use Modules\Client\Page\AppointmentAtHome\Controllers\AppointmentAtHomeController;
 
 //Dashboard
 use Modules\System\Dashboard\Users\Controllers\UserController;
@@ -59,6 +60,9 @@ Route::get('/', [ClientHomeController::class, 'index']);
 Route::get('/facilities', [FacilitiesController::class, 'index']);
 Route::get('/facilities/{code}', [FacilitiesController::class, 'detailIndex']);
 Route::get('/schedule/{code}', [FacilitiesController::class, 'schedule']);
+
+// dịch vụ tại nhà
+Route::get('/appointmentathome/{code}', [AppointmentAtHomeController::class, 'index']);
 
 // Trang chủ cơ sở bệnh viện
 Route::get('/package', [PackageController::class, 'index']);
@@ -114,12 +118,22 @@ Route::prefix('/client')->group(function () {
                 Route::get('/loadListTop',[FacilitiesController::class,'loadListTop']);
             });
         });
+        // đặt lịch khám
         route::prefix('schedule')->group(function(){
             Route::get('/createForm', [FacilitiesController::class,'createForm']);
             Route::get('/loadList', [FacilitiesController::class,'loadList']);
             Route::get('/getHuyen',[FacilitiesController::class,'getHuyen']);
             Route::get('/getXa',[FacilitiesController::class,'getXa']);
             Route::post('/sendPayment',[FacilitiesController::class,'sendPayment']);
+        });
+        // đặt lịch xét nghiệm , truyền tại nhà
+        route::prefix('appointmentathome')->group(function(){
+            Route::get('/index',[AppointmentAtHomeController::class,'index']);
+            Route::get('/createForm', [AppointmentAtHomeController::class,'createForm']);
+            Route::get('/loadList', [AppointmentAtHomeController::class,'loadList']);
+            Route::get('/getHuyen',[AppointmentAtHomeController::class,'getHuyen']);
+            Route::get('/getXa',[AppointmentAtHomeController::class,'getXa']);
+            Route::post('/sendPayment',[AppointmentAtHomeController::class,'sendPayment']);
         });
         
         // Trang chủ cơ sở bệnh viện

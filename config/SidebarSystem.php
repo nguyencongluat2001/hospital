@@ -15,6 +15,12 @@ return [
         'a'    => 'nav-link link-approvepayment',
         'href' => '/system/approvepayment/index',
     ],
+    'appointmentathome' => [
+        'name' => 'Lịch lấy máu, truyền dịch',
+        'icon' => 'fas fa-calendar-alt',
+        'a'    => 'nav-link link-appointmentathome',
+        'href' => '/system/appointmentathome/index',
+    ],
     'customerCare' => [
         'name' => 'Chăm sóc khách hàng',
         'icon' => 'fas fa-headset',
@@ -76,6 +82,12 @@ return [
         'icon' => 'fas fa-phone-volume',
         'a'    => 'nav-link link-approvepayment',
         'href' => '/system/approvepayment/index',
+    ],
+    'appointmentathome' => [
+        'name' => 'Lịch lấy máu, truyền dịch',
+        'icon' => 'fas fa-calendar-alt',
+        'a'    => 'nav-link link-appointmentathome',
+        'href' => '/system/appointmentathome/index',
     ],
     'customerCare' => [
         'name' => 'Chăm sóc khách hàng',

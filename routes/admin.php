@@ -18,6 +18,7 @@ use Modules\System\Dashboard\Signal\Controllers\SignalController;
 use Modules\System\Dashboard\Users\Controllers\UserController;
 use Modules\System\Dashboard\Permision\Controllers\PermisionController;
 use Modules\System\Dashboard\Specialty\Controllers\SpecialtyController;
+use Modules\System\Dashboard\AppointmentAtHome\Controllers\AppointmentAtHomeController;
 
 
 
@@ -114,7 +115,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
             Route::post('broadcast', [ChatAdminController::class, 'broadcast'])->name('broadcast');
             Route::post('receive', [ChatAdminController::class, 'receive'])->name('receive');
         });
-         //Tín hiệu mua
+         //Phê duyệt thanh toán đặt lịch 
          Route::prefix('approvepayment')->group(function(){
             Route::get('index', [ApprovePaymentController::class, 'index']);
             Route::post('loadList', [ApprovePaymentController::class, 'loadList']);
@@ -125,6 +126,17 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
             Route::post('updateApprovePayment', [ApprovePaymentController::class, 'updateApprovePayment']);
             Route::post('changeStatusApprovePayment', [ApprovePaymentController::class, 'changeStatusApprovePayment']);
             Route::get('getUserVIP', [ApprovePaymentController::class, 'getUserVIP']);
+        });
+         //Lịch lấy máu, xét nghiệm tại nhà
+         Route::prefix('appointmentathome')->group(function(){
+            Route::get('index', [AppointmentAtHomeController::class, 'index']);
+            Route::post('loadList', [AppointmentAtHomeController::class, 'loadList']);
+            Route::get('create', [AppointmentAtHomeController::class, 'create']);
+            Route::get('edit', [AppointmentAtHomeController::class, 'edit']);
+            Route::post('update', [AppointmentAtHomeController::class, 'update']);
+            Route::post('delete', [AppointmentAtHomeController::class, 'delete']);
+            Route::post('updateApprovePayment', [AppointmentAtHomeController::class, 'updateApprovePayment']);
+            Route::post('changeStatusApprovePayment', [AppointmentAtHomeController::class, 'changeStatusApprovePayment']);
         });
        
     });

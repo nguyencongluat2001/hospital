@@ -29,18 +29,10 @@
                                     <div class="col-lg-4 mx-auto ">
                                         <form action="#" method="get">
                                         <div class="input-group pt-2 box">
-                                        <!-- <div class="box">
-                                            <form name="search">
-                                                <input type="text" class="input " placeholder="Từ khóa" aria-label="Từ khóa" name="txt">
-                                            </form>
+                                            <input style="background:#ffffffb5" type="text" class="input form-control form-control-lg rounded-pill rounded" placeholder="Từ khóa tìm kiếm...">
                                             <i class="fas fa-search"></i>
-                                        </div> -->
-                                            <input style="background:#ffffffb5" type="text" class="input form-control form-control-lg rounded-pill rounded" id="email" placeholder="Từ khóa tìm kiếm..." aria-label="Từ khóa tìm kiếm..">
-                                            <i class="fas fa-search"></i>
-
                                         </div>
                                         </form>
-
                                     </div>
                                 </div>
                             </div>
@@ -53,7 +45,7 @@
                                 <div class="row g-lg-5 mb-4">
                                     <!-- Start Recent Work -->
                                     <div class="col-md-6 mb-4">
-                                        <a href="{{url('/')}}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                                        <a href="{{url('/appointmentathome/laymauxetnghiemtainha')}}" class="recent-work card border-0 shadow-lg overflow-hidden">
                                             <img class="recent-work-img card-img" style="height: 250px;object-fit: cover;" src="{{url('/clients/img/laymautainha.jpeg')}}" alt="Card image">
                                             <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                                 <div style="background: radial-gradient(#000000c2, transparent);border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
@@ -66,7 +58,7 @@
                                     </div><!-- End Recent Work -->    
                                      <!-- Start Recent Work -->
                                     <div class="col-md-6 mb-4">
-                                        <a href="{{url('/')}}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                                        <a href="{{url('/appointmentathome/truyendichtainha')}}" class="recent-work card border-0 shadow-lg overflow-hidden">
                                             <img class="recent-work-img card-img" style="height: 250px;object-fit: cover;" src="{{url('/clients/img/truyentainha.jpeg')}}" alt="Card image">
                                             <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                                 <div style="background: radial-gradient(#000000c2, transparent);border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
