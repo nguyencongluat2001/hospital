@@ -7,9 +7,6 @@
             max-width: 800px;
             margin: 30px auto;
         }
-
-
-
         .modal-body {
         position:relative;
         padding:0px;
