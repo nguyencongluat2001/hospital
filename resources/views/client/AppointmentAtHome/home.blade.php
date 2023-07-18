@@ -102,7 +102,7 @@
                                                 <div class="row">
                                                     <div class="form-wrapper col-md-4">
                                                         <label for="">Tỉnh thành <span class="request_star">*</span></label>
-                                                        <select onchange="JS_Schedule.getHuyen(this.value)"  class="form-control input-sm chzn-select" name="code_tinh" id="code_tinh">
+                                                        <select onchange="JS_AppointmentAtHome.getHuyen(this.value)"  class="form-control input-sm chzn-select" name="code_tinh" id="code_tinh">
                                                             <option value="">--Chọn tỉnh thành--</option>
                                                             @foreach($tinh as $key => $value) 
                                                                <option  value="{{$value->code_tinh}}">{{$value->name}}</option>

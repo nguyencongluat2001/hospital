@@ -126,7 +126,6 @@ JS_AppointmentAtHome.prototype.getHuyen = function (codeTinh) {
         cache: true,
         data: data,
         success: function (arrResult) {
-            $('.chzn-select').chosen({ height: '100%', width: '100%' });
             var html = '<label for="">Quận huyện <span class="request_star">*</span></label>'
             html += `<select onchange="JS_AppointmentAtHome.getXa(this.value)" class="form-control input-sm chzn-select" name="code_huyen" id="code_huyen">`
             html += `<option value="">--Chọn quận huyện--</option>`
@@ -135,6 +134,8 @@ JS_AppointmentAtHome.prototype.getHuyen = function (codeTinh) {
              });
              html += `</select>`
             $("#iss").html(html);
+            $('.chzn-select').chosen({ height: '100%', width: '100%' });
+            $('.chzn-select').trigger('chosen:updated');
         }
     });
 
@@ -156,6 +157,8 @@ JS_AppointmentAtHome.prototype.getXa = function (codeHuyen) {
         cache: true,
         data: data,
         success: function (arrResult) {
+            $('.chzn-select').chosen({ height: '100%', width: '100%' });
+            $('.chzn-select').trigger('chosen:updated');
             var html = '<label for="">Phường xã <span class="request_star">*</span></label>'
             html += `<select class="form-control input-sm chzn-select" name="code_xa" id="code_xa">`
             html += `<option value="">--Chọn phường xã--</option>`
@@ -164,6 +167,8 @@ JS_AppointmentAtHome.prototype.getXa = function (codeHuyen) {
              });
              html += `</select>`
             $("#iss_xa").html(html);
+            $('.chzn-select').chosen({ height: '100%', width: '100%' });
+            $('.chzn-select').trigger('chosen:updated');
         }
     });
 

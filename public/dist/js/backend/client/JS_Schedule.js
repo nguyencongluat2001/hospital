@@ -240,6 +240,8 @@ JS_Schedule.prototype.getHuyen = function (codeTinh) {
              });
              html += `</select>`
             $("#iss").html(html);
+            $('.chzn-select').chosen({ height: '100%', width: '100%' });
+            $('.chzn-select').trigger('chosen:updated');
         }
     });
 
@@ -269,6 +271,8 @@ JS_Schedule.prototype.getXa = function (codeHuyen) {
              });
              html += `</select>`
             $("#iss_xa").html(html);
+            $('.chzn-select').chosen({ height: '100%', width: '100%' });
+            $('.chzn-select').trigger('chosen:updated');
         }
     });
 }
