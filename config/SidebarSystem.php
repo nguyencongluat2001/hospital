@@ -35,17 +35,16 @@ return [
     ],
     'hospital' => [
         'name' => 'Quản trị bệnh viện',
-        'icon' => 'fas fa-home',
+        'icon' => 'fas fa-university',
         'a'    => 'nav-link link-hospital',
         'href' => '/system/hospital/index',
     ],
     'specialty' => [
         'name' => 'Quản trị chuyên khoa',
-        'icon' => 'fas fa-home',
+        'icon' => 'fas fa-building',
         'a'    => 'nav-link link-specialty',
         'href' => '/system/specialty/index',
     ],
-   
     'blog' => [
         'name' => 'Quản trị bài viết',
         'icon' => 'far fa-calendar-alt',
