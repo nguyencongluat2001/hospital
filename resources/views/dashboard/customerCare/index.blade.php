@@ -58,7 +58,7 @@
 
     #discussions::-webkit-scrollbar-thumb{
         background: #bdc7ff;
-        border: .2rem;
+        border-radius: .2rem;
     }
 
     #discussions .discussion {
@@ -197,6 +197,17 @@
     .chat .messages-chat {
         padding: 25px 35px;
         margin-bottom: 70px;
+        max-height: 525px;
+        overflow-y: scroll;
+    }
+
+    .chat .messages-chat::-webkit-scrollbar{
+        width: .4rem;
+    }
+
+    .chat .messages-chat::-webkit-scrollbar-thumb{
+        background: #bdc7ff;
+        border-radius: .2rem;
     }
 
     .chat .messages-chat .message {
@@ -389,7 +400,6 @@
                 html += '<p class="message font-bold">' + data.message + '</p>';
                 html += '</div>';
                 html += '<div class="timer">' +  + '</div>';
-                console.log($("#discussions #active_" + data.phone).html());
                 if($("#discussions #active_" + data.phone).html() !== undefined
                 && $("#discussions #active_" + data.phone).html() !== ''){
                     $("#active_" + data.phone).html(html);

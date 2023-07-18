@@ -817,7 +817,7 @@
     margin-bottom: 50px;
     overflow-y: scroll;
     max-height: 40vh;
-    padding: 10px;
+    padding: 10px 10px 10px 0;
   }
   #body-message::-webkit-scrollbar {
     width: 0.4rem;
@@ -837,7 +837,7 @@
   }
   .left-message{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 8px;
   }
   .left-message .text{
