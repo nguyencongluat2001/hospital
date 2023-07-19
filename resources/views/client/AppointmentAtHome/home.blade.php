@@ -62,25 +62,25 @@
                                                 <input type="hidden" id="code_hospital" name="code_hospital" value="{{ !empty($datas->code)?$datas->code:'' }}">
                                                 <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
                                                 <div class="row">
-                                                    <div class="form-wrapper col-md-4">
+                                                    <div class="form-wrapper col-md-6">
                                                         <label for="">Họ và tên <span class="request_star">*</span></label>
                                                         <input placeholder="Nhập tên..." id="name" type="text" class="form-control" name="name" value="" autofocus>
                                                     </div>
-                                                    <div class="form-wrapper col-md-4">
+                                                    <div class="form-wrapper col-md-6">
                                                         <label for="">Số điện thoại <span class="request_star">*</span></label>
                                                         <input placeholder="Số điện thoại..." id="phone" type="phone" class="form-control" name="phone" value="">
                                                     </div>
-                                                    <div class="form-wrapper col-md-4">
+                                                    {{--<div class="form-wrapper col-md-4">
                                                         <label for="">Địa chỉ Email</label>
                                                         <input placeholder="Nhập email..." id="email" type="email" class="form-control" name="email" value="">
-                                                    </div>
+                                                    </div>--}}
                                                 </div>
                                                 <div class="row">
-                                                    <div class="form-wrapper col-md-4">
+                                                {{--<div class="form-wrapper col-md-4">
                                                         <label for="">Ngày sinh <span class="request_star">*</span></label>
                                                         <input placeholder="Số điện thoại..." id="date_of_brith" type="date" class="form-control" name="date_of_brith" value="">
-                                                    </div>
-                                                    <div class="form-wrapper col-md-4">
+                                                    </div> --}}
+                                                    <div class="form-wrapper col-md-6">
                                                         @if($type == 'laymauxetnghiemtainha')
                                                             <label for="">Loại xét nghiệm</label>
                                                         @else
@@ -93,13 +93,13 @@
                                                             @endforeach 
                                                         </select>
                                                     </div>
-                                                    <div class="form-wrapper col-md-4">
+                                                    <div class="form-wrapper col-md-6">
                                                         <label for="">Giới tính <span class="request_star">*</span></label>
                                                         <input type="radio" value="1" name="sex" id="sex" />  <span style="padding-left:5px" >Nam</span>&emsp;
                                                         <input  type="radio" value="2" name="sex" id="sex"  /> <span style="padding-left:5px" >Nữ</span>
                                                     </div>
                                                 </div>
-                                                <div class="row">
+                                                {{--<div class="row">
                                                     <div class="form-wrapper col-md-4">
                                                         <label for="">Tỉnh thành <span class="request_star">*</span></label>
                                                         <select onchange="JS_AppointmentAtHome.getHuyen(this.value)"  class="form-control input-sm chzn-select" name="code_tinh" id="code_tinh">
@@ -121,7 +121,7 @@
                                                             <option value="">--Chọn phường xã--</option>
                                                         </select>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                                 <div class="row">
                                                     <div class="form-wrapper col-md-6">
                                                         @if($type == 'laymauxetnghiemtainha')

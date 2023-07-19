@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('customers_care', function (Blueprint $table) {
-            $table->string('ip',200)->nullable();
+            $table->timestamps();
         });
     }
 
