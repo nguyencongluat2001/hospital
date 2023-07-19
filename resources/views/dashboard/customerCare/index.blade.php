@@ -212,7 +212,7 @@
 
     .chat .messages-chat .message {
         display: flex;
-        align-items: center;
+        /* align-items: center; */
         margin-bottom: 8px;
         clear: right;
     }
@@ -237,7 +237,7 @@
 
     .time {
         font-size: 10px;
-        color: lightgrey;
+        color: #000;
         margin-bottom: 10px;
     }
 

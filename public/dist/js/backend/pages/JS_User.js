@@ -58,9 +58,6 @@ JS_User.prototype.loadevent = function (oForm) {
     $('form#frmAdd').find('#btn_create').click(function () {
         myClass.store('form#frmAdd');
     })
-    $('form#frmAdd').find('#btn_changePass').click(function () {
-        myClass.changePass('form#frmAdd');
-    })
     $('form#frmChangePass').find('#btn_updatePass').click(function () {
         myClass.updatePass('form#frmChangePass');
     })
@@ -85,7 +82,10 @@ JS_User.prototype.add = function (oForm) {
         success: function (arrResult) {
             $('#editmodal').html(arrResult);
             $('#editmodal').modal('show');
-            myClass.loadevent(oForm);
+            $('form#frmAdd').find('#btn_changePass').click(function () {
+                myClass.changePass('form#frmAdd');
+            })
+            // myClass.loadevent(oForm);
 
         }
     });
@@ -232,7 +232,10 @@ JS_User.prototype.edit = function (oForm) {
         success: function (arrResult) {
             $('#editmodal').html(arrResult);
             $('#editmodal').modal('show');
-            myClass.loadevent(oForm);
+            $('form#frmAdd').find('#btn_changePass').click(function () {
+                myClass.changePass('form#frmAdd');
+            })
+            // myClass.loadevent(oForm);
 
         }
     });
@@ -375,6 +378,8 @@ JS_User.prototype.updatePass = function (oFormCreate) {
                   var icon = 'success';
                   var color = '#f5ae67';
                   NclLib.alerMesage(nameMessage,icon,color);
+                  $("#editPassmodal").html('');
+                  $("#editPassmodal").modal('hide');
             } else {
                   var nameMessage = arrResult['message'];
                   var icon = 'warning';

@@ -15,6 +15,7 @@ JS_InforClient.prototype.loadIndex = function () {
     var myClass = this;
     var oForm = 'form#frmLoadlist_infor';
     $(oForm).find('#btn_changePass').click(function () {
+        console.log(12);
         myClass.changePass(oForm);
     })
     
