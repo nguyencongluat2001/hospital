@@ -29,6 +29,6 @@ use Carbon\Carbon;
     @endif
 </section>
 
-<section class="chat col-md-9" id="message">
-    <div style="position: absolute;top: 50%;left: 50%;">Hãy chọn một cuộc trò chuyện để bắt đầu!</div>
+<section class="chat col-md-9" id="message" style="background: url('assets/images/background-chat.png'); background-size: 100%;">
+    <div style="position: absolute;top: 50%;left: 50%;color: #000;">Hãy chọn một cuộc trò chuyện để bắt đầu!</div>
 </section>

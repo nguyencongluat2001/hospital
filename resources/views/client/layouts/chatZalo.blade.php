@@ -1,3 +1,13 @@
+@php
+use Modules\System\Dashboard\CustomerCare\Models\CustomerCareModel;
+@endphp
+
+@php
+$ip = gethostbyname(trim(exec("hostname")));
+$columnSelect = ['phone', 'ip', \DB::raw('cast(created_at as date)')];
+$customerCare = CustomerCareModel::select($columnSelect)->where('ip', $ip)->groupBy($columnSelect)->orderBy('created_at', 'desc')->get();
+
+@endphp
 <style>
     #form_chat {
         position: fixed;
@@ -97,6 +107,9 @@
                 <!-- Màn hình danh sách -->
                 <div class="table-responsive">
                     <div id="table-container-box">
+                        <div>
+
+                        </div>
                         <div class="form-group">
                             <input type="text" name="phone" id="phone" class="form-control" placeholder="Nhập số điện thoại">
                             <p class="errorPhone"></p>
@@ -167,11 +180,22 @@
             $("#table-container-box").hide();
             $(".sendMessage").show();
             $(".start").hide();
-            $("#body-message").append(`<div class="left-message"><div class="text">
-                                            <p>Chào mừng bạn đến với trang web của chúng tôi, hãy gửi tin nhắn để được trợ giúp.</p>
+            $("#body-message").append(`<div class="left-message">
+                                        <img src="./assets/images/staff-chat.png" alt="" width="50vw" style="margin-right: 5px;">
+                                        <div class="text">
+                                            <p>Xin chào!<br>Chúng tôi có thể giúp gì cho bạn.</p>
                                         </div></div>
                                         `);
             $(".title-header").html('<span class="text-uppercase" style="color: #fff;font-size: 18px;letter-spacing: 1px;font-family: Trocchi, serif;">Chat Booking Fast</span>');
+            setTimeout(function(){
+                $("#body-message").append(`
+                                        <div class="left-message">
+                                        <img src="./assets/images/staff-chat.png" alt="" width="50vw" style="margin-right: 5px;">
+                                        <div class="text">
+                                            <p><a href="{{url('/facilities')}}" target="_blank" class="btn btn-light">Đặt lịch khám</a></p>
+                                        </div></div>
+                                        `);
+            }, 1000);
         });
         // Check số điện thoại
         function isVietnamesePhoneNumber(number) {

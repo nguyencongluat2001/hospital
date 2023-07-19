@@ -13,6 +13,9 @@ use Carbon\Carbon;
     @endphp
     @if(!empty($data->question))
         <div class="message">
+            <div style="margin-right: 10px; align-items: top;">
+                <img src="{{URL::asset('assets/images/avatar_default.png')}}" width="50px" alt="">
+            </div>
             <div class="text">
                 <b>{{ $data->phone }}</b>
                 <p>{{ $data->question }}</p>
@@ -32,12 +35,15 @@ use Carbon\Carbon;
                     <p>{{ $data->reply }}</p>
                 </div>
             </div>
+            <div style="margin-left: 10px; align-items: top;">
+                <img src="{{URL::asset('assets/images/staff-chat.png')}}" width="50px" alt="">
+            </div>
         </div>
         <p class="response-time time"> {{ date('H:i d/m/Y', strtotime($data->created_at)) }}</p>
     @endif
     @endforeach
     @if($timeout > 1)
-        <div style="position: absolute;left: 50%;">Cuộc trò chuyện đã kết thúc!</div>
+        <div style="text-align: center;color: #000;">Cuộc trò chuyện đã kết thúc!</div>
     @endif
 </div>
 @if($timeout <= 1)

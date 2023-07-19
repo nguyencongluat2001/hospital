@@ -247,9 +247,10 @@ class UserController extends Controller
             }
          
             // $this->sendMail($input);
-            $input['email'] = $input['email_acc'];
-            $sendOtp = $this->userService->sendMail_register($input,$zenData['otp']);
-            return array('success' => true, 'message' => 'Chúng tôi đã gửi mã OTP qua gmail của bạn!');
+            // $input['email'] = $input['email_acc'];
+            // $sendOtp = $this->userService->sendMail_register($input,$zenData['otp']);
+            return array('success' => true, 'message' => 'Đổi mật khẩu thành công');
+            // return array('success' => true, 'message' => 'Chúng tôi đã gửi mã OTP qua gmail của bạn!');
         } else {
             return array('success' => false, 'message' => 'Mật khẩu cũ chưa chính xác!');
         }

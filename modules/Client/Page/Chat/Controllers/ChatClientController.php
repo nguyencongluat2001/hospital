@@ -16,6 +16,9 @@ class ChatClientController extends Controller
     }
     public function broadcast(Request $request)
     {
+
+        $ipv4 = gethostbyname(trim(exec("hostname")));
+        
         $arrInput = $request->all();
         broadcast(new PusherBroadcast($arrInput['phone'], $arrInput['message']))->toOthers();
         if(isset($arrInput['message']) && !empty($arrInput['message'])){
@@ -29,6 +32,7 @@ class ChatClientController extends Controller
                 'id' => strtoupper((string)\Str::uuid()),
                 'phone' => $arrInput['phone'],
                 'question' => $arrInput['message'],
+                'ip' => $ipv4,
                 'created_at' => date('Y/m/d H:i:s'),
             ];
             $this->customerCareService->insert($params);
@@ -43,6 +47,7 @@ class ChatClientController extends Controller
         if(isset($arrInput['message']) && !empty($arrInput['message'])){
             $html = '';
             $html .= '<div class="left-message">';
+            $html .= '<img src="./assets/images/staff-chat.png" alt="" width="50vw" style="margin-right: 5px;">';
             $html .= '<div class="text">';
             $html .= '<p>' . $arrInput['message'] . '</p>';
             $html .= '</div>';

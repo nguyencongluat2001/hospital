@@ -80,11 +80,6 @@ Route::get('/contact', [ContactController::class, 'index']);
 // trang chủ tra cứu
 Route::get('/searchschedule',[SearchScheduleController::class,'index']);
 
-Route::prefix('chat')->name('client.chat.')->group(function () {
-    Route::get('', 'Client\ChatController@index')->name('index');
-    Route::post('/broadcast', [ChatController::class, 'broadcast'])->name('broadcast');
-    
-});
 // route phía người dùng
 Route::prefix('/client')->group(function () {
         $arrModules = config('menuClient');
