@@ -2,12 +2,12 @@
 use Modules\System\Dashboard\CustomerCare\Models\CustomerCareModel;
 @endphp
 
-@php
+{{--@php
 $ip = gethostbyname(trim(exec("hostname")));
 $columnSelect = ['phone', 'ip', \DB::raw('cast(created_at as date)')];
 $customerCare = CustomerCareModel::select($columnSelect)->where('ip', $ip)->groupBy($columnSelect)->orderBy('created_at', 'desc')->get();
 
-@endphp
+@endphp--}}
 <style>
     #form_chat {
         position: fixed;
