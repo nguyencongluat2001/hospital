@@ -12,13 +12,9 @@ use Str;
 
 class AppointmentAtHomeService extends Service
 {
-    private $baseDis;
     public function __construct(
-
     ){
         parent::__construct();
-        $this->baseDis = public_path("file-image-client/AppointmentAtHome") . "/";
-
     }
     public function repository()
     {
@@ -31,36 +27,25 @@ class AppointmentAtHomeService extends Service
      *
      * @return view
      */
-    public function sendPayment($input,$file)
+    public function sendPayment($input)
     {
         DB::beginTransaction();
         try{
-            if(isset($file) && $file != []){
-                $arrFile = $this->uploadFile($input,$file);
-            }
             $random = Library::_get_randon_number();
-            // $code_AppointmentAtHome = $random.'_'.date("d").'_'.date("m").'_'.date("Y");
-            $code_AppointmentAtHome = $random.date("d").date("m").date("Y");
+            // $code_schedule = $random.'_'.date("d").'_'.date("m").'_'.date("Y");
+            $code = $random.date("d").date("m").date("Y");
             $param = [
                 'id' => (string)Str::uuid(),
-                'code_AppointmentAtHome' => $code_AppointmentAtHome, 
-                'code_hospital' => isset($input['code_hospital'])?$input['code_hospital']:'', 
-                'code_specialty' => isset($input['code_specialty'])?$input['code_specialty']:'', 
-                'type_payment' => isset($input['type_payment'])?$input['type_payment']:'', 
-                'money' => isset($input['money'])?$input['money']:'', 
-                'name' => isset($input['name'])?$input['name']:'', 
-                'phone' => isset($input['phone'])?$input['phone']:'', 
-                'code_insurance' => isset($input['code_insurance'])?$input['code_insurance']:'', 
-                'sex' => isset($input['sex'])?$input['sex']:'', 
-                'email' => isset($input['email'])?$input['email']:'', 
-                'date_of_brith' => isset($input['date_of_brith'])?$input['date_of_brith']:'', 
-                'code_tinh' => isset($input['code_tinh'])?$input['code_tinh']:'', 
-                'code_huyen' => isset($input['code_huyen'])?$input['code_huyen']:'', 
-                'code_xa' => isset($input['code_xa'])?$input['code_xa']:'', 
-                'address' => isset($input['address'])?$input['address']:'', 
-                'code_introduce' => isset($input['code_introduce'])?$input['code_introduce']:'', 
-                'reason' => isset($input['reason'])?$input['reason']:'', 
-                'name_image' => isset($arrFile[0])?$arrFile[0]:'Chưa gửi ảnh thanh toán!', 
+                'code'=> $code,
+                'name'=> $input['name'],
+                'phone'=> $input['phone'],
+                'type'=> $input['code_type'],
+                'sex'=> $input['sex'],
+                'date_sampling'=> $input['date_sampling'],
+                'hour_sampling'=> $input['hour_sampling'],
+                'address'=> $input['address'],
+                'reason'=> $input['reason'],
+                'status'=> 0,
                 'created_at' => date("Y/m/d H:i:s"),
                 'update_at' => date("Y/m/d H:i:s")
             ];
@@ -72,22 +57,4 @@ class AppointmentAtHomeService extends Service
            return array('success' => false, 'message' => (string) $e->getMessage());
         }
     }
-    // /**
-    //  * Tải ảnh vào thư mục
-    //  */
-    public function uploadFile($input,$file)
-    {
-            $path = $this->baseDis;
-            foreach($file as $attValue){
-                $fileName = $attValue['name'];
-                $random = Library::_get_randon_number();
-                $fileName = Library::_replaceBadChar($fileName);
-                $fileName = Library::_convertVNtoEN($fileName);
-                $sFullFileName = date("Y") . '_' . date("m") . '_' . date("d") . "_" . date("H") . date("i") . date("u") . $random . "!~!" . $fileName;
-                move_uploaded_file($attValue['tmp_name'], $path . $sFullFileName);
-                $arrImage[] =  $sFullFileName;
-            }
-            return $arrImage;
-    }
-   
 }

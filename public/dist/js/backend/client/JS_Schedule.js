@@ -338,13 +338,14 @@ JS_Schedule.prototype.sendPayment = function (data) {
         processData: false,
         success: function (arrResult) {
             if (arrResult['status'] == true) {
-                var nameMessage = 'Thông báo , Đặt lịch thành công, nhân viên sẽ liên hệ với quý khách trong vòng 1 giờ tới';
+                var nameMessage = 'Thông báo , Đặt lịch thành công';
                 var icon = 'success';
                 var color = '#344767';
                 NclLib.alerMesage(nameMessage,icon,color);
                 $('#editmodal').modal('hide');
-                myClass.loadList();
-                console.log(999)
+                setTimeout(() => {
+                    window.location.replace(myClass.baseUrl+'/searchschedule');
+                }, 2000)
             } else {
                 var nameMessage = 'Đặt lịch thất bại';
                 var icon = 'warning';

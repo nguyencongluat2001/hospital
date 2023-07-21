@@ -29,7 +29,7 @@ JS_AppointmentAtHome.prototype.loadIndex = function () {
     NclLib.menuActive('.link-facilities');
     $('.chzn-select').chosen({ height: '100%', width: '100%' });
 
-    myClass.loadList(oForm);
+    // myClass.loadList(oForm);
 
     // $('form#frmAdd').find('#btn_create').click(function () {
     //     myClass.store('form#frmAdd');
@@ -86,90 +86,101 @@ JS_AppointmentAtHome.prototype.loadList = function (oForm) {
         }
     });
 }
-// /**
-//  * Load màn hình danh sách
-//  *
-//  * @param oForm (tên form)
-//  *
-//  * @return void
-//  */
-// JS_AppointmentAtHome.prototype.inFor = function (id) {
-//     var myClass = this;
-//     console.log(id)
-//     var url = this.urlPath + '/loadList';
-//     var data = $(oForm).serialize();
-//     $.ajax({
-//         url: url,
-//         type: "GET",
-//         cache: true,
-//         data: data,
-//         success: function (arrResult) {
-//             $("#table-container").html(arrResult);
-//             myClass.loadevent(oForm);
-//         }
-//     });
-// }
-/**
- * Load màn hình danh sách huyện
- *
+/** 
  * @param oForm (tên form)
  *
  * @return void
  */
-JS_AppointmentAtHome.prototype.getHuyen = function (codeTinh) {
+JS_AppointmentAtHome.prototype.add = function (oForm) {
+    var url = this.urlPath + '/sendPayment';
     var myClass = this;
-    var url = this.urlPath + '/getHuyen';
-     var data = '&codeTinh=' + codeTinh;
+    var oForm = 'form#frmSendSchedule';
+    var data = $(oForm).serialize();
+    if ($("#name").val() == '') {
+        var nameMessage = 'Họ và tên không được để trống!';
+        var icon = 'warning';
+        var color = '#ffd200';
+        var background = 'rgb(33 41 68)';
+        NclLib.alerMesageClient(nameMessage,icon,color,background);
+        return false;
+    }
+    if ($("#phone").val() == '') {
+        var nameMessage = 'Số điện thoại không được để trống!';
+        var icon = 'warning';
+        var color = '#ffd200';
+        var background = 'rgb(33 41 68)';
+        NclLib.alerMesageClient(nameMessage,icon,color,background);
+        return false;
+    }
+    if ($("#type").val() == '') {
+        var nameMessage = 'Loại xét nghiệm không được để trống!';
+        var icon = 'warning';
+        var color = '#ffd200';
+        var background = 'rgb(33 41 68)';
+        NclLib.alerMesageClient(nameMessage,icon,color,background);
+        return false;
+    }
+    if ($("#sex").val() == '') {
+        var nameMessage = 'Giới tính không được để trống!';
+        var icon = 'warning';
+        var color = '#ffd200';
+        var background = 'rgb(33 41 68)';
+        NclLib.alerMesageClient(nameMessage,icon,color,background);
+        return false;
+    }
+    if ($("#date_sampling").val() == '') {
+        var nameMessage = 'Ngày lấy mẫu không được để trống!';
+        var icon = 'warning';
+        var color = '#ffd200';
+        var background = 'rgb(33 41 68)';
+        NclLib.alerMesageClient(nameMessage,icon,color,background);
+        return false;
+    }
+    if ($("#hour_sampling").val() == '') {
+        var nameMessage = 'Giờ lấy mẫu không được để trống!';
+        var icon = 'warning';
+        var color = '#ffd200';
+        var background = 'rgb(33 41 68)';
+        NclLib.alerMesageClient(nameMessage,icon,color,background);
+        return false;
+    }
+    if ($("#address").val() == '') {
+        var nameMessage = 'Địa chỉ chi tiết không được để trống!';
+        var icon = 'warning';
+        var color = '#ffd200';
+        var background = 'rgb(33 41 68)';
+        NclLib.alerMesageClient(nameMessage,icon,color,background);
+        return false;
+    }
+    if ($("#reason").val() == '') {
+        var nameMessage = 'Bạn chưa nêu lý do khám!';
+        var icon = 'warning';
+        var color = '#ffd200';
+        var background = 'rgb(33 41 68)';
+        NclLib.alerMesageClient(nameMessage,icon,color,background);
+        return false;
+    }
+    console.log(data)
     $.ajax({
         url: url,
-        type: "GET",
-        cache: true,
+        type: "POST",
         data: data,
         success: function (arrResult) {
-            var html = '<label for="">Quận huyện <span class="request_star">*</span></label>'
-            html += `<select onchange="JS_AppointmentAtHome.getXa(this.value)" class="form-control input-sm chzn-select" name="code_huyen" id="code_huyen">`
-            html += `<option value="">--Chọn quận huyện--</option>`
-            $(arrResult.data.huyen).each(function(index,el) {
-                 html += `<option value="`+ el.code_huyen +`">`+ el.name +`</option>`
-             });
-             html += `</select>`
-            $("#iss").html(html);
-            $('.chzn-select').chosen({ height: '100%', width: '100%' });
-            $('.chzn-select').trigger('chosen:updated');
+            if (arrResult['status'] == true) {
+                var nameMessage = 'Thông báo , Đặt lịch thành công';
+                var icon = 'success';
+                var color = '#344767';
+                NclLib.alerMesage(nameMessage,icon,color);
+                $('#editmodal').modal('hide');
+                setTimeout(() => {
+                    window.location.replace(myClass.baseUrl+'/searchschedule');
+                }, 2000)
+            } else {
+                var nameMessage = 'Đặt lịch thất bại';
+                var icon = 'warning';
+                var color = '#344767';
+                NclLib.alerMesage(nameMessage,icon,color);
+            }
         }
     });
-
-}
-/**
- * Load màn hình danh sách phường xã
- *
- * @param oForm (tên form)
- *
- * @return void
- */
-JS_AppointmentAtHome.prototype.getXa = function (codeHuyen) {
-    var myClass = this;
-    var url = this.urlPath + '/getXa';
-     var data = '&codeHuyen=' + codeHuyen;
-    $.ajax({
-        url: url,
-        type: "GET",
-        cache: true,
-        data: data,
-        success: function (arrResult) {
-            $('.chzn-select').chosen({ height: '100%', width: '100%' });
-            $('.chzn-select').trigger('chosen:updated');
-            var html = '<label for="">Phường xã <span class="request_star">*</span></label>'
-            html += `<select class="form-control input-sm chzn-select" name="code_xa" id="code_xa">`
-            html += `<option value="">--Chọn phường xã--</option>`
-            $(arrResult.data.xa).each(function(index,el) {
-                 html += `<option value="`+ el.code_xa +`">`+ el.name +`</option>`
-             });
-             html += `</select>`
-            $("#iss_xa").html(html);
-            $('.chzn-select').chosen({ height: '100%', width: '100%' });
-            $('.chzn-select').trigger('chosen:updated');
-        }
-    });
-
 }

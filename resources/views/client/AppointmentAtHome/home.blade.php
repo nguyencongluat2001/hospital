@@ -59,7 +59,7 @@
                                         <div class="wrapper" style="display: flex; justify-content: center;">
                                             <form id="frmSendSchedule" method="POST"  autocomplete="off">
                                                 @csrf
-                                                <input type="hidden" id="code_hospital" name="code_hospital" value="{{ !empty($datas->code)?$datas->code:'' }}">
+                                                <input type="hidden" id="code" name="code" value="{{ !empty($datas->code)?$datas->code:'' }}">
                                                 <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
                                                 <div class="row">
                                                     <div class="form-wrapper col-md-6">
@@ -78,7 +78,7 @@
                                                 <div class="row">
                                                 {{--<div class="form-wrapper col-md-4">
                                                         <label for="">Ngày sinh <span class="request_star">*</span></label>
-                                                        <input placeholder="Số điện thoại..." id="date_of_brith" type="date" class="form-control" name="date_of_brith" value="">
+                                                        <input placeholder="Số điện thoại..." id="date_sampling" type="date" class="form-control" name="date_sampling" value="">
                                                     </div> --}}
                                                     <div class="form-wrapper col-md-6">
                                                         @if($type == 'laymauxetnghiemtainha')
@@ -129,7 +129,7 @@
                                                         @else
                                                             <label for="">Ngày truyền<span class="request_star">*</span></label>
                                                         @endif
-                                                        <input  id="date_of_brith" type="date" class="form-control" name="date_of_brith" value="">
+                                                        <input  id="date_sampling" type="date" class="form-control" name="date_sampling" value="">
                                                     </div>
                                                     <div class="form-wrapper col-md-6">
                                                         @if($type == 'laymauxetnghiemtainha')
@@ -137,7 +137,7 @@
                                                         @else
                                                             <label for="">Giờ truyền dịch<span class="request_star">*</span></label>
                                                         @endif
-                                                        <select class="form-control input-sm chzn-select" name="date_hour" id="date_hour">
+                                                        <select class="form-control input-sm chzn-select" name="hour_sampling" id="hour_sampling">
                                                             <option value="">--Chọn giờ--</option>
                                                             <option value="05h30">05 giờ 30 phút</option>
                                                             <option value="06h00">06 giờ 00 phút</option>
@@ -184,7 +184,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="pt-3 mb-3">
-                                                    <button type="button" onclick="JS_Schedule.add()" class=" btn-primary" id="btn_register" style="background-color: slategrey">
+                                                    <button type="button" onclick="JS_AppointmentAtHome.add()" class=" btn-primary" id="btn_register" style="background-color: slategrey">
                                                         {{ __('Đặt lịch') }}
                                                     </button>
                                                 </div>

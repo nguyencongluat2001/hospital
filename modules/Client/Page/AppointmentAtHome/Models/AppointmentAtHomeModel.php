@@ -6,33 +6,24 @@ use Illuminate\Database\Eloquent\Model;
 
 class AppointmentAtHomeModel extends Model
 {
-    protected $table = 'AppointmentAtHome';
+    protected $table = 'service_at_home';
     public $incrementing = false;
     public $timestamps = false;
 
     protected $fillable = [
-           'id',
-           'code_AppointmentAtHome',
-           'code_hospital',
-           'code_specialty',
-           'type_payment',
-           'money',
-           'name',
-           'phone',
-           'code_insurance',
-           'sex',
-           'email',
-           'date_of_brith',
-           'code_tinh',
-           'code_huyen',
-           'code_xa',
-           'address',
-           'code_introduce',
-           'reason',
-           'name_image',
-        //    'status',
-           'created_at',
-           'updates_at'
+            'id',
+            'code',
+            'name',
+            'phone',
+            'type',
+            'sex',
+            'date_sampling',
+            'hour_sampling',
+            'address',
+            'reason',
+            'status',
+            'created_at',
+            'updates_at'
     ];
 
     public function filter($query, $param, $value)
