@@ -32,7 +32,7 @@ class CategoryService extends Service
             $arrData = [
                 'cate'=> $input['cate'] ,
                 'name_category'=> $input['name_category'] ,
-                'code_category'=> $input['code_category'] ,
+                'c'=> $input['code_category'] ,
                 'decision'=> $input['decision'] ,
                 'order' => isset($input['order']) && !empty($input['order']) ? trim($input['order']) : count($categories) + 1,
                 'status' => isset($input['status']) && !empty($input['status']) ? 1 : 0,

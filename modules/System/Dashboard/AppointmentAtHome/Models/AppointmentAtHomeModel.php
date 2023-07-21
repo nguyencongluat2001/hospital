@@ -9,29 +9,20 @@ use Modules\System\Helpers\NclLibraryHelper;
 
 class AppointmentAtHomeModel extends Model
 {
-    protected $table = 'schedule';
+    protected $table = 'service_at_home';
     public $incrementing = false;
 
     protected $fillable = [
         'id',
-        'code_schedule',
-        'code_hospital',
-        'code_specialty',
-        'type_payment',
-        'money',
+        'code',
         'name',
         'phone',
-        'code_insurance',
+        'type',
         'sex',
-        'email',
-        'date_of_brith',
-        'code_tinh',
-        'code_huyen',
-        'code_xa',
+        'date_sampling',
+        'hour_sampling',
         'address',
-        'code_introduce',
         'reason',
-        'name_image',
         'status',
         'created_at',
         'updates_at'
@@ -46,18 +37,13 @@ class AppointmentAtHomeModel extends Model
             case 'search':
                 if(!empty($value)){
                     $query->where(function($sql) use($value){
-                        $sql->where('code_schedule', 'like', "$value")
+                        $sql->where('code', 'like', "$value")
                         ->orWhere('phone', 'like', "$value")
-                        ->orWhere('email', 'like', "$value")
                         ->orWhere('address', 'like', "$value");
                     });
                 }
                 return $query;
             case 'type_payment':
-                if(!empty($value)){
-                    $query->where('type_payment', $value);
-                }
-                return $query;
             case 'fromdate':
                 if(!empty($value)){
                     $query->where('created_at', '>=', date('Y-m-d H:i:s', strtotime(NclLibraryHelper::_ddmmyyyyToyyyymmdd($value, 3))));

@@ -24,7 +24,7 @@ NclLib.prototype.alerMesage = function(nameMessage,icon,color){
       color: color,
       showConfirmButton: false,
       // width:'30%',
-      timer: 2666500
+      timer: 2500
     })
 }
 // alerMesage thông báo sau khi có sự kiện
@@ -37,7 +37,7 @@ NclLib.prototype.alerMesageClient = function(nameMessage,icon,color,background){
       background:background,
       showConfirmButton: false,
       // width:'30%',
-      timer: 2666500
+      timer: 2500
     })
 }
 NclLib.prototype.alertMessageBackend = function(type, label, message, s = 30000) {

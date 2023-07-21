@@ -24,11 +24,9 @@
                         onclick="checkbox_all_item_id(document.forms[0].chk_item_id);"></td>
                 <td align="center"><b>STT</b></td>
                 <td align="center"><b>Thời gian</b></td>
-                <td align="center"><b>Mã khám bệnh</b></td>
+                <td align="center"><b>Mã đặt lịch</b></td>
                 <td align="center"><b>Tên khách hàng</b></td>
                 <td align="center"><b>Số điện thoại</b></td>
-                <td align="center"><b>Số tiền</b></td>
-                <td align="center"><b>Banking</b></td>
                 <td align="center"><b>Trạng thái</b></td>
                 <td align="center"><b>#</b></td>
             </tr>
@@ -37,51 +35,22 @@
             @if(count($datas) > 0)
                 @foreach ($datas as $key => $data)
                 @php $id = $data->id; $i = 1; @endphp
-                    @if(Auth::user()->role == 'ADMIN')
                     <tr>
                         <td style="white-space: inherit;vertical-align: middle;" align="center"><input type="checkbox" name="chk_item_id"
                                 value="{{ $data->id }}"></td>
                         <td style="white-space: inherit;vertical-align: middle;" align="center">{{($datas->currentPage() - 1)*$datas->perPage() + ($key + 1)}}</td>
                         <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->created_at) ? $data->created_at : '' }}</td>
-                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->code_schedule) ? $data->code_schedule : '' }}</td>
+                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->code) ? $data->code : '' }}</td>
                         <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->name) ? $data->name : '' }}</td>
                         <td style="wwhite-space: inherit;vertical-align: middle;" align="center">{{ isset($data->phone) ? $data->phone : '' }}</td>
-                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->money) ? $data->money : '' }}</td>
-                        @if($data->type_payment == 'BANK')
-                        <td style="color:#00ab5f;white-space: inherit;vertical-align: middle;" align="center">Ngân hàng</td>
-                        @else
-                        <td style="color:#ff00c5;white-space: inherit;vertical-align: middle;" align="center">MoMo</td>
-                        @endif
+                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{ $data->status == 1 ? 'Đã liên hệ khách hàng' : 'Chưa liên hệ khách hàng' }}</td>
                         <td style="white-space: inherit;vertical-align: middle;" onclick="{select_row(this);}" align="center">
                             <label class="custom-control custom-checkbox p-0 m-0 pointer " style="cursor: pointer;">
                                 <input type="checkbox" hidden class="custom-control-input toggle-status" id="status_{{$id}}" data-id="{{$id}}" {{ $data->status == 1 ? 'checked' : '' }}>
-                                <span class="custom-control-indicator p-0 m-0" onclick="JS_ApprovePayment.changeStatusApprovePayment('{{$id}}')"></span>
+                                <span class="custom-control-indicator p-0 m-0" onclick="JS_AppointmentAtHome.changeStatusAppointmentAtHome('{{$id}}')"></span>
                             </label>
-                        </td>
-                        <td style="color: #ffb600;;white-space: inherit;vertical-align: middle;" align="center" onclick="JS_ApprovePayment.edit('{{$id}}')"><i class="far fa-eye"></i></td>
-                        <!-- <td style="width:5% ;white-space: inherit;vertical-align: middle;" align="center"><span class="text-cursor text-warning" onclick="JS_ApprovePayment.edit('{{$id}}')"><i class="fas fa-edit"></i></span></td> -->
+                        </td>                  <!-- <td style="width:5% ;white-space: inherit;vertical-align: middle;" align="center"><span class="text-cursor text-warning" onclick="JS_ApprovePayment.edit('{{$id}}')"><i class="fas fa-edit"></i></span></td> -->
                     </tr>
-                    @endif
-                    @if($data->status == 1 && Auth::user()->role == 'EMPLOYEE')
-                    <tr>
-                        <td style="white-space: inherit;vertical-align: middle;" align="center"><input type="checkbox" name="chk_item_id"
-                                value="{{ $data->id }}"></td>
-                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{($datas->currentPage() - 1)*$datas->perPage() + ($key + 1)}}</td>
-                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->created_at) ? $data->created_at : '' }}</td>
-                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->code_schedule) ? $data->code_schedule : '' }}</td>
-                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->name) ? $data->name : '' }}</td>
-                        <td style="wwhite-space: inherit;vertical-align: middle;" align="center">{{ isset($data->phone) ? $data->phone : '' }}</td>
-                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->money) ? $data->money : '' }}</td>
-                        @if($data->type_payment == 'BANK')
-                        <td style="color:#00ab5f;white-space: inherit;vertical-align: middle;" align="center">Ngân hàng</td>
-                        @else
-                        <td style="color:#ff00c5;white-space: inherit;vertical-align: middle;" align="center">MoMo</td>
-                        @endif                        <!-- <td style="vertical-align: middle;" align="center"><img  src="{{url('/file-image-client/schedule/')}}/{{ !empty($data->name_image)?$data->name_image:'' }}" alt="Image" style="height: 150px;width: 150px;object-fit: cover;"></td> -->
-                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{ $data->status == 1 ? 'Đã xác nhận' : 'Chưa xác nhân' }}</td>
-                        <td style="color: #ffb600;white-space: inherit;vertical-align: middle;" align="center" onclick="JS_ApprovePayment.edit('{{$id}}')"><i class="far fa-eye"></i></td>
-                        <!-- <td style="width:5% ;white-space: inherit;vertical-align: middle;" align="center"><span class="text-cursor text-warning" onclick="JS_ApprovePayment.edit('{{$id}}')"><i class="fas fa-edit"></i></span></td> -->
-                    </tr>
-                    @endif
                 @endforeach
             @endif
         </tbody>

@@ -14,7 +14,7 @@ function JS_AppointmentAtHome(baseUrl, module, controller) {
 JS_AppointmentAtHome.prototype.loadIndex = function() {
     var myClass = this;
     $('.chzn-select').chosen({ height: '100%', width: '100%' });
-    var oForm = 'form#frmAppointmentAtHome_index';
+    var oForm = 'form#frmApproveAthome';
     var oFormCreate = 'form#frmAdd';
     myClass.loadList(oForm);
 
@@ -90,68 +90,6 @@ JS_AppointmentAtHome.prototype.add = function(oForm) {
     });
 }
 /**
- * Lấy thông tin khách hàng theo loại VIP
- */
-JS_AppointmentAtHome.prototype.getUserVIP = function() {
-    var url = this.urlPath + '/getUserVIP';
-    var myClass = this;
-    var data = 'role_client=' + $("#role_client").val();
-    $.ajax({
-        url: url,
-        type: "GET",
-        data: data,
-        success: function(arrResult) {
-            $("#user_id").html(arrResult);
-            $('.chzn-select').chosen({ height: '100%', width: '100%' });
-            $('.chzn-select').trigger('chosen:updated');
-        }
-    });
-}
-/**
- * Hàm hiển thêm mới
- *
- * @param oFormCreate (tên form)
- *
- * @return void
- */
-JS_AppointmentAtHome.prototype.store = function(oFormCreate) {
-    var url = this.urlPath + '/update';
-    var myClass = this;
-    var data = $(oFormCreate).serialize();
-    if ($("#role_client").val() == '') {
-        NclLib.alertMessageBackend('warning', 'Cảnh báo', 'Loại VIP không được để trống!');
-        $("#role_client").focus();
-        return false;
-    }
-    if ($("#user_id").val() == '') {
-        NclLib.alertMessageBackend('warning', 'Cảnh báo', 'Khách hàng không được để trống!');
-        $("#user_id").focus();
-        return false;
-    }
-    if ($("#stop_loss").val() == '') {
-        NclLib.alertMessageBackend('warning', 'Cảnh báo', 'Dừng lỗ không được để trống!');
-        $("#stop_loss").focus();
-        return false;
-    }
-    $.ajax({
-        url: url,
-        type: "POST",
-        data: data,
-        success: function(arrResult) {
-            if (arrResult['success'] == true) {
-                var nameMessage = 'Cập nhật thành công!';
-                NclLib.alertMessageBackend('success', 'Thông báo', nameMessage);
-                $('#addmodal').modal('hide');
-                myClass.loadList(oFormCreate);
-
-            } else {
-                var nameMessage = 'Cập nhật thất bại!';
-                NclLib.alertMessageBackend('danger', 'Lỗi', nameMessage);
-            }
-        }
-    });
-}
-/**
  * Load màn hình danh sách
  *
  * @param oForm (tên form)
@@ -163,7 +101,6 @@ JS_AppointmentAtHome.prototype.loadList = function(oForm, numberPage = 1, perPag
     var url = this.urlPath + '/loadList';
     var data = '_token=' + $("#_token").val();
     data += '&search=' + $("#search").val();
-    data += '&type_payment=' + $("#type_payment").val();
     data += '&fromdate=' + $("#fromdate").val();
     data += '&todate=' + $("#todate").val();
     data += '&offset=' + numberPage;
@@ -287,7 +224,7 @@ JS_AppointmentAtHome.prototype.delete = function(oForm) {
 JS_AppointmentAtHome.prototype.changeStatusAppointmentAtHome = function(id) {
     var myClass = this;
     var url = myClass.urlPath + '/changeStatusAppointmentAtHome';
-    var data = '_token=' + $("#frmAppointmentAtHome_index #_token").val();
+    var data = '_token=' + $("#frmApproveAthome #_token").val();
     data += '&status=' + ($("#status_" + id).is(":checked") == true ? 0 : 1);
     data += '&id=' + id;
     $.ajax({

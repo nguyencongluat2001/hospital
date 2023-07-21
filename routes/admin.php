@@ -136,7 +136,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
             Route::post('update', [AppointmentAtHomeController::class, 'update']);
             Route::post('delete', [AppointmentAtHomeController::class, 'delete']);
             Route::post('updateApprovePayment', [AppointmentAtHomeController::class, 'updateApprovePayment']);
-            Route::post('changeStatusApprovePayment', [AppointmentAtHomeController::class, 'changeStatusApprovePayment']);
+            Route::post('changeStatusAppointmentAtHome', [AppointmentAtHomeController::class, 'changeStatusAppointmentAtHome']);
         });
        
     });
