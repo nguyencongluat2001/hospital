@@ -26,7 +26,7 @@
                         <td style="white-space: inherit;vertical-align: middle;">
                             <span>Tên khách hàng: {{ isset($data['name']) ? $data['name'] : '' }}</span> <br>
                             <span>Số điện thoại: {{ isset($data['phone']) ? $data['phone'] : '' }}</span><br>
-                            <span>Ngày sinh: {{ isset($data['date_of_brith']) ? $data['date_of_brith'] : '' }}</span>
+                            <span>Ngày sinh: {{ isset($data['date_of_brith']) ? $data['date_of_brith'] : '' }}</span><br>
                             <span>Địa chỉ: {{ isset($data['address']) ? $data['address'] : '' }}</span><br>
                             <span>Lý do: {{ isset($data['reason']) ? $data['reason'] : '' }}</span>
                         </td>
