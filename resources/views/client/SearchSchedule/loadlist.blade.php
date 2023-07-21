@@ -1,5 +1,5 @@
 @if(count($datas) > 0)
-<div class="table-responsive pmd-card pmd-z-depth " style="background: #dcf9ff9e;">
+<div class="table-responsive pmd-card pmd-z-depth " style="background: #dcf9ffd9;">
     <center><span style="font-size: 30px;font-family: math;color: #ff0202;font-weight: 600;">Dịch vụ đặt lịch khám nhanh tại các tuyến trung ương</span></center>
     <table id="table-data" class="table  table-bordered table-striped table-condensed dataTable no-footer">
         <colgroup>

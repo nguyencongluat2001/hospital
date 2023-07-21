@@ -42,13 +42,10 @@
                     </ul>
                 </div>
             </div>
-            <a class="" style="width: 4%;" href="{{url('/')}}">
-                <!-- <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon text-white"><i class="fa fa-bars"></i></span>
-                </button> -->
+            <!-- <a class="" style="width: 4%;" href="{{url('/')}}">
                 <img class="card-img " src="../clients/img/support.jpg" alt="Card image">
             </a>
-            <span style="color:#ffd979">&nbsp;+84.386.358.006</span>
+            <span style="color:#ffd979">&nbsp;+84.386.358.006</span> -->
             
 
         </div>
