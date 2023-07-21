@@ -69,7 +69,6 @@
             <col width="35%">
             <col width="35%">
             <col width="14%">
-            <col width="5%">
         </colgroup>
         <thead>
             <tr style="background: #243649;color: #ffa700;">
