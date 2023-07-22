@@ -39,7 +39,7 @@ class CustomerCareController extends Controller
      */
     public function loadList(Request $request)
     {
-        $customerCare = $this->customerCareService->select('phone')->distinct()->orderBy('created_at', 'desc')->get();
+        $customerCare = $this->customerCareService->select('phone')->groupBy('phone')->orderBy('created_at', 'desc')->get();
         foreach($customerCare as $key => $value){
             $customerCare[$key] = $this->customerCareService->select('*')->where('phone', $value->phone)->orderBy('created_at', 'desc')->first();
         }
