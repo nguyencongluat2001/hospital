@@ -23,7 +23,7 @@ JS_User.prototype.loadIndex = function () {
     $(oForm).find('#btn_add').click(function () {
         myClass.add(oForm);
     });
-    $('form#frmAdd').find('#btn_create').click(function () {
+    $('#btn_create').click(function () {
         myClass.store('form#frmAdd');
     })
     $(oForm).find('#btn_edit').click(function () {
@@ -82,11 +82,11 @@ JS_User.prototype.add = function (oForm) {
         success: function (arrResult) {
             $('#editmodal').html(arrResult);
             $('#editmodal').modal('show');
-            $('form#frmAdd').find('#btn_changePass').click(function () {
-                myClass.changePass('form#frmAdd');
+            $("#btn_changePass").hide();
+            $('#btn_create').click(function () {
+                myClass.store('form#frmAdd');
             })
             // myClass.loadevent(oForm);
-
         }
     });
 }

@@ -38,8 +38,8 @@
 						</div>
 					</div>
 					@if(!empty($data) && $_SESSION["email"] == $data['email'] || $_SESSION["role"] == 'ADMIN')
-					<span id='btn_changePass'>
-						<button class="btn btn-primary btn-sm" type="button">
+					<span>
+						<button class="btn btn-primary btn-sm" type="button" id='btn_changePass'>
 							Đổi mật khẩu
 						</button>
 					</span>

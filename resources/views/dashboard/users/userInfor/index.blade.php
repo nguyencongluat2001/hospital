@@ -15,8 +15,8 @@
                 <div class="d-flex align-items-center">
                     <input type="hidden" name="id" id="id" value="{{$data['id']}}">
                       @if(!empty($data) && $_SESSION["email"] == $data['email'] || $_SESSION["role"] == 'ADMIN')
-                      <span id='btn_changePass' class="pt-3">
-                        <button class="btn btn-primary btn-sm ms-auto" type="button">
+                      <span class="pt-3">
+                        <button class="btn btn-primary btn-sm ms-auto" type="button" id='btn_changePass'>
                           Đổi mật khẩu
                         </button>
                       </span>

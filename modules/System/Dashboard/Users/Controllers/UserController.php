@@ -3,6 +3,7 @@
 namespace Modules\System\Dashboard\Users\Controllers;
 
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Modules\System\Dashboard\Users\Services\UserInfoService;
 use Modules\System\Dashboard\Users\Services\UserService;
 use Modules\System\Dashboard\Users\Models\AuthenticationOTPModel;
@@ -11,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Modules\Base\Helpers\ForgetPassWordMailHelper;
-
+use Modules\System\Dashboard\Users\Models\UserPassOldModel;
 
 /**
  *
@@ -215,42 +216,28 @@ class UserController extends Controller
     public function updatePass(Request $request)
     {
         $input = $request->all();
+        // dd($input);
         if (Auth::guard('web')->attempt(['email' => $input['email_acc'],'password' => $input['password_old']])) {
             if($input['password_new'] != $input['password_retype_change']){
                 return array('success' => false, 'message' => 'Nhập lại mật khẩu không khớp!');
             }
             $user = $this->userService->where('email',$input['email_acc'])->first();
-            $selectOtp = AuthenticationOTPModel::where('phone',$user['phone'])->first();
-            $zenData = [
-                'phone'=> $user['phone'],
-                'otp'=> 'FT'.rand(10,100).rand(10,100).rand(10,100),
-                'created_at'=> date("Y/m/d H:i:s"),
-                'updated_at'=> date("Y/m/d H:i:s"),
-            ];
-            if(isset($input['otp'])){
-                $checkOtp = AuthenticationOTPModel::where('phone',$user['phone'])->where('otp',$input['otp'])->first();
-                if(empty($checkOtp)){
-                    return array('success' => false, 'message' => 'Mã otp không khớp!');
-                }else{
-                     $passNew = [
-                        'password'=> Hash::make($input['password_new']),
-                     ];
-                     $updatePass = $this->userService->where('id',$input['user_id'])->update($passNew);
-                     return array('success' => 3, 'message' => 'Mật khẩu của bạn đã được thay đổi');
+            if(!empty($user)){
+                Carbon::setLocale('vi');
+                $now = Carbon::now();
+                $arrPassOld = UserPassOldModel::where('user_id', $user->id)->get();
+                foreach($arrPassOld as $key => $value){
+                    $created = Carbon::create($value->created_at);
+                    if(password_verify($input['password_new'], $value->password)){
+                        return array('success' => false, 'message' => 'Bạn đã sử dụng mật khẩu này <span style="color:red">' . $created->diffForHumans($now) . '</span>. Hãy nhập một mật khẩu khác!');
+                    }
                 }
-            }
-            if(isset($selectOtp)){
-                $create = AuthenticationOTPModel::where('phone',$user['phone'])->update($zenData);
+                $user->update(['password' => Hash::make($input['password_new'])]);
+                UserPassOldModel::insert(['id' => (string)\Str::uuid(), 'user_id' => $user->id, 'password' => Hash::make($input['password_new']), 'created_at' => date('Y-m-d H:i:s')]);
+                return array('success' => true, 'message' => 'Đổi mật khẩu thành công');
             }else{
-                $zenData['id'] = (string)\Str::uuid();
-                $create = AuthenticationOTPModel::create($zenData);
+                return array('success' => false, 'message' => 'Không tồn tại tài khoản!');
             }
-         
-            // $this->sendMail($input);
-            // $input['email'] = $input['email_acc'];
-            // $sendOtp = $this->userService->sendMail_register($input,$zenData['otp']);
-            return array('success' => true, 'message' => 'Đổi mật khẩu thành công');
-            // return array('success' => true, 'message' => 'Chúng tôi đã gửi mã OTP qua gmail của bạn!');
         } else {
             return array('success' => false, 'message' => 'Mật khẩu cũ chưa chính xác!');
         }
