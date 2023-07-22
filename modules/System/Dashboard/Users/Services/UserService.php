@@ -11,7 +11,7 @@ use Modules\System\Dashboard\Users\Repositories\UserRepository;
 use Modules\System\Dashboard\Users\Services\UserInfoService;
 use Twilio\Rest\Client;
 use Modules\Base\Helpers\ForgetPassWordMailHelper;
-
+use Modules\System\Dashboard\Users\Models\UserPassOldModel;
 use Str;
 
 class UserService extends Service
@@ -65,7 +65,7 @@ class UserService extends Service
                 'status' => isset($input['status']) ? 1 : 0,
             ];
              // nếu có ảnh mới thì cập nhật
-             if(!empty($arrFile)){
+            if(!empty($arrFile)){
                 $arrData['avatar'] = $arrFile;
             }
             // array user info
@@ -94,7 +94,15 @@ class UserService extends Service
                 $getUser = $this->UserRepository->where('email',$input['email'])->first();
                 $arrInfo['id']=(string)Str::uuid();
                 $arrInfo['user_id'] = $getUser->id;
+                
+                $arrPassOld = [
+                    'id' => (string)\Str::uuid(),
+                    'user_id' => $getUser->id,
+                    'password' => $arrData['password'],
+                    'created_at' => date('Y-m-d H:i:s'),
+                ];
                 $create = $this->UserInfoService->create($arrInfo);
+                UserPassOldModel::create($arrPassOld);
                 return array('success' => true, 'message' => 'Thêm mới thành công');
             }
             
