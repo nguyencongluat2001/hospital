@@ -213,10 +213,15 @@ footer a.text-light:hover {
   color: #fff2de;
 }
 .text-title-home{
-  font-size: 33px;
+  /* font-size: 33px; */
   color: #ffffff;
   font-family: serif;
   font-weight: 600;
+}
+@media (max-width: 3026px) {
+  .text-title-home{
+    font-size: 33px;
+  }
 }
 @media (max-width: 426px) {
   .text-title-home{
