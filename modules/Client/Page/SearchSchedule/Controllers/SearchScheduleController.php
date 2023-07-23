@@ -58,8 +58,8 @@ class SearchScheduleController extends Controller
             $param_a[] = [
                 'id' => $value['id'],
                 'code_schedule' => $value['code_schedule'],
-                'code_hospital' =>  $getHospital->name_hospital,
-                'code_specialty' => $getSpecialty->name_specialty,
+                'code_hospital' =>  !empty($getHospital->name_hospital)?$getHospital->name_hospital:'',
+                'code_specialty' => !empty($getSpecialty->name_specialty)?$getSpecialty->name_specialty:'',
                 'type_payment' => $value['type_payment'],
                 'money' => $value['money'],
                 'name' => $value['name'],
