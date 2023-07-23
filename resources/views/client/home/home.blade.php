@@ -45,32 +45,32 @@
                                 <div class="row g-lg-5 mb-4">
                                     <!-- Start Recent Work -->
                                     <div class="col-md-3 mb-4">
-                                        <a href="{{ url('/') }}"  type="button" class="btn btn-light icon-menu-home">
+                                        <a href="{{ url('/') }}"  type="button" class="btn btn-light icon-menu-home" style="color: #f2ffff;background: #ffffff0a;">
                                         <i class="fas fa-home"></i>
                                             <br>
                                             <span>Trang chủ</span>
                                         </a>
-                                        <a href="{{ url('/specialty') }}" type="button" class="btn btn-light icon-menu-home">
+                                        <a href="{{ url('/specialty') }}" type="button" class="btn btn-light icon-menu-home" style="color: #f2ffff;background: #ffffff0a;">
                                         <i class="fas fa-suitcase"></i> <br>
                                              <span>Chuyên khoa</span>
                                         </a>
-                                        <a href="{{ url('/facilities') }}" type="button" class="btn btn-light icon-menu-home">
+                                        <a href="{{ url('/facilities') }}" type="button" class="btn btn-light icon-menu-home" style="color: #f2ffff;background: #ffffff0a;">
                                         <i class="fas fa-clinic-medical"></i> <br>
                                            <span>Cơ sở y tế</span><br>
                                         </a>
                                     </div><!-- End Recent Work -->    
                                      <!-- Start Recent Work -->
                                     <div class="col-md-3 mb-4">
-                                        <a href="{{ url('/package') }}" type="button" class="btn btn-light icon-menu-home">
+                                        <a href="{{ url('/package') }}" type="button" class="btn btn-light icon-menu-home" style="color: #f2ffff;background: #ffffff0a;">
                                         <i class="fas fa-file-medical"></i>   <br>
                                         <span>Gói khám</span><br>
                                         </a>
-                                        <a href="{{ url('/searchschedule') }}" type="button" class="btn btn-light icon-menu-home">
+                                        <a href="{{ url('/searchschedule') }}" type="button" class="btn btn-light icon-menu-home" style="color: #f2ffff;background: #ffffff0a;">
                                         <i class="fas fa-search-plus"></i>   <br>
                                             <span>Tra cứu</span><br>
 
                                         </a>
-                                        <a href="{{ url('/contact') }}" type="button" class="btn btn-light icon-menu-home">
+                                        <a href="{{ url('/contact') }}" type="button" class="btn btn-light icon-menu-home" style="color: #f2ffff;background: #ffffff0a;">
                                         <i class="fas fa-comment-medical"></i>   <br>
                                         <span>Đánh giá</span><br>
                                         </a>
