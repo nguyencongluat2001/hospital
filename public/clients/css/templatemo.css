@@ -218,9 +218,9 @@ footer a.text-light:hover {
   font-family: serif;
   font-weight: 600;
 }
-@media (max-width: 3026px) {
+@media (max-width: 3026px) and (min-width: 426px) {
   .text-title-home{
-    font-size: 33px;
+    font-size: 33px !important;
   }
 }
 @media (max-width: 426px) {
