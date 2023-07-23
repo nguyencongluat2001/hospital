@@ -24,7 +24,7 @@
                         <section class="banner-bg">
                         <!-- style="animation: lights 4s 750ms linear infinite;" -->
                             <span  class="text-title-home "><center> ĐẶT LỊCH KHÁM NHANH <br>TẠI CÁC TUYẾN TRUNG ƯƠNG</center></span>
-                            <!-- <div class="container">
+                            <div class="container">
                                 <div class="row">
                                     <div class="col-lg-4 mx-auto ">
                                         <form action="#" method="get">
@@ -35,7 +35,7 @@
                                         </form>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
                         </section>
                      </div>
                     <!-- End Contact -->

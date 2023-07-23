@@ -310,5 +310,7 @@ footer a.text-light:hover {
 @media (min-width: 426px) {
   .icon-menu-home{
     display: none;
+    color: #f2ffff;
+    background: #ffffff0a;
   }
 }
