@@ -302,3 +302,13 @@ footer a.text-light:hover {
   background: #516d87;
   color: #00b609 !important;
 }
+
+  .icon-menu-home{
+    background: #ffffff0a;
+    color: #f2ffff;
+  }
+@media (min-width: 426px) {
+  .icon-menu-home{
+    display: none;
+  }
+}
