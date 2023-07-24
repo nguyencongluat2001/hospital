@@ -70,7 +70,16 @@ class HospitalController extends Controller
     public function createForm(Request $request)
     {
         $input = $request->all();
-        return view('dashboard.hospital.edit');
+        $Specialty = $this->SpecialtyService->where('current_status',1)->get();
+        foreach($Specialty as $value){
+            $arrSpecialty[] = [
+                'code' =>  $value['code'],
+                'name' =>  $value['name_specialty'],
+                'status' =>  0
+            ];
+        }
+        $data['arrSpecialty_list'] = $arrSpecialty;
+        return view('dashboard.hospital.edit',compact('data'));
     }
     /**
      * them thông tin
