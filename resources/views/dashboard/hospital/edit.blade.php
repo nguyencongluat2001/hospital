@@ -36,17 +36,26 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                        <span class="col-md-3 control-label required">Chọn ảnh đại diện</span><br>
-                        <label for="upload_image" class="label-upload">Chọn ảnh</label>
-                        <input type="file" hidden name="upload_image" id="upload_image" onchange="readURL(this)">
-                        <br>
-                        @if(!empty($data['image']))
-                        <img id="show_img" src="{{url('/file-image-client/blogs/')}}/{{$data['image'][0]->name_image}}" alt="Image" style="width:150px">
-                        @else
-                        <img id="show_img" hidden alt="Image" style="width:150px">
-                        @endif
+                    <span class="col-md-3 control-label required">Chọn ảnh đại diện</span><br>
+                    <label for="upload_image" class="label-upload">Chọn ảnh</label>
+                    <input type="file" hidden name="upload_image" id="upload_image" onchange="readURL(this)">
+                    <br>
+                    @if(!empty($data['image']))
+                    <img id="show_img" src="{{url('/file-image-client/blogs/')}}/{{$data['image'][0]->name_image}}" alt="Image" style="width:150px">
+                    @else
+                    <img id="show_img" hidden alt="Image" style="width:150px">
+                    @endif
+                </div>
+                <!-- Chọn chuyên khoa  -->
+                <div class="row form-group" id="div_hinhthucgiai">
+                    <span class="col-md-3 control-label required" >Chuyên khoa</span>
+                    <div class="col-md-8">
+                        @foreach($data['arrSpecialty_list'] as $item)
+                            <input type="checkbox" value="{{$item['code']}}" name="code_specialty" id="code_specialty" {{($item['status'] == '1') ? 'checked' : ''}}/>
+                            <span for="code_specialty">{{$item['name']}}</span> <br>
+                        @endforeach
                     </div>
-                
+                </div>
                 {{-- mô tả --}}
                 <div class="row form-group" id="div_hinhthucgiai">
                     <span class="col-md-3 control-label">Mô tả</span>
@@ -60,7 +69,7 @@
                     <span class="col-md-3 control-label">Trạng thái</span>
                     <div class="col-md-8">
                         @if(!empty($data['detail']['current_status']))
-                        <input type="checkbox" value="1" name="is_checkbox_status" id="c" {{($data['detail']['current_status'] == '1') ? 'checked' : ''}}/>
+                        <input type="checkbox" value="1" name="is_checkbox_status" id="is_checkbox_status" {{($data['detail']['current_status'] == '1') ? 'checked' : ''}}/>
                         <span for="is_checkbox_status">Hoạt động</span> <br>
                         @else
                         <input type="checkbox" value="1" name="is_checkbox_status" id="is_checkbox_status"/>

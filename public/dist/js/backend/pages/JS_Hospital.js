@@ -117,6 +117,10 @@ JS_Hospital.prototype.store = function (oFormCreate) {
     $('input[name="is_checkbox_status"]:checked').each(function() {
         status =  $(this).val();
     });
+    var code_specialty = [];
+    $('input[name="code_specialty"]:checked').each(function() {
+        code_specialty.push(this.value); 
+    });
     formdata.append('_token', $("#_token").val());
     formdata.append('id', $("#id").val());
     formdata.append('name_hospital', $("#name_hospital").val());
@@ -124,6 +128,7 @@ JS_Hospital.prototype.store = function (oFormCreate) {
     formdata.append('decision', CKEDITOR.instances.decision.getData());
     formdata.append('address', $("#address").val());
     formdata.append('is_checkbox_status', status);
+    formdata.append('code_specialty', code_specialty);
     $('form#frmAdd input[type=file]').each(function () {
         var count = $(this)[0].files.length;
         for (var i = 0; i < count; i++) {

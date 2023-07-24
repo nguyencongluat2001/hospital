@@ -43,6 +43,7 @@ class HospitalService extends Service
             'code'=>$input['code'],
             'decision'=>$input['decision'],
             'address'=>$input['address'],
+            'code_specialty' => $input['code_specialty'],
             'current_status'=> !empty($input['is_checkbox_status'])?$input['is_checkbox_status']:0,
         ];
         if(isset($arrFile[0])){
@@ -59,6 +60,7 @@ class HospitalService extends Service
     }
     public function edit($arrInput){
         $getUserInfor = $this->repository->where('id',$arrInput['chk_item_id'])->first()->toArray();
+        $getUserInfor['arrSpecialty'] = explode(',',$getUserInfor['code_specialty']);
         return $getUserInfor;
     }
       // /**

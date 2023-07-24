@@ -17,6 +17,7 @@ class HospitalModel extends Model
         'decision',
         'avatar',
         'address',
+        'code_specialty',
         'current_status'
     ];
 

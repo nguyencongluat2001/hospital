@@ -7,6 +7,7 @@ use Modules\Base\Library;
 use Illuminate\Http\Request;
 use Modules\System\Dashboard\Hospital\Services\HospitalService;
 use Modules\System\Dashboard\Category\Services\CategoryService;
+use Modules\System\Dashboard\Specialty\Services\SpecialtyService;
 use DB;
 
 /**
@@ -18,9 +19,11 @@ class HospitalController extends Controller
 {
 
     public function __construct(
+        SpecialtyService $SpecialtyService,
         HospitalService $HospitalService,
         CategoryService $categoryService
     ){
+        $this->SpecialtyService = $SpecialtyService;
         $this->HospitalService = $HospitalService;
         $this->categoryService = $categoryService;
     }
@@ -94,6 +97,23 @@ class HospitalController extends Controller
     {
         $input = $request->all();
         $data['detail'] = $this->HospitalService->edit($input);
+        $Specialty = $this->SpecialtyService->where('current_status',1)->get();
+        foreach($Specialty as $value){
+            if(in_array($value['code'],$data['detail']['arrSpecialty'])){
+                $arrSpecialty[] = [
+                    'code' =>  $value['code'],
+                    'name' =>  $value['name_specialty'],
+                    'status' =>  1
+                ];
+            }else{
+                $arrSpecialty[] = [
+                    'code' =>  $value['code'],
+                    'name' =>  $value['name_specialty'],
+                    'status' =>  0
+                ];
+            }
+        }
+        $data['arrSpecialty_list'] = $arrSpecialty;
         return view('dashboard.hospital.edit',compact('data'));
     }
 
