@@ -205,109 +205,20 @@
             </div>
             <div class="container py-5">
                 <div class="row gx-5 gx-sm-3 gx-lg-5 gy-lg-5 gy-3 pb-3 projects">
-                    <!-- Start Recent Work -->
-                    <div class="col-xl-3 col-md-4 col-sm-6 project ui branding">
-                        <a href="#" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                            <img class="service card-img" src="../../clients/img/bookingcare-cover-4.jpg" alt="Card image">
-                            <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                                <div class="service-work-content text-left text-light">
-                                    <span class="btn btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">UI/UX design</span>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing</p>
+                     @foreach ($Specialty as $key => $data)
+                        <!-- Start Recent Work -->
+                        <div class="col-xl-3 col-md-4 col-sm-6 project ui branding">
+                            <a href="{{url('/specialty')}}/{{$data->code}}" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
+                                <img class="service card-img" src="{{url('/file-image-client/avatar-specialty/')}}/{{ !empty($data->avatar)?$data->avatar:'' }}" alt="Card image">
+                                <div class="service-work-vertical card-img-overlay d-flex align-items-end">
+                                    <div class="service-work-content text-left text-light">
+                                        <span class="btn btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300" style="color: #ffd100;">Đặt lịch</span>
+                                        <p class="card-text">Chuyên khoa: {{$data->name_specialty}}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div><!-- End Recent Work -->
-
-                    <!-- Start Recent Work -->
-                    <div class="col-xl-3 col-md-4 col-sm-6 project ui graphic">
-                        <a href="#" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                            <img class="card-img" src="../../clients/img/bookingcare-cover-4.jpg" alt="Card image">
-                            <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                                <div class="service-work-content text-left text-light">
-                                    <span class="btn btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Social Media</span>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div><!-- End Recent Work -->
-
-                    <!-- Start Recent Work -->
-                    <div class="col-xl-3 col-md-4 col-sm-6 project branding">
-                        <a href="#" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                            <img class="card-img" src="../../clients/img/bookingcare-cover-4.jpg" alt="Card image">
-                            <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                                <div class="service-work-content text-left text-light">
-                                    <span class="btn btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Marketing</span>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div><!-- End Recent Work -->
-
-                    <!-- Start Recent Work -->
-                    <div class="col-xl-3 col-md-4 col-sm-6 project ui graphic">
-                        <a href="#" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                            <img class="card-img" src="../../clients/img/bookingcare-cover-4.jpg" alt="Card image">
-                            <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                                <div class="service-work-content text-left text-light">
-                                    <span class="btn btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Graphic</span>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div><!-- End Recent Work -->
-
-                    <!-- Start Recent Work -->
-                    <div class="col-xl-3 col-md-4 col-sm-6 project ui graphic">
-                        <a href="#" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                            <img class="card-img" src="../../clients/img/bookingcare-cover-4.jpg" alt="Card image">
-                            <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                                <div class="service-work-content text-left text-light">
-                                    <span class="btn btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Digtal Marketing</span>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div><!-- End Recent Work -->
-
-                    <!-- Start Recent Work -->
-                    <div class="col-xl-3 col-md-4 col-sm-6 project branding">
-                        <a href="#" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                            <img class="card-img" src="../../clients/img/bookingcare-cover-4.jpg" alt="Card image">
-                            <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                                <div class="service-work-content text-left text-light">
-                                    <span class="btn btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Market Research</span>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div><!-- End Recent Work -->
-
-                    <!-- Start Recent Work -->
-                    <div class="col-xl-3 col-md-4 col-sm-6 project branding">
-                        <a href="#" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                            <img class="card-img" src="../../clients/img/bookingcare-cover-4.jpg" alt="Card image">
-                            <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                                <div class="service-work-content text-left text-light">
-                                    <span class="btn btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Business</span>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div><!-- End Recent Work -->
-
-                    <!-- Start Recent Work -->
-                    <div class="col-xl-3 col-md-4 col-sm-6 project ui graphic branding">
-                        <a href="#" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                            <img class="card-img" src="../../clients/img/bookingcare-cover-4.jpg" alt="Card image">
-                            <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                                <div class="service-work-content text-left text-light">
-                                    <span class="btn btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Branding</span>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div><!-- End Recent Work -->
+                            </a>
+                        </div><!-- End Recent Work -->
+                    @endforeach
                 </div>
             </div>
         </div>
