@@ -28,16 +28,16 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                        <span class="col-md-3 control-label required">Chọn ảnh đại diện</span><br>
-                        <label for="upload_image" class="label-upload">Chọn ảnh</label>
-                        <input type="file" hidden name="upload_image" id="upload_image" onchange="readURL(this)">
-                        <br>
-                        @if(!empty($data['image']))
-                        <img id="show_img" src="{{url('/file-image-client/avatar-specialty/')}}/{{$data['image'][0]->name_image}}" alt="Image" style="width:150px">
-                        @else
-                        <img id="show_img" hidden alt="Image" style="width:150px">
-                        @endif
-                    </div>
+                    <span class="col-md-3 control-label required">Chọn ảnh đại diện</span><br>
+                    <label for="upload_image" class="label-upload">Chọn ảnh</label>
+                    <input type="file" hidden name="upload_image" id="upload_image" onchange="readURL(this)">
+                    <br>
+                    @if(!empty($data['image']))
+                    <img id="show_img" src="{{url('/file-image-client/avatar-specialty/')}}/{{$data['image'][0]->name_image}}" alt="Image" style="width:150px">
+                    @else
+                    <img id="show_img" hidden alt="Image" style="width:150px">
+                    @endif
+                </div>
                 
                 {{-- mô tả --}}
                 <div class="row form-group" id="div_hinhthucgiai">
