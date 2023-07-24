@@ -209,7 +209,7 @@
                         <!-- Start Recent Work -->
                         <div class="col-xl-3 col-md-4 col-sm-6 project ui branding">
                             <a href="{{url('/specialty')}}/{{$data->code}}" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                                <img class="service card-img" src="{{url('/file-image-client/avatar-specialty/')}}/{{ !empty($data->avatar)?$data->avatar:'' }}" alt="Card image">
+                                <img class="service card-img" style="height: 250px;object-fit: cover;" src="{{url('/file-image-client/avatar-specialty/')}}/{{ !empty($data->avatar)?$data->avatar:'' }}" alt="Card image">
                                 <div class="service-work-vertical card-img-overlay d-flex align-items-end">
                                     <div class="service-work-content text-left text-light">
                                         <span class="btn btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300" style="color: #ffd100;">Đặt lịch</span>
