@@ -134,6 +134,13 @@
                                         `);
             }, 1000);
         });
+        $("#start_new").click(function(){
+            $("#start").removeAttr('hidden');
+            $("#body-message").removeAttr('hidden');
+            $("#txt-phone").removeAttr('hidden');
+            $("#start_new").hide();
+            $(".list-chat").hide();
+        });
         // Check số điện thoại
         function isVietnamesePhoneNumber(number) {
             return /(03|05|07|08|09|01[2|6|8|9])+([0-9]{8})\b/.test(number);

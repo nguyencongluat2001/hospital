@@ -77,7 +77,7 @@ foreach($customerCare as $key => $value){
                         @endif
                     </div>
                 </div>
-                <div class="form-group" @if(isset($customerCare) && count($customerCare) > 0) hidden @endif>
+                <div class="form-group" id="txt-phone" @if(isset($customerCare) && count($customerCare) > 0) hidden @endif>
                     <input type="text" name="phone" id="phone" class="form-control" placeholder="Nhập số điện thoại">
                     <p class="errorPhone"></p>
                 </div>
