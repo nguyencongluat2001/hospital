@@ -57,12 +57,12 @@ return [
         'a'    => 'nav-link link-blog',
         'href' => '/system/blog/index',
     ],
-    'Hospital' => [
-        'name' => 'Cẩm nang',
-        'icon' => 'fas fa-medkit',
-        'a'    => 'nav-link link-Hospital',
-        'href' => '/system/Hospital/index',
-    ],
+    // 'Hospital' => [
+    //     'name' => 'Cẩm nang',
+    //     'icon' => 'fas fa-medkit',
+    //     'a'    => 'nav-link link-Hospital',
+    //     'href' => '/system/Hospital/index',
+    // ],
     'report' => [
         'name' => 'Báo cáo KPI',
         'icon' => 'fas fa-hand-holding-usd',
