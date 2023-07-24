@@ -58,7 +58,7 @@
                                                         <select class="form-control input-sm chzn-select" name="code_specialty" id="code_specialty">
                                                             <option value="">--Chọn khoa khám bệnh--</option>
                                                             @foreach($khoa as $key => $values) 
-                                                                <option value="{{$values->code}}">{{$values->name_specialty}}</option>
+                                                                <option value="{{$values['code']}}">{{$values['name_specialty']}}</option>
                                                             @endforeach 
                                                         </select>
                                                     </div>

@@ -59,9 +59,9 @@ class HospitalService extends Service
         return $create;
     }
     public function edit($arrInput){
-        $getUserInfor = $this->repository->where('id',$arrInput['chk_item_id'])->first()->toArray();
-        $getUserInfor['arrSpecialty'] = explode(',',$getUserInfor['code_specialty']);
-        return $getUserInfor;
+        $getHospitalInfor = $this->repository->where('id',$arrInput['chk_item_id'])->first()->toArray();
+        $getHospitalInfor['arrSpecialty'] = explode(',',$getHospitalInfor['code_specialty']);
+        return $getHospitalInfor;
     }
       // /**
     //  * Tải ảnh vào thư mục
