@@ -46,12 +46,11 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
 </head>
-
  @if (isset($_SESSION['role']) && ($_SESSION['role'] == 'ADMIN' || $_SESSION['role'] == 'EMPLOYEE')) 
     @if ($_SESSION['color_view'] == 1)
-        <body class="g-sidenav-show dark-version">
+        <body id="addMenu" class="g-sidenav-show dark-version ">
     @else
-        <body class="g-sidenav-show bg-white">
+        <body id="addMenu" class="g-sidenav-show bg-white ">
     @endif
     <div id="imageLoading">
             <div class="loader_bg">
@@ -60,7 +59,11 @@
         </div>
         
     <!-- <div class="min-height-300 bg-primary position-absolute w-100"></div> -->
+    
     <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 ps " id="sidenav-main" style="background:#1d2440 !important">
+    <div style="margin-left: 90%;color:white" class="btn_closeMenu" id="btn_closeMenu">
+        <span onclick="Js_Main.remoteMenu(this)" >X</span>
+    </div>
         <div class="sidenav-header">
         <i class="fas fa-times cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
         <!-- target="_blank" -->
@@ -68,7 +71,9 @@
             <img src="../clients\img\logo.png" class="navbar-brand-imgh-120" alt="main_logo" style="width:80%;padding-left:20%">
             <span class="ms-1 font-weight-bold"></span>
         </a>
+
         </div>
+
         <hr class="horizontal dark mt-7">
         <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main" >
             <ul class="navbar-nav">
@@ -89,9 +94,64 @@
     <!-- style="background-color:#2a3352f0; padding:40px" -->
     <main class="main-content position-relative border-radius-lg "  >
             <!-- Content -->
-
             <div id="app">
             <!-- style="background-color: #11112c5e; border-radius: 5px;" -->
+            <center>
+            <div id="btn_addMenu" class="navbar navbar-expand-md shadow-sm menu_layout">
+               <button type="button" onclick="Js_Main.addMenu(this)" class="btn btn-light icon-menu-home" >Menu</button> 
+               <ul class="navbar-nav ms-auto acc_auth">
+                    <!-- Authentication Links -->
+                    @guest
+                        @if (Route::has('login'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Đăng nhập') }}</a>
+                            </li>
+                        @endif
+
+                        @if (Route::has('register'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Đăng ký') }}</a>
+                            </li>
+                        @endif
+                    @else
+                        <li class="nav-item dropdown">
+                            <!-- <span id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <img  src="{{url('/file-image/avatar/')}}/{{ Auth::user()->avatar }}" alt="Image" style="border-radius:50%;height: 30px;width: 30px;object-fit: cover;">
+                                </span>    -->
+                            <span id="navbarDropdown" class="dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <span>
+                                {{ $_SESSION['name'] }}
+                                </span>
+                            </span>
+
+
+                            <div class="dropdown-menu dropdown-menu-end"  aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ URL::asset('/system/userInfo/index') }}">
+                                        <p>
+                                            {{ __('Thông tin cá nhân') }}
+                                        </p>
+                                </a>
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                        <p>
+                                            {{ __('Đăng xuất') }}
+                                        </p>
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest
+                </ul>
+            </div>
+            </center>
+           
+
                 <nav class="navbar navbar-expand-md shadow-sm" >
                     <div class="container">
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -174,11 +234,13 @@
                                     <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
                                 </a>
                             </li>
+                           
                             <li class="nav-item dropdown pe-2 d-flex align-items-center">
                                 <a href="javascript:;" class=" text-black p-0" id="dropdownMenuButton"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-bell cursor-pointer"></i>
                                 </a>
+                                
                                 <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4"
                                     aria-labelledby="dropdownMenuButton">
                                     <li class="mb-2">

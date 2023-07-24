@@ -187,20 +187,6 @@
     <section class="service-wrapper py-3">
         <div class="service-tag py-5 popular-specialties">
             <div class="col-md-12">
-                <!-- <ul class="nav d-flex justify-content-center">
-                    <li class="nav-item mx-lg-4">
-                        <a class="filter-btn nav-link btn-outline-primary active shadow rounded-pill text-light px-4 light-300" href="#" data-filter=".project">All</a>
-                    </li>
-                    <li class="nav-item mx-lg-4">
-                        <a class="filter-btn nav-link btn-outline-primary rounded-pill text-light px-4 light-300" href="#" data-filter=".graphic">Graphics</a>
-                    </li>
-                    <li class="filter-btn nav-item mx-lg-4">
-                        <a class="filter-btn nav-link btn-outline-primary rounded-pill text-light px-4 light-300" href="#" data-filter=".ui">UI/UX</a>
-                    </li>
-                    <li class="nav-item mx-lg-4">
-                        <a class="filter-btn nav-link btn-outline-primary rounded-pill text-light px-4 light-300" href="#" data-filter=".branding">Branding</a>
-                    </li>
-                </ul> -->
                 <h2 class="h2 text-center col-12 py-2 semi-bold-600">Chuyên khoa phổ biến</h2>
             </div>
             <div class="container py-5">
@@ -231,49 +217,42 @@
                 <h2 class="h2 text-center col-12 py-2 semi-bold-600">Bác sĩ nổi bật</h2>
             </div>
             <div class="pt-2 py-5 pb-3 d-lg-flex align-items-center gx-5" style="padding:10%">
-                            <!-- <div class="col-lg-3">
-                                <h2 class="h2 py-5 typo-space-line">Cố vấn đầu tư</h2>
-                                <p class="text-muted light-300">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                </p>
-                            </div> -->
-                                <div class="col-lg-12 row align-items-center">
-                                    <div class="team-member col-md-3">
-                                        <img style="width:300px;height:300px;object-fit: cover;" class="team-member-img img-fluid rounded-circle p-4" src="./../clients/img/carousel-1.jpg" alt="Card image">
-                                        <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
-                                            <li class="name_cg"> (Ông) Lê Văn A</li>
-                                            <li>Chuyên gia phân tích - Giám đốc tư vấn đầu tư</li>
-                                            <li>Công ty cổ phần bảo hiểm GTF</li>
-                                        </ul>
-                                    </div>
-                                    <div class="team-member col-md-3">
-                                        <img style="width:300px;height:300px;object-fit: cover;" class="team-member-img img-fluid rounded-circle p-4" src="./../clients/img/carousel-1.jpg" alt="Card image">
-                                        <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
-                                            <li class="name_cg">(Ông) Nguyễn Van C</li>
-                                            <li>Chief executive officier (CEO) & Founder DHY</li>
-                                            <li>Chuyên gia phân tích y học</li>
-                                        </ul>
-                                    </div>
-                                    <div class="team-member col-md-3">
-                                        <img style="width:300px;height:300px;object-fit: cover;" class="team-member-img img-fluid rounded-circle p-4" src="./../clients/img/carousel-1.jpg" alt="Card image">
-                                        <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
-                                            <li class="name_cg">(Ông) Nguyễn Van A</li>
-                                            <li>Chief executive officier (CEO) & Founder JYT</li>
-                                            <li>Dữ liệu mẫu xét nghiệm </li>
-                                        </ul>
-                                    </div>
-                                    <div class="team-member col-md-3">
-                                        <img style="width:300px;height:300px;object-fit: cover;" class="team-member-img img-fluid rounded-circle p-4" src="./../clients/img/carousel-1.jpg" alt="Card image">
-                                        <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
-                                            <li class="name_cg">(Ông) Trần Văn G</li>
-                                            <li>Chuyên gia phân tích</li>
-                                            <li>Cán bộ đào tạo & phát triển đại học y</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="col-lg-12 row align-items-center">
+                        <div class="team-member col-md-3">
+                            <img style="width:300px;height:300px;object-fit: cover;" class="team-member-img img-fluid rounded-circle p-4" src="./../clients/img/carousel-1.jpg" alt="Card image">
+                            <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
+                                <li class="name_cg"> (Ông) Lê Văn A</li>
+                                <li>Chuyên gia phân tích - Giám đốc tư vấn đầu tư</li>
+                                <li>Công ty cổ phần bảo hiểm GTF</li>
+                            </ul>
                         </div>
+                        <div class="team-member col-md-3">
+                            <img style="width:300px;height:300px;object-fit: cover;" class="team-member-img img-fluid rounded-circle p-4" src="./../clients/img/carousel-1.jpg" alt="Card image">
+                            <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
+                                <li class="name_cg">(Ông) Nguyễn Van C</li>
+                                <li>Chief executive officier (CEO) & Founder DHY</li>
+                                <li>Chuyên gia phân tích y học</li>
+                            </ul>
+                        </div>
+                        <div class="team-member col-md-3">
+                            <img style="width:300px;height:300px;object-fit: cover;" class="team-member-img img-fluid rounded-circle p-4" src="./../clients/img/carousel-1.jpg" alt="Card image">
+                            <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
+                                <li class="name_cg">(Ông) Nguyễn Van A</li>
+                                <li>Chief executive officier (CEO) & Founder JYT</li>
+                                <li>Dữ liệu mẫu xét nghiệm </li>
+                            </ul>
+                        </div>
+                        <div class="team-member col-md-3">
+                            <img style="width:300px;height:300px;object-fit: cover;" class="team-member-img img-fluid rounded-circle p-4" src="./../clients/img/carousel-1.jpg" alt="Card image">
+                            <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
+                                <li class="name_cg">(Ông) Trần Văn G</li>
+                                <li>Chuyên gia phân tích</li>
+                                <li>Cán bộ đào tạo & phát triển đại học y</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <!-- End Service -->
