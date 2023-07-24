@@ -60,6 +60,7 @@ Route::get('/', [ClientHomeController::class, 'index']);
 Route::get('/facilities', [FacilitiesController::class, 'index']);
 Route::get('/facilities/{code}', [FacilitiesController::class, 'detailIndex']);
 Route::get('/schedule/{code}', [FacilitiesController::class, 'schedule']);
+Route::get('/schedule/{code}/{idstaff}', [FacilitiesController::class, 'schedule']);
 
 // dịch vụ tại nhà
 Route::get('/appointmentathome/{code}', [AppointmentAtHomeController::class, 'index']);

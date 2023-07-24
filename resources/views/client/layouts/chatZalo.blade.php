@@ -1,13 +1,4 @@
-@php
-use Modules\System\Dashboard\CustomerCare\Models\CustomerCareModel;
-@endphp
 
-{{--@php
-$ip = gethostbyname(trim(exec("hostname")));
-$columnSelect = ['phone', 'ip', \DB::raw('cast(created_at as date)')];
-$customerCare = CustomerCareModel::select($columnSelect)->where('ip', $ip)->groupBy($columnSelect)->orderBy('created_at', 'desc')->get();
-
-@endphp--}}
 <style>
     #form_chat {
         position: fixed;
@@ -77,61 +68,7 @@ $customerCare = CustomerCareModel::select($columnSelect)->where('ip', $ip)->grou
         </section>
     </div>
     <div id="customerCare">
-        <form action="" method="POST" id="frmChat_box" autocomplete="off">
-            <input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
-            <span class="form-group input-group" style="align-items: center;">
-                @if(isset($notification))
-                <div id="alertNotifi" class="form-control alertNotifi" @if(count($notification) <=0) hidden @endif>
-                    <span>Bạn có {{count($notification)}} thông báo mới</span>
-                </div>
-                @endif
-                <div class="input-group-btn messageClose" id="messageCustomer">
-                    <label class="" for="message">
-                        <img width="70px" height="70px" style="background-color: none" src="https://vcdn.subiz-cdn.com/file/fiqtarohdurccuocnccb-27.png" alt="">
-                    </label>
-                </div>
-            </span>
-
-            <section class="avenue-messenger messageCustomer transform" id="">
-                <div class="chat">
-                    <div class="chat-title-customer">
-                        <span class="title-header">
-                            <span class="text-uppercase" style="color: #fff;font-size: 18px;letter-spacing: 1px;font-family: Trocchi, serif;">Chào mừng bạn đã đến với Booking Fast</span>
-                            <p class="text-capitalize mb-0">Nhập số điện thoại để liên hệ Dịch vụ Khách hàng, chúng tôi luôn túc trực 24/7</p>
-                        </span>
-                        <span class="messageClose">
-                            <i class="fa fa-window-close fa-xs" aria-hidden="true" style="color: rgb(255, 255, 255);font-size: 22px;"></i>
-                        </span>
-                    </div>
-                </div>
-                <!-- Màn hình danh sách -->
-                <div class="table-responsive">
-                    <div id="table-container-box">
-                        <div>
-
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="phone" id="phone" class="form-control" placeholder="Nhập số điện thoại">
-                            <p class="errorPhone"></p>
-                        </div>
-                    </div>
-                    <div id="body-message"></div>
-                </div>
-                <div class="start col-md-12">
-                    <button type="button" id="start" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Bắt đầu cuộc hội thoại</button>
-                </div>
-                <div class="sendMessage" style="display: none;">
-                    <div class="row">
-                        <div class="col-md-10">
-                            <input type="text" name="txt-message" id="txt-message" class="form-control">
-                        </div>
-                        <div class="col-md-2">
-                            <button type="submit" id="sendMessage" class="btn btn-primary"><i class="fas fa-paper-plane"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </form>
+        @include('client.layouts.chat')
     </div>
 </div>
 
@@ -196,6 +133,13 @@ $customerCare = CustomerCareModel::select($columnSelect)->where('ip', $ip)->grou
                                         </div></div>
                                         `);
             }, 1000);
+        });
+        $("#start_new").click(function(){
+            $("#start").removeAttr('hidden');
+            $("#body-message").removeAttr('hidden');
+            $("#txt-phone").removeAttr('hidden');
+            $("#start_new").hide();
+            $(".list-chat").hide();
         });
         // Check số điện thoại
         function isVietnamesePhoneNumber(number) {

@@ -146,18 +146,18 @@
                                                         </div>
                                                     </div>
                                                 </div> -->
-                                                <div class="form-group" style="display:flex">
-                                                    <div class="form-wrapper col-md-6">
+                                                <div class="form-group row">
+                                                    <div class="col-md-6">
                                                         <label for="">Mã cộng tác viên</label>
-                                                        @if(isset($data['user_introduce_name']))
-                                                        <input style="color:red" disabled onchange="JS_Register.getUser()" placeholder="Mã nhân viên giới thiệu..." id="code_introduce" type="text" class="form-control" name="code_introduce" value="{{isset($data['user_introduce_id']) ? $data['user_introduce_id'] : ''}}">
+                                                        @if(isset($user_introduce_name))
+                                                        <input style="color:red" disabled onchange="JS_Register.getUser()" placeholder="Mã nhân viên giới thiệu..." id="code_introduce" type="text" class="form-control" name="code_introduce" value="{{isset($user_introduce_id) ? $user_introduce_id : ''}}">
                                                         @else
-                                                        <input style="color:red"  onchange="JS_Register.getUser()" placeholder="Mã nhân viên giới thiệu..." id="code_introduce" type="text" class="form-control" name="code_introduce" value="{{isset($data['user_introduce_id']) ? $data['user_introduce_id'] : ''}}">
+                                                        <input style="color:red"  onchange="JS_Register.getUser()" placeholder="Mã nhân viên giới thiệu..." id="code_introduce" type="text" class="form-control" name="code_introduce" value="{{isset($user_introduce_id) ? $user_introduce_id : ''}}">
                                                         @endif
                                                     </div>
-                                                    <div class="form-wrapper col-md-6" id="iss">
+                                                    <div class="col-md-6" id="iss">
                                                         <label for="">Tên cộng tác viên</label>
-                                                        <input style="color:red"  disabled placeholder="Tên nhân viên giới thiệu..."  type="text" class="form-control"  value="{{isset($data['user_introduce_name']) ? $data['user_introduce_name'] : ''}}">
+                                                        <input style="color:red"  disabled placeholder="Tên nhân viên giới thiệu..."  type="text" class="form-control"  value="{{isset($user_introduce_name) ? $user_introduce_name : ''}}">
                                                     </div>
                                                 </div>
                                                 <div class="row">
