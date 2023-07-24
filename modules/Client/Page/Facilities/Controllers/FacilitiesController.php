@@ -15,6 +15,8 @@ use Modules\System\Dashboard\Hospital\Services\HospitalService;
 use Modules\System\Dashboard\Specialty\Models\UnitsModel;
 use Modules\System\Dashboard\Specialty\Services\SpecialtyService;
 use Modules\Client\Page\Facilities\Services\ScheduleService;
+use Modules\System\Dashboard\Users\Services\UserService;
+
 /**
  * Phân quyền người dùng 
  *
@@ -30,7 +32,8 @@ class FacilitiesController extends Controller
         CategoryService $categoryService,
         FacilitiesService $FacilitiesService,
         BlogService $blogService,
-        HospitalService $hospitalService
+        HospitalService $hospitalService,
+        UserService $userService
     ){
         $this->scheduleService = $scheduleService;
         $this->SpecialtyService = $SpecialtyService;
@@ -39,6 +42,7 @@ class FacilitiesController extends Controller
         $this->blogService = $blogService;
         $this->FacilitiesService = $FacilitiesService;
         $this->hospitalService = $hospitalService;
+        $this->userService = $userService;
     }
 
     /**
@@ -95,7 +99,7 @@ class FacilitiesController extends Controller
      *
      * @return view
      */
-    public function schedule(Request $request ,$code)
+    public function schedule(Request $request ,$code, $idstaff = '')
     {
         $input = $request->all();
         $datas['datas'] = $this->hospitalService->where('code',$code)->first();
@@ -112,6 +116,11 @@ class FacilitiesController extends Controller
             }
         }
         $datas['khoa'] = $arrSpecialty;
+        if(!empty($idstaff)){
+            $user = $this->userService->where('id_personnel', $idstaff)->first();
+            $datas['user_introduce_id'] = $idstaff;
+            $datas['user_introduce_name'] = $user->name ?? '';
+        }
         return view('client.Facilities.Schedule.home',$datas);
     }
      /// Danh sách huyện

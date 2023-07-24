@@ -411,7 +411,7 @@
     border-radius: 20px;
     /* height: calc(100% - 60px) !important; */
     max-height: 82vh !important;
-    height: 400px !important;
+    height: 500px !important;
     width: 320px;
     /*  transform: translateY(0);
       -webkit-transform: translateY(0);
@@ -615,6 +615,40 @@
   #form_chat .card-img{
     width:200px;
     height:250px;
+  }
+  .list-chat{
+    border: 1px solid #ccc;
+    border-radius: .5rem;
+    box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.2);
+  }
+  .list-title{
+    text-align: center;
+    padding: .5rem 0;
+    font-size: 18px;
+  }
+  .list-list{
+    height: 100%;
+    max-height: 36vh;
+    overflow-y: scroll;
+  }
+  .list-item{
+    padding: .5rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: .5rem .5rem;
+    cursor: pointer;
+    display: flex;
+  }
+  .d-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .list-name{
+    font-weight: bold;
+  }
+  .list-time{
+    font-size: 13px;
   }
   
   @media only screen and (max-device-width: 667px), screen and (max-width: 450px) {
