@@ -355,3 +355,44 @@ JS_Schedule.prototype.sendPayment = function (data) {
         }
     });
 }
+/**
+ * lấy thông tin nhân viên giới thiệu
+ *
+ * @param oForm (tên form)
+ *
+ * @return void
+ */
+JS_Schedule.prototype.getUser = function (oForm) {
+    var myClass = this;
+    var oForm = 'form#frmSendSchedule';
+    var url = myClass.urlPath + '/getUser';
+    var data = $(oForm).serialize();
+    $.ajax({
+        url: url,
+        type: "POST",
+        //cache: true,
+        data: data,
+        success: function (arrResult) {
+            if (arrResult['success'] == true) {
+                $("#user_introduce_name").val(arrResult['data']['name']);
+                Swal.fire({
+                    position: 'top-end',
+                    icon : 'success',
+                    title: arrResult.message,
+                    showConfirmButton: false,
+                    // background:'#06ff00',
+                    timer: 3000
+                  })
+          } else if (arrResult['success'] == false) {
+            Swal.fire({
+                position: 'top-end',
+                icon : 'warning',
+                title: arrResult.message,
+                showConfirmButton: false,
+                timer: 3000
+              })
+          }
+
+        }
+    });
+}

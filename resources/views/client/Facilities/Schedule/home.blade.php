@@ -136,7 +136,7 @@
                                                         <label for="">Xác thực OTP SMS <span class="request_star">*</span></label>
                                                         <div class="col-md-12 " style="display:flex">
                                                             <div class="col-md-3">
-                                                                <button type="button" onclick="JS_Register.getOtp()" class=" btn-primary" id="btn_register" style="background-color: #ffae17">
+                                                                <button type="button" onclick="JS_Schedule.getOtp()" class=" btn-primary" id="btn_register" style="background-color: #ffae17">
                                                                     {{ __('Lấy OTP SMS') }}
                                                                 </button>
                                                             </div>
@@ -150,14 +150,14 @@
                                                     <div class="col-md-6">
                                                         <label for="">Mã cộng tác viên</label>
                                                         @if(isset($user_introduce_name))
-                                                        <input style="color:red" disabled onchange="JS_Register.getUser()" placeholder="Mã nhân viên giới thiệu..." id="code_introduce" type="text" class="form-control" name="code_introduce" value="{{isset($user_introduce_id) ? $user_introduce_id : ''}}">
+                                                        <input style="color:red" disabled onchange="JS_Schedule.getUser()" placeholder="Mã nhân viên giới thiệu..." id="code_introduce" type="text" class="form-control" name="code_introduce" value="{{isset($user_introduce_id) ? $user_introduce_id : ''}}">
                                                         @else
-                                                        <input style="color:red"  onchange="JS_Register.getUser()" placeholder="Mã nhân viên giới thiệu..." id="code_introduce" type="text" class="form-control" name="code_introduce" value="{{isset($user_introduce_id) ? $user_introduce_id : ''}}">
+                                                        <input style="color:red"  onchange="JS_Schedule.getUser()" placeholder="Mã nhân viên giới thiệu..." id="code_introduce" type="text" class="form-control" name="code_introduce" value="{{isset($user_introduce_id) ? $user_introduce_id : ''}}">
                                                         @endif
                                                     </div>
                                                     <div class="col-md-6" id="iss">
                                                         <label for="">Tên cộng tác viên</label>
-                                                        <input style="color:red"  disabled placeholder="Tên nhân viên giới thiệu..."  type="text" class="form-control"  value="{{isset($user_introduce_name) ? $user_introduce_name : ''}}">
+                                                        <input style="color:red" id="user_introduce_name" name="user_introduce_name" disabled placeholder="Tên nhân viên giới thiệu..."  type="text" class="form-control"  value="{{isset($user_introduce_name) ? $user_introduce_name : ''}}">
                                                     </div>
                                                 </div>
                                                 <div class="row">

@@ -105,7 +105,7 @@ class FacilitiesController extends Controller
         $datas['datas'] = $this->hospitalService->where('code',$code)->first();
         $datas['khoa'] =  $this->SpecialtyService->where('current_status',1)->get();
         $datas['tinh'] =  UnitsModel::whereNull('code_huyen')->get();
-        $Specialty = explode(',', $datas['datas']['code_specialty']);
+        $Specialty = isset($datas['datas']['code_specialty']) ? explode(',', $datas['datas']['code_specialty']) : [];
         $SpecialtyAll = $this->SpecialtyService->where('current_status',1)->get();
         foreach($SpecialtyAll as $value){
             if(in_array($value['code'],$Specialty)){
@@ -115,7 +115,7 @@ class FacilitiesController extends Controller
                 ];
             }
         }
-        $datas['khoa'] = $arrSpecialty;
+        $datas['khoa'] = isset($arrSpecialty) ? $arrSpecialty : [];
         if(!empty($idstaff)){
             $user = $this->userService->where('id_personnel', $idstaff)->first();
             $datas['user_introduce_id'] = $idstaff;
@@ -187,5 +187,21 @@ class FacilitiesController extends Controller
             'status' => $sendPayment
         ]);
     }
+    /**
+   * lấy thông tin nhân viên giới thiệu
+   */
+   public function getUser(Request $request)
+   {
+       $input = $request->all();
+       $selectUser = $this->userService->where('id_personnel',$input['code_introduce'])->first();
+       if($input['code_introduce'] == ''){
+           return '';
+       }
+       if(isset($selectUser)){
+           return array('success' => true,'data' => $selectUser, 'message' => 'Nhân viên giới thiệu: '.$selectUser->name);
+       }else{
+           return array('success' => false, 'message' => 'Mã nhân viên không chính xác , vui lòng thử lại!!!!');
+       }
+   }
     
 }

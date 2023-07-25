@@ -75,6 +75,7 @@ Route::get('/specialty/{code}', [SpecialtyController::class, 'specialty']);
 Route::prefix('chat')->group(function () {
     Route::post('/broadcast', [ChatClientController::class, 'broadcast'])->name('broadcast');
     Route::post('/receive', [ChatClientController::class, 'receive'])->name('receive');
+    Route::post('/showMessage', [ChatClientController::class, 'showMessage'])->name('showMessage');
 });
 // Trang chủ contact
 Route::get('/contact', [ContactController::class, 'index']);
@@ -121,6 +122,7 @@ Route::prefix('/client')->group(function () {
             Route::get('/getHuyen',[FacilitiesController::class,'getHuyen']);
             Route::get('/getXa',[FacilitiesController::class,'getXa']);
             Route::post('/sendPayment',[FacilitiesController::class,'sendPayment']);
+            Route::post('/getUser',[FacilitiesController::class,'getUser']);
         });
         // đặt lịch xét nghiệm , truyền tại nhà
         route::prefix('appointmentathome')->group(function(){
