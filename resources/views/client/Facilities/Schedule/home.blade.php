@@ -58,13 +58,14 @@
                                                         <select onchange="JS_Schedule.getMoney(this.value)" class="form-control input-sm chzn-select" name="code_specialty" id="code_specialty">
                                                             <option value="">--Chọn khoa khám bệnh--</option>
                                                             @foreach($khoa as $key => $values) 
-                                                                <option value="{{$values['code']}}">{{$values['name']}}</option>
+                                                                <option value="{{$values['code']}}" {{($values['status'] == '2') ? 'selected' : ''}}>{{$values['name']}}</option>
                                                             @endforeach 
                                                         </select>
                                                     </div>
                                                     <div class="form-wrapper col-md-6" id="moneys">
                                                         <label for="">Số tiền khám <span class="request_star">*</span></label>
-                                                        <span style="font-size: 25px;font-weight: 500;color: #ff9400;">0 </span>VND
+                                                        <input style="font-size: 25px;font-weight: 500;color: #ff9400;"type="hidden" id="money" class="form-control" name="money" value="{{!empty($money)?$money:'' }}">
+                                                        <span><span style="font-size: 25px;font-weight: 500;color: #ff9400;">{{!empty($moneyConvert)?$moneyConvert:'' }}</span> VND</span>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -165,12 +166,6 @@
                                                         <label for="">Lý do khám <span class="request_star">*</span></label>
                                                         <textarea name="reason" id="reason" class="form-control"  rows="4" cols="50"></textarea>
                                                     </div>
-                                                </div>
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox"> Tôi chấp nhận Điều khoản sử dụng và Chính sách bảo mật. <span class="request_star">*</span>
-                                                        <span class="checkmark"></span>
-                                                    </label>
                                                 </div>
                                                 <div class="pt-3 mb-3">
                                                     <button type="button" onclick="JS_Schedule.add()" class=" btn-primary" id="btn_register" style="background-color: slategrey">

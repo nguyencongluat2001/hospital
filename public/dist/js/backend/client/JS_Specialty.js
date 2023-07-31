@@ -66,3 +66,29 @@ JS_Specialty.prototype.loadList = function (oForm) {
         }
     });
 }
+/**
+ * Load màn hình danh sách bệnh viện
+ *
+ * @param oForm (tên form)
+ *
+ * @return void
+ */
+JS_Specialty.prototype.getHospital = function (codeKhoa,codeBv) {
+    var html = `<a href="/schedule/`+ codeKhoa +`,`+codeBv+`"  class="btn rounded-pill btn-success text-light px-4 light-300">Đặt lịch khám</a>`
+    $("#hospital").html(html);
+}
+/**
+ * Cảnh báo chưa chọn bệnh viện
+ *
+ * @param oForm (tên form)
+ *
+ * @return void
+ */
+JS_Specialty.prototype.warning = function () {
+    var nameMessage = 'Chưa chọn bệnh viện!';
+        var icon = 'warning';
+        var color = '#ffd200';
+        var background = 'rgb(33 41 68)';
+        NclLib.alerMesageClient(nameMessage,icon,color,background);
+    return false;
+}

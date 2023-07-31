@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Modules\Base\Library;
 use Illuminate\Http\Request;
 use  Modules\System\Dashboard\Specialty\Services\SpecialtyService;
+use Modules\System\Dashboard\Hospital\Models\HospitalModel;
 use Illuminate\Support\Facades\Http;
 use DB;
 
@@ -48,6 +49,8 @@ class SpecialtyController extends Controller
     {
         $input = $request->all();
         $datas['datas'] = $this->SpecialtyService->where('code',$code)->first();
+        $datas['hospital'] = HospitalModel::where('code_specialty','like','%'.$code.'%')->get()->toArray();
+        // dd($datas);
         return view('client.Specialty.Detail.home',$datas);
     }
      /**

@@ -103,42 +103,49 @@ class FacilitiesController extends Controller
     public function schedule(Request $request ,$code, $idstaff = '')
     {
         $input = $request->all();
-        $datas['datas'] = $this->hospitalService->where('code',$code)->first();
+        $arrEx = explode(',',$code);
+        if(isset($arrEx[1])){
+            $datas['datas'] = $this->hospitalService->where('code',$arrEx[1])->first();
+        }else{
+            $datas['datas'] = $this->hospitalService->where('code',$code)->first();
+
+        }
         if(isset($datas['datas'] )){
             $Specialty = $this->SpecialtyService->where('current_status',1)->get();
             $data_arr['arrSpecialty'] = explode(',',$datas['datas']['code_specialty']);
             foreach($Specialty as $value){
                 if(in_array($value['code'],$data_arr['arrSpecialty'])){
-                    $arrSpecialty[] = [
-                        'code' =>  $value['code'],
-                        'name' =>  $value['name_specialty'],
-                        'status' =>  1
-                    ];
+                    if(!empty($arrEx[1]) && $value['code'] == $arrEx[0]){
+                        $arrSpecialty[] = [
+                            'code' =>  $value['code'],
+                            'name' =>  $value['name_specialty'],
+                            'status' =>  2
+                        ];
+                    $moneys =  MoneySpecialtyModel::where('code_hospital',$arrEx[1])
+                            ->where('code_specialty',$value['code'])
+                            ->select('money')
+                            ->first();
+                    $datas['money'] = !empty($moneys->money)?$moneys->money:'';
+                    $datas['moneyConvert'] = !empty($moneys->money)?number_format($moneys->money, 0, '', ','):'Chưa cấu hình';
+                    }else{
+                        $arrSpecialty[] = [
+                            'code' =>  $value['code'],
+                            'name' =>  $value['name_specialty'],
+                            'status' =>  1
+                        ];
+                    }
+                    
                 }
             }
             $datas['khoa'] = $arrSpecialty;
-        }else{
-           $datas = HospitalModel::where('code_specialty','like','%'.$code.'%')->get()->toArray();
-           dd($datas);
-
         }
         $datas['tinh'] =  UnitsModel::whereNull('code_huyen')->get();
-        $Specialty = explode(',', $datas['datas']['code_specialty']);
-        $SpecialtyAll = $this->SpecialtyService->where('current_status',1)->get();
-        foreach($SpecialtyAll as $value){
-            if(in_array($value['code'],$Specialty)){
-                $arrSpecialty[] = [
-                    'code' =>  $value['code'],
-                    'name_specialty' =>  $value['name_specialty'],
-                ];
-            }
-        }
-        $datas['khoa'] = $arrSpecialty;
         if(!empty($idstaff)){
             $user = $this->userService->where('id_personnel', $idstaff)->first();
             $datas['user_introduce_id'] = $idstaff;
             $datas['user_introduce_name'] = $user->name ?? '';
         }
+        // dd($datas);
         return view('client.Facilities.Schedule.home',$datas);
     }
      /// Danh sách huyện
@@ -220,8 +227,8 @@ class FacilitiesController extends Controller
                                        ->select('money')
                                        ->first();
         $arr = [
-            'money' => $moneys->money,
-            'moneyConvert' => number_format($moneys->money, 0, '', ',')
+            'money' => !empty($moneys->money)?$moneys->money:'',
+            'moneyConvert' => !empty($moneys->money)?number_format($moneys->money, 0, '', ','):'Chưa cấu hình'
         ];
         return response()->json([
             'data' => $arr,
