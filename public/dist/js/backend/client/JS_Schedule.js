@@ -34,22 +34,6 @@ JS_Schedule.prototype.loadIndex = function () {
     $('form#frmAdd').find('#btn_register').click(function () {
         myClass.add('form#frmAdd');
     })
-    //  // form load
-    //  $('form#frmLoadlist_list').find('#type_code').change(function () {
-    //     myClass.loadList();
-    // });
-    //  // form load
-    //  $('form#frmLoadlist_list').find('#limit').change(function () {
-    //     myClass.loadList();
-    // });
-    //  // form load
-    //  $('form#frmLoadlist_Bank').find('#type_code').change(function () {
-    //     myClass.loadListTap1();
-    // });
-    // // form load
-    // $(oFormBlog).find('#category').change(function () {
-    //     myClass.loadListBlog(oFormBlog);
-    // });
     $(oForm).find('#txt_search').click(function () {
         var page = $(oForm).find('#limit').val();
         var perPage = $(oForm).find('#cbo_nuber_record_page').val();
@@ -244,7 +228,6 @@ JS_Schedule.prototype.getHuyen = function (codeTinh) {
             $('.chzn-select').trigger('chosen:updated');
         }
     });
-
 }
 /**
  * Load màn hình danh sách phường xã
@@ -297,6 +280,7 @@ JS_Schedule.prototype.sendPayment = function (data) {
     var formdata = new FormData();
     formdata.append('_token', $("#_token").val());
     formdata.append('code_hospital', $("#code_hospital").val());
+    formdata.append('code_specialty', $("#code_specialty").val());
     formdata.append('type_payment', this.type_bank);
     formdata.append('money', $("#money").val());
     formdata.append('money', $("#money").val());
@@ -357,7 +341,6 @@ JS_Schedule.prototype.sendPayment = function (data) {
 }
 /**
  * lấy thông tin nhân viên giới thiệu
- *
  * @param oForm (tên form)
  *
  * @return void
@@ -383,16 +366,41 @@ JS_Schedule.prototype.getUser = function (oForm) {
                     // background:'#06ff00',
                     timer: 3000
                   })
-          } else if (arrResult['success'] == false) {
-            Swal.fire({
-                position: 'top-end',
-                icon : 'warning',
-                title: arrResult.message,
-                showConfirmButton: false,
-                timer: 3000
-              })
-          }
-
+            } else if (arrResult['success'] == false) {
+                Swal.fire({
+                    position: 'top-end',
+                    icon : 'warning',
+                    title: arrResult.message,
+                    showConfirmButton: false,
+                    timer: 3000
+                })
+            }
+        }
+    })
+}
+/**
+* Load số tiền
+*
+* @param oForm (tên form)
+*
+* @return void
+*/
+JS_Schedule.prototype.getMoney = function (codeSpecialty) {
+    var myClass = this;
+    var url = this.urlPath + '/getMoney';
+    var data = '&codeSpecialty=' + codeSpecialty;
+    var oForm = 'form#frmSendSchedule';
+    data += '&code_hospital=' + $("#code_hospital").val();
+    $.ajax({
+        url: url,
+        type: "GET",
+        cache: true,
+        data: data,
+        success: function (arrResult) {
+            var htmls = '<label for="">Số tiền khám <span class="request_star">*</span></label>'
+            htmls += `<input id="money" type="hidden" class="form-control" name="money" value="`+ arrResult.data.money +`">`
+            htmls += `<span><span style="font-size: 25px;font-weight: 500;color: #ff9400;">`+ arrResult.data.moneyConvert +`</span> VND</span>`
+            $("#moneys").html(htmls);
         }
     });
 }

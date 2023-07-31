@@ -17,8 +17,9 @@ use Modules\System\Dashboard\Specialty\Services\SpecialtyService;
 use Modules\Client\Page\Facilities\Services\ScheduleService;
 use Modules\System\Dashboard\Users\Services\UserService;
 
+use Modules\System\Dashboard\Hospital\Models\MoneySpecialtyModel;
+use Modules\System\Dashboard\Hospital\Models\HospitalModel;
 /**
- * Phân quyền người dùng 
  *
  * @author Luatnc
  */
@@ -102,25 +103,49 @@ class FacilitiesController extends Controller
     public function schedule(Request $request ,$code, $idstaff = '')
     {
         $input = $request->all();
-        $datas['datas'] = $this->hospitalService->where('code',$code)->first();
-        $datas['khoa'] =  $this->SpecialtyService->where('current_status',1)->get();
-        $datas['tinh'] =  UnitsModel::whereNull('code_huyen')->get();
-        $Specialty = isset($datas['datas']['code_specialty']) ? explode(',', $datas['datas']['code_specialty']) : [];
-        $SpecialtyAll = $this->SpecialtyService->where('current_status',1)->get();
-        foreach($SpecialtyAll as $value){
-            if(in_array($value['code'],$Specialty)){
-                $arrSpecialty[] = [
-                    'code' =>  $value['code'],
-                    'name_specialty' =>  $value['name_specialty'],
-                ];
-            }
+        $arrEx = explode(',',$code);
+        if(isset($arrEx[1])){
+            $datas['datas'] = $this->hospitalService->where('code',$arrEx[1])->first();
+        }else{
+            $datas['datas'] = $this->hospitalService->where('code',$code)->first();
+
         }
-        $datas['khoa'] = isset($arrSpecialty) ? $arrSpecialty : [];
+        if(isset($datas['datas'] )){
+            $Specialty = $this->SpecialtyService->where('current_status',1)->get();
+            $data_arr['arrSpecialty'] = explode(',',$datas['datas']['code_specialty']);
+            foreach($Specialty as $value){
+                if(in_array($value['code'],$data_arr['arrSpecialty'])){
+                    if(!empty($arrEx[1]) && $value['code'] == $arrEx[0]){
+                        $arrSpecialty[] = [
+                            'code' =>  $value['code'],
+                            'name' =>  $value['name_specialty'],
+                            'status' =>  2
+                        ];
+                    $moneys =  MoneySpecialtyModel::where('code_hospital',$arrEx[1])
+                            ->where('code_specialty',$value['code'])
+                            ->select('money')
+                            ->first();
+                    $datas['money'] = !empty($moneys->money)?$moneys->money:'';
+                    $datas['moneyConvert'] = !empty($moneys->money)?number_format($moneys->money, 0, '', ','):'Chưa cấu hình';
+                    }else{
+                        $arrSpecialty[] = [
+                            'code' =>  $value['code'],
+                            'name' =>  $value['name_specialty'],
+                            'status' =>  1
+                        ];
+                    }
+                    
+                }
+            }
+            $datas['khoa'] = $arrSpecialty;
+        }
+        $datas['tinh'] =  UnitsModel::whereNull('code_huyen')->get();
         if(!empty($idstaff)){
             $user = $this->userService->where('id_personnel', $idstaff)->first();
             $datas['user_introduce_id'] = $idstaff;
             $datas['user_introduce_name'] = $user->name ?? '';
         }
+        // dd($datas);
         return view('client.Facilities.Schedule.home',$datas);
     }
      /// Danh sách huyện
@@ -203,5 +228,27 @@ class FacilitiesController extends Controller
            return array('success' => false, 'message' => 'Mã nhân viên không chính xác , vui lòng thử lại!!!!');
        }
    }
-    
+     /// Lấy số tiền của chuyên khoa
+     /**
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function getMoney(Request $request)
+    {
+        $input = $request->all();
+        $moneys =  MoneySpecialtyModel::where('code_hospital',$input['code_hospital'])
+                                       ->where('code_specialty',$input['codeSpecialty'])
+                                       ->select('money')
+                                       ->first();
+        $arr = [
+            'money' => !empty($moneys->money)?$moneys->money:'',
+            'moneyConvert' => !empty($moneys->money)?number_format($moneys->money, 0, '', ','):'Chưa cấu hình'
+        ];
+        return response()->json([
+            'data' => $arr,
+            'status' => true
+        ]);
+    }
 }

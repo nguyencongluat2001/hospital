@@ -123,6 +123,7 @@ Route::prefix('/client')->group(function () {
             Route::get('/getXa',[FacilitiesController::class,'getXa']);
             Route::post('/sendPayment',[FacilitiesController::class,'sendPayment']);
             Route::post('/getUser',[FacilitiesController::class,'getUser']);
+            Route::get('/getMoney',[FacilitiesController::class,'getMoney']);
         });
         // đặt lịch xét nghiệm , truyền tại nhà
         route::prefix('appointmentathome')->group(function(){

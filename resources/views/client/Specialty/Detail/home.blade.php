@@ -26,14 +26,31 @@
                                                                 <img class="card-img-top" src="{{url('/file-image-client/avatar-specialty/')}}/{{ !empty($datas->avatar)?$datas->avatar:'' }}" style="height: 150px;object-fit: cover;" alt="...">
                                                             </div>
                                                             <div class="col-lg-1 "></div>
-                                                            <div class="col-lg-7 ">
-                                                                <h5 style="color:#ffd877;font-size: 40px;font-family: serif;font-weight: 600;">{{ !empty($datas->name_specialty)?$datas->name_specialty:'' }}</h5>
-                                                                <span style="color:#11222a;font-size:20px">{{!empty($datas->address)?$datas->address:'' }}</span> <br> <br>
-                                                                <a href="{{url('/schedule')}}/{{$datas->code}}"  class="btn rounded-pill btn-success text-light px-4 light-300">Đặt lịch khám</a>
-                                                             
-                                                            </div>
+                                                            <form id="frmSpecialty" method="POST"  autocomplete="off">
+                                                                @csrf
+                                                                <input type="hidden" id="code_Specialty" name="code_Specialty" value="{{ !empty($datas->code)?$datas->code:'' }}">
+                                                                <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
+                                                                    <div class="col-lg-12 ">
+                                                                        <h5 style="color:#ffd877;font-size: 40px;font-family: serif;font-weight: 600;">Chuyên khoa: {{ !empty($datas->name_specialty)?$datas->name_specialty:'' }}</h5>
+                                                                        <div class="form-wrapper col-md-12">
+                                                                            <select onchange="JS_Specialty.getHospital('{{$datas->code}}',this.value)" class="form-control input-sm chzn-select" name="code_specialty" id="code_specialty">
+                                                                                <option value="">--Chọn bệnh viện--</option>
+                                                                                @foreach($hospital as $key => $values) 
+                                                                                    <option value="{{$values['code']}}">{{$values['name_hospital']}}</option>
+                                                                                @endforeach 
+                                                                            </select>
+                                                                        </div>  <br>
+                                                                        <div id="hospital">
+                                                                        <span  onclick="JS_Specialty.warning()" class="btn rounded-pill btn-success text-light px-4 light-300">
+                                                                            Đặt lịch khám
+                                                                        </span>
+                                                                    </div>
+                                                                    </div>
+                                                            </form>
                                                         </div>
+                                                        
                                                     </div>
+                                                    
                                                 </ul>
                                             </div>
                                         </div>
