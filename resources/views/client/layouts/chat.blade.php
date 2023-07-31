@@ -41,6 +41,7 @@ foreach($customerCare as $key => $value){
 
             <div class="chat-title-customer">
                 <span class="title-header">
+                    <span class="icon-back" style="cursor: pointer; color: #fff; display:none;margin-right: 10px;font-size: 18px;" ><i class="fas fa-angle-left"></i></span>
                     <span class="text-uppercase" style="color: #fff;font-size: 18px;letter-spacing: 1px;font-family: Trocchi, serif;">Chào mừng bạn đã đến với Booking Fast</span>
                     <p class="text-capitalize mb-0">Nhập số điện thoại để liên hệ Dịch vụ Khách hàng, chúng tôi luôn túc trực 24/7</p>
                 </span>
@@ -57,7 +58,7 @@ foreach($customerCare as $key => $value){
                     <div class="list-list">
                         @if(isset($customerCare) && count($customerCare) > 0)
                         @foreach($customerCare as $key => $value)
-                        <div class="list-item">
+                        <div class="list-item" onclick="showMessage('{{$value->phone}}')">
                             <div class="avatar">
                                 <img src="{{URL::asset('clients/img/logo.png')}}" alt="" width="50px">
                             </div>

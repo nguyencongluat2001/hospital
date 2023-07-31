@@ -4,6 +4,7 @@ namespace Modules\Client\Page\Chat\Controllers;
 
 use App\Events\PusherBroadcast;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Modules\System\Dashboard\CustomerCare\Services\CustomerCareService;
 
@@ -54,5 +55,45 @@ class ChatClientController extends Controller
             $html .= '</div>';
             return $html;
         }
+    }
+    public function showMessage(Request $request)
+    {
+        $arrInput = $request->all();
+        $customerCare = $this->customerCareService->where('phone', $request->phone)->get();
+        $htmls = '';
+        $htmls .= '<div class="left-message">';
+        $htmls .= '<img src="./assets/images/staff-chat.png" alt="" width="50vw" style="margin-right: 5px;">';
+        $htmls .= '<div class="text">';
+        $htmls .= '<p>Xin chào!<br>Chúng tôi có thể giúp gì cho bạn.</p>';
+        $htmls .= '</div></div>';
+        $htmls .= '<div class="left-message">';
+        $htmls .= '<img src="./assets/images/staff-chat.png" alt="" width="50vw" style="margin-right: 5px;">';
+        $htmls .= '<div class="text">';
+        $htmls .= '<p><a href="facilities" target="_blank" class="btn btn-light">Đặt lịch khám</a></p>';
+        $htmls .= '</div></div>';
+        $check = false;
+        foreach($customerCare as $key => $value){
+            $created_at = Carbon::create($value->created_at);
+            $now = Carbon::now();
+            if(!empty($value->reply)){
+                $htmls .= '<div class="left-message">';
+                $htmls .= '<img src="./assets/images/staff-chat.png" alt="" width="50vw" style="margin-right: 5px;">';
+                $htmls .= '<div class="text">';
+                $htmls .= '<p>' . $value->reply . '</p>';
+                $htmls .= '</div></div>';
+            }elseif(!empty($value->question)){
+                $htmls .= '<div class="right-message">';
+                $htmls .= '<div class="response">';
+                $htmls .= '<div class="text">';
+                $htmls .= '<p>' . $value->question . '</p>';
+                $htmls .= '</div>';
+                $htmls .= '</div>';
+                $htmls .= '</div>';
+            }
+            if($now->diffInHours($created_at) > 1){
+                $check = true;
+            }
+        }
+        return array('htmls' => $htmls, 'check' => $check);
     }
 }

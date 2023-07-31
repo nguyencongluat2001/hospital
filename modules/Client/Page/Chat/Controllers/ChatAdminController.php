@@ -27,8 +27,11 @@ class ChatAdminController extends Controller
             $html .= '<p>' . $arrInput['message'] . '</p>';
             $html .= '</div>';
             $html .= '</div>';
+            $html .= '<div style="margin-left: 10px; align-items: top;">';
+            $html .= '<img src="../assets/images/staff-chat.png" width="50px" alt="">';
             $html .= '</div>';
-            $html .= '<p class="response-time time">' . date('H:i d/m/Y') . '</p>';
+            $html .= '</div>';
+            $html .= '<p class="response-time time" style="padding-right: 4rem;">' . date('H:i d/m/Y') . '</p>';
 
             $params = [
                 'id' => strtoupper((string)\Str::uuid()),
@@ -47,12 +50,15 @@ class ChatAdminController extends Controller
         $arrInput = $request->all();
         if(isset($arrInput['message']) && !empty($arrInput['message'])){
             $html = '<div class="message">';
+            $html = '<div style="margin-right: 10px; align-items: top;">';
+            $html = '<img src="../assets/images/avatar_default.png" width="50px" alt="">';
+            $html = '</div>';
             $html .= '<div class="text">';
             $html .= '<b>' . $arrInput['phone'] . '</b>';
             $html .= '<p>' . $arrInput['message'] . '</p>';
             $html .= '</div>';
             $html .= '</div>';
-            $html .= '<p class="time">' . date('H:i d/m/Y') . '</p>';
+            $html .= '<p class="time" style="padding-leftt: 4rem;">' . date('H:i d/m/Y') . '</p>';
             return $html;
         }
     }

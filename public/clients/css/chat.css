@@ -848,9 +848,9 @@
     height: 300px;
   }
   #body-message{
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
     overflow-y: scroll;
-    max-height: 40vh;
+    max-height: 52vh;
     padding: 10px 10px 10px 0;
   }
   #body-message::-webkit-scrollbar {

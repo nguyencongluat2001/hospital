@@ -212,6 +212,22 @@ class FacilitiesController extends Controller
             'status' => $sendPayment
         ]);
     }
+    /**
+   * lấy thông tin nhân viên giới thiệu
+   */
+   public function getUser(Request $request)
+   {
+       $input = $request->all();
+       $selectUser = $this->userService->where('id_personnel',$input['code_introduce'])->first();
+       if($input['code_introduce'] == ''){
+           return '';
+       }
+       if(isset($selectUser)){
+           return array('success' => true,'data' => $selectUser, 'message' => 'Nhân viên giới thiệu: '.$selectUser->name);
+       }else{
+           return array('success' => false, 'message' => 'Mã nhân viên không chính xác , vui lòng thử lại!!!!');
+       }
+   }
      /// Lấy số tiền của chuyên khoa
      /**
      *

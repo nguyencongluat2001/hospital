@@ -76,6 +76,58 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/8.2.0/pusher.min.js"></script>
 <script>
     
+    function showMessage(phone){
+        $.ajax({
+            url: '/chat/showMessage',
+            method: 'POST',
+            data: {
+                _token: '{{csrf_token()}}',
+                phone: phone,
+            },
+            success: function(res) {
+                console.log(res);
+                $("#body-message").html(res['htmls']);
+                if(res['check'] == true){
+                    $("#body-message").append('<div align="center"><span>Cuộc trò truyện đã kết thúc</span></div>');
+                    $(".start").show();
+                    $("#table-container-box").show();
+                    $(".list-chat").hide();
+                }else{
+                    $(".sendMessage").show();
+                    $(".start").hide();
+                    $("#table-container-box").hide();
+                }
+                $("#body-message").removeAttr('hidden');
+                $("#body-message").show('hidden');
+                $(".icon-back").show();
+                $(".title-header").html('<span class="icon-back" style="cursor: pointer; color: #fff;margin-right: 10px;font-size: 18px;"><i class="fas fa-angle-left" aria-hidden="true"></i></span><span class="text-uppercase" style="color: #fff;font-size: 18px;letter-spacing: 1px;font-family: Trocchi, serif;">Chat Booking Fast</span>');
+                $(".icon-back").click(function(){
+                    callBack();
+                });
+            }
+        });
+    }
+    // <span class="title-header"><span class="icon-back" style="cursor: pointer; color: #fff;margin-right: 10px;font-size: 18px;"><i class="fas fa-angle-left" aria-hidden="true"></i></span><span class="text-uppercase" style="color: #fff;font-size: 18px;letter-spacing: 1px;font-family: Trocchi, serif;">Chat Booking Fast</span></span>
+    $(".icon-back").click(function(){
+        callBack();
+    });
+    function callBack(){
+        $("#body-message").html('');
+        $("#body-message").hide();
+        $(".sendMessage").hide();
+        $(".start").show();
+        $("#table-container-box").show();
+        $(".icon-back").hide();
+        $(".list-chat").show();
+        $("#txt-phone").hide();
+        $("#start").hide();
+        $("#start_new").show();
+        $(".title-header").html('<span class="icon-back" style="cursor: pointer; color: #fff; display:none;margin-right: 10px;font-size: 18px;"><i class="fas fa-angle-left" aria-hidden="true"></i></span><span class="text-uppercase" style="color: #fff;font-size: 18px;letter-spacing: 1px;font-family: Trocchi, serif;">Chào mừng bạn đã đến với Booking Fast</span><p class="text-capitalize mb-0">Nhập số điện thoại để liên hệ Dịch vụ Khách hàng, chúng tôi luôn túc trực 24/7</p>');
+        $(".icon-back").click(function(){
+            callBack();
+        });
+    }
+
     $(document).ready(function() {
         $(".chatZaloClose").click(function() {
             if($(".messageCustomer").hasClass('hidden')){
@@ -123,7 +175,7 @@
                                             <p>Xin chào!<br>Chúng tôi có thể giúp gì cho bạn.</p>
                                         </div></div>
                                         `);
-            $(".title-header").html('<span class="text-uppercase" style="color: #fff;font-size: 18px;letter-spacing: 1px;font-family: Trocchi, serif;">Chat Booking Fast</span>');
+            $(".title-header").html('<span class="icon-back" style="cursor: pointer; color: #fff;margin-right: 10px;font-size: 18px;" ><i class="fas fa-angle-left"></i></span><span class="text-uppercase" style="color: #fff;font-size: 18px;letter-spacing: 1px;font-family: Trocchi, serif;">Chat Booking Fast</span>');
             setTimeout(function(){
                 $("#body-message").append(`
                                         <div class="left-message">
@@ -133,13 +185,21 @@
                                         </div></div>
                                         `);
             }, 1000);
+            $(".icon-back").click(function(){
+                callBack();
+            });
         });
         $("#start_new").click(function(){
             $("#start").removeAttr('hidden');
             $("#body-message").removeAttr('hidden');
+            $("#body-message").html('');
             $("#txt-phone").removeAttr('hidden');
             $("#start_new").hide();
             $(".list-chat").hide();
+            $(".icon-back").show();
+            $("#txt-phone").show();
+            $("#start").show();
+
         });
         // Check số điện thoại
         function isVietnamesePhoneNumber(number) {

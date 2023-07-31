@@ -21,7 +21,7 @@ use Carbon\Carbon;
                 <p>{{ $data->question }}</p>
             </div>
         </div>
-        <p class="send-time time"> {{ date('H:i d/m/Y', strtotime($data->created_at)) }}</p>
+        <p class="send-time time" style="padding-left: 4rem;"> {{ date('H:i d/m/Y', strtotime($data->created_at)) }}</p>
     @elseif(!empty($data->reply))
     <?php 
         if(!empty($data->reply) && array_key_last($message->toArray()) != $key) $checkDateResponse = 0;
@@ -39,7 +39,7 @@ use Carbon\Carbon;
                 <img src="{{URL::asset('assets/images/staff-chat.png')}}" width="50px" alt="">
             </div>
         </div>
-        <p class="response-time time"> {{ date('H:i d/m/Y', strtotime($data->created_at)) }}</p>
+        <p class="response-time time" style="padding-right: 4rem;"> {{ date('H:i d/m/Y', strtotime($data->created_at)) }}</p>
     @endif
     @endforeach
     @if($timeout > 1)
@@ -48,7 +48,7 @@ use Carbon\Carbon;
 </div>
 @if($timeout <= 1)
 <div class="footer-chat">
-    <input type="text" class="txt-message" id="txt-message" placeholder="Nhập câu trả lời..."></input>
+    <input type="text" class="txt-message" id="txt-message" placeholder="Nhập câu trả lời..." onkeydown="if(event.key == 'Enter'){JS_CustomerCare.broadcast('{{$data->phone}}'); return false;}"></input>
     <i class="icon send fa fa-paper-plane-o clickable" aria-hidden="true" id="sendMessage"></i>
 </div>
 @endif
