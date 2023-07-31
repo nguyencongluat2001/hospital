@@ -16,7 +16,7 @@ use Modules\System\Dashboard\Specialty\Models\UnitsModel;
 use Modules\System\Dashboard\Specialty\Services\SpecialtyService;
 use Modules\Client\Page\Facilities\Services\ScheduleService;
 use Modules\System\Dashboard\Hospital\Models\MoneySpecialtyModel;
-
+use Modules\System\Dashboard\Hospital\Models\HospitalModel;
 /**
  *
  * @author Luatnc
@@ -100,18 +100,24 @@ class FacilitiesController extends Controller
     {
         $input = $request->all();
         $datas['datas'] = $this->hospitalService->where('code',$code)->first();
-        $Specialty = $this->SpecialtyService->where('current_status',1)->get();
-        $data_arr['arrSpecialty'] = explode(',',$datas['datas']['code_specialty']);
-        foreach($Specialty as $value){
-            if(in_array($value['code'],$data_arr['arrSpecialty'])){
-                $arrSpecialty[] = [
-                    'code' =>  $value['code'],
-                    'name' =>  $value['name_specialty'],
-                    'status' =>  1
-                ];
+        if(isset($datas['datas'] )){
+            $Specialty = $this->SpecialtyService->where('current_status',1)->get();
+            $data_arr['arrSpecialty'] = explode(',',$datas['datas']['code_specialty']);
+            foreach($Specialty as $value){
+                if(in_array($value['code'],$data_arr['arrSpecialty'])){
+                    $arrSpecialty[] = [
+                        'code' =>  $value['code'],
+                        'name' =>  $value['name_specialty'],
+                        'status' =>  1
+                    ];
+                }
             }
+            $datas['khoa'] = $arrSpecialty;
+        }else{
+           $datas = HospitalModel::where('code_specialty','like','%'.$code.'%')->get()->toArray();
+           dd($datas);
+
         }
-        $datas['khoa'] = $arrSpecialty;
         $datas['tinh'] =  UnitsModel::whereNull('code_huyen')->get();
         return view('client.Facilities.Schedule.home',$datas);
     }
