@@ -120,6 +120,8 @@ Route::prefix('/client')->group(function () {
             Route::get('/getHuyen',[FacilitiesController::class,'getHuyen']);
             Route::get('/getXa',[FacilitiesController::class,'getXa']);
             Route::post('/sendPayment',[FacilitiesController::class,'sendPayment']);
+            Route::get('/getMoney',[FacilitiesController::class,'getMoney']);
+
         });
         // đặt lịch xét nghiệm , truyền tại nhà
         route::prefix('appointmentathome')->group(function(){

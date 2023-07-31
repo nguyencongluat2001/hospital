@@ -86,7 +86,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
             Route::get('/loadListTap1',[HomeController::class,'loadListTap1'])->name('loadListTap1');
             Route::get('/realTimeData',[HomeController::class,'realTimeData'])->name('realTimeData');
         });
-        //Cẩm nang
+        //Bệnh viện
         Route::prefix('/hospital')->group(function () {
             //Hospital
             Route::get('/index', [HospitalController::class, 'index']);
@@ -94,8 +94,10 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
             Route::post('/createForm',[HospitalController::class,'createForm']);
             Route::post('/create',[HospitalController::class,'create'])->name('create');
             Route::post('/edit',[HospitalController::class,'edit'])->name('edit');
-            Route::post('/delete',[HospitalController::class,'delete'])->name('delete');
-            Route::get('/seeVideo',[HospitalController::class,'seeVideo'])->name('seeVideo');
+            Route::post('/editMoneyPackage',[HospitalController::class,'editMoneyPackage'])->name('editMoneyPackage');
+            Route::post('/createMoneyPackage',[HospitalController::class,'createMoneyPackage'])->name('createMoneyPackage');
+            Route::post('/delete',[HospitalController::class,'delete']);
+            Route::get('/seeVideo',[HospitalController::class,'seeVideo']);
         });
          //Chuyên khoa
          Route::prefix('/specialty')->group(function () {
@@ -105,7 +107,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
             Route::post('/createForm',[SpecialtyController::class,'createForm']);
             Route::post('/create',[SpecialtyController::class,'create'])->name('create');
             Route::post('/edit',[SpecialtyController::class,'edit'])->name('edit');
-            Route::post('/delete',[SpecialtyController::class,'delete'])->name('delete');
+            Route::post('/delete',[SpecialtyController::class,'delete']);
         });
         // customerCare
         Route::prefix('customerCare')->group(function(){

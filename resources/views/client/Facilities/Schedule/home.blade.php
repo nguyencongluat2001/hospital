@@ -55,16 +55,16 @@
                                                 <div class="row">
                                                     <div class="form-wrapper col-md-6">
                                                         <label for="">Chuyên khoa khám <span class="request_star">*</span></label>
-                                                        <select class="form-control input-sm chzn-select" name="code_specialty" id="code_specialty">
+                                                        <select onchange="JS_Schedule.getMoney(this.value)" class="form-control input-sm chzn-select" name="code_specialty" id="code_specialty">
                                                             <option value="">--Chọn khoa khám bệnh--</option>
                                                             @foreach($khoa as $key => $values) 
-                                                                <option value="{{$values->code}}">{{$values->name_specialty}}</option>
+                                                                <option value="{{$values['code']}}">{{$values['name']}}</option>
                                                             @endforeach 
                                                         </select>
                                                     </div>
-                                                    <div class="form-wrapper col-md-6">
+                                                    <div class="form-wrapper col-md-6" id="moneys">
                                                         <label for="">Số tiền khám <span class="request_star">*</span></label>
-                                                        <input placeholder="Nhập số tiền..." id="money" type="text" class="form-control" name="money" value="">
+                                                        <span style="font-size: 25px;font-weight: 500;color: #ff9400;">0 </span>VND
                                                     </div>
                                                 </div>
                                                 <div class="row">

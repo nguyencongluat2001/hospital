@@ -15,8 +15,9 @@ use Modules\System\Dashboard\Hospital\Services\HospitalService;
 use Modules\System\Dashboard\Specialty\Models\UnitsModel;
 use Modules\System\Dashboard\Specialty\Services\SpecialtyService;
 use Modules\Client\Page\Facilities\Services\ScheduleService;
+use Modules\System\Dashboard\Hospital\Models\MoneySpecialtyModel;
+
 /**
- * Phân quyền người dùng 
  *
  * @author Luatnc
  */
@@ -99,7 +100,18 @@ class FacilitiesController extends Controller
     {
         $input = $request->all();
         $datas['datas'] = $this->hospitalService->where('code',$code)->first();
-        $datas['khoa'] =  $this->SpecialtyService->where('current_status',1)->get();
+        $Specialty = $this->SpecialtyService->where('current_status',1)->get();
+        $data_arr['arrSpecialty'] = explode(',',$datas['datas']['code_specialty']);
+        foreach($Specialty as $value){
+            if(in_array($value['code'],$data_arr['arrSpecialty'])){
+                $arrSpecialty[] = [
+                    'code' =>  $value['code'],
+                    'name' =>  $value['name_specialty'],
+                    'status' =>  1
+                ];
+            }
+        }
+        $datas['khoa'] = $arrSpecialty;
         $datas['tinh'] =  UnitsModel::whereNull('code_huyen')->get();
         return view('client.Facilities.Schedule.home',$datas);
     }
@@ -167,5 +179,27 @@ class FacilitiesController extends Controller
             'status' => $sendPayment
         ]);
     }
-    
+     /// Lấy số tiền của chuyên khoa
+     /**
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function getMoney(Request $request)
+    {
+        $input = $request->all();
+        $moneys =  MoneySpecialtyModel::where('code_hospital',$input['code_hospital'])
+                                       ->where('code_specialty',$input['codeSpecialty'])
+                                       ->select('money')
+                                       ->first();
+        $arr = [
+            'money' => $moneys->money,
+            'moneyConvert' => number_format($moneys->money, 0, '', ',')
+        ];
+        return response()->json([
+            'data' => $arr,
+            'status' => true
+        ]);
+    }
 }
