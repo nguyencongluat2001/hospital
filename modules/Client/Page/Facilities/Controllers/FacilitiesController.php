@@ -17,8 +17,9 @@ use Modules\System\Dashboard\Specialty\Services\SpecialtyService;
 use Modules\Client\Page\Facilities\Services\ScheduleService;
 use Modules\System\Dashboard\Users\Services\UserService;
 
+use Modules\System\Dashboard\Hospital\Models\MoneySpecialtyModel;
+use Modules\System\Dashboard\Hospital\Models\HospitalModel;
 /**
- * Phân quyền người dùng 
  *
  * @author Luatnc
  */
@@ -103,7 +104,24 @@ class FacilitiesController extends Controller
     {
         $input = $request->all();
         $datas['datas'] = $this->hospitalService->where('code',$code)->first();
-        $datas['khoa'] =  $this->SpecialtyService->where('current_status',1)->get();
+        if(isset($datas['datas'] )){
+            $Specialty = $this->SpecialtyService->where('current_status',1)->get();
+            $data_arr['arrSpecialty'] = explode(',',$datas['datas']['code_specialty']);
+            foreach($Specialty as $value){
+                if(in_array($value['code'],$data_arr['arrSpecialty'])){
+                    $arrSpecialty[] = [
+                        'code' =>  $value['code'],
+                        'name' =>  $value['name_specialty'],
+                        'status' =>  1
+                    ];
+                }
+            }
+            $datas['khoa'] = $arrSpecialty;
+        }else{
+           $datas = HospitalModel::where('code_specialty','like','%'.$code.'%')->get()->toArray();
+           dd($datas);
+
+        }
         $datas['tinh'] =  UnitsModel::whereNull('code_huyen')->get();
         $Specialty = explode(',', $datas['datas']['code_specialty']);
         $SpecialtyAll = $this->SpecialtyService->where('current_status',1)->get();
@@ -187,5 +205,27 @@ class FacilitiesController extends Controller
             'status' => $sendPayment
         ]);
     }
-    
+     /// Lấy số tiền của chuyên khoa
+     /**
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function getMoney(Request $request)
+    {
+        $input = $request->all();
+        $moneys =  MoneySpecialtyModel::where('code_hospital',$input['code_hospital'])
+                                       ->where('code_specialty',$input['codeSpecialty'])
+                                       ->select('money')
+                                       ->first();
+        $arr = [
+            'money' => $moneys->money,
+            'moneyConvert' => number_format($moneys->money, 0, '', ',')
+        ];
+        return response()->json([
+            'data' => $arr,
+            'status' => true
+        ]);
+    }
 }

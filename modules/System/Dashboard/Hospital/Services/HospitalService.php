@@ -5,6 +5,7 @@ namespace Modules\System\Dashboard\Hospital\Services;
 use Illuminate\Support\Facades\Hash;
 use Modules\Base\Service;
 use Modules\System\Dashboard\Hospital\Repositories\HospitalRepository;
+use Modules\System\Dashboard\Hospital\Services\MoneySpecialtyService;
 use Str;
 use Modules\Base\Library;
 
@@ -13,9 +14,11 @@ class HospitalService extends Service
 {
 
     public function __construct(
+        MoneySpecialtyService $moneySpecialtyService,
         HospitalRepository $HospitalRepository
         )
     {
+        $this->moneySpecialtyService = $moneySpecialtyService;
         $this->HospitalRepository = $HospitalRepository;
         $this->baseDis = public_path("file-image-client/avatar-hospital") . "/";
         parent::__construct();
@@ -37,7 +40,6 @@ class HospitalService extends Service
         if(isset($file) && $file != []){
             $arrFile = $this->uploadFile($input,$file,$image_old);
         }
-
         $arrData = [
             'name_hospital'=>$input['name_hospital'],
             'code'=>$input['code'],
@@ -59,9 +61,9 @@ class HospitalService extends Service
         return $create;
     }
     public function edit($arrInput){
-        $getHospitalInfor = $this->repository->where('id',$arrInput['chk_item_id'])->first()->toArray();
-        $getHospitalInfor['arrSpecialty'] = explode(',',$getHospitalInfor['code_specialty']);
-        return $getHospitalInfor;
+        $data = $this->repository->where('id',$arrInput['chk_item_id'])->first()->toArray();
+        $data['arrSpecialty'] = explode(',',$data['code_specialty']);
+        return $data;
     }
       // /**
     //  * Tải ảnh vào thư mục
@@ -84,5 +86,35 @@ class HospitalService extends Service
             }
             return $arrImage;
     }
-
+    //Cấu hình giá tiền
+    public function createMoneyPackage($input){
+        $hospital = $this->HospitalRepository->where('id',$input['id'])->first();
+        foreach($input as $key=>$value){
+            if($key != '_token' &&  $key != 'id'){
+                if($value == '' && $value == null){
+                    return array('success' => false, 'message' => 'Giá khám các khoa không được để trống!');
+                }
+                
+            }
+        }
+        $delete = $this->moneySpecialtyService->where('code_hospital',$hospital->code)->delete();
+        foreach($input as $key=>$value){
+            if($key != '_token' &&  $key != 'id'){
+                if(isset($hospital)){
+                    $arrData = [
+                        'code_hospital' => $hospital->code,
+                        'code_specialty' => $key,
+                        'money' => $value,
+                        'created_at' => date("Y/m/d H:i:s"),
+                        'updated_at' => date("Y/m/d H:i:s")
+                    ];
+                    $arrData['id'] = (string)Str::uuid();
+                    $create = $this->moneySpecialtyService->create($arrData);
+                }else{
+                    return array('success' => false, 'message' => 'Không tồn tại bệnh viện!');
+                }
+            }
+        }
+        return array('success' => true, 'message' => 'Cập nhật thành công!');
+    }
 }

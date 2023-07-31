@@ -24,8 +24,14 @@ JS_Hospital.prototype.loadIndex = function () {
     $('form#frmAdd').find('#btn_create').click(function () {
         myClass.store('form#frmAdd');
     })
+    $('form#frmMoneyPackage').find('#btn_create').click(function () {
+        myClass.createMoneyPackage('form#frmMoneyPackage');
+    })
     $(oForm).find('#btn_edit').click(function () {
         myClass.edit(oForm);
+    });
+    $(oForm).find('#btn_money_package').click(function () {
+        myClass.editMoneyPackage(oForm);
     });
      // form load
      $(oForm).find('#cate').change(function () {
@@ -50,6 +56,9 @@ JS_Hospital.prototype.loadevent = function (oForm) {
     var myClass = this;
     $('form#frmAdd').find('#btn_create').click(function () {
         myClass.store('form#frmAdd');
+    })
+    $('form#frmMoneyPackage').find('#btn_create').click(function () {
+        myClass.createMoneyPackage('form#frmMoneyPackage');
     })
     $('form#frmVideo').find('#btn_create').click(function () {
         myClass.store('form#frmVideo');
@@ -168,6 +177,68 @@ JS_Hospital.prototype.store = function (oFormCreate) {
     });
 }
 /**
+ * Hàm hiển thêm mới
+ *
+ * @param oFormCreate (tên form)
+ *
+ * @return void
+ */
+JS_Hospital.prototype.createMoneyPackage = function (oFormCreate) {
+    var url = this.urlPath + '/createMoneyPackage';
+    var myClass = this;
+    var data = $(oFormCreate).serialize();
+    if ($("#name_hospital").val() == '') {
+        var nameMessage = 'Tên bệnh viện không được để trống!';
+        var icon = 'warning';
+        var color = '#f5ae67';
+        NclLib.alerMesage(nameMessage,icon,color);
+        return false;
+    }
+    if ($("#code").val() == '') {
+        var nameMessage = 'Mã bệnh viện không được để trống!';
+        var icon = 'warning';
+        var color = '#f5ae67';
+        NclLib.alerMesage(nameMessage,icon,color);
+        return false;
+    }
+    if ($("#address").val() == '') {
+        var nameMessage = 'Địa chỉ bệnh viện không được để trống!';
+        var icon = 'warning';
+        var color = '#f5ae67';
+        NclLib.alerMesage(nameMessage,icon,color);
+        return false;
+    }
+    $.ajax({
+        url: url,
+        type: "POST",
+        data: data,
+        dataType: 'json',
+        cache: false,
+        success: function (arrResult) {
+            if (arrResult['success'] == true) {
+                Swal.fire({
+                    position: 'top-start',
+                    icon: 'success',
+                    title: 'Cập nhật thành công',
+                    showConfirmButton: false,
+                    timer: 3000
+                  })
+               $('#editmodal').modal('hide');
+               var loadding = NclLib.successLoadding();
+               myClass.loadList(oFormCreate);
+            } else {
+                Swal.fire({
+                    position: 'top-start',
+                    icon: 'error',
+                    title: arrResult['message'],
+                    showConfirmButton: false,
+                    timer: 3000
+                  })
+            }
+        }
+    });
+}
+/**
  * Load màn hình danh sách
  *
  * @param oForm (tên form)
@@ -230,14 +301,65 @@ JS_Hospital.prototype.edit = function (oForm) {
         }
     });
     if (listitem == '') {
-        var nameMessage = 'Bạn chưa chọn thể loại!';
+        var nameMessage = 'Bạn chưa chọn bệnh viện!';
         var icon = 'warning';
         var color = '#f5ae67';
         NclLib.alerMesage(nameMessage,icon,color);
         return false;
     }
     if (i > 1) {
-        var nameMessage = 'Bạn chỉ được chọn một thể loại!';
+        var nameMessage = 'Bạn chỉ được chọn một bệnh viện!';
+        var icon = 'warning';
+        var color = '#f5ae67';
+        NclLib.alerMesage(nameMessage,icon,color);
+        return false;
+    }
+    $.ajax({
+        url: url,
+        type: "POST",
+        //cache: true,
+        data: data,
+        success: function (arrResult) {
+            $('#editmodal').html(arrResult);
+            $('#editmodal').modal('show');
+            myClass.loadevent(oForm);
+
+        }
+    });
+}
+/**
+ * Hàm hiển thị modal edit
+ *
+ * @param oForm (tên form)
+ *
+ * @return void
+ */
+JS_Hospital.prototype.editMoneyPackage = function (oForm) {
+    var url = this.urlPath + '/editMoneyPackage';
+    var myClass = this;
+    var data = $(oForm).serialize();
+    var listitem = '';
+    var i = 0;
+    var p_chk_obj = $('#table-data').find('input[name="chk_item_id"]');
+    $(p_chk_obj).each(function () {
+        if ($(this).is(':checked')) {
+            if (listitem !== '') {
+                listitem += ',' + $(this).val();
+            } else {
+                listitem = $(this).val();
+            }
+            i++;
+        }
+    });
+    if (listitem == '') {
+        var nameMessage = 'Bạn chưa chọn bệnh viện!';
+        var icon = 'warning';
+        var color = '#f5ae67';
+        NclLib.alerMesage(nameMessage,icon,color);
+        return false;
+    }
+    if (i > 1) {
+        var nameMessage = 'Bạn chỉ được chọn một bệnh viện!';
         var icon = 'warning';
         var color = '#f5ae67';
         NclLib.alerMesage(nameMessage,icon,color);
@@ -285,7 +407,7 @@ JS_Hospital.prototype.delete = function (oForm) {
     var data = $(oForm).serialize();
     var url = this.urlPath + '/delete';
     Swal.fire({
-        title: 'Bạn có chắc chắn xóa vĩnh viễn người dùng này không?',
+        title: 'Bạn có chắc chắn xóa vĩnh viễn bệnh viện này không?',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#34bd57',

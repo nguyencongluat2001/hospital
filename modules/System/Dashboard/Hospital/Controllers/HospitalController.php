@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Modules\System\Dashboard\Hospital\Services\HospitalService;
 use Modules\System\Dashboard\Category\Services\CategoryService;
 use Modules\System\Dashboard\Specialty\Services\SpecialtyService;
+use Modules\System\Dashboard\Hospital\Services\MoneySpecialtyService;
 use DB;
 
 /**
@@ -19,10 +20,12 @@ class HospitalController extends Controller
 {
 
     public function __construct(
+        MoneySpecialtyService $moneySpecialtyService,
         SpecialtyService $SpecialtyService,
         HospitalService $HospitalService,
         CategoryService $categoryService
     ){
+        $this->moneySpecialtyService = $moneySpecialtyService;
         $this->SpecialtyService = $SpecialtyService;
         $this->HospitalService = $HospitalService;
         $this->categoryService = $categoryService;
@@ -157,5 +160,41 @@ class HospitalController extends Controller
         $input = $request->all();
         $data = $this->HospitalService->where('id',$input['id'])->first();
         return view('dashboard.hospital.video',compact('data'));
+    }
+     /**
+     * Load màn hình cấu hình giá các khoa khám 
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function editMoneyPackage(Request $request)
+    {
+        $input = $request->all();
+        $data['detail'] = $this->HospitalService->edit($input);
+        foreach($data['detail']['arrSpecialty'] as $value){
+            $Specialty = $this->SpecialtyService->where('code',$value)->first();
+            $moneySpecialty = $this->moneySpecialtyService->where('code_hospital',$data['detail']['code'])->where('code_specialty',$value)->first();
+            $arrSpecialty[] = [
+                'code' =>  $Specialty->code,
+                'name' =>  $Specialty->name_specialty,
+                'money' => !empty($moneySpecialty->money)?$moneySpecialty->money:''
+            ];
+        }
+        $data['arrSpecialty_list'] = $arrSpecialty;
+        return view('dashboard.hospital.editMoneyPackage',compact('data'));
+    }
+    /**
+     * Thêm giá các khoa khám 
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function createMoneyPackage (Request $request)
+    {
+        $input = $request->input();
+        $result = $this->HospitalService->createMoneyPackage($input); 
+        return $result;
     }
 }

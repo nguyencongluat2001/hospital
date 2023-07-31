@@ -67,14 +67,16 @@
         <div class="sidenav-header">
         <i class="fas fa-times cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
         <!-- target="_blank" -->
-        <a class="navbar-brand m-0" href="{{url('/')}}">
+        <!-- <a class="navbar-brand m-0" href="{{url('/')}}">
             <img src="../clients\img\logo.png" class="navbar-brand-imgh-120" alt="main_logo" style="width:80%;padding-left:20%">
             <span class="ms-1 font-weight-bold"></span>
+        </a> -->
+        <a class="navbar-brand m-0" href="{{url('/')}}">
+            <img src="../clients\img\logo.png" alt="main_logo" style="width:80%;padding-left:20%">
         </a>
 
         </div>
-
-        <hr class="horizontal dark mt-7">
+        <hr class="horizontal dark mt-5">
         <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main" >
             <ul class="navbar-nav">
                 <!-- sidebar -->
