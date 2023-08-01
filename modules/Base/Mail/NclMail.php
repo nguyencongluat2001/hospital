@@ -35,7 +35,7 @@ class NclMail extends Mailable
     public function build()
     {
         return $this->subject($this->data['subject'])
-        ->view('emails.forgetPassWord',[
+        ->view('emails.chat',[
             'data' => $this->data
         ]);
     }

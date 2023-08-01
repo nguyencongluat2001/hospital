@@ -32,7 +32,7 @@ JS_Package.prototype.loadIndex = function () {
     myClass.loadList(oForm);
 
     //lấy danh sách bài viết
-    myClass.loadListBlog(oFormBlog);
+    // myClass.loadListBlog(oForm);
 
     // $('form#frmAdd').find('#btn_create').click(function () {
     //     myClass.store('form#frmAdd');

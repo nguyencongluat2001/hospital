@@ -103,7 +103,7 @@
                                 @endif
                             </label>
                             @if(!empty($datas['name_image']))
-                            <img class="form-control" id="show_img" src="{{url('/file-payment/')}}/{{$datas['name_image']}}" alt="Image" style="width:200px">
+                            <img class="form-control" id="show_img" src="{{url('/file-image-client/schedule/')}}/{{$datas['name_image']}}" alt="Image" style="width:200px">
                             @endif
                         </div>
                     </div>

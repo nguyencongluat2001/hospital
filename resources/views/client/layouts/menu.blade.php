@@ -30,9 +30,9 @@
                         <!-- <li class="nav-item">
                             <a class="nav-link btn-outline-dark rounded-pill" href="work.html"> <span class="text-menu-header">Bác sĩ </span> <br> <span class="text-12">Chọn bác sĩ giỏi</span></a>
                         </li> -->
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link link-package btn-outline-dark rounded-pill" href="{{ url('/package') }}"> <span class="text-menu-header"><i class="fas fa-file-medical"></i> Gói khám </span> <br> <span class="text-12">Khám sức khỏe tổng quát</span></a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link link-searchschedule btn-outline-dark rounded-pill" href="{{ url('/searchschedule') }}"> <span class="text-menu-header"><i class="fas fa-search-plus"></i> Tra cứu </span> <br> <span class="text-12">Tra cứu lịch hẹn</span></a>
                         </li>

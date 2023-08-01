@@ -299,18 +299,12 @@ JS_Schedule.prototype.sendPayment = function (data) {
 
     $('form#frmAdd input[type=file]').each(function () {
         var count = $(this)[0].files.length;
-        console.log(count);
-        if (count == 0) {
-            var nameMessage = 'Chưa tải ảnh giao dịch!';
-            var icon = 'warning';
-            var color = '#ffd200';
-            var background = 'rgb(33 41 68)';
-            NclLib.alerMesageClient(nameMessage,icon,color,background);
-            return false;
+        if (count > 0) {
+            for (var i = 0; i < count; i++) {
+                formdata.append('file-attack-' + i, $(this)[0].files[i]);
+            }
         }
-        for (var i = 0; i < count; i++) {
-            formdata.append('file-attack-' + i, $(this)[0].files[i]);
-        }
+        
     });
     $.ajax({
         url: url,

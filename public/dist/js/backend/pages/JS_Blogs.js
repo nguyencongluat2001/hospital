@@ -240,7 +240,7 @@ JS_Blogs.prototype.delete = function (oForm) {
         }
     });
     if (listitem == '') {
-          var nameMessage = 'Bạn chưa chọn  bài viết để xóa!';
+          var nameMessage = 'Bạn chưa chọn bài viết để xóa!';
           var icon = 'warning';
           var color = '#344767';
         //   var color = '#344767';

@@ -6,6 +6,7 @@ use App\Events\PusherBroadcast;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Modules\Base\Helpers\ForgetPassWordMailHelper;
 use Modules\System\Dashboard\CustomerCare\Services\CustomerCareService;
 
 class ChatClientController extends Controller
@@ -17,10 +18,13 @@ class ChatClientController extends Controller
     }
     public function broadcast(Request $request)
     {
-
         $ipv4 = gethostbyname(trim(exec("hostname")));
         
         $arrInput = $request->all();
+        $customerCare = $this->customerCareService->where('phone', $arrInput['phone'])->first();
+        if(empty($customerCare)){
+            $sebdMailToCTV = $this->sendMail($arrInput);
+        }
         broadcast(new PusherBroadcast($arrInput['phone'], $arrInput['message']))->toOthers();
         if(isset($arrInput['message']) && !empty($arrInput['message'])){
             $html = '<div class="right-message">';
@@ -33,7 +37,7 @@ class ChatClientController extends Controller
                 'id' => strtoupper((string)\Str::uuid()),
                 'phone' => $arrInput['phone'],
                 'question' => $arrInput['message'],
-                'ip' => $ipv4,
+                'ip' => !empty($ipv4)?$ipv4:'',
                 'created_at' => date('Y/m/d H:i:s'),
             ];
             $this->customerCareService->insert($params);
@@ -95,5 +99,20 @@ class ChatClientController extends Controller
             }
         }
         return array('htmls' => $htmls, 'check' => $check);
+    }
+    // gửi thông báo đến cộng tác viên khi có tin nhắn mới
+    public function sendMail($input)
+    {
+        $phone = $input['phone'];
+        $stringHtml = file_get_contents(base_path() . '\storage\templates\chat\tem_forget.html');
+        // Lấy dữ liệu
+        $data['date'] = 'Ngày ' . date('d') . ' tháng ' . date('m') . ' năm ' . date('Y');
+        $data['email'] = 'nguyencongluat092001@gmail.com';
+        $data['phone'] = $phone;
+        $data['mailto'] = 'nguyencongluat092001@gmail.com';
+        $data['message'] = $input['message'];
+        $data['subject'] = 'Phần mềm đặt lịch khám nhanh tại các tuyến trung ương';
+        // Gửi mail
+        (new ForgetPassWordMailHelper($data['email'], $data['email'], $stringHtml, $data))->send($data);
     }
 }

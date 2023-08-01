@@ -43,15 +43,14 @@
 
 <body style="font-family: 'Roboto', sans-serif">
     <div>
-        <center><p>Kính thưa: <b>{{ $data['name'] }}</b></p></center>
         <div class="row">
             <div class="info-conter">
-                <p>Địa chỉ email: <b>{{ $data['email'] }}</b></p>
-                <p>Số điện thoại: <b>{{ $data['phone'] }}</b></p>
-                <p>Mã OTP là: <b>2201RG</b></p>
+                <p>Có tin nhắn mới từ số điện thoại: {{ $data['phone'] }}</b></p>
+                <p>Tin nhắn: <b>{{ $data['message'] }}</b></p>
             </div>
         </div>
-        <p>Email được gửi tự động bởi phần mềm FinTop - Tài chính và đầu tư. Vui lòng không cung cấp m này cho bất kỳ ai .
+        <br>
+        <p>Email được gửi tự động bởi phần mềm đặt lịch khám nhanh tại các tuyến trung ương. Vui lòng kiểm phản hồi tin nhắn khách hàng.
         </p>
     </div>
 

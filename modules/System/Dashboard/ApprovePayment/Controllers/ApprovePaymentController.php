@@ -68,15 +68,15 @@ class ApprovePaymentController extends Controller
     /**
      * Xoá
      */
-    // public function delete(Request $request)
-    // {
-    //     $input = $request->input();
-    //     $arrId = explode(',', $input['listitem']);
-    //     foreach($arrId as $id){
-    //         $this->approvePaymentService->where('id', $id)->delete();
-    //     }
-    //     return array('success' => true, 'message' => 'Xóa thành công!');
-    // }
+    public function delete(Request $request)
+    {
+        $input = $request->input();
+        $arrId = explode(',', $input['listitem']);
+        foreach($arrId as $id){
+            $this->approvePaymentService->where('id', $id)->delete();
+        }
+        return array('success' => true, 'message' => 'Xóa thành công!');
+    }
     /**
      * Cập nhật thông tin màn hình index
      */

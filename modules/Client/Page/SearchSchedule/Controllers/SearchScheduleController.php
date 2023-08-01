@@ -52,6 +52,8 @@ class SearchScheduleController extends Controller
         $param = $arrInput;
         $param['search'] = isset($param['search'])?$param['search']:'';
         $objResult = SearchScheduleModel::where('code_schedule',$param['search'])->orWhere('phone',$param['search'])->get()->toArray();
+        $param_a = [];
+        $param_s = [];
         foreach($objResult as $value){
            $getHospital = $this->hospitalService->where('code',$value['code_hospital'])->first();
            $getSpecialty = $this->specialtyService->where('code',$value['code_specialty'])->first();

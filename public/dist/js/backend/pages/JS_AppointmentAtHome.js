@@ -176,7 +176,7 @@ JS_AppointmentAtHome.prototype.delete = function(oForm) {
         }
     });
     if (listitem == '') {
-        var nameMessage = 'Bạn chưa chọn danh mục để xóa!';
+        var nameMessage = 'Bạn chưa chọn lịch để xóa!';
         NclLib.alertMessageBackend('warning', 'Cảnh báo', nameMessage);
         return false;
     }
@@ -184,7 +184,7 @@ JS_AppointmentAtHome.prototype.delete = function(oForm) {
     // var url = this.urlPath + "/recordtype/" + listitem;
     var url = this.urlPath + '/delete';
     Swal.fire({
-        title: 'Bạn có chắc chắn xóa vĩnh viễn danh mục này không?',
+        title: 'Bạn có chắc chắn xóa vĩnh viễn lịch này không?',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#34bd57',

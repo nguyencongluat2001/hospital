@@ -73,7 +73,7 @@
                                                         <tr>
                                                             <td style="background: #ffffffeb;width:30%;vertical-align: middle;" align="center">
                                                                 <a class="pb-5" style="text-decoration: none" href="{{url('/specialty')}}/{{$data->code}}">
-                                                                    <img  src="{{url('/file-image-client/avatar-specialty/')}}/{{ !empty($data->avatar)?$data->avatar:'' }}" alt="Image" style="height: 180px;object-fit: cover;">
+                                                                    <img  src="{{url('/file-image-client/avatar-specialty/')}}/{{ !empty($data->avatar)?$data->avatar:'' }}" alt="Image" style="height: 180px;width: 180px;object-fit: cover;">
                                                                     <span style="padding-left:10px;font-size: 40px;font-family: -webkit-body;color: #1d3952;">{{ $key + 1 }}.&nbsp;{{$data->name_specialty}}</span> <br>
                                                                     <!-- <a class="pb-5"  href="{{url('/specialty')}}/{{$data->code}}">
                                                                         <span style="background: #32870b;color: #ffffff;" class="btn btn-outline-light rounded-pill">Xem chi tiết</span>

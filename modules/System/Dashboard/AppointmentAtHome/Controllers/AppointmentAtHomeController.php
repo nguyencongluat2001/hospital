@@ -68,15 +68,19 @@ class AppointmentAtHomeController extends Controller
     /**
      * Xoá
      */
-    // public function delete(Request $request)
-    // {
-    //     $input = $request->input();
-    //     $arrId = explode(',', $input['listitem']);
-    //     foreach($arrId as $id){
-    //         $this->AppointmentAtHomeService->where('id', $id)->delete();
-    //     }
-    //     return array('success' => true, 'message' => 'Xóa thành công!');
-    // }
+    public function delete(Request $request)
+    {
+        $_SESSION['role'] = 'USER';
+        if($_SESSION['role'] != 'ADMIN'){
+            return array('success' => false, 'message' => 'Bạn không có quyền xóa!');
+        }
+        $input = $request->input();
+        $arrId = explode(',', $input['listitem']);
+        foreach($arrId as $id){
+            $this->AppointmentAtHomeService->where('id', $id)->delete();
+        }
+        return array('success' => true, 'message' => 'Xóa thành công!');
+    }
     /**
      * Cập nhật thông tin màn hình index
      */

@@ -194,7 +194,7 @@ JS_Recommended.prototype.delete = function (oForm) {
         }
     });
     if (listitem == '') {
-        var nameMessage = 'Bạn chưa chọn thể loại để xóa!';
+        var nameMessage = 'Bạn chưa chọn đối tượng để xóa!';
         var icon = 'warning';
         var color = '#f5ae67';
         NclLib.alerMesage(nameMessage,icon,color);
@@ -204,7 +204,7 @@ JS_Recommended.prototype.delete = function (oForm) {
     // var url = this.urlPath + "/recordtype/" + listitem;
     var url = this.urlPath + '/delete';
     Swal.fire({
-        title: 'Bạn có chắc chắn xóa vĩnh viễn thể loại này không?',
+        title: 'Bạn có chắc chắn xóa vĩnh viễn đối tượng này không?',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#34bd57',
