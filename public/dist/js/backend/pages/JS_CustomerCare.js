@@ -72,12 +72,37 @@ JS_CustomerCare.prototype.message = function(phone){
                 NclLib.alertMessageBackend('danger', 'Lỗi', arrResult['message']);
             }
             $("#message").html(arrResult);
+            $("#message").show();
+            $("#message-title").show();
+            $("#message-title").removeClass('message-title');
+            $("#discussions").addClass('show-mobile');
             $(".discussion").removeClass('message-active');
             $("#active_" + phone).addClass('message-active');
             $("#message").attr('class', 'chat col-md-9 active_' + phone);
             $("#sendMessage").attr('onclick', "JS_CustomerCare.broadcast('" + phone + "')");
             $("#active_" + phone + " .name").removeClass('font-bold');
             $("#active_" + phone + " .message").removeClass('font-bold');
+            $(".message-title-title").html(phone);
+            $(".message-title-back").click(function(){
+                $("#message-title").hide();
+                $("#message").hide();
+                $("#discussions").removeClass('show-mobile');
+                $("#message-title").addClass('message-title');
+            });
+            $(window).on("navigate", function (event, data) {
+                var direction = data.state.direction;
+                if (direction == 'back') {
+                    alert(1234);
+                }
+                if (direction == 'forward') {
+                    alert(12344444);
+                }
+              });
+            $(document).keypress(function(e){
+                alert(1234);
+                if(e.keyCode == 8){
+                }
+            });
             NclLib.successLoadding();
         }, error: function(e){
             console.log(e);
