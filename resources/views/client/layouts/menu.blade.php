@@ -20,6 +20,9 @@
                     <ul class="nav navbar-nav d-flex justify-content-between mx-xl-2 text-center text-dark">
                         <li class="nav-item">
                             <a class="nav-link link-home btn-outline-dark rounded-pill" href="{{ url('/') }}"> <span class="text-menu-header"> <i class="fas fa-home"></i> Trang chủ </span> <br> <span class="text-12">Hạng mục nổi bật</span> </a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link link-specialty btn-outline-dark rounded-pill" href="{{ url('/specialty') }}"> <span class="text-menu-header"><i class="fas fa-suitcase"></i> Xét nghiệm tại nhà </span> <br> <span class="text-12">Lấy máu tại nhà</span> </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link link-specialty btn-outline-dark rounded-pill" href="{{ url('/specialty') }}"> <span class="text-menu-header"><i class="fas fa-suitcase"></i> Chuyên khoa </span> <br> <span class="text-12">Tìm theo chuyên khoa</span> </a>

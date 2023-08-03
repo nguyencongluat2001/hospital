@@ -85,7 +85,7 @@
                                 <div class="row g-lg-5 mb-4">
                                     <!-- Start Recent Work -->
                                     <div class="col-md-6 mb-4">
-                                        <a href="{{url('/appointmentathome/laymauxetnghiemtainha')}}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                                        <a href="{{url('/client/appointmentathome/indexApointment')}}" class="recent-work card border-0 shadow-lg overflow-hidden">
                                             <img class="recent-work-img card-img" style="height: 250px;object-fit: cover;" src="{{url('/clients/img/laymautainha.jpeg')}}" alt="Card image">
                                             <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                                 <div style="background: radial-gradient(#000000c2, transparent);border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">

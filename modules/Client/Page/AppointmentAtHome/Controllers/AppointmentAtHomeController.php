@@ -37,7 +37,18 @@ class AppointmentAtHomeController extends Controller
         $this->AppointmentAtHomeService = $AppointmentAtHomeService;
         $this->hospitalService = $hospitalService;
     }
-
+    /**
+     * dat lich
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function indexApointment(Request $request)
+    {
+        $input = $request->all();
+        return view('client.AppointmentAtHome.homeAppointement');
+    }
      // dịch vụ xét nghiệm, truyền dịch tại nhà
      /**
      *
