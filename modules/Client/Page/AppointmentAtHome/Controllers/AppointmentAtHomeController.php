@@ -79,5 +79,16 @@ class AppointmentAtHomeController extends Controller
             'status' => $sendPayment
         ]);
     }
-    
+     /**
+     * dat lich
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function tab1(Request $request)
+    {
+        $input = $request->all();
+        return view('client.AppointmentAtHome.tab1');
+    }
 }
