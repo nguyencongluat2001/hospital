@@ -19,6 +19,9 @@ use Modules\System\Dashboard\Users\Controllers\UserController;
 use Modules\System\Dashboard\Permision\Controllers\PermisionController;
 use Modules\System\Dashboard\Specialty\Controllers\SpecialtyController;
 use Modules\System\Dashboard\AppointmentAtHome\Controllers\AppointmentAtHomeController;
+use Modules\System\Dashboard\BloodTest\Controllers\BloodTestController;
+use Modules\System\Dashboard\BloodTest\Controllers\PriceTestController;
+
 
 
 
@@ -140,6 +143,25 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
             Route::post('updateApprovePayment', [AppointmentAtHomeController::class, 'updateApprovePayment']);
             Route::post('changeStatusAppointmentAtHome', [AppointmentAtHomeController::class, 'changeStatusAppointmentAtHome']);
         });
-       
+        //Quản trị gói xét nghiệm
+        Route::prefix('/bloodtest')->group(function () {
+            //bloodtest
+            Route::get('/index', [BloodTestController::class, 'index']);
+            Route::get('/loadList',[BloodTestController::class,'loadList']);
+            Route::post('/createForm',[BloodTestController::class,'createForm']);
+            Route::post('/create',[BloodTestController::class,'create']);
+            Route::post('/edit',[BloodTestController::class,'edit']);
+            Route::post('/delete',[BloodTestController::class,'delete']);
+        });
+         //giá gói xét nghiệm
+         Route::prefix('/pricetest')->group(function () {
+            //pricetest
+            Route::get('/index', [PriceTestController::class, 'index']);
+            Route::get('/loadList',[PriceTestController::class,'loadList']);
+            Route::post('/createForm',[PriceTestController::class,'createForm']);
+            Route::post('/create',[PriceTestController::class,'create']);
+            Route::post('/edit',[PriceTestController::class,'edit']);
+            Route::post('/delete',[PriceTestController::class,'delete']);
+        });
     });
 });

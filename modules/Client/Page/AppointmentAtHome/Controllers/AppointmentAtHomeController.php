@@ -14,6 +14,8 @@ use DB;
 use Modules\System\Dashboard\Hospital\Services\HospitalService;
 use Modules\System\Dashboard\Specialty\Models\UnitsModel;
 use Modules\System\Dashboard\Specialty\Services\SpecialtyService;
+use Modules\System\Dashboard\BloodTest\Services\BloodTestService;
+use Modules\System\Dashboard\BloodTest\Models\PriceTestModel;
 /**
  * dịch vụ lấy mẫu xet nghiệm , truyền dịch tại nhà
  *
@@ -23,6 +25,7 @@ class AppointmentAtHomeController extends Controller
 {
 
     public function __construct(
+        BloodTestService $BloodTestService,
         SpecialtyService $SpecialtyService,
         CateService $cateService,
         CategoryService $categoryService,
@@ -30,6 +33,7 @@ class AppointmentAtHomeController extends Controller
         BlogService $blogService,
         HospitalService $hospitalService
     ){
+        $this->BloodTestService = $BloodTestService;
         $this->SpecialtyService = $SpecialtyService;
         $this->cateService = $cateService;
         $this->categoryService = $categoryService;
@@ -47,7 +51,8 @@ class AppointmentAtHomeController extends Controller
     public function indexApointment(Request $request)
     {
         $input = $request->all();
-        return view('client.AppointmentAtHome.homeAppointement');
+        $getBloodTest['datas'] = $this->BloodTestService->where('sex',1)->orWhere('sex',2)->get()->toArray();
+        return view('client.AppointmentAtHome.homeAppointement',$getBloodTest);
     }
      // dịch vụ xét nghiệm, truyền dịch tại nhà
      /**
@@ -59,8 +64,8 @@ class AppointmentAtHomeController extends Controller
     public function index(Request $request ,$code)
     {
         $input = $request->all();
-        $datas['type'] = $code;
-        $datas['type_xetnghiem'] =  $this->categoryService->where('cate','DM_XET_NGHIEM_TAI_NHA')->get();
+        $datas['code'] = $code;
+        $datas['type_xetnghiem'] =  $this->BloodTestService->where('sex',1)->orWhere('sex',2)->get()->toArray();
         $datas['tinh'] =  UnitsModel::whereNull('code_huyen')->get();
         return view('client.AppointmentAtHome.home',$datas);
     }
@@ -86,9 +91,23 @@ class AppointmentAtHomeController extends Controller
      *
      * @return view
      */
-    public function tab1(Request $request)
+    public function tab1(Request $request,$code)
     {
         $input = $request->all();
-        return view('client.AppointmentAtHome.tab1');
+        $data['datas'] = $this->BloodTestService->where('code',$code)->get()->toArray();
+        $price = PriceTestModel::get()->toArray();
+        $total = 0;
+        foreach($price as $item){
+            $arr[] = [
+                'id'=> $item['id'],
+                'code'=> $item['code'],
+                'name'=> $item['name'],
+                'price'=> number_format($item['price'],0, '', ','),
+            ];
+            $total = $total+= $item['price'];
+        }
+        $data['arr_price'] = $arr;
+        $data['total'] = number_format($total,0, '', ',');
+        return view('client.AppointmentAtHome.tab1',$data);
     }
 }

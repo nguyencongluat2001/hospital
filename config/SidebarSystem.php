@@ -45,6 +45,12 @@ return [
         'a'    => 'nav-link link-hospital',
         'href' => '/system/hospital/index',
     ],
+    'bloodtest' => [
+        'name' => 'Gói xét nghiệm',
+        'icon' => 'fas fa-university',
+        'a'    => 'nav-link link-bloodtest',
+        'href' => '/system/bloodtest/index',
+    ],
     'specialty' => [
         'name' => 'Quản trị chuyên khoa',
         'icon' => 'fas fa-building',

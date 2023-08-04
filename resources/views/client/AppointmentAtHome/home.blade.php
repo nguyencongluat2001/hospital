@@ -22,7 +22,7 @@
                     <!-- End Contact -->
                     <div class="carousel-item active list-hispital-home" >
                         <div class=" row d-flex align-items-center">
-                            <div class="banner-content col-lg-10 col-10 offset-1 m-lg-auto text-left ">
+                            <div class="banner-content col-lg-8 col-10 offset-1 m-lg-auto text-left ">
                                 <div class="row g-lg-5 mb-4">
                                     <div class="banner-wrapper w-100" style="background:#ffffffba;color:black">
                                         <div class="row g-lg-5 mb-4">
@@ -31,22 +31,12 @@
                                                     <a class="col-sm-6 col-lg-12 text-decoration-none text-light">
                                                         <div class="d-lg-flex gx-5">
                                                             <div class="col-lg-3">
-                                                                @if($type == 'laymauxetnghiemtainha')
-                                                                     <img class="card-img-top" src="{{url('/clients/img/laymautainha.jpeg')}}" style="object-fit: cover;" alt="...">
-                                                                @else
-                                                                     <img class="card-img-top" src="{{url('/clients/img/truyentainha.jpeg')}}" style="object-fit: cover;" alt="...">
-                                                                @endif
-
+                                                                <img class="card-img-top" src="{{url('/clients/img/laymautainha.jpeg')}}" style="width:250px;height:150px;object-fit: cover;" alt="...">
                                                             </div>
                                                             <div class="col-lg-1 "></div>
                                                             <div class="col-lg-8 ">
-                                                            @if($type == 'laymauxetnghiemtainha')
                                                             <span  class="text-title-home" style="color:#ff9300"><center> Lấy mẫu tại nhà</center></span>
-                                                            <span class="text-title-home"  style="font-size:20px">Lấy mẫu xét nghiệm tại nhà giúp khách hàng chủ động tầm soát bệnh lý. Đồng thời tiết kiệm thời gian đi lại, chờ đợi kết quả với mức chi phí hợp lý.</span>
-                                                            @else
-                                                            <span  class="text-title-home" style="color:#ff9300"><center> Truyền dịch tại nhà</center></span>
-                                                            <span class="text-title-home"  style="font-size:20px">Truyền dịch tại nhà giúp khách hàng được chăm sóc tại chính ngôi nhà của bạn hơn thế tiết kiệm thời gian đi lại, mức chi phí hợp lý.</span>
-                                                            @endif
+                                                            <span  style="font-size:20px">Lấy mẫu xét nghiệm tại nhà giúp khách hàng chủ động tầm soát bệnh lý. Đồng thời tiết kiệm thời gian đi lại, chờ đợi kết quả với mức chi phí hợp lý.</span>
                                                         </div>
                                                         </div>
                                                     </a>
@@ -80,63 +70,37 @@
                                                         <label for="">Ngày sinh <span class="request_star">*</span></label>
                                                         <input placeholder="Số điện thoại..." id="date_sampling" type="date" class="form-control" name="date_sampling" value="">
                                                     </div> --}}
-                                                    <div class="form-wrapper col-md-6">
-                                                        @if($type == 'laymauxetnghiemtainha')
-                                                            <label for="">Loại xét nghiệm</label>
-                                                        @else
-                                                            <label for="">Loại dịch truyền</label>
-                                                        @endif
+                                                    <div class="form-wrapper col-md-12">
+                                                        <label for="">Loại xét nghiệm</label>
                                                         <select class="form-control input-sm chzn-select" name="code_type" id="code_type">
                                                             <option value="">--Chọn loại--</option>
                                                             @foreach($type_xetnghiem as $key => $values) 
-                                                                <option value="{{$values->code_category}}">{{$values->name_category}}</option>
+                                                                <option value="{{$values['code']}}" {{($values['code'] == $values['code']) ? 'selected' : ''}}>{{$values['name']}}>{{$values['name']}}</option>
                                                             @endforeach 
                                                         </select>
                                                     </div>
                                                     <div class="form-wrapper col-md-6">
-                                                        <label for="">Giới tính <span class="request_star">*</span></label>
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-wrapper col-md-6">
+                                                        <label for="">Giá gói khám <span class="request_star">*</span></label>
+                                                        <input id="name" type="text" class="form-control" name="name" value="" autofocus>
+                                                    </div>
+                                                    <div class="form-wrapper col-md-6">
+                                                    <label for="">Giới tính <span class="request_star">*</span></label>
                                                         <input type="radio" value="1" name="sex" id="sex" />  <span style="padding-left:5px" >Nam</span>&emsp;
                                                         <input  type="radio" value="2" name="sex" id="sex"  /> <span style="padding-left:5px" >Nữ</span>
                                                     </div>
                                                 </div>
-                                                {{--<div class="row">
-                                                    <div class="form-wrapper col-md-4">
-                                                        <label for="">Tỉnh thành <span class="request_star">*</span></label>
-                                                        <select onchange="JS_AppointmentAtHome.getHuyen(this.value)"  class="form-control input-sm chzn-select" name="code_tinh" id="code_tinh">
-                                                            <option value="">--Chọn tỉnh thành--</option>
-                                                            @foreach($tinh as $key => $value) 
-                                                               <option  value="{{$value->code_tinh}}">{{$value->name}}</option>
-                                                             @endforeach 
-                                                        </select>
-                                                    </div>
-                                                    <div id="iss" class="form-wrapper col-md-4">
-                                                        <label for="">Quận huyện <span class="request_star">*</span></label>
-                                                        <select class="form-control input-sm chzn-select" name="code_huyen" id="code_huyen">
-                                                            <option value="">--Chọn quận huyện--</option>
-                                                        </select>
-                                                    </div>
-                                                    <div id="iss_xa" class="form-wrapper col-md-4">
-                                                        <label for="">Phường xã <span class="request_star">*</span></label>
-                                                        <select class="form-control input-sm chzn-select" name="code_xa" id="code_xa">
-                                                            <option value="">--Chọn phường xã--</option>
-                                                        </select>
-                                                    </div>
-                                                </div> --}}
                                                 <div class="row">
                                                     <div class="form-wrapper col-md-6">
-                                                        @if($type == 'laymauxetnghiemtainha')
                                                             <label for="">Ngày lấy mẫu<span class="request_star">*</span></label>
-                                                        @else
-                                                            <label for="">Ngày truyền<span class="request_star">*</span></label>
-                                                        @endif
                                                         <input  id="date_sampling" type="date" class="form-control" name="date_sampling" value="">
                                                     </div>
                                                     <div class="form-wrapper col-md-6">
-                                                        @if($type == 'laymauxetnghiemtainha')
                                                             <label for="">Giờ lấy mẫu<span class="request_star">*</span></label>
-                                                        @else
-                                                            <label for="">Giờ truyền dịch<span class="request_star">*</span></label>
-                                                        @endif
                                                         <select class="form-control input-sm chzn-select" name="hour_sampling" id="hour_sampling">
                                                             <option value="">--Chọn giờ--</option>
                                                             <option value="05h30">05 giờ 30 phút</option>
@@ -215,11 +179,4 @@
         JS_AppointmentAtHome.loadIndex(baseUrl);
     })
 </script>
-<!-- <script type="text/javascript" src="{{ URL::asset('dist\js\backend\pages\JS_System_Security.js') }}"></script>
-<script>
-      var JS_System_Security = new JS_System_Security();
-          $(document).ready(function($) {
-                 JS_System_Security.security();
-      })
-</script> -->
 @endsection

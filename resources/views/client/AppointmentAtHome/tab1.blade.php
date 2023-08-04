@@ -14,28 +14,26 @@
                 <div class="carousel-inner active pt-5" >
                      <div class="list-hispital-home-one pt-5">
                         <section class="banner-bg">
-                            <span  class="text-title-home "><center> XÉT NGHIỆM TẠI NHÀ</center></span>
+                            <span  class="text-title-home "><center>XÉT NGHIỆM TẠI NHÀ</center></span>
                         </section>
                      </div>
                     <!-- End Contact -->
-                    <div class="carousel-item active list-hispital-home pt-5" >
+                    <div class="carousel-item active list-hispital-home" >
                         <div class=" row d-flex align-items-center">
                             <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-left ">
                                 <div class="row g-lg-5 mb-4">
-                                    <div class="banner-wrapper w-100 py-5" style="background:#ffffff80">
+                                    <div class="banner-wrapper w-100 pt-5" style="background:#ffffffcf">
                                         <div class="pb-0 px-3">
                                             <div class="">
                                                 <ul class="list-group">
                                                     <div  class="col-sm-6 col-lg-12 text-decoration-none">
                                                         <div class="pb-3 d-lg-flex gx-5">
                                                             <div class="col-lg-12">
-                                                                <h5 style="color:#6c0000;font-size: 25px;font-family: serif;font-weight: 600;">GÓI XÉT NGHIỆM SÀNG LỌC VIRUS HỢP BÀO HÔ HẤP- CÚM AB- SỐT SXH</h5>
-                                                                <span style="font-size:20px"><i style="color:#3cb9ff" class="fas fa-user-tie"></i> Nam</span>
-                                                                <span style="font-size:20px;padding-left:15px"><i style="color:#3cb9ff" class="fas fa-calendar-alt"></i> Từ 0 đến 100 tuổi</span>
+                                                                <h5 style="color:#6c0000;font-size: 25px;font-family: serif;font-weight: 600;">{{$datas[0]['name']}}</h5>
                                                                 <span style="font-size:20px;padding-left:15px"><i style="color:#3cb9ff" class="fas fa-map-marker-alt"></i> Hà Nội</span>
-                                                                <span style="font-size:20px;padding-left:15px"><i style="color:#3cb9ff" class="fas fa-dollar-sign"></i> Giá gói: 1.530.000 ₫</span> <br> <br>
+                                                                <span style="font-size:20px;padding-left:15px"><i style="color:#3cb9ff" class="fas fa-dollar-sign"></i> Giá gói: {{$total}} ₫</span> <br> <br>
                                                                 <div class="text-center">
-                                                                    <a href="{{url('/schedule')}}"  class="btn rounded-pill btn-success text-light px-4 light-300">Đặt lịch khám</a>
+                                                                    <a href="{{url('/appointmentathome/')}}/{{$datas[0]['code']}}"  class="btn rounded-pill btn-success text-light px-4 light-300">Đặt lịch</a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -58,66 +56,114 @@
         <div class="banner-content col-lg-10 col-10 m-lg-auto text-left">
             <div style="color:#264451" class="light-300">
             <div class="carousel-item active">
-                            <div class=" row d-flex ">
-                                <div class="banner-content col-lg-12 col-12 m-lg-auto text-left ">
-                                        <!-- Start Contact -->
-                                        <section class="container" style="background: #ffffffc4;">
-                                            <div class="row pb-4">
-                                                <div class="col-lg-4">
-                                                    <div class="contact row mb-4">
-                                                        <div class="contact-icon col-lg-3 col-3">
-                                                            <div class="py-3 mb-2 text-center border rounded text-secondary">
-                                                                <i class='display-6 bx bx-news'></i>
-                                                            </div>
-                                                        </div>
-                                                        <ul class="contact-info list-unstyled col-lg-9 col-9  light-300">
-                                                            <li class="h5 mb-0">Hình thức thực hiện</li>
-                                                            <li class="text-muted">Tại nhà</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="contact row mb-4">
-                                                        <div class="contact-icon col-lg-3 col-3">
-                                                            <div class="border py-3 mb-2 text-center border rounded text-secondary">
-                                                                <i class='bx bx-laptop display-6' ></i>
-                                                            </div>
-                                                        </div>
-                                                        <ul class="contact-info list-unstyled col-lg-9 col-9 light-300">
-                                                            <li class="h5 mb-0">Liên hệ kỹ thuật</li>
-                                                            <li class="text-muted">Mr. luatnc</li>
-                                                            <li class="text-muted">010-020-0340</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="contact row mb-4">
-                                                        <div class="contact-icon col-lg-3 col-3">
-                                                            <div class="border py-3 mb-2 text-center border rounded text-secondary">
-                                                                <i class='bx bx-money display-6'></i>
-                                                            </div>
-                                                        </div>
-                                                        <ul class="contact-info list-unstyled col-lg-9 col-9 light-300">
-                                                            <li class="h5 mb-0">Liên hệ thanh toán</li>
-                                                            <li class="text-muted">Mr. </li>
-                                                            <li class="text-muted">010-020-0340</li>
-                                                        </ul>
+                    <div class=" row d-flex ">
+                        <div class="banner-content col-lg-12 col-12 m-lg-auto text-left ">
+                                <!-- Start Contact -->
+                                <section class="container" style="background: #ffffffc4;">
+                                    <div class="row pb-4">
+                                        <div class="col-lg-4" style="padding: 20px;background: #080a21;color: white;border-radius: 2%;">
+                                            <div class="contact row mb-4" >
+                                                <div class="contact-icon col-lg-3 col-3">
+                                                    <div class="mb-2 text-center border rounded text-secondary">
+                                                        <i style="color:#ffba29"class="fas fa-teeth"></i>
                                                     </div>
                                                 </div>
-                                                <!-- Start Contact Form -->
-                                                <div class="col-lg-8 ">
-                                                    * Địa điểm áp dụng: Tại các Bệnh viện phòng khám và Các đơn vị lấy mẫu tại nhà trên địa bàn Hà Nội <br>
-                                                    * Thời gian áp dụng: Từ ngày 01/4/2023 đến 31/03/2024 <br>
-                                                    * Ý nghĩa gói khám: <br>
-                                                    - Các xét nghiệm đánh giá tình trạng sức khỏe của người bệnh để có thái độ xử trí phù hợp <br>
-                                                    - Các xét nghiệm xác định tác nhân thường gặp có thể phát hiện được kể từ mốc 24h (sau sốt- hạn chế nguy cơ âm tính giả), gồm:<br>
-                                                    + Sốt XH Dengue: Test Dengue NS1/IgM/IgG, 
-                                                </div>
-                                                <!-- End Contact Form -->
+                                                <ul class="contact-info list-unstyled col-lg-9 col-9  light-300">
+                                                    <li class="h5 mb-0">Hình thức thực hiện</li>
+                                                    <li style="color: #8ae9ff !important;font-size: 14px;font-family: serif;" class="text-muted">{{$datas[0]['form']}}</li>
+                                                </ul>
                                             </div>
-                                        </section>
-                                        <!-- End Contact -->
+                                            <div class="contact row mb-4">
+                                                <div class="contact-icon col-lg-3 col-3">
+                                                    <div class="border mb-2 text-center border rounded text-secondary">
+                                                        <!-- <i class='bx bx-laptop display-6' ></i> -->
+                                                        <i style="color:#ffba29"class="fab fa-superpowers"></i>
+                                                    </div>
+                                                </div>
+                                                <ul class="contact-info list-unstyled col-lg-9 col-9 light-300">
+                                                    <li class="h5 mb-0">Giới tính</li>
+                                                    <li style="color: #8ae9ff !important;font-size: 14px;font-family: serif;" class="text-muted">{{$datas[0]['sex']}}</li>
+                                                </ul>
+                                            </div>
+                                            <div class="contact row mb-4">
+                                                <div class="contact-icon col-lg-3 col-3">
+                                                    <div class="border mb-2 text-center border rounded text-secondary">
+                                                        <!-- <i class='bx bx-money display-6'></i> -->
+                                                        <i style="color:#ffba29"class="fas fa-universal-access"></i>
+                                                    </div>
+                                                </div>
+                                                <ul class="contact-info list-unstyled col-lg-9 col-9 light-300">
+                                                    <li class="h5 mb-0">Độ tuổi</li>
+                                                    <li style="color: #8ae9ff !important;font-size: 14px;font-family: serif;" class="text-muted">{{$datas[0]['age']}}</li>
+                                                </ul>
+                                            </div>
+                                            <div class="contact row mb-4">
+                                                <div class="contact-icon col-lg-3 col-3">
+                                                    <div class="border mb-2 text-center border rounded text-secondary">
+                                                        <i style="color:#ffba29"class="fas fas fa-university"></i>
+                                                    </div>
+                                                </div>
+                                                <ul class="contact-info list-unstyled col-lg-9 col-9 light-300">
+                                                    <li class="h5 mb-0">Tỉnh thành</li>
+                                                    <li style="color: #8ae9ff !important;font-size: 14px;font-family: serif;" class="text-muted">Hà Nội</li>
+                                                </ul>
+                                            </div>
+                                            <div class="contact row mb-4">
+                                                <div class="contact-icon col-lg-3 col-3">
+                                                    <div class="border mb-2 text-center border rounded text-secondary">
+                                                        <i style="color:#ffba29"class="fas fa-calendar-alt"></i>
+                                                    </div>
+                                                </div>
+                                                <ul class="contact-info list-unstyled col-lg-9 col-9 light-300">
+                                                    <li class="h5 mb-0">Tời gian áp dụng</li>
+                                                    <li style="color: #8ae9ff !important;font-size: 14px;font-family: serif;" class="text-muted">{{$datas[0]['date_created']}} đến {{$datas[0]['date_end']}}</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- Start Contact Form -->
+                                        <div class="col-lg-8 " style="background: #8ebdad0d;border-radius: 2%;">
+                                        {!! $datas[0]['decision'] !!} 
+                                        </div>
+                                        <!-- End Contact Form -->
                                     </div>
-                                </div>
+                                </section>
+                                <!-- End Contact -->
                             </div>
                         </div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </div>
+    <div class="banner-vertical-center-work container d-flex justify-content-center align-items-center">
+        <div class="banner-content col-lg-10 col-10 m-lg-auto text-left">
+            <table id="table-data" class="table  table-bordered table-striped table-condensed dataTable no-footer">
+                <thead>
+                    <tr style="background: #ffa71e;">
+                        <td align="center"><input type="checkbox" name="chk_all_item_id"
+                                onclick="checkbox_all_item_id(document.forms[0].chk_item_id);"></td>
+                        <td align="center"><b>STT</b></td>
+                        <td align="center"><b>Tên xét nghiệm</b></td>
+                        <td align="center"><b>Giá chỉ số xét nghiệm</b></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    @foreach ($arr_price as $key => $data)
+                        <tr>
+                            <td style="padding-top: 20px;vertical-align: middle;"align="center"><input type="checkbox" name="chk_item_id"
+                                    value="{{ $data['id'] }}"></td>
+                            <td style="padding-top: 20px;vertical-align: middle;"align="center">{{ $key + 1 }}
+                            <td style="padding-top: 20px;white-space: inherit;vertical-align: middle;" ondblclick="" onclick="{select_row(this);}">
+                            {{$data['name']}}
+                            </td>
+                            <td align="center" style="padding-top: 20px;white-space: inherit;vertical-align: middle;" ondblclick="" onclick="{select_row(this);}">
+                            {{$data['price']}} VND
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
     <!-- End Service -->
@@ -130,11 +176,4 @@
         JS_AppointmentAtHome.loadIndex(baseUrl);
     })
 </script>
-<!-- <script type="text/javascript" src="{{ URL::asset('dist\js\backend\pages\JS_System_Security.js') }}"></script>
-<script>
-      var JS_System_Security = new JS_System_Security();
-          $(document).ready(function($) {
-                 JS_System_Security.security();
-      })
-</script> -->
 @endsection

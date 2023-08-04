@@ -2,7 +2,7 @@ function JS_AppointmentAtHome(baseUrl, module, controller) {
     this.module = module;
     this.baseUrl = baseUrl;
     this.controller = controller;
-    NclLib.menuActive('.link-facilities');
+    NclLib.menuActive('.link-bloodtest');
     NclLib.loadding();
     this.urlPath = baseUrl + '/' + module + '/' + controller;//Biên public lưu tên module
 }
@@ -26,7 +26,7 @@ JS_AppointmentAtHome.prototype.alerMesage = function(nameMessage,icon,color){
 JS_AppointmentAtHome.prototype.loadIndex = function () {
     var myClass = this;
     var oForm = 'form#frmHospital';
-    NclLib.menuActive('.link-facilities');
+    NclLib.menuActive('.link-bloodtest');
     $('.chzn-select').chosen({ height: '100%', width: '100%' });
 
     // myClass.loadList(oForm);
