@@ -20,7 +20,7 @@
                             <option value=''>-- Chọn mã Gói --</option>
                             @if(!empty($arr_list))
                                 @foreach($arr_list as $item)
-                                    <option @if((isset($arr_list) && $item['code'] == $detail['code_blood'])) selected @endif
+                                    <option @if((isset($arr_list) && isset($detail['code_blood'])) && $item['code'] == $detail['code_blood'])) selected @endif
                                     value="{{$item['code']}}">{{$item['name']}}</option>
                                 @endforeach
                             @endif
