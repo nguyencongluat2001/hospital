@@ -9,7 +9,7 @@
                 <div class="breadcrumb-input-fix d-sm-flex align-items-center justify-content-between">
                     <div class="breadcrumb-input-fix d-sm-flex align-items-center">
                     <span>
-                    <a href="{{ URL::asset('/system/pricetest/index') }}">
+                    <a href="{{ URL::asset('/system/bloodtest/index') }}">
                         <button class="btn btn-light btn-sm shadow-sm" id="" type="button"data-toggle="tooltip"
                             data-original-title="Thêm danh mục"><i class="fas fa-book-medical"></i> Gói xét nghiệm</button>
                         </a>

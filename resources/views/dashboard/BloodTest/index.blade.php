@@ -16,7 +16,7 @@
                     </span>
                     <span>
                         &nbsp;
-                    <a href="{{ URL::asset('/system/category/indexCategory') }}">
+                    <a href="{{ URL::asset('/system/pricetest/index') }}">
                         <button class="btn btn-light btn-sm shadow-sm" id="" type="button"data-toggle="tooltip"
                             data-original-title="Thêm danh mục"><i class="fas fa-list-alt"></i> Giá các xét nghiệm</button>
                         </a>
