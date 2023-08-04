@@ -64,9 +64,15 @@ class AppointmentAtHomeController extends Controller
     public function index(Request $request ,$code)
     {
         $input = $request->all();
+        // $data['datas'] = $this->BloodTestService->where('code',$code)->get()->toArray();
+        $price = PriceTestModel::where('code_blood',$code)->get()->toArray();
+        $total = 0;
+        foreach($price as $item){
+            $total = $total+= $item['price'];
+        }
+        $datas['total'] = !empty($total)?number_format($total,0, '', ','):0;
         $datas['code'] = $code;
         $datas['type_xetnghiem'] =  $this->BloodTestService->where('sex',1)->orWhere('sex',2)->get()->toArray();
-        $datas['tinh'] =  UnitsModel::whereNull('code_huyen')->get();
         return view('client.AppointmentAtHome.home',$datas);
     }
      /**

@@ -4,6 +4,9 @@
     form{
         width:80%;
     }
+    .form-control:disabled{
+        background-color:#ffffff
+    }
 </style>
 <link rel="stylesheet" href="../clients/css/style.css">
     <!-- Start Banner Hero -->
@@ -86,7 +89,7 @@
                                                 <div class="row">
                                                     <div class="form-wrapper col-md-6">
                                                         <label for="">Giá gói khám <span class="request_star">*</span></label>
-                                                        <input id="name" type="text" class="form-control" name="name" value="" autofocus>
+                                                        <input id="price" disabled type="text" class="form-control" name="price" value="{{$total}} VND" autofocus>
                                                     </div>
                                                     <div class="form-wrapper col-md-6">
                                                     <label for="">Giới tính <span class="request_star">*</span></label>
