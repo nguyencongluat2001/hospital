@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Modules\System\Dashboard\ApprovePayment\Services\ApprovePaymentService;
 use Modules\System\Dashboard\Category\Services\CategoryService;
 use Modules\System\Dashboard\Users\Services\UserService;
+use Illuminate\Support\Facades\Auth;
 
 class ApprovePaymentController extends Controller
 {
