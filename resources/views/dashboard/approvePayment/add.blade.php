@@ -24,7 +24,7 @@
                         </div>
                         <div class="form-wrapper col-md-6">
                             <label for="">Số tiền khám</label>
-                            <input disabled type="text" class="form-control" value="{{!empty($datas['money']) ? $datas['money'] : ''}}">
+                            <input disabled type="text" class="form-control" value="{{!empty($datas['money']) ? $datas['money'] : ''}} VND">
                         </div>
                     </div>
                     <div class="row">
@@ -44,7 +44,7 @@
                         </div>
                         <div class="form-wrapper col-md-6">
                             <label for="">Giới tính</label> <br>
-                            <input disabled type="text" class="form-control" value="{{!empty($datas['sex']) ? $datas['sex'] : ''}}">
+                            <input disabled type="text" class="form-control" value="{{!empty($datas['sex'] == 1) ? 'nam' : 'nữ'}}">
                         </div>
                     </div>
                     <div class="row">
@@ -57,7 +57,7 @@
                             <input disabled type="text" class="form-control" value="{{!empty($datas['date_of_brith']) ? $datas['date_of_brith'] : ''}}">
                         </div>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="form-wrapper col-md-4">
                             <label for="">Tỉnh thành</label>
                             <input disabled type="text" class="form-control" value="{{!empty($datas['code_tinh']) ? $datas['code_tinh'] : ''}}">
@@ -70,7 +70,7 @@
                             <label for="">Phường xã</label>
                             <input disabled type="text" class="form-control" value="{{!empty($datas['code_xa']) ? $datas['code_xa'] : ''}}">
                         </div>
-                    </div>
+                    </div> -->
                     <div class="row">
                         <div class="form-wrapper">
                             <label for="">Địa chỉ chi tiết</label>

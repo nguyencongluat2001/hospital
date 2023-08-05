@@ -53,7 +53,7 @@ class ApprovePaymentService extends Service
             'code_hospital' => isset($approvePayment['code_hospital'])?$approvePayment['code_hospital']:'', 
             'code_specialty' => isset($code_specialty->name_specialty)?$code_specialty->name_specialty:'', 
             'type_payment' => isset($approvePayment['type_payment'])?$approvePayment['type_payment']:'', 
-            'money' => isset($approvePayment['money'])?$approvePayment['money']:'', 
+            'money' => !empty($approvePayment['money'])?number_format($approvePayment['money'],0, '', ','):0, 
             'name' => isset($approvePayment['name'])?$approvePayment['name']:'', 
             'phone' => isset($approvePayment['phone'])?$approvePayment['phone']:'', 
             'code_insurance' => isset($approvePayment['code_insurance'])?$approvePayment['code_insurance']:'', 
