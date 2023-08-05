@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('customers_care', function (Blueprint $table) {
-            $table->string('ip')->nullable();
+        Schema::table('service_at_home', function (Blueprint $table) {
+            $table->string('money')->nullable();
         });
     }
 
@@ -21,7 +21,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('customers_care', function (Blueprint $table) {
+        Schema::table('service_at_home', function (Blueprint $table) {
             //
         });
     }

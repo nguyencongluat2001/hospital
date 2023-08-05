@@ -15,6 +15,7 @@ class AppointmentAtHomeModel extends Model
             'code',
             'name',
             'phone',
+            'money',
             'type',
             'sex',
             'date_sampling',

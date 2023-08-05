@@ -160,7 +160,6 @@ JS_AppointmentAtHome.prototype.add = function (oForm) {
         NclLib.alerMesageClient(nameMessage,icon,color,background);
         return false;
     }
-    console.log(data)
     $.ajax({
         url: url,
         type: "POST",
@@ -181,6 +180,60 @@ JS_AppointmentAtHome.prototype.add = function (oForm) {
                 var color = '#344767';
                 NclLib.alerMesage(nameMessage,icon,color);
             }
+        }
+    });
+}
+/**
+ * Load màn hình danh sách huyện
+ *
+ * @param oForm (tên form)
+ *
+ * @return void
+ */
+JS_AppointmentAtHome.prototype.getPrice = function (code_blood) {
+    var myClass = this;
+    var url = this.urlPath + '/getPrice';
+    var data = '&code_blood=' + code_blood;
+    $.ajax({
+        url: url,
+        type: "GET",
+        cache: true,
+        data: data,
+        success: function (arrResult) {
+
+            var html = `<input id="price" disabled type="text" class="form-control" value="`+ arrResult.data.total +` VND" autofocus>`
+            html += `<input disabled type="hidden" class="form-control" id="money" name="money" value="`+ arrResult.data.money +` VND" autofocus>`
+
+            $("#price").html(html);
+            var htmls = `<div id="infor" class="form-wrapper col-md-4">`
+            htmls += `<label style="width: 150px;" for="">Gồm `+ arrResult.data.count +` chỉ số</label>`
+            htmls += `<button onclick="JS_AppointmentAtHome.showInfor('`+ arrResult.data.code_blood +`')" type="button" style="width: 120px;display: inline-block;" class="btn-warning"><i class="fas fa-hand-point-right"></i> Chi tiết</button>`
+            htmls += `</div">`
+            $("#infor").html(htmls);
+        }
+    });
+}
+/**
+ * Load màn hình danh sách
+ *
+ * @param oForm (tên form)
+ *
+ * @return void
+ */
+JS_AppointmentAtHome.prototype.showInfor = function (code_blood) {
+    var myClass = this;
+    var url = this.urlPath + '/showInfor';
+    var oForm = 'form#frmView';
+    var data = '&code_blood=' + code_blood;
+    $.ajax({
+        url: url,
+        type: "GET",
+        // cache: true,
+        data: data,
+        success: function (arrResult) {
+            $('#editmodal').html(arrResult);
+            $('#editmodal').modal('show');
+            myClass.loadevent(oForm);
         }
     });
 }

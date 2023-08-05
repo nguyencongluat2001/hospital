@@ -91,9 +91,11 @@
                             <span>Lý do: {{ isset($data['reason']) ? $data['reason'] : '' }}</span> <br>
                         </td>
                         <td style="wwhite-space: inherit;vertical-align: middle;">
-                            <span>Loại xét nghiệm: {{ isset($data['type']) ? $data['type'] : '' }}</span> <br>
-                            <span>Ngày lấy mẫu: {{ isset($data['date_sampling']) ? $data['date_sampling'] : '' }}</span> <br>
-                            <span>Giờ lấy mẫu: {{ isset($data['hour_sampling']) ? $data['hour_sampling'] : '' }} Phút</span>
+                            <span>Loại xét nghiệm: <b>{{ isset($data['type']) ? $data['type'] : '' }}</b></span> <br>
+                            <span>Ngày lấy mẫu: <b>{{ isset($data['date_sampling']) ? $data['date_sampling'] : '' }}</b></span> <br>
+                            <span>Giờ lấy mẫu: <b>{{ isset($data['hour_sampling']) ? $data['hour_sampling'] : '' }} Phút</b></span> <br>
+                            <span>Số tiền: <b>{{ isset($data['money']) ? $data['money'] : '' }} VND</b></span> <br>
+                            <span>Thanh toán: <b>Tại nhà</b></span> <br>
                         </td>
 
                         @if($data['status'] == 1)

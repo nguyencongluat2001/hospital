@@ -137,6 +137,8 @@ Route::prefix('/client')->group(function () {
             Route::get('/getHuyen',[AppointmentAtHomeController::class,'getHuyen']);
             Route::get('/getXa',[AppointmentAtHomeController::class,'getXa']);
             Route::post('/sendPayment',[AppointmentAtHomeController::class,'sendPayment']);
+            Route::get('/getPrice',[AppointmentAtHomeController::class,'getPrice']);
+            Route::get('/showInfor', [AppointmentAtHomeController::class,'showInfor']);
         });
         
         // Trang chủ cơ sở bệnh viện

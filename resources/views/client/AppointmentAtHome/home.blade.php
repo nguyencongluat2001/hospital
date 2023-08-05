@@ -52,7 +52,7 @@
                                         <div class="wrapper" style="display: flex; justify-content: center;">
                                             <form id="frmSendSchedule" method="POST"  autocomplete="off">
                                                 @csrf
-                                                <input type="hidden" id="code" name="code" value="{{ !empty($datas->code)?$datas->code:'' }}">
+                                                <!-- <input type="hidden" id="code" name="code" value="{{ !empty($datas->code)?$datas->code:'' }}"> -->
                                                 <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
                                                 <div class="row">
                                                     <div class="form-wrapper col-md-6">
@@ -75,24 +75,28 @@
                                                     </div> --}}
                                                     <div class="form-wrapper col-md-12">
                                                         <label for="">Loại xét nghiệm</label>
-                                                        <select class="form-control input-sm chzn-select" name="code_type" id="code_type">
+                                                        <select onchange="JS_AppointmentAtHome.getPrice(this.value)" class="form-control input-sm chzn-select" name="code" id="code">
                                                             <option value="">--Chọn loại--</option>
                                                             @foreach($type_xetnghiem as $key => $values) 
-                                                                <option value="{{$values['code']}}" {{($values['code'] == $values['code']) ? 'selected' : ''}}>{{$values['name']}}>{{$values['name']}}</option>
+                                                                <option value="{{$values['code']}}" {{($values['code'] == $code) ? 'selected' : ''}}>{{$values['name']}}</option>
                                                             @endforeach 
                                                         </select>
                                                     </div>
-                                                    <div class="form-wrapper col-md-6">
-                                                        
-                                                    </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="form-wrapper col-md-6">
+                                                    <div class="form-wrapper col-md-4">
                                                         <label for="">Giá gói khám <span class="request_star">*</span></label>
-                                                        <input id="price" disabled type="text" class="form-control" name="price" value="{{$total}} VND" autofocus>
+                                                        <div id="price">
+                                                             <input  type="hidden" class="form-control" id="money" name="money" value="{{$money}}" autofocus> 
+                                                             <input  disabled type="text" class="form-control" value="{{$total}} VND" autofocus> 
+                                                        </div>
                                                     </div>
-                                                    <div class="form-wrapper col-md-6">
-                                                    <label for="">Giới tính <span class="request_star">*</span></label>
+                                                    <div id="infor" class="form-wrapper col-md-3">
+                                                        <label for="">Gồm {{$count}} chỉ số</label>
+                                                        <button onclick="JS_AppointmentAtHome.showInfor('{{$code_blood}}')" type="button" style="display: inline-block;" class="btn-warning"><i class="fas fa-hand-point-right"></i> Chi tiết</button>
+                                                    </div>
+                                                    <div class="form-wrapper col-md-4">
+                                                        <label for="">Giới tính <span class="request_star">*</span></label>
                                                         <input type="radio" value="1" name="sex" id="sex" />  <span style="padding-left:5px" >Nam</span>&emsp;
                                                         <input  type="radio" value="2" name="sex" id="sex"  /> <span style="padding-left:5px" >Nữ</span>
                                                     </div>
@@ -170,6 +174,7 @@
     </div>
 <div class="modal fade" id="editmodal" role="dialog"></div>
 <div class="modal " id="addfile" role="dialog"></div>
+<div class="modal " id="show" role="dialog"></div>
 
 <div id="dialogconfirm"></div>
     <!-- End Service -->

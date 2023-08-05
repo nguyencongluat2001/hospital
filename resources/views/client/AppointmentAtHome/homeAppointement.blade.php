@@ -72,6 +72,7 @@
     <!-- End Banner Hero -->
 <div class="modal fade" id="editmodal" role="dialog"></div>
 <div class="modal " id="addfile" role="dialog"></div>
+<div class="modal " id="show" role="dialog"></div>
 
 <div id="dialogconfirm"></div>
     <!-- End Service -->

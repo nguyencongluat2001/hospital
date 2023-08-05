@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('phone')->nullable(); // số điện thoại
             $table->string('type')->nullable();  // loại xét nghiệm
             $table->string('sex')->nullable();  // giới tính
+            $table->string('money')->nullable(); // giá gói khám
 
             $table->datetime('date_sampling')->nullable(); // ngày lấy mẫu
             $table->string('hour_sampling')->nullable(); // giờ lấy mẫu

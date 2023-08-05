@@ -71,8 +71,12 @@ class AppointmentAtHomeController extends Controller
             $total = $total+= $item['price'];
         }
         $datas['total'] = !empty($total)?number_format($total,0, '', ','):0;
+        $datas['money'] = $total;
         $datas['code'] = $code;
+        $datas['count'] = count($price);
+        $datas['code_blood'] = $code;
         $datas['type_xetnghiem'] =  $this->BloodTestService->where('sex',1)->orWhere('sex',2)->get()->toArray();
+        // dd($datas);
         return view('client.AppointmentAtHome.home',$datas);
     }
      /**
@@ -101,7 +105,7 @@ class AppointmentAtHomeController extends Controller
     {
         $input = $request->all();
         $data['datas'] = $this->BloodTestService->where('code',$code)->get()->toArray();
-        $price = PriceTestModel::get()->toArray();
+        $price = PriceTestModel::where('code_blood',$code)->get()->toArray();
         $total = 0;
         foreach($price as $item){
             $arr[] = [
@@ -115,5 +119,54 @@ class AppointmentAtHomeController extends Controller
         $data['arr_price'] = $arr;
         $data['total'] = number_format($total,0, '', ',');
         return view('client.AppointmentAtHome.tab1',$data);
+    }
+       /**
+     * dat lich
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function getPrice(Request $request)
+    {
+        $input = $request->all();
+        $price = PriceTestModel::where('code_blood',$input['code_blood'])->get()->toArray();
+        $total = 0;
+        foreach($price as $item){
+            $total = $total+= $item['price'];
+        }
+        $datas['total'] = number_format($total,0, '', ',');
+        $datas['money'] = $total;
+        $datas['count'] = count($price);
+        $datas['code_blood'] = $input['code_blood'];
+        return response()->json([
+            'data' => $datas,
+            'status' => true
+        ]);
+    }
+         /**
+     * dat lich
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function showInfor(Request $request)
+    {
+        $input = $request->all();
+        $price = PriceTestModel::where('code_blood',$input['code_blood'])->get()->toArray();
+        $total = 0;
+        foreach($price as $item){
+            $arr[] = [
+                'id'=> $item['id'],
+                'code'=> $item['code'],
+                'name'=> $item['name'],
+                'price'=> number_format($item['price'],0, '', ','),
+            ];
+            $total = $total+= $item['price'];
+        }
+        $data['arr_price'] = $arr;
+        $data['total'] = number_format($total,0, '', ',');
+        return view('client.AppointmentAtHome.infor',$data);
     }
 }

@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Http;
 use Modules\System\Dashboard\Category\Services\CategoryService;
 use Modules\System\Dashboard\Hospital\Services\HospitalService;
 use Modules\System\Dashboard\Specialty\Services\SpecialtyService;
+use Modules\System\Dashboard\BloodTest\Services\BloodTestService;
 use DB;
 /** 
  *
@@ -20,10 +21,12 @@ class SearchScheduleController extends Controller
 {
 
     public function __construct(
+        BloodTestService $BloodTestService,
         SpecialtyService $specialtyService,
         HospitalService $hospitalService,
         CategoryService $categoryService
     ){
+        $this->BloodTestService = $BloodTestService;
         $this->specialtyService = $specialtyService;
         $this->hospitalService = $hospitalService;
         $this->categoryService = $categoryService;
@@ -83,13 +86,15 @@ class SearchScheduleController extends Controller
 
         $dataAtHome = AppointmentAtHomeModel::where('code',$param['search'])->orWhere('phone',$param['search'])->get()->toArray();
         foreach($dataAtHome as $value){
-            $cate = $this->categoryService->where('cate','DM_XET_NGHIEM_TAI_NHA')->where('code_category',$value['type'])->first();
+            $cate = $this->BloodTestService->where('code',$value['type'])->first();
+            // dd($cate);
             $param_s[] = [
                 'id' => $value['id'],
                 'code' => $value['code'],
                 'name' => $value['name'],
                 'phone' => $value['phone'],
-                'type' => $cate['name_category'],
+                'money' => number_format($value['money'],0, '', ','),
+                'type' => !empty($cate->name)?$cate->name:'',
                 'sex' => $value['sex'],
                 'date_sampling' => date('d-m-Y',strtotime($value['date_sampling'])),
                 'hour_sampling' => $value['hour_sampling'],
