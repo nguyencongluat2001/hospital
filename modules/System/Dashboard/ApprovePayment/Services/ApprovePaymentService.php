@@ -47,7 +47,7 @@ class ApprovePaymentService extends Service
     {
         $approvePayment = $this->repository->where('id', $input['id'])->first();
         $code_specialty = $this->specialtyService->where('code',$approvePayment['code_specialty'])->first();
-        $user = $this->userService->where('id_personnel',$approvePayment['code_insurance'])->first();
+        $user = $this->userService->where('id_personnel',$approvePayment['code_introduce'])->first();
         $data = [
             'code_schedule' => isset($approvePayment['code_schedule'])?$approvePayment['code_schedule']:'', 
             'code_hospital' => isset($approvePayment['code_hospital'])?$approvePayment['code_hospital']:'', 
