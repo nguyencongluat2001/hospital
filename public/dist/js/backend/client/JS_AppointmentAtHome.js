@@ -194,6 +194,7 @@ JS_AppointmentAtHome.prototype.getPrice = function (code_blood) {
     var myClass = this;
     var url = this.urlPath + '/getPrice';
     var data = '&code_blood=' + code_blood;
+    NclLib.loadding();
     $.ajax({
         url: url,
         type: "GET",
