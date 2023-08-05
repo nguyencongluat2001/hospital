@@ -22,7 +22,7 @@
                         <div class=" row d-flex align-items-center">
                             <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-left ">
                                 <div class="row g-lg-5 mb-4">
-                                    <div class="banner-wrapper w-100 pt-5" style="background:#00000045">
+                                    <div class="banner-wrapper w-100 pt-5" style="background:#ffffffcf">
                                         <div class="pb-0 px-3">
                                             <div class="">
                                                 <ul class="list-group">

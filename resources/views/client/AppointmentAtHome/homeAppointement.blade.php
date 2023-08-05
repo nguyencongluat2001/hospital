@@ -46,7 +46,7 @@
                                             <a href="{{url('/client/appointmentathome/tab1/')}}/{{$data['code']}}" class="recent-work card border-0 shadow-lg overflow-hidden">
                                                 <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/laymautainha.jpeg')}}" alt="Card image">
                                                 <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                                                    <div style="background: #142132;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                                    <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
                                                         <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;">{{$data['name']}}</h3>
                                                     </div>
                                                 </div>
