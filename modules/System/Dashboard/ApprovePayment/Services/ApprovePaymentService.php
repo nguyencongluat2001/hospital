@@ -5,13 +5,17 @@ namespace Modules\System\Dashboard\ApprovePayment\Services;
 use Modules\Base\Service;
 use Modules\System\Dashboard\ApprovePayment\Repositories\ApprovePaymentRepository;
 use Modules\System\Dashboard\Specialty\Services\SpecialtyService;
+use Modules\System\Dashboard\Users\Services\UserService;
+
 class ApprovePaymentService extends Service
 {
     public function __construct(
-        SpecialtyService $specialtyService
+        SpecialtyService $specialtyService,
+        UserService $userService
     ){
         parent::__construct();
         $this->specialtyService = $specialtyService;
+        $this->userService = $userService;
     }
     public function repository()
     {
@@ -43,6 +47,7 @@ class ApprovePaymentService extends Service
     {
         $approvePayment = $this->repository->where('id', $input['id'])->first();
         $code_specialty = $this->specialtyService->where('code',$approvePayment['code_specialty'])->first();
+        $user = $this->userService->where('id_personnel',$approvePayment['code_insurance'])->first();
         $data = [
             'code_schedule' => isset($approvePayment['code_schedule'])?$approvePayment['code_schedule']:'', 
             'code_hospital' => isset($approvePayment['code_hospital'])?$approvePayment['code_hospital']:'', 
@@ -52,6 +57,7 @@ class ApprovePaymentService extends Service
             'name' => isset($approvePayment['name'])?$approvePayment['name']:'', 
             'phone' => isset($approvePayment['phone'])?$approvePayment['phone']:'', 
             'code_insurance' => isset($approvePayment['code_insurance'])?$approvePayment['code_insurance']:'', 
+            'name_insurance' => isset($user['name'])?$user['name']:'', 
             'sex' => isset($approvePayment['sex'])?$approvePayment['sex']:'', 
             'email' => isset($approvePayment['email'])?$approvePayment['email']:'', 
             'date_of_brith' => isset($approvePayment['date_of_brith'])?$approvePayment['date_of_brith']:'', 

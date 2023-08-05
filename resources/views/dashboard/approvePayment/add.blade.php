@@ -84,7 +84,7 @@
                         </div>
                         <div class="form-wrapper col-md-6">
                             <label for="">Tên cộng tác viên</label>
-                            <input disabled type="text" class="form-control" name="date_of_brith" value="">
+                            <input disabled type="text" class="form-control" name="date_of_brith" value="{{!empty($datas['name_insurance']) ? $datas['name_insurance'] : ''}}">
                         </div>
                     </div>
                     <div class="row">
