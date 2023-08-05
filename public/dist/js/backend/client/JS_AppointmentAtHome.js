@@ -223,6 +223,7 @@ JS_AppointmentAtHome.prototype.getPrice = function (code_blood) {
  */
 JS_AppointmentAtHome.prototype.showInfor = function (code_blood) {
     var myClass = this;
+    NclLib.loadding();
     var url = this.urlPath + '/showInfor';
     var oForm = 'form#frmView';
     var data = '&code_blood=' + code_blood;
