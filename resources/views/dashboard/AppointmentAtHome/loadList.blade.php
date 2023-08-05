@@ -24,9 +24,12 @@
                         onclick="checkbox_all_item_id(document.forms[0].chk_item_id);"></td>
                 <td align="center"><b>STT</b></td>
                 <td align="center"><b>Thời gian</b></td>
+                <td align="center"><b>Thời gian lấy mẫu</b></td>
+                <td align="center"><b>Gói</b></td>
                 <td align="center"><b>Mã đặt lịch</b></td>
                 <td align="center"><b>Tên khách hàng</b></td>
                 <td align="center"><b>Số điện thoại</b></td>
+                <td align="center"><b>Số tiền</b></td>
                 <td align="center"><b>Trạng thái</b></td>
                 <td align="center"><b>#</b></td>
             </tr>
@@ -40,9 +43,12 @@
                                 value="{{ $data->id }}"></td>
                         <td style="white-space: inherit;vertical-align: middle;" align="center">{{($datas->currentPage() - 1)*$datas->perPage() + ($key + 1)}}</td>
                         <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->created_at) ? $data->created_at : '' }}</td>
+                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->hour_sampling) ? $data->hour_sampling : '' }} {{ isset($data->date_sampling) ? $data->date_sampling : '' }}</td>
+                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->type) ? $data->type : '' }}</td>
                         <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->code) ? $data->code : '' }}</td>
                         <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->name) ? $data->name : '' }}</td>
                         <td style="wwhite-space: inherit;vertical-align: middle;" align="center">{{ isset($data->phone) ? $data->phone : '' }}</td>
+                        <td style="wwhite-space: inherit;vertical-align: middle;" align="center">{{ isset($data->money) ? $data->money : '' }}</td>
                         <td style="white-space: inherit;vertical-align: middle;" align="center">{{ $data->status == 1 ? 'Đã liên hệ khách hàng' : 'Chưa liên hệ khách hàng' }}</td>
                         <td style="white-space: inherit;vertical-align: middle;" onclick="{select_row(this);}" align="center">
                             <label class="custom-control custom-checkbox p-0 m-0 pointer " style="cursor: pointer;">

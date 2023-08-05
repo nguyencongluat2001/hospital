@@ -70,7 +70,6 @@ class AppointmentAtHomeController extends Controller
      */
     public function delete(Request $request)
     {
-        $_SESSION['role'] = 'USER';
         if($_SESSION['role'] != 'ADMIN'){
             return array('success' => false, 'message' => 'Bạn không có quyền xóa!');
         }

@@ -112,7 +112,7 @@ JS_AppointmentAtHome.prototype.add = function (oForm) {
         NclLib.alerMesageClient(nameMessage,icon,color,background);
         return false;
     }
-    if ($("#type").val() == '') {
+    if ($("#code").val() == '') {
         var nameMessage = 'Loại xét nghiệm không được để trống!';
         var icon = 'warning';
         var color = '#ffd200';
