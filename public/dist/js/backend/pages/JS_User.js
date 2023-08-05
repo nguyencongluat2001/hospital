@@ -71,6 +71,7 @@ JS_User.prototype.loadevent = function (oForm) {
  * @return void
  */
 JS_User.prototype.add = function (oForm) {
+    console.log(12)
     var url = this.urlPath + '/createForm';
     var myClass = this;
     var data = $(oForm).serialize();
@@ -126,7 +127,7 @@ JS_User.prototype.store = function (oFormCreate) {
             formdata.append('file-attack-' + i, $(this)[0].files[i]);
         }
     });
-
+    console.log(formdata)
     $.ajax({
         url: url,
         type: "POST",

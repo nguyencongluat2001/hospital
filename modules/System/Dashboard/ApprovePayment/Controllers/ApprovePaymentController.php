@@ -37,7 +37,6 @@ class ApprovePaymentController extends Controller
         $input['sort'] = 'created_at';
         $objResult = $this->approvePaymentService->filter($input);
         $data['datas'] = $objResult;
-        dd(Auth::user()->role);
         return view('dashboard.approvePayment.loadList', $data)->render();
     }
     /**

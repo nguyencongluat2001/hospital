@@ -109,7 +109,7 @@
 					</div>
 					<div class="modal-footer">
 						<span id="btupdate">
-							<button id='btn_create' class="btn btn-primary btn-sm" type="button">
+							<button onclick="JS_User.store('form#frmAdd')" id='btn_create' class="btn btn-primary btn-sm" type="button">
 								Cập nhật
 							</button>
 						</span>
