@@ -2,7 +2,7 @@ function JS_AppointmentAtHome(baseUrl, module, controller) {
     this.module = module;
     this.baseUrl = baseUrl;
     this.controller = controller;
-    NclLib.active('.link-bloodtest');
+    NclLib.active('.link-appointmentathome');
     this.urlPath = baseUrl + '/' + module + '/' + controller;
 }
 
