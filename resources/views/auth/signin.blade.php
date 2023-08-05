@@ -37,12 +37,12 @@
                                         class="form-control" name="password" placeholder="Mật khẩu">
                                     @if(isset($data['password'])) <span style="color: red">{{$data['password']}}</span> @endif
                                 </div>
-                                <div class="checkbox">
+                                <!-- <div class="checkbox">
                                     <label>
                                         <input type="checkbox"> Tôi chấp nhận Điều khoản sử dụng và Chính sách bảo mật. <span class="request_star">*</span>
                                         <span class="checkmark"></span>
                                     </label>
-                                </div>
+                                </div> -->
                                 @if (Route::has('password.request'))
                                         <a class="btn btn-link" href="{{ route('password.request') }}" style="color: #8b9ac5;">
                                             {{ __('Quên mật khẩu?') }}
