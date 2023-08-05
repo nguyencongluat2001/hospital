@@ -37,7 +37,7 @@
             @if(count($datas) > 0)
                 @foreach ($datas as $key => $data)
                 @php $id = $data->id; $i = 1; @endphp
-                    @if(Auth::user()->role == 'ADMIN')
+                    @if($_SESSION['role'] == 'ADMIN')
                     <tr>
                         <td style="white-space: inherit;vertical-align: middle;" align="center"><input type="checkbox" name="chk_item_id"
                                 value="{{ $data->id }}"></td>
@@ -62,7 +62,7 @@
                         <!-- <td style="width:5% ;white-space: inherit;vertical-align: middle;" align="center"><span class="text-cursor text-warning" onclick="JS_ApprovePayment.edit('{{$id}}')"><i class="fas fa-edit"></i></span></td> -->
                     </tr>
                     @endif
-                    @if($data->status == 1 && Auth::user()->role == 'EMPLOYEE')
+                    @if($data->status == 1 && $_SESSION['role'] == 'EMPLOYEE')
                     <tr>
                         <td style="white-space: inherit;vertical-align: middle;" align="center"><input type="checkbox" name="chk_item_id"
                                 value="{{ $data->id }}"></td>
