@@ -84,11 +84,11 @@
 					<span class="col-md-3 control-label required">Quyền truy cập</span>
 					<div class="col-md-5">
 					     @if ($_SESSION['role'] == 'ADMIN')
-						<input type="radio" value="ADMIN" name="role" id="role_admin" {{!empty($data['role']) && $data['role'] == 'ADMIN' ? 'checked' : ''}} />
-						<label for="role_admin">Quản trị hệ thống</label> <br>
+						<input type="radio" value="ADMIN" name="role" id="role" {{!empty($data['role']) && $data['role'] == 'ADMIN' ? 'checked' : ''}} />
+						<label for="role">Quản trị hệ thống</label> <br>
 						@endif
-						<input type="radio" value="EMPLOYEE" name="role" id="role_EMPLOYEE" {{!empty($data['role']) && $data['role'] == 'EMPLOYEE' ? 'checked' : ''}} />
-						<label for="role_EMPLOYEE">Nhân viên</label><br>
+						<input type="radio" value="EMPLOYEE" name="role" id="role" {{!empty($data['role']) && $data['role'] == 'EMPLOYEE' ? 'checked' : ''}} />
+						<label for="role">Nhân viên</label><br>
 					</div>
 					<div class="col-md-4">
 						<label for="">Trạng thái</label><br>
