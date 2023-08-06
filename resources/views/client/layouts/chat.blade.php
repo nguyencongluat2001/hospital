@@ -53,6 +53,7 @@ foreach($customerCare as $key => $value){
         <!-- Màn hình danh sách -->
         <div class="table-responsive">
             <div id="table-container-box">
+                @if(!isset($customerCare) || (count($customerCare) > 0) && isset($customerCare))
                 <div class="list-chat">
                     <div class="list-title">Danh sách hội thoại</div>
                     <div class="list-list">
@@ -78,6 +79,7 @@ foreach($customerCare as $key => $value){
                         @endif
                     </div>
                 </div>
+                @endif
                 <div class="form-group" id="txt-phone" @if(isset($customerCare) && count($customerCare) > 0) hidden @endif>
                     <input type="text" name="phone" id="phone" class="form-control" placeholder="Nhập số điện thoại">
                     <p class="errorPhone"></p>
@@ -86,15 +88,17 @@ foreach($customerCare as $key => $value){
             <div id="body-message"  @if(isset($customerCare) && count($customerCare) > 0) hidden @endif></div>
         </div>
         <div class="start col-md-12">
+            @if(!isset($customerCare) || (count($customerCare) > 0) && isset($customerCare))
             <button type="button" id="start_new" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Bắt đầu cuộc trò truyện mới</button>
+            @endif
             <button type="button" id="start" class="btn btn-primary" @if(isset($customerCare) && count($customerCare) > 0) hidden @endif><i class="fa fa-paper-plane"></i> Bắt đầu cuộc hội thoại</button>
         </div>
         <div class="sendMessage" style="display: none;">
             <div class="row">
-                <div class="col-md-10">
+                <div style="width: 83.33333%">
                     <input type="text" name="txt-message" id="txt-message" class="form-control">
                 </div>
-                <div class="col-md-2">
+                <div style="width: 16.66667%">
                     <button type="submit" id="sendMessage" class="btn btn-primary"><i class="fas fa-paper-plane"></i></button>
                 </div>
             </div>

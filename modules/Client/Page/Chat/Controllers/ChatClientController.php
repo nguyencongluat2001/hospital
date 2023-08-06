@@ -7,7 +7,9 @@ use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Modules\Base\Helpers\ForgetPassWordMailHelper;
+use Modules\Base\LoggerHelpers;
 use Modules\System\Dashboard\CustomerCare\Services\CustomerCareService;
+use Monolog\Logger;
 
 class ChatClientController extends Controller
 {
@@ -18,31 +20,39 @@ class ChatClientController extends Controller
     }
     public function broadcast(Request $request)
     {
-        $ipv4 = gethostbyname(trim(exec("hostname")));
-        
-        $arrInput = $request->all();
-        $customerCare = $this->customerCareService->where('phone', $arrInput['phone'])->first();
-        if(empty($customerCare)){
-            $sebdMailToCTV = $this->sendMail($arrInput);
-        }
-        broadcast(new PusherBroadcast($arrInput['phone'], $arrInput['message']))->toOthers();
-        if(isset($arrInput['message']) && !empty($arrInput['message'])){
-            $html = '<div class="right-message">';
-            $html .= '<div class="response">';
-            $html .= '<div class="text">';
-            $html .= '<p>' . $arrInput['message'] . '</p>';
-            $html .= '</div></div></div>';
-            
-            $params = [
-                'id' => strtoupper((string)\Str::uuid()),
-                'phone' => $arrInput['phone'],
-                'question' => $arrInput['message'],
-                'ip' => !empty($ipv4)?$ipv4:'',
-                'created_at' => date('Y/m/d H:i:s'),
-            ];
-            $this->customerCareService->insert($params);
+        $logger = new LoggerHelpers();
+        $logger->setFileName('ChatClient');
+        try{
 
-            return $html;
+            $ipv4 = gethostbyname(trim(exec("hostname")));
+            
+            $arrInput = $request->all();
+            $customerCare = $this->customerCareService->where('phone', $arrInput['phone'])->first();
+            if(empty($customerCare)){
+                $sebdMailToCTV = $this->sendMail($arrInput);
+            }
+            broadcast(new PusherBroadcast($arrInput['phone'], $arrInput['message']))->toOthers();
+            if(isset($arrInput['message']) && !empty($arrInput['message'])){
+                $html = '<div class="right-message">';
+                $html .= '<div class="response">';
+                $html .= '<div class="text">';
+                $html .= '<p>' . $arrInput['message'] . '</p>';
+                $html .= '</div></div></div>';
+                
+                $params = [
+                    'id' => strtoupper((string)\Str::uuid()),
+                    'phone' => $arrInput['phone'],
+                    'question' => $arrInput['message'],
+                    'ip' => !empty($ipv4)?$ipv4:'',
+                    'created_at' => date('Y/m/d H:i:s'),
+                ];
+                $this->customerCareService->insert($params);
+
+                $logger->log('Susccess', $params);
+                return $html;
+            }
+        }catch (\Exception $e){
+            $logger->log('Error', $e->getMessage());
         }
     }
 

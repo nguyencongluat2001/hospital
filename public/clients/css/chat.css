@@ -793,6 +793,9 @@
     .agent {
       display: none;
     }
+    .sendMessage {
+      padding: 30px 20px;
+    }
   }
   .wrapper.ten {
     background-color: #0e2839;
