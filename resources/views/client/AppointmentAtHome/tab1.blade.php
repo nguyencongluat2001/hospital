@@ -82,7 +82,7 @@
                                                 </div>
                                                 <ul class="contact-info list-unstyled col-lg-9 col-9 light-300">
                                                     <li class="h5 mb-0">Giới tính</li>
-                                                    <li style="color: #8ae9ff !important;font-size: 14px;font-family: serif;" class="text-muted">{{$datas[0]['sex']}}</li>
+                                                    <li style="color: #8ae9ff !important;font-size: 14px;font-family: serif;" class="text-muted">{{isset($datas[0]['sex']) ? 'Nam':'Nữ'}}</li>
                                                 </ul>
                                             </div>
                                             <div class="contact row mb-4">
