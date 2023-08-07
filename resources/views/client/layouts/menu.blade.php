@@ -25,7 +25,7 @@
                             <a class="nav-link link-bloodtest btn-outline-dark rounded-pill" href="{{ url('/client/appointmentathome/indexApointment') }}"> <span class="text-menu-header"><i class="fas fa-suitcase"></i> Xét nghiệm </span> <br> <span class="text-12">Lấy máu tại nhà</span> </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link link-bloodtest btn-outline-dark rounded-pill" href="{{ url('/client/appointmentathome/indexApointment') }}"> <span class="text-menu-header"><i class="fas fa-suitcase"></i> Truyền dịch </span> <br> <span class="text-12">Truyền dịch tại nhà</span> </a>
+                            <a class="nav-link link-infusion btn-outline-dark rounded-pill" href="{{ url('/client/appointmentathome/indexInfusion') }}"> <span class="text-menu-header"><i class="fas fa-suitcase"></i> Truyền dịch </span> <br> <span class="text-12">Truyền dịch tại nhà</span> </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link link-specialty btn-outline-dark rounded-pill" href="{{ url('/specialty') }}"> <span class="text-menu-header"><i class="fas fa-suitcase"></i> Chuyên khoa </span> <br> <span class="text-12">Tìm theo chuyên khoa</span> </a>

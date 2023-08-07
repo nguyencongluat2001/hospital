@@ -196,19 +196,19 @@
 
             <div class="col-lg-9 row">
                 <div class="team-member col-md-4">
-                    <img class="team-member-img img-fluid rounded-circle p-4"style="width:300px;height: 300px;object-fit: cover;" src="{{url('/clients/img/bacsi1.webp')}}" alt="Card image">
+                    <center><img class="team-member-img img-fluid rounded-circle p-4"style="width:300px;height: 300px;object-fit: cover;" src="{{url('/clients/img/bacsi1.webp')}}" alt="Card image"></center>
                     <ul class="team-member-caption list-unstyled text-center pt-4 text-muted ">
                         <li>Văn Chung</li>
                     </ul>
                 </div>
                 <div class="team-member col-md-4">
-                    <img class="team-member-img img-fluid rounded-circle p-4"style="width:300px;height: 300px;object-fit: cover;" src="{{url('/clients/img/bacsi2.webp')}}" alt="Card image">
+                    <center><img class="team-member-img img-fluid rounded-circle p-4"style="width:300px;height: 300px;object-fit: cover;" src="{{url('/clients/img/bacsi2.webp')}}" alt="Card image"></center>
                     <ul class="team-member-caption list-unstyled text-center pt-4 text-muted ">
                         <li>Hồng Ngân</li>
                     </ul>
                 </div>
                 <div class="team-member col-md-4">
-                    <img class="team-member-img img-fluid rounded-circle p-4"style="width:300px;height: 300px;object-fit: cover;" src="{{url('/clients/img/bacsi3.webp')}}" alt="Card image">
+                    <center><img class="team-member-img img-fluid rounded-circle p-4"style="width:300px;height: 300px;object-fit: cover;" src="{{url('/clients/img/bacsi3.webp')}}" alt="Card image"></center>
                     <ul class="team-member-caption list-unstyled text-center pt-4 text-muted ">
                         <li>Quốc Anh</li>
                     </ul>
@@ -321,6 +321,7 @@
 <script type="text/javascript" src="{{ URL::asset('dist/js/backend/client/JS_AppointmentAtHome.js') }}"></script>
 <script src='../assets/js/jquery.js'></script>
 <script type="text/javascript">
+    NclLib.menuActive('.link-bloodtest');
     var baseUrl = "{{ url('') }}";
     var JS_AppointmentAtHome = new JS_AppointmentAtHome(baseUrl, 'client', 'appointmentathome');
     $(document).ready(function($) {

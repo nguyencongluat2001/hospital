@@ -169,4 +169,28 @@ class AppointmentAtHomeController extends Controller
         $data['total'] = number_format($total,0, '', ',');
         return view('client.AppointmentAtHome.infor',$data);
     }
+
+
+
+
+
+
+
+
+
+
+    /// Truyền dịch tại nhà
+    /**
+     * dat lich
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function indexInfusion(Request $request)
+    {
+        $input = $request->all();
+        $getBloodTest['datas'] = $this->BloodTestService->where('sex',1)->orWhere('sex',2)->get()->toArray();
+        return view('client.AppointmentAtHome.Infusion.InfusionAppointement',$getBloodTest);
+    }
 }

@@ -139,6 +139,12 @@ Route::prefix('/client')->group(function () {
             Route::post('/sendPayment',[AppointmentAtHomeController::class,'sendPayment']);
             Route::get('/getPrice',[AppointmentAtHomeController::class,'getPrice']);
             Route::get('/showInfor', [AppointmentAtHomeController::class,'showInfor']);
+
+
+
+            // Truyền dịch
+            Route::get('/indexInfusion',[AppointmentAtHomeController::class,'indexInfusion']);
+
         });
         
         // Trang chủ cơ sở bệnh viện
