@@ -6,7 +6,7 @@
 /public/file-image-client
 /public/build
 /public/hot
-/public/storage
+# /public/storage
 /vendor
 .env
 .env.backup
