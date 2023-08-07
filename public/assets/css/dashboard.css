@@ -27103,9 +27103,9 @@ pre[class*="language-"] {
 .hidden_menu {
   display: none;
 }
-.show_menu {
+/* .show_menu {
   display: block;
-}
+} */
 
 @media (min-width: 1025px ) {
   .menu_layout, .btn_closeMenu {

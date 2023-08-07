@@ -190,7 +190,7 @@
                 <h2 class="h2 text-center col-12 py-2 semi-bold-600">Chuyên khoa phổ biến</h2>
             </div>
             <div class="container py-5">
-                <div class="row gx-5 gx-sm-3 gx-lg-5 gy-lg-5 gy-3 pb-3 projects">
+                <div class="row gx-sm-3 gx-lg-5 gy-lg-5 gy-3 pb-3 projects">
                      @foreach ($Specialty as $key => $data)
                         <!-- Start Recent Work -->
                         <div class="col-xl-3 col-md-4 col-sm-6 project ui branding">
