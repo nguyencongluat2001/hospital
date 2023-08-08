@@ -17,7 +17,7 @@
                 <!-- <i class='bx bx-buildings bx-sm text-dark'></i> -->
                 <span style="color: #ffbc00!important;" class="text-dark h5">Booking</span> <sup style="color:#32a5c2">Fast</sup>
             </a>
-            <button style="background: #ffea71;" class="text-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button style="background: #ffea71" class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
