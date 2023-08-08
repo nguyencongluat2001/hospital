@@ -1,4 +1,10 @@
- <!-- Header -->
+<style>
+    .navbar-nav .nav-link {
+        padding-right: 10px !important;
+        padding-left: 10px !important;
+    }
+</style>
+<!-- Header -->
  <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow" style="top:0;padding-top:0px !important;padding-bottom: 0px !important;background:#243649!important;position: fixed;width: 100%;z-index: 1000;">
         <div class="container d-flex justify-content-between align-items-center">
             <a class="" style="width: 7%;" href="{{url('/')}}">
