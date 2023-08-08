@@ -193,4 +193,29 @@ class AppointmentAtHomeController extends Controller
         $getBloodTest['datas'] = $this->BloodTestService->where('sex',1)->orWhere('sex',2)->get()->toArray();
         return view('client.AppointmentAtHome.Infusion.InfusionAppointement',$getBloodTest);
     }
+     /**
+     * dat lich truyền dịch
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function indexInfusion_form(Request $request ,$code)
+    {
+        $input = $request->all();
+        // $data['datas'] = $this->BloodTestService->where('code',$code)->get()->toArray();
+        $price = PriceTestModel::where('code_blood',$code)->get()->toArray();
+        $total = 0;
+        foreach($price as $item){
+            $total = $total+= $item['price'];
+        }
+        $datas['total'] = !empty($total)?number_format($total,0, '', ','):0;
+        $datas['money'] = $total;
+        $datas['code'] = $code;
+        $datas['count'] = count($price);
+        $datas['code_blood'] = $code;
+        $datas['type_xetnghiem'] =  $this->BloodTestService->where('sex',1)->orWhere('sex',2)->get()->toArray();
+        // dd($datas);
+        return view('client.AppointmentAtHome.Infusion.home',$datas);
+    }
 }

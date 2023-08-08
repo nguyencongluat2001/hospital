@@ -144,6 +144,7 @@ Route::prefix('/client')->group(function () {
 
             // Truyền dịch
             Route::get('/indexInfusion',[AppointmentAtHomeController::class,'indexInfusion']);
+            Route::get('/tab2/{code}',[AppointmentAtHomeController::class,'indexInfusion_form']);
 
         });
         

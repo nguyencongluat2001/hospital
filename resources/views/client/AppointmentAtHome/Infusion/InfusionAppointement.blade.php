@@ -63,7 +63,7 @@
                                     
                                 <center>
                                     <div class="col-md-6 mb-4">
-                                        <a href="" class="card border-0 shadow-lg overflow-hidden">
+                                        <a href="{{url('/client/appointmentathome/tab2/')}}/test" class="card border-0 shadow-lg overflow-hidden">
                                             <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/laymautainha.jpeg')}}" alt="Card image">
                                             <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                                 <div style="background: #00000091;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
@@ -72,7 +72,7 @@
                                             </div>
                                         </a>
                                         <br>
-                                        <a href="">
+                                        <a href="{{url('/client/appointmentathome/tab2/')}}/test">
                                             <span style="padding: 25px;;background: #ffba4b; color: #0d1226;" class="btn btn-outline-light rounded-pill">Đặt lịch truyền</span>
                                         </a>
                                     </div>

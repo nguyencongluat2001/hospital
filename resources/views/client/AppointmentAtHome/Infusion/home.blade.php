@@ -38,8 +38,8 @@
                                                             </div>
                                                             <div class="col-lg-1 "></div>
                                                             <div class="col-lg-8 ">
-                                                            <span  class="text-title-home" style="color:#ff9300"><center> Lấy mẫu tại nhà</center></span>
-                                                            <span  style="font-size:20px">Lấy mẫu xét nghiệm tại nhà giúp khách hàng chủ động tầm soát bệnh lý. Đồng thời tiết kiệm thời gian đi lại, chờ đợi kết quả với mức chi phí hợp lý.</span>
+                                                            <span  class="text-title-home" style="color:#ff9300"><center> Truyền dịch tại nhà - Tiêm thuốc theo chỉ định của bác sĩ</center></span>
+                                                            <!-- <span  style="font-size:20px">Việc làm truyền dịch tại nhà giúp tiết kiệm thời gian và công sức di chuyển đến cơ sở y tế. Người dùng có thể sắp xếp thời gian và địa điểm phù hợp cho việc làm truyền dịch.</span> -->
                                                         </div>
                                                         </div>
                                                     </a>
@@ -69,45 +69,17 @@
                                                     </div>--}}
                                                 </div>
                                                 <div class="row">
-                                                {{--<div class="form-wrapper col-md-4">
-                                                        <label for="">Ngày sinh <span class="request_star">*</span></label>
-                                                        <input placeholder="Số điện thoại..." id="date_sampling" type="date" class="form-control" name="date_sampling" value="">
-                                                    </div> --}}
-                                                    <div class="form-wrapper col-md-12">
-                                                        <label for="">Loại xét nghiệm</label>
-                                                        <select onchange="JS_AppointmentAtHome.getPrice(this.value)" class="form-control input-sm chzn-select" name="code" id="code">
-                                                            <option value="">--Chọn loại--</option>
-                                                            @foreach($type_xetnghiem as $key => $values) 
-                                                                <option value="{{$values['code']}}" {{($values['code'] == $code) ? 'selected' : ''}}>{{$values['name']}}</option>
-                                                            @endforeach 
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="form-wrapper col-md-4">
-                                                        <label for="">Giá gói khám <span class="request_star">*</span></label>
-                                                        <div id="price">
-                                                             <input  type="hidden" class="form-control" id="money" name="money" value="{{$money}}" autofocus> 
-                                                             <input  disabled type="text" class="form-control" value="{{$total}} VND" autofocus> 
-                                                        </div>
-                                                    </div>
-                                                    <div id="infor" class="form-wrapper col-md-3">
-                                                        <label for="">Gồm {{$count}} chỉ số</label>
-                                                        <button onclick="JS_AppointmentAtHome.showInfor('{{$code_blood}}')" type="button" style="display: inline-block;" class="btn-warning"><i class="fas fa-hand-point-right"></i> Chi tiết</button>
-                                                    </div>
                                                     <div class="form-wrapper col-md-4">
                                                         <label for="">Giới tính <span class="request_star">*</span></label>
                                                         <input type="radio" value="1" name="sex" id="sex" />  <span style="padding-left:5px" >Nam</span>&emsp;
                                                         <input  type="radio" value="2" name="sex" id="sex"  /> <span style="padding-left:5px" >Nữ</span>
                                                     </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="form-wrapper col-md-6">
-                                                            <label for="">Ngày lấy mẫu<span class="request_star">*</span></label>
+                                                    <div class="form-wrapper col-md-4">
+                                                            <label for="">Ngày truyền<span class="request_star">*</span></label>
                                                         <input  id="date_sampling" type="date" class="form-control" name="date_sampling" value="">
                                                     </div>
-                                                    <div class="form-wrapper col-md-6">
-                                                            <label for="">Giờ lấy mẫu<span class="request_star">*</span></label>
+                                                    <div class="form-wrapper col-md-4">
+                                                            <label for="">Giờ truyền<span class="request_star">*</span></label>
                                                         <select class="form-control input-sm chzn-select" name="hour_sampling" id="hour_sampling">
                                                             <option value="">--Chọn giờ--</option>
                                                             <option value="05h30">05 giờ 30 phút</option>
@@ -150,8 +122,8 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="form-wrapper">
-                                                        <label for="">Nội dung<span class="request_star">*</span></label>
-                                                        <textarea style="height: 100px;" name="reason" id="reason" class="form-control"  rows="4" cols="50"></textarea>
+                                                        <label for="">Nội dung <span class="request_star">*</span></label>
+                                                        <textarea style="height: 100px;" placeholder="Bạn cảm thấy trong người?..." name="reason" id="reason" class="form-control"  rows="8" cols="50"></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="pt-3 mb-3">
