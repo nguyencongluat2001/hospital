@@ -54,6 +54,7 @@
                                                 @csrf
                                                 <!-- <input type="hidden" id="code" name="code" value="{{ !empty($datas->code)?$datas->code:'' }}"> -->
                                                 <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
+                                                <input type="hidden" id="type_at_home" name="type_at_home" value="TRUYEN_DICH">
                                                 <div class="row">
                                                     <div class="form-wrapper col-md-6">
                                                         <label for="">Họ và tên <span class="request_star">*</span></label>
@@ -69,7 +70,7 @@
                                                     </div>--}}
                                                 </div>
                                                 <div class="row">
-                                                    <div class="form-wrapper col-md-4">
+                                                    <div class="form-wrapper col-md-3">
                                                         <label for="">Giới tính <span class="request_star">*</span></label>
                                                         <input type="radio" value="1" name="sex" id="sex" />  <span style="padding-left:5px" >Nam</span>&emsp;
                                                         <input  type="radio" value="2" name="sex" id="sex"  /> <span style="padding-left:5px" >Nữ</span>
@@ -153,6 +154,7 @@
 <script type="text/javascript" src="{{ URL::asset('dist/js/backend/client/JS_AppointmentAtHome.js') }}"></script>
 <script src='../assets/js/jquery.js'></script>
 <script type="text/javascript">
+    NclLib.menuActive('.link-infusion');
     var baseUrl = "{{ url('') }}";
     var JS_AppointmentAtHome = new JS_AppointmentAtHome(baseUrl, 'client', 'appointmentathome');
     $(document).ready(function($) {

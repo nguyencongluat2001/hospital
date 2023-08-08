@@ -54,6 +54,7 @@
                                                 @csrf
                                                 <!-- <input type="hidden" id="code" name="code" value="{{ !empty($datas->code)?$datas->code:'' }}"> -->
                                                 <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
+                                                <input type="hidden" id="type_at_home" name="type_at_home" value="XET_NGHIEM">
                                                 <div class="row">
                                                     <div class="form-wrapper col-md-6">
                                                         <label for="">Họ và tên <span class="request_star">*</span></label>

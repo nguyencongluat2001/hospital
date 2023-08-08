@@ -21,6 +21,14 @@
                 </div>
                 @endif
                 <div class="col-md-10 row">
+                     <div class="col-md-3">
+                        <select class="form-control input-sm chzn-select" name="type_at_home"
+                            id="type_at_home">
+                            <!-- <option value=''>-- Chọn loại --</option> -->
+                            <option value="XET_NGHIEM">Xét nghiệm</option>
+                            <option value="TRUYEN_DICH">Truyền dịch</option>
+                        </select>
+                    </div>
                     <div class="col-md-2">
                         <input type="text" class="form-control datepicker" name="fromdate" id="fromdate" placeholder="Từ ngày">
                     </div>

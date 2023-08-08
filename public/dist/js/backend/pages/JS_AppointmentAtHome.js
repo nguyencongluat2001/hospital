@@ -28,7 +28,7 @@ JS_AppointmentAtHome.prototype.loadIndex = function() {
         myClass.edit(oForm);
     });
     // form load
-    $(oForm).find('#type_payment').change(function() {
+    $(oForm).find('#type_at_home').change(function() {
         var page = $(oForm).find('#limit').val();
         var perPage = $(oForm).find('#cbo_nuber_record_page').val();
         myClass.loadList(oForm, page, perPage);
@@ -101,6 +101,7 @@ JS_AppointmentAtHome.prototype.loadList = function(oForm, numberPage = 1, perPag
     var url = this.urlPath + '/loadList';
     var data = '_token=' + $("#_token").val();
     data += '&search=' + $("#search").val();
+    data += '&type_at_home=' + $("#type_at_home").val();
     data += '&fromdate=' + $("#fromdate").val();
     data += '&todate=' + $("#todate").val();
     data += '&offset=' + numberPage;

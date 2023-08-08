@@ -38,7 +38,11 @@
                 @foreach ($datas as $key => $data)
                 @php $id = $data->id; $i = 1; @endphp
                     @if($_SESSION['role'] == 'ADMIN')
+                    @if($data->status == 1)
+                    <tr style="background:#7bffa5">
+                    @else 
                     <tr>
+                    @endif
                         <td style="white-space: inherit;vertical-align: middle;" align="center"><input type="checkbox" name="chk_item_id"
                                 value="{{ $data->id }}"></td>
                         <td style="white-space: inherit;vertical-align: middle;" align="center">{{($datas->currentPage() - 1)*$datas->perPage() + ($key + 1)}}</td>
@@ -63,7 +67,11 @@
                     </tr>
                     @endif
                     @if($data->status == 1 && $_SESSION['role'] == 'EMPLOYEE')
+                    @if($data->status == 1)
+                    <tr style="background:#7bffa5">
+                    @else 
                     <tr>
+                    @endif
                         <td style="white-space: inherit;vertical-align: middle;" align="center"><input type="checkbox" name="chk_item_id"
                                 value="{{ $data->id }}"></td>
                         <td style="white-space: inherit;vertical-align: middle;" align="center">{{($datas->currentPage() - 1)*$datas->perPage() + ($key + 1)}}</td>
