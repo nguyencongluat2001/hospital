@@ -58,9 +58,17 @@
                                         <i class="fas fa-clinic-medical"></i> <br>
                                            <span>Cơ sở y tế</span><br>
                                         </a>
+                                        <a href="{{ url('/client/appointmentathome/indexApointment') }}" type="button" class="btn btn-light icon-menu-home" style="width:100px;height:70px;color: #f2ffff;background: #ffffff0a;">
+                                        <i class="fas fa-tint"></i>
+                                           <span>Xét nghiệm</span><br>
+                                        </a>
                                     </div><!-- End Recent Work -->    
                                      <!-- Start Recent Work -->
                                     <div class="col-md-3 mb-4">
+                                        <a href="{{ url('/client/appointmentathome/indexInfusion') }}" type="button" class="btn btn-light icon-menu-home" style="width:100px;height:70px;color: #f2ffff;background: #ffffff0a;">
+                                            <i class="fas fa-thermometer"></i>
+                                           <span>Truyền dịch</span><br>
+                                        </a>
                                         <!-- <a href="{{ url('/package') }}" type="button" class="btn btn-light icon-menu-home" style="width:100px;height:70px;color: #f2ffff;background: #ffffff0a;">
                                         <i class="fas fa-file-medical"></i>   <br>
                                         <span>Gói khám</span><br>

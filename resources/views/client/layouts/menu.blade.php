@@ -27,17 +27,18 @@
                         <li class="nav-item">
                             <a class="nav-link link-home btn-outline-dark rounded-pill" href="{{ url('/') }}"> <span class="text-menu-header"> <i class="fas fa-home"></i> Trang chủ </span> <br> <span class="text-12">Hạng mục nổi bật</span> </a>
                         </li> 
-                        <li class="nav-item">
-                            <a class="nav-link link-bloodtest btn-outline-dark rounded-pill" href="{{ url('/client/appointmentathome/indexApointment') }}"> <span class="text-menu-header"><i class="fas fa-suitcase"></i> Xét nghiệm </span> <br> <span class="text-12">Lấy máu tại nhà</span> </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link link-infusion btn-outline-dark rounded-pill" href="{{ url('/client/appointmentathome/indexInfusion') }}"> <span class="text-menu-header"><i class="fas fa-suitcase"></i> Truyền dịch </span> <br> <span class="text-12">Truyền dịch tại nhà</span> </a>
-                        </li>
+                       
                         <li class="nav-item">
                             <a class="nav-link link-specialty btn-outline-dark rounded-pill" href="{{ url('/specialty') }}"> <span class="text-menu-header"><i class="fas fa-suitcase"></i> Chuyên khoa </span> <br> <span class="text-12">Tìm theo chuyên khoa</span> </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link link-facilities btn-outline-dark rounded-pill" href="{{ url('/facilities') }}"> <span class="text-menu-header"><i class="fas fa-clinic-medical"></i> Cơ sở y tế</span> <br> <span class="text-12">Chọn bệnh viện</span> </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-bloodtest btn-outline-dark rounded-pill" href="{{ url('/client/appointmentathome/indexApointment') }}"> <span class="text-menu-header"><i class="fas fa-tint"></i> Xét nghiệm </span> <br> <span class="text-12">Lấy máu tại nhà</span> </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-infusion btn-outline-dark rounded-pill" href="{{ url('/client/appointmentathome/indexInfusion') }}"> <span class="text-menu-header"><i class="fas fa-thermometer"></i> Truyền dịch </span> <br> <span class="text-12">Truyền dịch tại nhà</span> </a>
                         </li>
                         <!-- <li class="nav-item">
                             <a class="nav-link btn-outline-dark rounded-pill" href="work.html"> <span class="text-menu-header">Bác sĩ </span> <br> <span class="text-12">Chọn bác sĩ giỏi</span></a>
