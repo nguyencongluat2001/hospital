@@ -24,18 +24,26 @@
                      <div class="col-md-3">
                         <select class="form-control input-sm chzn-select" name="type_at_home"
                             id="type_at_home">
-                            <!-- <option value=''>-- Chọn loại --</option> -->
+                            <!-- <option value=''>-- Chọn loại dịch vụ--</option> -->
                             <option value="XET_NGHIEM">Xét nghiệm</option>
                             <option value="TRUYEN_DICH">Truyền dịch</option>
                         </select>
                     </div>
-                    <div class="col-md-2">
+                    <!-- <div class="col-md-3">
+                        <select class="form-control input-sm chzn-select" name="status"
+                            id="status">
+                            <option value="">--Trạng thái--</option>
+                            <option value="1">Đã liên hệ</option>
+                            <option value="0">Chưa liên hệ</option>
+                        </select>
+                    </div> -->
+                    <div class="col-md-3">
                         <input type="text" class="form-control datepicker" name="fromdate" id="fromdate" placeholder="Từ ngày">
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                         <input type="text" class="form-control datepicker" name="todate" id="todate" placeholder="Đến ngày">
                     </div>
-                    <div class="col-md-5 row">
+                    <div class="col-md-7 row pt-3"> 
                         <div class="form-search form-group input-group">
                             <input type="text" class="form-control" name="search" id="search" style="height:40px" placeholder="Từ khóa tìm kiếm..." onkeydown="if (event.key == 'Enter'){JS_AppointmentAtHome.search();return false;}">
                             <span class="input-group-btn">

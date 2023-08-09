@@ -33,6 +33,11 @@ JS_AppointmentAtHome.prototype.loadIndex = function() {
         var perPage = $(oForm).find('#cbo_nuber_record_page').val();
         myClass.loadList(oForm, page, perPage);
     });
+    $(oForm).find('#status').change(function() {
+        var page = $(oForm).find('#limit').val();
+        var perPage = $(oForm).find('#cbo_nuber_record_page').val();
+        myClass.loadList(oForm, page, perPage);
+    });
     // form load
     $(oForm).find('#fromdate').change(function() {
         var page = $(oForm).find('#limit').val();
@@ -102,6 +107,7 @@ JS_AppointmentAtHome.prototype.loadList = function(oForm, numberPage = 1, perPag
     var data = '_token=' + $("#_token").val();
     data += '&search=' + $("#search").val();
     data += '&type_at_home=' + $("#type_at_home").val();
+    data += '&status=' + $("#status").val();
     data += '&fromdate=' + $("#fromdate").val();
     data += '&todate=' + $("#todate").val();
     data += '&offset=' + numberPage;
@@ -252,4 +258,36 @@ JS_AppointmentAtHome.prototype.changeStatusAppointmentAtHome = function(id) {
  */
 JS_AppointmentAtHome.prototype.search = function(){
     JS_AppointmentAtHome.loadList();
+}
+/**
+ * Hàm hiển thị modal edit
+ *
+ * @param oForm (tên form)
+ *
+ * @return void
+ */
+JS_AppointmentAtHome.prototype.showDetail = function(id) {
+    var url = this.urlPath + '/edit';
+    var myClass = this;
+    var data = '_token=' + $('#frmAppointmentAtHome_index #_token').val();
+    data += '&id=' + id;
+    $.ajax({
+        url: url,
+        type: "GET",
+        data: data,
+        success: function(arrResult) {
+            if (arrResult['success'] == false) {
+                NclLib.alertMessageBackend('danger', 'Lỗi', arrResult['message']);
+                return false;
+            }
+            $('#addmodal').html(arrResult);
+            $('#addmodal').modal('show');
+            $('.chzn-select').chosen({ height: '100%', width: '100%' });
+            $("#role_client").change(function(){
+                myClass.getUserVIP();
+            });
+            myClass.loadevent('form#frmAdd');
+
+        }
+    });
 }

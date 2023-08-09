@@ -6,14 +6,18 @@ use Modules\Base\Service;
 use Modules\System\Dashboard\AppointmentAtHome\Repositories\AppointmentAtHomeRepository;
 use Modules\System\Dashboard\Specialty\Services\SpecialtyService;
 use Modules\System\Dashboard\Category\Services\CategoryService;
+use Modules\System\Dashboard\BloodTest\Models\PriceTestModel;
+use Modules\System\Dashboard\BloodTest\Services\BloodTestService;
 
 class AppointmentAtHomeService extends Service
 {
     public function __construct(
+        BloodTestService $BloodTestService,
         CategoryService $categoryService,
         SpecialtyService $specialtyService
     ){
         parent::__construct();
+        $this->BloodTestService = $BloodTestService;
         $this->categoryService = $categoryService;
         $this->specialtyService = $specialtyService;
     }
@@ -46,14 +50,22 @@ class AppointmentAtHomeService extends Service
     public function edit($input)
     {
         $AppointmentAtHome = $this->repository->where('id', $input['id'])->first();
-        $cate = $this->categoryService->where('cate','DM_XET_NGHIEM_TAI_NHA')->where('code_category',$AppointmentAtHome['type'])->first();
+        $type = $this->BloodTestService->where('code',$AppointmentAtHome['type'])->first();
+        $price = PriceTestModel::where('code_blood',$AppointmentAtHome['type'])->get()->toArray();
+        $total = 0;
+        foreach($price as $item){
+            $total = $total+= $item['price'];
+        }
+        $totals = number_format($total,0, '', ',');
         $param = [
             'code' => isset($AppointmentAtHome['code'])?$AppointmentAtHome['code']:'', 
-            'type' => isset($cate['name_category'])?$cate['name_category']:'', 
+            'type' => isset($type['name'])?$type['name']:'', 
+            'type_at_home' => isset($AppointmentAtHome['type_at_home'])?$AppointmentAtHome['type_at_home']:'', 
             'name' => isset($AppointmentAtHome['name'])?$AppointmentAtHome['name']:'', 
             'phone' => isset($AppointmentAtHome['phone'])?$AppointmentAtHome['phone']:'', 
             'sex' => isset($AppointmentAtHome['sex'])?$AppointmentAtHome['sex']:'', 
             'address' => isset($AppointmentAtHome['address'])?$AppointmentAtHome['address']:'', 
+            'money' => $totals, 
             'reason' => isset($AppointmentAtHome['reason'])?$AppointmentAtHome['reason']:'', 
             'date_sampling' => isset($AppointmentAtHome['date_sampling'])?date('d-m-Y',strtotime($AppointmentAtHome['date_sampling'])):'', 
             'hour_sampling' => isset($AppointmentAtHome['hour_sampling'])?$AppointmentAtHome['hour_sampling']:'', 
