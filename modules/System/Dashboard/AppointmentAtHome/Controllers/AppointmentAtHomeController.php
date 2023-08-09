@@ -54,6 +54,7 @@ class AppointmentAtHomeController extends Controller
     {
         $input = $request->all();
         $data = $this->AppointmentAtHomeService->edit($input); 
+        // dd($data);
         return view('dashboard.AppointmentAtHome.add', $data);
     }
     /**
