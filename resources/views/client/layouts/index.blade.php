@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>BOOKING CALENDAR</title>
+    <title>BOOKING46</title>
     <meta charset="utf-8">
     <base href="{{ asset('') }}">
     @if(request()->isSecure())
