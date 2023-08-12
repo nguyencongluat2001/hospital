@@ -33,17 +33,17 @@
                                                                     <div class="col-lg-12 ">
                                                                         <h5 style="color:#ffd877;font-size: 40px;font-family: serif;font-weight: 600;">Chuyên khoa: {{ !empty($datas->name_specialty)?$datas->name_specialty:'' }}</h5>
                                                                         <div class="form-wrapper col-md-12">
-                                                                            <select onchange="JS_Specialty.getHospital('{{$datas->code}}',this.value)" class="form-control input-sm chzn-select" name="code_specialty" id="code_specialty">
-                                                                                <option value="">--Chọn bệnh viện--</option>
+                                                                            <!-- <select onchange="JS_Specialty.getHospital('{{$datas->code}}',this.value)" class="form-control input-sm chzn-select" name="code_specialty" id="code_specialty">
+                                                                                <option value="">--Chọn phòng khám--</option>
                                                                                 @foreach($hospital as $key => $values) 
                                                                                     <option value="{{$values['code']}}">{{$values['name_hospital']}}</option>
                                                                                 @endforeach 
-                                                                            </select>
+                                                                            </select> -->
                                                                         </div>  <br>
                                                                         <div id="hospital">
-                                                                        <span  onclick="JS_Specialty.warning()" class="btn rounded-pill btn-success text-light px-4 light-300">
+                                                                        <!-- <span  onclick="JS_Specialty.warning()" class="btn rounded-pill btn-success text-light px-4 light-300">
                                                                             Đặt lịch khám
-                                                                        </span>
+                                                                        </span> -->
                                                                     </div>
                                                                     </div>
                                                             </form>
@@ -63,6 +63,24 @@
                     <!-- Start Banner Hero -->
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-left pt-5">
+        <div class="row g-lg-5 mb-4">
+        @foreach ($hospital as $key => $data)
+            <!-- Start Recent Work -->
+            <div class="col-md-4 mb-4">
+                <a  href="{{url('/schedule')}}/{{$datas['code']}},{{$data['code']}}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                    <img class="recent-work-img card-img" style="height: 250px;object-fit: cover;" src="{{url('/file-image-client/avatar-hospital/')}}/{{ !empty($data['avatar'])?$data['avatar']:'' }}" alt="Card image">
+                    <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                        <div style="background: radial-gradient(#000000c2, transparent);border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                            <h3 class="card-title" style="font-size: 23 !important;">{{$data['name_hospital']}}</h3>
+                            <span style="color: #ffd100" class="btn btn-outline-light rounded-pill">Đặt lịch khám</span>
+                        </div>
+                    </div>
+                </a>
+            </div><!-- End Recent Work -->
+        @endforeach
         </div>
     </div>
     <div class="banner-vertical-center-work container d-flex justify-content-center align-items-center">

@@ -44,6 +44,7 @@ class HospitalService extends Service
             'name_hospital'=>$input['name_hospital'],
             'code'=>$input['code'],
             'decision'=>$input['decision'],
+            'type'=>$input['type'],
             'address'=>$input['address'],
             'code_specialty' => $input['code_specialty'],
             'current_status'=> !empty($input['is_checkbox_status'])?$input['is_checkbox_status']:0,

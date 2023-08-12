@@ -101,6 +101,13 @@ JS_Hospital.prototype.store = function (oFormCreate) {
     var data = $(oFormCreate).serialize();
     var formdata = new FormData();
 
+    if ($("#type").val() == '') {
+        var nameMessage = 'Loại cơ sở không được để trống!';
+        var icon = 'warning';
+        var color = '#f5ae67';
+        NclLib.alerMesage(nameMessage,icon,color);
+        return false;
+    }
     if ($("#name_hospital").val() == '') {
         var nameMessage = 'Tên bệnh viện không được để trống!';
         var icon = 'warning';
@@ -135,6 +142,7 @@ JS_Hospital.prototype.store = function (oFormCreate) {
     formdata.append('name_hospital', $("#name_hospital").val());
     formdata.append('code', $("#code").val());
     formdata.append('decision', CKEDITOR.instances.decision.getData());
+    formdata.append('type', $("#type").val());
     formdata.append('address', $("#address").val());
     formdata.append('is_checkbox_status', status);
     formdata.append('code_specialty', code_specialty);

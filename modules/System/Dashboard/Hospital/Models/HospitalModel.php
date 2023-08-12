@@ -15,6 +15,7 @@ class HospitalModel extends Model
         'name_hospital',
         'code',
         'decision',
+        'type',
         'avatar',
         'address',
         'code_specialty',

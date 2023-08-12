@@ -49,7 +49,7 @@ class SpecialtyController extends Controller
     {
         $input = $request->all();
         $datas['datas'] = $this->SpecialtyService->where('code',$code)->first();
-        $datas['hospital'] = HospitalModel::where('code_specialty','like','%'.$code.'%')->get()->toArray();
+        $datas['hospital'] = HospitalModel::where('code_specialty','like','%'.$code.'%')->where('type','PHONG_KHAM')->get()->toArray();
         // dd($datas);
         return view('client.Specialty.Detail.home',$datas);
     }

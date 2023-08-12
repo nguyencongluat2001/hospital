@@ -5,7 +5,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content card">
             <div class="modal-header">
-                <h5 class="modal-title">Cập nhật bệnh viện</h5>
+                <h5 class="modal-title">Cập nhật bệnh viện, phòng khám</h5>
                 <button type="button" class="btn btn-sm" data-bs-dismiss="modal">
                     X
                 </button>
@@ -13,7 +13,21 @@
             <div class="modal-body" style="padding:15px">
                 <!-- tên -->
                 <div class="row form-group" id="div_hinhthucgiai">
-                    <span class="col-md-3 control-label required">Tên bệnh viện</span>
+                    <span class="col-md-3 control-label required">Loại cơ sở</span>
+                    <div class="col-md-8">
+                        <select class="form-control input-sm chzn-select" name="type"
+                            id="type">
+                            <option value=''>-- Chọn loại --</option>
+                            <option @if(isset($data['detail']['type']) && $data['detail']['type'] == 'BENH_VIEN') selected @endif 
+                             value='BENH_VIEN'>Bệnh viện
+                            </option>
+                            <option @if(isset($data['detail']['type']) && $data['detail']['type'] == 'PHONG_KHAM') selected @endif 
+                             value='PHONG_KHAM'>Phòng khám</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group" id="div_hinhthucgiai">
+                    <span class="col-md-3 control-label required">Tên bệnh viện, phòng khám</span>
                     <div class="col-md-8">
                         <input class="form-control" type="text" value="{{!empty($data['detail']['name_hospital'])?$data['detail']['name_hospital']:''}}" name="name_hospital" id="name_hospital"
                             placeholder="Nhập tên bệnh viện..." />
@@ -21,7 +35,7 @@
                 </div>
                  <!-- tên -->
                  <div class="row form-group" id="div_hinhthucgiai">
-                    <span class="col-md-3 control-label required">Mã bệnh viện</span>
+                    <span class="col-md-3 control-label required">Mã bệnh viện, phòng khám</span>
                     <div class="col-md-8">
                         <input class="form-control" type="text" value="{{!empty($data['detail']['code'])?$data['detail']['code']:''}}" name="code" id="code"
                             placeholder="Nhập tên bệnh viện..." />

@@ -40,7 +40,7 @@ return [
         'href' => '/system/category/index',
     ],
     'hospital' => [
-        'name' => 'Quản trị bệnh viện',
+        'name' => 'Bệnh viện, phòng khám',
         'icon' => 'fas fa-university',
         'a'    => 'nav-link link-hospital',
         'href' => '/system/hospital/index',
