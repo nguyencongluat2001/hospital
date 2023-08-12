@@ -65,8 +65,10 @@
             </div>
         </div>
     </div>
-    <span style="color:#00d3ff"  class="text-title-home pl-2"><center> Phòng khám</center></span>
-                            </div>
+        <span style="color:#00d3ff" class="text-title-home pl-2">
+              <center> Phòng khám</center>
+        </span>
+    </div>
     <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-left pt-5">
         <div class="row g-lg-5 mb-4">
         @foreach ($hospital as $key => $data)

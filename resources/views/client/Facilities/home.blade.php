@@ -86,24 +86,46 @@
                                                                     <img  src="{{url('/file-image-client/avatar-hospital/')}}/{{ !empty($data->avatar)?$data->avatar:'' }}" alt="Image" style="height: 200px;width: 250px;object-fit: cover;">
                                                                     <span style="padding-left:10px;font-size: 30px;font-family: -webkit-body;color: #1d3952;">{{ $key + 1 }}.&nbsp;{{$data->name_hospital}}</span>
                                                                     <span style="padding-left:10px;font-size: 18px;font-family: -webkit-body;color: #ff0000;">({{$data->address}})</span><br>
-                                                                    <!-- <a  href="{{url('/facilities')}}/{{$data->code}}">
-                                                                        <span style="background: #32870b;color: #ffffff;" class="btn btn-outline-light rounded-pill">Xem chi tiết</span>
-                                                                    </a> -->
                                                                 </a>
                                                             </td>
-                                                            <!-- <td style="background: #ffffffeb;width:70%;vertical-align: middle;" align="center">
-                                                                <span style="padding-left:10px;font-size: 40px;font-family: -webkit-body;color: #1d3952;">{{ $key + 1 }}.&nbsp;{{$data->name_hospital}}</span> <br>
-                                                                <span style="padding-left:10px;font-size: 20px;font-family: -webkit-body;color: #1d3952;"><i style="color:#8b0000" class="fas fa-hotel"></i> Địa chỉ: {{$data->address}}</span><br>
-                                                                <a  href="{{url('/facilities')}}/{{$data->code}}">
-                                                                    <span style="background: #32870b;color: #ffffff;" class="btn btn-outline-light rounded-pill">Xem chi tiết</span>
-                                                                </a>
-                                                            </td> -->
                                                             
                                                         </tr> 
                                                     @endforeach
                                                 </tbody>
                                             </table>
                                         </section>
+                                        <!-- <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-left pt-5">
+                                            <div class="row g-lg-5 mb-4">
+                                            <table id="myTable" class="table  table-bordered table-striped table-condensed dataTable no-footer">
+
+                                            @foreach ($datas as $key => $data)
+                                                <div class="col-md-6 mb-4">
+                                                    <a  href="{{url('/facilities')}}/{{$data->code}}" class=" card border-0 shadow-lg overflow-hidden">
+                                                        <img class="recent-work-img card-img" style="height: 250px;object-fit: cover;" src="{{url('/file-image-client/avatar-hospital/')}}/{{ !empty($data->avatar)?$data->avatar:'' }}" alt="Card image">
+                                                        <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                                                            <div style="background:#f5f6ffe3;border-radius: 5px;width: 100%;" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                                            <span style="padding:10px">
+                                                                    <h3 class="card-title" style="font-weight: 600;;color:#365270;padding:10px;font-size: 23 !important;">{{$data->name_hospital}}</h3>
+                                                                        <span class="card-title" style="color:#365270;padding:10px;font-size: 14 !important;"><i class="fas fa-map-marker-alt"></i> {{$data->address}}</span> <br> <br>
+                                                            </span>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                    </a>
+                                                    <br>
+                                                    <a href="{{url('/facilities')}}/{{$data->code}}">
+                                                        <center>
+                                                            <span style="color: #ffd100;background: #243157;" class="btn btn-outline-light rounded-pill">Đặt lịch khám</span>
+                                                        </center>
+                                                    </a>
+                                            @endforeach
+                                            </table>
+
+                                            <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-center py-2 pb-2">
+                                                    <a class="banner-button btn rounded-pill btn-outline-primary btn-lg px-4 " href="{{url('/facilities')}}" role="button">Xem thêm</a>
+                                                </div>
+                                            </div>
+                                        </div> -->
                                         <!-- End Our Work -->
                                     </div>
                                 </div>
