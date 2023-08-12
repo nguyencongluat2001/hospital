@@ -65,20 +65,34 @@
             </div>
         </div>
     </div>
+    <span style="color:red"  class="text-title-home pl-2"><center> Phòng khám</center></span>
+                            </div>
     <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-left pt-5">
         <div class="row g-lg-5 mb-4">
         @foreach ($hospital as $key => $data)
             <!-- Start Recent Work -->
-            <div class="col-md-4 mb-4">
-                <a  href="{{url('/schedule')}}/{{$datas['code']}},{{$data['code']}}" class="recent-work card border-0 shadow-lg overflow-hidden">
+            <div class="col-md-6 mb-4">
+                <a  href="{{url('/schedule')}}/{{$datas['code']}},{{$data['code']}}" class=" card border-0 shadow-lg overflow-hidden">
                     <img class="recent-work-img card-img" style="height: 250px;object-fit: cover;" src="{{url('/file-image-client/avatar-hospital/')}}/{{ !empty($data['avatar'])?$data['avatar']:'' }}" alt="Card image">
                     <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                        <div style="background: radial-gradient(#000000c2, transparent);border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                            <h3 class="card-title" style="font-size: 23 !important;">{{$data['name_hospital']}}</h3>
-                            <span style="color: #ffd100" class="btn btn-outline-light rounded-pill">Đặt lịch khám</span>
+                        <div style="background:#f5f6ffb8;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                           <span style="padding:10px">
+                                <h3 class="card-title" style="font-weight: 600;;color:#365270;padding:10px;font-size: 23 !important;">{{$data['name_hospital']}}</h3>
+                                    <span class="card-title" style="color:#365270;padding:10px;font-size: 14 !important;"><i class="fas fa-map-marker-alt"></i> {{$data['address']}}</span> <br> <br>
+                           </span>
+
                         </div>
                     </div>
+                   
                 </a>
+                <br>
+                <a href="{{url('/schedule')}}/{{$datas['code']}},{{$data['code']}}">
+                    <center>
+                        <span style="color: #ffd100;background: #c90000;" class="btn btn-outline-light rounded-pill">Đặt lịch khám</span>
+                    </center>
+                </a>
+                
+
             </div><!-- End Recent Work -->
         @endforeach
         </div>
