@@ -89,20 +89,20 @@ JS_CustomerCare.prototype.message = function(phone){
                 $("#discussions").removeClass('show-mobile');
                 $("#message-title").addClass('message-title');
             });
-            $(window).on("navigate", function (event, data) {
-                var direction = data.state.direction;
-                if (direction == 'back') {
-                    alert(1234);
-                }
-                if (direction == 'forward') {
-                    alert(12344444);
-                }
-              });
-            $(document).keypress(function(e){
-                alert(1234);
-                if(e.keyCode == 8){
-                }
-            });
+            // $(window).on("navigate", function (event, data) {
+            //     var direction = data.state.direction;
+            //     if (direction == 'back') {
+            //         alert(1234);
+            //     }
+            //     if (direction == 'forward') {
+            //         alert(12344444);
+            //     }
+            //   });
+            // $(document).keypress(function(e){
+            //     alert(1234);
+            //     if(e.keyCode == 8){
+            //     }
+            // });
             NclLib.successLoadding();
         }, error: function(e){
             console.log(e);

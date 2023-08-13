@@ -99,7 +99,7 @@ foreach($customerCare as $key => $value){
                     <input type="text" name="txt-message" id="txt-message" class="form-control">
                 </div>
                 <div style="width: 16.66667%">
-                    <button type="submit" id="sendMessage" class="btn btn-primary"><i class="fas fa-paper-plane"></i></button>
+                    <button type="button" id="sendMessage" class="btn btn-primary"><i class="fas fa-paper-plane"></i></button>
                 </div>
             </div>
         </div>
