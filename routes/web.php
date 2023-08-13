@@ -73,8 +73,8 @@ Route::get('/specialty', [SpecialtyController::class, 'index']);
 Route::get('/specialty/{code}', [SpecialtyController::class, 'specialty']);
 
 Route::prefix('chat')->group(function () {
-    Route::post('/broadcast', [ChatClientController::class, 'broadcast'])->name('broadcast');
-    Route::post('/receive', [ChatClientController::class, 'receive'])->name('receive');
+    Route::get('/broadcast', [ChatClientController::class, 'broadcast'])->name('broadcast');
+    Route::get('/receive', [ChatClientController::class, 'receive'])->name('receive');
     Route::post('/showMessage', [ChatClientController::class, 'showMessage'])->name('showMessage');
 });
 // Trang chủ contact

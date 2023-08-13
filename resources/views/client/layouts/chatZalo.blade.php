@@ -73,9 +73,8 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/8.2.0/pusher.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/8.2.0/pusher.min.js"></script>
 <script>
-    
     function showMessage(phone){
         $.ajax({
             url: '/chat/showMessage',
@@ -85,7 +84,6 @@
                 phone: phone,
             },
             success: function(res) {
-                console.log(res);
                 $("#body-message").html(res['htmls']);
                 if(res['check'] == true){
                     $("#body-message").append('<div align="center"><span>Cuộc trò truyện đã kết thúc</span></div>');
@@ -97,6 +95,7 @@
                     $(".start").hide();
                     $("#table-container-box").hide();
                 }
+                $("#frmChat_box #phone").val(phone);
                 $("#body-message").removeAttr('hidden');
                 $("#body-message").show('hidden');
                 $(".icon-back").show();
@@ -175,6 +174,7 @@
                                             <p>Xin chào!<br>Chúng tôi có thể giúp gì cho bạn.</p>
                                         </div></div>
                                         `);
+            $("#body-message").show();
             $(".title-header").html('<span class="icon-back" style="cursor: pointer; color: #fff;margin-right: 10px;font-size: 18px;" ><i class="fas fa-angle-left"></i></span><span class="text-uppercase" style="color: #fff;font-size: 18px;letter-spacing: 1px;font-family: Trocchi, serif;">Chat Booking Fast</span>');
             setTimeout(function(){
                 $("#body-message").append(`
@@ -205,18 +205,15 @@
         function isVietnamesePhoneNumber(number) {
             return /(03|05|07|08|09|01[2|6|8|9])+([0-9]{8})\b/.test(number);
         }
+        
         // chat ng dung
-        const pusher = new Pusher("{{config('chat.pusher.key')}}", {
-            cluster: 'ap1'
-        });
+        const pusher = new Pusher("{{config('chat.pusher.key')}}", {cluster: 'ap1'});
         const chanel = pusher.subscribe('public');
-
         chanel.bind('chat', function(data) {
             $.ajax({
                 url: '/chat/receive',
-                type: 'POST',
+                type: 'GET',
                 data: {
-                    _token: '{{csrf_token()}}',
                     message: data.message,
                     phone: data.phone,
                 },
@@ -226,18 +223,16 @@
             });
         });
 
-
         $('#sendMessage').click(function(event) {
         // $('form').submit(function(event) {
-            event.preventDefault();
+            // event.preventDefault();
             $.ajax({
                 url: '/chat/broadcast',
-                method: 'POST',
+                method: 'GET',
                 headers: {
                     'X-Socket-Id': pusher.connection.socket_id
                 },
                 data: {
-                    _token: '{{csrf_token()}}',
                     message: $("#frmChat_box #txt-message").val(),
                     phone: $("#frmChat_box #phone").val(),
                 },
