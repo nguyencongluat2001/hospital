@@ -10,7 +10,12 @@
                     <div class="carousel-inner active pt-5" >
                         <div class="list-hispital-home-one pt-4">
                             <section class="banner-bg" style="padding-top: 30px">
-                                <span  class="text-title-home "><center> TRA CỨU ĐẶT LỊCH </center></span>
+                                <center>
+                                    <span class="text-title-home anime-title" style=" padding-top: 20px;"> TRA CỨU ĐẶT LỊCH</span> <br>
+                                    <div class="text-title-home anime-title"> 
+                                        <span  class="text-title-home anime-title-span">NHANH CHÓNG - HIỆU QUẢ</span>
+                                    </div>
+                                </center>
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-6 mx-auto " style="display:flex">

@@ -38,7 +38,13 @@
                      <div class="list-hispital-home-one pt-5">
                         <section class="banner-bg">
                         <!-- style="animation: lights 4s 750ms linear infinite;" -->
-                            <span  class="text-title-home "><center> XÉT NGHIỆM TẠI NHÀ </center></span>
+                                <center>
+                                    <span class="text-title-home anime-title" style=" padding-top: 20px;"> XÉT NGHIỆM - LẤY MÁU TẠI NHÀ</span> <br>
+                                    <!-- <div class="text-title-home anime-title"> 
+                                        <span  class="text-title-home anime-title-span">TẠI CÁC TUYẾN TRUNG ƯƠNG</span>
+                                    </div> -->
+                                </center>
+                            <!-- <span  class="text-title-home "><center> XÉT NGHIỆM TẠI NHÀ </center></span> -->
                             <!-- <div class="container">
                                 <div class="row">
                                     <div class="col-lg-4 mx-auto ">

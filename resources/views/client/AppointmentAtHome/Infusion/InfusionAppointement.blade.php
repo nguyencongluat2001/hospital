@@ -38,19 +38,9 @@
                      <div class="list-hispital-home-one pt-5">
                         <section class="banner-bg">
                         <!-- style="animation: lights 4s 750ms linear infinite;" -->
-                            <span  class="text-title-home "><center>TRUYỀN DỊCH TẠI NHÀ </center></span>
-                            <!-- <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-4 mx-auto ">
-                                        <form action="#" method="get">
-                                        <div class="input-group pt-2 box">
-                                            <input style="background:#ffffffb5" type="text" class="input form-control form-control-lg rounded-pill rounded" placeholder="Từ khóa tìm kiếm...">
-                                            <i class="fas fa-search"></i>
-                                        </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div> -->
+                            <center>
+                                <span class="text-title-home anime-title" style=" padding-top: 20px;"> TRUYỀN DỊCH TẠI NHÀ</span> <br>
+                            </center>
                         </section>
                      </div>
                      <!-- <div class="test"></div> -->

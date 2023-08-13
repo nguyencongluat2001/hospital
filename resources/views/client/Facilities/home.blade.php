@@ -47,7 +47,13 @@
                     <div class="carousel-inner active pt-4" >
                         <div class="list-hispital-home-one pt-5">
                             <section class="banner-bg">
-                                <span  class="text-title-home "><center> BỆNH VIỆN PHÒNG KHÁM <br>TẠI CÁC TUYẾN TRUNG ƯƠNG</center></span>
+                                <center>
+                                    <span class="text-title-home anime-title" style=" padding-top: 20px;"> BỆNH VIỆN - PHÒNG KHÁM</span> <br>
+                                    <div class="text-title-home anime-title"> 
+                                        <span  class="text-title-home anime-title-span">TẠI CÁC TUYẾN TRUNG ƯƠNG</span>
+                                    </div>
+                                </center>
+                                <!-- <span  class="text-title-home "><center> BỆNH VIỆN PHÒNG KHÁM <br>TẠI CÁC TUYẾN TRUNG ƯƠNG</center></span> -->
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-4 mx-auto " style="display:flex">

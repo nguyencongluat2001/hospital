@@ -8,7 +8,13 @@
                 <div class="carousel-inner active pt-5" >
                      <div class="list-hispital-home-one pt-5">
                         <section class="banner-bg">
-                            <span  class="text-title-home "><center> ĐẶT LỊCH KHÁM NHANH <br>TẠI CÁC TUYẾN TRUNG ƯƠNG</center></span>
+                                <center>
+                                    <span class="text-title-home anime-title" style=" padding-top: 20px;"> ĐẶT LỊCH KHÁM NHANH</span> <br>
+                                    <div class="text-title-home anime-title"> 
+                                        <span  class="text-title-home anime-title-span">TẠI CÁC TUYẾN TRUNG ƯƠNG</span>
+                                    </div>
+                                </center>
+                            <!-- <span  class="text-title-home "><center> ĐẶT LỊCH KHÁM NHANH <br>TẠI CÁC TUYẾN TRUNG ƯƠNG</center></span> -->
                         </section>
                      </div>
                     <!-- End Contact -->

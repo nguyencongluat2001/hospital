@@ -49,7 +49,13 @@
                     <div class="carousel-inner active pt-4" >
                         <div class="list-hispital-home-one pt-5">
                             <section class="banner-bg">
-                                <span  class="text-title-home "><center> CHUYÊN KHOA -  PHÒNG KHÁM</center></span>
+                                <!-- <span  class="text-title-home "><center> CHUYÊN KHOA -  PHÒNG KHÁM</center></span> -->
+                                <center>
+                                    <span class="text-title-home anime-title" style=" padding-top: 20px;">ĐẶT LỊCH KHÁM NHANH</span> <br>
+                                    <div class="text-title-home anime-title"> 
+                                        <span  class="text-title-home anime-title-span">CHUYÊN KHOA -  PHÒNG KHÁM</span>
+                                    </div>
+                                </center>
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-4 mx-auto " style="display:flex">
