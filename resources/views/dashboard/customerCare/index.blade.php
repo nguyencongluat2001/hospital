@@ -3,7 +3,6 @@
 <script src="{{URL::asset('assets/js/moment.min.js')}}"></script>
 <script src="{{URL::asset('assets/js/moment-with-locales.js')}}"></script>
 <script type="text/javascript" src="{{ URL::asset('dist/js/backend/pages/JS_CustomerCare.js') }}"></script>
-<script src="https://js.pusher.com/4.4/pusher.min.js"></script>
 <link rel="stylesheet" href="{{URL::asset('dist/css/backend/customerCase.css')}}">
 <div class="container-fluid">
     <div class="row">
