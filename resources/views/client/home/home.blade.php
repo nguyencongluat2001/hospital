@@ -9,6 +9,9 @@
         -webkit-line-clamp: 3;
         overflow: hidden;
     }
+    .text-center{
+        font-family: auto;
+    }
 </style>
     <!-- Start Banner Hero -->
     <div class="banner-wrapper bg-light" >
@@ -131,7 +134,7 @@
                         </div>
                         <div class=" row d-flex align-items-center">
                              <div class="rowx">
-                             <span  class="text-title-home pl-2"><center> Bệnh viện hàng đầu</center></span>
+                             <span  class="h2 text-center col-12 py-2"><center> Cơ sở y tế</center></span>
                             </div>
                             <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-left pt-5">
                                 <div class="row g-lg-5 mb-4">
@@ -151,7 +154,7 @@
                                 @endforeach
                                     
                                     <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-center py-2 pb-2">
-                                        <a class="banner-button btn rounded-pill btn-outline-primary btn-lg px-4 " href="{{url('/facilities')}}" role="button">Xem thêm</a>
+                                        <a class="banner-button btn rounded-pill btn-outline-primary btn-lg px-4 " href="{{url('/facilities')}}" role="button">Xem thêm <i class="fas fa-hand-point-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -199,7 +202,7 @@
     <section class="service-wrapper py-3">
         <div class="container-fluid pb-3">
             <div class="row">
-               <h2 class="h2 text-center col-12 py-2 semi-bold-600">Vai trò của Booking</h2>
+               <h2 class="h2 text-center col-12 py-2">Vai trò của Booking</h2>
             </div>
             <p class="col-10 offset-1 col-lg-10 text-start pb-3 text-muted px-2">
             &nbsp; &nbsp;&nbsp; BookingCare giúp bệnh nhân dễ dàng lựa chọn đúng bác sĩ từ mạng lưới bác sĩ chuyên khoa giỏi, với thông tin đã xác thực và đặt lịch nhanh chóng. Bác sĩ chuyên khoa giỏi, được nhiều bệnh nhân tin tưởng, đồng nghiệp đánh giá cao, có uy tín trong ngành. Các bác sĩ đã, đang công tác tại các bệnh viện hàng đầu như: Bệnh viện Bạch Mai, Bệnh Viện Việt Đức, Bệnh viện TW Quân đội 108, Bệnh viện Quân Y 103, Bệnh viện Nhi TW, Bệnh viện Tai Mũi Họng TW, Viện Tim mạch Việt Nam, Bệnh viện Chợ Rẫy, Bệnh viện Đại học Y dược TP.HCM, Bệnh viện Nhân dân 115… 
@@ -216,7 +219,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <!-- <div class="row">
-                             <h2 class="h2 text-center col-12 semi-bold-600">Bài viết nổi bật</h2>
+                             <h2 class="h2 text-center col-12">Bài viết nổi bật</h2>
                         </div> -->
                         <div class=" row d-flex align-items-center">
                             <div class="banner-content col-lg-10 col-10 offset-1 m-lg-auto text-left py-5 pb-5">
@@ -234,7 +237,7 @@
     <section class="service-wrapper py-3">
         <div class="service-tag py-5 popular-specialties">
             <div class="col-md-12">
-                <h2 class="h2 text-center col-12 py-2 semi-bold-600">Chuyên khoa phổ biến</h2>
+                <h2 class="h2 text-center col-12 py-2">Chuyên khoa phổ biến</h2>
             </div>
             <div class="container py-5">
                 <div class="row gx-sm-3 gx-lg-5 gy-lg-5 gy-3 pb-3 projects">
@@ -261,38 +264,38 @@
      <section class="service-wrapper py-3">
         <div class="service-tag py-5 popular-specialties">
             <div class="col-md-12">
-                <h2 class="h2 text-center col-12 py-2 semi-bold-600">Bác sĩ nổi bật</h2>
+                <h2 class="h2 text-center col-12 py-2">Bác sĩ nổi bật</h2>
             </div>
             <div class="pt-2 py-5 pb-3 d-lg-flex align-items-center gx-5" style="padding:10%">
                     <div class="col-lg-12 row align-items-center">
                         <div class="team-member col-md-3">
-                            <img style="width:300px;height:300px;object-fit: cover;" class="team-member-img img-fluid rounded-circle p-4" src="./../clients/img/carousel-1.jpg" alt="Card image">
+                            <img style="width:300px;height:300px;object-fit: cover;" class="team-member-img img-fluid rounded-circle p-4" src="{{url('/clients/img/bacsi1.webp')}}" alt="Card image">
                             <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
-                                <li class="name_cg"> (Ông) Lê Văn A</li>
+                                <li class="name_cg"> (BS.) Văn Chung</li>
                                 <li>Chuyên gia phân tích - Giám đốc tư vấn đầu tư</li>
                                 <li>Công ty cổ phần bảo hiểm GTF</li>
                             </ul>
                         </div>
                         <div class="team-member col-md-3">
-                            <img style="width:300px;height:300px;object-fit: cover;" class="team-member-img img-fluid rounded-circle p-4" src="./../clients/img/carousel-1.jpg" alt="Card image">
+                            <img style="width:300px;height:300px;object-fit: cover;" class="team-member-img img-fluid rounded-circle p-4" src="{{url('/clients/img/bacsi2.webp')}}" alt="Card image">
                             <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
-                                <li class="name_cg">(Ông) Nguyễn Van C</li>
+                                <li class="name_cg">(BS) Hồng Ngân</li>
                                 <li>Chief executive officier (CEO) & Founder DHY</li>
                                 <li>Chuyên gia phân tích y học</li>
                             </ul>
                         </div>
                         <div class="team-member col-md-3">
-                            <img style="width:300px;height:300px;object-fit: cover;" class="team-member-img img-fluid rounded-circle p-4" src="./../clients/img/carousel-1.jpg" alt="Card image">
+                            <img style="width:300px;height:300px;object-fit: cover;" class="team-member-img img-fluid rounded-circle p-4" src="{{url('/clients/img/bacsi3.webp')}}" alt="Card image">
                             <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
-                                <li class="name_cg">(Ông) Nguyễn Van A</li>
+                                <li class="name_cg">(BS) Quốc Anh</li>
                                 <li>Chief executive officier (CEO) & Founder JYT</li>
                                 <li>Dữ liệu mẫu xét nghiệm </li>
                             </ul>
                         </div>
                         <div class="team-member col-md-3">
-                            <img style="width:300px;height:300px;object-fit: cover;" class="team-member-img img-fluid rounded-circle p-4" src="./../clients/img/carousel-1.jpg" alt="Card image">
+                            <img style="width:300px;height:300px;object-fit: cover;" class="team-member-img img-fluid rounded-circle p-4" src="{{url('/clients/img/bacsi5.webp')}}" alt="Card image">
                             <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
-                                <li class="name_cg">(Ông) Trần Văn G</li>
+                                <li class="name_cg">(BS) Thành Trung</li>
                                 <li>Chuyên gia phân tích</li>
                                 <li>Cán bộ đào tạo & phát triển đại học y</li>
                             </ul>
