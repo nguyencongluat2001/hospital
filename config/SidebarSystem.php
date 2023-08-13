@@ -138,4 +138,36 @@ return [
     //     'href' => '/system/report/index',
     // ],
    ],
+   "CTV" => [
+    'home' => [
+        'name' => 'Trang Chủ',
+        'icon' => 'fas fa-home',
+        'a'    => 'nav-link link-home',
+        'href' => '/system/home/index',
+    ],
+    'approvepayment' => [
+        'name' => 'Liên hệ khách hàng',
+        'icon' => 'fas fa-phone-volume',
+        'a'    => 'nav-link link-approvepayment',
+        'href' => '/system/approvepayment/index',
+    ],
+    'appointmentathome' => [
+        'name' => 'Lịch lấy máu, truyền dịch',
+        'icon' => 'fas fa-calendar-alt',
+        'a'    => 'nav-link link-appointmentathome',
+        'href' => '/system/appointmentathome/index',
+    ],
+    'customerCare' => [
+        'name' => 'Chăm sóc khách hàng',
+        'icon' => 'fas fa-headset',
+        'a'    => 'nav-link link-customerCare',
+        'href' => '/system/customerCare/index',
+    ],
+    'blog' => [
+        'name' => 'Quản trị bài viết',
+        'icon' => 'far fa-calendar-alt',
+        'a'    => 'nav-link link-blog',
+        'href' => '/system/blog/index',
+    ],
+   ],
 ];

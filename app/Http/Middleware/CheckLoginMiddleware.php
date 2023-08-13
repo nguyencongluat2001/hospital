@@ -18,7 +18,7 @@ class CheckLoginMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::check() && ($_SESSION["role"] == 'ADMIN' || $_SESSION["role"] == 'EMPLOYEE')){
+        if(Auth::check() && ($_SESSION["role"] == 'ADMIN' || $_SESSION["role"] == 'EMPLOYEE' || $_SESSION["role"] == 'CTV')){
             return $next($request);
         };
         return redirect()->route('login');

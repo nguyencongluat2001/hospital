@@ -7,6 +7,12 @@
     .form-control:disabled{
         background-color:#ffffff
     }
+    .hiddel{
+        display: none;
+    }
+    .show{
+        display: block;
+    }
 </style>
 <link rel="stylesheet" href="../clients/css/style.css">
     <!-- Start Banner Hero -->
@@ -64,10 +70,12 @@
                                                         <label for="">Số điện thoại <span class="request_star">*</span></label>
                                                         <input placeholder="Số điện thoại..." id="phone" type="phone" class="form-control" name="phone" value="">
                                                     </div>
-                                                    {{--<div class="form-wrapper col-md-4">
-                                                        <label for="">Địa chỉ Email</label>
-                                                        <input placeholder="Nhập email..." id="email" type="email" class="form-control" name="email" value="">
-                                                    </div>--}}
+                                                    @if (isset($_SESSION['role']) && $_SESSION['role'] == 'CTV')
+                                                    <div class="form-wrapper col-md-12">
+                                                        <label for="">Mã bệnh nhân trên ống nghiệm</label>
+                                                        <input required placeholder="Nhập mã..." id="code_patient" type="code_patient" class="form-control" name="code_patient" value="">
+                                                    </div>
+                                                    @endif
                                                 </div>
                                                 <div class="row">
                                                 {{--<div class="form-wrapper col-md-4">
@@ -155,11 +163,49 @@
                                                         <textarea style="height: 100px;" name="reason" id="reason" class="form-control"  rows="4" cols="50"></textarea>
                                                     </div>
                                                 </div>
+                                                <!-- // -->
+                                                @if (isset($_SESSION['role']) && $_SESSION['role'] == 'CTV')
+                                                <div class="row form-group pt-4" id="div_hinhthucgiai">
+                                                    <div class="col-md-12" >
+                                                        <label style="font-size:20px;font-family: math;" for="">Chọn hình thức thanh toán <span class="request_star">*</span></label> <br>
+                                                        
+                                                    </div>
+                                                </div>
+                                                <input type="radio" onchange="JS_AppointmentAtHome.getTypeBank(this.value)" value="BANK" name="type_payment" id="type_payment"/>  <span style="padding-left:5px" >Chuyển khoản ngân hàng bằng mã QR</span><br>
+                                                <!-- <div id="bank"></div> -->
+                                                <div id="bank" class="hiddel">
+                                                    <div class="row" style="background: #ffc686;">
+                                                        <div class="form-wrapper col-md-3 pt-3">
+                                                            <img style="width:100%;" class="card-img " src="../clients/img/qrluatnc.jpg" alt="Card image">
+                                                        </div>
+                                                        <div class="form-wrapper col-md-9 pt-3">
+                                                            <span>Số Tài khoản: 097871279812</span><br>
+                                                            <span>Tên chủ Tài khoản: Công ty Cổ phần Công nghệ Booking</span><br>
+                                                            <span>Ngân Hàng: Ngân hàng Thương mại cổ phần kỹ Thương Việt Nam (techcombank)</span><br>
+                                                            <span>Chi nhánh: Hội sở chính</span><br>
+                                                            <span>Nội dung thanh toán:Tên khách hàng - số điện thoại - mã đặt lịch</span><br>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            
+                                                <input  type="radio" onchange="JS_AppointmentAtHome.getTypeBank('tienmat')" value="TIEN_MAT" name="type_payment" id="type_payment"/> <span style="padding-left:5px" >Thanh toán tiền mặt</span>
+                                                <div id="tienmat" class="hiddel">
+                                                </div>
+                                                @endif
+                                                <!-- // -->
+                                                @if (isset($_SESSION['role']) && $_SESSION['role'] == 'CTV')
+                                                <div class="pt-3 mb-3">
+                                                    <button type="button" onclick="JS_AppointmentAtHome.add()" class=" btn-primary" id="btn_register" style="background-color: slategrey">
+                                                        {{ __('Thanh toán') }}
+                                                    </button>
+                                                </div>
+                                                @else
                                                 <div class="pt-3 mb-3">
                                                     <button type="button" onclick="JS_AppointmentAtHome.add()" class=" btn-primary" id="btn_register" style="background-color: slategrey">
                                                         {{ __('Đặt lịch') }}
                                                     </button>
                                                 </div>
+                                                @endif
                                             </form>
                                         </div>
                                         </div>

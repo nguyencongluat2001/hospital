@@ -35,7 +35,7 @@
                         </div>
                         <div class="form-wrapper col-md-4">
                             <label for="">Giới tính</label> <br>
-                            <input disabled type="text" class="form-control" value="{{$datas['sex'] == 1 ? 'Nam' : Nữ}}">
+                            <input disabled type="text" class="form-control" value="{{$datas['sex'] == 1 ? 'Nam' : 'Nữ'}}">
                         </div>
                     </div>
                     
@@ -44,6 +44,12 @@
                         <div class="form-wrapper col-md-12">
                             <label for="">Loại</label> <br>
                             <input disabled type="text" class="form-control" value="{{!empty($datas['type']) ? $datas['type'] : ''}} - {{!empty($datas['money']) ? $datas['money'] : '0'}} VND">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-wrapper col-md-12">
+                            <label for="">Mã bệnh nhân trên ống nghiệm</label> <br>
+                            <input disabled type="text" class="form-control" value="{{!empty($datas['code_patient']) ? $datas['code_patient'] : ''}}">
                         </div>
                     </div>
                     @else

@@ -47,9 +47,10 @@ class LoginController extends Controller
             $_SESSION["id"]   = $getUsers->id;
             $_SESSION["email"]   = $email;
             $_SESSION["name"]   = $user->name;
+            $_SESSION["code"]   = $user->id_personnel;
             $_SESSION["color_view"] = !empty($getInfo->color_view)?$getInfo->color_view:2;
             // kiem tra quyen nguoi dung
-            if ($user->role == 'ADMIN' || $user->role == 'EMPLOYEE') {
+            if ($user->role == 'ADMIN' || $user->role == 'EMPLOYEE' || $user->role == 'CTV') {
                 // menu sidebar
                 $sideBarConfig = config('SidebarSystem');
                 $sideBar = $this->checkPermision($sideBarConfig , $user->role);
@@ -93,6 +94,9 @@ class LoginController extends Controller
     {
         // session_unset();
         Auth::logout();
+        if(!empty($_SESSION['role'])){
+            session_destroy();
+        }
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return view('auth.signin');

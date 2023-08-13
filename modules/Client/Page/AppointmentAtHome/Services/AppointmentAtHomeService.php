@@ -37,6 +37,7 @@ class AppointmentAtHomeService extends Service
             $param = [
                 'id' => (string)Str::uuid(),
                 'code'=> $code,
+                'code_patient'=> !empty($input['code_patient'])?$input['code_patient']:'',
                 'name'=> $input['name'],
                 'phone'=> !empty($input['phone'])?$input['phone']:'',
                 'money'=> !empty($input['money'])?$input['money']:'',
@@ -47,10 +48,14 @@ class AppointmentAtHomeService extends Service
                 'hour_sampling'=> !empty($input['hour_sampling'])?$input['hour_sampling']:'',
                 'address'=> !empty($input['address'])?$input['address']:'',
                 'reason'=> !empty($input['reason'])?$input['reason']:'',
+                'type_payment'=> !empty($input['type_payment'])?$input['type_payment']:'',
                 'status'=> 0,
                 'created_at' => date("Y/m/d H:i:s"),
                 'update_at' => date("Y/m/d H:i:s")
             ];
+            if(!empty($_SESSION['role'])){
+                $param['code_ctv'] = $_SESSION['id_personnel'];
+            }
             $create = $this->create($param);
             DB::commit();
             return true;

@@ -237,3 +237,25 @@ JS_AppointmentAtHome.prototype.showInfor = function (code_blood) {
         }
     });
 }
+/**
+ * Hàm hiển thị modal thanh toán 
+ *
+ * @param oForm (tên form)
+ *
+ * @return void
+ */
+JS_AppointmentAtHome.prototype.getTypeBank = function (type) {
+    if(type=='BANK'){
+        $('#bank').removeClass("hiddel");
+        $('#tienmat').removeClass("show");
+        $('#tienmat').addClass("hiddel");
+        $('#bank').addClass("show");
+    }
+    else{
+        $('#tienmat').removeClass("hiddel");
+        $('#bank').removeClass("show");
+        $('#bank').addClass("hiddel");
+        $('#tienmat').addClass("show");
+    }
+    this.type_bank = type;
+}

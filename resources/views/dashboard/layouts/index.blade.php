@@ -46,7 +46,7 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
 </head>
- @if (isset($_SESSION['role']) && ($_SESSION['role'] == 'ADMIN' || $_SESSION['role'] == 'EMPLOYEE')) 
+ @if (isset($_SESSION['role']) && ($_SESSION['role'] == 'ADMIN' || $_SESSION['role'] == 'EMPLOYEE' || $_SESSION['role'] == 'CTV'))  
     @if ($_SESSION['color_view'] == 1)
         <body id="addMenu" class="g-sidenav-show dark-version ">
     @else

@@ -61,6 +61,7 @@ class AppointmentAtHomeService extends Service
             'code' => isset($AppointmentAtHome['code'])?$AppointmentAtHome['code']:'', 
             'type' => isset($type['name'])?$type['name']:'', 
             'type_at_home' => isset($AppointmentAtHome['type_at_home'])?$AppointmentAtHome['type_at_home']:'', 
+            'code_patient'=> isset($AppointmentAtHome['code_patient'])?$AppointmentAtHome['code_patient']:'', 
             'name' => isset($AppointmentAtHome['name'])?$AppointmentAtHome['name']:'', 
             'phone' => isset($AppointmentAtHome['phone'])?$AppointmentAtHome['phone']:'', 
             'sex' => isset($AppointmentAtHome['sex'])?$AppointmentAtHome['sex']:'', 
