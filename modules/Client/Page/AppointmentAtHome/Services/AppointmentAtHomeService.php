@@ -54,7 +54,7 @@ class AppointmentAtHomeService extends Service
                 'update_at' => date("Y/m/d H:i:s")
             ];
             if(!empty($_SESSION['role'])){
-                $param['code_ctv'] = $_SESSION['id_personnel'];
+                $param['code_ctv'] = $_SESSION['code'];
             }
             $create = $this->create($param);
             DB::commit();
