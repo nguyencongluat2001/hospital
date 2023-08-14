@@ -50,17 +50,17 @@ class LoginController extends Controller
             $_SESSION["code"]   = $user->id_personnel;
             $_SESSION["color_view"] = !empty($getInfo->color_view)?$getInfo->color_view:2;
             // kiem tra quyen nguoi dung
-            if ($user->role == 'ADMIN' || $user->role == 'EMPLOYEE' || $user->role == 'CTV') {
+            if ($user->role == 'ADMIN' || $user->role == 'EMPLOYEE' ) {
                 // menu sidebar
                 $sideBarConfig = config('SidebarSystem');
                 $sideBar = $this->checkPermision($sideBarConfig , $user->role);
                 $_SESSION["sidebar"] = $sideBar;
                 Auth::login($user);
                 return redirect('system/home/index');
-            } else if ($user->role == 'USERS' || $user->role == 'USER') {
+            } else if ($user->role == 'CTV') {
                 $checkPrLogin = $this->permission_login($email);
                 Auth::login($user);
-                return redirect('client/datafinancial/index');
+                return redirect('appointmentathome/tainha');
             }else{
                 return redirect('/');
             }

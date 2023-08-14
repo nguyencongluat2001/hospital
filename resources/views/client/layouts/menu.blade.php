@@ -55,6 +55,60 @@
                     </ul>
                 </div>
             </div>
+            <center>
+            <div id="btn_addMenu" class="navbar navbar-expand-md shadow-sm menu_layout">
+               <!-- <button type="button" onclick="Js_Main.addMenu(this)" class="btn btn-light icon-menu-home" >Menu</button>  -->
+               <ul class="navbar-nav ms-auto acc_auth">
+                    <!-- Authentication Links -->
+                    @guest
+                        @if (Route::has('login'))
+                            <li class="nav-item">
+                                <a style="color:#ff9d00" class="nav-link" href="{{ route('login') }}">{{ __('Đăng nhập') }}</a>
+                            </li>
+                        @endif
+
+                        <!-- @if (Route::has('register'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Đăng ký') }}</a>
+                            </li>
+                        @endif -->
+                    @else
+                        <li class="nav-item dropdown">
+                            <!-- <span id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <img  src="{{url('/file-image/avatar/')}}/{{ Auth::user()->avatar }}" alt="Image" style="border-radius:50%;height: 30px;width: 30px;object-fit: cover;">
+                                </span>    -->
+                            <span style="color:#ff9d00" id="navbarDropdown" class="dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <span>
+                                {{ $_SESSION['name'] }}
+                                </span>
+                            </span>
+
+
+                            <div class="dropdown-menu dropdown-menu-end"  aria-labelledby="navbarDropdown">
+                                <!-- <a class="dropdown-item" href="{{ URL::asset('/system/userInfo/index') }}">
+                                        <p>
+                                            {{ __('Thông tin cá nhân') }}
+                                        </p>
+                                </a> -->
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                        <p>
+                                            {{ __('Đăng xuất') }}
+                                        </p>
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest
+                </ul>
+            </div>
+            </center>
             <!-- <a class="" style="width: 4%;" href="{{url('/')}}">
                 <img class="card-img " src="../clients/img/support.jpg" alt="Card image">
             </a>

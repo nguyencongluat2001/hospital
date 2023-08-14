@@ -11,8 +11,8 @@
 </style>
 <link rel="stylesheet" href="../clients/css/style.css">
 
-    <div class="container mt-2 mb-2" style="padding-top:7%">
-        <div class="row justify-content-center">
+    <div class="container mt-2 mb-2" style="padding-top:13%">
+        <div class="row justify-content-center" >
             <div class="col-md-7" style="height:400px">
                 <div class="card" style="background:#3f5d79;">
                     <div class="wrapper" style=" display: flex; justify-content: center;">
