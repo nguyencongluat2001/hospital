@@ -81,7 +81,9 @@
                             <span style="color:#ff9d00" id="navbarDropdown" class="dropdown-toggle" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <span>
-                                {{ $_SESSION['name'] }}
+                                    @if(!empty($_SESSION['name'])) 
+                                        {{ $_SESSION['name'] }}
+                                    @endif
                                 </span>
                             </span>
 
