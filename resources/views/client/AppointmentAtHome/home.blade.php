@@ -176,9 +176,9 @@
                                                                 <table id="myTable" class="table  table-bordered table-striped table-condensed dataTable no-footer">
                                                                     <thead>
                                                                         <tr>
-                                                                            <td align="center"><b>Chọn chỉ mục</b></td>
-                                                                            <td align="center"><b>Tên chỉ số</b></td>
-                                                                            <td align="center"><b>Giá chỉ số</b></td>
+                                                                            <td style="white-space: inherit;vertical-align: middle;" align="center"><b>Chọn chỉ mục</b></td>
+                                                                            <td style="white-space: inherit;vertical-align: middle;" align="center"><b>Tên chỉ số</b></td>
+                                                                            <td style="white-space: inherit;vertical-align: middle;" align="center"><b>Giá chỉ số</b></td>
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody id="body_data">
