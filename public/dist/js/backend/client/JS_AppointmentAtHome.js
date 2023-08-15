@@ -93,7 +93,13 @@ JS_AppointmentAtHome.prototype.add = function (oForm) {
     var url = this.urlPath + '/sendPayment';
     var myClass = this;
     var oForm = 'form#frmSendSchedule';
+    var code_indications = [];
+    $('input[name="code_indications"]:checked').each(function() {
+        code_indications.push(this.value); 
+    });
     var data = $(oForm).serialize();
+    data += '&code_indications=' + code_indications;
+    console.log(data);
     if ($("#name").val() == '') {
         var nameMessage = 'Họ và tên không được để trống!';
         var icon = 'warning';
@@ -110,14 +116,14 @@ JS_AppointmentAtHome.prototype.add = function (oForm) {
         NclLib.alerMesageClient(nameMessage,icon,color,background);
         return false;
     }
-    if ($("#code").val() == '') {
-        var nameMessage = 'Loại xét nghiệm không được để trống!';
-        var icon = 'warning';
-        var color = '#ffd200';
-        var background = 'rgb(33 41 68)';
-        NclLib.alerMesageClient(nameMessage,icon,color,background);
-        return false;
-    }
+    // if ($("#code").val() == '') {
+    //     var nameMessage = 'Loại xét nghiệm không được để trống!';
+    //     var icon = 'warning';
+    //     var color = '#ffd200';
+    //     var background = 'rgb(33 41 68)';
+    //     NclLib.alerMesageClient(nameMessage,icon,color,background);
+    //     return false;
+    // }
     if ($("#sex").val() == '') {
         var nameMessage = 'Giới tính không được để trống!';
         var icon = 'warning';
@@ -158,28 +164,28 @@ JS_AppointmentAtHome.prototype.add = function (oForm) {
         NclLib.alerMesageClient(nameMessage,icon,color,background);
         return false;
     }
-    $.ajax({
-        url: url,
-        type: "POST",
-        data: data,
-        success: function (arrResult) {
-            if (arrResult['status'] == true) {
-                var nameMessage = 'Thông báo , Đặt lịch thành công';
-                var icon = 'success';
-                var color = '#344767';
-                NclLib.alerMesage(nameMessage,icon,color);
-                $('#editmodal').modal('hide');
-                setTimeout(() => {
-                    window.location.replace(myClass.baseUrl+'/searchschedule');
-                }, 2000)
-            } else {
-                var nameMessage = 'Đặt lịch thất bại';
-                var icon = 'warning';
-                var color = '#344767';
-                NclLib.alerMesage(nameMessage,icon,color);
-            }
-        }
-    });
+    // $.ajax({
+    //     url: url,
+    //     type: "POST",
+    //     data: data,
+    //     success: function (arrResult) {
+    //         if (arrResult['status'] == true) {
+    //             var nameMessage = 'Thông báo , Đặt lịch thành công';
+    //             var icon = 'success';
+    //             var color = '#344767';
+    //             NclLib.alerMesage(nameMessage,icon,color);
+    //             $('#editmodal').modal('hide');
+    //             setTimeout(() => {
+    //                 window.location.replace(myClass.baseUrl+'/searchschedule');
+    //             }, 2000)
+    //         } else {
+    //             var nameMessage = 'Đặt lịch thất bại';
+    //             var icon = 'warning';
+    //             var color = '#344767';
+    //             NclLib.alerMesage(nameMessage,icon,color);
+    //         }
+    //     }
+    // });
 }
 /**
  * Load màn hình danh sách huyện

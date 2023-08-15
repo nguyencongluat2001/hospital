@@ -53,6 +53,7 @@ class PriceTestController extends Controller
     { 
         $arrInput = $request->input();
         $data = array();
+        $arrInput['limit'] = 300;
         $param = $arrInput;
         $objResult = $this->PriceTestService->filter($param);
         $data['datas'] = $objResult;

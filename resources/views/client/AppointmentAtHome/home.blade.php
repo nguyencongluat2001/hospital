@@ -77,6 +77,7 @@
                                                     </div>
                                                     @endif
                                                 </div>
+                                                @if (!isset($_SESSION['role']) && $_SESSION['role'] != 'CTV')
                                                 <div class="row">
                                                 {{--<div class="form-wrapper col-md-4">
                                                         <label for="">Ngày sinh <span class="request_star">*</span></label>
@@ -90,6 +91,37 @@
                                                                 <option value="{{$values['code']}}" {{($values['code'] == $code) ? 'selected' : ''}}>{{$values['name']}}</option>
                                                             @endforeach 
                                                         </select>
+                                                    </div>
+                                                </div>
+                                                @endif
+                                                <div class="row">
+                                                <div class="row">
+                                                    <div class="col-lg-4 mx-auto " style="display:flex">
+                                                        <div class="input-group pt-2 box">
+                                                            <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg rounded-pill rounded" placeholder="Từ kiếm tên chuyên khoa..." aria-label="Từ kiếm tên chuyên khoa..">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                    <div class="form-wrapper col-md-12">
+                                                        <label for="">Loại xét nghiệm chỉ định</label>
+                                                        <table id="table-data" class="table  table-bordered table-striped table-condensed dataTable no-footer">
+                                                            <thead>
+                                                                <tr>
+                                                                    <td align="center"><b>Chọn chỉ mục</b></td>
+                                                                    <td align="center"><b>Tên chỉ số</b></td>
+                                                                    <td align="center"><b>Giá chỉ số</b></td>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="body_data">
+                                                                    @foreach ($type_chidinh as $key => $values)
+                                                                        <tr>
+                                                                            <td style="white-space: inherit;vertical-align: middle;" align="center"><input type="checkbox" value="{{ isset($values['code']) ? $values['code'] : '' }}" name="code_indications" id="code_indications"/></td>
+                                                                            <td style="white-space: inherit;vertical-align: middle;" >{{ isset($values['name']) ? $values['name'] : '' }}</td>
+                                                                            <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($values['price']) ? $values['price'] : '' }} VND</td>
+                                                                        </tr>
+                                                                    @endforeach
+                                                            </tbody>
+                                                        </table>
                                                     </div>
                                                 </div>
                                                 <div class="row">

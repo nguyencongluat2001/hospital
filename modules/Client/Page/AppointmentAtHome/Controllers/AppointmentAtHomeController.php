@@ -51,7 +51,7 @@ class AppointmentAtHomeController extends Controller
     public function indexApointment(Request $request)
     {
         $input = $request->all();
-        $getBloodTest['datas'] = $this->BloodTestService->where('sex',1)->orWhere('sex',2)->get()->toArray();
+        $getBloodTest['datas'] = $this->BloodTestService->whereIn('code',['PACK1','PACK2','PACK3','PACK4','PACK5','PACK6','PACK7','PACK8','PACK9','PACK10','PACK11','PACK12','PACK13','PACK14','PACK15','PACK16','PACK17','PACK18','PACK19','PACK20','PACK21','PACK22'])->get()->toArray();
         return view('client.AppointmentAtHome.homeAppointement',$getBloodTest);
     }
      // dịch vụ xét nghiệm, truyền dịch tại nhà
@@ -75,7 +75,8 @@ class AppointmentAtHomeController extends Controller
         $datas['code'] = $code;
         $datas['count'] = count($price);
         $datas['code_blood'] = $code;
-        $datas['type_xetnghiem'] =  $this->BloodTestService->where('sex',1)->orWhere('sex',2)->get()->toArray();
+        $datas['type_xetnghiem'] =  $this->BloodTestService->where('code',['PACK1','PACK2','PACK3','PACK4','PACK5','PACK6','PACK7','PACK8','PACK9','PACK10','PACK11','PACK12','PACK13','PACK14','PACK15','PACK16','PACK17','PACK18','PACK19','PACK20','PACK21','PACK22'])->get()->toArray();
+        $datas['type_chidinh'] =  PriceTestModel::where('price','>',0)->whereIn('code_blood','!=',['PACK1','PACK2','PACK3','PACK4','PACK5','PACK6','PACK7','PACK8','PACK9','PACK10','PACK11','PACK12','PACK13','PACK14','PACK15','PACK16','PACK17','PACK18','PACK19','PACK20','PACK21','PACK22'])->get()->toArray();
         // dd($datas);
         return view('client.AppointmentAtHome.home',$datas);
     }

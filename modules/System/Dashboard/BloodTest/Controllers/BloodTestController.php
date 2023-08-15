@@ -52,6 +52,7 @@ class BloodTestController extends Controller
         // if($arrInput['cate'] == null || $arrInput['cate'] == ''){
         //     unset($arrInput['cate']);
         // }
+        $arrInput['limit'] = 300;
         $data = array();
         $param = $arrInput;
         $objResult = $this->BloodTestService->filter($param);
