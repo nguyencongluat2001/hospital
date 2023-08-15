@@ -54,7 +54,7 @@ foreach($customerCare as $key => $value){
         <div class="table-responsive">
             <div id="table-container-box">
                 @if(!isset($customerCare) || (count($customerCare) > 0) && isset($customerCare))
-                <div class="list-chat">
+                {{--<div class="list-chat">
                     <div class="list-title">Danh sách hội thoại</div>
                     <div class="list-list">
                         @if(isset($customerCare) && count($customerCare) > 0)
@@ -78,20 +78,22 @@ foreach($customerCare as $key => $value){
                         @endforeach
                         @endif
                     </div>
-                </div>
+                </div>--}}
                 @endif
-                <div class="form-group" id="txt-phone" @if(isset($customerCare) && count($customerCare) > 0) hidden @endif>
+                {{-- <div class="form-group" id="txt-phone" @if(isset($customerCare) && count($customerCare) > 0) hidden @endif> --}}
+                <div class="form-group" id="txt-phone">
                     <input type="text" name="phone" id="phone" class="form-control" placeholder="Nhập số điện thoại">
                     <p class="errorPhone"></p>
                 </div>
             </div>
-            <div id="body-message"  @if(isset($customerCare) && count($customerCare) > 0) hidden @endif></div>
+            <div id="body-message" style="display: none;"></div>
         </div>
         <div class="start col-md-12">
             @if(!isset($customerCare) || (count($customerCare) > 0) && isset($customerCare))
-            <button type="button" id="start_new" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Bắt đầu cuộc trò truyện mới</button>
+            {{-- <button type="button" id="start_new" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Bắt đầu cuộc trò truyện mới</button> --}}
             @endif
-            <button type="button" id="start" class="btn btn-primary" @if(isset($customerCare) && count($customerCare) > 0) hidden @endif><i class="fa fa-paper-plane"></i> Bắt đầu cuộc hội thoại</button>
+            {{-- <button type="button" id="start" class="btn btn-primary" @if(isset($customerCare) && count($customerCare) > 0) hidden @endif><i class="fa fa-paper-plane"></i> Bắt đầu cuộc hội thoại</button> --}}
+            <button type="button" id="start" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Bắt đầu cuộc hội thoại</button>
         </div>
         <div class="sendMessage" style="display: none;">
             <div class="row">

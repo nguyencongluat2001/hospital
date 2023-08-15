@@ -97,7 +97,7 @@
                 }
                 $("#frmChat_box #phone").val(phone);
                 $("#body-message").removeAttr('hidden');
-                $("#body-message").show('hidden');
+                $("#body-message").show();
                 $(".icon-back").show();
                 $(".title-header").html('<span class="icon-back" style="cursor: pointer; color: #fff;margin-right: 10px;font-size: 18px;"><i class="fas fa-angle-left" aria-hidden="true"></i></span><span class="text-uppercase" style="color: #fff;font-size: 18px;letter-spacing: 1px;font-family: Trocchi, serif;">Chat Booking Fast</span>');
                 $(".icon-back").click(function(){

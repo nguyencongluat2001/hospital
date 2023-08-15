@@ -24,7 +24,7 @@ class ChatClientController extends Controller
         $logger->setFileName('ChatClient');
         try{
 
-            $ipv4 = gethostbyname(trim(exec("hostname")));
+            // $ipv4 = gethostbyname(trim(exec("hostname")));
             
             $arrInput = $request->all();
             $customerCare = $this->customerCareService->where('phone', $arrInput['phone'])->first();
@@ -43,7 +43,7 @@ class ChatClientController extends Controller
                     'id' => strtoupper((string)\Str::uuid()),
                     'phone' => $arrInput['phone'],
                     'question' => $arrInput['message'],
-                    'ip' => !empty($ipv4)?$ipv4:'',
+                    'ip' => '',
                     'created_at' => date('Y/m/d H:i:s'),
                 ];
                 $this->customerCareService->insert($params);
