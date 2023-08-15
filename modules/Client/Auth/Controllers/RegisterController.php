@@ -83,7 +83,7 @@ class RegisterController extends Controller
                 'id_personnel'=> isset($arrInput['id_personnel'])?$arrInput['id_personnel']:'YE07',
                 'user_introduce'=> $arrInput['name_personnel'],
                 "status" => isset($arrInput['status']) ? 1 : 0,
-                "role" => 'USERS',
+                "role" => 'EMPLOYEE',
             ];
             $arrInfo = [
                 'company'=> '', 
