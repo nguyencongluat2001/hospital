@@ -172,24 +172,26 @@
                                                         </div>
                                                         <br>
                                                         <div id="style-1" style="padding-right:10px;">
-                                                            <table id="myTable" class="table  table-bordered table-striped table-condensed dataTable no-footer">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <td align="center"><b>Chọn chỉ mục</b></td>
-                                                                        <td align="center"><b>Tên chỉ số</b></td>
-                                                                        <td align="center"><b>Giá chỉ số</b></td>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody id="body_data">
-                                                                        @foreach ($type_chidinh as $key => $values)
-                                                                            <tr>
-                                                                                <td style="white-space: inherit;vertical-align: middle;" align="center"><input type="checkbox" value="{{ isset($values['code']) ? $values['code'] : '' }}" name="code_indications" id="code_indications"/></td>
-                                                                                <td style="white-space: inherit;vertical-align: middle;" >{{ isset($values['name']) ? $values['name'] : '' }}</td>
-                                                                                <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($values['price']) ? $values['price'] : '' }} VND</td>
-                                                                            </tr>
-                                                                        @endforeach
-                                                                </tbody>
-                                                            </table>
+                                                            <div class="table-responsive pmd-card pmd-z-depth table-container">
+                                                                <table id="myTable" class="table  table-bordered table-striped table-condensed dataTable no-footer">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td align="center"><b>Chọn chỉ mục</b></td>
+                                                                            <td align="center"><b>Tên chỉ số</b></td>
+                                                                            <td align="center"><b>Giá chỉ số</b></td>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody id="body_data">
+                                                                            @foreach ($type_chidinh as $key => $values)
+                                                                                <tr>
+                                                                                    <td style="white-space: inherit;vertical-align: middle;" align="center"><input type="checkbox" value="{{ isset($values['code']) ? $values['code'] : '' }}" name="code_indications" id="code_indications"/></td>
+                                                                                    <td style="white-space: inherit;vertical-align: middle;" >{{ isset($values['name']) ? $values['name'] : '' }}</td>
+                                                                                    <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($values['price']) ? $values['price'] : '' }} VND</td>
+                                                                                </tr>
+                                                                            @endforeach
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
