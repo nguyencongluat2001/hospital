@@ -160,6 +160,7 @@
                                                         </select>
                                                     </div>
                                                 </div>
+                                                @if (isset($_SESSION['role']) && $_SESSION['role'] == 'CTV')
                                                 <div class="row">
                                                     <div class="form-wrapper col-md-12">
                                                         <label for="">Loại xét nghiệm chỉ định</label>
@@ -195,7 +196,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- <div class="row">
+                                                @else
+                                                <div class="row">
                                                     <div class="form-wrapper col-md-4">
                                                         <label for="">Giá gói khám <span class="request_star">*</span></label>
                                                         <div id="price">
@@ -212,7 +214,8 @@
                                                         <input type="radio" value="1" name="sex" id="sex" />  <span style="padding-left:5px" >Nam</span>&emsp;
                                                         <input  type="radio" value="2" name="sex" id="sex"  /> <span style="padding-left:5px" >Nữ</span>
                                                     </div>
-                                                </div> -->
+                                                </div>
+                                                @endif
                                                 <div class="row">
                                                     <div class="form-wrapper col-md-6">
                                                             <label for="">Ngày lấy mẫu<span class="request_star">*</span></label>
