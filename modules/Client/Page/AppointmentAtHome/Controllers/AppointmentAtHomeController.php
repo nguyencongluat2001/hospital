@@ -76,8 +76,23 @@ class AppointmentAtHomeController extends Controller
         $datas['count'] = count($price);
         $datas['code_blood'] = $code;
         $datas['type_xetnghiem'] =  $this->BloodTestService->where('code',['PACK1','PACK2','PACK3','PACK4','PACK5','PACK6','PACK7','PACK8','PACK9','PACK10','PACK11','PACK12','PACK13','PACK14','PACK15','PACK16','PACK17','PACK18','PACK19','PACK20','PACK21','PACK22'])->get()->toArray();
-        $datas['type_chidinh'] =  PriceTestModel::where('price','>',0)->whereIn('code_blood','!=',['PACK1','PACK2','PACK3','PACK4','PACK5','PACK6','PACK7','PACK8','PACK9','PACK10','PACK11','PACK12','PACK13','PACK14','PACK15','PACK16','PACK17','PACK18','PACK19','PACK20','PACK21','PACK22'])->get()->toArray();
-        // dd($datas);
+        $BloodTest =  $this->BloodTestService->where('sex',1)->orWhere('sex',2)->get()->toArray();
+        foreach($BloodTest as $val){
+            $price = PriceTestModel::where('code',$val['code'])->first();
+            if(empty($price) || $price == null ){
+                $price = PriceTestModel::where('code_blood',$val['code'])->get()->toArray();
+                $total = 0;
+                foreach($price as $item){
+                    $total = $total+= $item['price'];
+                }
+            }
+            $arr[] = [
+                'code'=> $val['code'],
+                'name'=> $val['name'],
+                'price'=> !empty($price->price)?$price->price: $total
+            ];
+        }
+        $datas['type_chidinh'] = $arr;
         return view('client.AppointmentAtHome.home',$datas);
     }
      /**

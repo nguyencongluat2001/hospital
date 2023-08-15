@@ -14,6 +14,7 @@ class AppointmentAtHomeModel extends Model
             'id',
             'code',
             'code_patient',
+            'code_indications',
             'name',
             'phone',
             'money',

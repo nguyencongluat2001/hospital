@@ -77,7 +77,6 @@
                                                     </div>
                                                     @endif
                                                 </div>
-                                                @if (!isset($_SESSION['role']) && $_SESSION['role'] != 'CTV')
                                                 <div class="row">
                                                 {{--<div class="form-wrapper col-md-4">
                                                         <label for="">Ngày sinh <span class="request_star">*</span></label>
@@ -93,18 +92,18 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                                @endif
                                                 <div class="row">
-                                                <div class="row">
-                                                    <div class="col-lg-4 mx-auto " style="display:flex">
-                                                        <div class="input-group pt-2 box">
-                                                            <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg rounded-pill rounded" placeholder="Từ kiếm tên chuyên khoa..." aria-label="Từ kiếm tên chuyên khoa..">
-                                                        </div>
-                                                    </div>
-                                                </div>
                                                     <div class="form-wrapper col-md-12">
                                                         <label for="">Loại xét nghiệm chỉ định</label>
-                                                        <table id="table-data" class="table  table-bordered table-striped table-condensed dataTable no-footer">
+                                                        <div class="row">
+                                                            <div class="col-lg-4 mx-auto " style="display:flex">
+                                                                <div class="input-group pt-2 box">
+                                                                    <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg rounded-pill rounded" placeholder="Từ kiếm tên chỉ số..." aria-label="Từ kiếm tên chỉ số..">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <table id="myTable" class="table  table-bordered table-striped table-condensed dataTable no-footer">
                                                             <thead>
                                                                 <tr>
                                                                     <td align="center"><b>Chọn chỉ mục</b></td>
@@ -124,7 +123,7 @@
                                                         </table>
                                                     </div>
                                                 </div>
-                                                <div class="row">
+                                                <!-- <div class="row">
                                                     <div class="form-wrapper col-md-4">
                                                         <label for="">Giá gói khám <span class="request_star">*</span></label>
                                                         <div id="price">
@@ -141,7 +140,7 @@
                                                         <input type="radio" value="1" name="sex" id="sex" />  <span style="padding-left:5px" >Nam</span>&emsp;
                                                         <input  type="radio" value="2" name="sex" id="sex"  /> <span style="padding-left:5px" >Nữ</span>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 <div class="row">
                                                     <div class="form-wrapper col-md-6">
                                                             <label for="">Ngày lấy mẫu<span class="request_star">*</span></label>
@@ -255,6 +254,26 @@
 <div class="modal " id="addfile" role="dialog"></div>
 <div class="modal " id="show" role="dialog"></div>
 
+<script>
+    function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
 <div id="dialogconfirm"></div>
     <!-- End Service -->
 <script type="text/javascript" src="{{ URL::asset('dist/js/backend/client/JS_AppointmentAtHome.js') }}"></script>

@@ -164,28 +164,28 @@ JS_AppointmentAtHome.prototype.add = function (oForm) {
         NclLib.alerMesageClient(nameMessage,icon,color,background);
         return false;
     }
-    // $.ajax({
-    //     url: url,
-    //     type: "POST",
-    //     data: data,
-    //     success: function (arrResult) {
-    //         if (arrResult['status'] == true) {
-    //             var nameMessage = 'Thông báo , Đặt lịch thành công';
-    //             var icon = 'success';
-    //             var color = '#344767';
-    //             NclLib.alerMesage(nameMessage,icon,color);
-    //             $('#editmodal').modal('hide');
-    //             setTimeout(() => {
-    //                 window.location.replace(myClass.baseUrl+'/searchschedule');
-    //             }, 2000)
-    //         } else {
-    //             var nameMessage = 'Đặt lịch thất bại';
-    //             var icon = 'warning';
-    //             var color = '#344767';
-    //             NclLib.alerMesage(nameMessage,icon,color);
-    //         }
-    //     }
-    // });
+    $.ajax({
+        url: url,
+        type: "POST",
+        data: data,
+        success: function (arrResult) {
+            if (arrResult['status'] == true) {
+                var nameMessage = 'Thông báo , Đặt lịch thành công';
+                var icon = 'success';
+                var color = '#344767';
+                NclLib.alerMesage(nameMessage,icon,color);
+                $('#editmodal').modal('hide');
+                setTimeout(() => {
+                    window.location.replace(myClass.baseUrl+'/searchschedule');
+                }, 2000)
+            } else {
+                var nameMessage = 'Đặt lịch thất bại';
+                var icon = 'warning';
+                var color = '#344767';
+                NclLib.alerMesage(nameMessage,icon,color);
+            }
+        }
+    });
 }
 /**
  * Load màn hình danh sách huyện

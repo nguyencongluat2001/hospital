@@ -38,6 +38,7 @@ class AppointmentAtHomeService extends Service
                 'id' => (string)Str::uuid(),
                 'code'=> $code,
                 'code_patient'=> !empty($input['code_patient'])?$input['code_patient']:'',
+                'code_indications'=> !empty($input['code_indications'])?$input['code_indications']:'',
                 'name'=> $input['name'],
                 'phone'=> !empty($input['phone'])?$input['phone']:'',
                 'money'=> !empty($input['money'])?$input['money']:'',
