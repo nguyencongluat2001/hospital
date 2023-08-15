@@ -40,18 +40,40 @@
                     </div>
                     
                     @if($datas['type_at_home'] == 'XET_NGHIEM')
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="form-wrapper col-md-12">
                             <label for="">Loại</label> <br>
                             <input disabled type="text" class="form-control" value="{{!empty($datas['type']) ? $datas['type'] : ''}} - {{!empty($datas['money']) ? $datas['money'] : '0'}} VND">
                         </div>
-                    </div>
+                    </div> -->
                     <div class="row">
                         <div class="form-wrapper col-md-12">
                             <label for="">Mã bệnh nhân trên ống nghiệm</label> <br>
                             <input disabled type="text" class="form-control" value="{{!empty($datas['code_patient']) ? $datas['code_patient'] : ''}}">
                         </div>
                     </div>
+                    <br>
+                    <div class="row">
+                        <div class="form-wrapper col-md-12">
+                            <label for="">Chỉ số xét nghiệm</label> <br>
+                        </div>
+                    </div>
+                    <table id="myTable" class="table  table-bordered table-striped table-condensed dataTable no-footer">
+                        <thead>
+                            <tr>
+                                <td align="center"><b>Tên chỉ số</b></td>
+                                <td align="center"><b>Giá chỉ số</b></td>
+                            </tr>
+                        </thead>
+                        <tbody id="body_data">
+                                @foreach ($price as $key => $values)
+                                    <tr>
+                                        <td style="white-space: inherit;vertical-align: middle;" >{{ isset($values['name']) ? $values['name'] : '' }} - ( {{ isset($values['code']) ? $values['code'] : '' }} )</td>
+                                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($values['price']) ? $values['price'] : '' }} VND</td>
+                                    </tr>
+                                @endforeach
+                        </tbody>
+                    </table>
                     @else
                     <div class="row">
                         <div class="form-wrapper col-md-12">

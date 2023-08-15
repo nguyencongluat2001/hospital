@@ -50,12 +50,12 @@ class AppointmentAtHomeService extends Service
     public function edit($input)
     {
         $AppointmentAtHome = $this->repository->where('id', $input['id'])->first();
-        $type = $this->BloodTestService->where('code',$AppointmentAtHome['type'])->first();
-        $price = PriceTestModel::where('code_blood',$AppointmentAtHome['type'])->get()->toArray();
+        // dd($AppointmentAtHome);
+        $expl = explode(',',$AppointmentAtHome['code_indications']);
+        // $type = $this->BloodTestService->where('code',$AppointmentAtHome['type'])->first();
+       
         $total = 0;
-        foreach($price as $item){
-            $total = $total+= $item['price'];
-        }
+        $price = PriceTestModel::whereIn('code_blood',$expl)->get()->toArray();
         $totals = number_format($total,0, '', ',');
         $param = [
             'code' => isset($AppointmentAtHome['code'])?$AppointmentAtHome['code']:'', 
@@ -72,6 +72,8 @@ class AppointmentAtHomeService extends Service
             'hour_sampling' => isset($AppointmentAtHome['hour_sampling'])?$AppointmentAtHome['hour_sampling']:'', 
         ];
         $data['datas'] = $param;
+        $data['price'] = $price;
+    
         return $data;
     }
 }
