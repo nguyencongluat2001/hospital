@@ -150,6 +150,7 @@
                                                         <label for="">Ngày sinh <span class="request_star">*</span></label>
                                                         <input placeholder="Số điện thoại..." id="date_sampling" type="date" class="form-control" name="date_sampling" value="">
                                                     </div> --}}
+                                                    @if (!isset($_SESSION['role']) && $_SESSION['role'] != 'CTV')
                                                     <div class="form-wrapper col-md-12">
                                                         <label for="">Loại xét nghiệm</label>
                                                         <select onchange="JS_AppointmentAtHome.getPrice(this.value)" class="form-control input-sm chzn-select" name="code" id="code">
@@ -159,6 +160,7 @@
                                                             @endforeach 
                                                         </select>
                                                     </div>
+                                                    @endif
                                                 </div>
                                                 @if (isset($_SESSION['role']) && $_SESSION['role'] == 'CTV')
                                                 <div class="row">
