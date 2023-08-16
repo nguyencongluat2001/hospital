@@ -198,26 +198,27 @@ class AppointmentAtHomeController extends Controller
     public function showPack(Request $request)
     {
         $input = $request->all();
-        if($input['code_indications'] == null){
-            $data['total'] = 0;
-        }
-        $expl = explode(',',$input['code_indications']);
-        $total = 0;
         $arr = [];
-        foreach($expl as $val){
-            $price = PriceTestModel::where('code',$val)->first();
-            if(empty($price) || $price == null ){
-                $price = PriceTestModel::where('code_blood',$val)->get()->toArray();
-                foreach($price as $item){
-                    $total = $total+= $item['price'];
+        $total = 0;
+        if($input['code_indications'] == null){
+            $total = 0;
+        }else{
+            $expl = explode(',',$input['code_indications']);
+            foreach($expl as $val){
+                $price = PriceTestModel::where('code',$val)->first();
+                if(empty($price) || $price == null ){
+                    $price = PriceTestModel::where('code_blood',$val)->get()->toArray();
+                    foreach($price as $item){
+                        $total = $total+= $item['price'];
+                    }
                 }
-            }
-            $arr[] = [
-                'code'=> $val,
-                'price'=> !empty($price->price)?number_format($price->price): number_format($total)
-            ];
-            if(!empty($price->price)){
-                $total = $total+= $price->price;
+                $arr[] = [
+                    'code'=> $val,
+                    'price'=> !empty($price->price)?number_format($price->price): number_format($total)
+                ];
+                if(!empty($price->price)){
+                    $total = $total+= $price->price;
+                }
             }
         }
         $data['chiso'] = $arr;
