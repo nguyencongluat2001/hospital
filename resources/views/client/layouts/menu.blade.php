@@ -99,6 +99,26 @@
                                             {{ __('Nhập chỉ định xét nghiệm') }}
                                         </p>
                                 </a>
+                                <a class="dropdown-item">
+                                        <p>
+                                            {{ __('Đăng ký lấy máu') }}
+                                        </p>
+                                </a>
+                                <a class="dropdown-item" href="{{ URL::asset('client/appointmentathome/tab2/truyendich') }}">
+                                        <p>
+                                            {{ __('Đăng ký lịch truyền') }}
+                                        </p>
+                                </a>
+                                <a class="dropdown-item">
+                                        <p>
+                                            {{ __('Link giới thiệu') }}
+                                        </p>
+                                </a>
+                                <a class="dropdown-item">
+                                        <p>
+                                            {{ __('Quản lý kinh doanh') }}
+                                        </p>
+                                </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
