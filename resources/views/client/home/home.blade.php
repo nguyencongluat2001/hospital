@@ -64,7 +64,7 @@
                 <!-- End Contact -->
                 <div class="carousel-item active list-hispital-home pt-3">
                     <div class=" row d-flex align-items-center">
-                        <div class="banner-content col-lg-12 col-12 m-lg-auto text-center ">
+                        <div class="banner-content col-lg-12 offset-1 col-10 m-lg-auto text-center ">
                             <div class="row g-lg-5 mb-4">
                                 <div class="col-md-3 mb-4" style="display: flex; justify-content: space-between; align-items: flex-start;">
                                     <!-- <a href="{{ url('/') }}"  type="button" class="btn btn-light icon-menu-home" style="width:100px;color: #f2ffff;background: none;">

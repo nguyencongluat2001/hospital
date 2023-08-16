@@ -96,7 +96,7 @@
                                 </a> -->
                                  <a class="dropdown-item" href="{{ URL::asset('appointmentathome/tainha') }}">
                                         <p>
-                                            {{ __('Đặt lịch chỉ định') }}
+                                            {{ __('Nhập chỉ định xét nghiệm') }}
                                         </p>
                                 </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
