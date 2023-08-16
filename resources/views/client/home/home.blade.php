@@ -77,19 +77,19 @@
                                         <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
                                             <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/chuyen-khoa.png);background-size: 40px;background-repeat: no-repeat;background-position: center;"></div>
                                         </div>
-                                        <div>Khoa</div>
+                                        <div style="font-size: 12px;">Chuyên khoa</div>
                                     </a>
                                     <a href="{{ url('/facilities') }}" type="button" class="btn icon-menu-home" style="width:100px;color: #f2ffff;background: none;">
                                         <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
                                             <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/co-so-y-te.png);background-size: 40px;background-repeat: no-repeat;background-position: center;"></div>
                                         </div>
-                                        <div>Cơ sở y tế</div>
+                                        <div style="font-size: 12px;">Bệnh viện</div>
                                     </a>
                                     <a href="{{ url('/client/appointmentathome/indexApointment') }}" type="button" class="btn icon-menu-home" style="width:100px;color: #f2ffff;background: none;">
                                         <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
                                             <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/xet-nghiem.png);background-size: 40px;background-repeat: no-repeat;background-position: center;"></div>
                                         </div>
-                                        <div>Xét nghiệm</div>
+                                        <div style="font-size: 12px;">Xét nghiệm tại nhà</div>
                                     </a>
                                 </div>
                                 
@@ -98,7 +98,7 @@
                                         <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
                                             <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/truyen-dich.png);background-size: 40px;background-repeat: no-repeat;background-position: center;"></div>
                                         </div>
-                                        <div>Truyền dịch</div>
+                                        <div style="font-size: 12px;">Truyền dịch</div>
                                     </a>
                                     <!-- <a href="{{ url('/package') }}" type="button" class="btn btn-light icon-menu-home" style="width:100px;color: #f2ffff;background: none;">
                                         <i class="fas fa-file-medical"></i>   <br>
@@ -108,13 +108,13 @@
                                         <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
                                             <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/tra-cuu.png);background-size: 40px;background-repeat: no-repeat;background-position: center;"></div>
                                         </div>
-                                        <div>Tra cứu</div>
+                                        <div style="font-size: 12px;">Tra cứu</div>
                                     </a>
                                     <a href="{{ url('/contact') }}" type="button" class="btn icon-menu-home" style="width:100px;color: #f2ffff;background: none;">
                                         <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
                                             <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/danh-gia.png);background-size: 40px;background-repeat: no-repeat;background-position: center;"></div>
                                         </div>
-                                        <div>Đánh giá</div>
+                                        <div style="font-size: 12px;">Đánh giá</div>
                                     </a>
                                 </div><!-- End Recent Work -->
                             </div>
