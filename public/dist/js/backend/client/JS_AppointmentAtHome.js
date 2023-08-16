@@ -265,3 +265,48 @@ JS_AppointmentAtHome.prototype.getTypeBank = function (type) {
     }
     this.type_bank = type;
 }
+/**
+ * Load chỉ số
+ *
+ * @param oForm (tên form)
+ *
+ * @return void
+ */
+JS_AppointmentAtHome.prototype.showPack = function () {
+    NclLib.loadding();
+    var url = this.urlPath + '/showPack';
+    var myClass = this;
+    var oForm = 'form#frmSendSchedule';
+    var code_indications = [];
+    $('input[name="code_indications"]:checked').each(function() {
+        code_indications.push(this.value); 
+    });
+    // var data = $(oForm).serialize();
+    var data = '&code_indications=' + code_indications;
+    console.log(data);
+    $.ajax({
+        url: url,
+        type: "GET",
+        // cache: true,
+        data: data,
+        success: function (arrResult) {
+            console.log(arrResult)
+            // var  html = `<br>`
+            var html = `&nbsp; Tổng đã chọn: <span style="font-weight: 600;color: #ff6400;">`+ arrResult.data.total +` </span>VND`
+            html += '<div class="table-responsive pmd-card pmd-z-depth table-container">'
+                html += `<table id="myTable" class="table  table-bordered table-striped table-condensed dataTable no-footer">`
+                    html += `<tbody id="body_data" style="background: #47aa28;">`
+                    $(arrResult.data.chiso).each(function(index,el) {
+                        html += `<tr>`
+                            html += `<td>`
+                                html += `<span style="color: white;"> `+ el.code +` - ` + el.price + ` VND</span>`
+                            html += `</td>`
+                        html += `</tr>`
+                    });
+                    html += `</tbody>`
+                html += `</table>`
+            html += `</div>`
+            $("#iss").html(html);
+        }
+    });
+}

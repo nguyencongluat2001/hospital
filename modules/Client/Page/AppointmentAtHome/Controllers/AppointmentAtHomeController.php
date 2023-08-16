@@ -188,6 +188,45 @@ class AppointmentAtHomeController extends Controller
 
 
 
+     /**
+     * tổng giá các chỉ số
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function showPack(Request $request)
+    {
+        $input = $request->all();
+        $expl = explode(',',$input['code_indications']);
+        $total = 0;
+        foreach($expl as $val){
+            $price = PriceTestModel::where('code',$val)->first();
+            if(empty($price) || $price == null ){
+                $price = PriceTestModel::where('code_blood',$val)->get()->toArray();
+                foreach($price as $item){
+                    $total = $total+= $item['price'];
+                }
+            }
+            $arr[] = [
+                'code'=> $val,
+                'price'=> !empty($price->price)?number_format($price->price): number_format($total)
+            ];
+            if(!empty($price->price)){
+                $total = $total+= $price->price;
+            }
+        }
+        $data['chiso'] = $arr;
+        $data['total'] = number_format($total,0, '', ',');
+        // dd($data);
+        return response()->json([
+            'data' => $data,
+            'status' => true
+        ]);
+    }
+
+
+
 
 
 

@@ -74,7 +74,7 @@
     } */
     .table-responsive.pmd-card.pmd-z-depth{
       height: 100%;
-      max-height: 350px;
+      max-height: 200px;
     }
     #style-1 #table-data thead tr td{
       position: sticky;
@@ -186,7 +186,7 @@
                                                                                 <tr>
                                                                                     <!-- <td style="white-space: inherit;vertical-align: middle;" align="center"></td> -->
                                                                                     <td style="white-space: inherit;vertical-align: middle;" >
-                                                                                    <input type="checkbox" value="{{ isset($values['code']) ? $values['code'] : '' }}" name="code_indications" id="code_indications"/> 
+                                                                                    <input onclick="JS_AppointmentAtHome.showPack('{{$code_blood}}')" type="checkbox" value="{{ isset($values['code']) ? $values['code'] : '' }}" name="code_indications" id="code_indications"/> 
                                                                                     <span style="color:red">{{ isset($values['code']) ? $values['code'] : '' }}</span> - <span style="color:#ff8a06">{{ isset($values['price']) ? $values['price'] : '' }}  </span> <span style="font-size:10px">VND </span>  <br>
                                                                                     <span style="font-size:12px"> ( {{ isset($values['name']) ? $values['name'] : '' }} )</span> 
                                                                                     </td>
@@ -197,6 +197,9 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                </div>
+                                                <div id="iss">
+
                                                 </div>
                                                 @else
                                                 <div class="row">

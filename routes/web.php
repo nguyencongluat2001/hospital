@@ -139,6 +139,8 @@ Route::prefix('/client')->group(function () {
             Route::post('/sendPayment',[AppointmentAtHomeController::class,'sendPayment']);
             Route::get('/getPrice',[AppointmentAtHomeController::class,'getPrice']);
             Route::get('/showInfor', [AppointmentAtHomeController::class,'showInfor']);
+ 
+            Route::get('/showPack', [AppointmentAtHomeController::class,'showPack']);
 
 
 
