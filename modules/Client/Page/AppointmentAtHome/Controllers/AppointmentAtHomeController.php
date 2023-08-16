@@ -198,8 +198,12 @@ class AppointmentAtHomeController extends Controller
     public function showPack(Request $request)
     {
         $input = $request->all();
+        if($input['code_indications'] == null){
+            $data['total'] = 0;
+        }
         $expl = explode(',',$input['code_indications']);
         $total = 0;
+        $arr = [];
         foreach($expl as $val){
             $price = PriceTestModel::where('code',$val)->first();
             if(empty($price) || $price == null ){
