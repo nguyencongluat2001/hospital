@@ -146,22 +146,7 @@
                                                     @endif
                                                 </div>
                                                 <div class="row">
-                                                {{--<div class="form-wrapper col-md-4">
-                                                        <label for="">Ngày sinh <span class="request_star">*</span></label>
-                                                        <input placeholder="Số điện thoại..." id="date_sampling" type="date" class="form-control" name="date_sampling" value="">
-                                                    </div> --}}
-                                                    @if (!isset($_SESSION['role']) && $_SESSION['role'] != 'CTV')
-                                                    <div class="form-wrapper col-md-12">
-                                                        <label for="">Loại xét nghiệm</label>
-                                                        <select onchange="JS_AppointmentAtHome.getPrice(this.value)" class="form-control input-sm chzn-select" name="code" id="code">
-                                                            <option value="">--Chọn loại--</option>
-                                                            @foreach($type_xetnghiem as $key => $values) 
-                                                                <option value="{{$values['code']}}" {{($values['code'] == $code) ? 'selected' : ''}}>{{$values['name']}}</option>
-                                                            @endforeach 
-                                                        </select>
-                                                    </div>
-                                                    @endif
-                                                </div>
+                                                
                                                 @if (isset($_SESSION['role']) && $_SESSION['role'] == 'CTV')
                                                 <div class="row">
                                                     <div class="form-wrapper col-md-12">
@@ -204,6 +189,20 @@
 
                                                 </div>
                                                 @else
+                                                {{--<div class="form-wrapper col-md-4">
+                                                        <label for="">Ngày sinh <span class="request_star">*</span></label>
+                                                        <input placeholder="Số điện thoại..." id="date_sampling" type="date" class="form-control" name="date_sampling" value="">
+                                                    </div> --}}
+                                                    <div class="form-wrapper col-md-12">
+                                                        <label for="">Loại xét nghiệm</label>
+                                                        <select onchange="JS_AppointmentAtHome.getPrice(this.value)" class="form-control input-sm chzn-select" name="code" id="code">
+                                                            <option value="">--Chọn loại--</option>
+                                                            @foreach($type_xetnghiem as $key => $values) 
+                                                                <option value="{{$values['code']}}" {{($values['code'] == $code) ? 'selected' : ''}}>{{$values['name']}}</option>
+                                                            @endforeach 
+                                                        </select>
+                                                    </div>
+                                                </div>
                                                 <div class="row">
                                                     <div class="form-wrapper col-md-4">
                                                         <label for="">Giá gói khám <span class="request_star">*</span></label>
