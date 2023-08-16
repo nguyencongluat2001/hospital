@@ -89,7 +89,7 @@ class AppointmentAtHomeController extends Controller
             $arr[] = [
                 'code'=> $val['code'],
                 'name'=> $val['name'],
-                'price'=> !empty($price->price)?$price->price: $total
+                'price'=> !empty($price->price)?number_format($price->price): number_format($total)
             ];
         }
         $datas['type_chidinh'] = $arr;

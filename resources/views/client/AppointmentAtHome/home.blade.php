@@ -56,12 +56,12 @@
       background-color: #F5F5F5;
     }
 
-    #style-2::-webkit-scrollbar-thumb
+    /* #style-2::-webkit-scrollbar-thumb
     {
       border-radius: 10px;
       -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
       background-color: #D62929;
-    }
+    } */
     .tv-lightweight-charts{
       width: 100%;
       padding-right: var(--bs-gutter-x, 0.5rem) !important;
@@ -69,12 +69,12 @@
       margin-right: auto!important;
       margin-left: auto!important;
     }
-    .table{
+    /* .table{
         border-color: #670000;
-    }
+    } */
     .table-responsive.pmd-card.pmd-z-depth{
       height: 100%;
-      max-height: 300px;
+      max-height: 350px;
     }
     #style-1 #table-data thead tr td{
       position: sticky;
@@ -167,27 +167,29 @@
                                                         <div class="row">
                                                             <div class="col-lg-4 mx-auto " style="display:flex">
                                                                 <div class="input-group pt-2 box">
-                                                                    <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg rounded-pill rounded" placeholder="Từ kiếm tên chỉ số..." aria-label="Từ kiếm tên chỉ số..">
+                                                                    <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg rounded-pill rounded" placeholder="Tìm kiếm gói - tên chỉ số" aria-label="Tìm kiếm gói - tên chỉ số">
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <br>
                                                         <div id="style-1" style="padding-right:10px;">
                                                             <div class="table-responsive pmd-card pmd-z-depth table-container">
                                                                 <table id="myTable" class="table  table-bordered table-striped table-condensed dataTable no-footer">
-                                                                    <thead>
+                                                                    <!-- <thead>
                                                                         <tr>
                                                                             <td style="white-space: inherit;vertical-align: middle;" align="center"><b>Chọn chỉ mục</b></td>
                                                                             <td style="white-space: inherit;vertical-align: middle;" align="center"><b>Tên chỉ số</b></td>
                                                                             <td style="white-space: inherit;vertical-align: middle;" align="center"><b>Giá chỉ số</b></td>
                                                                         </tr>
-                                                                    </thead>
-                                                                    <tbody id="body_data">
+                                                                    </thead> -->
+                                                                    <tbody id="body_data" style="background: #fdffff;">
                                                                             @foreach ($type_chidinh as $key => $values)
                                                                                 <tr>
-                                                                                    <td style="white-space: inherit;vertical-align: middle;" align="center"><input type="checkbox" value="{{ isset($values['code']) ? $values['code'] : '' }}" name="code_indications" id="code_indications"/></td>
-                                                                                    <td style="white-space: inherit;vertical-align: middle;" >{{ isset($values['name']) ? $values['name'] : '' }}</td>
-                                                                                    <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($values['price']) ? $values['price'] : '' }} VND</td>
+                                                                                    <!-- <td style="white-space: inherit;vertical-align: middle;" align="center"></td> -->
+                                                                                    <td style="white-space: inherit;vertical-align: middle;" >
+                                                                                    <input type="checkbox" value="{{ isset($values['code']) ? $values['code'] : '' }}" name="code_indications" id="code_indications"/> 
+                                                                                    <span style="color:red">{{ isset($values['code']) ? $values['code'] : '' }}</span> - <span style="color:#ff8a06">{{ isset($values['price']) ? $values['price'] : '' }}  </span> <span style="font-size:10px">VND </span>  <br>
+                                                                                    <span style="font-size:12px"> ( {{ isset($values['name']) ? $values['name'] : '' }} )</span> 
+                                                                                    </td>
                                                                                 </tr>
                                                                             @endforeach
                                                                     </tbody>
@@ -201,7 +203,7 @@
                                                     <div class="form-wrapper col-md-4">
                                                         <label for="">Giá gói khám <span class="request_star">*</span></label>
                                                         <div id="price">
-                                                             <input  type="hidden" class="form-control" id="money" name="money" value="{{$money}}" autofocus> 
+                                                             <input  type="hidden" class="form-control" id="money" price="money" value="{{$money}}" autofocus> 
                                                              <input  disabled type="text" class="form-control" value="{{$total}} VND" autofocus> 
                                                         </div>
                                                     </div>
@@ -277,7 +279,7 @@
                                                         
                                                     </div>
                                                 </div>
-                                                <input type="radio" onchange="JS_AppointmentAtHome.getTypeBank(this.value)" value="BANK" name="type_payment" id="type_payment"/>  <span style="padding-left:5px" >Chuyển khoản ngân hàng bằng mã QR</span><br>
+                                                <input type="radio" onchange="JS_AppointmentAtHome.getTypeBank(this.value)" value="BANK" name="type_payment" id="type_payment"/> <span style="padding-left:5px" >Chuyển khoản ngân hàng bằng mã QR</span><br>
                                                 <!-- <div id="bank"></div> -->
                                                 <div id="bank" class="hiddel">
                                                     <div class="row" style="background: #ffc686;">
@@ -337,7 +339,7 @@
   table = document.getElementById("myTable");
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[1];
+    td = tr[i].getElementsByTagName("td")[0];
     if (td) {
       txtValue = td.textContent || td.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
