@@ -1,6 +1,9 @@
 <style>
 
         td > p { overflow-y:scroll;overflow-x:hidden;} 
+        .table-responsive.pmd-card.pmd-z-depth{
+                max-height: 1000px;
+        }
 </style>
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <input type="hidden" name="id" id="id" value="{{isset($_id) ? $_id : ''}}">
