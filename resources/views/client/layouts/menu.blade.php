@@ -119,6 +119,11 @@
                                             {{ __('Quản lý kinh doanh') }}
                                         </p>
                                 </a>
+                                <a class="dropdown-item">
+                                        <p>
+                                            {{ __('Danh sách lịch xét nghiệm') }}
+                                        </p>
+                                </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">

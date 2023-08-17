@@ -74,7 +74,7 @@
     } */
     .table-responsive.pmd-card.pmd-z-depth{
       height: 100%;
-      max-height: 200px;
+      max-height: 250px;
     }
     #style-1 #table-data thead tr td{
       position: sticky;

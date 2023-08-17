@@ -187,6 +187,35 @@ class AppointmentAtHomeController extends Controller
     }
 
 
+           /**
+     * dat lich
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function flow(Request $request)
+    {
+        $input = $request->all();
+        if($input['code'] == 'TONG_QUAT'){
+
+        }
+        if($input['code'] == 'UNG_THU'){
+            $data = [
+                '1' => [
+                    'code' => 'PACK4',
+                    'name' => 'Xét nghiệm ung thư nam giới'
+                ],
+                '2' => [
+                    'code' => 'PACK5',
+                    'name' => 'Xét nghiệm ung thư nữ giới'
+                ]
+                ];
+        }
+        return view('client.AppointmentAtHome.flow',compact('data'));
+    }
+
+
 
      /**
      * tổng giá các chỉ số

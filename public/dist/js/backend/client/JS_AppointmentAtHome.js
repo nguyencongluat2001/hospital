@@ -310,3 +310,29 @@ JS_AppointmentAtHome.prototype.showPack = function () {
         }
     });
 }
+/**
+ * Load màn hình danh sách
+ *
+ * @param oForm (tên form)
+ *
+ * @return void
+ */
+JS_AppointmentAtHome.prototype.flow = function (code) {
+    var myClass = this;
+    NclLib.loadding();
+    var url = this.urlPath + '/flow';
+    var oForm = 'form#frmView';
+    var data = '&code=' + code;
+    console.log(code)
+    $.ajax({
+        url: url,
+        type: "GET",
+        // cache: true,
+        data: data,
+        success: function (arrResult) {
+            $('#show').html(arrResult);
+            $('#show').modal('show');
+            myClass.loadevent(oForm);
+        }
+    });
+}

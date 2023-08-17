@@ -94,6 +94,7 @@ JS_AppointmentAtHome.prototype.add = function(oForm) {
         }
     });
 }
+
 /**
  * Load màn hình danh sách
  *
