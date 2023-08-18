@@ -142,14 +142,14 @@
                                         </a>
                                         </div>
                                         <div class="scroll-item" onclick="JS_AppointmentAtHome.flow('CUM')">
-                                            <a href="{{url('/client/appointmentathome/tab1/1')}}" type="button" class="btn" style="color: #f2ffff;background: none;">
+                                            <a type="button" class="btn" style="color: #f2ffff;background: none;">
                                             <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
                                                 <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/cumvasot.webp);background-size: 80px;background-repeat: no-repeat;background-position: center;"></div>
                                             </div>
                                             <div style="font-size: 16px;color: #0c0c0c;font-weight: 600;">Cúm và sốt</div>
                                         </a>
                                         </div>
-                                        <div class="scroll-item" onclick="JS_AppointmentAtHome.flow('UNG_THU')">
+                                        <div class="scroll-item">
                                             <a href="{{url('appointmentathome/1')}}" type="button" class="btn" style="color: #f2ffff;background: none;">
                                             <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
                                                 <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/diung.webp);background-size: 80px;background-repeat: no-repeat;background-position: center;"></div>
@@ -158,7 +158,7 @@
                                         </a>
                                         </div>
                                         <div class="scroll-item" onclick="JS_AppointmentAtHome.flow('GAN')">
-                                            <a href="{{url('appointmentathome/PACK3')}}" type="button" class="btn" style="color: #f2ffff;background: none;">
+                                            <a type="button" class="btn" style="color: #f2ffff;background: none;">
                                             <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
                                                 <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/gan.webp);background-size: 80px;background-repeat: no-repeat;background-position: center;"></div>
                                             </div>
@@ -174,7 +174,7 @@
                                         </a>
                                         </div>
                                         <div class="scroll-item">
-                                            <a href="{{url('appointmentathome/PACK3')}}" type="button" class="btn" style="color: #f2ffff;background: none;">
+                                            <a href="{{url('appointmentathome/1')}}" type="button" class="btn" style="color: #f2ffff;background: none;">
                                             <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
                                                 <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/gen.webp);background-size: 80px;background-repeat: no-repeat;background-position: center;"></div>
                                             </div>
