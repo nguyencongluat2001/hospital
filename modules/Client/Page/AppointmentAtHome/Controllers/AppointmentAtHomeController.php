@@ -201,7 +201,20 @@ class AppointmentAtHomeController extends Controller
     {
         $input = $request->all();
         if($input['code'] == 'TONG_QUAT'){
-
+            $data = [
+                '1' => [
+                    'code' => 'PACK8',
+                    'name' => 'Xét nghiệm vi chất trẻ nhỏ'
+                ],
+                '2' => [
+                    'code' => 'PACK4',
+                    'name' => 'Xét nghiệm ung thư nam giới'
+                ],
+                '3' => [
+                    'code' => 'PACK5',
+                    'name' => 'Xét nghiệm ung thư nữ giới'
+                ]
+                ];
         }
         if($input['code'] == 'UNG_THU'){
             $data = [
