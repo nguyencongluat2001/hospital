@@ -86,7 +86,6 @@ class AppointmentAtHomeController extends Controller
                 $price = PriceTestModel::where('code_blood',$val['code'])->get()->toArray();
                 $total = 0;
                 foreach($price as $item){
-                    var_dump($item,$i++);
                     $total = $total+= $item['price'];
                 }
             }
