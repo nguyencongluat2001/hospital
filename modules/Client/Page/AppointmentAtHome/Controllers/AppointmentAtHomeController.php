@@ -212,6 +212,54 @@ class AppointmentAtHomeController extends Controller
                 ]
                 ];
         }
+        if($input['code'] == 'SOT_XH'){
+            $data = [
+                '1' => [
+                    'code' => 'PACK6',
+                    'name' => 'Xét nghiệm sốt XH'
+                ]
+                ];
+        }
+        if($input['code'] == 'CUM'){
+            $data = [
+                '1' => [
+                    'code' => 'PACK7',
+                    'name' => 'Xét nghiệm cúm'
+                ]
+                ];
+        }
+        if($input['code'] == 'VI_CHAT_TRE_NHO'){
+            $data = [
+                '1' => [
+                    'code' => 'PACK8',
+                    'name' => 'Xét nghiệm vi chất trẻ nhỏ'
+                ]
+                ];
+        }
+        if($input['code'] == 'GAN'){
+            $data = [
+                '1' => [
+                    'code' => 'PACK9',
+                    'name' => 'Xét nghiệm gan'
+                ]
+                ];
+        }
+        if($input['code'] == 'TRUYEN_NHIEM'){
+            $data = [
+                '1' => [
+                    'code' => 'PACK10',
+                    'name' => 'Xét nghiệm truyền nhiễm'
+                ]
+                ];
+        }
+        if($input['code'] == 'NOI_TIETT'){
+            $data = [
+                '1' => [
+                    'code' => 'PACK11',
+                    'name' => 'Xét nghiệm nội tiết'
+                ]
+                ];
+        }
         return view('client.AppointmentAtHome.flow',compact('data'));
     }
 
