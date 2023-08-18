@@ -31,7 +31,7 @@
                                     <td style="white-space: inherit;vertical-align: middle;" >
                                     <span style="color:#254885;font-size:16px">{{ isset($data['name']) ? $data['name'] : '' }}  </span><br>
                                     </td>
-                                    <td style="white-space: inherit;vertical-align: middle;">
+                                    <td style="white-space: inherit;vertical-align: middle;" align="center">
                                         <a href="{{url('appointmentathome/')}}/{{$data['code']}}">
                                             <span style="background: #ffba4b; color: #0d1226;" class="btn btn-outline-light rounded-pill">Đặt lịch</span>
                                         </a>
