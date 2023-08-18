@@ -119,9 +119,9 @@
                                             {{ __('Quản lý kinh doanh') }}
                                         </p>
                                 </a>
-                                <a class="dropdown-item">
+                                <a class="dropdown-item" href="{{ URL::asset('client/appointmentathome/list_Indications')}}">
                                         <p>
-                                            {{ __('Danh sách lịch xét nghiệm') }}
+                                            {{ __('Danh sách chỉ định') }}
                                         </p>
                                 </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"

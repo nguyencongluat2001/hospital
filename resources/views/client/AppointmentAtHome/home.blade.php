@@ -74,7 +74,7 @@
     } */
     .table-responsive.pmd-card.pmd-z-depth{
       height: 100%;
-      max-height: 250px;
+      max-height: 300px;
     }
     #style-1 #table-data thead tr td{
       position: sticky;
@@ -144,11 +144,8 @@
                                                         <input required placeholder="Nhập mã..." id="code_patient" type="code_patient" class="form-control" name="code_patient" value="">
                                                     </div>
                                                     @endif
-                                                </div>
-                                                <div class="row">
-                                                
+                                                </div>                                                
                                                 @if (isset($_SESSION['role']) && $_SESSION['role'] == 'CTV')
-                                                <div class="row">
                                                     <div class="form-wrapper col-md-12">
                                                         <label for="">Loại xét nghiệm chỉ định</label>
                                                         <div class="row">
@@ -159,7 +156,7 @@
                                                             </div>
                                                         </div>
                                                         <div id="style-1" style="padding-right:10px;">
-                                                            <div class="table-responsive pmd-card pmd-z-depth table-container">
+                                                            <div class="table-responsive pmd-card pmd-z-depth table-container" style="padding:0px">
                                                                 <table id="myTable" class="table  table-bordered table-striped table-condensed dataTable no-footer">
                                                                     <!-- <thead>
                                                                         <tr>
@@ -184,7 +181,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
                                                 <div id="iss">
 
                                                 </div>
@@ -202,7 +198,6 @@
                                                             @endforeach 
                                                         </select>
                                                     </div>
-                                                </div>
                                                 <div class="row">
                                                     <div class="form-wrapper col-md-4">
                                                         <label for="">Giá gói khám <span class="request_star">*</span></label>

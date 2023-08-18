@@ -312,7 +312,48 @@ class AppointmentAtHomeController extends Controller
 
 
 
-
+    /// Danh sách lịch chỉ định 
+    /**
+     * dat lich
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function list_Indications(Request $request)
+    {
+        $input = $request->all();
+        $getBloodTest['datas'] = $this->BloodTestService->where('sex',1)->orWhere('sex',2)->get()->toArray();
+        return view('client.AppointmentAtHome.Indications.index',$getBloodTest);
+    }
+     /**
+     * dat lich truyền dịch
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function loadList_Indications(Request $request)
+    {
+        $arrInput = $request->input();
+        $data = array();
+        $arrInput['code'] = !empty($_SESSION['code'])?$_SESSION['code']:'';
+        // $arrInput['sortType'] = 1
+        // dd($_SESSION['code']);
+        $objResult = $this->AppointmentAtHomeService->filter($arrInput);
+        $data['datas'] = $objResult;
+        return view("client.AppointmentAtHome.Indications.loadlist", $data)->render();
+    }
+    /**
+     * Form sửa
+     */
+    public function showDetail(Request $request)
+    {
+        $input = $request->all();
+        $data = $this->AppointmentAtHomeService->showDetail($input); 
+        // dd($data);
+        return view('client.AppointmentAtHome.Indications.showDetail', $data);
+    }
 
 
 

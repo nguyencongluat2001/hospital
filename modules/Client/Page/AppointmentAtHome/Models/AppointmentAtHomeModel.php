@@ -39,12 +39,15 @@ class AppointmentAtHomeModel extends Model
                 $this->value = $value;
                 // dd($this->value);
                 return $query->where(function ($query) {
-                    $query->where('name_hospital', 'like', '%' . $this->value . '%');
+                    $query->where('name', 'like', '%' . $this->value . '%')
+                    ->orWhere('code', 'like', '%' . $this->value . '%')
+                    ->orWhere('phone', 'like', '%' . $this->value . '%')
+                    ->orWhere('code_patient', 'like', '%' . $this->value . '%');
                 });
                 return $query;
-            // case 'cate':
-            //     $query->where('category_Hospital', $value);
-            //     return $query;
+            case 'code':
+                $query->where('code_ctv', $value);
+                return $query;
             default:
                 return $query;
         }

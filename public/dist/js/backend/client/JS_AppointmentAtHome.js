@@ -170,7 +170,7 @@ JS_AppointmentAtHome.prototype.add = function (oForm) {
         data: data,
         success: function (arrResult) {
             if (arrResult['status'] == true) {
-                var nameMessage = 'Thông báo , Đặt lịch thành công';
+                var nameMessage = 'Thông báo , Thành công';
                 var icon = 'success';
                 var color = '#344767';
                 NclLib.alerMesage(nameMessage,icon,color);
@@ -179,7 +179,7 @@ JS_AppointmentAtHome.prototype.add = function (oForm) {
                     window.location.replace(myClass.baseUrl+'/searchschedule');
                 }, 2000)
             } else {
-                var nameMessage = 'Đặt lịch thất bại';
+                var nameMessage = 'Thất bại';
                 var icon = 'warning';
                 var color = '#344767';
                 NclLib.alerMesage(nameMessage,icon,color);

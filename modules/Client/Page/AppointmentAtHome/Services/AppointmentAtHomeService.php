@@ -7,6 +7,8 @@ use Modules\Base\Service;
 use Modules\Client\Page\AppointmentAtHome\Repositories\AppointmentAtHomeRepository;
 use Illuminate\Support\Facades\Http;
 use Modules\Base\Library;
+use Modules\System\Dashboard\BloodTest\Models\PriceTestModel;
+
 use DB;
 use Str;
 
@@ -51,8 +53,8 @@ class AppointmentAtHomeService extends Service
                 'reason'=> !empty($input['reason'])?$input['reason']:'',
                 'type_payment'=> !empty($input['type_payment'])?$input['type_payment']:'',
                 'status'=> 0,
-                'created_at' => date("Y/m/d H:i:s"),
-                'update_at' => date("Y/m/d H:i:s")
+                'created_at' => date("Y/m/d"),
+                'update_at' => date("Y/m/d")
             ];
             if(!empty($_SESSION['role'])){
                 $param['code_ctv'] = $_SESSION['code'];
@@ -64,5 +66,37 @@ class AppointmentAtHomeService extends Service
             DB::rollBack();
            return array('success' => false, 'message' => (string) $e->getMessage());
         }
+    }
+      /**
+     * Form show chi tiết lịch khám
+     */
+    public function showDetail($input)
+    {
+        $AppointmentAtHome = $this->repository->where('id', $input['id'])->first();
+        // dd($AppointmentAtHome);
+        $expl = explode(',',$AppointmentAtHome['code_indications']);
+        // $type = $this->BloodTestService->where('code',$AppointmentAtHome['type'])->first();
+       
+        $total = 0;
+        $price = PriceTestModel::whereIn('code_blood',$expl)->get()->toArray();
+        $totals = number_format($total,0, '', ',');
+        $param = [
+            'code' => isset($AppointmentAtHome['code'])?$AppointmentAtHome['code']:'', 
+            'type' => isset($type['name'])?$type['name']:'', 
+            'type_at_home' => isset($AppointmentAtHome['type_at_home'])?$AppointmentAtHome['type_at_home']:'', 
+            'code_patient'=> isset($AppointmentAtHome['code_patient'])?$AppointmentAtHome['code_patient']:'', 
+            'name' => isset($AppointmentAtHome['name'])?$AppointmentAtHome['name']:'', 
+            'phone' => isset($AppointmentAtHome['phone'])?$AppointmentAtHome['phone']:'', 
+            'sex' => isset($AppointmentAtHome['sex'])?$AppointmentAtHome['sex']:'', 
+            'address' => isset($AppointmentAtHome['address'])?$AppointmentAtHome['address']:'', 
+            'money' => $totals, 
+            'reason' => isset($AppointmentAtHome['reason'])?$AppointmentAtHome['reason']:'', 
+            'date_sampling' => isset($AppointmentAtHome['date_sampling'])?date('d-m-Y',strtotime($AppointmentAtHome['date_sampling'])):'', 
+            'hour_sampling' => isset($AppointmentAtHome['hour_sampling'])?$AppointmentAtHome['hour_sampling']:'', 
+        ];
+        $data['datas'] = $param;
+        $data['price'] = $price;
+    
+        return $data;
     }
 }

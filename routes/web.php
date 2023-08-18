@@ -142,6 +142,10 @@ Route::prefix('/client')->group(function () {
  
             Route::get('/showPack', [AppointmentAtHomeController::class,'showPack']);
             Route::get('/flow', [AppointmentAtHomeController::class,'flow']);
+            //danh sách lịch chỉ định
+            Route::get('/list_Indications', [AppointmentAtHomeController::class,'list_Indications']);
+            Route::get('/loadList_Indications', [AppointmentAtHomeController::class,'loadList_Indications']);
+            Route::get('/showDetail', [AppointmentAtHomeController::class,'showDetail']);
 
 
 
