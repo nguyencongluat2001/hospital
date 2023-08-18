@@ -337,10 +337,13 @@ class AppointmentAtHomeController extends Controller
     {
         $arrInput = $request->input();
         $data = array();
+        $arrInput['sort'] = 'created_at';
         $arrInput['code'] = !empty($_SESSION['code'])?$_SESSION['code']:'';
-        // $arrInput['sortType'] = 1
-        // dd($_SESSION['code']);
-        $objResult = $this->AppointmentAtHomeService->filter($arrInput);
+        if(empty($_SESSION['code'])){
+            $objResult = [];
+        }else{
+            $objResult = $this->AppointmentAtHomeService->filter($arrInput);
+        }
         $data['datas'] = $objResult;
         return view("client.AppointmentAtHome.Indications.loadlist", $data)->render();
     }

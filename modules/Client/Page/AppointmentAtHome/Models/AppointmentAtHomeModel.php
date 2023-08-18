@@ -9,7 +9,7 @@ class AppointmentAtHomeModel extends Model
     protected $table = 'service_at_home';
     public $incrementing = false;
     public $timestamps = false;
-
+    public $sortable = ['created_at'];
     protected $fillable = [
             'id',
             'code',
