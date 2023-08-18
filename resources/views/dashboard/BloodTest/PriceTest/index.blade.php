@@ -38,15 +38,15 @@
                                             data-original-title="Xóa bệnh viện"><i class="fas fa-trash-alt"></i></button>
                                     </div>
                                 </div>
-                                <!-- <div class="col-md-3">
+                                <div class="col-md-3">
                                     <select class="form-control input-sm chzn-select" name="cate"
                                         id="cate">
-                                        <option value=''>-- Chọn loại cẩm nang --</option>
+                                        <option value=''>-- Chọn loại gói --</option>
                                         @foreach($data['category'] as $item)
-                                            <option value="{{$item['code_category']}}">{{$item['decision']}}</option>
+                                            <option value="{{$item['code']}}">{{$item['name']}}</option>
                                         @endforeach
                                     </select>
-                                </div> -->
+                                </div>
                                 <div class="input-group" style="width:30%;height:10%">
                                     <!-- <span class="input-group-text text-body"><i class="fas fa-search"
                                             aria-hidden="true"></i></span> -->

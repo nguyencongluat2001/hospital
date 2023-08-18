@@ -29,9 +29,9 @@ class PriceTestModel extends Model
                     $query->where('name', 'like', '%' . $this->value . '%');
                 });
                 return $query;
-            // case 'cate':
-            //     $query->where('category_BloodTest', $value);
-            //     return $query;
+            case 'cate':
+                $query->where('code_blood', $value);
+                return $query;
             default:
                 return $query;
         }

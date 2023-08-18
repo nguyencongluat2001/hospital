@@ -38,7 +38,7 @@ class PriceTestController extends Controller
      */
     public function index(Request $request)
     {
-        $getCategory = $this->categoryService->where('cate','CNK_001')->get()->toArray();
+        $getCategory = $this->BloodTestService->whereIn('code',['PACK1','PACK2','PACK3','PACK4','PACK5','PACK6','PACK7','PACK8','PACK9','PACK10','PACK11','PACK12','PACK13','PACK14','PACK15','PACK16','PACK17','PACK18','PACK19','PACK20','PACK21','PACK22'])->get()->toArray();
         $data['category'] = $getCategory;
         return view('dashboard.BloodTest.PriceTest.index',compact('data'));
     }
@@ -53,6 +53,9 @@ class PriceTestController extends Controller
     { 
         $arrInput = $request->input();
         $data = array();
+        if($arrInput['cate'] == ''){
+            unset($arrInput['cate']);
+        }
         $arrInput['limit'] = 300;
         $param = $arrInput;
         $objResult = $this->PriceTestService->filter($param);
