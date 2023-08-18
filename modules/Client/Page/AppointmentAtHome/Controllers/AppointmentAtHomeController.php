@@ -64,9 +64,9 @@ class AppointmentAtHomeController extends Controller
     public function index(Request $request ,$code)
     {
         $input = $request->all();
-        dd($input);
         // $data['datas'] = $this->BloodTestService->where('code',$code)->get()->toArray();
         $price = PriceTestModel::where('code_blood',$code)->get()->toArray();
+
         $total = 0;
         foreach($price as $item){
             $total = $total+= $item['price'];
@@ -78,6 +78,8 @@ class AppointmentAtHomeController extends Controller
         $datas['code_blood'] = $code;
         $datas['type_xetnghiem'] =  $this->BloodTestService->whereIn('code',['PACK1','PACK2','PACK3','PACK4','PACK5','PACK6','PACK7','PACK8','PACK9','PACK10','PACK11','PACK12','PACK13','PACK14','PACK15','PACK16','PACK17','PACK18','PACK19','PACK20','PACK21','PACK22'])->get()->toArray();
         $BloodTest =  $this->BloodTestService->where('sex',1)->orWhere('sex',2)->get()->toArray();
+        dd($price,$BloodTest,$total);
+
         foreach($BloodTest as $val){
             $price = PriceTestModel::where('code',$val['code'])->first();
             if(empty($price) || $price == null ){
