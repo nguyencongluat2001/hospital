@@ -42,6 +42,7 @@ class AppointmentAtHomeService extends Service
                 'code_patient'=> !empty($input['code_patient'])?$input['code_patient']:'',
                 'code_indications'=> !empty($input['code_indications'])?$input['code_indications']:'',
                 'code_doctor'=> !empty($input['code_doctor'])?$input['code_doctor']:'',
+                'money'=> !empty($input['money'])?$input['money']:'',
                 'name'=> $input['name'],
                 'phone'=> !empty($input['phone'])?$input['phone']:'',
                 'money'=> !empty($input['money'])?$input['money']:'',

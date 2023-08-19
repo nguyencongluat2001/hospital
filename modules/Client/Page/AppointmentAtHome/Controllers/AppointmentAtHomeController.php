@@ -109,6 +109,7 @@ class AppointmentAtHomeController extends Controller
     public function sendPayment(Request $request)
     {
         $input = $request->all();
+        dd($input);
         $sendPayment =  $this->AppointmentAtHomeService->sendPayment($input);
         return response()->json([
             'status' => $sendPayment
@@ -317,6 +318,7 @@ class AppointmentAtHomeController extends Controller
         }
         $data['chiso'] = $arr;
         $data['total'] = number_format($total,0, '', ',');
+        $data['total_number'] = $total;
         // dd($data);
         return response()->json([
             'data' => $data,

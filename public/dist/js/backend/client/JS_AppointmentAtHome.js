@@ -292,21 +292,25 @@ JS_AppointmentAtHome.prototype.showPack = function () {
         success: function (arrResult) {
             console.log(arrResult)
             // var  html = `<br>`
-            var html = `&nbsp; Tổng đã chọn: <span style="font-weight: 600;color: #ff6400;">`+ arrResult.data.total +` </span>VND`
+            var html = `&nbsp; Tổng đã chọn: <span style="font-weight: 600;color: #ff6400;">`+ arrResult.data.total +` </span><span style="font-size:10px">VND </span>`
+            html += `<input id="money" value="`+ arrResult.data.total_number +`" name="money" type="hidden">`
             html += '<div class="table-responsive pmd-card pmd-z-depth table-container">'
                 html += `<table id="myTable" class="table  table-bordered table-striped table-condensed dataTable no-footer">`
-                    html += `<tbody id="body_data" style="background: #47aa28;">`
+                    html += `<tbody id="body_data" style="background: #182033;">`
                     $(arrResult.data.chiso).each(function(index,el) {
                         html += `<tr>`
                             html += `<td>`
-                                html += `<button onclick="JS_AppointmentAtHome.showInfor('`+ el.code +`')" type="button" style="display: inline-block;width:20%;padding:0px" class="btn-warning"><i class="fas fa-eye"></i></button> <span style="color: white;" > `+ el.code +` - ` + el.price + ` VND</span>`
+                                html += `<button onclick="JS_AppointmentAtHome.showInfor('`+ el.code +`')" type="button" style="display: inline-block;width:50px;padding:0px" class="btn-warning"><i class="fas fa-eye"></i></button> <span style="color: white;" > `+ el.code +` - <span style="color:#ffc788"> `+ el.price + `</span> <span style="font-size:10px">VND </span></span>`
                             html += `</td>`
                         html += `</tr>`
                     });
                     html += `</tbody>`
                 html += `</table>`
             html += `</div>`
+            var html_money = `<input id="money" value="`+ arrResult.data.total_number +`" name="money" type="hidden">`
+
             $("#iss").html(html);
+            $("#iss_money").html(html_money);
         }
     });
 }

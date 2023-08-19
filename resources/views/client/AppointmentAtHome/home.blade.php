@@ -189,6 +189,7 @@
                                                 <!-- <input type="hidden" id="code" name="code" value="{{ !empty($datas->code)?$datas->code:'' }}"> -->
                                                 <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
                                                 <input type="hidden" id="type_at_home" name="type_at_home" value="XET_NGHIEM">
+                                                <div id="iss_money"></div>
                                                 <!-- <div class="row">
                                                     <div class="form-wrapper col-md-6">
                                                         <label for="">Họ và tên <span class="request_star">*</span></label>
@@ -309,35 +310,35 @@
                                                     <div class="form-input col-md-6 padding-style">
                                                         <select class="form-control input-sm chzn-select required" name="hour_sampling" id="hour_sampling">
                                                             <option value=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chọn giờ lấy mẫu  </option>
-                                                            <option value="05h30">05 giờ 30 phút</option>
-                                                            <option value="06h00">06 giờ 00 phút</option>
-                                                            <option value="06h30">06 giờ 30 phút</option>
-                                                            <option value="07h00">07 giờ 00 phút</option>
-                                                            <option value="07h30">07 giờ 30 phút</option>
-                                                            <option value="08h00">08 giờ 00 phút</option>
-                                                            <option value="08h30">08 giờ 30 phút</option>
-                                                            <option value="09h00">09 giờ 00 phút</option>
-                                                            <option value="09h30">00 giờ 30 phút</option>
-                                                            <option value="10h00">10 giờ 00 phút</option>
-                                                            <option value="10h30">10 giờ 30 phút</option>
-                                                            <option value="11h00">11 giờ 00 phút</option>
-                                                            <option value="11h30">11 giờ 30 phút</option>
-                                                            <option value="13h30">13 giờ 30 phút</option>
-                                                            <option value="14h00">14 giờ 00 phút</option>
-                                                            <option value="14h30">14 giờ 30 phút</option>
-                                                            <option value="15h00">15 giờ 00 phút</option>
-                                                            <option value="15h30">15 giờ 30 phút</option>
-                                                            <option value="16h00">16 giờ 00 phút</option>
-                                                            <option value="16h30">16 giờ 30 phút</option>
-                                                            <option value="17h00">17 giờ 00 phút</option>
-                                                            <option value="17h30">17 giờ 30 phút</option>
-                                                            <option value="18h00">18 giờ 00 phút</option>
-                                                            <option value="17h30">17 giờ 30 phút</option>
-                                                            <option value="18h00">18 giờ 00 phút</option>
-                                                            <option value="18h30">18 giờ 30 phút</option>
-                                                            <option value="19h00">19 giờ 00 phút</option>
-                                                            <option value="19h30">19 giờ 30 phút</option>
-                                                            <option value="20h00">20 giờ 00 phút</option>
+                                                            <option value="05h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;05 giờ 30 phút</option>
+                                                            <option value="06h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;06 giờ 00 phút</option>
+                                                            <option value="06h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;06 giờ 30 phút</option>
+                                                            <option value="07h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;07 giờ 00 phút</option>
+                                                            <option value="07h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;07 giờ 30 phút</option>
+                                                            <option value="08h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;08 giờ 00 phút</option>
+                                                            <option value="08h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;08 giờ 30 phút</option>
+                                                            <option value="09h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;09 giờ 00 phút</option>
+                                                            <option value="09h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;00 giờ 30 phút</option>
+                                                            <option value="10h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10 giờ 00 phút</option>
+                                                            <option value="10h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10 giờ 30 phút</option>
+                                                            <option value="11h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11 giờ 00 phút</option>
+                                                            <option value="11h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11 giờ 30 phút</option>
+                                                            <option value="13h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13 giờ 30 phút</option>
+                                                            <option value="14h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14 giờ 00 phút</option>
+                                                            <option value="14h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14 giờ 30 phút</option>
+                                                            <option value="15h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15 giờ 00 phút</option>
+                                                            <option value="15h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15 giờ 30 phút</option>
+                                                            <option value="16h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;16 giờ 00 phút</option>
+                                                            <option value="16h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;16 giờ 30 phút</option>
+                                                            <option value="17h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17 giờ 00 phút</option>
+                                                            <option value="17h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17 giờ 30 phút</option>
+                                                            <option value="18h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18 giờ 00 phút</option>
+                                                            <option value="17h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17 giờ 30 phút</option>
+                                                            <option value="18h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18 giờ 00 phút</option>
+                                                            <option value="18h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18 giờ 30 phút</option>
+                                                            <option value="19h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;19 giờ 00 phút</option>
+                                                            <option value="19h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;19 giờ 30 phút</option>
+                                                            <option value="20h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20 giờ 00 phút</option>
                                                         </select>
                                                         <i class="fa fa-calendar-alt uname-icon padding-style"></i>
                                                         <span class="message-error uname-error">Giờ lấy mẫu không được để trống!</span>
