@@ -427,10 +427,11 @@ class AppointmentAtHomeController extends Controller
     public function pdf(Request $request)
     {
         $input = $request->all();
-        $input['id'] = 'dc8413ff-7c87-4bab-a0ce-772ee476f21d';
+        $input['id'] = '047632ee-2010-4091-af35-29e59f92b0d2';
         // $data = ['name' => 'tienduong'];
         $data = $this->AppointmentAtHomeService->showDetail($input); 	
-    	$pdf = PDF::loadView('client.AppointmentAtHome.invoice',  compact('data'));
+    	$pdf = PDF::loadView('client.AppointmentAtHome.invoice',  compact('data')) ->setPaper('a4', 'landscape')
+              ->setWarnings(false)->setOptions(['isFontSubsettingEnabled' => true]);
     		return $pdf->download('invoice.pdf');
     }
 }

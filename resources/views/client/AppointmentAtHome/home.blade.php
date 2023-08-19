@@ -216,11 +216,12 @@
                                                         <i class="fas fa-phone phone-icon padding-style"></i>
                                                         <span class="message-error phone-error">Số điện thoại không được để trống!</span>
                                                     </div>
-                                                    
                                                 </div>
                                                 <div class="row mt-3">
                                                     <div class="form-input col-md-6">
-                                                        <input type="date" class="form-control required" placeholder="Ngày sinh..." name="date_birthday" id="date_birthday" oninput="inValid(this.id)">
+                                                        <input type="text" 
+                                                            onfocus="(this.type='date')"
+                                                            onblur="(this.type='text')" class="form-control required" placeholder="Ngày sinh..." name="date_birthday" id="date_birthday" oninput="inValid(this.id)">
                                                         <i class="fa fa-calendar-alt uname-icon"></i>
                                                         <!-- <i class="fas fa-calendar-alt"></i> -->
                                                         <span class="message-error uname-error">Ngày sinh không được để trống!</span>
@@ -249,7 +250,7 @@
                                                     <div class="row">
                                                         <div class="col-lg-6 mx-auto " style="display:flex">
                                                             <div class="input-group pt-2 box">
-                                                                <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg rounded-pill rounded" placeholder="Tìm kiếm gói - tên chỉ số" aria-label="Tìm kiếm gói - tên chỉ số">
+                                                                <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg" placeholder="Tìm kiếm gói - tên chỉ số" aria-label="Tìm kiếm gói - tên chỉ số">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -343,9 +344,10 @@
                                                     </div>
 
                                                     <div class="form-input col-md-6 padding-style">
-                                                        <input type="date" class="form-control required" placeholder="Ngày lấy..." name="date_sampling" id="date_sampling" oninput="inValid(this.id)">
+                                                        <input onfocus="(this.type='date')"
+                                                            onblur="(this.type='text')" type="text" class="form-control required" placeholder="Ngày lấy mẫu..." name="date_sampling" id="date_sampling" oninput="inValid(this.id)">
                                                         <i class="fa fa-calendar-alt uname-icon padding-style"></i>
-                                                        <span class="message-error uname-error">Ngày lấy không được để trống!</span>
+                                                        <span class="message-error uname-error">Ngày lấy mẫu không được để trống!</span>
                                                     </div>
                                                 </div>
                                                 <div class="row mt-3">

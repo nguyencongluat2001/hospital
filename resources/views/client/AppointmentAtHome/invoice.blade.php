@@ -23,9 +23,13 @@
 form {
   padding-top: 80px;
 }
+.sss{
+  font-family:Helvetica,Arial,sans-serif !important;
+
+}
 
 .active {
-  border-bottom: 2px solid #1161ed;
+  border-bottom: 2px ;
 } */
 
 .nonactive {
