@@ -41,6 +41,7 @@ class AppointmentAtHomeService extends Service
                 'code'=> $code,
                 'code_patient'=> !empty($input['code_patient'])?$input['code_patient']:'',
                 'code_indications'=> !empty($input['code_indications'])?$input['code_indications']:'',
+                'code_doctor'=> !empty($input['code_doctor'])?$input['code_doctor']:'',
                 'name'=> $input['name'],
                 'phone'=> !empty($input['phone'])?$input['phone']:'',
                 'money'=> !empty($input['money'])?$input['money']:'',
@@ -53,6 +54,7 @@ class AppointmentAtHomeService extends Service
                 'reason'=> !empty($input['reason'])?$input['reason']:'',
                 'type_payment'=> !empty($input['type_payment'])?$input['type_payment']:'',
                 'status'=> 0,
+                'date_birthday'=> !empty($input['date_birthday'])?$input['date_birthday']:'',
                 'created_at' => date("Y/m/d"),
                 'update_at' => date("Y/m/d")
             ];

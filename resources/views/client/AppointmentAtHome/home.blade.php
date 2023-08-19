@@ -144,51 +144,58 @@
                                                         <input required placeholder="Nhập mã..." id="code_patient" type="code_patient" class="form-control" name="code_patient" value="">
                                                     </div>
                                                     @endif
-                                                </div>                                                
+                                                </div>   
                                                 @if (isset($_SESSION['role']) && $_SESSION['role'] == 'CTV')
-                                                    <div class="form-wrapper col-md-12">
-                                                        <label for="">Loại xét nghiệm chỉ định</label>
-                                                        <div class="row">
-                                                            <div class="col-lg-4 mx-auto " style="display:flex">
-                                                                <div class="input-group pt-2 box">
-                                                                    <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg rounded-pill rounded" placeholder="Tìm kiếm gói - tên chỉ số" aria-label="Tìm kiếm gói - tên chỉ số">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div id="style-1" style="padding-right:10px;">
-                                                            <div class="table-responsive pmd-card pmd-z-depth table-container" style="padding:0px">
-                                                                <table id="myTable" class="table  table-bordered table-striped table-condensed dataTable no-footer">
-                                                                    <!-- <thead>
-                                                                        <tr>
-                                                                            <td style="white-space: inherit;vertical-align: middle;" align="center"><b>Chọn chỉ mục</b></td>
-                                                                            <td style="white-space: inherit;vertical-align: middle;" align="center"><b>Tên chỉ số</b></td>
-                                                                            <td style="white-space: inherit;vertical-align: middle;" align="center"><b>Giá chỉ số</b></td>
-                                                                        </tr>
-                                                                    </thead> -->
-                                                                    <tbody id="body_data" style="background: #fdffff;">
-                                                                            @foreach ($type_chidinh as $key => $values)
-                                                                                <tr>
-                                                                                    <!-- <td style="white-space: inherit;vertical-align: middle;" align="center"></td> -->
-                                                                                    <td style="white-space: inherit;vertical-align: middle;" >
-                                                                                    <input onclick="JS_AppointmentAtHome.showPack('{{$code_blood}}')" type="checkbox" value="{{ isset($values['code']) ? $values['code'] : '' }}" name="code_indications" id="code_indications"/> 
-                                                                                    <span style="color:red">{{ isset($values['code']) ? $values['code'] : '' }}</span> - <span style="color:#ff8a06">{{ isset($values['price']) ? $values['price'] : '' }}  </span> <span style="font-size:10px">VND </span>  <br>
-                                                                                    <span style="font-size:12px"> ( {{ isset($values['name']) ? $values['name'] : '' }} )</span> 
-                                                                                    </td>
-                                                                                </tr>
-                                                                            @endforeach
-                                                                    </tbody>
-                                                                </table>
+                                                <div class="row">
+                                                    <div class="form-wrapper col-md-6">
+                                                        <label for="">Mã bác sĩ <span class="request_star">*</span></label>
+                                                        <input placeholder="Mã bác sĩ..." id="code_doctor" type="text" class="form-control" name="code_doctor" value="">
+                                                    </div>
+                                                    <div class="form-wrapper col-md-6">
+                                                        <label for="">Ngày sinh <span class="request_star">*</span></label>
+                                                        <input placeholder="Ngày sinh..." id="date_birthday" type="date" class="form-control" name="date_birthday" value="">
+                                                    </div>   
+                                                </div>              
+                                                <div class="form-wrapper col-md-12">
+                                                    <label for="">Loại xét nghiệm chỉ định</label>
+                                                    <div class="row">
+                                                        <div class="col-lg-4 mx-auto " style="display:flex">
+                                                            <div class="input-group pt-2 box">
+                                                                <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg rounded-pill rounded" placeholder="Tìm kiếm gói - tên chỉ số" aria-label="Tìm kiếm gói - tên chỉ số">
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div id="style-1" style="padding-right:10px;">
+                                                        <div class="table-responsive pmd-card pmd-z-depth table-container" style="padding:0px">
+                                                            <table id="myTable" class="table  table-bordered table-striped table-condensed dataTable no-footer">
+                                                                <!-- <thead>
+                                                                    <tr>
+                                                                        <td style="white-space: inherit;vertical-align: middle;" align="center"><b>Chọn chỉ mục</b></td>
+                                                                        <td style="white-space: inherit;vertical-align: middle;" align="center"><b>Tên chỉ số</b></td>
+                                                                        <td style="white-space: inherit;vertical-align: middle;" align="center"><b>Giá chỉ số</b></td>
+                                                                    </tr>
+                                                                </thead> -->
+                                                                <tbody id="body_data" style="background: #fdffff;">
+                                                                        @foreach ($type_chidinh as $key => $values)
+                                                                            <tr>
+                                                                                <!-- <td style="white-space: inherit;vertical-align: middle;" align="center"></td> -->
+                                                                                <td style="white-space: inherit;vertical-align: middle;" >
+                                                                                <input onclick="JS_AppointmentAtHome.showPack('{{$code_blood}}')" type="checkbox" value="{{ isset($values['code']) ? $values['code'] : '' }}" name="code_indications" id="code_indications"/> 
+                                                                                <span style="color:red">{{ isset($values['code']) ? $values['code'] : '' }}</span> - <span style="color:#ff8a06">{{ isset($values['price']) ? $values['price'] : '' }}  </span> <span style="font-size:10px">VND </span>  <br>
+                                                                                <span style="font-size:12px"> ( {{ isset($values['name']) ? $values['name'] : '' }} )</span> 
+                                                                                </td>
+                                                                            </tr>
+                                                                        @endforeach
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div id="iss">
 
                                                 </div>
                                                 @else
-                                                {{--<div class="form-wrapper col-md-4">
-                                                        <label for="">Ngày sinh <span class="request_star">*</span></label>
-                                                        <input placeholder="Số điện thoại..." id="date_sampling" type="date" class="form-control" name="date_sampling" value="">
-                                                    </div> --}}
+
                                                     <div class="form-wrapper col-md-12">
                                                         <label for="">Loại xét nghiệm</label>
                                                         <select onchange="JS_AppointmentAtHome.getPrice(this.value)" class="form-control input-sm chzn-select" name="code" id="code">

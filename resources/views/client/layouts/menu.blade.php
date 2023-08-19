@@ -73,70 +73,76 @@
                             </li>
                         @endif -->
                     @else
-                        <li class="nav-item dropdown">
-                            <!-- <span id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <img  src="{{url('/file-image/avatar/')}}/{{ Auth::user()->avatar }}" alt="Image" style="border-radius:50%;height: 30px;width: 30px;object-fit: cover;">
-                                </span>    -->
-                            <span style="color:#ff9d00" id="navbarDropdown" class="dropdown-toggle" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <span>
-                                    @if(!empty($_SESSION['name'])) 
-                                        {{ $_SESSION['name'] }}
-                                    @endif
+                         @if (!empty($_SESSION['name']) && Auth::check())
+                            <li class="nav-item dropdown">
+                                <!-- <span id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        <img  src="{{url('/file-image/avatar/')}}/{{ Auth::user()->avatar }}" alt="Image" style="border-radius:50%;height: 30px;width: 30px;object-fit: cover;">
+                                    </span>    -->
+                                <span style="color:#ff9d00" id="navbarDropdown" class="dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <span>
+                                        @if(!empty($_SESSION['name'])) 
+                                            {{ $_SESSION['name'] }}
+                                        @endif
+                                    </span>
                                 </span>
-                            </span>
 
 
-                            <div class="dropdown-menu dropdown-menu-end"  aria-labelledby="navbarDropdown">
-                                <!-- <a class="dropdown-item" href="{{ URL::asset('/system/userInfo/index') }}">
-                                        <p>
-                                            {{ __('Thông tin cá nhân') }}
-                                        </p>
-                                </a> -->
-                                 <a class="dropdown-item" href="{{ URL::asset('appointmentathome/tainha') }}">
-                                        <p>
-                                            {{ __('Nhập chỉ định xét nghiệm') }}
-                                        </p>
-                                </a>
-                                <a class="dropdown-item">
-                                        <p>
-                                            {{ __('Đăng ký lấy máu') }}
-                                        </p>
-                                </a>
-                                <a class="dropdown-item" href="{{ URL::asset('client/appointmentathome/tab2/truyendich') }}">
-                                        <p>
-                                            {{ __('Đăng ký lịch truyền') }}
-                                        </p>
-                                </a>
-                                <a class="dropdown-item">
-                                        <p>
-                                            {{ __('Link giới thiệu') }}
-                                        </p>
-                                </a>
-                                <a class="dropdown-item">
-                                        <p>
-                                            {{ __('Quản lý kinh doanh') }}
-                                        </p>
-                                </a>
-                                <a class="dropdown-item" href="{{ URL::asset('client/appointmentathome/list_Indications')}}">
-                                        <p>
-                                            {{ __('Danh sách chỉ định') }}
-                                        </p>
-                                </a>
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                                        <p>
-                                            {{ __('Đăng xuất') }}
-                                        </p>
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
+                                <div class="dropdown-menu dropdown-menu-end"  aria-labelledby="navbarDropdown">
+                                    <!-- <a class="dropdown-item" href="{{ URL::asset('/system/userInfo/index') }}">
+                                            <p>
+                                                {{ __('Thông tin cá nhân') }}
+                                            </p>
+                                    </a> -->
+                                    <a class="dropdown-item" href="{{ URL::asset('appointmentathome/tainha') }}">
+                                            <p>
+                                                {{ __('Nhập chỉ định xét nghiệm') }}
+                                            </p>
+                                    </a>
+                                    <a class="dropdown-item">
+                                            <p>
+                                                {{ __('Đăng ký lấy máu') }}
+                                            </p>
+                                    </a>
+                                    <a class="dropdown-item" href="{{ URL::asset('client/appointmentathome/tab2/truyendich') }}">
+                                            <p>
+                                                {{ __('Đăng ký lịch truyền') }}
+                                            </p>
+                                    </a>
+                                    <a class="dropdown-item">
+                                            <p>
+                                                {{ __('Link giới thiệu') }}
+                                            </p>
+                                    </a>
+                                    <a class="dropdown-item">
+                                            <p>
+                                                {{ __('Quản lý kinh doanh') }}
+                                            </p>
+                                    </a>
+                                    <a class="dropdown-item" href="{{ URL::asset('client/appointmentathome/list_Indications')}}">
+                                            <p>
+                                                {{ __('Danh sách chỉ định') }}
+                                            </p>
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                            <p>
+                                                {{ __('Đăng xuất') }}
+                                            </p>
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @else
+                            <li class="nav-item">
+                                <a style="color:#ff9d00" class="nav-link" href="{{ route('login') }}">{{ __('Đăng nhập') }}</a>
+                            </li>
+                        @endif
                     @endguest
                 </ul>
             </div>

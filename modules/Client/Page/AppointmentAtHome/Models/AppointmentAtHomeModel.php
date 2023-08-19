@@ -15,6 +15,7 @@ class AppointmentAtHomeModel extends Model
             'code',
             'code_patient',
             'code_indications',
+            'code_doctor',
             'name',
             'phone',
             'money',
@@ -28,6 +29,7 @@ class AppointmentAtHomeModel extends Model
             'type_payment',
             'code_ctv',
             'status',
+            'date_birthday',
             'created_at',
             'updates_at'
     ];
