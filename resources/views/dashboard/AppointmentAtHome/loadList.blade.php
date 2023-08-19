@@ -53,19 +53,19 @@
                         <td style="wwhite-space: inherit;vertical-align: middle;" align="center">{{ isset($data->code_ctv) ? $data->code_ctv : '' }}</td>
                         <!-- <td style="wwhite-space: inherit;vertical-align: middle;" align="center">{{ isset($data->money) ? $data->money : '' }}</td> -->
                         <td style="white-space: inherit;vertical-align: middle;" align="center">{{ $data->status == 1 ? 'Đã xác nhận' : 'Chưa xác nhận' }}</td>
+                        @if($_SESSION['role'] == 'ADMIN')
                         <td style="white-space: inherit;vertical-align: middle;" onclick="{select_row(this);}" align="center">
                             <label class="custom-control custom-checkbox p-0 m-0 pointer " style="cursor: pointer;">
                                 <input type="checkbox" hidden class="custom-control-input toggle-status" id="status_{{$id}}" data-id="{{$id}}" {{ $data->status == 1 ? 'checked' : '' }}>
                                 <span class="custom-control-indicator p-0 m-0" onclick="JS_AppointmentAtHome.changeStatusAppointmentAtHome('{{$id}}')"></span>
                             </label>
                         </td>
-                        @if($_SESSION['role'] == 'ADMIN')
+                        @endif
                         <td style="width:5% ;white-space: inherit;vertical-align: middle;" align="center"> <br>
                             <button onclick="JS_AppointmentAtHome.showDetail('{{$id}}')" class="btn btn-light"  type="button">
                                 <i style="color:#00740a" class="far fa-eye"></i>
                             </button>
                         </td>
-                        @endif
                     </tr>
                 @endforeach
             @endif
