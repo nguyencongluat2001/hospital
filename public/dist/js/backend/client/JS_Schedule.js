@@ -163,7 +163,6 @@ JS_Schedule.prototype.add = function (oForm) {
         NclLib.alerMesageClient(nameMessage,icon,color,background);
         return false;
     }
-    console.log(data)
     $.ajax({
         url: url,
         type: "GET",

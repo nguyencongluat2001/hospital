@@ -99,7 +99,6 @@ JS_AppointmentAtHome.prototype.add = function (oForm) {
     });
     var data = $(oForm).serialize();
     data += '&code_indications=' + code_indications;
-    console.log(data);
     if ($("#name").val() == '') {
         var nameMessage = 'Họ và tên không được để trống!';
         var icon = 'warning';
@@ -325,7 +324,6 @@ JS_AppointmentAtHome.prototype.flow = function (code) {
     var url = this.urlPath + '/flow';
     var oForm = 'form#frmView';
     var data = '&code=' + code;
-    console.log(code)
     $.ajax({
         url: url,
         type: "GET",
