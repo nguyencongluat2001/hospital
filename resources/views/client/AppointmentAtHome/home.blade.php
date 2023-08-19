@@ -350,14 +350,14 @@
                                                 </div>
                                                 <div class="row mt-3">
                                                     <div class="form-input col-md-12 padding-style">
-                                                        <input style="height:70px" type="text" class="form-control required" placeholder="Địa chỉ chi tiết..." name="address" id="address" oninput="inValid(this.id)">
+                                                        <textarea style="height:70px" type="text" class="form-control required" placeholder="Địa chỉ chi tiết..." name="address" id="address" oninput="inValid(this.id)"></textarea>
                                                         <i class="fa fa-map-marker-alt uname-icon padding-style"></i>
                                                         <span class="message-error uname-error">Địa chỉ chi tiết không được để trống!</span>
                                                     </div>
                                                 </div>
                                                 <div class="row mt-3">
                                                     <div class="form-input col-md-12 padding-style">
-                                                        <textarea style="height:100px" class="form-control required padding-style" placeholder="Triệu chứng lâm sàng ..." name="reason" id="reason" oninput="inValid(this.id)"rows="4" cols="50"></textarea>
+                                                        <textarea style="height:100px" class="form-control required" placeholder="Triệu chứng lâm sàng ..." name="reason" id="reason" oninput="inValid(this.id)"rows="4" cols="50"></textarea>
                                                         <i class="fas fa-comment-dots uname-icon padding-style"></i>
                                                         <span class="message-error uname-error">Triệu chứng lâm sàng không được để trống!</span>
                                                     </div>
