@@ -1,170 +1,217 @@
 @extends('client.layouts.index')
 @section('body-client')
+<link rel="stylesheet" href="{{URL::asset('assets/datepicker/bootstrap-datepicker.min.css')}}">
+<script type="text/javascript" src="{{ URL::asset('assets/datepicker/bootstrap-datepicker.min.js') }}"></script>
 <style>
-    form{
-        width:80%;
+    #frmSendSchedule{
+        width: 60%;
+    }
+    #carouselExampleIndicators input[type=text], input[type=email], input[type=password], input[type=date] {
+        padding: 12px 40px;
+        display: inline-block;
+        border: 1px solid #ccc;
+    }
+    #carouselExampleIndicators textarea{
+        padding: 5px 40px;
+        display: inline-block;
+        border: 1px solid #ccc;
+    }
+
+    /* Set a style for the buttons*/
+    #carouselExampleIndicators button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    /* Set a hover effect for the button*/
+    #carouselExampleIndicators button:hover {
+        opacity: 0.8;
+    }
+
+    /* Set extra style for the cancel button*/
+    #carouselExampleIndicators .container {
+        padding: 16px;
+    }
+
+    #carouselExampleIndicators .form-input {
+        position: relative;
+    }
+
+    #carouselExampleIndicators .form-input i {
+        position: absolute;
+        left: 24px;
+        top: 12px;
+        color: gray;
+    }
+    .message-error{
+        display: none;
+        color: red;
+    }
+    .error-input{
+        border: 1px solid red;
+    }
+    .error-icon{
+        color: red !important;
+    }
+    .error-input::placeholder{
+        color: red;
     }
 </style>
 <link rel="stylesheet" href="../clients/css/style.css">
-    <!-- Start Banner Hero -->
-    <div class="banner-wrapper bg-light" >
-        <div id="index_banner" class="banner-vertical-center-index">
-            <!-- Start slider -->
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner active pt-5" >
-                     <!-- <div class="list-hispital-home-one pt-5">
+<!-- Start Banner Hero -->
+<div class="banner-wrapper bg-light">
+    <div id="index_banner" class="banner-vertical-center-index">
+        <!-- Start slider -->
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner active pt-5">
+                <!-- <div class="list-hispital-home-one pt-5">
                         <section class="banner-bg">
                             <span  class="text-title-home "><center> ĐĂNG KÝ KHÁM NHANH</center></span>
                         </section>
                         
                      </div> -->
-                     
-                    <!-- End Contact -->
-                    <div class="carousel-item active list-hispital-home" >
-                        <div class=" row d-flex align-items-center">
-                            <div class="banner-content col-lg-10 col-10 offset-1 m-lg-auto text-left ">
-                                <div class="row g-lg-5 mb-4">
-                                    <div class="banner-wrapper w-100" style="background:#ffffffba;color:black">
-                                        <div class="row g-lg-5 mb-4">
-                                            <div class="banner-wrapper w-100 py-3" style="background:#15283dd6">
-                                                <div class="list-group wrapper pb-0 px-3">
-                                                    <a class="col-sm-6 col-lg-12 text-decoration-none text-light">
-                                                        <div class="d-lg-flex gx-5">
-                                                            <div class="col-lg-3">
-                                                                <img class="card-img-top" src="{{url('/file-image-client/avatar-hospital/')}}/{{ !empty($datas->avatar)?$datas->avatar:'' }}" style="object-fit: cover;height:150px" alt="...">
-                                                            </div>
-                                                            <div class="col-lg-1 "></div>
-                                                            <div class="col-lg-8 ">
-                                                            <span  class="text-title-home" style="color:#ff9300"><center> ĐẶT LỊCH KHÁM TẠI</center></span>
-                                                            <center><h5  style="font-size: 40px;font-family: serif;font-weight: 600; animation: lights 4s 750ms linear infinite;">{{ !empty($datas->name_hospital)?$datas->name_hospital:'' }}</h5></center>                                                     
-                                                            <span style="color: #bad1ff;font-size: 20px;"><center>{{ !empty($datas->address)?$datas->address:'' }}</center></span>
-                                                            </div>
+
+                <!-- End Contact -->
+                <div class="carousel-item active list-hispital-home">
+                    <div class=" row d-flex align-items-center">
+                        <div class="banner-content col-lg-10 col-10 offset-1 m-lg-auto text-left ">
+                            <div class="row g-lg-5 mb-4">
+                                <div class="banner-wrapper w-100" style="background:#ffffffba;color:black">
+                                    <div class="row g-lg-5 mb-4">
+                                        <div class="banner-wrapper w-100 py-3" style="background:#15283dd6">
+                                            <div class="list-group wrapper pb-0 px-3">
+                                                <a class="col-sm-6 col-lg-12 text-decoration-none text-light">
+                                                    <div class="d-lg-flex gx-5">
+                                                        <div class="col-lg-3">
+                                                            <img class="card-img-top" src="{{url('/file-image-client/avatar-hospital/')}}/{{ !empty($datas->avatar)?$datas->avatar:'' }}" style="object-fit: cover;height:150px" alt="...">
                                                         </div>
-                                                    </a>
-                                                </div>
+                                                        <div class="col-lg-1 "></div>
+                                                        <div class="col-lg-8 ">
+                                                            <span class="text-title-home" style="color:#ff9300">
+                                                                <center> ĐẶT LỊCH KHÁM TẠI</center>
+                                                            </span>
+                                                            <center>
+                                                                <h5 style="font-size: 40px;font-family: serif;font-weight: 600; animation: lights 4s 750ms linear infinite;">{{ !empty($datas->name_hospital)?$datas->name_hospital:'' }}</h5>
+                                                            </center>
+                                                            <span style="color: #bad1ff;font-size: 20px;">
+                                                                <center>{{ !empty($datas->address)?$datas->address:'' }}</center>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </a>
                                             </div>
                                         </div>
-                                        <div class=" pb-0 px-3">
-                                        <span  class="text-title-home" style="color:#226c28c9" ><center> Thông tin đăng ký</center></span>
+                                    </div>
+                                    <div class=" pb-0 px-3">
+                                        <span class="text-title-home" style="color:#226c28c9">
+                                            <center> Thông tin đăng ký</center>
+                                        </span>
 
                                         <div class="wrapper" style="display: flex; justify-content: center;">
-                                            <form id="frmSendSchedule" method="POST"  autocomplete="off">
+                                            <form id="frmSendSchedule" method="POST" autocomplete="off">
                                                 @csrf
                                                 <input type="hidden" id="code_hospital" name="code_hospital" value="{{ !empty($datas->code)?$datas->code:'' }}">
                                                 <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
                                                 <div class="row">
-                                                    <div class="form-wrapper col-md-6">
-                                                        <label for="">Chuyên khoa khám <span class="request_star">*</span></label>
+                                                    <div class="form-input col-md-6">
                                                         <select onchange="JS_Schedule.getMoney(this.value)" class="form-control input-sm chzn-select" name="code_specialty" id="code_specialty">
                                                             <option value="">--Chọn khoa khám bệnh--</option>
-                                                            @foreach($khoa as $key => $values) 
-                                                                <option value="{{$values['code']}}" {{($values['status'] == '2') ? 'selected' : ''}}>{{$values['name']}}</option>
-                                                            @endforeach 
+                                                            @foreach($khoa as $key => $values)
+                                                            <option value="{{$values['code']}}" {{($values['status'] == '2') ? 'selected' : ''}}>{{$values['name']}}</option>
+                                                            @endforeach
                                                         </select>
                                                     </div>
-                                                    <div class="form-wrapper col-md-6" id="moneys">
-                                                        <label for="">Số tiền khám <span class="request_star">*</span></label>
-                                                        <input style="font-size: 25px;font-weight: 500;color: #ff9400;"type="hidden" id="money" class="form-control" name="money" value="{{!empty($money)?$money:'' }}">
+                                                    <div class="form-input col-md-6" id="moneys">
+                                                        <span>Số tiền khám: <span>
+                                                        <input style="font-size: 25px;font-weight: 500;color: #ff9400;" type="hidden" id="money" class="form-control" name="money" value="{{!empty($money)?$money:'' }}">
                                                         <span><span style="font-size: 25px;font-weight: 500;color: #ff9400;">{{!empty($moneyConvert)?$moneyConvert:'' }}</span> VND</span>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="form-wrapper col-md-6">
-                                                        <label for="">Họ và tên bệnh nhân <span class="request_star">*</span></label>
-                                                        <input placeholder="Nhập tên..." id="name" type="text" class="form-control" name="name" value="" autofocus>
+                                                <div class="row mt-3">
+                                                    <div class="form-input col-md-6">
+                                                        <input type="text" class="form-control required" placeholder="Họ và tên bệnh nhân..." name="uname" id="uname" oninput="inValid(this.id)">
+                                                        <i class="fa fa-user uname-icon"></i>
+                                                        <span class="message-error uname-error">Họ và tên bệnh nhân không được để trống!</span>
                                                     </div>
-                                                    <div class="form-wrapper col-md-6">
-                                                        <label for="">Số điện thoại <span class="request_star">*</span></label>
-                                                        <input placeholder="Số điện thoại..." id="phone" type="phone" class="form-control" name="phone" value="">
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <!-- <div class="form-wrapper col-md-4">
-                                                        <label for="">Số tiền khám <span class="request_star">*</span></label>
-                                                        <input placeholder="Nhập số tiền..." id="money" type="text" class="form-control" name="money" value="">
-                                                    </div> -->
-                                                    <div class="form-wrapper col-md-6">
-                                                        <label for="">Số bảo hiểm y tế</label>
-                                                        <input placeholder="Nhập bảo hiểm y tế..." id="code_insurance" type="text" class="form-control" name="code_insurance" value="">
-                                                    </div>
-                                                    <div class="form-wrapper col-md-6">
-                                                        <label for="">Giới tính <span class="request_star">*</span></label>
-                                                        <input type="radio" value="1" name="sex" id="sex" />  <span style="padding-left:5px" >Nam</span>&emsp;
-                                                        <input  type="radio" value="2" name="sex" id="sex"  /> <span style="padding-left:5px" >Nữ</span>
+                                                    <div class="form-input col-md-6">
+                                                        <input type="text" class="form-control required" placeholder="Số điện thoại..." name="phone" id="phone" oninput="inValid(this.id)">
+                                                        <i class="fas fa-phone phone-icon"></i>
+                                                        <span class="message-error phone-error">Số điện thoại không được để trống!</span>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="form-wrapper col-md-6">
-                                                        <label for="">Địa chỉ Email</label>
-                                                        <input placeholder="Nhập email..." id="email" type="email" class="form-control" name="email" value="">
+                                                <div class="row mt-3">
+                                                    <div class="form-input col-md-6">
+                                                        <input type="text" class="form-control required" placeholder="Số bảo hiểm y tế..." name="code_insurance" id="code_insurance" oninput="inValid(this.id)">
+                                                        <i class="fas fa-book-medical code_insurance-icon"></i>
+                                                        <span class="message-error code_insurance-error">Số bảo hiểm y tế không được để trống!</span>
                                                     </div>
                                                     <div class="form-wrapper col-md-6">
-                                                        <label for="">Ngày sinh <span class="request_star">*</span></label>
-                                                        <input placeholder="Số điện thoại..." id="date_of_brith" type="date" class="form-control" name="date_of_brith" value="">
+                                                        Giới tính <span class="request_star">*</span>
+                                                        <input type="radio" value="1" name="sex" id="sex" /> <span style="padding-left:5px">Nam</span>&emsp;
+                                                        <input type="radio" value="2" name="sex" id="sex" /> <span style="padding-left:5px">Nữ</span>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="form-wrapper col-md-4">
-                                                        <label for="">Tỉnh thành <span class="request_star">*</span></label>
-                                                        <select onchange="JS_Schedule.getHuyen(this.value)"  class="form-control input-sm chzn-select" name="code_tinh" id="code_tinh">
+                                                <div class="row mt-3">
+                                                    <div class="form-input col-md-6">
+                                                        <input type="email" class="form-control" placeholder="Địa chỉ Email..." name="email" id="email"  oninput="inValid(this.id)">
+                                                        <i class="fas fa-envelope"></i>
+                                                    </div>
+                                                    <div class="form-input col-md-6">
+                                                        <input type="date" class="form-control required datepicker" placeholder="Ngày sinh..." name="date_of_brith" id="date_of_brith"  oninput="inValid(this.id)">
+                                                        <i class="fa fa-calendar-alt date_of_brith-icon"></i>
+                                                        <span class="message-error date_of_brith-error">Ngày sinh không được để trống!</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-3">
+                                                    <div class="form-input col-md-4">
+                                                        <select onchange="JS_Schedule.getHuyen(this.value)" class="form-control input-sm chzn-select" name="code_tinh" id="code_tinh">
                                                             <option value="">--Chọn tỉnh thành--</option>
-                                                            @foreach($tinh as $key => $value) 
-                                                               <option  value="{{$value->code_tinh}}">{{$value->name}}</option>
-                                                             @endforeach 
+                                                            @foreach($tinh as $key => $value)
+                                                            <option value="{{$value->code_tinh}}">{{$value->name}}</option>
+                                                            @endforeach
                                                         </select>
                                                     </div>
-                                                    <div id="iss" class="form-wrapper col-md-4">
-                                                        <label for="">Quận huyện <span class="request_star">*</span></label>
+                                                    <div id="iss" class="form-input col-md-4">
                                                         <select class="form-control input-sm chzn-select" name="code_huyen" id="code_huyen">
                                                             <option value="">--Chọn quận huyện--</option>
                                                         </select>
                                                     </div>
-                                                    <div id="iss_xa" class="form-wrapper col-md-4">
-                                                        <label for="">Phường xã <span class="request_star">*</span></label>
+                                                    <div id="iss_xa" class="form-input col-md-4">
                                                         <select class="form-control input-sm chzn-select" name="code_xa" id="code_xa">
                                                             <option value="">--Chọn phường xã--</option>
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="form-wrapper">
-                                                        <label for="">Địa chỉ chi tiết <span class="request_star">*</span></label>
-                                                        <input placeholder="Nhập địa chỉ chi tiết..." id="address" type="text" class="form-control" name="address" value="{{ old('birth') }}">
+                                                <div class="row mt-3">
+                                                    <div class="form-input col-md-12">
+                                                        <input type="text" class="form-control required" placeholder="Địa chỉ chi tiết..." name="address" id="address"  oninput="inValid(this.id)">
+                                                        <i class="fas fa-map-marker-alt address-icon"></i>
+                                                        <span class="message-error address-error">Địa chỉ chi tiết không được để trống!</span>
                                                     </div>
                                                 </div>
-                                                <!-- <div class="row">
-                                                    <div class="form-wrapper">
-                                                        <label for="">Xác thực OTP SMS <span class="request_star">*</span></label>
-                                                        <div class="col-md-12 " style="display:flex">
-                                                            <div class="col-md-3">
-                                                                <button type="button" onclick="JS_Schedule.getOtp()" class=" btn-primary" id="btn_register" style="background-color: #ffae17">
-                                                                    {{ __('Lấy OTP SMS') }}
-                                                                </button>
-                                                            </div>
-                                                            <div class="col-md-9" style="padding-left:15px">
-                                                                <input placeholder="Nhập mã OTP..." id="otp" type="text" class="form-control" name="otp" value="{{ old('otp') }}">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> -->
-                                                <div class="form-group row">
-                                                    <div class="col-md-6">
-                                                        <label for="">Mã cộng tác viên</label>
+                                                <div class="row mt-3">
+                                                    <div class="form-input col-md-6">
                                                         @if(isset($user_introduce_name))
                                                         <input style="color:red" disabled onchange="JS_Schedule.getUser()" placeholder="Mã nhân viên giới thiệu..." id="code_introduce" type="text" class="form-control" name="code_introduce" value="{{isset($user_introduce_id) ? $user_introduce_id : ''}}">
                                                         @else
-                                                        <input style="color:red"  onchange="JS_Schedule.getUser()" placeholder="Mã nhân viên giới thiệu..." id="code_introduce" type="text" class="form-control" name="code_introduce" value="{{isset($user_introduce_id) ? $user_introduce_id : ''}}">
+                                                        <input style="color:red" onchange="JS_Schedule.getUser()" placeholder="Mã nhân viên giới thiệu..." id="code_introduce" type="text" class="form-control" name="code_introduce" value="{{isset($user_introduce_id) ? $user_introduce_id : ''}}">
                                                         @endif
+                                                        <i class="fas fa-id-card code_introduce-icon"></i>
                                                     </div>
-                                                    <div class="col-md-6" id="iss">
-                                                        <label for="">Tên cộng tác viên</label>
-                                                        <input style="color:red" id="user_introduce_name" name="user_introduce_name" disabled placeholder="Tên nhân viên giới thiệu..."  type="text" class="form-control"  value="{{isset($user_introduce_name) ? $user_introduce_name : ''}}">
+                                                    <div class="form-input col-md-6" id="iss">
+                                                        <input style="color:red" id="user_introduce_name" name="user_introduce_name" disabled placeholder="Tên nhân viên giới thiệu..." type="text" class="form-control" value="{{isset($user_introduce_name) ? $user_introduce_name : ''}}">
+                                                        <i class="fa fa-user-cog user_introduce_name-icon"></i>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="form-wrapper">
-                                                        <label for="">Lý do khám <span class="request_star">*</span></label>
-                                                        <textarea name="reason" id="reason" class="form-control"  rows="4" cols="50"></textarea>
+                                                <div class="row mt-3">
+                                                    <div class="form-input">
+                                                        <textarea name="reason" id="reason" class="form-control" rows="4" cols="50" placeholder="Lý do khám..."></textarea>
+                                                        <i class="fas fa-keyboard reason-icon"></i>
                                                     </div>
                                                 </div>
                                                 <div class="pt-3 mb-3">
@@ -174,33 +221,54 @@
                                                 </div>
                                             </form>
                                         </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Start Banner Hero -->
                 </div>
+                <!-- Start Banner Hero -->
             </div>
         </div>
     </div>
+</div>
 <div class="modal fade" id="editmodal" role="dialog"></div>
 <div class="modal " id="addfile" role="dialog"></div>
 
 <div id="dialogconfirm"></div>
-    <!-- End Service -->
+<!-- End Service -->
 <script type="text/javascript" src="{{ URL::asset('dist/js/backend/client/JS_Facilities.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('dist/js/backend/client/JS_Schedule.js') }}"></script>
 <script src='../assets/js/jquery.js'></script>
 <script type="text/javascript">
+    function inValid(id){
+        console.log(id);
+        if($("#" + id).val() != ''){
+            $('.' + id + '-error').css("display", "none");
+            $('.' + id + '-icon').removeClass("error-icon");
+        }
+    }
+    $("#frmSendSchedule div.form-input").each(function(key, value){
+        $(this,'input').focusout(function(){
+            if($(this).find('input').hasClass('required') && $(this).find('input').val() == ''){
+                $(this).find('.message-error').css("display", "block");
+                $(this).find('input').addClass('error-input');
+                $(this).find('i').addClass('error-icon');
+            }else if($(this).find('textarea').hasClass('required') && $(this).find('textarea').val() == ''){
+                $(this).find('.message-error').css("display", "block");
+                $(this).find('input').addClass('error-input');
+                $(this).find('i').addClass('error-icon');
+            }
+        });
+    });
+
     var baseUrl = "{{ url('') }}";
     var JS_Schedule = new JS_Schedule(baseUrl, 'client', 'schedule');
     $(document).ready(function($) {
         JS_Schedule.loadIndex(baseUrl);
     })
 </script>
-<!-- <script type="text/javascript" src="{{ URL::asset('dist\js\backend\pages\JS_System_Security.js') }}"></script>
+<!-- <script type="text/javascript" src="{{ URL::asset('dist/js/backend/pages/JS_System_Security.js') }}"></script>
 <script>
       var JS_System_Security = new JS_System_Security();
           $(document).ready(function($) {
