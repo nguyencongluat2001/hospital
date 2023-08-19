@@ -146,6 +146,7 @@ Route::prefix('/client')->group(function () {
             Route::get('/list_Indications', [AppointmentAtHomeController::class,'list_Indications']);
             Route::get('/loadList_Indications', [AppointmentAtHomeController::class,'loadList_Indications']);
             Route::get('/showDetail', [AppointmentAtHomeController::class,'showDetail']);
+            Route::get('/pdf', [AppointmentAtHomeController::class,'pdf']);
 
 
 

@@ -52,7 +52,6 @@
                             <input disabled type="text" class="form-control" value="{{!empty($datas['code_patient']) ? $datas['code_patient'] : ''}}">
                         </div>
                     </div>
-                    <br>
                     <div class="row">
                         <div class="form-wrapper col-md-4">
                             <label for="">Ngày sinh</label>
