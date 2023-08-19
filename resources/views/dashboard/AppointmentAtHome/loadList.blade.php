@@ -31,7 +31,9 @@
                 <td align="center"><b>Số điện thoại</b></td>
                 <td align="center"><b>CTV chỉ định</b></td>
                 <td align="center"><b>Trạng thái</b></td>
+                @if($_SESSION['role'] == 'ADMIN')
                 <td align="center"><b>Phê duyệt</b></td>
+                @endif
             </tr>
         </thead>
         <tbody id="body_data">
@@ -57,11 +59,13 @@
                                 <span class="custom-control-indicator p-0 m-0" onclick="JS_AppointmentAtHome.changeStatusAppointmentAtHome('{{$id}}')"></span>
                             </label>
                         </td>
+                        @if($_SESSION['role'] == 'ADMIN')
                         <td style="width:5% ;white-space: inherit;vertical-align: middle;" align="center"> <br>
                             <button onclick="JS_AppointmentAtHome.showDetail('{{$id}}')" class="btn btn-light"  type="button">
                                 <i style="color:#00740a" class="far fa-eye"></i>
                             </button>
                         </td>
+                        @endif
                     </tr>
                 @endforeach
             @endif
