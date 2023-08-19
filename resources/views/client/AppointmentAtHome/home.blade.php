@@ -357,7 +357,7 @@
                                                 </div>
                                                 <div class="row mt-3">
                                                     <div class="form-input col-md-12 padding-style">
-                                                        <textarea class="form-control required padding-style" placeholder="Triệu chứng lâm sàng ..." name="reason" id="reason" oninput="inValid(this.id)"rows="4" cols="50"></textarea>
+                                                        <textarea style="height:70px" class="form-control required padding-style" placeholder="Triệu chứng lâm sàng ..." name="reason" id="reason" oninput="inValid(this.id)"rows="4" cols="50"></textarea>
                                                         <i class="fas fa-comment-dots uname-icon padding-style"></i>
                                                         <span class="message-error uname-error">Triệu chứng lâm sàng không được để trống!</span>
                                                     </div>
