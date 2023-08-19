@@ -54,6 +54,17 @@
                     </div>
                     <br>
                     <div class="row">
+                        <div class="form-wrapper col-md-4">
+                            <label for="">Ngày sinh</label>
+                            <input disabled type="text" class="form-control" value="{{!empty($datas['date_birthday']) ? $datas['date_birthday'] : ''}}" autofocus>
+                        </div>
+                        <div class="form-wrapper col-md-4">
+                            <label for="">Mã bác sĩ</label>
+                            <input disabled type="text" class="form-control" value="{{!empty($datas['code_doctor']) ? $datas['code_doctor'] : ''}}">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
                         <div class="form-wrapper col-md-12">
                             <label for="">Chỉ số xét nghiệm</label> <br>
                         </div>
@@ -100,7 +111,7 @@
                     </div>
                     <div class="row">
                         <div class="form-wrapper">
-                            <label for="">Nội dung</label>
+                            <label for="">Triệu chứng lâm sàng</label>
                             <textarea disabled name="reason" id="reason" class="form-control"  rows="3" cols="30">{{!empty($datas['reason']) ? $datas['reason'] : ''}}</textarea>
                         </div>
                     </div>

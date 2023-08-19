@@ -57,6 +57,7 @@ class AppointmentAtHomeService extends Service
                 'date_birthday'=> !empty($input['date_birthday'])?$input['date_birthday']:'',
                 'created_at' => date("Y/m/d"),
                 'update_at' => date("Y/m/d")
+                
             ];
             if(!empty($_SESSION['role'])){
                 $param['code_ctv'] = $_SESSION['code'];
@@ -85,7 +86,8 @@ class AppointmentAtHomeService extends Service
         $param = [
             'code' => isset($AppointmentAtHome['code'])?$AppointmentAtHome['code']:'', 
             'type' => isset($type['name'])?$type['name']:'', 
-            'type_at_home' => isset($AppointmentAtHome['type_at_home'])?$AppointmentAtHome['type_at_home']:'', 
+            'type_at_home' => isset($AppointmentAtHome['type_at_home'])?$AppointmentAtHome['type_at_home']:'',
+            'code_doctor' => isset($AppointmentAtHome['code_doctor'])?$AppointmentAtHome['code_doctor']:'',  
             'code_patient'=> isset($AppointmentAtHome['code_patient'])?$AppointmentAtHome['code_patient']:'', 
             'name' => isset($AppointmentAtHome['name'])?$AppointmentAtHome['name']:'', 
             'phone' => isset($AppointmentAtHome['phone'])?$AppointmentAtHome['phone']:'', 
@@ -93,6 +95,7 @@ class AppointmentAtHomeService extends Service
             'address' => isset($AppointmentAtHome['address'])?$AppointmentAtHome['address']:'', 
             'money' => $totals, 
             'reason' => isset($AppointmentAtHome['reason'])?$AppointmentAtHome['reason']:'', 
+            'date_birthday' => isset($AppointmentAtHome['date_birthday'])?date('d-m-Y',strtotime($AppointmentAtHome['date_birthday'])):'', 
             'date_sampling' => isset($AppointmentAtHome['date_sampling'])?date('d-m-Y',strtotime($AppointmentAtHome['date_sampling'])):'', 
             'hour_sampling' => isset($AppointmentAtHome['hour_sampling'])?$AppointmentAtHome['hour_sampling']:'', 
         ];
