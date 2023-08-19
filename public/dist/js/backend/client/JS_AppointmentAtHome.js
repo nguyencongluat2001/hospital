@@ -211,7 +211,7 @@ JS_AppointmentAtHome.prototype.getPrice = function (code_blood) {
             $("#price").html(html);
             var htmls = `<div id="infor" class="form-wrapper col-md-4">`
             htmls += `<label style="width: 150px;" for="">Gồm `+ arrResult.data.count +` chỉ số</label>`
-            htmls += `<button onclick="JS_AppointmentAtHome.showInfor('`+ arrResult.data.code_blood +`')" type="button" style="width: 120px;display: inline-block;" class="btn-warning"><i class="fas fa-hand-point-right"></i> Chi tiết</button>`
+            htmls += `<button onclick="JS_AppointmentAtHome.showInfor('`+ arrResult.data.code_blood +`')" type="button" style="width: 120px;" class="btn-warning"><i class="fas fa-hand-point-right"></i>&nbsp; Chi tiết</button>`
             htmls += `</div">`
             $("#infor").html(htmls);
         }

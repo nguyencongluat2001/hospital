@@ -302,14 +302,14 @@
                                                     </div>
                                                     <div id="infor" class="form-wrapper col-md-3">
                                                         <label for="">Gồm {{$count}} chỉ số</label>
-                                                        <button onclick="JS_AppointmentAtHome.showInfor('{{$code_blood}}')" type="button" style="display: inline-block;" class="btn-warning"><i class="fas fa-hand-point-right"></i> Chi tiết</button>
+                                                        <button onclick="JS_AppointmentAtHome.showInfor('{{$code_blood}}')" type="button" style="width: 120px;" class="btn-warning"><i class="fas fa-hand-point-right"></i> &nbsp;Chi tiết</button>
                                                     </div>
                                                 </div>
                                                 @endif
                                                 <div class="row mt-3">
                                                     <div class="form-input col-md-6 padding-style">
-                                                        <select class="form-control input-sm chzn-select required" name="hour_sampling" id="hour_sampling">
-                                                            <option value=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chọn giờ lấy mẫu  </option>
+                                                        <select style="color:#757e87" class="form-control input-sm chzn-select required" name="hour_sampling" id="hour_sampling">
+                                                            <option  value=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chọn giờ lấy mẫu  </option>
                                                             <option value="05h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;05 giờ 30 phút</option>
                                                             <option value="06h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;06 giờ 00 phút</option>
                                                             <option value="06h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;06 giờ 30 phút</option>
