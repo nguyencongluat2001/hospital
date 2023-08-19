@@ -16,6 +16,7 @@ use Modules\System\Dashboard\Specialty\Models\UnitsModel;
 use Modules\System\Dashboard\Specialty\Services\SpecialtyService;
 use Modules\System\Dashboard\BloodTest\Services\BloodTestService;
 use Modules\System\Dashboard\BloodTest\Models\PriceTestModel;
+use PDF;
 /**
  * dịch vụ lấy mẫu xet nghiệm , truyền dịch tại nhà
  *
@@ -414,5 +415,22 @@ class AppointmentAtHomeController extends Controller
         $datas['type_xetnghiem'] =  $this->BloodTestService->where('sex',1)->orWhere('sex',2)->get()->toArray();
         // dd($datas);
         return view('client.AppointmentAtHome.Infusion.home',$datas);
+    }
+
+    /**
+     * Xuất lịch PDF
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function pdf(Request $request)
+    {
+        $input = $request->all();
+        $input['id'] = 'dc8413ff-7c87-4bab-a0ce-772ee476f21d';
+        // $data = ['name' => 'tienduong'];
+        $data = $this->AppointmentAtHomeService->showDetail($input); 	
+    	$pdf = PDF::loadView('client.AppointmentAtHome.invoice',  compact('data'));
+    		return $pdf->download('invoice.pdf');
     }
 }
