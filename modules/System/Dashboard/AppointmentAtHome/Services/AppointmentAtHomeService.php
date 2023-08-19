@@ -51,9 +51,12 @@ class AppointmentAtHomeService extends Service
     {
         $AppointmentAtHome = $this->repository->where('id', $input['id'])->first();
         // dd($AppointmentAtHome);
-        $expl = explode(',',$AppointmentAtHome['code_indications']);
+        if($AppointmentAtHome['code_indications'] == '' || $AppointmentAtHome['code_indications'] == null){
+            $expl = explode(',',$AppointmentAtHome['type']);
+        }else{
+            $expl = explode(',',$AppointmentAtHome['code_indications']);
+        }
         // $type = $this->BloodTestService->where('code',$AppointmentAtHome['type'])->first();
-       
         $total = 0;
         $price = PriceTestModel::whereIn('code_blood',$expl)->get()->toArray();
         $totals = number_format($total,0, '', ',');
@@ -73,7 +76,7 @@ class AppointmentAtHomeService extends Service
         ];
         $data['datas'] = $param;
         $data['price'] = $price;
-    
+        dd($data);
         return $data;
     }
 }
