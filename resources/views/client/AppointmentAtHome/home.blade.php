@@ -225,7 +225,7 @@
                                                         <!-- <i class="fas fa-calendar-alt"></i> -->
                                                         <span class="message-error uname-error">Ngày sinh không được để trống!</span>
                                                     </div>
-                                                    <div class="form-input col-md-6">
+                                                    <div class="form-input col-md-6 padding-style">
                                                         <input type="radio" value="1" name="sex" id="sex" />  <span style="padding-left:5px" >Nam</span>&emsp;
                                                         <input  type="radio" value="2" name="sex" id="sex"  /> <span style="padding-left:5px" >Nữ</span>
                                                         <span class="message-error phone-error">Giới tính không được để trống!</span>
