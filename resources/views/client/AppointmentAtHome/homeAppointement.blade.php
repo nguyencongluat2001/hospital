@@ -24,7 +24,7 @@
 }
 #scroll {
   position: relative;
-  width: 80%;
+  width: 100%;
   margin: auto;
   /* border: solid black 2px; */
   overflow-x: scroll;
