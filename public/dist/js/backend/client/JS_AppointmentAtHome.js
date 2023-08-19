@@ -206,7 +206,7 @@ JS_AppointmentAtHome.prototype.getPrice = function (code_blood) {
         data: data,
         success: function (arrResult) {
 
-            var html = `<input id="price" disabled type="text" class="form-control" value="`+ arrResult.data.total +` VND" autofocus>`
+            var html = `<input id="money" disabled type="text" class="form-control" value="`+ arrResult.data.total +` VND" autofocus>`
             html += `<input type="hidden" class="form-control" id="money" name="money" value="`+ arrResult.data.money +`" autofocus>`
 
             $("#price").html(html);
@@ -283,7 +283,6 @@ JS_AppointmentAtHome.prototype.showPack = function () {
     });
     // var data = $(oForm).serialize();
     var data = '&code_indications=' + code_indications;
-    console.log(data);
     $.ajax({
         url: url,
         type: "GET",

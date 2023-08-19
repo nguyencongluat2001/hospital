@@ -63,7 +63,6 @@ class AppointmentAtHomeService extends Service
             if(!empty($_SESSION['role'])){
                 $param['code_ctv'] = $_SESSION['code'];
             }
-            dd($param);
             $create = $this->create($param);
             DB::commit();
             return true;
