@@ -86,7 +86,7 @@ form {
   width: 100%;
   height: 40px;
   padding: 0 20px;
-  border-radius: 20px;
+  border-radius: 0.5rem;
   font-family: "Muli-Bold";
   background: none; }
   .form-control:focus {

@@ -25,6 +25,7 @@ JS_Schedule.prototype.alerMesage = function(nameMessage,icon,color){
  */
 JS_Schedule.prototype.loadIndex = function () {
     var myClass = this;
+    // $('.datepicker').datepicker();
     var oForm = 'form#frmHospital';
     NclLib.menuActive('.link-facilities');
     $('.chzn-select').chosen({ height: '100%', width: '100%' });
@@ -391,7 +392,7 @@ JS_Schedule.prototype.getMoney = function (codeSpecialty) {
         cache: true,
         data: data,
         success: function (arrResult) {
-            var htmls = '<label for="">Số tiền khám <span class="request_star">*</span></label>'
+            var htmls = '<span>Số tiền khám: </span>';
             htmls += `<input id="money" type="hidden" class="form-control" name="money" value="`+ arrResult.data.money +`">`
             htmls += `<span><span style="font-size: 25px;font-weight: 500;color: #ff9400;">`+ arrResult.data.moneyConvert +`</span> VND</span>`
             $("#moneys").html(htmls);
