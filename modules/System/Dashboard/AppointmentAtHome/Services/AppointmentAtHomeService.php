@@ -76,7 +76,6 @@ class AppointmentAtHomeService extends Service
         ];
         $data['datas'] = $param;
         $data['price'] = $price;
-        dd($data);
         return $data;
     }
 }
