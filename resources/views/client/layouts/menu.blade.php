@@ -7,19 +7,26 @@
 <!-- Header -->
  <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow" style="top:0;padding-top:0px !important;padding-bottom: 0px !important;background:#243649!important;position: fixed;width: 100%;z-index: 1000;">
         <div class="container d-flex justify-content-between align-items-center">
-            <a class="" style="width: 7%;" href="{{url('/')}}">
-                <!-- <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon text-white"><i class="fa fa-bars"></i></span>
-                </button> -->
+        <div style="background: #ffffff00;font-family: ui-monospace;width: 50px;color: #ffffff;height: 30px;margin: 0 !important;" 
+             data-bs-toggle="collapse" 
+            data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" 
+            aria-expanded="false" aria-label="Toggle navigation">
+                <!-- <span class="navbar-toggler-icon"></span> -->
+                <i class="fas fa-bars"></i>
+            </div>
+            <!-- <a class="" style="width: 7%;" href="{{url('/')}}">
                 <img class="card-img " src="../clients/img/logo.png" alt="Card image">
-            </a>
+            </a> -->
+            <div style="width:8%">
+            <img class="card-img " src="../clients/img/logo.png" alt="Card image">
+            </div>
+
             <a class="navbar-brand h1" href="{{ url('/') }}">
+            <!-- <img class="card-img " src="../clients/img/logo.png" alt="Card image"> -->
                 <!-- <i class='bx bx-buildings bx-sm text-dark'></i> -->
                 <span style="color: #ffbc00!important;" class="text-dark h5">Booking</span> <sup style="color:#32a5c2">46</sup>
             </a>
-            <button style="background: #ffea71" class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+           
 
             <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="navbar-toggler-success">
                 <div class="flex-fill mx-xl-2">

@@ -237,7 +237,7 @@
                                                 <div class="row mt-3">
                                                     <div class="form-input col-md-6 padding-style">
                                                         <input type="text" class="form-control required" placeholder="Mã bệnh nhân trên ống nghiệm..." name="code_patient" id="code_patient" oninput="inValid(this.id)">
-                                                        <i class="fa fa-code uname-icon padding-style"></i>
+                                                        <i class="fa fa-vial uname-icon padding-style"></i>
                                                         <span class="message-error uname-error">Mã bệnh nhân trên ống nghiệm không được để trống!</span>
                                                     </div>
                                                     <div class="form-input col-md-6 padding-style">
@@ -340,7 +340,7 @@
                                                             <option value="19h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;19 giờ 30 phút</option>
                                                             <option value="20h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20 giờ 00 phút</option>
                                                         </select>
-                                                        <i class="fa fa-calendar-alt uname-icon padding-style"></i>
+                                                        <i class="fa fa-hourglass-half uname-icon padding-style"></i>
                                                         <span class="message-error uname-error">Giờ lấy mẫu không được để trống!</span>
                                                     </div>
 
