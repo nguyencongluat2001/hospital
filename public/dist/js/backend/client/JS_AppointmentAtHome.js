@@ -299,7 +299,7 @@ JS_AppointmentAtHome.prototype.showPack = function () {
                     $(arrResult.data.chiso).each(function(index,el) {
                         html += `<tr>`
                             html += `<td>`
-                                html += `<span style="color: white;"> `+ el.code +` - ` + el.price + ` VND</span>`
+                                html += `<button onclick="JS_AppointmentAtHome.showInfor('`+ el.code +`')" type="button" style="display: inline-block;width:20%;padding:0px" class="btn-warning"><i class="fas fa-eye"></i></button> <span style="color: white;" > `+ el.code +` - ` + el.price + ` VND</span>`
                             html += `</td>`
                         html += `</tr>`
                     });
