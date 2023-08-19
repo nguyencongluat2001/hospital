@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::table('service_at_home', function (Blueprint $table) {
             // $table->string('code_indications')->nullable();
-            $table->string('code_doctor')->nullable();
-            $table->string('date_birthday')->nullable();
+            // $table->string('code_doctor')->nullable();
+            $table->string('money')->nullable();
         });
     }
 
