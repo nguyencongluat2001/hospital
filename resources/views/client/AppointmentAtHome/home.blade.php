@@ -13,9 +13,7 @@
     .show{
         display: block;
     }
-</style>
 
-<style>
       .scrollbar
     {
       margin-left: 30px;
@@ -81,6 +79,68 @@
       top: 0;
       background: #92241a;
     }
+
+    #frmSendSchedule{
+        width: 100%;
+    }
+    #carouselExampleIndicators input[type=text], input[type=email], input[type=password], input[type=date] {
+        padding: 12px 40px;
+        display: inline-block;
+        border: 1px solid #ccc;
+    }
+    #carouselExampleIndicators textarea{
+        padding: 5px 40px;
+        display: inline-block;
+        border: 1px solid #ccc;
+    }
+
+    /* Set a style for the buttons*/
+    #carouselExampleIndicators button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    /* Set a hover effect for the button*/
+    #carouselExampleIndicators button:hover {
+        opacity: 0.8;
+    }
+
+    /* Set extra style for the cancel button*/
+    #carouselExampleIndicators .container {
+        padding: 16px;
+    }
+
+    #carouselExampleIndicators .form-input {
+        position: relative;
+    }
+
+    #carouselExampleIndicators .form-input i {
+        position: absolute;
+        left: 24px;
+        top: 12px;
+        color: gray;
+    }
+    .message-error{
+        display: none;
+        color: red;
+    }
+    .error-input{
+        border: 1px solid red;
+    }
+    .error-icon{
+        color: red !important;
+    }
+    .error-input::placeholder{
+        color: red;
+    }
+    .padding-style{
+        padding-top:15px
+    }
 </style>
 <link rel="stylesheet" href="../clients/css/style.css">
     <!-- Start Banner Hero -->
@@ -129,7 +189,7 @@
                                                 <!-- <input type="hidden" id="code" name="code" value="{{ !empty($datas->code)?$datas->code:'' }}"> -->
                                                 <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
                                                 <input type="hidden" id="type_at_home" name="type_at_home" value="XET_NGHIEM">
-                                                <div class="row">
+                                                <!-- <div class="row">
                                                     <div class="form-wrapper col-md-6">
                                                         <label for="">Họ và tên <span class="request_star">*</span></label>
                                                         <input placeholder="Nhập tên..." id="name" type="text" class="form-control" name="name" value="" autofocus>
@@ -144,22 +204,50 @@
                                                         <input required placeholder="Nhập mã..." id="code_patient" type="code_patient" class="form-control" name="code_patient" value="">
                                                     </div>
                                                     @endif
-                                                </div>   
-                                                @if (isset($_SESSION['role']) && $_SESSION['role'] == 'CTV')
-                                                <div class="row">
-                                                    <div class="form-wrapper col-md-6">
-                                                        <label for="">Mã bác sĩ <span class="request_star">*</span></label>
-                                                        <input placeholder="Mã bác sĩ..." id="code_doctor" type="text" class="form-control" name="code_doctor" value="">
+                                                </div> -->
+                                                 <div class="row mt-3">
+                                                    <div class="form-input col-md-6 padding-style">
+                                                        <input type="text" class="form-control required" placeholder="Họ và tên bệnh nhân..." name="name" id="name" oninput="inValid(this.id)">
+                                                        <i class="fa fa-user uname-icon padding-style"></i>
+                                                        <span class="message-error uname-error">Họ và tên bệnh nhân không được để trống!</span>
                                                     </div>
-                                                    <div class="form-wrapper col-md-6">
-                                                        <label for="">Ngày sinh <span class="request_star">*</span></label>
-                                                        <input placeholder="Ngày sinh..." id="date_birthday" type="date" class="form-control" name="date_birthday" value="">
-                                                    </div>   
-                                                </div>              
+                                                    <div class="form-input col-md-6 padding-style">
+                                                        <input type="text" class="form-control required" placeholder="Số điện thoại..." name="phone" id="phone" oninput="inValid(this.id)">
+                                                        <i class="fas fa-phone phone-icon padding-style"></i>
+                                                        <span class="message-error phone-error">Số điện thoại không được để trống!</span>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="row mt-3">
+                                                    <div class="form-input col-md-6">
+                                                        <input type="date" class="form-control required" placeholder="Ngày sinh..." name="date_birthday" id="date_birthday" oninput="inValid(this.id)">
+                                                        <i class="fa fa-calendar-alt uname-icon"></i>
+                                                        <!-- <i class="fas fa-calendar-alt"></i> -->
+                                                        <span class="message-error uname-error">Ngày sinh không được để trống!</span>
+                                                    </div>
+                                                    <div class="form-input col-md-6">
+                                                        <input type="radio" value="1" name="sex" id="sex" />  <span style="padding-left:5px" >Nam</span>&emsp;
+                                                        <input  type="radio" value="2" name="sex" id="sex"  /> <span style="padding-left:5px" >Nữ</span>
+                                                        <span class="message-error phone-error">Giới tính không được để trống!</span>
+                                                    </div>
+                                                </div>
+                                                @if (isset($_SESSION['role']) && $_SESSION['role'] == 'CTV')
+                                                <div class="row mt-3">
+                                                    <div class="form-input col-md-6 padding-style">
+                                                        <input type="text" class="form-control required" placeholder="Mã bệnh nhân trên ống nghiệm..." name="code_patient" id="code_patient" oninput="inValid(this.id)">
+                                                        <i class="fa fa-code uname-icon padding-style"></i>
+                                                        <span class="message-error uname-error">Mã bệnh nhân trên ống nghiệm không được để trống!</span>
+                                                    </div>
+                                                    <div class="form-input col-md-6 padding-style">
+                                                        <input type="text" class="form-control required" placeholder="Mã bác sĩ..." name="code_doctor" id="code_doctor" oninput="inValid(this.id)">
+                                                        <i class="fa fa-user-nurse uname-icon padding-style"></i>
+                                                        <span class="message-error uname-error">Mã bác sĩ không được để trống!</span>
+                                                    </div>
+                                                </div>
                                                 <div class="form-wrapper col-md-12">
-                                                    <label for="">Loại xét nghiệm chỉ định</label>
+                                                    <!-- <label for="">Loại xét nghiệm chỉ định</label> -->
                                                     <div class="row">
-                                                        <div class="col-lg-4 mx-auto " style="display:flex">
+                                                        <div class="col-lg-6 mx-auto " style="display:flex">
                                                             <div class="input-group pt-2 box">
                                                                 <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg rounded-pill rounded" placeholder="Tìm kiếm gói - tên chỉ số" aria-label="Tìm kiếm gói - tên chỉ số">
                                                             </div>
@@ -191,20 +279,17 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div id="iss">
-
-                                                </div>
+                                                <div id="iss"></div>
                                                 @else
-
-                                                    <div class="form-wrapper col-md-12">
-                                                        <label for="">Loại xét nghiệm</label>
-                                                        <select onchange="JS_AppointmentAtHome.getPrice(this.value)" class="form-control input-sm chzn-select" name="code" id="code">
-                                                            <option value="">--Chọn loại--</option>
-                                                            @foreach($type_xetnghiem as $key => $values) 
-                                                                <option value="{{$values['code']}}" {{($values['code'] == $code) ? 'selected' : ''}}>{{$values['name']}}</option>
-                                                            @endforeach 
-                                                        </select>
-                                                    </div>
+                                                <div class="form-wrapper col-md-12 padding-style">
+                                                    <label for="">Loại xét nghiệm</label>
+                                                    <select onchange="JS_AppointmentAtHome.getPrice(this.value)" class="form-control input-sm chzn-select" name="code" id="code">
+                                                        <option value="">--Chọn loại--</option>
+                                                        @foreach($type_xetnghiem as $key => $values) 
+                                                            <option value="{{$values['code']}}" {{($values['code'] == $code) ? 'selected' : ''}}>{{$values['name']}}</option>
+                                                        @endforeach 
+                                                    </select>
+                                                </div>
                                                 <div class="row">
                                                     <div class="form-wrapper col-md-4">
                                                         <label for="">Giá gói khám <span class="request_star">*</span></label>
@@ -217,22 +302,12 @@
                                                         <label for="">Gồm {{$count}} chỉ số</label>
                                                         <button onclick="JS_AppointmentAtHome.showInfor('{{$code_blood}}')" type="button" style="display: inline-block;" class="btn-warning"><i class="fas fa-hand-point-right"></i> Chi tiết</button>
                                                     </div>
-                                                    <div class="form-wrapper col-md-4">
-                                                        <label for="">Giới tính <span class="request_star">*</span></label>
-                                                        <input type="radio" value="1" name="sex" id="sex" />  <span style="padding-left:5px" >Nam</span>&emsp;
-                                                        <input  type="radio" value="2" name="sex" id="sex"  /> <span style="padding-left:5px" >Nữ</span>
-                                                    </div>
                                                 </div>
                                                 @endif
-                                                <div class="row">
-                                                    <div class="form-wrapper col-md-6">
-                                                            <label for="">Ngày lấy mẫu<span class="request_star">*</span></label>
-                                                        <input  id="date_sampling" type="date" class="form-control" name="date_sampling" value="">
-                                                    </div>
-                                                    <div class="form-wrapper col-md-6">
-                                                            <label for="">Giờ lấy mẫu<span class="request_star">*</span></label>
-                                                        <select class="form-control input-sm chzn-select" name="hour_sampling" id="hour_sampling">
-                                                            <option value="">--Chọn giờ--</option>
+                                                <div class="row mt-3">
+                                                    <div class="form-input col-md-6 padding-style">
+                                                        <select class="form-control input-sm chzn-select required" name="hour_sampling" id="hour_sampling">
+                                                            <option value=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chọn giờ lấy mẫu  </option>
                                                             <option value="05h30">05 giờ 30 phút</option>
                                                             <option value="06h00">06 giờ 00 phút</option>
                                                             <option value="06h30">06 giờ 30 phút</option>
@@ -263,18 +338,28 @@
                                                             <option value="19h30">19 giờ 30 phút</option>
                                                             <option value="20h00">20 giờ 00 phút</option>
                                                         </select>
+                                                        <i class="fa fa-calendar-alt uname-icon padding-style"></i>
+                                                        <span class="message-error uname-error">Giờ lấy mẫu không được để trống!</span>
+                                                    </div>
+
+                                                    <div class="form-input col-md-6 padding-style">
+                                                        <input type="date" class="form-control required" placeholder="Ngày lấy..." name="date_sampling" id="date_sampling" oninput="inValid(this.id)">
+                                                        <i class="fa fa-calendar-alt uname-icon padding-style"></i>
+                                                        <span class="message-error uname-error">Ngày lấy không được để trống!</span>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="form-wrapper">
-                                                        <label for="">Địa chỉ chi tiết <span class="request_star">*</span></label>
-                                                        <input placeholder="Nhập địa chỉ chi tiết..." id="address" type="text" class="form-control" name="address" value="{{ old('birth') }}">
+                                                <div class="row mt-3">
+                                                    <div class="form-input col-md-12 padding-style">
+                                                        <input type="text" class="form-control required" placeholder="Địa chỉ chi tiết..." name="address" id="address" oninput="inValid(this.id)">
+                                                        <i class="fa fa-map-marker-alt uname-icon padding-style"></i>
+                                                        <span class="message-error uname-error">Địa chỉ chi tiết không được để trống!</span>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="form-wrapper">
-                                                        <label for="">Nội dung<span class="request_star">*</span></label>
-                                                        <textarea style="height: 100px;" name="reason" id="reason" class="form-control"  rows="4" cols="50"></textarea>
+                                                <div class="row mt-3">
+                                                    <div class="form-input col-md-12 padding-style">
+                                                        <textarea class="form-control required padding-style" placeholder="Triệu chứng lâm sàng ..." name="reason" id="reason" oninput="inValid(this.id)"rows="4" cols="50"></textarea>
+                                                        <i class="fas fa-comment-dots uname-icon padding-style"></i>
+                                                        <span class="message-error uname-error">Triệu chứng lâm sàng không được để trống!</span>
                                                     </div>
                                                 </div>
                                                 <!-- // -->
@@ -362,6 +447,26 @@
 <script type="text/javascript" src="{{ URL::asset('dist/js/backend/client/JS_AppointmentAtHome.js') }}"></script>
 <script src='../assets/js/jquery.js'></script>
 <script type="text/javascript">
+    function inValid(id){
+        console.log(id);
+        if($("#" + id).val() != ''){
+            $('.' + id + '-error').css("display", "none");
+            $('.' + id + '-icon').removeClass("error-icon");
+        }
+    }
+    $("#frmSendSchedule div.form-input").each(function(key, value){
+        $(this,'input').focusout(function(){
+            if($(this).find('input').hasClass('required') && $(this).find('input').val() == ''){
+                $(this).find('.message-error').css("display", "block");
+                $(this).find('input').addClass('error-input');
+                $(this).find('i').addClass('error-icon');
+            }else if($(this).find('textarea').hasClass('required') && $(this).find('textarea').val() == ''){
+                $(this).find('.message-error').css("display", "block");
+                $(this).find('input').addClass('error-input');
+                $(this).find('i').addClass('error-icon');
+            }
+        });
+    });
     var baseUrl = "{{ url('') }}";
     var JS_AppointmentAtHome = new JS_AppointmentAtHome(baseUrl, 'client', 'appointmentathome');
     $(document).ready(function($) {
