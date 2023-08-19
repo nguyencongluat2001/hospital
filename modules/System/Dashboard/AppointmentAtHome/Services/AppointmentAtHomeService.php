@@ -59,7 +59,9 @@ class AppointmentAtHomeService extends Service
         // $type = $this->BloodTestService->where('code',$AppointmentAtHome['type'])->first();
         $total = 0;
         $price = PriceTestModel::whereIn('code_blood',$expl)->get()->toArray();
-        $totals = number_format($total,0, '', ',');
+        if($AppointmentAtHome['money'] >= 0){
+            $totals = number_format($AppointmentAtHome['money'],0, '', ',');
+        }
         $param = [
             'code' => isset($AppointmentAtHome['code'])?$AppointmentAtHome['code']:'', 
             'type' => isset($type['name'])?$type['name']:'', 
@@ -69,13 +71,21 @@ class AppointmentAtHomeService extends Service
             'phone' => isset($AppointmentAtHome['phone'])?$AppointmentAtHome['phone']:'', 
             'sex' => isset($AppointmentAtHome['sex'])?$AppointmentAtHome['sex']:'', 
             'address' => isset($AppointmentAtHome['address'])?$AppointmentAtHome['address']:'', 
-            'money' => $totals, 
+            'money' => isset($totals)?$totals:'', 
             'reason' => isset($AppointmentAtHome['reason'])?$AppointmentAtHome['reason']:'', 
             'date_sampling' => isset($AppointmentAtHome['date_sampling'])?date('d-m-Y',strtotime($AppointmentAtHome['date_sampling'])):'', 
             'hour_sampling' => isset($AppointmentAtHome['hour_sampling'])?$AppointmentAtHome['hour_sampling']:'', 
         ];
         $data['datas'] = $param;
-        $data['price'] = $price;
+        $price_convert=[];
+        foreach( $price as $val){
+            $price_convert[]= [
+                'name' => isset($val['name'])?$val['name']:'', 
+                'code' => isset($val['code'])?$val['code']:'', 
+                'price' => isset($val['price'])?number_format($val['price'],0, '', ','):'', 
+            ];
+        }
+        $data['price'] =  $price_convert;
         return $data;
     }
 }

@@ -59,6 +59,7 @@
                         </div>
                     </div>
                     <table id="myTable" class="table  table-bordered table-striped table-condensed dataTable no-footer">
+                        <span>Tổng: <span style="color:#ff8900;font-weight: 600;">{{ isset($datas['money']) ? $datas['money'] : '' }}</span> VND</span>
                         <thead>
                             <tr>
                                 <td align="center"><b>Tên chỉ số</b></td>
