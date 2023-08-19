@@ -296,7 +296,7 @@
                                                     <div class="form-wrapper col-md-4">
                                                         <label for="">Giá gói khám <span class="request_star">*</span></label>
                                                         <div id="price">
-                                                             <input  type="hidden" class="form-control" id="money" price="money" value="{{$money}}" autofocus> 
+                                                             <input  type="hidden" class="form-control" id="money" name="money" value="{{$money}}" autofocus> 
                                                              <input  disabled type="text" class="form-control" value="{{$total}} VND" autofocus> 
                                                         </div>
                                                     </div>

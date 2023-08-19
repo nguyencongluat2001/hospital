@@ -289,7 +289,6 @@ JS_AppointmentAtHome.prototype.showPack = function () {
         // cache: true,
         data: data,
         success: function (arrResult) {
-            console.log(arrResult)
             // var  html = `<br>`
             var html = `&nbsp; Tổng đã chọn: <span style="font-weight: 600;color: #ff6400;">`+ arrResult.data.total +` </span><span style="font-size:10px">VND </span>`
             html += `<input id="money" value="`+ arrResult.data.total_number +`" name="money" type="hidden">`
