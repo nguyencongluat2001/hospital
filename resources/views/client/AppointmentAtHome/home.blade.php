@@ -350,7 +350,7 @@
                                                 </div>
                                                 <div class="row mt-3">
                                                     <div class="form-input col-md-12 padding-style">
-                                                        <input type="text" class="form-control required" placeholder="Địa chỉ chi tiết..." name="address" id="address" oninput="inValid(this.id)">
+                                                        <input style="height:40px" type="text" class="form-control required" placeholder="Địa chỉ chi tiết..." name="address" id="address" oninput="inValid(this.id)">
                                                         <i class="fa fa-map-marker-alt uname-icon padding-style"></i>
                                                         <span class="message-error uname-error">Địa chỉ chi tiết không được để trống!</span>
                                                     </div>
