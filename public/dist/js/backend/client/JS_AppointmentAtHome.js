@@ -207,7 +207,7 @@ JS_AppointmentAtHome.prototype.getPrice = function (code_blood) {
         success: function (arrResult) {
 
             var html = `<input id="price" disabled type="text" class="form-control" value="`+ arrResult.data.total +` VND" autofocus>`
-            html += `<input disabled type="hidden" class="form-control" id="money" name="money" value="`+ arrResult.data.money +` VND" autofocus>`
+            html += `<input type="hidden" class="form-control" id="money" name="money" value="`+ arrResult.data.money +`" autofocus>`
 
             $("#price").html(html);
             var htmls = `<div id="infor" class="form-wrapper col-md-4">`
