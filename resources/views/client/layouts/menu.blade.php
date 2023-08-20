@@ -4,16 +4,16 @@
         padding-left: 10px !important;
     }
     .tooltip-text {
-  visibility: hidden;
-  position: absolute;
-  z-index: 2;
-  width: 100px;
-  color: white;
-  font-size: 12px;
-  background-color: #192733;
-  border-radius: 10px;
-  padding: 10px 15px 10px 15px;
-}
+        visibility: hidden;
+        position: absolute;
+        z-index: 2;
+        width: 100px;
+        color: white;
+        font-size: 12px;
+        background-color: #192733;
+        border-radius: 10px;
+        padding: 10px 15px 10px 0px;
+    }
 
 .tooltip-text::before {
   content: "";
@@ -34,7 +34,7 @@
 
 #top::before {
   top: 80%;
-  left: 45%;
+  left: 45%;-
 }
 
 /* #bottom {
@@ -141,9 +141,10 @@
                     @guest
                         @if (Route::has('login'))
                             <div class="hover-text">
-                                <a style="color:#ff9d00" class="nav-link " href="{{ route('login') }}"><i class="fas fa-sign-in-alt fa-2x"></i></a>
-                                 <span class="tooltip-text" id="top">Đăng nhập</span>
+                                <a style="color:#ffffff" class="nav-link " href="{{ route('login') }}"><i class="fas fa-sign-in-alt fa-1x"></i></a>
                             </div>
+                            <!-- <span class="tooltip-text" id="top">Đăng nhập</span> -->
+
                         @endif
 
                         <!-- @if (Route::has('register'))
