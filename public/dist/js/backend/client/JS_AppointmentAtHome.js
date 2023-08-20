@@ -115,6 +115,14 @@ JS_AppointmentAtHome.prototype.add = function (oForm) {
         NclLib.alerMesageClient(nameMessage,icon,color,background);
         return false;
     }
+    if ($("#code_patient").val() == '') {
+        var nameMessage = 'Mã bệnh nhân trên ống nghiệm không được để trống!';
+        var icon = 'warning';
+        var color = '#ffd200';
+        var background = 'rgb(33 41 68)';
+        NclLib.alerMesageClient(nameMessage,icon,color,background);
+        return false;
+    }
     // if ($("#code").val() == '') {
     //     var nameMessage = 'Loại xét nghiệm không được để trống!';
     //     var icon = 'warning';
