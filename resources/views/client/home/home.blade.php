@@ -25,6 +25,31 @@
     background: #fff;
     box-shadow: 3px 3px 5px 0 rgba(0,0,0,0.5);
     }
+    .dropbtn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+.search-home{
+    width: 100%;
+    height: 45px;
+    border-radius: 10px !important;
+}
+.list-search{
+    position: fixed;
+    /* top: 0; */
+    left: 0;
+    width: 60%;
+    z-index: 9999;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: auto;
+    background: #fff;
+}
+
 </style>
 <!-- Start Banner Hero -->
 <div class="banner-wrapper bg-light">
@@ -45,28 +70,70 @@
                                 <span class="text-title-home anime-title-span">TẠI CÁC TUYẾN TRUNG ƯƠNG</span>
                             </div>
                         </center>
+
                         <!-- <span  class="text-title-home anime-text-titel"><center> ĐẶT LỊCH KHÁM NHANH <br>TẠI CÁC TUYẾN TRUNG ƯƠNG</center></span> -->
-                        <div class="banner-content col-lg-12 offset-2 col-8 m-lg-auto text-center pb-5 ">
-                            <div class="container">
+                        <div class="banner-content col-lg-8 offset-2 col-8 m-lg-auto text-center pb-5 ">
+                            
+                             <div class="container">
                                 <div class="row">
-                                    <div class="col-lg-4 mx-auto ">
-                                        <form action="#" method="get">
-                                        <div class="input-group pt-2 box">
+                                    <div class="col-lg-5 mx-auto ">
+                                        <!-- <form action="#" method="get"> -->
+                                        <!-- <div class="input-group pt-2 box"> -->
                                             <!-- <input style="background:#ffffffb5" type="text" class="input form-control form-control-lg rounded-pill rounded" placeholder="Từ khóa tìm kiếm...">
                                             <i class="fas fa-search"></i> -->
-                                            <select style="text-align: left;" class="form-control input-sm chzn-select " name="" id="">
+                                            <!-- <select style="text-align: left;" class="form-control input-sm chzn-select " name="" id="">
                                                 <option value="">Nhập từ khóa cần tìm kiếm...</option>
                                                 {{--@foreach($type_xetnghiem as $key => $values) 
                                                     <option value="{{$values['code']}}" {{($values['code'] == $code) ? 'selected' : ''}}>{{$values['name']}}</option>
                                                 @endforeach --}}
                                                 <option value="">Xét nghiệm vi chất trẻ nhỏ</option>
                                                 <option value="">Xét nghiệm gan</option>
-                                            </select>
-                                        </div>
-                                        </form>
+                                            </select> -->
+                                            <div class=" mx-auto " style="">
+                                                <div class=" pt-2 box">
+                                                    <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg" placeholder="Tìm kiếm từ khóa..." aria-label="Tìm kiếm từ khóa...">
+                                                </div>
+                                                <!-- <div class=" list-search"> -->
+                                                            <table id="myTable" class="table  table-bordered table-striped table-condensed dataTable no-footer" style=>
+                                                                <tbody id="body_data" style="background: #fdffff;">
+                                                                            <tr>
+                                                                                <td style="white-space: inherit;vertical-align: middle;" >
+                                                                                123
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td style="white-space: inherit;vertical-align: middle;" >
+                                                                                123
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td style="white-space: inherit;vertical-align: middle;" >
+                                                                                123
+                                                                                </td>
+                                                                            </tr>
+                                                                       {{-- @foreach ($type_chidinh as $key => $values)
+                                                                            <tr>
+                                                                                <!-- <td style="white-space: inherit;vertical-align: middle;" align="center"></td> -->
+                                                                                <td style="white-space: inherit;vertical-align: middle;" >
+                                                                                <input onclick="JS_AppointmentAtHome.showPack('{{$code_blood}}')" type="checkbox" value="{{ isset($values['code']) ? $values['code'] : '' }}" name="code_indications" id="code_indications"/> 
+                                                                                <span style="color:red">{{ isset($values['code']) ? $values['code'] : '' }}</span> - <span style="color:#ff8a06">{{ isset($values['price']) ? $values['price'] : '' }}  </span> <span style="font-size:10px">VND </span>  <br>
+                                                                                <span style="font-size:12px"> ( {{ isset($values['name']) ? $values['name'] : '' }} )</span> 
+                                                                                </td>
+                                                                            </tr>
+                                                                        @endforeach--}}
+                                                                </tbody>
+                                                            </table>
+                                            <!-- </div> -->
+                                            </div>
+                                            
+                                                 
+                                           
+                                        <!-- </div> -->
+                                        <!-- </form> -->
                                     </div>
                                 </div>
                             </div>
+                           
                         </div>
                     </section>
                 </div>
@@ -339,6 +406,26 @@
     </div>
     </div>
 </section>
+<script>
+    function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
 <!-- End Service -->
 <script type="text/javascript" src="{{ URL::asset('dist/js/backend/client/JS_Home.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('dist/js/backend/client/JS_Facilities.js') }}"></script>
@@ -350,7 +437,6 @@
         JS_Home.loadIndex(baseUrl);
     })
 </script>
-
 <!-- <script type="text/javascript" src="{{ URL::asset('dist\js\backend\pages\JS_System_Security.js') }}"></script>
 <script>
       var JS_System_Security = new JS_System_Security();

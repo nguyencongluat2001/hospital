@@ -345,8 +345,9 @@
                                                     </div>
 
                                                     <div class="form-input col-md-6 padding-style">
-                                                        <input onfocus="(this.type='date')"
-                                                            onblur="(this.type='text')" type="text" class="form-control required" placeholder="Ngày lấy mẫu..." name="date_sampling" id="date_sampling" oninput="inValid(this.id)">
+                                                    <!-- onfocus="(this.type='date')"
+                                                            onblur="(this.type='text')" -->
+                                                        <input  type="date" class="form-control required" placeholder="Ngày lấy mẫu..." name="date_sampling" id="date_sampling" oninput="inValid(this.id)">
                                                         <i class="fa fa-calendar-alt uname-icon padding-style"></i>
                                                         <span class="message-error uname-error">Ngày lấy mẫu không được để trống!</span>
                                                     </div>

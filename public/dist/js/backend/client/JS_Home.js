@@ -203,3 +203,15 @@ JS_Home.prototype.inFor = function (id) {
         }
     });
 }
+/**
+ * Load màn hình chỉ số top
+ *
+ * @param oForm (tên form)
+ *
+ * @return void
+ */
+JS_Home.prototype.getSearch = function (url) {
+    console.log(url)
+    var myClass = this;
+    // window.location.replace(myClass.baseUrl+'/searchschedule');
+}
