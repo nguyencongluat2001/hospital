@@ -93,7 +93,7 @@
                                                 <div class=" pt-2 box">
                                                     <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg" placeholder="Tìm kiếm từ khóa..." aria-label="Tìm kiếm từ khóa...">
                                                 </div>
-                                                <!-- <div class=" list-search"> -->
+                                                {{--<!-- <div class=" list-search"> -->
                                                             <table id="myTable" class="table  table-bordered table-striped table-condensed dataTable no-footer" style=>
                                                                 <tbody id="body_data" style="background: #fdffff;">
                                                                             <tr>
@@ -122,7 +122,7 @@
                                                                             </tr>
                                                                         @endforeach--}}
                                                                 </tbody>
-                                                            </table>
+                                                            </table>--}}
                                             <!-- </div> -->
                                             </div>
                                             
