@@ -207,25 +207,25 @@
                                                     @endif
                                                 </div> -->
                                                  <div class="row mt-3">
-                                                    <div class="form-input col-md-6 padding-style">
+                                                    <div class="form-input col-md-3 padding-style">
                                                         <input type="text" class="form-control required" placeholder="Họ và tên bệnh nhân..." name="name" id="name" oninput="inValid(this.id)">
                                                         <i class="fa fa-user uname-icon padding-style"></i>
                                                         <span class="message-error uname-error">Họ và tên bệnh nhân không được để trống!</span>
                                                     </div>
-                                                    <div class="form-input col-md-6 padding-style">
+                                                    <div class="form-input col-md-3 padding-style">
                                                         <input type="text" class="form-control required" placeholder="Số điện thoại..." name="phone" id="phone" oninput="inValid(this.id)">
                                                         <i class="fas fa-phone phone-icon padding-style"></i>
                                                         <span class="message-error phone-error">Số điện thoại không được để trống!</span>
                                                     </div>
-                                                </div>
-                                                <div class="row mt-3">
-                                                    <div class="form-input col-md-6">
-                                                        <input type="date"  class="form-control required" placeholder="Ngày sinh..." name="date_birthday" id="date_birthday" oninput="inValid(this.id)">
-                                                        <i class="fa fa-calendar-alt uname-icon"></i>
+                                                    <div class="form-input col-md-3  padding-style">
+                                                        <!-- <label for=""></label> -->
+                                                        <input type="date" class="form-control required" placeholder="Ngày sinh..." name="date_birthday" id="date_birthday" oninput="inValid(this.id)">
+                                                        <!-- <i class="fa fa-calendar-alt uname-icon"></i> -->
                                                         <!-- <i class="fas fa-calendar-alt"></i> -->
+                                                        <i class="fas fa-birthday-cake  padding-style"></i>
                                                         <span class="message-error uname-error">Ngày sinh không được để trống!</span>
                                                     </div>
-                                                    <div class="form-input col-md-6 padding-style">
+                                                    <div class="form-input col-md-3 padding-style">
                                                         <input type="radio" value="1" name="sex" id="sex" />  <span style="padding-left:5px" >Nam</span>&emsp;
                                                         <input  type="radio" value="2" name="sex" id="sex"  /> <span style="padding-left:5px" >Nữ</span>
                                                         <span class="message-error phone-error">Giới tính không được để trống!</span>
@@ -306,6 +306,15 @@
                                                 @endif
                                                 <div class="row mt-3">
                                                     <div class="form-input col-md-6 padding-style">
+                                                    <!-- onfocus="(this.type='date')"
+                                                            onblur="(this.type='text')" -->
+                                                        <label for="">Ngày lấy mẫu</label>
+                                                        <input type="date" class="form-control required" placeholder="Ngày lấy mẫu..." name="date_sampling" id="date_sampling" oninput="inValid(this.id)">
+                                                        <!-- <i class="fa fa-calendar-alt uname-icon padding-style"></i> -->
+                                                        <span class="message-error uname-error">Ngày lấy mẫu không được để trống!</span>
+                                                    </div>
+                                                    <div class="form-input col-md-6 padding-style">
+                                                        <label for="">Giờ lấy mẫu</label>
                                                         <select style="color:#757e87" class="form-control input-sm chzn-select required" name="hour_sampling" id="hour_sampling">
                                                             <option  value=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chọn giờ lấy mẫu  </option>
                                                             <option value="05h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;05 giờ 30 phút</option>
@@ -338,16 +347,8 @@
                                                             <option value="19h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;19 giờ 30 phút</option>
                                                             <option value="20h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20 giờ 00 phút</option>
                                                         </select>
-                                                        <i class="fa fa-hourglass-half uname-icon padding-style"></i>
+                                                        <!-- <i class="fa fa-hourglass-half uname-icon padding-style"></i> -->
                                                         <span class="message-error uname-error">Giờ lấy mẫu không được để trống!</span>
-                                                    </div>
-
-                                                    <div class="form-input col-md-6 padding-style">
-                                                    <!-- onfocus="(this.type='date')"
-                                                            onblur="(this.type='text')" -->
-                                                        <input  type="date" class="form-control required" placeholder="Ngày lấy mẫu..." name="date_sampling" id="date_sampling" oninput="inValid(this.id)">
-                                                        <i class="fa fa-calendar-alt uname-icon padding-style"></i>
-                                                        <span class="message-error uname-error">Ngày lấy mẫu không được để trống!</span>
                                                     </div>
                                                 </div>
                                                 <div class="row mt-3">
