@@ -142,7 +142,7 @@ class AppointmentAtHomeService extends Service
             $j++;
         }
         $objPHPExcel->setActiveSheetIndex(0)->setCellValue("D12", 'Tổng: '.$i.' chỉ số');
-        $objWriter = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($objPHPExcel, 'Xls');dd(base_path());
+        $objWriter = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($objPHPExcel, 'Xls');
         $objWriter->save(base_path() . "/resources/public/export/" . $namefile);
         // $objWriter->save(public_path("export/".$namefile));
         return $namefile;
