@@ -4,7 +4,7 @@
 <script type="text/javascript" src="{{ URL::asset('assets/datepicker/bootstrap-datepicker.min.js') }}"></script>
 <style>
     #frmSendSchedule{
-        width: 60%;
+        width: 100%;
     }
     #carouselExampleIndicators input[type=text], input[type=email], input[type=password], input[type=date] {
         padding: 12px 40px;
@@ -61,6 +61,10 @@
     .error-input::placeholder{
         color: red;
     }
+    .padding-style{
+        padding-top:15px
+    }
+
 </style>
 <link rel="stylesheet" href="../clients/css/style.css">
 <!-- Start Banner Hero -->
@@ -117,7 +121,7 @@
                                                 @csrf
                                                 <input type="hidden" id="code_hospital" name="code_hospital" value="{{ !empty($datas->code)?$datas->code:'' }}">
                                                 <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
-                                                <div class="row">
+                                                <div class="row padding-style">
                                                     <div class="form-input col-md-6">
                                                         <select onchange="JS_Schedule.getMoney(this.value)" class="form-control input-sm chzn-select" name="code_specialty" id="code_specialty">
                                                             <option value="">--Chọn khoa khám bệnh--</option>
@@ -132,43 +136,42 @@
                                                         <span><span style="font-size: 25px;font-weight: 500;color: #ff9400;">{{!empty($moneyConvert)?$moneyConvert:'' }}</span> VND</span>
                                                     </div>
                                                 </div>
-                                                <div class="row mt-3">
-                                                    <div class="form-input col-md-6">
+                                                <div class="row mt-3 ">
+                                                    <div class="form-input col-md-6 padding-style">
                                                         <input type="text" class="form-control required" placeholder="Họ và tên bệnh nhân..." name="uname" id="uname" oninput="inValid(this.id)">
-                                                        <i class="fa fa-user uname-icon"></i>
+                                                        <i class="fa fa-user uname-icon padding-style"></i>
                                                         <span class="message-error uname-error">Họ và tên bệnh nhân không được để trống!</span>
                                                     </div>
-                                                    <div class="form-input col-md-6">
+                                                    <div class="form-input col-md-6 padding-style">
                                                         <input type="text" class="form-control required" placeholder="Số điện thoại..." name="phone" id="phone" oninput="inValid(this.id)">
-                                                        <i class="fas fa-phone phone-icon"></i>
+                                                        <i class="fas fa-phone phone-icon padding-style"></i>
                                                         <span class="message-error phone-error">Số điện thoại không được để trống!</span>
                                                     </div>
                                                 </div>
                                                 <div class="row mt-3">
-                                                    <div class="form-input col-md-6">
+                                                    <div class="form-input col-md-6 padding-style">
                                                         <input type="text" class="form-control required" placeholder="Số bảo hiểm y tế..." name="code_insurance" id="code_insurance" oninput="inValid(this.id)">
-                                                        <i class="fas fa-book-medical code_insurance-icon"></i>
+                                                        <i class="fas fa-book-medical code_insurance-icon padding-style"></i>
                                                         <span class="message-error code_insurance-error">Số bảo hiểm y tế không được để trống!</span>
                                                     </div>
-                                                    <div class="form-wrapper col-md-6">
-                                                        Giới tính <span class="request_star">*</span>
+                                                    <div class="form-wrapper col-md-6 padding-style">
                                                         <input type="radio" value="1" name="sex" id="sex" /> <span style="padding-left:5px">Nam</span>&emsp;
                                                         <input type="radio" value="2" name="sex" id="sex" /> <span style="padding-left:5px">Nữ</span>
                                                     </div>
                                                 </div>
                                                 <div class="row mt-3">
-                                                    <div class="form-input col-md-6">
+                                                    <div class="form-input col-md-6 padding-style">
                                                         <input type="email" class="form-control" placeholder="Địa chỉ Email..." name="email" id="email"  oninput="inValid(this.id)">
-                                                        <i class="fas fa-envelope"></i>
+                                                        <i class="fas fa-envelope padding-style"></i>
                                                     </div>
-                                                    <div class="form-input col-md-6">
+                                                    <div class="form-input col-md-6 padding-style">
                                                         <input type="date" class="form-control required datepicker" placeholder="Ngày sinh..." name="date_of_brith" id="date_of_brith"  oninput="inValid(this.id)">
-                                                        <i class="fa fa-calendar-alt date_of_brith-icon"></i>
+                                                        <i class="fa fa-calendar-alt date_of_brith-icon padding-style"></i>
                                                         <span class="message-error date_of_brith-error">Ngày sinh không được để trống!</span>
                                                     </div>
                                                 </div>
                                                 <div class="row mt-3">
-                                                    <div class="form-input col-md-4">
+                                                    <div class="form-input col-md-4 padding-style">
                                                         <select onchange="JS_Schedule.getHuyen(this.value)" class="form-control input-sm chzn-select" name="code_tinh" id="code_tinh">
                                                             <option value="">--Chọn tỉnh thành--</option>
                                                             @foreach($tinh as $key => $value)
@@ -176,36 +179,36 @@
                                                             @endforeach
                                                         </select>
                                                     </div>
-                                                    <div id="iss" class="form-input col-md-4">
+                                                    <div id="iss" class="form-input col-md-4 padding-style">
                                                         <select class="form-control input-sm chzn-select" name="code_huyen" id="code_huyen">
                                                             <option value="">--Chọn quận huyện--</option>
                                                         </select>
                                                     </div>
-                                                    <div id="iss_xa" class="form-input col-md-4">
+                                                    <div id="iss_xa" class="form-input col-md-4 padding-style">
                                                         <select class="form-control input-sm chzn-select" name="code_xa" id="code_xa">
                                                             <option value="">--Chọn phường xã--</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="row mt-3">
-                                                    <div class="form-input col-md-12">
+                                                    <div class="form-input col-md-12 padding-style">
                                                         <input type="text" class="form-control required" placeholder="Địa chỉ chi tiết..." name="address" id="address"  oninput="inValid(this.id)">
-                                                        <i class="fas fa-map-marker-alt address-icon"></i>
+                                                        <i class="fas fa-map-marker-alt address-icon padding-style"></i>
                                                         <span class="message-error address-error">Địa chỉ chi tiết không được để trống!</span>
                                                     </div>
                                                 </div>
                                                 <div class="row mt-3">
-                                                    <div class="form-input col-md-6">
+                                                    <div class="form-input col-md-6 padding-style">
                                                         @if(isset($user_introduce_name))
                                                         <input style="color:red" disabled onchange="JS_Schedule.getUser()" placeholder="Mã nhân viên giới thiệu..." id="code_introduce" type="text" class="form-control" name="code_introduce" value="{{isset($user_introduce_id) ? $user_introduce_id : ''}}">
                                                         @else
                                                         <input style="color:red" onchange="JS_Schedule.getUser()" placeholder="Mã nhân viên giới thiệu..." id="code_introduce" type="text" class="form-control" name="code_introduce" value="{{isset($user_introduce_id) ? $user_introduce_id : ''}}">
                                                         @endif
-                                                        <i class="fas fa-id-card code_introduce-icon"></i>
+                                                        <i class="fas fa-id-card code_introduce-icon padding-style"></i>
                                                     </div>
-                                                    <div class="form-input col-md-6" id="iss">
+                                                    <div class="form-input col-md-6 padding-style" id="iss">
                                                         <input style="color:red" id="user_introduce_name" name="user_introduce_name" disabled placeholder="Tên nhân viên giới thiệu..." type="text" class="form-control" value="{{isset($user_introduce_name) ? $user_introduce_name : ''}}">
-                                                        <i class="fa fa-user-cog user_introduce_name-icon"></i>
+                                                        <i class="fa fa-user-cog user_introduce_name-icon padding-style"></i>
                                                     </div>
                                                 </div>
                                                 <div class="row mt-3">

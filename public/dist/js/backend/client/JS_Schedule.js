@@ -216,8 +216,8 @@ JS_Schedule.prototype.getHuyen = function (codeTinh) {
         data: data,
         success: function (arrResult) {
             $('.chzn-select').chosen({ height: '100%', width: '100%' });
-            var html = '<label for="">Quận huyện <span class="request_star">*</span></label>'
-            html += `<select onchange="JS_Schedule.getXa(this.value)" class="form-control input-sm chzn-select" name="code_huyen" id="code_huyen">`
+            // var html = '<label for="">Quận huyện <span class="request_star">*</span></label>'
+            var html = `<select onchange="JS_Schedule.getXa(this.value)" class="form-control input-sm chzn-select" name="code_huyen" id="code_huyen">`
             html += `<option value="">--Chọn quận huyện--</option>`
             $(arrResult.data.huyen).each(function(index,el) {
                  html += `<option value="`+ el.code_huyen +`">`+ el.name +`</option>`
@@ -246,8 +246,8 @@ JS_Schedule.prototype.getXa = function (codeHuyen) {
         cache: true,
         data: data,
         success: function (arrResult) {
-            var html = '<label for="">Phường xã <span class="request_star">*</span></label>'
-            html += `<select class="form-control input-sm chzn-select" name="code_xa" id="code_xa">`
+            // var html = '<label for="">Phường xã <span class="request_star">*</span></label>'
+            var html = `<select class="form-control input-sm chzn-select" name="code_xa" id="code_xa">`
             html += `<option value="">--Chọn phường xã--</option>`
             $(arrResult.data.xa).each(function(index,el) {
                  html += `<option value="`+ el.code_xa +`">`+ el.name +`</option>`
