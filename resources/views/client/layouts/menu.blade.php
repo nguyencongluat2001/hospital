@@ -3,6 +3,77 @@
         padding-right: 10px !important;
         padding-left: 10px !important;
     }
+    .tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  z-index: 2;
+  width: 100px;
+  color: white;
+  font-size: 12px;
+  background-color: #192733;
+  border-radius: 10px;
+  padding: 10px 15px 10px 15px;
+}
+
+.tooltip-text::before {
+  content: "";
+  position: absolute;
+  transform: rotate(45deg);
+  background-color: #192733;
+  padding: 5px;
+  z-index: 1;
+}
+
+.hover-text:hover .tooltip-text {
+  visibility: visible;
+}
+/* #top {
+  top: -40px;
+  left: -50%;
+} */
+
+#top::before {
+  top: 80%;
+  left: 45%;
+}
+
+/* #bottom {
+  top: 25px;
+  left: -50%;
+} */
+
+/* #bottom::before {
+  top: -5%;
+  left: 45%;
+}
+
+#left {
+  top: -8px;
+  right: 120%;
+}
+
+#left::before {
+  top: 35%;
+  left: 94%;
+}
+
+#right {
+  top: -8px;
+  left: 120%;
+}
+
+#right::before {
+  top: 35%;
+  left: -2%;
+} */
+
+/* .hover-text {
+  position: relative;
+  display: inline-block;
+  margin: 40px;
+  font-family: Arial;
+  text-align: center;
+} */
 </style>
 <!-- Header -->
  <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow" style="top:0;padding-top:0px !important;padding-bottom: 0px !important;background:#243649!important;position: fixed;width: 100%;z-index: 1000;">
@@ -69,9 +140,10 @@
                     <!-- Authentication Links -->
                     @guest
                         @if (Route::has('login'))
-                            <li class="nav-item">
-                                <a style="color:#ff9d00" class="nav-link" href="{{ route('login') }}">{{ __('Đăng nhập') }}</a>
-                            </li>
+                            <div class="hover-text">
+                                <a style="color:#ff9d00" class="nav-link " href="{{ route('login') }}"><i class="fas fa-sign-in-alt fa-2x"></i></a>
+                                 <span class="tooltip-text" id="top">Đăng nhập</span>
+                            </div>
                         @endif
 
                         <!-- @if (Route::has('register'))
@@ -135,7 +207,9 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
+                                            
                                             <p>
+                                            <i class="fas fa-sign-out-alt"></i>
                                                 {{ __('Đăng xuất') }}
                                             </p>
                                     </a>
