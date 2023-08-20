@@ -448,7 +448,6 @@ class AppointmentAtHomeController extends Controller
         $data = $this->AppointmentAtHomeService->showDetail($input); 
         $urls = $this->AppointmentAtHomeService->exportExcel($data); 
         $url = ['url' => url('export/'.$urls),'success' => true];
-        dd($url);
         return response()->json($url);
     }
 }
