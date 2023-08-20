@@ -46,10 +46,10 @@ class ChatClientController extends Controller
                     'ip' => '',
                     'created_at' => date('Y/m/d H:i:s'),
                 ];
-                dd($params);
                 $this->customerCareService->insert($params);
 
                 $logger->log('Susccess', $params);
+                dd($html);
                 return $html;
             }
         }catch (\Exception $e){
