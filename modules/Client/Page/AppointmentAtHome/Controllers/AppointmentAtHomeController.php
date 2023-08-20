@@ -447,7 +447,8 @@ class AppointmentAtHomeController extends Controller
         $input = $request->all();
         $data = $this->AppointmentAtHomeService->showDetail($input); 
         $urls = $this->AppointmentAtHomeService->exportExcel($data); 
-        $url = ['url' => url('/resources/public/export/'.$urls),'success' => true];
+        $url = ['url' => url('export/'.$urls),'success' => true];
+        dd($url);
         return response()->json($url);
     }
 }

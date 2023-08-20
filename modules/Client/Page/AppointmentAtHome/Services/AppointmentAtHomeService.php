@@ -8,15 +8,16 @@ use Modules\Client\Page\AppointmentAtHome\Repositories\AppointmentAtHomeReposito
 use Illuminate\Support\Facades\Http;
 use Modules\Base\Library;
 use Modules\System\Dashboard\BloodTest\Models\PriceTestModel;
-
 use DB;
 use Str;
+
 
 class AppointmentAtHomeService extends Service
 {
     public function __construct(
     ){
         parent::__construct();
+        $this->baseDis = public_path("export/") . "/";
     }
     public function repository()
     {
@@ -110,11 +111,12 @@ class AppointmentAtHomeService extends Service
      */
     public function exportExcel($input)
     {
+        $path = $this->baseDis;
         $fromDate = date('H:i:s d-m-Y');
         $objPHPExcel = \PhpOffice\PhpSpreadsheet\IOFactory::load(base_path() . "/resources/public/template/TemCXLog.xlsx");
         $objWorksheet_template = $objPHPExcel->getActiveSheet();
         $provinceSheet = $objPHPExcel->setActiveSheetIndex(0);
-        $namefile = "ThongTinXetNghiemBenhNhan".$input['datas']['code_patient'].".xls";
+        $namefile = "ThongTinXetNghiemBenhNhan".$input['datas']['code_patient'].'.Xls';
 
         if($input['datas']['sex'] == 1){
             $gioitinh = 'Nam';
@@ -143,7 +145,10 @@ class AppointmentAtHomeService extends Service
         }
         $objPHPExcel->setActiveSheetIndex(0)->setCellValue("D12", 'Tổng: '.$i.' chỉ số');
         $objWriter = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($objPHPExcel, 'Xls');
-        $objWriter->save(base_path() . "/resources/public/export/" . $namefile);
+        // $objWriter->save(base_path() . "/resources/public/export/" . $namefile);
+
+        $objWriter->save($path . $namefile);
+
         // $objWriter->save(public_path("export/".$namefile));
         return $namefile;
     }
