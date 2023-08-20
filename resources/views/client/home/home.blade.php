@@ -93,8 +93,7 @@
                                                 <div class=" pt-2 box">
                                                     <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg" placeholder="Tìm kiếm từ khóa..." aria-label="Tìm kiếm từ khóa...">
                                                 </div>
-                                                {{--<!-- <div class=" list-search"> -->
-                                                            <table id="myTable" class="table  table-bordered table-striped table-condensed dataTable no-footer" style=>
+                                                            <!-- <table id="myTable" class="table  table-bordered table-striped table-condensed dataTable no-footer" style=>
                                                                 <tbody id="body_data" style="background: #fdffff;">
                                                                             <tr>
                                                                                 <td style="white-space: inherit;vertical-align: middle;" >
@@ -113,7 +112,6 @@
                                                                             </tr>
                                                                        {{-- @foreach ($type_chidinh as $key => $values)
                                                                             <tr>
-                                                                                <!-- <td style="white-space: inherit;vertical-align: middle;" align="center"></td> -->
                                                                                 <td style="white-space: inherit;vertical-align: middle;" >
                                                                                 <input onclick="JS_AppointmentAtHome.showPack('{{$code_blood}}')" type="checkbox" value="{{ isset($values['code']) ? $values['code'] : '' }}" name="code_indications" id="code_indications"/> 
                                                                                 <span style="color:red">{{ isset($values['code']) ? $values['code'] : '' }}</span> - <span style="color:#ff8a06">{{ isset($values['price']) ? $values['price'] : '' }}  </span> <span style="font-size:10px">VND </span>  <br>
@@ -122,8 +120,7 @@
                                                                             </tr>
                                                                         @endforeach--}}
                                                                 </tbody>
-                                                            </table> --}}
-                                            <!-- </div> -->
+                                                            </table> -->
                                             </div>
                                             
                                                  
