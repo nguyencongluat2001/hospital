@@ -294,3 +294,47 @@ JS_listIndications.prototype.showDetail = function(id) {
         }
     });
 }
+// Xoa mot doi tuong
+JS_listIndications.prototype.exportExcel = function (id) {
+    var myClass = this;
+    var url = this.urlPath + '/exportExcel';
+    Swal.fire({
+        title: 'Bạn có chắc chắn muốn xuất Excel này không?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#34bd57',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Xác nhận'
+      }).then((result) => {
+        if(result.isConfirmed == true){
+            $.ajax({
+                url: url,
+                type: "POST",
+                dataType: 'json',
+                data: {
+                    _token: $('#_token').val(),
+                    id: id,
+                },
+                success: function (arrResult) {
+                    if (arrResult['success'] == true) {
+                        window.open(arrResult.url);
+                        if (result.isConfirmed) {
+                            var nameMessage = 'Xuất thành công!';
+                            var icon = 'success';
+                            var color = '#f5ae67';
+                            NclLib.alerMesage(nameMessage,icon,color);
+                            myClass.loadList(oForm);
+                          }
+                    } else {
+                        if (result.isConfirmed) {
+                            var nameMessage = 'Quá trình xuất đã xảy ra lỗi!';
+                            var icon = 'error';
+                            var color = '#f5ae67';
+                            NclLib.alerMesage(nameMessage,icon,color);
+                          }
+                    }
+                }
+            });
+        }
+      })
+}

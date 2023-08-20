@@ -147,7 +147,7 @@ Route::prefix('/client')->group(function () {
             Route::get('/loadList_Indications', [AppointmentAtHomeController::class,'loadList_Indications']);
             Route::get('/showDetail', [AppointmentAtHomeController::class,'showDetail']);
             Route::get('/pdf', [AppointmentAtHomeController::class,'pdf']);
-
+            Route::post('/exportExcel', [AppointmentAtHomeController::class,'exportExcel']);
 
 
             // Truyền dịch

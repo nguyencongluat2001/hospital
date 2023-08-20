@@ -435,4 +435,19 @@ class AppointmentAtHomeController extends Controller
               ->setWarnings(false)->setOptions(['isFontSubsettingEnabled' => true]);
     		return $pdf->download('invoice.pdf');
     }
+        /**
+     * Xuất lịch Excel
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function exportExcel(Request $request)
+    {
+        $input = $request->all();
+        $data = $this->AppointmentAtHomeService->showDetail($input); 
+        $urls = $this->AppointmentAtHomeService->exportExcel($data); 
+        $url = ['url' => base_path()."/resources/public/export/".$urls,'success' => true];
+        return response()->json($url);
+    }
 }

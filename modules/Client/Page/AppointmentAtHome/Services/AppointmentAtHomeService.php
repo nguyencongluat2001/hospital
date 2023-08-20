@@ -105,4 +105,46 @@ class AppointmentAtHomeService extends Service
     
         return $data;
     }
+     /**
+     * Xuất excel
+     */
+    public function exportExcel($input)
+    {
+        $fromDate = date('H:i:s d-m-Y');
+        $objPHPExcel = \PhpOffice\PhpSpreadsheet\IOFactory::load(base_path() . "/resources/public/template/TemCXLog.xlsx");
+        $objWorksheet_template = $objPHPExcel->getActiveSheet();
+        $provinceSheet = $objPHPExcel->setActiveSheetIndex(0);
+        $namefile = "ThongTinXetNghiemBenhNhan".$input['datas']['code_patient'].".xls";
+
+        if($input['datas']['sex'] == 1){
+            $gioitinh = 'Nam';
+        }elseif($input['datas']['sex'] == 0){
+            $gioitinh = 'Nữ';
+        }else{
+            $gioitinh = 'Khác';
+        }
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue("A4", '(Thông tin được xuất lúc '.$fromDate.')');
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C5", $input['datas']['name']);
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C6", $input['datas']['date_birthday']);
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C7", $gioitinh);
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C8", $input['datas']['code_patient']);
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C9", $input['datas']['code_doctor']);
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C10", 'Lúc '.$input['datas']['hour_sampling'].' ngày '.$input['datas']['date_sampling']);
+
+        $j = 1;
+        $i = 13;
+        foreach ($input['price'] as $value) {
+            $objPHPExcel->setActiveSheetIndex(0)
+                ->setCellValue("A$i", $j)
+                ->setCellValue("B$i", $value['code'])
+                ->setCellValue("C$i", $value['name']);
+            $i++;
+            $j++;
+        }
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue("D12", 'Tổng: '.$i.' chỉ số');
+        $objWriter = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($objPHPExcel, 'Xls');dd(base_path());
+        $objWriter->save(base_path() . "/resources/public/export/" . $namefile);
+        // $objWriter->save(public_path("export/".$namefile));
+        return $namefile;
+    }
 }
