@@ -27,10 +27,10 @@ class ChatClientController extends Controller
             // $ipv4 = gethostbyname(trim(exec("hostname")));
             
             $arrInput = $request->all();
-            // $customerCare = $this->customerCareService->where('phone', $arrInput['phone'])->first();
-            // if(empty($customerCare)){
-            //     $sebdMailToCTV = $this->sendMail($arrInput);
-            // }
+            $customerCare = $this->customerCareService->where('phone', $arrInput['phone'])->first();
+            if(empty($customerCare)){
+                $sebdMailToCTV = $this->sendMail($arrInput);
+            }
             broadcast(new PusherBroadcast($arrInput['phone'], $arrInput['message']))->toOthers();
             if(isset($arrInput['message']) && !empty($arrInput['message'])){
                 $html = '<div class="right-message">';
