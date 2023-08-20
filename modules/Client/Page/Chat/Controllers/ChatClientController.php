@@ -49,7 +49,7 @@ class ChatClientController extends Controller
                 $this->customerCareService->insert($params);
 
                 $logger->log('Susccess', $params);
-                dd($html);
+                // dd($html);
                 return $html;
             }
         }catch (\Exception $e){
