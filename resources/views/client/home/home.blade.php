@@ -46,14 +46,22 @@
                             </div>
                         </center>
                         <!-- <span  class="text-title-home anime-text-titel"><center> ĐẶT LỊCH KHÁM NHANH <br>TẠI CÁC TUYẾN TRUNG ƯƠNG</center></span> -->
-                        <div class="banner-content col-lg-12 offset-2 col-8 m-lg-auto text-center ">
+                        <div class="banner-content col-lg-12 offset-2 col-8 m-lg-auto text-center pb-5 ">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-lg-4 mx-auto ">
                                         <form action="#" method="get">
                                         <div class="input-group pt-2 box">
-                                            <input style="background:#ffffffb5" type="text" class="input form-control form-control-lg rounded-pill rounded" placeholder="Từ khóa tìm kiếm...">
-                                            <i class="fas fa-search"></i>
+                                            <!-- <input style="background:#ffffffb5" type="text" class="input form-control form-control-lg rounded-pill rounded" placeholder="Từ khóa tìm kiếm...">
+                                            <i class="fas fa-search"></i> -->
+                                            <select style="text-align: left;" class="form-control input-sm chzn-select " name="" id="">
+                                                <option value="">Nhập từ khóa cần tìm kiếm...</option>
+                                                {{--@foreach($type_xetnghiem as $key => $values) 
+                                                    <option value="{{$values['code']}}" {{($values['code'] == $code) ? 'selected' : ''}}>{{$values['name']}}</option>
+                                                @endforeach --}}
+                                                <option value="">Xét nghiệm vi chất trẻ nhỏ</option>
+                                                <option value="">Xét nghiệm gan</option>
+                                            </select>
                                         </div>
                                         </form>
                                     </div>
