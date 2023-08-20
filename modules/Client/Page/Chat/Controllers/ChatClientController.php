@@ -31,6 +31,7 @@ class ChatClientController extends Controller
             if(empty($customerCare)){
                 $sebdMailToCTV = $this->sendMail($arrInput);
             }
+            dd($arrInput['phone'], $arrInput['message']);
             broadcast(new PusherBroadcast($arrInput['phone'], $arrInput['message']))->toOthers();
             if(isset($arrInput['message']) && !empty($arrInput['message'])){
                 $html = '<div class="right-message">';
