@@ -220,9 +220,7 @@
                                                 </div>
                                                 <div class="row mt-3">
                                                     <div class="form-input col-md-6">
-                                                        <input type="text" 
-                                                            onfocus="(this.type='date')"
-                                                            onblur="(this.type='text')" class="form-control required" placeholder="Ngày sinh..." name="date_birthday" id="date_birthday" oninput="inValid(this.id)">
+                                                        <input type="date"  class="form-control required" placeholder="Ngày sinh..." name="date_birthday" id="date_birthday" oninput="inValid(this.id)">
                                                         <i class="fa fa-calendar-alt uname-icon"></i>
                                                         <!-- <i class="fas fa-calendar-alt"></i> -->
                                                         <span class="message-error uname-error">Ngày sinh không được để trống!</span>
