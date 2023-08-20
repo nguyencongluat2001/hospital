@@ -6,7 +6,7 @@
                 <div class="col-lg-3 col-12 align-left">
                     <a class="navbar-brand" href="index.html">
                         <i class='bx bx-buildings bx-sm text-light'></i>
-                        <span class="text-light h5">Booking</span> <span class="text-light h5 semi-bold-600">46</span>
+                        <span class="text-light h5">BOOKING HOSPITAL</span>
                     </a>
                     <p class="text-light my-lg-4 my-2">
                     Hệ thống đặt lịch khám nhanh tại các tuyến trung ương được liên kết với nhiều bệnh viện tuyến cuối tại Việt Nam. Những thông tin y khoa trên trang web chỉ dùng để tham khảo - đặt lịch giữ chỗ nhanh.
@@ -82,8 +82,11 @@
                 <div class="col-lg-3 col-md-4 my-sm-0 mt-4">
                     <h2 class="h4 pb-lg-3 text-light light-300">LIÊN HỆ</h2>
                     <ul class="list-unstyled text-light light-300">
+                         <li class="pb-2">
+                            <i class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-light py-1" href="tel:024 39036555">Công ty TNHH dịch vụ y tế <br> BOOKING HOSPITAL </a>
+                        </li>
                         <li class="pb-2">
-                            <i class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-light py-1" href="tel:010-020-0340">010-020-0340</a>
+                            <i class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-light py-1" href="tel:024 39036555">024 39036555</a>
                         </li>
                         <li class="pb-2">
                             <i class='bx-fw bx bx-mail-send bx-xs'></i><a class="text-decoration-none text-light py-1" href="mailto:info@company.com">info@company.com</a>

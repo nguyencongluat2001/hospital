@@ -95,7 +95,7 @@
             <a class="navbar-brand h1" href="{{ url('/') }}">
             <!-- <img class="card-img " src="../clients/img/logo.png" alt="Card image"> -->
                 <!-- <i class='bx bx-buildings bx-sm text-dark'></i> -->
-                <span style="color: #ffbc00!important;" class="text-dark h5">Booking</span> <sup style="color:#32a5c2">46</sup>
+                <span style="color: #ffbc00!important;" class="text-dark h5">Booking</span> <sup style="color:#32a5c2">Hospital</sup>
             </a>
            
 
