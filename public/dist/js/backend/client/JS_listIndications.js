@@ -318,6 +318,7 @@ JS_listIndications.prototype.exportExcel = function (id) {
                 success: function (arrResult) {
                     if (arrResult['success'] == true) {
                         window.open(arrResult.url);
+                        myClass.loadList();
                         if (result.isConfirmed) {
                             var nameMessage = 'Xuất thành công!';
                             var icon = 'success';

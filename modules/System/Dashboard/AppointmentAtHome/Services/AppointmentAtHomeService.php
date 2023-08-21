@@ -76,7 +76,6 @@ class AppointmentAtHomeService extends Service
             'date_sampling' => isset($AppointmentAtHome['date_sampling'])?date('d-m-Y',strtotime($AppointmentAtHome['date_sampling'])):'', 
             'hour_sampling' => isset($AppointmentAtHome['hour_sampling'])?$AppointmentAtHome['hour_sampling']:'', 
             'date_birthday' => isset($AppointmentAtHome['date_birthday'])?$AppointmentAtHome['date_birthday']:'', 
-
         ];
         $data['datas'] = $param;
         $price_convert=[];

@@ -31,6 +31,7 @@ class AppointmentAtHomeModel extends Model
             'code_ctv',
             'status',
             'date_birthday',
+            'link_excel',
             'created_at',
             'updates_at'
     ];
