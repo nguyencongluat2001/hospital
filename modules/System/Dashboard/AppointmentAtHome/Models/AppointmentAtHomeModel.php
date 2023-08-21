@@ -23,6 +23,7 @@ class AppointmentAtHomeModel extends Model
         'hour_sampling',
         'address',
         'reason',
+        'money',
         'status',
         'created_at',
         'updates_at'
