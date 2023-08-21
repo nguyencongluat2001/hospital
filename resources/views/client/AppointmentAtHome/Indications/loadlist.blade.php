@@ -34,7 +34,7 @@ use Modules\System\Recordtype\Helpers\WorkflowHelper;
                             <span>Số tiền: {{ !empty($data['money']) ? number_format($data['money'],0, '', ',') : '' }} VNĐ </span><br>
                             <!-- <span>Chỉ số: <span style="color:red">{{ isset($data['code_indications']) ? $data['code_indications'] : '' }}</span> </span><br> -->
                             @if(!empty($data['link_excel']) && $data['link_excel'] != null)
-                            <span>Link Excel: <span style="color:#009efe"><a href="{{$data['link_excel']}}">{{$data['link_excel']}}</a></span> </span><br>
+                            <span>Link Excel: <span style="color:#009efe"><a href="{{$data['link_excel']}}">Xem</a></span> </span><br>
                             @endif
                             <!-- <span>Trạng thái: @if($data['status'] == 1)
                                 <span style="color:#00b406;white-space: inherit;vertical-align: middle;" align="center">Đã xác nhận - Thanh toán thành công</span>
