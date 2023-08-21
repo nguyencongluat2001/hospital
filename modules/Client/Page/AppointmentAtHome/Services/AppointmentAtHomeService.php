@@ -120,7 +120,7 @@ class AppointmentAtHomeService extends Service
 
         if($input['datas']['sex'] == 1){
             $gioitinh = 'Nam';
-        }elseif($input['datas']['sex'] == 0){
+        }elseif($input['datas']['sex'] == 2){
             $gioitinh = 'Nữ';
         }else{
             $gioitinh = 'Khác';
