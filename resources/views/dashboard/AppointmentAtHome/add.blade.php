@@ -25,20 +25,25 @@
                     <input type="hidden" id="code_hospital" name="code_hospital" value="{{ !empty($datas->code)?$datas->code:'' }}">
                     <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
                     <div class="row">
-                        <div class="form-wrapper col-md-4">
+                        <div class="form-wrapper col-md-6">
                             <label for="">Họ và tên bệnh nhân</label>
                             <input disabled type="text" class="form-control" value="{{!empty($datas['name']) ? $datas['name'] : ''}}" autofocus>
                         </div>
-                        <div class="form-wrapper col-md-4">
+                        <div class="form-wrapper col-md-6">
                             <label for="">Số điện thoại</label>
                             <input disabled type="phone" class="form-control" value="{{!empty($datas['phone']) ? $datas['phone'] : ''}}">
                         </div>
-                        <div class="form-wrapper col-md-4">
+                    </div>
+                    <div class="row">
+                        <div class="form-wrapper col-md-6">
+                            <label for="">Năm sinh</label> <br>
+                            <input disabled type="text" class="form-control" value="{{!empty($datas['date_birthday'])? $datas['date_birthday'] : ''}}">
+                        </div>
+                        <div class="form-wrapper col-md-6">
                             <label for="">Giới tính</label> <br>
                             <input disabled type="text" class="form-control" value="{{$datas['sex'] == 1 ? 'Nam' : 'Nữ'}}">
                         </div>
                     </div>
-                    
                     @if($datas['type_at_home'] == 'XET_NGHIEM')
                     <!-- <div class="row">
                         <div class="form-wrapper col-md-12">

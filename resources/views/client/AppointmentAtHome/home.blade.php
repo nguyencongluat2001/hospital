@@ -219,11 +219,11 @@
                                                     </div>
                                                     <div class="form-input col-md-3  padding-style">
                                                         <!-- <label for=""></label> -->
-                                                        <input type="date" class="form-control required" placeholder="Ngày sinh..." name="date_birthday" id="date_birthday" oninput="inValid(this.id)">
+                                                        <input type="text" class="form-control required" placeholder="Năm sinh..." name="date_birthday" id="date_birthday" oninput="inValid(this.id)">
                                                         <!-- <i class="fa fa-calendar-alt uname-icon"></i> -->
                                                         <!-- <i class="fas fa-calendar-alt"></i> -->
                                                         <i class="fas fa-birthday-cake  padding-style"></i>
-                                                        <span class="message-error uname-error">Ngày sinh không được để trống!</span>
+                                                        <span class="message-error uname-error">Năm sinh không được để trống!</span>
                                                     </div>
                                                     <div class="form-input col-md-3 padding-style">
                                                         <input type="radio" value="1" name="sex" id="sex" />  <span style="padding-left:5px" >Nam</span>&emsp;
