@@ -359,7 +359,10 @@ class AppointmentAtHomeController extends Controller
         }else{
             $objResult = $this->AppointmentAtHomeService->filter($arrInput);
         }
+        $turnover = $this->AppointmentAtHomeService->where('code_ctv',$_SESSION['code'])->sum('money');
+        $turnover_convert = number_format($turnover,0, '', ',');
         $data['datas'] = $objResult;
+        $data['turnover_convert'] = $turnover_convert;
         return view("client.AppointmentAtHome.Indications.loadlist", $data)->render();
     }
     /**
