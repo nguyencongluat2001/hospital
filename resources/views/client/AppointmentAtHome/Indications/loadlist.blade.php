@@ -27,7 +27,7 @@ use Modules\System\Recordtype\Helpers\WorkflowHelper;
                             <!-- <span>Ngày tạo chỉ định: {{ isset($data['created_at']) ? $data['created_at'] : '' }}</span> <br> -->
                             <!-- <span>Mã hệ thống: {{ isset($data['code']) ? $data['code'] : '' }}</span> <br> -->
                             <span>Mã ống nghiệm: <span style="color: red;">{{ isset($data['code_patient']) ? $data['code_patient'] : '' }}</span></span> <br>
-                            <span>Tên khách hàng: {{ isset($data['name']) ? $data['name'] : '' }}</span> <br>
+                            <span>Tên bệnh nhân: {{ isset($data['name']) ? $data['name'] : '' }}</span> <br>
                             <span>Năm sinh: {{ isset($data['date_birthday']) ? $data['date_birthday'] : '' }}</span> <br>
                             <span>Số điện thoại: {{ isset($data['phone']) ? $data['phone'] : '' }}</span><br>
                             <span>Địa chỉ: {{ isset($data['address']) ? $data['address'] : '' }}</span><br>
