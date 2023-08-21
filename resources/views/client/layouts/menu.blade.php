@@ -192,7 +192,7 @@
                                     </a>
                                     <a class="dropdown-item">
                                             <p>
-                                                {{ __('Mã CTV:') }} <span style="color:red"> @if(!empty($_SESSION['code'])){{ $_SESSION['code'] }}@endif</span>
+                                                {{ __('Mã CTV:') }} <span style="color:red;font-weight: 500;"> @if(!empty($_SESSION['code'])){{ $_SESSION['code'] }}@endif</span>
                                             </p>
                                     </a>
                                     <a class="dropdown-item">
