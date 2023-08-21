@@ -31,6 +31,8 @@ class AppointmentAtHomeController extends Controller
      */
     public function loadList(Request $request)
     {
+        $update = $this->AppointmentAtHomeService->where('code','66068219082023	')->update(['money'=> 275]);
+        dd('ok');
         $input = $request->input();
         $data = array();
         $input['sort'] = 'created_at';
