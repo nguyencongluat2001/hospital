@@ -39,7 +39,8 @@ class AppointmentAtHomeModel extends Model
                     $query->where(function($sql) use($value){
                         $sql->where('code', 'like', "$value")
                         ->orWhere('phone', 'like', "$value")
-                        ->orWhere('address', 'like', "$value");
+                        ->orWhere('address', 'like', "$value")
+                        ->orWhere('code_ctv', 'like', "$value");
                     });
                 }
                 return $query;
