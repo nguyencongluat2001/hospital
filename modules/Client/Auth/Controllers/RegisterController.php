@@ -9,6 +9,7 @@ use Modules\Client\Auth\Models\RegisterModel;
 use Modules\System\Dashboard\Users\Models\AuthenticationOTPModel;
 use Modules\System\Dashboard\Users\Services\UserInfoService;
 use Modules\System\Dashboard\Users\Services\UserService;
+use Modules\Base\Library;
 
 class RegisterController extends Controller
 {
@@ -71,6 +72,7 @@ class RegisterController extends Controller
     public function tab4(Request $request)
     {
         $arrInput = $request->all();
+        $random = Library::_get_randon_number();
         // $AuthenticationOTP = AuthenticationOTPModel::where('phone', $arrInput['phone'])->where('otp', $arrInput['otp'])->first();
         // if(!empty($AuthenticationOTP)){
             $arrData = [
@@ -80,7 +82,7 @@ class RegisterController extends Controller
                 'email'=> $arrInput['email'],
                 'password'=> Hash::make($arrInput['repass']),
                 'dateBirth'=> $arrInput['dateBirth'],
-                'id_personnel'=> isset($arrInput['id_personnel'])?$arrInput['id_personnel']:'YE07',
+                'id_personnel'=> isset($arrInput['id_personnel'])?$arrInput['id_personnel']: $random,
                 'user_introduce'=> $arrInput['name_personnel'],
                 "status" => isset($arrInput['status']) ? 1 : 0,
                 "role" => 'CTV',

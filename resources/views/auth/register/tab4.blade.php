@@ -7,7 +7,7 @@
     <div class="card-body">
         <div class="row">
             <div class="form-wrapper text-center">
-                <h4>Chúc mừng bạn đã đăng ký thành công và trở thành Hội viên FinTop</h4>
+                <h4>Chúc mừng bạn đã đăng ký thành công và trở thành Hội viên Booking Hospital</h4>
             </div>
         </div>
         <div class="form-group" style="display: flex;justify-content: center;">

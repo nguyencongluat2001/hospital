@@ -6,7 +6,7 @@
     </div>
     <div class="card-body">
         <div class="row">
-            <div class="form-wrapper col-md-4">
+            <!-- <div class="form-wrapper col-md-4">
                 <label for="">Thời gian đầu tư <span class="request_star">*</span></label>
                 <select name="investment_time" id="investment_time" class="form-control chzn-select">
                     <option value="0-3">0 - 3 tháng</option>
@@ -32,14 +32,14 @@
                     <option value="vnd">VND</option>
                     <option value="khac">Công ty khác</option>
                 </select>
-            </div>
+            </div> -->
         </div>
         <div class="row">
-            <div class="form-wrapper col-md-4">
+            <div class="form-wrapper col-md-6">
                 <label for="">Đặt mật khẩu <span class="request_star">*</span></label>
                 <input placeholder="Nhập mật khẩu..." id="password" type="password" class="form-control" name="password" value="">
             </div>
-            <div class="form-wrapper col-md-4">
+            <div class="form-wrapper col-md-6">
                 <label for="">Nhập lại mật khẩu <span class="request_star">*</span></label>
                 <input placeholder="Nhập lại mật khẩu" id="repass" type="password" class="form-control" name="repass" value="">
             </div>

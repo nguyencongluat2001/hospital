@@ -30,6 +30,7 @@
                 <td align="center"><b>Tên khách hàng</b></td>
                 <td align="center"><b>Số điện thoại</b></td>
                 <td align="center"><b>CTV chỉ định</b></td>
+                <td align="center"><b>Số tiền</b></td>
                 <td align="center"><b>Trạng thái</b></td>
                 @if($_SESSION['role'] == 'ADMIN')
                 <td align="center"><b>Phê duyệt</b></td>
@@ -51,7 +52,7 @@
                         <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->name) ? $data->name : '' }}</td>
                         <td style="wwhite-space: inherit;vertical-align: middle;" align="center">{{ isset($data->phone) ? $data->phone : '' }}</td>
                         <td style="wwhite-space: inherit;vertical-align: middle;" align="center">{{ isset($data->code_ctv) ? $data->code_ctv : '' }}</td>
-                        <!-- <td style="wwhite-space: inherit;vertical-align: middle;" align="center">{{ isset($data->money) ? $data->money : '' }}</td> -->
+                        <td style="wwhite-space: inherit;vertical-align: middle;" align="center">{{ isset($data->money) ? number_format($data->money,0, '', ',') : '' }} VNĐ</td>
                         <td style="white-space: inherit;vertical-align: middle;" align="center">{{ $data->status == 1 ? 'Đã xác nhận' : 'Chưa xác nhận' }}</td>
                         @if($_SESSION['role'] == 'ADMIN')
                         <td style="white-space: inherit;vertical-align: middle;" onclick="{select_row(this);}" align="center">

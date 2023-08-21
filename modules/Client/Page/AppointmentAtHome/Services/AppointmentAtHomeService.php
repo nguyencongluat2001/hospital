@@ -131,7 +131,7 @@ class AppointmentAtHomeService extends Service
         $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C7", $gioitinh);
         $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C8", $input['datas']['code_patient']);
         $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C9", $input['datas']['code_doctor']);
-        $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C10", 'Lúc '.$input['datas']['hour_sampling'].' ngày '.$input['datas']['date_sampling']);
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C10", 'Lúc '.$input['datas']['hour_sampling'].' ngày '.$input['datas']['date_sampling'].' Tại '.$input['datas']['address']);
 
         $j = 1;
         $i = 13;
