@@ -34,7 +34,7 @@
                                             <span style="font-size:30px;font-family: initial;color:#3e3e99">Doanh thu 2023</span> <br>
                                             <span style="font-size:20px;font-family: initial;">Tổng : <span style="font-size:20px;font-family: initial; font-weight: 600;color:#f5b500">827,460,000</span> </span>VND <br>
                                             <span style="font-size:20px;font-family: initial;">Tổng lịch: <span style="font-size:20px;font-family: initial; font-weight: 600;color:#f5b500">253</span> </span> <br>
-                                            <span style="font-size:20px;font-family: initial;">Trong đó: </span> Xét nghiệm: 158 , Khám nhanh: 43 , Truyền dịch: 60
+                                            <span style="font-size:20px;font-family: initial;">Trong đó: </span> XN/158 , KN/43 , TD/60
                                             <canvas id="myChart" style="width:100%;max-width:950px"></canvas>
                                         </div>
                                     </div>
