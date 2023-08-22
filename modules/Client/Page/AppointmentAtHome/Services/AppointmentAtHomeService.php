@@ -61,7 +61,6 @@ class AppointmentAtHomeService extends Service
                 'update_at' => date("Y/m/d")
                 
             ];
-            dd($param);
             if(!empty($_SESSION['role'])){
                 $param['code_ctv'] = $_SESSION['code'];
             }
