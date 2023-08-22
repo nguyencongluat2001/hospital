@@ -453,4 +453,19 @@ class AppointmentAtHomeController extends Controller
         $url = ['url' => url('export/'.$urls),'success' => true];
         return response()->json($url);
     }
+
+
+     // Biểu đồ thống kê doanh thu
+     /**
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function chart(Request $request)
+    {
+        $input = $request->all();
+        $data = $this->AppointmentAtHomeService->chart($input); 
+        return view('client.AppointmentAtHome.chart',$data);
+    }
 }

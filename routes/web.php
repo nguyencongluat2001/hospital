@@ -149,6 +149,9 @@ Route::prefix('/client')->group(function () {
             Route::get('/pdf', [AppointmentAtHomeController::class,'pdf']);
             Route::post('/exportExcel', [AppointmentAtHomeController::class,'exportExcel']);
 
+            Route::get('/chart',[AppointmentAtHomeController::class,'chart']);
+
+
 
             // Truyền dịch
             Route::get('/indexInfusion',[AppointmentAtHomeController::class,'indexInfusion']);

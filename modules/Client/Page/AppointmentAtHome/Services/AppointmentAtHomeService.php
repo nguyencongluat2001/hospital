@@ -153,4 +153,12 @@ class AppointmentAtHomeService extends Service
         $create = $this->repository->where('id', $input['datas']['id'])->update(['link_excel' => url('export/'.$namefile)]);
         return $namefile;
     }
+     /**
+     * biểu đồ thống kê
+     */
+    public function chart($input)
+    {
+        // dd($input);
+        return $input;
+    }
 }

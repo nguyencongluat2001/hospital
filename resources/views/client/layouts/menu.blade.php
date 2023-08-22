@@ -195,7 +195,7 @@
                                                 {{ __('Mã CTV:') }} <span style="color:red;font-weight: 500;"> @if(!empty($_SESSION['code'])){{ $_SESSION['code'] }}@endif</span>
                                             </p>
                                     </a>
-                                    <a class="dropdown-item">
+                                    <a class="dropdown-item" href="{{ URL::asset('client/appointmentathome/chart')}}">
                                             <p>
                                                 {{ __('Quản lý kinh doanh') }}
                                             </p>
