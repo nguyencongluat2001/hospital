@@ -57,8 +57,8 @@ class AppointmentAtHomeService extends Service
                 'type_payment'=> !empty($input['type_payment'])?$input['type_payment']:'',
                 'status'=> 0,
                 'date_birthday'=> !empty($input['date_birthday'])?$input['date_birthday']:'',
-                'created_at' => date("Y/m/d"),
-                'update_at' => date("Y/m/d")
+                'created_at' => date("Y/m/d H:i:s"),
+                'update_at' => date("Y/m/d H:i:s")
                 
             ];
             if(!empty($_SESSION['role'])){
