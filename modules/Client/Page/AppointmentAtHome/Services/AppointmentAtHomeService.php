@@ -33,7 +33,7 @@ class AppointmentAtHomeService extends Service
     public function sendPayment($input)
     {
         DB::beginTransaction();
-        // try{
+        try{
             $random = Library::_get_randon_number();
             // $code_schedule = $random.'_'.date("d").'_'.date("m").'_'.date("Y");
             $code = $random.date("d").date("m").date("Y");
@@ -67,10 +67,10 @@ class AppointmentAtHomeService extends Service
             $create = $this->create($param);
             DB::commit();
             return true;
-        // } catch (\Exception $e) {
-        //     DB::rollBack();
-        //    return array('success' => false, 'message' => (string) $e->getMessage());
-        // }
+        } catch (\Exception $e) {
+            DB::rollBack();
+           return array('success' => false, 'message' => (string) $e->getMessage());
+        }
     }
       /**
      * Form show chi tiết lịch khám
@@ -78,6 +78,7 @@ class AppointmentAtHomeService extends Service
     public function showDetail($input)
     {
         $AppointmentAtHome = $this->repository->where('id', $input['id'])->first();
+        dd($AppointmentAtHome);
         // dd($AppointmentAtHome);
         $expl = explode(',',$AppointmentAtHome['code_indications']);
         // $type = $this->BloodTestService->where('code',$AppointmentAtHome['type'])->first();
