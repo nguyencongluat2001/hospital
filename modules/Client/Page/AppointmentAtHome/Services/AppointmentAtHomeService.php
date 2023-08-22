@@ -78,13 +78,14 @@ class AppointmentAtHomeService extends Service
     public function showDetail($input)
     {
         $AppointmentAtHome = $this->repository->where('id', $input['id'])->first();
-        dd($AppointmentAtHome);
         // dd($AppointmentAtHome);
         $expl = explode(',',$AppointmentAtHome['code_indications']);
+        // dd($expl);
+
         // $type = $this->BloodTestService->where('code',$AppointmentAtHome['type'])->first();
        
         $total = 0;
-        $price = PriceTestModel::whereIn('code_blood',$expl)->get()->toArray();
+        $price = PriceTestModel::whereIn('code_blood',$expl)->orWhereIn('code',$expl)->get()->toArray();
         $totals = number_format($total,0, '', ',');
         $param = [
             'id' => isset($AppointmentAtHome['id'])?$AppointmentAtHome['id']:'', 
