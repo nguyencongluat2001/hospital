@@ -130,14 +130,15 @@ class AppointmentAtHomeService extends Service
         }
         $objPHPExcel->setActiveSheetIndex(0)->setCellValue("A4", '(Thông tin được xuất lúc '.$fromDate.')');
         $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C5", $input['datas']['name']);
-        $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C6", $input['datas']['date_birthday']);
-        $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C7", $gioitinh);
-        $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C8", $input['datas']['code_patient']);
-        $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C9", $input['datas']['code_doctor']);
-        $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C10", 'Lúc '.$input['datas']['hour_sampling'].' ngày '.$input['datas']['date_sampling'].' Tại '.$input['datas']['address']);
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C6", $input['datas']['phone']);
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C7", $input['datas']['date_birthday']);
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C8", $gioitinh);
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C9", $input['datas']['code_patient']);
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C10", $input['datas']['code_doctor']);
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C11", 'Lúc '.$input['datas']['hour_sampling'].' ngày '.$input['datas']['date_sampling'].' - Tại '.$input['datas']['address']);
 
         $j = 1;
-        $i = 13;
+        $i = 14;
         foreach ($input['price'] as $value) {
             $objPHPExcel->setActiveSheetIndex(0)
                 ->setCellValue("A$i", $j)
