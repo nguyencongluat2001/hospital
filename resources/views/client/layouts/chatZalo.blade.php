@@ -110,18 +110,32 @@
     $(".icon-back").click(function(){
         callBack();
     });
+    // function callBack(){
+    //     $("#body-message").html('');
+    //     $("#body-message").hide();
+    //     $(".sendMessage").hide();
+    //     $(".start").show();
+    //     $("#table-container-box").show();
+    //     $(".icon-back").hide();
+    //     $(".list-chat").show();
+    //     $("#txt-phone").hide();
+    //     $("#start").hide();
+    //     $("#start_new").show();
+    //     $(".title-header").html('<span class="icon-back" style="cursor: pointer; color: #fff; display:none;margin-right: 10px;font-size: 18px;"><i class="fas fa-angle-left" aria-hidden="true"></i></span><span class="text-uppercase" style="color: #fff;font-size: 18px;letter-spacing: 1px;font-family: Trocchi, serif;">Chào mừng bạn đã đến với Booking Fast</span><p class="text-capitalize mb-0">Nhập số điện thoại để liên hệ Dịch vụ Khách hàng, chúng tôi luôn túc trực 24/7</p>');
+    //     $(".icon-back").click(function(){
+    //         callBack();
+    //     });
+    // }
     function callBack(){
         $("#body-message").html('');
         $("#body-message").hide();
         $(".sendMessage").hide();
         $(".start").show();
         $("#table-container-box").show();
-        $(".icon-back").hide();
-        $(".list-chat").show();
-        $("#txt-phone").hide();
-        $("#start").hide();
-        $("#start_new").show();
-        $(".title-header").html('<span class="icon-back" style="cursor: pointer; color: #fff; display:none;margin-right: 10px;font-size: 18px;"><i class="fas fa-angle-left" aria-hidden="true"></i></span><span class="text-uppercase" style="color: #fff;font-size: 18px;letter-spacing: 1px;font-family: Trocchi, serif;">Chào mừng bạn đã đến với Booking Fast</span><p class="text-capitalize mb-0">Nhập số điện thoại để liên hệ Dịch vụ Khách hàng, chúng tôi luôn túc trực 24/7</p>');
+        $("#txt-phone").show();
+        $("#phone").val('');
+        $("#errorPhone").html('');
+        $("#start").show();
         $(".icon-back").click(function(){
             callBack();
         });

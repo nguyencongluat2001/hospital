@@ -53,6 +53,7 @@ class ChatClientController extends Controller
                 return $html;
             }
         }catch (\Exception $e){
+            dd($e);
             $logger->log('Error', $e->getMessage());
         }
     }
