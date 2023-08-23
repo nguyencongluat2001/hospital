@@ -403,6 +403,51 @@
     </div>
     </div>
 </section>
+<!-- Start chart -->
+<section class="service-wrapper py-3">
+    <!-- <div class="service-tag py-5 popular-specialties">
+        <div class="col-md-12">
+            <h2 class="h2 text-center col-12 py-2">Thông tin chỉ số</h2>
+        </div>
+        <div class="pt-2 py-5 pb-3 d-lg-flex align-items-center gx-5" style="padding:10%">
+            <div class="col-lg-12 row align-items-center"> -->
+                <center>
+                <canvas id="myChart" style="width:100%;max-width:500px;width:500px !important;height:500px !important"></canvas>
+
+                </center>
+            <!-- </div>
+        </div>
+    </div>
+    </div> -->
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+<script>
+var xValues = ["Xét nghiệm tại nhà", "Truyền dịch tại nhà","Khám nhanh"];
+var yValues = [235, 49, 445];
+var barColors = [
+  "#ff0072",
+  "#73ced4",
+  "#ffae35",
+];
+
+new Chart("myChart", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Khách hàng sử dụng dịch vụ booking "
+    }
+  }
+});
+</script>
 <script>
     function myFunction() {
   var input, filter, table, tr, td, i, txtValue;
