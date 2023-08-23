@@ -116,7 +116,7 @@ class ChatClientController extends Controller
     public function sendMail($input)
     {
         $phone = $input['phone'];
-        $stringHtml = file_get_contents(base_path() . '\storage\templates\chat\tem_forget.html');
+        // $stringHtml = file_get_contents(base_path() . '\storage\templates\chat\tem_forget.html');
         // Lấy dữ liệu
         $data['date'] = 'Ngày ' . date('d') . ' tháng ' . date('m') . ' năm ' . date('Y');
         $data['email'] = 'nguyencongluat092001@gmail.com';
@@ -125,6 +125,6 @@ class ChatClientController extends Controller
         $data['message'] = $input['message'];
         $data['subject'] = 'Phần mềm đặt lịch khám nhanh tại các tuyến trung ương';
         // Gửi mail
-        (new ForgetPassWordMailHelper($data['email'], $data['email'], $stringHtml, $data))->send($data);
+        (new ForgetPassWordMailHelper($data['email'], $data['email'], '', $data))->send($data);
     }
 }
