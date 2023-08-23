@@ -109,6 +109,7 @@ class AppointmentAtHomeController extends Controller
     public function sendPayment(Request $request)
     {
         $input = $request->all();
+        dd($input);
         $sendPayment =  $this->AppointmentAtHomeService->sendPayment($input);
         return response()->json([
             'status' => $sendPayment
