@@ -360,7 +360,7 @@ class AppointmentAtHomeController extends Controller
             $objResult = $this->AppointmentAtHomeService->filter($arrInput);
         }
         $date = date('Y-m-d');
-        $turnover = $this->AppointmentAtHomeService->where('code_ctv',$_SESSION['code']->where('created_at','LIKE','%'.$date.'%'))->sum('money');
+        $turnover = $this->AppointmentAtHomeService->where('code_ctv',$_SESSION['code']->whereDate('created_at','LIKE','%'.$date.'%'))->sum('money');
         $turnover_convert = number_format($turnover,0, '', ',');
         $data['datas'] = $objResult;
         $data['turnover_convert'] = $turnover_convert;
