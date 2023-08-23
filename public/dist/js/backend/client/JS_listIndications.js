@@ -206,7 +206,7 @@ JS_listIndications.prototype.delete = function (id) {
     // var url = this.urlPath + "/recordtype/" + listitem;
     var url = this.urlPath + '/delete';
     Swal.fire({
-        title: 'Bạn có chắc chắn xóa vĩnh viễn thể loại này không?',
+        title: 'Bạn có chắc chắn xóa vĩnh viễn chỉ định này không?',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#34bd57',
