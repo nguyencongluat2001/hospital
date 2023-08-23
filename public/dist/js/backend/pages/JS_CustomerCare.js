@@ -133,3 +133,49 @@ JS_CustomerCare.prototype.broadcast = function(phone){
         }
     });
 }
+function mouseover(_this){
+    $(_this).find(".discussion-time").hide();
+    $(_this).find(".show-more").show();
+    // $(".discussion").removeAttr('onclick');
+}
+function mouseout(_this, phone){
+    $(_this).find(".discussion-time").show();
+    $(_this).find(".show-more").hide();
+    // $(".discussion").attr('onclick', `JS_CustomerCare.message('${phone}')`);
+}
+
+function showMore(_this, phone){
+    console.log(phone);
+    $(_this).parent().find(".menuShowMore").show();
+    $(".deleteMes").click(function(){
+        Swal.fire({
+            title: 'Bạn có chắc chắn xóa vĩnh viễn cuộc trò chuyện này không?',
+            icon: 'warning',
+            showCancelButton: true,
+            cancelButtonText: 'Đóng',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Xác nhận',
+            confirmButtonColor: '#34bd57',
+        }).then((result) => {
+            if (result.isConfirmed == true) {
+                var url = JS_CustomerCare.urlPath + '/delete';
+                var data = 'phone=' + phone;
+                data += '&_token=' + $("#_token").val();
+                $.ajax({
+                    url: url,
+                    data: data,
+                    type: "POST",
+                    success: function(arrResult){
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Xóa thành công',
+                            showConfirmButton: false,
+                            timer: 3000
+                        })
+                        setTimeout(function(){window.location.reload()}, 2500)
+                    }
+                });
+            }
+        });
+    });
+}
