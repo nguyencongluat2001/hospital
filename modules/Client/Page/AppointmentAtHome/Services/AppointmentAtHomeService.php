@@ -100,7 +100,7 @@ class AppointmentAtHomeService extends Service
             'address' => isset($AppointmentAtHome['address'])?$AppointmentAtHome['address']:'', 
             'money' => $totals, 
             'reason' => isset($AppointmentAtHome['reason'])?$AppointmentAtHome['reason']:'', 
-            'date_birthday' => isset($AppointmentAtHome['date_birthday'])?date('d-m-Y',strtotime($AppointmentAtHome['date_birthday'])):'', 
+            'date_birthday' => isset($AppointmentAtHome['date_birthday'])?($AppointmentAtHome['date_birthday']):'', 
             'date_sampling' => isset($AppointmentAtHome['date_sampling'])?date('d-m-Y',strtotime($AppointmentAtHome['date_sampling'])):'', 
             'hour_sampling' => isset($AppointmentAtHome['hour_sampling'])?$AppointmentAtHome['hour_sampling']:'', 
         ];
