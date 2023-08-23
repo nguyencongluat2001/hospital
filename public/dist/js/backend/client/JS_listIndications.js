@@ -200,29 +200,11 @@ JS_listIndications.prototype.edit = function (id) {
     });
 }
 // Xoa mot doi tuong
-JS_listIndications.prototype.delete = function (oForm) {
+JS_listIndications.prototype.delete = function (id) {
     var myClass = this;
     var listitem = '';
-    var p_chk_obj = $('#table-data').find('input[name="chk_item_id"]');
-    $(p_chk_obj).each(function () {
-        if ($(this).is(':checked')) {
-            if (listitem !== '') {
-                listitem += ',' + $(this).val();
-            } else {
-                listitem = $(this).val();
-            }
-        }
-    });
-    if (listitem == '') {
-        var nameMessage = 'Bạn chưa chọn thể loại để xóa!';
-        var icon = 'warning';
-        var color = '#f5ae67';
-        NclLib.alerMesage(nameMessage,icon,color);
-        return false;
-    }
-    var data = $(oForm).serialize();
     // var url = this.urlPath + "/recordtype/" + listitem;
-    var url = this.urlPath + '/deleteCategory';
+    var url = this.urlPath + '/delete';
     Swal.fire({
         title: 'Bạn có chắc chắn xóa vĩnh viễn thể loại này không?',
         icon: 'warning',
@@ -238,7 +220,7 @@ JS_listIndications.prototype.delete = function (oForm) {
                 dataType: 'json',
                 data: {
                     _token: $('#_token').val(),
-                    listitem: listitem,
+                    listitem: id,
                 },
                 success: function (arrResult) {
                     if (arrResult['success'] == true) {

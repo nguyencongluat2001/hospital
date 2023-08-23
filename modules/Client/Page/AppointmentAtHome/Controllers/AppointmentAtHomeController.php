@@ -453,6 +453,19 @@ class AppointmentAtHomeController extends Controller
         $url = ['url' => url('export/'.$urls),'success' => true];
         return response()->json($url);
     }
+        /**
+     * delete
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function delete(Request $request)
+    {
+        $input = $request->all();
+        $data = $this->AppointmentAtHomeService->where('id', $input['id'])->delete(); 
+        return response()->json(['success'=>true]);
+    }
 
 
      // Biểu đồ thống kê doanh thu
