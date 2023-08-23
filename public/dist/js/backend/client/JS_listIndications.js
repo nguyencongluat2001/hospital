@@ -220,7 +220,7 @@ JS_listIndications.prototype.delete = function (id) {
                 dataType: 'json',
                 data: {
                     _token: $('#_token').val(),
-                    listitem: id,
+                    id: id,
                 },
                 success: function (arrResult) {
                     if (arrResult['success'] == true) {
