@@ -45,13 +45,13 @@ use Modules\System\Recordtype\Helpers\WorkflowHelper;
                                 <span style="color: #ff0000;white-space: inherit;vertical-align: middle;" align="center">Không nhận được tiền - nhân viên sẽ liên hệ khách hàng</span>
                                 @endif -->
                         <td style="width:5% ;white-space: inherit;vertical-align: middle;" align="center"> <br>
-                            <button onclick="JS_listIndications.showDetail('{{$id}}')" class="btn btn-light"  type="button">
+                            <button onclick="JS_listIndications.showDetail('{{$id}}')" class="btn"  type="button">
                                 <i style="color:#00740a" class="far fa-eye"></i>
                             </button>
-                            <button onclick="JS_listIndications.delete('{{$id}}')" class="btn btn-light"  type="button">
+                            <button onclick="JS_listIndications.delete('{{$id}}')" class="btn"  type="button">
                                 <i style="color:red" class="fas fa-trash-alt"></i>
                             </button>
-                            <button onclick="JS_listIndications.exportExcel('{{$id}}')" class="btn btn-light"  type="button">
+                            <button onclick="JS_listIndications.exportExcel('{{$id}}')" class="btn"  type="button">
                                 <i style="color:#ffdb2e" class="fas fa-file-download"></i>
                             </button>
                         </td>
