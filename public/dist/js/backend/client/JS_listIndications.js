@@ -224,12 +224,12 @@ JS_listIndications.prototype.delete = function (id) {
                 },
                 success: function (arrResult) {
                     if (arrResult['success'] == true) {
+                        myClass.loadList();
                         if (result.isConfirmed) {
                             var nameMessage = 'Xóa thành công!';
                             var icon = 'success';
                             var color = '#f5ae67';
                             NclLib.alerMesage(nameMessage,icon,color);
-                            myClass.loadList(oForm);
                           }
                     } else {
                         if (result.isConfirmed) {
