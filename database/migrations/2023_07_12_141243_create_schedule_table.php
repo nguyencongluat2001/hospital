@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('schedule', function (Blueprint $table) {
+        Schema::create('c', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('code_schedule');
             $table->string('code_hospital')->nullable();

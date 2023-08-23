@@ -25,7 +25,6 @@ use Modules\System\Recordtype\Helpers\WorkflowHelper;
                 @php $id = $data['id']; $i = 1; @endphp
                     <tr>
                         <td style="white-space: inherit;vertical-align: middle;">
-                            <!-- <span>Ngày tạo chỉ định: {{ isset($data['created_at']) ? $data['created_at'] : '' }}</span> <br> -->
                             <!-- <span>Mã hệ thống: {{ isset($data['code']) ? $data['code'] : '' }}</span> <br> -->
                             <span>Mã ống nghiệm: <span style="color: red;">{{ isset($data['code_patient']) ? $data['code_patient'] : '' }}</span></span> <br>
                             <span>Tên bệnh nhân: {{ isset($data['name']) ? $data['name'] : '' }}</span> <br>
@@ -33,6 +32,7 @@ use Modules\System\Recordtype\Helpers\WorkflowHelper;
                             <span>Số điện thoại: {{ isset($data['phone']) ? $data['phone'] : '' }}</span><br>
                             <span>Địa chỉ: {{ isset($data['address']) ? $data['address'] : '' }}</span><br>
                             <span>Số tiền: {{ !empty($data['money']) ? number_format($data['money'],0, '', ',') : '' }} VNĐ </span><br>
+                            <span>Ngày tạo: {{ isset($data['created_at']) ? $data['created_at'] : '' }}</span> <br>
                             <!-- <span>Chỉ số: <span style="color:red">{{ isset($data['code_indications']) ? $data['code_indications'] : '' }}</span> </span><br> -->
                             @if(!empty($data['link_excel']) && $data['link_excel'] != null)
                             <span>Link Excel: <span style="color:#009efe"><a href="{{$data['link_excel']}}">Xem</a></span> </span><br>
