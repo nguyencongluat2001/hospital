@@ -59,7 +59,7 @@ use Modules\System\Dashboard\Specialty\Models\SpecialtyModel;
                             $dataaa = SpecialtyModel::where('code',$data->code_specialty)->first();
                             
                             @endphp
-                            {{$dataaa['name']}};
+                            {{$dataaa['name_specialty']}}
                         </td>
                         <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->money) ? $data->money : '' }}</td>
                         <!-- @if($data->type_payment == 'BANK') -->
