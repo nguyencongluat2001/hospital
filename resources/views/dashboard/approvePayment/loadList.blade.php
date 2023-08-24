@@ -25,7 +25,6 @@ use Modules\System\Dashboard\Specialty\Models\SpecialtyModel;
             <tr>
                 <td align="center"><input type="checkbox" name="chk_all_item_id"
                         onclick="checkbox_all_item_id(document.forms[0].chk_item_id);"></td>
-                <td align="center"><b>STT</b></td>
                 <td align="center"><b>Thông tin đặt lịch</b></td>
                 <td align="center"><b>Trạng thái</b></td>
                 <td align="center"><b>#</b></td>
@@ -45,7 +44,8 @@ use Modules\System\Dashboard\Specialty\Models\SpecialtyModel;
                                 value="{{ $data->id }}">
                         </td>
                         <td style="white-space: inherit;vertical-align: middle;">
-                            <span>Mã khám bệnh: {{ isset($data->created_at) ? $data->created_at : '' }}</span> <br>
+                            <span>Ngày đặt lịch khám: {{ isset($data->created_at) ? $data->created_at : '' }}</span> <br>
+                            <span>Mã lịch khám: {{ isset($data->code_hospital) ? $data->code_hospital : '' }}</span> <br>
                             <span>Tên khách hàng: {{ isset($data->name) ? $data->name : '' }}</span> <br>
                             <span>Số điện thoại: {{ isset($data->phone) ? $data->phone : '' }}</span><br>
                             <span>Ngày tạo: {{ isset($data->created_at) ? $data->created_at : '' }}</span> <br>
@@ -54,9 +54,9 @@ use Modules\System\Dashboard\Specialty\Models\SpecialtyModel;
                                     $dataaa = SpecialtyModel::where('code',$data->code_specialty)->first();
                                 @endphp
                                 {{$dataaa['name_specialty']}}
-                            </span>
-                            <span>Số tiền: {{ !empty($data['money']) ? number_format($data['money'],0, '', ',') : '' }} VNĐ </span><br>
-                            <span>Bankking: Chuyển khoản qua ngân hàng </span><br>
+                            </span><br>
+                            <span>Số tiền: <span sty;e="color: #ffa729;font-weight: 600;"> {{ !empty($data['money']) ? number_format($data['money'],0, '', ',') : '' }}</span> VNĐ </span><br>
+                            <span>Banking: Chuyển khoản qua ngân hàng </span><br>
                         </td>
                         <td style="white-space: inherit;vertical-align: middle;" onclick="{select_row(this);}" align="center">
                             <label class="custom-control custom-checkbox p-0 m-0 pointer " style="cursor: pointer;">
@@ -74,22 +74,24 @@ use Modules\System\Dashboard\Specialty\Models\SpecialtyModel;
                     <tr>
                     @endif
                         <td style="white-space: inherit;vertical-align: middle;" align="center"><input type="checkbox" name="chk_item_id"
-                                value="{{ $data->id }}"></td>
-                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{($datas->currentPage() - 1)*$datas->perPage() + ($key + 1)}}</td>
-                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->created_at) ? $data->created_at : '' }}</td>
-                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->code_schedule) ? $data->code_schedule : '' }}</td>
-                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->name) ? $data->name : '' }}</td>
-                        <td style="wwhite-space: inherit;vertical-align: middle;" align="center">{{ isset($data->phone) ? $data->phone : '' }}</td>
-                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->money) ? $data->money : '' }}</td>
-                        <!-- @if($data->type_payment == 'BANK') -->
-                        <td style="color:#00ab5f;white-space: inherit;vertical-align: middle;" align="center">Ngân hàng</td>
-                        <!-- @else
-                        <td style="color:#ff00c5;white-space: inherit;vertical-align: middle;" align="center">MoMo</td>
-                        @endif              -->
-                                   <!-- <td style="vertical-align: middle;" align="center"><img  src="{{url('/file-image-client/schedule/')}}/{{ !empty($data->name_image)?$data->name_image:'' }}" alt="Image" style="height: 150px;width: 150px;object-fit: cover;"></td> -->
+                                value="{{ $data->id }}">
+                        </td>
+                        <td style="white-space: inherit;vertical-align: middle;">
+                            <span>Mã khám bệnh: {{ isset($data->created_at) ? $data->created_at : '' }}</span> <br>
+                            <span>Tên khách hàng: {{ isset($data->name) ? $data->name : '' }}</span> <br>
+                            <span>Số điện thoại: {{ isset($data->phone) ? $data->phone : '' }}</span><br>
+                            <span>Ngày tạo: {{ isset($data->created_at) ? $data->created_at : '' }}</span> <br>
+                            <span>Khoa:  
+                                @php
+                                    $dataaa = SpecialtyModel::where('code',$data->code_specialty)->first();
+                                @endphp
+                                {{$dataaa['name_specialty']}}
+                            </span> <br>
+                            <span>Số tiền: <span sty;e="color: #ffa729;font-weight: 600;"> {{ !empty($data['money']) ? number_format($data['money'],0, '', ',') : '' }}</span> VNĐ </span><br>
+                            <span>Banking: Chuyển khoản qua ngân hàng </span><br>
+                        </td>
                         <td style="white-space: inherit;vertical-align: middle;" align="center">{{ $data->status == 1 ? 'Đã xác nhận' : 'Chưa xác nhân' }}</td>
-                        <td style="color: #ffb600;white-space: inherit;vertical-align: middle;" align="center" onclick="JS_ApprovePayment.edit('{{$id}}')"><i class="far fa-eye"></i></td>
-                        <!-- <td style="width:5% ;white-space: inherit;vertical-align: middle;" align="center"><span class="text-cursor text-warning" onclick="JS_ApprovePayment.edit('{{$id}}')"><i class="fas fa-edit"></i></span></td> -->
+                        <td style="color: #ffb600;;white-space: inherit;vertical-align: middle;" align="center" onclick="JS_ApprovePayment.edit('{{$id}}')"><i class="far fa-eye"></i></td>
                     </tr>
                     @endif
                 @endforeach
