@@ -183,7 +183,7 @@ class AppointmentAtHomeService extends Service
             }
             $fromDate = $input['year'].'-'.$month.'-01';
             $toDate = $input['year'].'-'.$month.'-'.$toDayEnd;
-            $money = DB::table('service_at_home')->whereDate('created_at','>=' ,$fromDate)->whereDate('created_at','<=' ,$toDate)->sum('money');
+            $money = DB::table('service_at_home')->whereDate('created_at','>=' ,$fromDate)->whereDate('created_at','<=' ,$toDate)->where('code_ctv',$_SESSION['code'])->sum('money');
             if($input['month'] == '' || $input['month'] == $month){
                 $datacc['dataMoney'][] = $money;
                 $total += $money;
