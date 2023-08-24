@@ -30,7 +30,7 @@ use Modules\System\Dashboard\Specialty\Models\SpecialtyModel;
                 <td align="center"><b>Mã khám bệnh</b></td>
                 <td align="center"><b>Tên khách hàng</b></td>
                 <td align="center"><b>Số điện thoại</b></td>
-                <td align="center"><b>Gói khám</b></td>
+                <td align="center"><b>Khoa</b></td>
                 <td align="center"><b>Số tiền</b></td>
                 <td align="center"><b>Banking</b></td>
                 <td align="center"><b>Trạng thái</b></td>
@@ -61,7 +61,7 @@ use Modules\System\Dashboard\Specialty\Models\SpecialtyModel;
                             @endphp
                             {{$dataaa['name_specialty']}}
                         </td>
-                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->money) ? $data->money : '' }}</td>
+                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->money) ? number_format($data->money,0, '', ',') : '' }} VNĐ</td>
                         <!-- @if($data->type_payment == 'BANK') -->
                         <td style="color:#00ab5f;white-space: inherit;vertical-align: middle;" align="center">Ngân hàng</td>
                         <!-- @else
