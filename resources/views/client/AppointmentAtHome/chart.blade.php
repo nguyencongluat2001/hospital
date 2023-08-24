@@ -51,27 +51,45 @@
 <script type="text/javascript" src="{{ URL::asset('dist/js/backend/client/JS_AppointmentAtHome.js') }}"></script>
 <script src='../assets/js/jquery.js'></script>
 <script>
-var xValues = ["1", "2", "3", "4", "5","6","7","8","9","10","11","12"];
-var yValues = [15500000, 49000000, 44000000, 24000000, 15000000, 55000000, 46530000, 4400000, 24006000, 158900000,54500005, 49865755];
-var barColors = ["orange", "orange","orange","orange","orange","orange", "orange","red","orange","green","orange", "orange"];
+    var myClass = this;
+    var baseUrl = "{{ url('') }}";
+    NclLib.loadding();
+    var urlPath = baseUrl + '/client/appointmentathome/report';
+    var data = '';
+    $.ajax({
+        url: urlPath,
+        type: "GET",
+        // cache: true,
+        data: data,
+        success: function (arrResult) {
+            var yValues = arrResult.datas.dataMoney;
+            var xValues = ["1", "2", "3", "4", "5","6","7","8","9","10","11","12"];
+            // var yValues = [15500000, 49000000, 44000000, 24000000, 15000000, 55000000, 46530000, 4400000, 24006000, 158900000,54500005, 49865755];
+            var barColors = ["orange", "orange","orange","orange","orange","orange", "orange","orange","orange","orange","orange", "orange"];
 
-new Chart("myChart", {
-  type: "bar",
-  data: {
-    labels: xValues,
-    datasets: [{
-      backgroundColor: barColors,
-      data: yValues
-    }]
-  },
-  options: {
-    legend: {display: false},
-    title: {
-      display: true,
-      text: "Tính tổng doanh thu theo tháng / giá trị VND"
-    }
-  }
-});
+            new Chart("myChart", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+                }]
+            },
+            options: {
+                legend: {display: false},
+                title: {
+                display: true,
+                text: "Tính tổng doanh thu theo tháng / giá trị VND"
+                }
+            }
+            });
+        }
+    });
+    
+
+
+
 </script>
 <script type="text/javascript">
     var baseUrl = "{{ url('') }}";

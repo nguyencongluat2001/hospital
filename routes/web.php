@@ -151,6 +151,7 @@ Route::prefix('/client')->group(function () {
             Route::post('/exportExcel', [AppointmentAtHomeController::class,'exportExcel']);
 
             Route::get('/chart',[AppointmentAtHomeController::class,'chart']);
+            Route::get('/report',[AppointmentAtHomeController::class,'report']);
 
 
 
