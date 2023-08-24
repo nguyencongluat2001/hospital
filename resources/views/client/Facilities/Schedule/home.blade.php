@@ -138,9 +138,9 @@
                                                 </div>
                                                 <div class="row mt-3 ">
                                                     <div class="form-input col-md-6 padding-style">
-                                                        <input type="text" class="form-control required" placeholder="Họ và tên bệnh nhân..." name="uname" id="uname" oninput="inValid(this.id)">
-                                                        <i class="fa fa-user uname-icon padding-style"></i>
-                                                        <span class="message-error uname-error">Họ và tên bệnh nhân không được để trống!</span>
+                                                        <input type="text" class="form-control required" placeholder="Họ và tên bệnh nhân..." name="name" id="name" oninput="inValid(this.id)">
+                                                        <i class="fa fa-user name-icon padding-style"></i>
+                                                        <span class="message-error name-error">Họ và tên bệnh nhân không được để trống!</span>
                                                     </div>
                                                     <div class="form-input col-md-6 padding-style">
                                                         <input type="text" class="form-control required" placeholder="Số điện thoại..." name="phone" id="phone" oninput="inValid(this.id)">
