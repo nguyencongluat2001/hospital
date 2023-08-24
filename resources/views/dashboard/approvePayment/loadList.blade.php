@@ -57,8 +57,9 @@ use Modules\System\Dashboard\Specialty\Models\SpecialtyModel;
                         <td style="wwhite-space: inherit;vertical-align: middle;" align="center">
                             @php
                             $dataaa = SpecialtyModel::where('code',$data->code_specialty)->first();
-                            dd($dataaa);
+                            
                             @endphp
+                            $dataaa['name'];
                         </td>
                         <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->money) ? $data->money : '' }}</td>
                         <!-- @if($data->type_payment == 'BANK') -->
