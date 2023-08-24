@@ -44,7 +44,6 @@ use Modules\System\Dashboard\Specialty\Models\SpecialtyModel;
                                 value="{{ $data->id }}">
                         </td>
                         <td style="white-space: inherit;vertical-align: middle;">
-                            <span>Ngày đặt lịch: {{ isset($data->created_at) ? $data->created_at : '' }}</span> <br>
                             <span>Mã lịch khám: {{ isset($data->code_schedule) ? $data->code_schedule : '' }}</span> <br>
                             <span>Tên khách hàng: {{ isset($data->name) ? $data->name : '' }}</span> <br>
                             <span>Số điện thoại: {{ isset($data->phone) ? $data->phone : '' }}</span><br>
@@ -77,7 +76,6 @@ use Modules\System\Dashboard\Specialty\Models\SpecialtyModel;
                                 value="{{ $data->id }}">
                         </td>
                         <td style="white-space: inherit;vertical-align: middle;">
-                            <span>Ngày đặt lịch: {{ isset($data->created_at) ? $data->created_at : '' }}</span> <br>
                             <span>Mã lịch khám: {{ isset($data->code_schedule) ? $data->code_schedule : '' }}</span> <br>
                             <span>Tên khách hàng: {{ isset($data->name) ? $data->name : '' }}</span> <br>
                             <span>Số điện thoại: {{ isset($data->phone) ? $data->phone : '' }}</span><br>
