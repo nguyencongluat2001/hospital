@@ -45,7 +45,9 @@
                             <span>Địa chỉ: {{ isset($data->address) ? $data->address : '' }}</span><br>
                             <span>Số tiền: {{ !empty($data->money) ? number_format($data->money,0, '', ',') : '' }} VNĐ </span><br>
                             <span>Ngày tạo: {{ isset($data->created_at) ? $data->created_at : '' }}</span> <br>
-                            <span>Ngày lấy mẫu<span style="color:black">Lúc </span> {{ isset($data->hour_sampling) ? $data->hour_sampling : '' }} <span style="color:black">Ngày </span>{{Carbon\Carbon::parse($data->date_sampling)->format('d-m-Y')}} Tại {{ isset($data->address) ? $data->address : '' }}</span>
+                            <span>Ngày lấy mẫu: Lúc <span style="color:red">{{ isset($data->hour_sampling) ? $data->hour_sampling : '' }}</span>
+                             Ngày <span style="color:red">{{Carbon\Carbon::parse($data->date_sampling)->format('d-m-Y')}}</span>
+                              - Tại {{ isset($data->address) ? $data->address : '' }}</span>
                             <span>CTV chỉ định: {{ isset($data->code_ctv) ? $data->code_ctv : '' }}</span> <br>
                             <span>Trạng thái: {{ $data->status == 1 ? 'Đã xác nhận' : 'Chưa xác nhận' }}</span> <br>
                         </td>
