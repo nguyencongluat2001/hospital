@@ -32,9 +32,7 @@
                                             </div>
                                             <!-- Màn hình danh sách -->
                                             <span style="font-size:30px;font-family: initial;color:#3e3e99">Doanh thu 2023</span> <br>
-                                            <span style="font-size:20px;font-family: initial;">Tổng : <span style="font-size:20px;font-family: initial; font-weight: 600;color:#f5b500">827,460,000</span> </span>VND <br>
-                                            <span style="font-size:20px;font-family: initial;">Tổng lịch: <span style="font-size:20px;font-family: initial; font-weight: 600;color:#f5b500">253</span> </span> <br>
-                                            <span style="font-size:20px;font-family: initial;">Trong đó: </span> XN/158 , KN/43 , TD/60
+                                            <div id="total"></div>
                                             <canvas id="myChart" style="width:100%;max-width:950px"></canvas>
                                         </div>
                                     </div>
@@ -62,6 +60,9 @@
         // cache: true,
         data: data,
         success: function (arrResult) {
+            var html = `<span style="font-size:20px;font-family: initial;">Tổng : <span style="font-size:20px;font-family: initial; font-weight: 600;color:#f5b500">`+ arrResult.total +`</span> </span>VND <br>`
+            $("#total").html(html);
+
             var yValues = arrResult.datas.dataMoney;
             var xValues = ["1", "2", "3", "4", "5","6","7","8","9","10","11","12"];
             // var yValues = [15500000, 49000000, 44000000, 24000000, 15000000, 55000000, 46530000, 4400000, 24006000, 158900000,54500005, 49865755];

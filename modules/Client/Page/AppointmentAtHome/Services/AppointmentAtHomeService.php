@@ -170,6 +170,7 @@ class AppointmentAtHomeService extends Service
         $input['month'] = '';
         $data = array();
         $monthArr = ['01','02','03','04','05','06','07','08','09','10','11','12'];
+        $total = 0;
         foreach($monthArr as $month){
             if(checkdate($month,31,date('Y')) == true){
                 $toDayEnd = 31;
@@ -182,45 +183,15 @@ class AppointmentAtHomeService extends Service
             }
             $fromDate = $input['year'].'-'.$month.'-01';
             $toDate = $input['year'].'-'.$month.'-'.$toDayEnd;
-            // $sql = "SELECT COUNT(CASE WHEN 
-            //         (DATEDIFF(day,have_to_result_date,appointed_date) >= 0 or appointed_date is null)
-            //         AND CAST(have_to_result_date AS date) >= '$fromDate'
-            //         AND CAST(have_to_result_date AS date) <= '$toDate' 
-            //         THEN 1 ELSE null END) AS daGiaiQuyetDungHan,
-
-            //         COUNT(CASE WHEN (DATEDIFF(day,have_to_result_date,appointed_date) < 0 or appointed_date is null)
-            //         AND CAST(have_to_result_date AS date) >= '$fromDate'
-            //         AND CAST(have_to_result_date AS date) <= '$toDate' 
-            //         THEN 1 ELSE null END) AS daGiaiQuyetQuahan,
-
-            //         COUNT(CASE WHEN CAST(have_to_result_date AS date ) >= '$fromDate'
-            //         AND CAST(have_to_result_date AS date) <= '$toDate' 
-            //         THEN 1 ELSE null END) 
-            //         AS tong
-
-            //         FROM [ecs-h55-sync].[dbo].[records_gov]";
-
-
-            
-            // $dataSql =  \DB::select($sql);
-            // //convert đúng hạn
-            // if(($dataSql[0]->daGiaiQuyetDungHan) <= 0){
-            // $dunghan = 0;
-            // }else{
-            //     $dunghan = round(($dataSql[0]->daGiaiQuyetDungHan / $dataSql[0]->tong) * 100, 2);
-            // }
-            // //convert quá hạn
-            // if(($dataSql[0]->daGiaiQuyetQuahan) <= 0){
-            //     $quahan = 0;
-            // }else{
-            //     $quahan = 100 - $dunghan;
-            // }
             $money = DB::table('service_at_home')->whereDate('created_at','>=' ,$fromDate)->whereDate('created_at','<=' ,$toDate)->sum('money');
             if($input['month'] == '' || $input['month'] == $month){
                 $datacc['dataMoney'][] = $money;
+                $total += $money;
+
             }
         }
         $data['datas'] = $datacc;
+        $data['total'] =  number_format($total,0, '', ',');
         return $data;
     }
 }
