@@ -57,4 +57,13 @@ class CustomerCareController extends Controller
         $this->customerCareService->where('phone', $arrInput['phone'])->update(['view' => 1]);
         return view("dashboard.customerCare.message", $data);
     }
+
+    /**
+     * Xóa cuộc trò chuyện
+     */
+    public function delete(Request $request)
+    {
+        $phone = $request->phone;
+        $this->customerCareService->where('phone', $phone)->delete();
+    }
 }
