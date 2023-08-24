@@ -42,12 +42,12 @@
                             <span>Năm sinh: {{ isset($data->date_birthday) ? $data->date_birthday : '' }}</span> <br>
                             <span>Số điện thoại: {{ isset($data->phone) ? $data->phone : '' }}</span><br>
                             <span>Địa chỉ: {{ isset($data->address) ? $data->address : '' }}</span><br>
-                            <span>Mã ống nghiệm: <span style="color: red;">{{ isset($data->code) ? $data->code : '' }}</span></span> <br>
+                            <span>Mã ống nghiệm: <span style="color: red;font-weight: 600;">{{ isset($data->code) ? $data->code : '' }}</span></span> <br>
                             <span>Số tiền: {{ !empty($data->money) ? number_format($data->money,0, '', ',') : '' }} VNĐ </span><br>
                             <span>Ngày tạo: {{ isset($data->created_at) ? $data->created_at : '' }}</span> <br>
-                            <span>Ngày lấy mẫu: Lúc <span style="color:red;color: #2cab9e;">{{ isset($data->hour_sampling) ? $data->hour_sampling : '' }}</span>
-                             Ngày <span style="color:red;font-weight: 600;">{{Carbon\Carbon::parse($data->date_sampling)->format('d-m-Y')}}</span>
-                              - Tại {{ isset($data->address) ? $data->address : '' }}</span>
+                            <span>Lấy mẫu: Lúc <span style="font-weight: 600;">{{ isset($data->hour_sampling) ? $data->hour_sampling : '' }}</span>
+                            Ngày <span style="font-weight: 600;">{{Carbon\Carbon::parse($data->date_sampling)->format('d-m-Y')}}</span>
+                              - Tại <span style="font-weight: 600;">{{ isset($data->address) ? $data->address : '' }}</span>  </span>
                             <span>CTV chỉ định: {{ isset($data->code_ctv) ? $data->code_ctv : '' }}</span> <br>
                             <span>Trạng thái: {{ $data->status == 1 ? 'Đã xác nhận' : 'Chưa xác nhận' }}</span> <br>
                         </td>
