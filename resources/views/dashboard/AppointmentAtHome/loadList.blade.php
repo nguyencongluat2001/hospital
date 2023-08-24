@@ -23,15 +23,7 @@
                 <td align="center"><input type="checkbox" name="chk_all_item_id"
                         onclick="checkbox_all_item_id(document.forms[0].chk_item_id);"></td>
                 <td align="center"><b>STT</b></td>
-                <td align="center"><b>Thời gian tạo</b></td>
-                <td align="center"><b>Thời gian lấy mẫu</b></td>
-                <!-- <td align="center"><b>Gói</b></td> -->
-                <td align="center"><b>Mã đặt lịch</b></td>
-                <td align="center"><b>Tên khách hàng</b></td>
-                <td align="center"><b>Số điện thoại</b></td>
-                <td align="center"><b>CTV chỉ định</b></td>
-                <td align="center"><b>Số tiền</b></td>
-                <td align="center"><b>Trạng thái</b></td>
+                <td align="center"><b>Thông tin</b></td>
                 @if($_SESSION['role'] == 'ADMIN')
                 <td align="center"><b>Phê duyệt</b></td>
                 @endif
@@ -53,7 +45,7 @@
                             <span>Địa chỉ: {{ isset($data->address) ? $data->address : '' }}</span><br>
                             <span>Số tiền: {{ !empty($data->money) ? number_format($data->money,0, '', ',') : '' }} VNĐ </span><br>
                             <span>Ngày tạo: {{ isset($data->created_at) ? $data->created_at : '' }}</span> <br>
-                            <span>Ngày lấy mẫu<span style="color:black">Lúc </span> {{ isset($data->hour_sampling) ? $data->hour_sampling : '' }} <br> <span style="color:black">Ngày </span>{{Carbon\Carbon::parse($data->date_sampling)->format('d-m-Y')}} Tại {{ isset($data->address) ? $data->address : '' }}</span>
+                            <span>Ngày lấy mẫu<span style="color:black">Lúc </span> {{ isset($data->hour_sampling) ? $data->hour_sampling : '' }} <span style="color:black">Ngày </span>{{Carbon\Carbon::parse($data->date_sampling)->format('d-m-Y')}} Tại {{ isset($data->address) ? $data->address : '' }}</span>
                             <span>CTV chỉ định: {{ isset($data->code_ctv) ? $data->code_ctv : '' }}</span> <br>
                             <span>Trạng thái: {{ $data->status == 1 ? 'Đã xác nhận' : 'Chưa xác nhận' }}</span> <br>
                         </td>
