@@ -44,18 +44,18 @@ use Modules\System\Dashboard\Specialty\Models\SpecialtyModel;
                                 value="{{ $data->id }}">
                         </td>
                         <td style="white-space: inherit;vertical-align: middle;">
-                            <span>Ngày đặt lịch khám: {{ isset($data->created_at) ? $data->created_at : '' }}</span> <br>
-                            <span>Mã lịch khám: {{ isset($data->code_hospital) ? $data->code_hospital : '' }}</span> <br>
+                            <span>Ngày đặt lịch: {{ isset($data->created_at) ? $data->created_at : '' }}</span> <br>
+                            <span>Mã lịch khám: {{ isset($data->code_schedule) ? $data->code_schedule : '' }}</span> <br>
                             <span>Tên khách hàng: {{ isset($data->name) ? $data->name : '' }}</span> <br>
                             <span>Số điện thoại: {{ isset($data->phone) ? $data->phone : '' }}</span><br>
                             <span>Ngày tạo: {{ isset($data->created_at) ? $data->created_at : '' }}</span> <br>
                             <span>Khoa:  
                                 @php
-                                    $dataaa = SpecialtyModel::where('code',$data->code_specialty)->first();
+                                    $specialty = SpecialtyModel::where('code',$data->code_specialty)->first();
                                 @endphp
-                                {{$dataaa['name_specialty']}}
+                                <span style="color: red;font-weight: 600;">{{$specialty['name_specialty']}}</span>
                             </span><br>
-                            <span>Số tiền: <span sty;e="color: #ffa729;font-weight: 600;"> {{ !empty($data['money']) ? number_format($data['money'],0, '', ',') : '' }}</span> VNĐ </span><br>
+                            <span>Số tiền: <span style="color: #ffa729;font-weight: 600;"> {{ !empty($data['money']) ? number_format($data['money'],0, '', ',') : '' }}</span> VNĐ </span><br>
                             <span>Banking: Chuyển khoản qua ngân hàng </span><br>
                         </td>
                         <td style="white-space: inherit;vertical-align: middle;" onclick="{select_row(this);}" align="center">
@@ -77,16 +77,17 @@ use Modules\System\Dashboard\Specialty\Models\SpecialtyModel;
                                 value="{{ $data->id }}">
                         </td>
                         <td style="white-space: inherit;vertical-align: middle;">
-                            <span>Mã khám bệnh: {{ isset($data->created_at) ? $data->created_at : '' }}</span> <br>
+                            <span>Ngày đặt lịch: {{ isset($data->created_at) ? $data->created_at : '' }}</span> <br>
+                            <span>Mã lịch khám: {{ isset($data->code_schedule) ? $data->code_schedule : '' }}</span> <br>
                             <span>Tên khách hàng: {{ isset($data->name) ? $data->name : '' }}</span> <br>
                             <span>Số điện thoại: {{ isset($data->phone) ? $data->phone : '' }}</span><br>
                             <span>Ngày tạo: {{ isset($data->created_at) ? $data->created_at : '' }}</span> <br>
                             <span>Khoa:  
                                 @php
-                                    $dataaa = SpecialtyModel::where('code',$data->code_specialty)->first();
+                                    $specialty = SpecialtyModel::where('code',$data->code_specialty)->first();
                                 @endphp
-                                {{$dataaa['name_specialty']}}
-                            </span> <br>
+                                <span style="color: red;font-weight: 600;">{{$specialty['name_specialty']}}</span>
+                            </span><br>
                             <span>Số tiền: <span sty;e="color: #ffa729;font-weight: 600;"> {{ !empty($data['money']) ? number_format($data['money'],0, '', ',') : '' }}</span> VNĐ </span><br>
                             <span>Banking: Chuyển khoản qua ngân hàng </span><br>
                         </td>
