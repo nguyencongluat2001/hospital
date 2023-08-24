@@ -36,7 +36,7 @@ use Modules\System\Dashboard\Specialty\Models\SpecialtyModel;
                 @php $id = $data->id; $i = 1; @endphp
                     @if($_SESSION['role'] == 'ADMIN')
                     @if($data->status == 1)
-                    <tr style="background:#7bffa5">
+                    <tr style="background:#dafcff">
                     @else 
                     <tr>
                     @endif
@@ -55,7 +55,7 @@ use Modules\System\Dashboard\Specialty\Models\SpecialtyModel;
                                 @endphp
                                 <span style="color: red;font-weight: 600;">{{$specialty['name_specialty']}}</span>
                             </span><br>
-                            <span>Số tiền: <span style="color: #ffa729;font-weight: 600;"> {{ !empty($data['money']) ? number_format($data['money'],0, '', ',') : '' }}</span> VNĐ </span><br>
+                            <span>Số tiền: <span style="color: #3b83c0;font-weight: 600;"> {{ !empty($data['money']) ? number_format($data['money'],0, '', ',') : '' }}</span> VNĐ </span><br>
                             <span>Banking: Chuyển khoản qua ngân hàng </span><br>
                         </td>
                         <td style="white-space: inherit;vertical-align: middle;" onclick="{select_row(this);}" align="center">
@@ -69,7 +69,7 @@ use Modules\System\Dashboard\Specialty\Models\SpecialtyModel;
                     @endif
                     @if($data->status == 1 && $_SESSION['role'] == 'EMPLOYEE')
                     @if($data->status == 1)
-                    <tr style="background:#7bffa5">
+                    <tr style="background:#dafcff">
                     @else 
                     <tr>
                     @endif
@@ -88,7 +88,7 @@ use Modules\System\Dashboard\Specialty\Models\SpecialtyModel;
                                 @endphp
                                 <span style="color: red;font-weight: 600;">{{$specialty['name_specialty']}}</span>
                             </span><br>
-                            <span>Số tiền: <span sty;e="color: #ffa729;font-weight: 600;"> {{ !empty($data['money']) ? number_format($data['money'],0, '', ',') : '' }}</span> VNĐ </span><br>
+                            <span>Số tiền: <span sty;e="color: #3b83c0;font-weight: 600;"> {{ !empty($data['money']) ? number_format($data['money'],0, '', ',') : '' }}</span> VNĐ </span><br>
                             <span>Banking: Chuyển khoản qua ngân hàng </span><br>
                         </td>
                         <td style="white-space: inherit;vertical-align: middle;" align="center">{{ $data->status == 1 ? 'Đã xác nhận' : 'Chưa xác nhân' }}</td>
