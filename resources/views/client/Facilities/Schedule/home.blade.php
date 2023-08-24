@@ -150,9 +150,9 @@
                                                 </div>
                                                 <div class="row mt-3">
                                                     <div class="form-input col-md-6 padding-style">
-                                                        <input type="text" class="form-control required" placeholder="Số bảo hiểm y tế..." name="code_insurance" id="code_insurance" oninput="inValid(this.id)">
-                                                        <i class="fas fa-book-medical code_insurance-icon padding-style"></i>
-                                                        <span class="message-error code_insurance-error">Số bảo hiểm y tế không được để trống!</span>
+                                                        <input type="text" class="form-control" placeholder="Số bảo hiểm y tế..." name="code_insurance" id="code_insurance" oninput="inValid(this.id)">
+                                                        <!-- <i class="fas fa-book-medical code_insurance-icon padding-style"></i> -->
+                                                        <!-- <span class="message-error code_insurance-error">Số bảo hiểm y tế không được để trống!</span> -->
                                                     </div>
                                                     <div class="form-wrapper col-md-6 padding-style">
                                                         <input type="radio" value="1" name="sex" id="sex" /> <span style="padding-left:5px">Nam</span>&emsp;
