@@ -118,6 +118,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
                 Route::post('message', [CustomerCareController::class, 'message']);
                 Route::post('broadcast', [ChatAdminController::class, 'broadcast'])->name('broadcast');
                 Route::post('receive', [ChatAdminController::class, 'receive'])->name('receive');
+                Route::post('delete', [CustomerCareController::class, 'delete']);
             });
              //Phê duyệt thanh toán đặt lịch 
              Route::prefix('approvepayment')->group(function(){

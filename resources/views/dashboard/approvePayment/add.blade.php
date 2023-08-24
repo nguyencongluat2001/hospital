@@ -96,11 +96,11 @@
                     <div class="row pt-5">
                         <div class="form-wrapper col-md-6">
                             <label for="">Ảnh giao dịch thành công đến: 
-                                @if($datas['type_payment'] == 'BANK')
+                                <!-- @if($datas['type_payment'] == 'BANK') -->
                                 <span style="color:#2831c7">Ngân hàng</span>
-                                @else
+                                <!-- @else
                                 <span style="color:#dc0088">MoMo</span>
-                                @endif
+                                @endif -->
                             </label>
                             @if(!empty($datas['name_image']))
                             <img class="form-control" id="show_img" src="{{url('/file-image-client/schedule/')}}/{{$datas['name_image']}}" alt="Image" style="width:200px">

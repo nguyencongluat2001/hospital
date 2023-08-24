@@ -22,19 +22,11 @@
             <tr>
                 <td align="center"><input type="checkbox" name="chk_all_item_id"
                         onclick="checkbox_all_item_id(document.forms[0].chk_item_id);"></td>
-                <td align="center"><b>STT</b></td>
-                <td align="center"><b>Thời gian tạo</b></td>
-                <td align="center"><b>Thời gian lấy mẫu</b></td>
-                <!-- <td align="center"><b>Gói</b></td> -->
-                <td align="center"><b>Mã đặt lịch</b></td>
-                <td align="center"><b>Tên khách hàng</b></td>
-                <td align="center"><b>Số điện thoại</b></td>
-                <td align="center"><b>CTV chỉ định</b></td>
-                <td align="center"><b>Số tiền</b></td>
-                <td align="center"><b>Trạng thái</b></td>
+                <td align="center"><b>Thông tin</b></td>
                 @if($_SESSION['role'] == 'ADMIN')
                 <td align="center"><b>Phê duyệt</b></td>
                 @endif
+                <td align="center"><b>Chi tiết</b></td>
             </tr>
         </thead>
         <tbody id="body_data">
@@ -43,17 +35,21 @@
                 @php $id = $data->id; $i = 1; @endphp
                     <tr>
                         <td style="white-space: inherit;vertical-align: middle;" align="center"><input type="checkbox" name="chk_item_id"
-                                value="{{ $data->id }}"></td>
-                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{($datas->currentPage() - 1)*$datas->perPage() + ($key + 1)}}</td>
-                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->created_at) ? $data->created_at : '' }}</td>
-                        <td style="white-space: inherit;vertical-align: middle;color: #e85600;font-weight: 600;" align="center"><span style="color:black">Lúc </span> {{ isset($data->hour_sampling) ? $data->hour_sampling : '' }} <br> <span style="color:black">Ngày </span>{{Carbon\Carbon::parse($data->date_sampling)->format('d-m-Y')}}</td>
-                        <!-- <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->type) ? $data->type : '' }}</td> -->
-                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->code) ? $data->code : '' }}</td>
-                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->name) ? $data->name : '' }}</td>
-                        <td style="wwhite-space: inherit;vertical-align: middle;" align="center">{{ isset($data->phone) ? $data->phone : '' }}</td>
-                        <td style="wwhite-space: inherit;vertical-align: middle;" align="center">{{ isset($data->code_ctv) ? $data->code_ctv : '' }}</td>
-                        <td style="wwhite-space: inherit;vertical-align: middle;" align="center">{{ !empty($data->money) ? number_format($data->money,0, '', ',') : 0 }} VNĐ</td>
-                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{ $data->status == 1 ? 'Đã xác nhận' : 'Chưa xác nhận' }}</td>
+                            value="{{ $data->id }}">
+                        </td>
+                        <td>
+                            <span>Ngày tạo: {{ isset($data->created_at) ? $data->created_at : '' }}</span> <br>
+                            <span>Tên bệnh nhân: <span style="font-weight: 600;">{{ isset($data->name) ? $data->name : '' }}</span></span> <br>
+                            <span>Năm sinh: {{ isset($data->date_birthday) ? $data->date_birthday : '' }}</span> <br>
+                            <span>Số điện thoại: {{ isset($data->phone) ? $data->phone : '' }}</span><br>
+                            <span>Mã ống nghiệm: <span style="font-weight: 600;">{{ isset($data->code) ? $data->code : '' }}</span></span> <br>
+                            <span>Số tiền:  <span style="font-weight: 600;color:#ff6200">{{ !empty($data->money) ? number_format($data->money,0, '', ',') : '' }}</span> VNĐ </span><br>
+                            <span>Lấy mẫu: Lúc <span style="font-weight: 600;">{{ isset($data->hour_sampling) ? $data->hour_sampling : '' }}</span>
+                            Ngày <span style="font-weight: 600;">{{Carbon\Carbon::parse($data->date_sampling)->format('d-m-Y')}}</span>
+                              - Tại <span style="font-weight: 600;">{{ isset($data->address) ? $data->address : '' }}</span>  </span> <br>
+                            <span>CTV chỉ định: {{ isset($data->code_ctv) ? $data->code_ctv : '' }}</span> <br>
+                            <span>Trạng thái: {{ $data->status == 1 ? 'Đã xác nhận' : 'Chưa xác nhận' }}</span> <br>
+                        </td>
                         @if($_SESSION['role'] == 'ADMIN')
                         <td style="white-space: inherit;vertical-align: middle;" onclick="{select_row(this);}" align="center">
                             <label class="custom-control custom-checkbox p-0 m-0 pointer " style="cursor: pointer;">

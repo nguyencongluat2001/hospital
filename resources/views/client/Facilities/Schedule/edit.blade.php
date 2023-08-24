@@ -75,7 +75,7 @@
                     </div>
                 </div>
                
-                 <input  type="radio" onchange="JS_Schedule.getTypeBank('momo')" value="MOMO" name="type_bank" id="type_bank"/> <span style="padding-left:5px" >Thanh toán ví điện tử MoMo</span>
+                 <!-- <input  type="radio" onchange="JS_Schedule.getTypeBank('momo')" value="MOMO" name="type_bank" id="type_bank"/> <span style="padding-left:5px" >Thanh toán ví điện tử MoMo</span>
                  <div id="momo" class="hiddel">
                     <div class="row" style="background:#e00085d9">
                         <div class="form-wrapper col-md-3 pt-3">
@@ -87,11 +87,11 @@
                             <span>Nội dung thanh toán:Tên khách hàng - số điện thoại - mã đặt lịch</span><br>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 {{--  Mô tả --}}
                 <div class="row form-group pt-4" id="div_hinhthucgiai">
                     <div class="col-md-12" >
-                        <label style="font-size:20px;font-family: math;" for="">Ảnh xác thực thanh toán thành công <span class="request_star">*</span></label> <br>
+                        <label style="font-size:20px;font-family: math;" for="">Ảnh xác thực thanh toán thành công</label> <br>
                     </div>
                 </div>
                 <div class="col-md-6">
