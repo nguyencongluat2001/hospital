@@ -47,26 +47,20 @@ use Modules\System\Dashboard\Specialty\Models\SpecialtyModel;
                     @else 
                     <tr>
                     @endif
-                        <td style="white-space: inherit;vertical-align: middle;" align="center"><input type="checkbox" name="chk_item_id"
-                                value="{{ $data->id }}"></td>
-                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{($datas->currentPage() - 1)*$datas->perPage() + ($key + 1)}}</td>
-                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->created_at) ? $data->created_at : '' }}</td>
-                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->code_schedule) ? $data->code_schedule : '' }}</td>
-                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->name) ? $data->name : '' }}</td>
-                        <td style="wwhite-space: inherit;vertical-align: middle;" align="center">{{ isset($data->phone) ? $data->phone : '' }}</td>
-                        <td style="wwhite-space: inherit;vertical-align: middle;" align="center">
-                            @php
-                            $dataaa = SpecialtyModel::where('code',$data->code_specialty)->first();
-                            
-                            @endphp
-                            {{$dataaa['name_specialty']}}
+                        <td style="white-space: inherit;vertical-align: middle;">
+                            <span>Mã khám bệnh: {{ isset($data->created_at) ? $data->created_at : '' }}</span> <br>
+                            <span>Tên khách hàng: {{ isset($data->name) ? $data->name : '' }}</span> <br>
+                            <span>Số điện thoại: {{ isset($data->phone) ? $data->phone : '' }}</span><br>
+                            <span>Ngày tạo: {{ isset($data->created_at) ? $data->created_at : '' }}</span> <br>
+                            <span>Khoa:  
+                                @php
+                                    $dataaa = SpecialtyModel::where('code',$data->code_specialty)->first();
+                                @endphp
+                                {{$dataaa['name_specialty']}}
+                            </span>
+                            <span>Số tiền: {{ !empty($data['money']) ? number_format($data['money'],0, '', ',') : '' }} VNĐ </span><br>
+                            <span>Bankking: Chuyển khoản qua ngân hàng </span><br>
                         </td>
-                        <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->money) ? number_format($data->money,0, '', ',') : '' }} VNĐ</td>
-                        <!-- @if($data->type_payment == 'BANK') -->
-                        <td style="color:#00ab5f;white-space: inherit;vertical-align: middle;" align="center">Ngân hàng</td>
-                        <!-- @else
-                        <td style="color:#ff00c5;white-space: inherit;vertical-align: middle;" align="center">MoMo</td>
-                        @endif -->
                         <td style="white-space: inherit;vertical-align: middle;" onclick="{select_row(this);}" align="center">
                             <label class="custom-control custom-checkbox p-0 m-0 pointer " style="cursor: pointer;">
                                 <input type="checkbox" hidden class="custom-control-input toggle-status" id="status_{{$id}}" data-id="{{$id}}" {{ $data->status == 1 ? 'checked' : '' }}>
@@ -74,7 +68,6 @@ use Modules\System\Dashboard\Specialty\Models\SpecialtyModel;
                             </label>
                         </td>
                         <td style="color: #ffb600;;white-space: inherit;vertical-align: middle;" align="center" onclick="JS_ApprovePayment.edit('{{$id}}')"><i class="far fa-eye"></i></td>
-                        <!-- <td style="width:5% ;white-space: inherit;vertical-align: middle;" align="center"><span class="text-cursor text-warning" onclick="JS_ApprovePayment.edit('{{$id}}')"><i class="fas fa-edit"></i></span></td> -->
                     </tr>
                     @endif
                     @if($data->status == 1 && $_SESSION['role'] == 'EMPLOYEE')
