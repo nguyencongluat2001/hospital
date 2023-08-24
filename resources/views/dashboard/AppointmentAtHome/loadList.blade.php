@@ -26,6 +26,7 @@
                 @if($_SESSION['role'] == 'ADMIN')
                 <td align="center"><b>Phê duyệt</b></td>
                 @endif
+                <td align="center"><b>Chi tiết</b></td>
             </tr>
         </thead>
         <tbody id="body_data">
