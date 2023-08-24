@@ -26,13 +26,7 @@ use Modules\System\Dashboard\Specialty\Models\SpecialtyModel;
                 <td align="center"><input type="checkbox" name="chk_all_item_id"
                         onclick="checkbox_all_item_id(document.forms[0].chk_item_id);"></td>
                 <td align="center"><b>STT</b></td>
-                <td align="center"><b>Thời gian</b></td>
-                <td align="center"><b>Mã khám bệnh</b></td>
-                <td align="center"><b>Tên khách hàng</b></td>
-                <td align="center"><b>Số điện thoại</b></td>
-                <td align="center"><b>Khoa</b></td>
-                <td align="center"><b>Số tiền</b></td>
-                <td align="center"><b>Banking</b></td>
+                <td align="center"><b>Thông tin đặt lịch</b></td>
                 <td align="center"><b>Trạng thái</b></td>
                 <td align="center"><b>#</b></td>
             </tr>
@@ -47,6 +41,9 @@ use Modules\System\Dashboard\Specialty\Models\SpecialtyModel;
                     @else 
                     <tr>
                     @endif
+                        <td style="white-space: inherit;vertical-align: middle;" align="center"><input type="checkbox" name="chk_item_id"
+                                value="{{ $data->id }}">
+                        </td>
                         <td style="white-space: inherit;vertical-align: middle;">
                             <span>Mã khám bệnh: {{ isset($data->created_at) ? $data->created_at : '' }}</span> <br>
                             <span>Tên khách hàng: {{ isset($data->name) ? $data->name : '' }}</span> <br>
