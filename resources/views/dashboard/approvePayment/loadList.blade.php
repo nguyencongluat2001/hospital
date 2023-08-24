@@ -4,6 +4,9 @@
     }
     td > p { overflow-y:scroll;overflow-x:hidden;} 
 </style>
+<?php
+use Modules\System\Dashboard\Specialty\Models\SpecialtyModel;
+?>
 <div class="table-responsive pmd-card pmd-z-depth ">
     <table id="table-data" class="table  table-bordered table-striped table-condensed dataTable no-footer">
         <!-- <colgroup>
@@ -27,6 +30,7 @@
                 <td align="center"><b>Mã khám bệnh</b></td>
                 <td align="center"><b>Tên khách hàng</b></td>
                 <td align="center"><b>Số điện thoại</b></td>
+                <td align="center"><b>Gói khám</b></td>
                 <td align="center"><b>Số tiền</b></td>
                 <td align="center"><b>Banking</b></td>
                 <td align="center"><b>Trạng thái</b></td>
@@ -50,12 +54,18 @@
                         <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->code_schedule) ? $data->code_schedule : '' }}</td>
                         <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->name) ? $data->name : '' }}</td>
                         <td style="wwhite-space: inherit;vertical-align: middle;" align="center">{{ isset($data->phone) ? $data->phone : '' }}</td>
+                        <td style="wwhite-space: inherit;vertical-align: middle;" align="center">
+                            @php
+                            $dataaa = SpecialtyModel::where('code',$data->code_specialty)->first();
+                            dd($dataaa);
+                            @endphp
+                        </td>
                         <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->money) ? $data->money : '' }}</td>
-                        @if($data->type_payment == 'BANK')
+                        <!-- @if($data->type_payment == 'BANK') -->
                         <td style="color:#00ab5f;white-space: inherit;vertical-align: middle;" align="center">Ngân hàng</td>
-                        @else
+                        <!-- @else
                         <td style="color:#ff00c5;white-space: inherit;vertical-align: middle;" align="center">MoMo</td>
-                        @endif
+                        @endif -->
                         <td style="white-space: inherit;vertical-align: middle;" onclick="{select_row(this);}" align="center">
                             <label class="custom-control custom-checkbox p-0 m-0 pointer " style="cursor: pointer;">
                                 <input type="checkbox" hidden class="custom-control-input toggle-status" id="status_{{$id}}" data-id="{{$id}}" {{ $data->status == 1 ? 'checked' : '' }}>
@@ -80,11 +90,12 @@
                         <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->name) ? $data->name : '' }}</td>
                         <td style="wwhite-space: inherit;vertical-align: middle;" align="center">{{ isset($data->phone) ? $data->phone : '' }}</td>
                         <td style="white-space: inherit;vertical-align: middle;" align="center">{{ isset($data->money) ? $data->money : '' }}</td>
-                        @if($data->type_payment == 'BANK')
+                        <!-- @if($data->type_payment == 'BANK') -->
                         <td style="color:#00ab5f;white-space: inherit;vertical-align: middle;" align="center">Ngân hàng</td>
-                        @else
+                        <!-- @else
                         <td style="color:#ff00c5;white-space: inherit;vertical-align: middle;" align="center">MoMo</td>
-                        @endif                        <!-- <td style="vertical-align: middle;" align="center"><img  src="{{url('/file-image-client/schedule/')}}/{{ !empty($data->name_image)?$data->name_image:'' }}" alt="Image" style="height: 150px;width: 150px;object-fit: cover;"></td> -->
+                        @endif              -->
+                                   <!-- <td style="vertical-align: middle;" align="center"><img  src="{{url('/file-image-client/schedule/')}}/{{ !empty($data->name_image)?$data->name_image:'' }}" alt="Image" style="height: 150px;width: 150px;object-fit: cover;"></td> -->
                         <td style="white-space: inherit;vertical-align: middle;" align="center">{{ $data->status == 1 ? 'Đã xác nhận' : 'Chưa xác nhân' }}</td>
                         <td style="color: #ffb600;white-space: inherit;vertical-align: middle;" align="center" onclick="JS_ApprovePayment.edit('{{$id}}')"><i class="far fa-eye"></i></td>
                         <!-- <td style="width:5% ;white-space: inherit;vertical-align: middle;" align="center"><span class="text-cursor text-warning" onclick="JS_ApprovePayment.edit('{{$id}}')"><i class="fas fa-edit"></i></span></td> -->

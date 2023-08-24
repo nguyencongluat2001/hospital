@@ -25,7 +25,7 @@
                         <select name="type_payment" id="type_payment" class="form-control chzn-select">
                             <option value="">--Chọn loại giao dịch--</option>
                             <option value="BANK">Chuyển khoản qua ngân hàng</option>
-                            <option value="MOMO">Momo</option>
+                            <!-- <option value="MOMO">Momo</option> -->
                         </select>
                     </div>
                     <div class="col-md-2">
