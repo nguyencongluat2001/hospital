@@ -165,9 +165,9 @@
                                                         <i class="fas fa-envelope padding-style"></i>
                                                     </div>
                                                     <div class="form-input col-md-6 padding-style">
-                                                        <input type="date" class="form-control required datepicker" placeholder="Ngày sinh..." name="date_of_brith" id="date_of_brith"  oninput="inValid(this.id)">
+                                                        <input type="text" class="form-control required datepicker" placeholder="Năm sinh..." name="date_of_brith" id="date_of_brith"  oninput="inValid(this.id)">
                                                         <i class="fa fa-calendar-alt date_of_brith-icon padding-style"></i>
-                                                        <span class="message-error date_of_brith-error">Ngày sinh không được để trống!</span>
+                                                        <span class="message-error date_of_brith-error">Năm sinh không được để trống!</span>
                                                     </div>
                                                 </div>
                                                 <div class="row mt-3">

@@ -152,14 +152,63 @@
 }
 
 .timer {
+    width: 5.75rem;
     margin-left: 15%;
     font-family: 'Open Sans', sans-serif;
     font-size: 11px;
-    padding: 3px 8px;
     color: #BBB;
+    border-radius: 15px;
+}
+#discussions .message-active .timer{
+    background-color: #e5efff;
+}
+.timer .discussion-time {
     background-color: #FFF;
+    width: 5.75rem;
+    padding: 3px 8px;
     border: 1px solid #E5E5E5;
     border-radius: 15px;
+}
+.timer .show-more{
+    background-color: #FFF;
+    width: 2rem;
+    padding: 4px 8px;
+    border: 1px solid #E5E5E5;
+    border-radius: 15px;
+}
+
+.show-more{
+    display: none;
+}
+
+.menuShowMore{
+    display: none;
+    color: red;
+    border: 1px solid #ccc;
+    width: 100px;
+    background-color: #c9f6ff;
+    border-radius: 5px;
+    inset: unset !important;
+}
+
+.menuShowMore ul{
+    margin: 0;
+    padding: 5px;
+}
+.menuShowMore ul li{
+    list-style: none;
+}
+.dark-version .dropdown .dropdown-menu:before{
+    content: "";
+}
+.dropdown .dropdown-toggle:after{
+    content: "" !important;
+}
+.dropdown:not(.dropdown-hover) .dropdown-menu{
+    margin-top: 0 !important;
+}
+.dark-version .dropdown .dropdown-menu{
+    background-color: #fff !important;
 }
 
 .header-chat {
