@@ -36,7 +36,7 @@ use Modules\System\Dashboard\Specialty\Models\SpecialtyModel;
                 @php $id = $data->id; $i = 1; @endphp
                     @if($_SESSION['role'] == 'ADMIN')
                     @if($data->status == 1)
-                    <tr style="background:#dafcff">
+                    <tr style="background:#91ffb9">
                     @else 
                     <tr>
                     @endif
@@ -69,7 +69,7 @@ use Modules\System\Dashboard\Specialty\Models\SpecialtyModel;
                     @endif
                     @if($data->status == 1 && $_SESSION['role'] == 'EMPLOYEE')
                     @if($data->status == 1)
-                    <tr style="background:#dafcff">
+                    <tr style="background:#91ffb9">
                     @else 
                     <tr>
                     @endif
