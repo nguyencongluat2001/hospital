@@ -22,7 +22,6 @@
             <tr>
                 <td align="center"><input type="checkbox" name="chk_all_item_id"
                         onclick="checkbox_all_item_id(document.forms[0].chk_item_id);"></td>
-                <td align="center"><b>STT</b></td>
                 <td align="center"><b>Thông tin</b></td>
                 @if($_SESSION['role'] == 'ADMIN')
                 <td align="center"><b>Phê duyệt</b></td>
