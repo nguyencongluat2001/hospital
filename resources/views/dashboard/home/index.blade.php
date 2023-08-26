@@ -10,7 +10,7 @@
     <script type="text/javascript" src="{{ URL::asset('dist\js\backend\pages\JS_Home.js') }}"></script>
     <!-- <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
     {{-- <link  href="../assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" /> --}}
-    <form action="" method="POST" id="frmHome_index">
+    <form action="" method="GET" id="frmHome_index">
         <main class="main-content position-relative border-radius-lg ">
             <div class="container-fluid py-4">
             
@@ -49,43 +49,49 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="card h-100">
-                        <div style="display:flex">
+                        <!-- <div style="display:flex">
                             <div class="col-md-6">
                                 <input type="text" class="form-control datepicker" name="fromdate" id="fromdate" placeholder="Từ ngày">
                             </div>
                             <div class="col-md-6">
                                 <input type="text" class="form-control datepicker" name="todate" id="todate" placeholder="Đến ngày">
                             </div>
-                        </div>
+                        </div> -->
                        
-                        <div class="input-group pt-3" style="width:100%;height:10%">
-                            <span class="input-group-text text-body"><i class="fas fa-search"
-                                    aria-hidden="true"></i></span>
+                        <div class="input-group py-3" style="width:100%;height:10%">
+                            <!-- <span class="input-group-text text-body"><i class="fas fa-search"
+                                    aria-hidden="true"></i></span> -->
                             <input id="search" name="search" type="text" class="form-control" placeholder="Tìm kiếm theo mã ctv...">
                         </div>
-                        <div class="card-header pb-0 p-3 pt-5">
+                        <div style="padding-top:20px">
+                            <center><button style="width:100px;" id="txt_search" name="txt_search" type="button" class="btn btn-dark "><i class="fas fa-search"></i></button></center>
+
+                        </div>
+                        <div class="card-header pb-0 p-3 pt-3">
                         <div class="row">
                             <div class="col-6 d-flex align-items-center">
-                            <h6 class="mb-0">Doanh thu cá nhân</h6>
+                            <h6 class="mb-0">Doanh thu cá nhân</h6> 
                             </div>
+                            <div id="iss"></div>
                             <!-- <div class="col-6 text-end">
                             <button class="btn btn-outline-primary btn-sm mb-0">View All</button>
                             </div> -->
                         </div>
                         </div>
                         <div class="card-body p-3 pb-0">
-                        <ul class="list-group">
-                            <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                            <div class="d-flex flex-column">
-                                <h6 class="mb-1 text-dark font-weight-bold text-sm">Nguyen Van A</h6>
-                                <span class="text-xs">#YE12</span>
+                            <div id="iss_money">
+                                <!-- <ul class="list-group">
+                                    <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                                        <div class="d-flex flex-column">
+                                            <h6 class="mb-1 text-dark font-weight-bold text-sm">Nguyen Van A</h6>
+                                            <span class="text-xs">#YE12</span>
+                                        </div>
+                                        <div class="d-flex align-items-center text-sm">
+                                            Doanh thu: <span style="color: #ff7539;font-weight: 600;">18,950,00 </span> VND
+                                        </div>
+                                    </li>
+                                </ul> -->
                             </div>
-                            <div class="d-flex align-items-center text-sm">
-                                Doanh thu: <span style="color: #ff7539;font-weight: 600;">18,950,00 </span> VND
-                                <!-- <button class="btn btn-link text-dark text-sm mb-0 px-0 ms-4"><i class="fas fa-file-pdf text-lg me-1"></i> PDF</button> -->
-                            </div>
-                            </li>
-                        </ul>
                         </div>
                     </div>
                 </div>
