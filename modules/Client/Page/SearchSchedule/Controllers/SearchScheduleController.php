@@ -79,7 +79,9 @@ class SearchScheduleController extends Controller
                 'address' => $value['address'],
                 'reason' => $value['reason'],
                 'name_image' => $value['name_image'],
-                'status' => $value['status']
+                'status' => $value['status'],
+                'created_at' => date('d-m-Y',strtotime($value['created_at']))
+
             ];
         }
         $data['datas'] = $param_a;
@@ -105,7 +107,8 @@ class SearchScheduleController extends Controller
                 'hour_sampling' => $value['hour_sampling'],
                 'address' => $value['address'],
                 'reason' => $value['reason'],
-                'status' => $value['status']
+                'status' => $value['status'],
+                'created_at' => date('d-m-Y',strtotime($value['created_at']))
             ];
         }
         $data['datas_athome'] = $param_s;
