@@ -39,11 +39,11 @@ JS_Home.prototype.loadIndex = function () {
         myClass.edit(oForm);
     });
      // form load
-     $(oForm).find('#type_code').change(function () {
-        var page = $(oForm).find('#limit').val();
-        var perPage = $(oForm).find('#cbo_nuber_record_page').val();
-        myClass.loadList(oForm, page, perPage);
-    });
+    //  $(oForm).find('#type_code').change(function () {
+    //     var page = $(oForm).find('#limit').val();
+    //     var perPage = $(oForm).find('#cbo_nuber_record_page').val();
+    //     myClass.loadList(oForm, page, perPage);
+    // });
     $(oForm).find('#txt_search').click(function () {
         /* ENTER PRESSED*/
             myClass.loadMoney();
@@ -85,7 +85,6 @@ JS_Home.prototype.loadMoney = function () {
         return false;
     }
     var data = $(oForm).serialize();
-    console.log(data)
     NclLib.loadding();
     $.ajax({
         url: url,
