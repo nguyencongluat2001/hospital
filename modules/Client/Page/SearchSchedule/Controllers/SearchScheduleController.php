@@ -88,12 +88,17 @@ class SearchScheduleController extends Controller
         foreach($dataAtHome as $value){
             $cate = $this->BloodTestService->where('code',$value['type'])->first();
             // dd($cate);
+            if($value['money'] > 0){
+                $money = number_format($value['money'],0, '', ',');
+            }else{
+                $money = 0;
+            }
             $param_s[] = [
                 'id' => $value['id'],
                 'code' => $value['code'],
                 'name' => $value['name'],
                 'phone' => $value['phone'],
-                'money' => number_format($value['money'],0, '', ','),
+                'money' => $money,
                 'type' => !empty($cate->name)?$cate->name:'',
                 'sex' => $value['sex'],
                 'date_sampling' => date('d-m-Y',strtotime($value['date_sampling'])),

@@ -45,8 +45,8 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        $objResult = $this->hospitalService->where('current_status',1)->get()->take(6);
-        $Specialty = $this->specialtyService->where('current_status',1)->get()->take(8);
+        $objResult = $this->hospitalService->where('current_status',1)->get()->take(3);
+        $Specialty = $this->specialtyService->where('current_status',1)->get()->take(4);
         $datas['datas']= $objResult;
         $datas['Specialty']= $Specialty;
         return view('client.home.home',$datas);
