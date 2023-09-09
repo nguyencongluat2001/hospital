@@ -102,7 +102,7 @@
                 <div class="row pt-2">
                     <div class="col-lg-6 col-sm-12">
                         <p class="text-lg-start text-center text-light light-300">
-                            © Bản quyền @2023 , Công ty TNHH dịch vụ & sức khỏe BOOKING 46
+                            © Bản quyền @2023 , Công ty TNHH dịch vụ y tế Booking Hospital
                         </p>
                     </div>
                     <!-- <div class="col-lg-6 col-sm-12">

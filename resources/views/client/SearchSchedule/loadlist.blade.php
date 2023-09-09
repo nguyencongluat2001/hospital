@@ -31,6 +31,7 @@
                             <span>Lý do: {{ isset($data['reason']) ? $data['reason'] : '' }}</span>
                         </td>
                         <td style="wwhite-space: inherit;vertical-align: middle;">
+                            <span>Thời gian tạo lịch: {{ isset($data['created_at']) ? $data['created_at'] : '' }}</span> <br>
                             <span>Đơn vị: {{ isset($data['code_hospital']) ? $data['code_hospital'] : '' }}</span> <br>
                             <span>Khoa khám bệnh: {{ isset($data['code_specialty']) ? $data['code_specialty'] : '' }}</span><br>
                         </td>
@@ -91,6 +92,7 @@
                             <span>Lý do: {{ isset($data['reason']) ? $data['reason'] : '' }}</span> <br>
                         </td>
                         <td style="wwhite-space: inherit;vertical-align: middle;">
+                            <span>Thời gian tạo lịch: {{ isset($data['created_at']) ? $data['created_at'] : '' }}</span> <br>
                             <span>Loại xét nghiệm: <b>{{ isset($data['type']) ? $data['type'] : '' }}</b></span> <br>
                             <span>Ngày lấy mẫu: <b>{{ isset($data['date_sampling']) ? $data['date_sampling'] : '' }}</b></span> <br>
                             <span>Giờ lấy mẫu: <b>{{ isset($data['hour_sampling']) ? $data['hour_sampling'] : '' }} Phút</b></span> <br>

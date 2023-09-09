@@ -79,7 +79,9 @@ class SearchScheduleController extends Controller
                 'address' => $value['address'],
                 'reason' => $value['reason'],
                 'name_image' => $value['name_image'],
-                'status' => $value['status']
+                'status' => $value['status'],
+                'created_at' => date('d-m-Y',strtotime($value['created_at']))
+
             ];
         }
         $data['datas'] = $param_a;
@@ -88,19 +90,25 @@ class SearchScheduleController extends Controller
         foreach($dataAtHome as $value){
             $cate = $this->BloodTestService->where('code',$value['type'])->first();
             // dd($cate);
+            if($value['money'] > 0){
+                $money = number_format($value['money'],0, '', ',');
+            }else{
+                $money = 0;
+            }
             $param_s[] = [
                 'id' => $value['id'],
                 'code' => $value['code'],
                 'name' => $value['name'],
                 'phone' => $value['phone'],
-                'money' => number_format($value['money'],0, '', ','),
+                'money' => $money,
                 'type' => !empty($cate->name)?$cate->name:'',
                 'sex' => $value['sex'],
                 'date_sampling' => date('d-m-Y',strtotime($value['date_sampling'])),
                 'hour_sampling' => $value['hour_sampling'],
                 'address' => $value['address'],
                 'reason' => $value['reason'],
-                'status' => $value['status']
+                'status' => $value['status'],
+                'created_at' => date('d-m-Y',strtotime($value['created_at']))
             ];
         }
         $data['datas_athome'] = $param_s;

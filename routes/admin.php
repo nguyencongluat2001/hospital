@@ -87,6 +87,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
                 Route::get('/loadList',[HomeController::class,'loadList']);
                 Route::get('/loadListTap1',[HomeController::class,'loadListTap1'])->name('loadListTap1');
                 Route::get('/realTimeData',[HomeController::class,'realTimeData'])->name('realTimeData');
+                Route::get('/loadMoney', [HomeController::class, 'loadMoney']);
+
             });
             //Bệnh viện
             Route::prefix('/hospital')->group(function () {
