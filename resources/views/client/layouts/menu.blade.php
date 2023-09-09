@@ -141,7 +141,7 @@
                     @guest
                         @if (Route::has('login'))
                             <div class="hover-text">
-                                <a style="color:#ffffff" class="nav-link " href="{{ route('login') }}"><i class="fas fa-sign-in-alt fa-1x"></i></a>
+                                <a style="color:#ff4d00" class="nav-link " href="{{ route('login') }}"><i class="fas fa-sign-in-alt fa-1x"></i></a>
                             </div>
                             <!-- <span class="tooltip-text" id="top">Đăng nhập</span> -->
 
