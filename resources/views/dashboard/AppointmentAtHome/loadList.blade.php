@@ -4,6 +4,7 @@
     }
     td > p { overflow-y:scroll;overflow-x:hidden;} 
 </style>
+<span>Doanh thu theo tiêu thức lọc: <span style="font-weight: 600; color: #ff8414;">{{$sumMoney}}</span> VND</span>
 <div class="table-responsive pmd-card pmd-z-depth ">
     <table id="table-data" class="table  table-bordered table-striped table-condensed dataTable no-footer">
         <!-- <colgroup>
@@ -33,7 +34,11 @@
             @if(count($datas) > 0)
                 @foreach ($datas as $key => $data)
                 @php $id = $data->id; $i = 1; @endphp
+                    @if($data->status == 1)
+                    <tr style="background:#91ffb9">
+                    @else 
                     <tr>
+                    @endif
                         <td style="white-space: inherit;vertical-align: middle;" align="center"><input type="checkbox" name="chk_item_id"
                             value="{{ $data->id }}">
                         </td>

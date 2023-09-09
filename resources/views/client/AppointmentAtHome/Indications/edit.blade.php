@@ -26,7 +26,7 @@
                             placeholder="Nhập tên danh mục..." />
                     </div>
                 </div>
-                {{--  Mô tả --}}
+            {{--  Mô tả --}}
                 <div class="row form-group" id="div_hinhthucgiai">
                     <span class="col-md-3 control-label">Mô tả</span>
                     <div class="col-md-8">

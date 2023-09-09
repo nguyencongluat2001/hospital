@@ -39,9 +39,9 @@
   scroll-snap-align: start;
   scroll-margin-left: 20px;
 }
-.text-center {
+/* .text-center {
         font-family: auto;
-    }
+    } */
     
     .icon-dichvu{
     width: 80px;

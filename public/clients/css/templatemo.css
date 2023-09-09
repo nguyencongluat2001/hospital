@@ -211,7 +211,7 @@ footer a.text-light:hover {
 }
 .text-12{
   font-size: 12px;
-  color: #fff2de;
+  color: #3a5061;
 }
 .text-title-home{
   /* font-size: 33px; */
@@ -241,7 +241,7 @@ footer a.text-light:hover {
 }
 .text-menu-header{
   font-weight: 500;
-  color: #c1efff;
+  color: #005f6b;
 }
 .famous-saying{
   font-size: 20px;
@@ -312,7 +312,7 @@ footer a.text-light:hover {
   
 }
 .active-menuClient{
-  background: #516d87;
+  background: #a4b7d942;
   color: #00b609 !important;
 }
 @media (min-width: 426px ) {

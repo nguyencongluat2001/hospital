@@ -76,7 +76,7 @@
 } */
 </style>
 <!-- Header -->
- <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow" style="top:0;padding-top:0px !important;padding-bottom: 0px !important;background:#243649!important;position: fixed;width: 100%;z-index: 1000;">
+ <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow" style="top:0;padding-top:0px !important;padding-bottom: 0px !important;background:#ffffff!important;position: fixed;width: 100%;z-index: 1000;">
         <div class="container d-flex justify-content-between align-items-center">
         <div style="background: #ffffff00;font-family: ui-monospace;width: 50px;color: #ffffff;height: 30px;margin: 0 !important;" 
              data-bs-toggle="collapse" 
@@ -180,7 +180,7 @@
                                                 {{ __('Nhập chỉ định xét nghiệm') }}
                                             </p>
                                     </a>
-                                    <a class="dropdown-item">
+                                    <!-- <a class="dropdown-item">
                                             <p>
                                                 {{ __('Đăng ký lấy máu') }}
                                             </p>
@@ -189,7 +189,7 @@
                                             <p>
                                                 {{ __('Đăng ký lịch truyền') }}
                                             </p>
-                                    </a>
+                                    </a> -->
                                     <a class="dropdown-item">
                                             <p>
                                                 {{ __('Mã CTV:') }} <span style="color:red;font-weight: 500;"> @if(!empty($_SESSION['code'])){{ $_SESSION['code'] }}@endif</span>

@@ -240,9 +240,9 @@ button {
 .registration-step__item.active::before{
   background: #2cbf00;
 }
-.text-center ,.registration-step{
+/* .text-center ,.registration-step{
   font-family: "Muli-Regular";
-}
+} */
 .card-header{
   background: #ffc827;
 }

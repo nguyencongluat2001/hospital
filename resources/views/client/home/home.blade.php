@@ -10,9 +10,9 @@
         overflow: hidden;
     }
 
-    .text-center {
+    /* .text-center {
         font-family: auto;
-    }
+    } */
     
     .icon-dichvu{
     width: 60px;
@@ -50,7 +50,71 @@
     background: #fff;
 }
 
+
+/* search home */
+/* select checkBook */
+.multiselect {
+  width: 300px;
+}
+
+.selectBox {
+  position: relative;
+}
+
+.selectBox select {
+  width: 100%;
+  font-weight: bold;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#checkboxes {
+  display: none;
+  border: 1px #dadada solid;
+}
+
+#checkboxes label {
+  display: block;
+}
+
+#checkboxes label:hover {
+  background-color: #1e90ff;
+}
+
+
+#checkboxes1 {
+  display: none;
+  border: 1px #dadada solid;
+}
+
+#checkboxes1 label {
+  display: block;
+}
+
+#checkboxes1 label:hover {
+  background-color: #1e90ff;
+}
+/* ::-webkit-scrollbar {
+  width: 20px;
+} */
+
+.scrollbar {
+  overflow: scroll;
+  scrollbar-color: red orange;
+  scrollbar-width: thin;
+  height:300px !important;
+  width: 60%;
+}
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
 <!-- Start Banner Hero -->
 <div class="banner-wrapper bg-light">
     <div id="index_banner" class="banner-vertical-center-index">
@@ -72,61 +136,76 @@
                         </center>
 
                         <!-- <span  class="text-title-home anime-text-titel"><center> ĐẶT LỊCH KHÁM NHANH <br>TẠI CÁC TUYẾN TRUNG ƯƠNG</center></span> -->
-                        <div class="banner-content col-lg-8 offset-2 col-8 m-lg-auto text-center pb-5 ">
+                        <div class="banner-content col-lg-8 offset-2 col-8 m-lg-auto pb-5 ">
                             
                              <div class="container">
                                 <div class="row">
                                     <div class="col-lg-5 mx-auto ">
-                                        <!-- <form action="#" method="get"> -->
-                                        <!-- <div class="input-group pt-2 box"> -->
-                                            <!-- <input style="background:#ffffffb5" type="text" class="input form-control form-control-lg rounded-pill rounded" placeholder="Từ khóa tìm kiếm...">
-                                            <i class="fas fa-search"></i> -->
-                                            <!-- <select style="text-align: left;" class="form-control input-sm chzn-select " name="" id="">
-                                                <option value="">Nhập từ khóa cần tìm kiếm...</option>
-                                                {{--@foreach($type_xetnghiem as $key => $values) 
-                                                    <option value="{{$values['code']}}" {{($values['code'] == $code) ? 'selected' : ''}}>{{$values['name']}}</option>
-                                                @endforeach --}}
-                                                <option value="">Xét nghiệm vi chất trẻ nhỏ</option>
-                                                <option value="">Xét nghiệm gan</option>
-                                            </select> -->
-                                            <div class=" mx-auto " style="">
-                                                <div class=" pt-2 box">
+                                                <!-- <div class=" pt-2 box">
                                                     <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg" placeholder="Tìm kiếm từ khóa..." aria-label="Tìm kiếm từ khóa...">
-                                                </div>
-                                                            <!-- <table id="myTable" class="table  table-bordered table-striped table-condensed dataTable no-footer" style=>
-                                                                <tbody id="body_data" style="background: #fdffff;">
-                                                                            <tr>
-                                                                                <td style="white-space: inherit;vertical-align: middle;" >
-                                                                                123
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td style="white-space: inherit;vertical-align: middle;" >
-                                                                                123
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td style="white-space: inherit;vertical-align: middle;" >
-                                                                                123
-                                                                                </td>
-                                                                            </tr>
-                                                                       {{-- @foreach ($type_chidinh as $key => $values)
-                                                                            <tr>
-                                                                                <td style="white-space: inherit;vertical-align: middle;" >
-                                                                                <input onclick="JS_AppointmentAtHome.showPack('{{$code_blood}}')" type="checkbox" value="{{ isset($values['code']) ? $values['code'] : '' }}" name="code_indications" id="code_indications"/> 
-                                                                                <span style="color:red">{{ isset($values['code']) ? $values['code'] : '' }}</span> - <span style="color:#ff8a06">{{ isset($values['price']) ? $values['price'] : '' }}  </span> <span style="font-size:10px">VND </span>  <br>
-                                                                                <span style="font-size:12px"> ( {{ isset($values['name']) ? $values['name'] : '' }} )</span> 
-                                                                                </td>
-                                                                            </tr>
-                                                                        @endforeach--}}
-                                                                </tbody>
-                                                            </table> -->
-                                            </div>
-                                            
-                                                 
-                                           
-                                        <!-- </div> -->
-                                        <!-- </form> -->
+                                                </div> -->
+                                                <!-- <div class="col-md-12">
+                                                    <div class="selectBox" onclick="showCheckboxes1()">
+                                                    <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg" placeholder="Tìm kiếm từ khóa..." aria-label="Tìm kiếm từ khóa...">
+
+                                                        <div class="overSelect"></div>
+                                                    </div>
+                                                    
+                                                    <table id="myTable" class="table  table-bordered table-striped table-condensed dataTable no-footer">
+                                                        <div class="scrollbar" id="checkboxes1" style="position: absolute;z-index: 10; border: 1px solid #5e72e4;border-top: 0;background: #fff;margin-left: 0px !important;">
+                                                            {{--@foreach($data['category'] as $item)--}}
+                                                            <label for="one" class="pt-1">
+                                                            <span style=";color: #252c43;font-family: serif;"> Khám chuyên khoa xương khớp</span></label>
+                                                            <label for="one" class="pt-1">
+                                                            <span style=";color: #252c43;font-family: serif;"> Khám chuyên khoa tiêu hóa</span></label>
+                                                            <label for="one" class="pt-1">
+                                                            <span style=";color: #252c43;font-family: serif;"> Khám chuyên khoa nội tiết</span></label>
+                                                            <label for="one" class="pt-1">
+                                                            <span style=";color: #252c43;font-family: serif;"> Khám chuyên khoa tim mạch</span></label>
+                                                            <label for="one" class="pt-1">
+                                                            <span style=";color: #252c43;font-family: serif;"> Khám chuyên khoa nhi</span></label>
+                                                            <label for="one" class="pt-1">
+                                                            <span style=";color: #252c43;font-family: serif;"> Xét nghiệm tổng quát</span></label>
+                                                            <label for="one" class="pt-1">
+                                                            <span style=";color: #252c43;font-family: serif;"> Xét nghiệm vi chất trẻ nhỏ</span></label>
+                                                            <label for="one" class="pt-1">
+                                                            <span style=";color: #252c43;font-family: serif;"> Khám chuyên khoa xương khớp</span></label>
+                                                            <label for="one" class="pt-1">
+                                                            <span style=";color: #252c43;font-family: serif;"> Khám chuyên khoa tiêu hóa</span></label>
+                                                            <label for="one" class="pt-1">
+                                                            <span style=";color: #252c43;font-family: serif;"> Khám chuyên khoa nội tiết</span></label>
+                                                            <label for="one" class="pt-1">
+                                                            <span style=";color: #252c43;font-family: serif;"> Khám chuyên khoa tim mạch</span></label>
+                                                            <label for="one" class="pt-1">
+                                                            <span style=";color: #252c43;font-family: serif;"> Khám chuyên khoa nhi</span></label>
+                                                            <label for="one" class="pt-1">
+                                                            <span style=";color: #252c43;font-family: serif;"> Xét nghiệm tổng quát</span></label>
+                                                            <label for="one" class="pt-1">
+                                                            <span style=";color: #252c43;font-family: serif;"> Xét nghiệm vi chất trẻ nhỏ</span></label>
+                                                            {{--@endforeach--}}
+                                                            
+                                                        </div>
+                                                    </table>
+                                                    
+                                                </div> -->
+                                                <!-- <select id="select-state" placeholder="Pick a state...">
+                                                    <option value="">Select a state...</option>
+                                                    <option value="AL">Alabama</option>
+                                                    <option value="AK">Alaska</option>
+                                                    <option value="AZ">Arizona</option>
+                                                    <option value="AR">Arkansas</option>
+                                                    <option value="CA">California</option>
+                                                    <option value="CO">Colorado</option>
+                                                    <option value="CT">Connecticut</option>
+                                                    <option value="DE">Delaware</option>
+                                                    <option value="DC">District of Columbia</option>
+                                                    <option value="FL">Florida</option>
+                                                    <option value="GA">Georgia</option>
+                                                    <option value="HI">Hawaii</option>
+                                                    <option value="ID">Idaho</option>
+                                                    <option value="IL">Illinois</option>
+                                                    <option value="IN">Indiana</option>
+                                                </select> -->
                                     </div>
                                 </div>
                             </div>
@@ -423,6 +502,25 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
 <script>
+      $(document).ready(function () {
+      $('#select-state').selectize({
+          sortField: 'text'
+      });
+  });
+    //search home
+var expanded = false;
+function showCheckboxes1() {
+var checkboxes = document.getElementById("checkboxes1");
+if (!expanded) {
+    checkboxes.style.display = "block";
+    expanded = true;
+} else {
+    checkboxes.style.display = "none";
+    expanded = false;
+}}
+
+
+//
 var xValues = ["Xét nghiệm tại nhà", "Truyền dịch tại nhà","Khám nhanh"];
 var yValues = [235, 49, 445];
 var barColors = [
@@ -467,6 +565,7 @@ new Chart("myChart", {
     }       
   }
 }
+
 </script>
 <!-- End Service -->
 <script type="text/javascript" src="{{ URL::asset('dist/js/backend/client/JS_Home.js') }}"></script>
