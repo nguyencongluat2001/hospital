@@ -27,7 +27,7 @@
 
     .force-overflow
     {
-      min-height: 300px;
+      min-height: 400px;
     }
 
     #wrapper
@@ -72,7 +72,7 @@
     } */
     .table-responsive.pmd-card.pmd-z-depth{
       height: 100%;
-      max-height: 300px;
+      max-height: 400px;
     }
     #style-1 #table-data thead tr td{
       position: sticky;
@@ -163,17 +163,20 @@
                                 <div class="row g-lg-5 mb-4">
                                     <div class="banner-wrapper w-100" style="background:#ffffffba;color:black">
                                         <div class="row g-lg-5 mb-4">
-                                            <div class="banner-wrapper w-100 py-3" style="background:#15283dd6">
+                                            <div class="banner-wrapper w-100 py-3" style="background:#d5e9ffd6">
                                                 <div class="list-group wrapper pb-0 px-3">
                                                     <a class="col-sm-6 col-lg-12 text-decoration-none text-light">
                                                         <div class="d-lg-flex gx-5">
-                                                            <div class="col-lg-3">
-                                                                <img class="card-img-top" src="{{url('/clients/img/laymautainha.jpeg')}}" style="width:250px;height:150px;object-fit: cover;" alt="...">
+                                                            <div class="col-lg-2">
+                                                                <center>
+                                                                <img class="card-img-top" src="{{url('/clients/img/logoMed.webp')}}" style="width:150px;height:150px;object-fit: cover;" alt="...">
+
+                                                                </center>
                                                             </div>
                                                             <div class="col-lg-1 "></div>
                                                             <div class="col-lg-8 ">
-                                                            <span  class="text-title-home" style="color:#ff9300"><center> Lấy mẫu tại nhà</center></span>
-                                                            <span  style="font-size:20px">Lấy mẫu xét nghiệm tại nhà giúp khách hàng chủ động tầm soát bệnh lý. Đồng thời tiết kiệm thời gian đi lại, chờ đợi kết quả với mức chi phí hợp lý.</span>
+                                                            <span  class="text-title-home" style="color:#000000"><center> Lấy mẫu tại nhà</center></span>
+                                                            <span  style="font-size:20px;color:#577391">Lấy mẫu xét nghiệm tại nhà giúp khách hàng chủ động tầm soát bệnh lý. Đồng thời tiết kiệm thời gian đi lại, chờ đợi kết quả với mức chi phí hợp lý.</span>
                                                         </div>
                                                         </div>
                                                     </a>
