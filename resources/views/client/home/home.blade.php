@@ -282,7 +282,7 @@
                                     <a href="{{url('/client/appointmentathome/indexApointment')}}" class="recent-work card border-0 shadow-lg overflow-hidden">
                                         <img class="recent-work-img card-img" style="height: 250px;object-fit: cover;" src="{{url('/clients/img/laymautainha.jpeg')}}" alt="Card image">
                                         <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                                            <div style="background: radial-gradient(#000000c2, transparent);border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                            <div style="background: #00000075;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
                                                 <h3 class="card-title" style="font-size: 23 !important;">Dịch vụ lấy máu tại nhà</h3>
                                                 <span style="color:#caefff" class="blogReader">Lấy mẫu xét nghiệm tại nhà giúp khách hàng chủ động tầm soát bệnh lý. Đồng thời tiết kiệm thời gian đi lại, chờ đợi kết quả với mức chi phí hợp lý.</span> <br>
                                                 <span style="background: #ffba4b; color: #0d1226;" class="btn btn-outline-light rounded-pill">Đặt lịch</span>
@@ -295,7 +295,7 @@
                                     <a href="{{url('/client/appointmentathome/tab2/')}}/truyendich" class="recent-work card border-0 shadow-lg overflow-hidden">
                                         <img class="recent-work-img card-img" style="height: 250px;object-fit: cover;" src="{{url('/clients/img/truyentainha.jpeg')}}" alt="Card image">
                                         <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                                            <div style="background: radial-gradient(#000000c2, transparent);border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                            <div style="background: #00000075;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
                                                 <h3 class="card-title" style="font-size: 23 !important;">Dịch vụ truyền dịch tại nhà</h3>
                                                 <span style="color:#caefff" class="blogReader">Truyền dịch tại nhà giúp khách hàng được chăm sóc tại chính ngôi nhà của bạn hơn thế tiết kiệm thời gian đi lại, mức chi phí hợp lý.</span> <br>
                                                 <span style="background: #ffba4b; color: #0d1226;" class="btn btn-outline-light rounded-pill">Đặt lịch</span>
