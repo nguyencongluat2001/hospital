@@ -16,7 +16,7 @@
    }
 
 </style>
-<section class="container" style="padding-top:7%">
+<section class="container" style="padding-top:10%">
     <div class=" pb-3 d-lg-flex gx-5 pt-10">
         <div class="col-lg-12">
             <form action="" method="POST" id="frmLoadlist_infor">
