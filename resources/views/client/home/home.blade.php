@@ -144,7 +144,7 @@
                                                 <!-- <div class=" pt-2 box">
                                                     <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg" placeholder="Tìm kiếm từ khóa..." aria-label="Tìm kiếm từ khóa...">
                                                 </div> -->
-                                                <!-- <div class="col-md-12">
+                                                <div class="col-md-12">
                                                     <div class="selectBox" onclick="showCheckboxes1()">
                                                     <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg" placeholder="Tìm kiếm từ khóa..." aria-label="Tìm kiếm từ khóa...">
 
@@ -187,7 +187,7 @@
                                                         </div>
                                                     </table>
                                                     
-                                                </div> -->
+                                                </div>
                                                 <!-- <select id="select-state" placeholder="Pick a state...">
                                                     <option value="">Select a state...</option>
                                                     <option value="AL">Alabama</option>
@@ -216,59 +216,60 @@
                 <!-- End Contact -->
                 <div class="carousel-item active list-hispital-home pt-3">
                     <div class=" row d-flex align-items-center">
-                        <div class="banner-content col-lg-12 offset-1 col-10 m-lg-auto text-center ">
-                            <div class="row g-lg-5 mb-4">
-                                <div class="col-md-3 mb-4" style="display: flex; justify-content: space-between; align-items: flex-start;">
-                                    <!-- <a href="{{ url('/') }}"  type="button" class="btn btn-light icon-menu-home" style="width:100px;color: #f2ffff;background: none;">
-                                        <i class="fas fa-home"></i>
-                                            <br>
-                                            <span>Trang chủ</span>
-                                        </a> -->
-                                    <a href="{{ url('/specialty') }}" type="button" class="btn icon-menu-home" style="width:100px;color: #f2ffff;background: none;">
-                                        <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
-                                            <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/chuyen-khoa.png);background-size: 40px;background-repeat: no-repeat;background-position: center;"></div>
-                                        </div>
-                                        <div style="font-size: 12px;">Chuyên khoa</div>
-                                    </a>
-                                    <a href="{{ url('/facilities') }}" type="button" class="btn icon-menu-home" style="width:100px;color: #f2ffff;background: none;">
-                                        <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
-                                            <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/co-so-y-te.png);background-size: 40px;background-repeat: no-repeat;background-position: center;"></div>
-                                        </div>
-                                        <div style="font-size: 12px;">Bệnh viện</div>
-                                    </a>
-                                    <a href="{{ url('/client/appointmentathome/indexApointment') }}" type="button" class="btn icon-menu-home" style="width:100px;color: #f2ffff;background: none;">
-                                        <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
-                                            <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/xet-nghiem.png);background-size: 40px;background-repeat: no-repeat;background-position: center;"></div>
-                                        </div>
-                                        <div style="font-size: 12px;">Xét nghiệm tại nhà</div>
-                                    </a>
-                                </div>
-                                
-                                <div class="col-md-3 mb-4" style="display: flex; justify-content: space-between; align-items: flex-start;">
-                                    <a href="{{ url('/client/appointmentathome/indexInfusion') }}" type="button" class="btn icon-menu-home" style="width:100px;color: #f2ffff;background: none;">
-                                        <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
-                                            <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/truyen-dich.png);background-size: 40px;background-repeat: no-repeat;background-position: center;"></div>
-                                        </div>
-                                        <div style="font-size: 12px;">Truyền dịch</div>
-                                    </a>
-                                    <!-- <a href="{{ url('/package') }}" type="button" class="btn btn-light icon-menu-home" style="width:100px;color: #f2ffff;background: none;">
-                                        <i class="fas fa-file-medical"></i>   <br>
-                                        <span>Gói khám</span><br>
-                                        </a> -->
-                                    <a href="{{ url('/searchschedule') }}" type="button" class="btn icon-menu-home" style="width:100px;color: #f2ffff;background: none;">
-                                        <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
-                                            <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/tra-cuu.png);background-size: 40px;background-repeat: no-repeat;background-position: center;"></div>
-                                        </div>
-                                        <div style="font-size: 12px;">Tra cứu</div>
-                                    </a>
-                                    <a href="{{ url('/contact') }}" type="button" class="btn icon-menu-home" style="width:100px;color: #f2ffff;background: none;">
-                                        <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
-                                            <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/danh-gia.png);background-size: 40px;background-repeat: no-repeat;background-position: center;"></div>
-                                        </div>
-                                        <div style="font-size: 12px;">Đánh giá</div>
-                                    </a>
-                                </div><!-- End Recent Work -->
+                        <div class="banner-content col-lg-6 offset-1 col-10 m-lg-auto text-center ">
+                         <div class="row g-lg-5 mb-4">
+
+                            <div class="col-md-6 mb-4" style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <!-- <a href="{{ url('/') }}"  type="button" class="btn btn-light icon-menu-home" style="width:100px;color: #f2ffff;background: none;">
+                                    <i class="fas fa-home"></i>
+                                        <br>
+                                        <span>Trang chủ</span>
+                                    </a> -->
+                                <a href="{{ url('/specialty') }}" type="button" class="btn icon-menu-home" style="width:100px;color: #f2ffff;background: none;">
+                                    <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
+                                        <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/chuyen-khoa.png);background-size: 40px;background-repeat: no-repeat;background-position: center;"></div>
+                                    </div>
+                                    <div style="font-size: 12px;">Chuyên khoa</div>
+                                </a>
+                                <a href="{{ url('/facilities') }}" type="button" class="btn icon-menu-home" style="width:100px;color: #f2ffff;background: none;">
+                                    <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
+                                        <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/co-so-y-te.png);background-size: 40px;background-repeat: no-repeat;background-position: center;"></div>
+                                    </div>
+                                    <div style="font-size: 12px;">Bệnh viện</div>
+                                </a>
+                                <a href="{{ url('/client/appointmentathome/indexApointment') }}" type="button" class="btn icon-menu-home" style="width:100px;color: #f2ffff;background: none;">
+                                    <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
+                                        <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/xet-nghiem.png);background-size: 40px;background-repeat: no-repeat;background-position: center;"></div>
+                                    </div>
+                                    <div style="font-size: 12px;">Xét nghiệm tại nhà</div>
+                                </a>
                             </div>
+
+                            <div class="col-md-6 mb-4" style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <a href="{{ url('/client/appointmentathome/indexInfusion') }}" type="button" class="btn icon-menu-home" style="width:100px;color: #f2ffff;background: none;">
+                                    <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
+                                        <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/truyen-dich.png);background-size: 40px;background-repeat: no-repeat;background-position: center;"></div>
+                                    </div>
+                                    <div style="font-size: 12px;">Truyền dịch</div>
+                                </a>
+                                <!-- <a href="{{ url('/package') }}" type="button" class="btn btn-light icon-menu-home" style="width:100px;color: #f2ffff;background: none;">
+                                    <i class="fas fa-file-medical"></i>   <br>
+                                    <span>Gói khám</span><br>
+                                    </a> -->
+                                <a href="{{ url('/searchschedule') }}" type="button" class="btn icon-menu-home" style="width:100px;color: #f2ffff;background: none;">
+                                    <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
+                                        <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/tra-cuu.png);background-size: 40px;background-repeat: no-repeat;background-position: center;"></div>
+                                    </div>
+                                    <div style="font-size: 12px;">Tra cứu</div>
+                                </a>
+                                <a href="{{ url('/contact') }}" type="button" class="btn icon-menu-home" style="width:100px;color: #f2ffff;background: none;">
+                                    <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
+                                        <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/danh-gia.png);background-size: 40px;background-repeat: no-repeat;background-position: center;"></div>
+                                    </div>
+                                    <div style="font-size: 12px;">Đánh giá</div>
+                                </a>
+                            </div><!-- End Recent Work -->
+                        </div>                               
                             <!-- <center><span class="famous-saying">"Chỉ khi người giàu ốm họ mới thực hiểu sự bất lực của giàu sang"</span></center> -->
 
                         </div>
@@ -309,7 +310,7 @@
                     </div>
                     <div class=" row d-flex align-items-center">
                         <div class="rowx">
-                            <span class="h2 text-center col-12 py-2">
+                            <span class="h2 text-center col-12 py-2" style="font-family:emoji">
                                 <center> Cơ sở y tế</center>
                             </span>
                         </div>

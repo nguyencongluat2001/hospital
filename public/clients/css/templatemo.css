@@ -315,7 +315,7 @@ footer a.text-light:hover {
   background: #a4b7d942;
   color: #00b609 !important;
 }
-@media (min-width: 426px ) {
+/* @media (min-width: 426px ) {
   .icon-menu-home{
     display: none;
   }
@@ -325,7 +325,7 @@ footer a.text-light:hover {
     color: #f2ffff;
     background: #ffffff0a;
   }
-}
+} */
 
 /* animetion */
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
