@@ -1,6 +1,6 @@
 @extends('client.layouts.index')
 @section('body-client')
-<!-- <link rel="stylesheet" href="../clients/css/style.css"> -->
+<link rel="stylesheet" href="../clients/css/style.css">
 <script type="text/javascript" src="{{ URL::asset('dist\js\backend\client\JS_InforClient.js') }}"></script>
 
 <style>
@@ -16,8 +16,8 @@
    }
 
 </style>
-<section class="container" style="padding-top:10%">
-    <div class=" pb-3 d-lg-flex gx-5 pt-10">
+<section class="container" style="padding-top:90px">
+    <div class=" pb-3 d-lg-flex gx-5 ">
         <div class="col-lg-12">
             <form action="" method="POST" id="frmLoadlist_infor">
                 @csrf
@@ -26,10 +26,10 @@
                 <input type="hidden" name="id" id="id" value="{{ isset($datas->id) ? $datas->id : '' }}">
                 <div class="home_index_vnindex pt-1 pb-3" style="background:#f3f3f3 !important;border-radius:0px !important">
                     <!-- phần giới thiệu FIn top -->
-                    <div class="home_index_child" style="background:#e7faff !important">
+                    <div class="home_index_child" style="background:#f4f4f4 !important">
                         <div class="col-lg-12" style="padding:10px;">
                             <div class="row">
-                                <div class="col-md-8" style="color: black;">
+                                <div class="col-md-12" style="color: black;">
                                     <!-- <div class="card-header">
                                         <button class="btn btn-primary btn-sm ms-auto">Đổi mật khẩu</button>
                                     </div> -->
@@ -46,7 +46,7 @@
 
                                     {{-- @endif --}}
                                     <div class="card-body">
-                                        <p class="text-uppercase text-sm">Thông tin người dùng</p>
+                                        <p class="text-uppercase text-sm">Thông tin tài khoản</p>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
@@ -113,9 +113,8 @@
                                         </div> -->
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <!-- <div class="col-md-4">
                                     <div class="card card-profile">
-                                        <!-- <img src="../assets/img/bg-profile.jpg" alt="Image placeholder" class="card-img-top"> -->
                                         <div class=" justify-content-center" style="--bs-gutter-x: 1.5rem;
                                                                                     --bs-gutter-y: 0;
                                                                                     display: flex;
@@ -131,44 +130,17 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- <div class="card-header text-center border-0 pt-0 pt-lg-2 pb-4 pb-lg-3">
-                                            <div class="d-flex justify-content-between">
-                                                <a href="javascript:;" class="btn btn-sm btn-info mb-0 d-none d-lg-block">Connect</a>
-                                                <a href="javascript:;" class="btn btn-sm btn-info mb-0 d-block d-lg-none"><i class="ni ni-collection"></i></a>
-                                                <a href="javascript:;" class="btn btn-sm btn-dark float-right mb-0 d-none d-lg-block">Message</a>
-                                                <a href="javascript:;" class="btn btn-sm btn-dark float-right mb-0 d-block d-lg-none"><i class="ni ni-email-83"></i></a>
-                                            </div>
-                                        </div> -->
                                         <div class="card-body pt-0">
-                                            <!-- <div class="row">
-                                                <div class="col">
-                                                    <div class="d-flex justify-content-center">
-                                                        <div class="d-grid text-center">
-                                                            <span class="text-lg font-weight-bolder">22</span>
-                                                            <span class="text-sm opacity-8">Friends</span>
-                                                        </div>
-                                                        <div class="d-grid text-center mx-4">
-                                                            <span class="text-lg font-weight-bolder">10</span>
-                                                            <span class="text-sm opacity-8">Photos</span>
-                                                        </div>
-                                                        <div class="d-grid text-center">
-                                                            <span class="text-lg font-weight-bolder">89</span>
-                                                            <span class="text-sm opacity-8">Comments</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> -->
                                             <div class="text-center mt-4">
                                                 <h5>
                                                     {{isset($datas->name) ? $datas->name : ''}}
                                                 </h5>
                                                 <div>
-                                                    <i class="ni location_pin mr-2"></i>Hội viên: {{isset($datas->account_type_vip) ? $datas->account_type_vip : ''}} <br>
                                                     <i class="ni location_pin mr-2"></i>Ngày đăng ký: {{isset($datas->date_update_vip) ? $datas->date_update_vip : ''}}
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
