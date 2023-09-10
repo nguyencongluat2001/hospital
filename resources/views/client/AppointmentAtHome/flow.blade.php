@@ -9,7 +9,7 @@
         display: block;
     }
     .modal-dialog {
-        padding-top: 400px;
+        padding-top: 100px;
     }
     a {
     text-decoration: none;
