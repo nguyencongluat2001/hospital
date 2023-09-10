@@ -12,6 +12,7 @@ use Modules\Client\Page\Specialty\Controllers\SpecialtyController;
 use Modules\Client\Page\Package\Controllers\PackageController;
 use Modules\Client\Page\SearchSchedule\Controllers\SearchScheduleController;
 use Modules\Client\Page\AppointmentAtHome\Controllers\AppointmentAtHomeController;
+use Modules\Client\Page\Infor\Controllers\InforController;
 
 //Dashboard
 use Modules\System\Dashboard\Users\Controllers\UserController;
