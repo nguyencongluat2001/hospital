@@ -111,6 +111,35 @@
   height:300px !important;
   width: 60%;
 }
+#myInput{
+    background-color: #ffffffb5;
+}
+#overSearch{
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+}
+#overSearch.closed{
+    display: none;
+}
+#overSearch ul{
+    padding-left: 0;
+    margin-bottom: 0;
+}
+#overSearch .dropdown-item:active{
+    background-color: #fff;
+}
+#overSearch ul li{
+    list-style: none;
+    line-height: 40px;
+}
+#overSearch ul a{
+    color: #000;
+    text-decoration: none;
+}
+#overSearch ul a:hover li{
+    text-decoration: underline;
+}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
@@ -144,49 +173,17 @@
                                                 <!-- <div class=" pt-2 box">
                                                     <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg" placeholder="Tìm kiếm từ khóa..." aria-label="Tìm kiếm từ khóa...">
                                                 </div> -->
-                                                <div class="col-md-12">
-                                                    <div class="selectBox" onclick="showCheckboxes1()">
-                                                    <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg" placeholder="Tìm kiếm từ khóa..." aria-label="Tìm kiếm từ khóa...">
-
-                                                        <div class="overSelect"></div>
+                                                <div style="width: 100%;position: relative;z-index: 1000;">
+                                                    <input id="myInput" type="text" class="input form-control form-control-lg" placeholder="Tìm kiếm từ khóa..." aria-label="Tìm kiếm từ khóa..." onkeypress="filterSearch()">
+                                                    @if(isset($search) && count($search) > 0)
+                                                    <div id="overSearch" class="closed">
+                                                        <ul>
+                                                            @foreach($search as $value)
+                                                            <a href="{{ $value['url'] }}" class="dropdown-item"><li>{{ $value['name'] }}</li></a>
+                                                            @endforeach
+                                                        </ul>
                                                     </div>
-                                                    
-                                                    <table id="myTable" class="table  table-bordered table-striped table-condensed dataTable no-footer">
-                                                        <div class="scrollbar" id="checkboxes1" style="position: absolute;z-index: 10; border: 1px solid #5e72e4;border-top: 0;background: #fff;margin-left: 0px !important;">
-                                                            {{--@foreach($data['category'] as $item)--}}
-                                                            <label for="one" class="pt-1">
-                                                            <span style=";color: #252c43;font-family: serif;"> Khám chuyên khoa xương khớp</span></label>
-                                                            <label for="one" class="pt-1">
-                                                            <span style=";color: #252c43;font-family: serif;"> Khám chuyên khoa tiêu hóa</span></label>
-                                                            <label for="one" class="pt-1">
-                                                            <span style=";color: #252c43;font-family: serif;"> Khám chuyên khoa nội tiết</span></label>
-                                                            <label for="one" class="pt-1">
-                                                            <span style=";color: #252c43;font-family: serif;"> Khám chuyên khoa tim mạch</span></label>
-                                                            <label for="one" class="pt-1">
-                                                            <span style=";color: #252c43;font-family: serif;"> Khám chuyên khoa nhi</span></label>
-                                                            <label for="one" class="pt-1">
-                                                            <span style=";color: #252c43;font-family: serif;"> Xét nghiệm tổng quát</span></label>
-                                                            <label for="one" class="pt-1">
-                                                            <span style=";color: #252c43;font-family: serif;"> Xét nghiệm vi chất trẻ nhỏ</span></label>
-                                                            <label for="one" class="pt-1">
-                                                            <span style=";color: #252c43;font-family: serif;"> Khám chuyên khoa xương khớp</span></label>
-                                                            <label for="one" class="pt-1">
-                                                            <span style=";color: #252c43;font-family: serif;"> Khám chuyên khoa tiêu hóa</span></label>
-                                                            <label for="one" class="pt-1">
-                                                            <span style=";color: #252c43;font-family: serif;"> Khám chuyên khoa nội tiết</span></label>
-                                                            <label for="one" class="pt-1">
-                                                            <span style=";color: #252c43;font-family: serif;"> Khám chuyên khoa tim mạch</span></label>
-                                                            <label for="one" class="pt-1">
-                                                            <span style=";color: #252c43;font-family: serif;"> Khám chuyên khoa nhi</span></label>
-                                                            <label for="one" class="pt-1">
-                                                            <span style=";color: #252c43;font-family: serif;"> Xét nghiệm tổng quát</span></label>
-                                                            <label for="one" class="pt-1">
-                                                            <span style=";color: #252c43;font-family: serif;"> Xét nghiệm vi chất trẻ nhỏ</span></label>
-                                                            {{--@endforeach--}}
-                                                            
-                                                        </div>
-                                                    </table>
-                                                    
+                                                    @endif
                                                 </div>
                                                 <!-- <select id="select-state" placeholder="Pick a state...">
                                                     <option value="">Select a state...</option>
@@ -578,6 +575,29 @@ new Chart("myChart", {
     $(document).ready(function($) {
         JS_Home.loadIndex(baseUrl);
     })
+    document.addEventListener('click', closeOnClickOutside);
+    function closeOnClickOutside(e) {
+    if(!$("#overSearch").hasClass('closed')){
+            if (!e.target.matches('#myInput')) {
+                $("#overSearch").addClass('closed');
+            }
+        }
+    }
+    function filterSearch(){
+        let input = document.getElementById('myInput');
+        let dropdown = document.getElementById('overSearch');
+        input.addEventListener('input', function () {
+        let dropdown_items = dropdown.querySelectorAll('.dropdown-item');
+        if (!dropdown_items)
+            return false;
+        for (let i=0; i<dropdown_items.length; i++) {
+            if (dropdown_items[i].innerHTML.toUpperCase().includes(input.value.toUpperCase()))
+                dropdown_items[i].style.display = 'block';
+            else
+                dropdown_items[i].style.display = 'none';
+            }
+        });
+    }
 </script>
 <!-- <script type="text/javascript" src="{{ URL::asset('dist\js\backend\pages\JS_System_Security.js') }}"></script>
 <script>
