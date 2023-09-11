@@ -231,6 +231,7 @@ JS_AppointmentAtHome.prototype.delete = function(oForm) {
  */
 JS_AppointmentAtHome.prototype.changeStatusAppointmentAtHome = function(id) {
     var myClass = this;
+    var oForm = 'form#frmApproveAthome';
     var url = myClass.urlPath + '/changeStatusAppointmentAtHome';
     var data = '_token=' + $("#frmApproveAthome #_token").val();
     data += '&status=' + ($("#status_" + id).is(":checked") == true ? 0 : 1);
@@ -242,7 +243,7 @@ JS_AppointmentAtHome.prototype.changeStatusAppointmentAtHome = function(id) {
         success: function(arrResult) {
             if (arrResult['success'] == true) {
                 NclLib.alertMessageBackend('success', 'Thông báo', arrResult['message']);
-                myClass.loadList();
+                myClass.loadList(oForm);
             } else {
                 NclLib.alertMessageBackend('danger', 'Lỗi', arrResult['message']);
             }
