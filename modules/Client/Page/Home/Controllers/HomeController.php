@@ -49,6 +49,16 @@ class HomeController extends Controller
         $Specialty = $this->specialtyService->where('current_status',1)->get()->take(4);
         $datas['datas']= $objResult;
         $datas['Specialty']= $Specialty;
+        $datas['search']= [
+            [
+                'name' => 'Google',
+                'url' => 'https://www.google.com/'
+            ],
+            [
+                'name' => 'Youtube',
+                'url' => 'https://www.youtube.com/'
+            ],
+        ];
         return view('client.home.home',$datas);
     }
     

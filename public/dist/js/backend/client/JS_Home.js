@@ -38,6 +38,9 @@ JS_Home.prototype.loadIndex = function () {
     $('form#frmAdd').find('#btn_create').click(function () {
         myClass.store('form#frmAdd');
     })
+    $("#myInput").click(function(){
+        $("#overSearch").toggleClass('closed');
+    });
 }
 JS_Home.prototype.loadevent = function (oForm) {
     var myClass = this;
