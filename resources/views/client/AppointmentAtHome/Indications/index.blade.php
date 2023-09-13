@@ -24,7 +24,21 @@
                                                         data-original-title="Xóa danh mục"><i class="fas fa-trash-alt"></i></button>
                                                 </div> -->
                                                 {{-- @endif --}}
-                                                <div class="input-group" style="width:80%;height:10%">
+                                                <div style="display:flex">
+                                                    <div class="col-md-3" style="">
+                                                        <input class="form-control input-sm" style="height:30px;font-size: 13px;" type="date"
+                                                            id="fromDate" name="fromDate" value="<?php echo (new DateTime())->format('Y-m-d'); ?>" min="2010-01-01"
+                                                            max="2030-12-31">
+                                                    </div>
+                                                    <div style="margin-top:5px ;font-size: 13px; color:#555555;paddingh-left:10px">
+                                                        Đến
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <input class="form-control input-sm" style="height:30px;font-size: 13px;" type="date"
+                                                            id="toDate" name="toDate" value="<?php echo (new DateTime())->format('Y-m-d'); ?>" min="2010-01-01" max="2030-12-31">
+                                                    </div>
+                                                </div>
+                                                <div class="input-group" style="width:80%;height:10%;padding-top:10px">
                                                     <input id="search" name="search" type="text" class="form-control" placeholder="Tìm kiếm mã, mã ống nghiệm, tên - sđt khách hàng...">
                                                 </div>
                                                 <button style="width:60px" id="txt_search" name="txt_search" type="button" class="btn btn-dark"><i class="fas fa-search"></i></button>
@@ -45,7 +59,6 @@
     <div class="modal " id="addmodal" role="dialog"></div>
     <div class="modal " id="addfile" role="dialog"></div>
     <script type="text/javascript" src="{{ URL::asset('dist/js/backend/client/JS_listIndications.js') }}"></script>
-
     <div id="dialogconfirm"></div>
     <script src='../assets/js/jquery.js'></script>
     <script type="text/javascript">

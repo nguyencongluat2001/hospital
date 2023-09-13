@@ -86,7 +86,7 @@ class AppointmentAtHomeService extends Service
        
         $total = 0;
         $price = PriceTestModel::whereIn('code_blood',$expl)->orWhereIn('code',$expl)->get()->toArray();
-        $totals = number_format($total,0, '', ',');
+        $totals = number_format($AppointmentAtHome->money,0, '', ',');
         $param = [
             'id' => isset($AppointmentAtHome['id'])?$AppointmentAtHome['id']:'', 
             'code' => isset($AppointmentAtHome['code'])?$AppointmentAtHome['code']:'', 
@@ -147,6 +147,9 @@ class AppointmentAtHomeService extends Service
             $i++;
             $j++;
         }
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue("B$i", 'Tổng tiền');
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C$i", $input['datas']['money'].' VND');
+
         // $objPHPExcel->setActiveSheetIndex(0)->setCellValue("D12", 'Tổng: '.$i.' chỉ số');
         $objWriter = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($objPHPExcel, 'Xls');
         $objWriter->save($path . $namefile);

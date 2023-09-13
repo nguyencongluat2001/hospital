@@ -48,6 +48,18 @@ JS_AppointmentAtHome.prototype.loadIndex = function () {
     // $(oFormBlog).find('#category').change(function () {
     //     myClass.loadListBlog(oFormBlog);
     // });
+     // form load
+     $(oForm).find('#fromDate').change(function() {
+        var page = $(oForm).find('#limit').val();
+        var perPage = $(oForm).find('#cbo_nuber_record_page').val();
+        myClass.loadList(oForm, page, perPage);
+    });
+    // form load
+    $(oForm).find('#toDate').change(function() {
+        var page = $(oForm).find('#limit').val();
+        var perPage = $(oForm).find('#cbo_nuber_record_page').val();
+        myClass.loadList(oForm, page, perPage);
+    });
     $(oForm).find('#txt_search').click(function () {
         var page = $(oForm).find('#limit').val();
         var perPage = $(oForm).find('#cbo_nuber_record_page').val();

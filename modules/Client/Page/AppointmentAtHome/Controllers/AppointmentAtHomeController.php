@@ -354,9 +354,8 @@ class AppointmentAtHomeController extends Controller
         $data = array();
         $arrInput['sort'] = 'created_at';
         $arrInput['code'] = !empty($_SESSION['code'])?$_SESSION['code']:'';
-        $arrInput['fromdate'] = date("Y/m/d").' 00:00:00';
-        $arrInput['todate'] = date("Y/m/d".' 23:59:00');
-
+        $arrInput['fromdate'] = $arrInput['fromDate'].' 00:00:00';
+        $arrInput['todate'] = $arrInput['toDate'].' 23:59:00';
         if(empty($_SESSION['code'])){
             $objResult = [];
         }else{
