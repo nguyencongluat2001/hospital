@@ -136,9 +136,10 @@ class AppointmentAtHomeService extends Service
         $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C9", $input['datas']['code_patient']);
         $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C10", $input['datas']['code_doctor']);
         $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C11", 'Lúc '.$input['datas']['hour_sampling'].' ngày '.$input['datas']['date_sampling'].' - Tại '.$input['datas']['address']);
-
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue("A13", 'Tổng tiền');
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C13", $input['datas']['money'].' VND');
         $j = 1;
-        $i = 14;
+        $i = 15;
         foreach ($input['price'] as $value) {
             $objPHPExcel->setActiveSheetIndex(0)
                 ->setCellValue("A$i", $j)
@@ -147,8 +148,7 @@ class AppointmentAtHomeService extends Service
             $i++;
             $j++;
         }
-        $objPHPExcel->setActiveSheetIndex(0)->setCellValue("B$i", 'Tổng tiền');
-        $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C$i", $input['datas']['money'].' VND');
+        
 
         // $objPHPExcel->setActiveSheetIndex(0)->setCellValue("D12", 'Tổng: '.$i.' chỉ số');
         $objWriter = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($objPHPExcel, 'Xls');
