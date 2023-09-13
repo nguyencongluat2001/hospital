@@ -305,7 +305,9 @@ JS_AppointmentAtHome.prototype.showPack = function () {
                     $(arrResult.data.chiso).each(function(index,el) {
                         html += `<tr>`
                             html += `<td>`
-                                html += `<button onclick="JS_AppointmentAtHome.showInfor('`+ el.code +`')" type="button" style="display: inline-block;width:50px;padding:0px" class="btn-warning"><i class="fas fa-eye"></i></button> <span style="color: white;" > `+ el.code +` - <span style="color:#ffc788"> `+ el.price + `</span> <span style="font-size:10px">VND </span></span>`
+                                // html += `<button onclick="JS_AppointmentAtHome.showInfor('`+ el.code +`')" type="button" style="display: inline-block;width:50px;padding:0px" class="btn-warning"><i class="fas fa-eye"></i></button> <span style="color: white;" > `+ el.code +` - <span style="color:#ffc788"> `+ el.price + `</span> <span style="font-size:10px">VND </span></span>`
+
+                                html += `<button onclick="JS_AppointmentAtHome.showInfor('`+ el.code +`')" type="button" style="display: inline-block;width:50px;padding:0px" class="btn-warning"><i class="fas fa-eye"></i></button> <span style="color: white;" > `+ el.code +`</span>`
                             html += `</td>`
                         html += `</tr>`
                     });
