@@ -10,6 +10,8 @@ use Modules\Base\Library;
 use Modules\System\Dashboard\BloodTest\Models\PriceTestModel;
 use DB;
 use Str;
+use Modules\Client\Page\AppointmentAtHome\Models\PatientModel;
+
 
 
 class AppointmentAtHomeService extends Service
@@ -59,12 +61,29 @@ class AppointmentAtHomeService extends Service
                 'date_birthday'=> !empty($input['date_birthday'])?$input['date_birthday']:'',
                 'created_at' => date("Y/m/d H:i:s"),
                 'update_at' => date("Y/m/d H:i:s")
-                
             ];
             if(!empty($_SESSION['role'])){
                 $param['code_ctv'] = $_SESSION['code'];
             }
             $create = $this->create($param);
+            // thoong tin benh nhan
+            $paramPatient = [
+                'code'=> $code,
+                'name'=> $input['name'],
+                'phone'=> !empty($input['phone'])?$input['phone']:'',
+                'sex'=> !empty($input['sex'])?$input['sex']:'',
+                'address'=> !empty($input['address'])?$input['address']:'',
+                'date_of_birth'=> !empty($input['date_birthday'])?$input['date_birthday']:'',
+                'created_at' => date("Y/m/d H:i:s"),
+                'updated_at' => date("Y/m/d H:i:s")
+            ];
+            $check = PatientModel::where('phone',$input['phone'])->first();
+            if(!empty($check)){
+                $createPatient = PatientModel::where('phone',$input['phone'])->update($paramPatient);
+            }else{
+                $paramPatient['id'] = (string)Str::uuid();
+                $createPatient = PatientModel::create($paramPatient);
+            }
             DB::commit();
             return true;
         } catch (\Exception $e) {
@@ -195,6 +214,37 @@ class AppointmentAtHomeService extends Service
         }
         $data['datas'] = $datacc;
         $data['total'] =  number_format($total,0, '', ',');
+        return $data;
+    }
+      /**
+     * lay thong tin benh nhan
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function getInfioPatient($input)
+    {
+        $datas = PatientModel::where('phone',$input['phone'])->first();
+        if(!empty($datas)){
+            $data = [
+                'code' => $datas['code'],
+                'name' => $datas['name'],
+                'phone' => $datas['phone'],
+                'date_of_birth' => $datas['date_of_birth'],
+                'sex' => $datas['sex'],
+                'address' => $datas['address'],
+            ];
+        }else{
+            $data = [
+                'code' => '',
+                'name' => '',
+                'phone' => '',
+                'date_of_birth' => '',
+                'sex' => '',
+                'address' => '',
+            ];
+        }
         return $data;
     }
 }

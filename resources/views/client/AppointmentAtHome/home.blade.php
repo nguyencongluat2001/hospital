@@ -211,21 +211,25 @@
                                                 </div> -->
                                                  <div class="row mt-3">
                                                     <div class="form-input col-md-3 padding-style">
-                                                        <input type="text" class="form-control required" placeholder="Họ và tên bệnh nhân..." name="name" id="name" oninput="inValid(this.id)">
-                                                        <i class="fa fa-user uname-icon padding-style"></i>
-                                                        <span class="message-error uname-error">Họ và tên bệnh nhân không được để trống!</span>
-                                                    </div>
-                                                    <div class="form-input col-md-3 padding-style">
-                                                        <input type="text" class="form-control required" placeholder="Số điện thoại..." name="phone" id="phone" oninput="inValid(this.id)">
+                                                        <input type="text" class="form-control required" onchange="JS_AppointmentAtHome.getInfioPatient(this.value)" placeholder="Số điện thoại..." name="phone" id="phone" oninput="inValid(this.id)">
                                                         <i class="fas fa-phone phone-icon padding-style"></i>
                                                         <span class="message-error phone-error">Số điện thoại không được để trống!</span>
                                                     </div>
+                                                    <div class="form-input col-md-3 padding-style" >
+                                                        <div id="changeName">
+                                                            <input type="text" class="form-control required" placeholder="Họ và tên bệnh nhân..." name="name" id="name" oninput="inValid(this.id)">
+                                                            <i class="fa fa-user uname-icon padding-style"></i>
+                                                        </div>
+                                                        <span class="message-error uname-error">Họ và tên bệnh nhân không được để trống!</span>
+                                                    </div>
                                                     <div class="form-input col-md-3  padding-style">
                                                         <!-- <label for=""></label> -->
-                                                        <input type="text" class="form-control required" placeholder="Năm sinh..." name="date_birthday" id="date_birthday" oninput="inValid(this.id)">
+                                                        <div id="change_Date_birthday">
+                                                            <input type="text" class="form-control required" placeholder="Năm sinh..." name="date_birthday" id="date_birthday" oninput="inValid(this.id)">
+                                                            <i class="fas fa-birthday-cake  padding-style"></i>
+                                                        </div>
                                                         <!-- <i class="fa fa-calendar-alt uname-icon"></i> -->
                                                         <!-- <i class="fas fa-calendar-alt"></i> -->
-                                                        <i class="fas fa-birthday-cake  padding-style"></i>
                                                         <span class="message-error uname-error">Năm sinh không được để trống!</span>
                                                     </div>
                                                     <div class="form-input col-md-3 padding-style">
@@ -356,8 +360,10 @@
                                                 </div>
                                                 <div class="row mt-3">
                                                     <div class="form-input col-md-12 padding-style">
-                                                        <textarea style="height:70px" type="text" class="form-control required" placeholder="Địa chỉ chi tiết..." name="address" id="address" oninput="inValid(this.id)"></textarea>
-                                                        <i class="fa fa-map-marker-alt uname-icon padding-style"></i>
+                                                        <div id="changeAddress">
+                                                            <input type="text" class="form-control required" placeholder="Địa chỉ chi tiết..." name="address" id="address" oninput="inValid(this.id)">
+                                                            <i class="fa fa-map-marker-alt uname-icon padding-style"></i>
+                                                        </div>
                                                         <span class="message-error uname-error">Địa chỉ chi tiết không được để trống!</span>
                                                     </div>
                                                 </div>

@@ -164,6 +164,22 @@ class AppointmentAtHomeController extends Controller
             'status' => true
         ]);
     }
+       /**
+     * lay thong tin benh nhan
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function getInfioPatient(Request $request)
+    {
+        $input = $request->all();
+        $datas = $this->AppointmentAtHomeService->getInfioPatient($input);
+        return response()->json([
+            'data' => $datas,
+            'status' => true
+        ]);
+    }
          /**
      * dat lich
      *

@@ -358,3 +358,43 @@ JS_AppointmentAtHome.prototype.flow = function (code) {
         }
     });
 }
+
+
+/**
+ * Load thong tin benh nhan
+ *
+ * @param oForm (tên form)
+ *
+ * @return void
+ */
+JS_AppointmentAtHome.prototype.getInfioPatient = function (phone) {
+    var myClass = this;
+    var url = this.urlPath + '/getInfioPatient';
+    var data = '&phone=' + phone;
+    NclLib.loadding();
+    $.ajax({
+        url: url,
+        type: "GET",
+        cache: true,
+        data: data,
+        success: function (arrResult) {
+            var htmls = `<div id="changeName">`
+            htmls += `<input type="text" class="form-control required" placeholder="Họ và tên bệnh nhân..." name="name" id="name" value="`+ arrResult.data.name +`" oninput="inValid(this.id)">`
+            htmls += `<i class="fa fa-user uname-icon padding-style"></i>`
+            htmls += `</div">`
+            $("#changeName").html(htmls);
+
+            var htmls_date_birthday = `<div id="change_Date_birthday">`
+            htmls_date_birthday += `<input type="text" class="form-control required" placeholder="Năm sinh..." name="date_birthday" id="date_birthday" value="`+ arrResult.data.date_of_birth +`" oninput="inValid(this.id)">`
+            htmls_date_birthday += `<i class="fas fa-birthday-cake  padding-style"></i>`
+            htmls_date_birthday += `</div">`
+            $("#change_Date_birthday").html(htmls_date_birthday);
+
+            var htmls_address = `<div id="changeAddress">`
+            htmls_address += `<input type="text" class="form-control required" placeholder="Địa chỉ chi tiết..." name="address" id="address" value="`+ arrResult.data.address +`" oninput="inValid(this.id)">`
+            htmls_address += `<i class="fa fa-map-marker-alt uname-icon padding-style"></i>`
+            htmls_address += `</div">`
+            $("#changeAddress").html(htmls_address);
+        }
+    });
+}

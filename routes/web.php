@@ -140,7 +140,9 @@ Route::prefix('/client')->group(function () {
             Route::post('/sendPayment',[AppointmentAtHomeController::class,'sendPayment']);
             Route::get('/getPrice',[AppointmentAtHomeController::class,'getPrice']);
             Route::get('/showInfor', [AppointmentAtHomeController::class,'showInfor']);
- 
+
+            Route::get('/getInfioPatient',[AppointmentAtHomeController::class,'getInfioPatient']);
+
             Route::get('/showPack', [AppointmentAtHomeController::class,'showPack']);
             Route::get('/flow', [AppointmentAtHomeController::class,'flow']);
             //danh sách lịch chỉ định
