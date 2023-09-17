@@ -21,8 +21,7 @@ use Modules\System\Dashboard\Specialty\Controllers\SpecialtyController;
 use Modules\System\Dashboard\AppointmentAtHome\Controllers\AppointmentAtHomeController;
 use Modules\System\Dashboard\BloodTest\Controllers\BloodTestController;
 use Modules\System\Dashboard\BloodTest\Controllers\PriceTestController;
-
-
+use Modules\System\Dashboard\UrlSearch\Controllers\UrlSearchController;
 
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
@@ -164,6 +163,16 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
                 Route::post('/create',[PriceTestController::class,'create']);
                 Route::post('/edit',[PriceTestController::class,'edit']);
                 Route::post('/delete',[PriceTestController::class,'delete']);
+            });
+              //quản trị search
+              Route::prefix('/urlsearch')->group(function () {
+                //Hospital
+                Route::get('/index', [UrlSearchController::class, 'index']);
+                Route::get('/loadList',[UrlSearchController::class,'loadList'])->name('loadList');
+                Route::post('/createForm',[UrlSearchController::class,'createForm']);
+                Route::post('/create',[UrlSearchController::class,'create'])->name('create');
+                Route::post('/edit',[UrlSearchController::class,'edit'])->name('edit');
+                Route::post('/delete',[UrlSearchController::class,'delete']);
             });
         });
     });

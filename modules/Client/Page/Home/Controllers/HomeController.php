@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Http;
 use DB;
 use Modules\System\Dashboard\Hospital\Services\HospitalService;
 use Modules\System\Dashboard\Specialty\Services\SpecialtyService;
-
+use Modules\System\Dashboard\UrlSearch\Services\UrlSearchService;
 /**
  * Phân quyền người dùng 
  *
@@ -23,6 +23,7 @@ class HomeController extends Controller
 {
 
     public function __construct(
+        UrlSearchService $UrlSearchService,
         SpecialtyService $specialtyService,
         CateService $cateService,
         CategoryService $categoryService,
@@ -30,6 +31,7 @@ class HomeController extends Controller
         BlogService $blogService,
         HospitalService $hospitalService
     ){
+        $this->UrlSearchService = $UrlSearchService;
         $this->specialtyService = $specialtyService;
         $this->cateService = $cateService;
         $this->categoryService = $categoryService;
@@ -49,16 +51,14 @@ class HomeController extends Controller
         $Specialty = $this->specialtyService->where('current_status',1)->get()->take(4);
         $datas['datas']= $objResult;
         $datas['Specialty']= $Specialty;
-        $datas['search']= [
-            [
-                'name' => 'Google',
-                'url' => 'https://www.google.com/'
-            ],
-            [
-                'name' => 'Youtube',
-                'url' => 'https://www.youtube.com/'
-            ],
-        ];
+        $data_search = $this->UrlSearchService->where('current_status',1)->get();
+        foreach($data_search as $val){
+            $datas['search'][]= [
+                    'name' => $val['name'],
+                    'url' => $val['url']
+            ];
+        }
+        
         return view('client.home.home',$datas);
     }
     
