@@ -197,7 +197,7 @@
     <!-- Custom -->
     <script src="../clients/js/custom.js"></script>
     <script src="../assets/js/plugins/chartjs.min.js"></script>
-
+    @yield('js')
 </body>
 
 </html>
