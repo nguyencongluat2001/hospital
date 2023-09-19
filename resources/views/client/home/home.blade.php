@@ -173,7 +173,7 @@
                                                 <!-- <div class=" pt-2 box">
                                                     <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg" placeholder="Tìm kiếm từ khóa..." aria-label="Tìm kiếm từ khóa...">
                                                 </div> -->
-                                                <div style="width: 100%;position: relative;z-index: 1000;">
+                                                <div style="width: 100%;position: relative;z-index: 100;">
                                                     <input id="myInput" type="text" class="input form-control form-control-lg" placeholder="Tìm kiếm từ khóa..." aria-label="Tìm kiếm từ khóa..." onkeypress="filterSearch()">
                                                     @if(isset($search) && count($search) > 0)
                                                     <div id="overSearch" class="closed">
