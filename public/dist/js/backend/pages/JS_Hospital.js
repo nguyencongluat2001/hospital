@@ -30,6 +30,9 @@ JS_Hospital.prototype.loadIndex = function () {
     $(oForm).find('#btn_edit').click(function () {
         myClass.edit(oForm);
     });
+    $(oForm).find('#btn_stage').click(function () {
+        myClass.edit(oForm);
+    });
     $(oForm).find('#btn_money_package').click(function () {
         myClass.editMoneyPackage(oForm);
     });
