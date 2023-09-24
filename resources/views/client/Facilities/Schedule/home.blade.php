@@ -143,7 +143,7 @@
                                                             <img style="width:200px;height:200px;object-fit: cover;" class="team-member-img img-fluid rounded-circle p-4" src="{{url('/file-image-client/avatar-hospital/')}}/{{ !empty($physician['image'])?$physician['image']:'' }}" alt="Card image">
                                                             </center>
                                                         </div>
-                                                        <div class="col-md-8">
+                                                        <div class="col-md-8" style="padding: 15px;">
                                                             <ul class="team-member-caption list-unstyled pt-4">
                                                                 <li class="name_cg" style="font-size: 20px;font-weight: 700;color: #ff9f00;">{{$physician['name']}}</li>
                                                                 <li>Chuyên khoa: <span style="color:#38526f">{{$physician['specialtys']}}</span></li>
