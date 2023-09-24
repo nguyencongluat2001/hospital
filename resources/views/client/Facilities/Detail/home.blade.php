@@ -70,7 +70,7 @@
                         </center>
                     </div>
                     <div class="col-md-8">
-                        <ul class="team-member-caption list-unstyled pt-4">
+                        <ul class="team-member-caption list-unstyled pt-4" style="padding:15px">
                             <li class="name_cg" style="font-size: 20px;font-weight: 700;color: #ff9f00;">{{$data['name']}}</li>
                             <li>Chuyên khoa: <span style="color:#38526f">{{$data['specialtys']}}</span></li>
                             <li>Thời gian khám: <span style="color:#38526f">{{$data['time']}}</span></li>
