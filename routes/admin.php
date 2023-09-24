@@ -101,6 +101,17 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
                 Route::post('/createMoneyPackage',[HospitalController::class,'createMoneyPackage'])->name('createMoneyPackage');
                 Route::post('/delete',[HospitalController::class,'delete']);
                 Route::get('/seeVideo',[HospitalController::class,'seeVideo']);
+                Route::prefix('/stage')->group(function () {
+                    //Hospital
+                    Route::get('/index/{code}', [HospitalController::class, 'indexStage']);
+
+                    // Route::get('/index', [HospitalController::class, 'index']);
+                    Route::get('/loadList',[HospitalController::class,'loadListStage']);
+                    Route::post('/createFormStage',[HospitalController::class,'createFormStage']);
+                    Route::post('/createStage',[HospitalController::class,'createStage'])->name('createStage');
+                    Route::post('/editStage',[HospitalController::class,'editStage'])->name('editStage');
+                    Route::post('/delete',[HospitalController::class,'deleteStage']);
+                });
             });
              //Chuyên khoa
              Route::prefix('/specialty')->group(function () {

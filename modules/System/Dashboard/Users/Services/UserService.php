@@ -61,9 +61,12 @@ class UserService extends Service
                 'email'=> $input['email'],
                 'dateBirth'=> $input['dateBirth'],
                 'role'=> isset($input['role']) ? $input['role'] : (isset($user) ? $user->role : 'USERS'),
-                'id_personnel'=> isset($input['id_personnel'])?$input['id_personnel']:'YE07',
                 'status' => isset($input['status']) ? 1 : 0,
             ];
+            if(!empty($input['id_personnel']) && $input['id_personnel'] != ''){
+                $arrData['id_personnel'] = $input['id_personnel'];
+
+            }
              // nếu có ảnh mới thì cập nhật
             if(!empty($arrFile)){
                 $arrData['avatar'] = $arrFile;

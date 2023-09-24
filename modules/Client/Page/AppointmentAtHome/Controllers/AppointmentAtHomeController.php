@@ -309,7 +309,7 @@ class AppointmentAtHomeController extends Controller
     {
         $input = $request->all();
         $arr = [];
-        $total = 0;
+        $total = 10000;
         if($input['code_indications'] == null){
             $total = 0;
         }else{

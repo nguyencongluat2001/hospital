@@ -309,7 +309,7 @@ JS_AppointmentAtHome.prototype.showPack = function () {
         data: data,
         success: function (arrResult) {
             // var  html = `<br>`
-            var html = `&nbsp; Tổng đã chọn: <span style="font-weight: 600;color: #ff6400;">`+ arrResult.data.total +` </span><span style="font-size:10px">VND </span>`
+            var html = `&nbsp; Tổng đã chọn: <span style="font-weight: 600;color: #ff6400;">`+ arrResult.data.total +` </span><span style="font-size:10px">VND ( Đã bao gồm phí đi lại 10.000 vnd)</span>`
             html += `<input id="money" value="`+ arrResult.data.total_number +`" name="money" type="hidden">`
             html += '<div class="table-responsive pmd-card pmd-z-depth table-container">'
                 html += `<table id="myTable" class="table  table-bordered table-striped table-condensed dataTable no-footer">`

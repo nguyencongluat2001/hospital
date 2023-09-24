@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use Modules\Base\Service;
 use Modules\System\Dashboard\Hospital\Repositories\HospitalRepository;
 use Modules\System\Dashboard\Hospital\Services\MoneySpecialtyService;
+use Modules\System\Dashboard\Hospital\Services\SystemClinicsService;
 use Str;
 use Modules\Base\Library;
 
@@ -14,10 +15,12 @@ class HospitalService extends Service
 {
 
     public function __construct(
+        SystemClinicsService $SystemClinicsService,
         MoneySpecialtyService $moneySpecialtyService,
         HospitalRepository $HospitalRepository
         )
     {
+        $this->SystemClinicsService  = $SystemClinicsService;
         $this->moneySpecialtyService = $moneySpecialtyService;
         $this->HospitalRepository = $HospitalRepository;
         $this->baseDis = public_path("file-image-client/avatar-hospital") . "/";
@@ -117,5 +120,44 @@ class HospitalService extends Service
             }
         }
         return array('success' => true, 'message' => 'Cập nhật thành công!');
+    }
+    //
+    public function storeStage($input,$file){
+        //lấy mã bài viết
+        $random = Library::_get_randon_number();
+        $image_old = null;
+        if($input['id'] != ''){
+            $hospital = $this->SystemClinicsService->where('id',$input['id'])->first();
+            $image_old = !empty($hospital->avatar)?$hospital->avatar:'';
+        }
+        if(isset($file) && $file != []){
+            $arrFile = $this->uploadFile($input,$file,$image_old);
+        }
+        $arrData = [
+            'code_hospital'=> $input['code_hospital'], // mã bệnh viện phòng khám
+            'code'=> $input['code'],
+            'name'=> $input['name'],
+            'time'=> $input['time'],
+            'specialtys'=> $input['specialtys'], //chuyên khoa
+            'money'=> $input['money'], //phí khám
+            'profile'=> $input['profile'], //tiểu sử
+            'order'=> $input['order'],
+        ];
+        if(isset($arrFile[0])){
+            $arrData['image'] = $arrFile[0];
+        }
+        if($input['id'] != ''){
+            $create = $this->SystemClinicsService->where('id',$input['id'])->update($arrData);
+        }else{
+            $arrData['id'] = (string)Str::uuid();
+            $create = $this->SystemClinicsService->create($arrData);
+        }
+        
+        return $create;
+    }
+    // cập nhật bác sĩ phòng khám
+    public function editStage($arrInput){
+        $data = $this->SystemClinicsService->where('id',$arrInput['chk_item_id'])->first();
+        return $data;
     }
 }

@@ -54,6 +54,38 @@
             </div>
         </div>
     </div>
+    <!-- Start Service -->
+<section class="service-wrapper py-3">
+    <div class="service-tag py-5 popular-specialties">
+        <div class="col-md-12">
+            <h2 class="h2 text-center col-12 py-2">Bác sĩ nổi bật</h2>
+        </div>
+        <div class="pt-2 py-5 pb-3 d-lg-flex align-items-center gx-5" style="padding:10%">
+            <div class="col-lg-12 row align-items-center">
+               @foreach ($SystemClinics as $key => $data)
+                <div class="team-member col-md-12 d-lg-flex mt-3 pb-3" style="background: white;">
+                    <div class="col-md-3">
+                        <img style="width:200px;height:200px;object-fit: cover;" class="team-member-img img-fluid rounded-circle p-4" src="{{url('/file-image-client/avatar-hospital/')}}/{{ !empty($data['image'])?$data['image']:'' }}" alt="Card image">
+                    </div>
+                    <div class="col-md-8">
+                        <ul class="team-member-caption list-unstyled pt-4">
+                            <li class="name_cg" style="font-size: 20px;font-weight: 700;color: #ff9f00;">{{$data['name']}}</li>
+                            <li>Chuyên khoa: <span style="color:#38526f">{{$data['specialtys']}}</span></li>
+                            <li>Thời gian khám: <span style="color:#38526f">{{$data['time']}}</span></li>
+                            <li>Giá khám: <span style="color: #0090ff;font-weight: 600;">{{ !empty($data['money']) ? number_format($data['money'],0, '', ',') : '' }}</span> VND</li>
+                            <li>Thông tin: <span style="color:#38526f">{{$data['profile']}}</span></li>
+                        </ul>
+                        <!-- <span style="background:#90a9cd;font-weight: 600;" class="btn btn-outline-light rounded-pill">Đặt lịch khám</span> -->
+                        <a style="background:#90a9cd;font-weight: 600;" href="{{url('/schedule')}}/{{$datas->code}}"  class="btn rounded-pill btn-success text-light px-4 light-300">Đặt lịch khám</a>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<!-- Start chart -->
     <div class="banner-vertical-center-work container d-flex justify-content-center align-items-center">
         <div class="banner-content col-lg-10 col-10 m-lg-auto text-left">
             <div style="color:#264451" class="light-300">

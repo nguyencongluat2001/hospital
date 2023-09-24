@@ -16,7 +16,7 @@ use Modules\System\Dashboard\Specialty\Models\UnitsModel;
 use Modules\System\Dashboard\Specialty\Services\SpecialtyService;
 use Modules\Client\Page\Facilities\Services\ScheduleService;
 use Modules\System\Dashboard\Users\Services\UserService;
-
+use Modules\System\Dashboard\Hospital\Services\SystemClinicsService;
 use Modules\System\Dashboard\Hospital\Models\MoneySpecialtyModel;
 use Modules\System\Dashboard\Hospital\Models\HospitalModel;
 /**
@@ -27,6 +27,7 @@ class FacilitiesController extends Controller
 {
 
     public function __construct(
+        SystemClinicsService $SystemClinicsService,
         ScheduleService $scheduleService,
         SpecialtyService $SpecialtyService,
         CateService $cateService,
@@ -36,6 +37,7 @@ class FacilitiesController extends Controller
         HospitalService $hospitalService,
         UserService $userService
     ){
+        $this->SystemClinicsService  = $SystemClinicsService;
         $this->scheduleService = $scheduleService;
         $this->SpecialtyService = $SpecialtyService;
         $this->cateService = $cateService;
@@ -91,6 +93,7 @@ class FacilitiesController extends Controller
     {
         $input = $request->all();
         $datas['datas'] = $this->hospitalService->where('code',$code)->first();
+        $datas['SystemClinics'] = $this->SystemClinicsService->where('code_hospital',$code)->get();
         return view('client.Facilities.Detail.home',$datas);
     }
      /// đặt lịch khám
