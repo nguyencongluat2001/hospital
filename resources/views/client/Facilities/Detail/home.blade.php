@@ -57,9 +57,9 @@
     <!-- Start Service -->
 <section class="service-wrapper py-3">
     <div class="service-tag py-5 popular-specialties">
-        <div class="col-md-12">
+        <!-- <div class="col-md-12">
             <h2 class="h2 text-center col-12 py-2">Bác sĩ nổi bật</h2>
-        </div>
+        </div> -->
         <div class="pt-2 py-5 pb-3 d-lg-flex align-items-center gx-5" style="padding:10%">
             <div class="col-lg-12 row align-items-center">
                @foreach ($SystemClinics as $key => $data)
