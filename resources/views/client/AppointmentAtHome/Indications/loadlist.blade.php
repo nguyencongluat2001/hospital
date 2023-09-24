@@ -49,9 +49,11 @@ use Modules\System\Recordtype\Helpers\WorkflowHelper;
                             <button onclick="JS_listIndications.showDetail('{{$id}}')" class="btn"  type="button">
                                 <i style="color:#00740a" class="far fa-eye"></i>
                             </button>
+                            @if(empty($data['link_excel']))
                             <button onclick="JS_listIndications.delete('{{$id}}')" class="btn"  type="button">
                                 <i style="color:red" class="fas fa-trash-alt"></i>
                             </button>
+                            @endif
                             <button onclick="JS_listIndications.exportExcel('{{$id}}')" class="btn"  type="button">
                                 <i style="color:#ffdb2e" class="fas fa-file-download"></i>
                             </button>
