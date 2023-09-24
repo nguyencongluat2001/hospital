@@ -76,7 +76,7 @@
                             <li>Thông tin: <span style="color:#38526f">{{$data['profile']}}</span></li>
                         </ul>
                         <!-- <span style="background:#90a9cd;font-weight: 600;" class="btn btn-outline-light rounded-pill">Đặt lịch khám</span> -->
-                        <a style="background:#90a9cd;font-weight: 600;" href="{{url('/schedule')}}/{{$datas->code}}"  class="btn rounded-pill btn-success text-light px-4 light-300">Đặt lịch khám</a>
+                        <a style="background:#90a9cd;font-weight: 600;" href="{{url('/scheduleStage')}}/{{$datas->code}}/{{$data['code']}}"  class="btn rounded-pill btn-success text-light px-4 light-300">Đặt lịch khám</a>
                     </div>
                 </div>
                 @endforeach

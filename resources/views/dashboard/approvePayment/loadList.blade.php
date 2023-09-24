@@ -6,6 +6,8 @@
 </style>
 <?php
 use Modules\System\Dashboard\Specialty\Models\SpecialtyModel;
+use Modules\System\Dashboard\Hospital\Models\HospitalModel;
+use Modules\System\Dashboard\Hospital\Models\SystemClinicsModel;
 ?>
 <div class="table-responsive pmd-card pmd-z-depth ">
     <table id="table-data" class="table  table-bordered table-striped table-condensed dataTable no-footer">
@@ -48,11 +50,25 @@ use Modules\System\Dashboard\Specialty\Models\SpecialtyModel;
                             <span>Tên khách hàng: {{ isset($data->name) ? $data->name : '' }}</span> <br>
                             <span>Số điện thoại: {{ isset($data->phone) ? $data->phone : '' }}</span><br>
                             <span>Ngày tạo: {{ isset($data->created_at) ? $data->created_at : '' }}</span> <br>
+                            <span>Khám tại: 
+                                @php
+                                    $Hospital = HospitalModel::where('code',$data->code_hospital)->first();
+                                @endphp
+                                <span style="color: #2150ff;font-weight: 600;">{{ isset($Hospital->name_hospital) ? $Hospital->name_hospital : '' }}</span>
+                            </span>
+                            <br>
+                            <span>Bác sĩ: 
+                                @php
+                                    $SystemClinics = SystemClinicsModel::where('code',$data->code_physician)->first();
+                                @endphp
+                                <span style="color: #15853f;font-weight: 600;">{{ isset($SystemClinics->name) ? $SystemClinics->name : '' }}</span> ( Mã bác sĩ: {{ isset($SystemClinics->code) ? $SystemClinics->code : '' }} )
+                            </span>
+                            <br>
                             <span>Khoa:  
                                 @php
                                     $specialty = SpecialtyModel::where('code',$data->code_specialty)->first();
                                 @endphp
-                                <span style="color: red;font-weight: 600;">{{$specialty['name_specialty']}}</span>
+                                <span style="color: red;font-weight: 600;">{{!empty($specialty['name_specialty'])?$specialty['name_specialty']:$data->code_specialty}}</span>
                             </span><br>
                             <span>Số tiền: <span style="color: #3b83c0;font-weight: 600;"> {{ !empty($data['money']) ? number_format($data['money'],0, '', ',') : '' }}</span> VNĐ </span><br>
                             <span>Banking: Chuyển khoản qua ngân hàng </span><br>
@@ -80,11 +96,25 @@ use Modules\System\Dashboard\Specialty\Models\SpecialtyModel;
                             <span>Tên khách hàng: {{ isset($data->name) ? $data->name : '' }}</span> <br>
                             <span>Số điện thoại: {{ isset($data->phone) ? $data->phone : '' }}</span><br>
                             <span>Ngày tạo: {{ isset($data->created_at) ? $data->created_at : '' }}</span> <br>
+                            <span>Khám tại: 
+                                @php
+                                    $Hospital = HospitalModel::where('code',$data->code_hospital)->first();
+                                @endphp
+                                <span style="color: #2150ff;font-weight: 600;">{{ isset($Hospital->name_hospital) ? $Hospital->name_hospital : '' }}</span>
+                            </span>
+                            <br>
+                            <span>Bác sĩ: 
+                                @php
+                                    $SystemClinics = SystemClinicsModel::where('code',$data->code_physician)->first();
+                                @endphp
+                                <span style="color: #15853f;font-weight: 600;">{{ isset($SystemClinics->name) ? $SystemClinics->name : '' }}</span>{{ isset($SystemClinics->code) ? $SystemClinics->code : '' }}
+                            </span>
+                            <br>
                             <span>Khoa:  
                                 @php
                                     $specialty = SpecialtyModel::where('code',$data->code_specialty)->first();
                                 @endphp
-                                <span style="color: red;font-weight: 600;">{{$specialty['name_specialty']}}</span>
+                                <span style="color: red;font-weight: 600;">{{!empty($specialty['name_specialty'])?$specialty['name_specialty']:$data->code_specialty}}</span>
                             </span><br>
                             <span>Số tiền: <span sty;e="color: #3b83c0;font-weight: 600;"> {{ !empty($data['money']) ? number_format($data['money'],0, '', ',') : '' }}</span> VNĐ </span><br>
                             <span>Banking: Chuyển khoản qua ngân hàng </span><br>

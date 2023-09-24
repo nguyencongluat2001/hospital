@@ -121,7 +121,57 @@
                                                 @csrf
                                                 <input type="hidden" id="code_hospital" name="code_hospital" value="{{ !empty($datas->code)?$datas->code:'' }}">
                                                 <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
-                                                <div class="row padding-style">
+                                                @if(!empty($physician) && $physician != '')
+                                                   <!-- <div class="row padding-style">
+                                                        <div class="form-input col-md-6">
+                                                            <select onchange="JS_Schedule.getMoney(this.value)" class="form-control input-sm chzn-select" name="code_specialty" id="code_specialty">
+                                                                <option value="">--Chọn khoa khám bệnh--</option>
+                                                                @foreach($khoa as $key => $values)
+                                                                <option value="{{$values['code']}}" {{($values['status'] == '2') ? 'selected' : ''}}>{{$values['name']}}</option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-input col-md-6" id="moneys">
+                                                            <span>Số tiền khám: <span>
+                                                            <input style="font-size: 25px;font-weight: 500;color: #ff9400;" type="hidden" id="money" class="form-control" name="money" value="{{!empty($money)?$money:'' }}">
+                                                            <span><span style="font-size: 25px;font-weight: 500;color: #ff9400;">{{!empty($moneyConvert)?$moneyConvert:'' }}</span> VND</span>
+                                                        </div>
+                                                    </div> -->
+                                                    <div class="team-member col-md-12 d-lg-flex mt-3 pb-3" style="background: white;">
+                                                        <div class="col-md-3">
+                                                            <img style="width:200px;height:200px;object-fit: cover;" class="team-member-img img-fluid rounded-circle p-4" src="{{url('/file-image-client/avatar-hospital/')}}/{{ !empty($physician['image'])?$physician['image']:'' }}" alt="Card image">
+                                                        </div>
+                                                        <div class="col-md-8">
+                                                            <ul class="team-member-caption list-unstyled pt-4">
+                                                                <li class="name_cg" style="font-size: 20px;font-weight: 700;color: #ff9f00;">{{$physician['name']}}</li>
+                                                                <li>Chuyên khoa: <span style="color:#38526f">{{$physician['specialtys']}}</span></li>
+                                                                <li>Thời gian khám: <span style="color:#38526f">{{$physician['time']}}</span></li>
+                                                                <li>Giá khám: <span style="color: #0090ff;font-weight: 600;">{{ !empty($physician['money']) ? number_format($physician['money'],0, '', ',') : '' }}</span> VND</li>
+                                                                <li>Thông tin: <span style="color:#38526f">{{$physician['profile']}}</span></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <input type="hidden" id="money" class="form-control" name="money" value="{{!empty($physician['money'])?$physician['money']:'' }}">
+                                                    <input type="hidden" id="code_physician" class="form-control" name="code_physician" value="{{!empty($physician['code'])?$physician['code']:'' }}">
+                                                    <input type="hidden" id="code_specialty" class="form-control" name="code_specialty" value="{{!empty($physician['specialtys'])?$physician['specialtys']:'' }}">
+                                                @else
+                                                    <div class="row padding-style">
+                                                        <div class="form-input col-md-6">
+                                                            <select onchange="JS_Schedule.getMoney(this.value)" class="form-control input-sm chzn-select" name="code_specialty" id="code_specialty">
+                                                                <option value="">--Chọn khoa khám bệnh--</option>
+                                                                @foreach($khoa as $key => $values)
+                                                                <option value="{{$values['code']}}" {{($values['status'] == '2') ? 'selected' : ''}}>{{$values['name']}}</option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-input col-md-6" id="moneys">
+                                                            <span>Số tiền khám: <span>
+                                                            <input style="font-size: 25px;font-weight: 500;color: #ff9400;" type="hidden" id="money" class="form-control" name="money" value="{{!empty($money)?$money:'' }}">
+                                                            <span><span style="font-size: 25px;font-weight: 500;color: #ff9400;">{{!empty($moneyConvert)?$moneyConvert:'' }}</span> VND</span>
+                                                        </div>
+                                                    </div>
+                                                @endif
+                                                <!-- <div class="row padding-style">
                                                     <div class="form-input col-md-6">
                                                         <select onchange="JS_Schedule.getMoney(this.value)" class="form-control input-sm chzn-select" name="code_specialty" id="code_specialty">
                                                             <option value="">--Chọn khoa khám bệnh--</option>
@@ -135,7 +185,7 @@
                                                         <input style="font-size: 25px;font-weight: 500;color: #ff9400;" type="hidden" id="money" class="form-control" name="money" value="{{!empty($money)?$money:'' }}">
                                                         <span><span style="font-size: 25px;font-weight: 500;color: #ff9400;">{{!empty($moneyConvert)?$moneyConvert:'' }}</span> VND</span>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 <div class="row mt-3 ">
                                                     <div class="form-input col-md-6 padding-style">
                                                         <input type="text" class="form-control required" placeholder="Họ và tên bệnh nhân..." name="name" id="name" oninput="inValid(this.id)">

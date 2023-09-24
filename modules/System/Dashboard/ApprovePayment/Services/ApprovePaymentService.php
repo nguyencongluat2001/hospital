@@ -47,12 +47,17 @@ class ApprovePaymentService extends Service
     {
         $approvePayment = $this->repository->where('id', $input['id'])->first();
         $code_specialty = $this->specialtyService->where('code',$approvePayment['code_specialty'])->first();
+        if(empty($code_specialty->name_specialty)){
+            $tt = $approvePayment['code_specialty'];
+        }else{
+            $tt = $code_specialty->name_specialty;
+        }
         $user = $this->userService->where('id_personnel',$approvePayment['code_introduce'])->first();
         $data = [
             'code_schedule' => isset($approvePayment['code_schedule'])?$approvePayment['code_schedule']:'', 
             'code_hospital' => isset($approvePayment['code_hospital'])?$approvePayment['code_hospital']:'', 
-            'code_specialty' => isset($code_specialty->name_specialty)?$code_specialty->name_specialty:'', 
-            'type_payment' => isset($approvePayment['type_payment'])?$approvePayment['type_payment']:'', 
+            'code_specialty' => $tt, 
+            'type_payment' => isset($approvePayment['type_payment'])?$approvePayment['type_payment']: $tt, 
             'money' => !empty($approvePayment['money'])?number_format($approvePayment['money'],0, '', ','):0, 
             'name' => isset($approvePayment['name'])?$approvePayment['name']:'', 
             'phone' => isset($approvePayment['phone'])?$approvePayment['phone']:'', 

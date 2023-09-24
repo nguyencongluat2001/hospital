@@ -151,6 +151,60 @@ class FacilitiesController extends Controller
         // dd($datas);
         return view('client.Facilities.Schedule.home',$datas);
     }
+     /// đặt lịch phongf khasm co bac si chi dinh
+     /**
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function scheduleStage(Request $request ,$code, $physician = '')
+    {
+        $input = $request->all();
+        $arrEx = explode(',',$code);
+        if(isset($arrEx[1])){
+            $datas['datas'] = $this->hospitalService->where('code',$arrEx[1])->first();
+        }else{
+            $datas['datas'] = $this->hospitalService->where('code',$code)->first();
+
+        }
+        if(isset($datas['datas'] )){
+            $Specialty = $this->SpecialtyService->where('current_status',1)->get();
+            $data_arr['arrSpecialty'] = explode(',',$datas['datas']['code_specialty']);
+            foreach($Specialty as $value){
+                if(in_array($value['code'],$data_arr['arrSpecialty'])){
+                    if(!empty($arrEx[1]) && $value['code'] == $arrEx[0]){
+                        $arrSpecialty[] = [
+                            'code' =>  $value['code'],
+                            'name' =>  $value['name_specialty'],
+                            'status' =>  2
+                        ];
+                    $moneys =  MoneySpecialtyModel::where('code_hospital',$arrEx[1])
+                            ->where('code_specialty',$value['code'])
+                            ->select('money')
+                            ->first();
+                    $datas['money'] = !empty($moneys->money)?$moneys->money:'';
+                    $datas['moneyConvert'] = !empty($moneys->money)?number_format($moneys->money, 0, '', ','):'Chưa cấu hình';
+                    }else{
+                        $arrSpecialty[] = [
+                            'code' =>  $value['code'],
+                            'name' =>  $value['name_specialty'],
+                            'status' =>  1
+                        ];
+                    }
+                    
+                }
+            }
+            $datas['khoa'] = $arrSpecialty;
+        }
+        $datas['tinh'] =  UnitsModel::whereNull('code_huyen')->get();
+        if(!empty($physician)){
+            $user = $this->SystemClinicsService->where('code', $physician)->first();
+            $datas['physician'] = $user;
+        }
+        // dd($datas);
+        return view('client.Facilities.Schedule.home',$datas);
+    }
      /// Danh sách huyện
      /**
      *

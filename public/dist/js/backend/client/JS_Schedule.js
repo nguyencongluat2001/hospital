@@ -280,6 +280,7 @@ JS_Schedule.prototype.sendPayment = function (data) {
     var formdata = new FormData();
     formdata.append('_token', $("#_token").val());
     formdata.append('code_hospital', $("#code_hospital").val());
+    formdata.append('code_physician', $("#code_physician").val());
     formdata.append('code_specialty', $("#code_specialty").val());
     formdata.append('type_payment', this.type_bank);
     formdata.append('money', $("#money").val());
