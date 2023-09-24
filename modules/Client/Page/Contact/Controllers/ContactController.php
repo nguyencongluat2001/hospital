@@ -148,5 +148,12 @@ class ContactController extends Controller
         $data['datas'] = $input;
         return view('client.Contact.Schedule.edit',$data);
     }
+
+    public function lien_he(Request $request)
+    {
+        return view('client.Contact.lien-he');
+    }
+
+    
     
 }

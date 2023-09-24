@@ -44,6 +44,11 @@
         position: relative;
         display: none;
         overflow: auto;
+        display: block;
+    }
+
+    #menu-list.closed {
+        display: none;
     }
 
     #navbar-toggler {
@@ -59,9 +64,26 @@
     #navbar-toggler.show {
         display: block;
         background-color: #fff;
-        width: 200px;
+        width: 18rem;
         animation: menu-show .5s;
+        height: 100%;
     }
+
+    .menu-sidebar {
+        max-height: 90vh;
+        overflow-y: scroll;
+        display: block;
+    }
+
+    .menu-sidebar::-webkit-scrollbar {
+        width: 0.4rem;
+    }
+
+    .menu-sidebar::-webkit-scrollbar-thumb {
+        background: #24354c;
+        border-radius: 0.2rem;
+    }
+
 
     @keyframes menu-show {
         0% {
@@ -237,18 +259,17 @@
     </div>
 </nav>
 
-<div id="menu-list" style="position: fixed;top: 0;right: 0;left: 0;bottom: 0;background: rgba(0,0,0,0.7);z-index: 1000;">
+<div id="menu-list" class="closed" style="position: fixed;top: 0;right: 0;left: 0;bottom: 0;background: rgba(0,0,0,0.7);z-index: 1000;">
     <!-- <span class="navbar-toggler-icon"></span> -->
     <div class="" id="navbar-toggler">
         <div class="flex-fill mx-xl-2 menu-navigate">
-            <ul class="nav navbar-nav justify-content-between mx-xl-2 text-dark">
-                <li class="nav-item" style="text-align: right; padding: .5rem">
-                    <span class="menu-close"><i class="fas fa-times"></i></span>
-                </li>
+            <div style="text-align: right; padding: .5rem">
+                <span type="button" class="menu-close"><i class="fas fa-times"></i></span>
+            </div>
+            <ul class="nav navbar-nav justify-content-between mx-xl-2 text-dark menu-sidebar">
                 <li class="nav-item">
                     <a class="nav-link link-home btn-outline-info" href="{{ url('/') }}"> <span class="text-menu-header"> <i class="fas fa-home"></i> Trang chủ </span> <br> <span class="text-12">Hạng mục nổi bật</span> </a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link link-specialty btn-outline-info" href="{{ url('/specialty') }}"> <span class="text-menu-header"><i class="fas fa-suitcase"></i> Chuyên khoa </span> <br> <span class="text-12">Tìm theo chuyên khoa</span> </a>
                 </li>
@@ -261,17 +282,23 @@
                 <li class="nav-item">
                     <a class="nav-link link-infusion btn-outline-info" href="{{ url('/client/appointmentathome/indexInfusion') }}"> <span class="text-menu-header"><i class="fas fa-thermometer"></i> Truyền dịch </span> <br> <span class="text-12">Truyền dịch tại nhà</span> </a>
                 </li>
-                <!-- <li class="nav-item">
-                            <a class="nav-link btn-outline-info" href="work.html"> <span class="text-menu-header">Bác sĩ </span> <br> <span class="text-12">Chọn bác sĩ giỏi</span></a>
-                        </li> -->
-                <!-- <li class="nav-item">
-                            <a class="nav-link link-package btn-outline-info" href="{{ url('/package') }}"> <span class="text-menu-header"><i class="fas fa-file-medical"></i> Gói khám </span> <br> <span class="text-12">Khám sức khỏe tổng quát</span></a>
-                        </li> -->
                 <li class="nav-item">
                     <a class="nav-link link-searchschedule btn-outline-info" href="{{ url('/searchschedule') }}"> <span class="text-menu-header"><i class="fas fa-search-plus"></i> Tra cứu </span> <br> <span class="text-12">Tra cứu lịch hẹn</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link link-contact btn-outline-info" href="{{ url('/contact') }}"> <span class="text-menu-header"><i class="fas fa-comment-medical"></i> Đánh giá </span> <br> <span class="text-12">Đánh giá dịch vụ</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-patients btn-outline-info" href="{{ url('/patients') }}"> <span class="text-menu-header"><i class="fas fa-procedures"></i> Dành cho bệnh nhân </span> <br> <span class="text-12">Dành cho bệnh nhân</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-package btn-outline-info" href="{{ url('/vai-tro') }}"> <span class="text-menu-header"><i class="fas fa-dice-d6"></i> Vai trò </span> <br> <span class="text-12">Vai trò của Booking46</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-package btn-outline-info" href="{{ url('/lien-he') }}"> <span class="text-menu-header"><i class="fas fa-phone"></i> Liên hệ </span> <br> <span class="text-12">Liên hệ</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-package btn-outline-info" href="{{ url('/faq') }}"> <span class="text-menu-header"><i class="fas fa-question-circle"></i> Câu hỏi thường gặp </span> <br> <span class="text-12">Câu hỏi thường gặp</span></a>
                 </li>
             </ul>
         </div>
@@ -282,13 +309,21 @@
 <script>
     $('#menu-toggle').click(function() {
         $("#navbar-toggler").toggleClass('show');
-        $("#menu-list").toggle();
+        $("#menu-list").toggleClass('closed');
         $("body").attr('style', 'overflow: hidden');
     })
-    $(".menu-close").click(function(){
+    $(".menu-close").click(function() {
         $("#navbar-toggler").toggleClass('show');
-        $("#menu-list").toggle();
+        $("#menu-list").toggleClass('closed');
         $("body").removeAttr('style');
     })
+    document.addEventListener('click', closeOnClickOutside);
+
+    function closeOnClickOutside(e) {
+        if (!$("#menu-list").hasClass('closed') && !e.target.matches('#menu-toggle, .fa-bars')) {
+            $("#menu-list").addClass('closed');
+            $("#navbar-toggler").removeClass('show');
+        }
+    }
 </script>
 @endsection

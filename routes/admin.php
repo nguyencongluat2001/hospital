@@ -21,6 +21,7 @@ use Modules\System\Dashboard\Specialty\Controllers\SpecialtyController;
 use Modules\System\Dashboard\AppointmentAtHome\Controllers\AppointmentAtHomeController;
 use Modules\System\Dashboard\BloodTest\Controllers\BloodTestController;
 use Modules\System\Dashboard\BloodTest\Controllers\PriceTestController;
+use Modules\System\Dashboard\Faq\Controllers\FaqController;
 use Modules\System\Dashboard\UrlSearch\Controllers\UrlSearchController;
 
 
@@ -184,6 +185,15 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
                 Route::post('/create',[UrlSearchController::class,'create'])->name('create');
                 Route::post('/edit',[UrlSearchController::class,'edit'])->name('edit');
                 Route::post('/delete',[UrlSearchController::class,'delete']);
+            });
+            //quản trị câu hỏi
+            Route::prefix('/faq')->group(function () {
+                //Hospital
+                Route::get('/index', [FaqController::class, 'index']);
+                Route::get('/loadList',[FaqController::class,'loadList']);
+                Route::get('/create',[FaqController::class,'add']);
+                Route::post('/update',[FaqController::class,'update']);
+                Route::post('/delete',[FaqController::class,'delete']);
             });
         });
     });

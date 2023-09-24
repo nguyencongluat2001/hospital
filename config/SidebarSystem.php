@@ -69,6 +69,12 @@ return [
         'a'    => 'nav-link link-urlsearch',
         'href' => '/system/urlsearch/index',
     ],
+    'faq' => [
+        'name' => 'Quản trị câu hỏi',
+        'icon' => 'fas fa-question-circle',
+        'a'    => 'nav-link link-faq',
+        'href' => '/system/faq/index',
+    ],
     'report' => [
         'name' => 'Báo cáo KPI',
         'icon' => 'fas fa-hand-holding-usd',

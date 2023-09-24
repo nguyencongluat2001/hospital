@@ -13,7 +13,9 @@ use Modules\Client\Page\Package\Controllers\PackageController;
 use Modules\Client\Page\SearchSchedule\Controllers\SearchScheduleController;
 use Modules\Client\Page\AppointmentAtHome\Controllers\AppointmentAtHomeController;
 use Modules\Client\Page\Infor\Controllers\InforController;
-
+use Modules\Client\Page\Patient\Controllers\PatientController;
+use Modules\Client\Page\Role\Controllers\RoleController;
+use Modules\Client\Page\Faq\Controllers\FAQController;
 //Dashboard
 use Modules\System\Dashboard\Users\Controllers\UserController;
 
@@ -84,6 +86,10 @@ Route::prefix('chat')->group(function () {
 Route::get('/contact', [ContactController::class, 'index']);
 // trang chủ tra cứu
 Route::get('/searchschedule',[SearchScheduleController::class,'index']);
+Route::get('/patients',[PatientController::class,'index']);
+Route::get('/vai-tro',[RoleController::class,'index']);
+Route::get('/lien-he',[ContactController::class,'lien_he']);
+Route::get('/faq',[FAQController::class,'index']);
 
 // route phía người dùng
 Route::prefix('/client')->group(function () {
@@ -237,6 +243,7 @@ Route::prefix('/client')->group(function () {
         });
         // Đọc thông báo
         Route::get('readNotification', [ReadNotificationController::class, 'readNotification']);
+
     
     Route::prefix('des')->group(function () {
         Route::get('index', [DesController::class, 'index']);
