@@ -40,6 +40,41 @@
     #patients .col-pc-3 {
         width: 30%;
     }
+    @media (max-width: 991px){
+        .patients-item{
+            padding: 1rem 1rem;
+        }
+        .patients-item i{
+            font-size: 3rem;
+        }
+        .patients-item p b {
+            font-size: 20px;
+        }
+    }
+    @media (max-width: 768px){
+        #patients .service-wrapper{
+            padding-top: 1rem!important;
+        }
+        #patients h2{
+            font-size: 30px;
+        }
+        #patients .col-pc-3{
+            margin-top: 1rem;
+            width: 100%;
+        }
+        .patients-item {
+            height: 15rem;
+        }
+        .patients-item p b {
+            font-size: 16px;
+        }
+        .patients-item i {
+            font-size: 4rem;
+        }
+        .patients-item span p{
+            text-align: justify;
+        }
+    }
     @media (max-width: 450px){
         #patients .service-wrapper{
             padding-top: 1rem!important;

@@ -53,6 +53,42 @@
     #nav-comments ol li{
         font-size: 1rem;
     }
+    @media (max-width: 991px){
+        #roles .nav-link {
+            margin-right: 1rem;
+        }
+    }
+    @media (max-width: 768px){
+        #roles .service-wrapper{
+            padding-top: 1rem!important;
+        }
+        #roles .nav-link{
+            margin-right: 0;
+        }
+        #roles .nav.nav-tabs button div{
+            display: flex;
+        }
+        #roles .nav.nav-tabs button div p{
+            padding-left: 5px;
+        }
+        #roles .nav.nav-tabs button{
+            text-align: left;
+            width: 100%;
+        }
+        #roles .nav .nav-link i{
+            font-size: 1.5rem;
+            width: 30px;
+        }
+        #roles ol, ul {
+            padding-left: 1rem;
+        }
+        #roles li{
+            text-align: justify;
+        }
+        #nav-tabContent p {
+            text-align: justify;
+        }
+    }
     @media (max-width: 450px){
         #roles .service-wrapper{
             padding-top: 1rem!important;
