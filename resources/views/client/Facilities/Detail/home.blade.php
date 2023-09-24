@@ -65,7 +65,9 @@
                @foreach ($SystemClinics as $key => $data)
                 <div class="team-member col-md-12 d-lg-flex mt-3 pb-3" style="background: white;">
                     <div class="col-md-3">
+                        <center>
                         <img style="width:200px;height:200px;object-fit: cover;" class="team-member-img img-fluid rounded-circle p-4" src="{{url('/file-image-client/avatar-hospital/')}}/{{ !empty($data['image'])?$data['image']:'' }}" alt="Card image">
+                        </center>
                     </div>
                     <div class="col-md-8">
                         <ul class="team-member-caption list-unstyled pt-4">
