@@ -25,6 +25,9 @@
     #roles .nav.nav-tabs button {
         background: unset;
     }
+    #roles .nav.nav-tabs button div p {
+        margin-bottom: 0;
+    }
 
     #roles .nav.nav-tabs button:focus {
         outline: unset;
@@ -35,7 +38,7 @@
     }
 
     #roles .nav .nav-link.active i,
-    #roles .nav .nav-link.active span {
+    #roles .nav .nav-link.active p {
         color: #49bce2;
     }
 
@@ -50,6 +53,73 @@
     #nav-comments ol li{
         font-size: 1rem;
     }
+    @media (max-width: 991px){
+        #roles .nav-link {
+            margin-right: 1rem;
+        }
+    }
+    @media (max-width: 768px){
+        #roles .service-wrapper{
+            padding-top: 1rem!important;
+        }
+        #roles .nav-link{
+            margin-right: 0;
+        }
+        #roles .nav.nav-tabs button div{
+            display: flex;
+        }
+        #roles .nav.nav-tabs button div p{
+            padding-left: 5px;
+        }
+        #roles .nav.nav-tabs button{
+            text-align: left;
+            width: 100%;
+        }
+        #roles .nav .nav-link i{
+            font-size: 1.5rem;
+            width: 30px;
+        }
+        #roles ol, ul {
+            padding-left: 1rem;
+        }
+        #roles li{
+            text-align: justify;
+        }
+        #nav-tabContent p {
+            text-align: justify;
+        }
+    }
+    @media (max-width: 450px){
+        #roles .service-wrapper{
+            padding-top: 1rem!important;
+        }
+        #roles .nav-link{
+            margin-right: 0;
+        }
+        #roles .nav.nav-tabs button div{
+            display: flex;
+        }
+        #roles .nav.nav-tabs button div p{
+            padding-left: 5px;
+        }
+        #roles .nav.nav-tabs button{
+            text-align: left;
+            width: 100%;
+        }
+        #roles .nav .nav-link i{
+            font-size: 1.5rem;
+            width: 30px;
+        }
+        #roles ol, ul {
+            padding-left: 1rem;
+        }
+        #roles li{
+            text-align: justify;
+        }
+        #nav-tabContent p {
+            text-align: justify;
+        }
+    }
 </style>
 
 <div id="roles">
@@ -58,16 +128,16 @@
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <button class="nav-link active" id="nav-user-tab" data-bs-toggle="tab" data-bs-target="#nav-user" type="button" role="tab" aria-controls="nav-user" aria-selected="true">
-                        <div><i class="fas fa-user-nurse"></i><br><span>Bác sĩ uy tín</span></div>
+                        <div><i class="fas fa-user-nurse"></i><p>Bác sĩ uy tín</p></div>
                     </button>
                     <button class="nav-link" id="nav-calendar-tab" data-bs-toggle="tab" data-bs-target="#nav-calendar" type="button" role="tab" aria-controls="nav-calendar" aria-selected="false">
-                        <div><i class="fas fa-calendar-check"></i><br><span>Đúng người đúng bệnh</span></div>
+                        <div><i class="fas fa-calendar-check"></i><p>Đúng người đúng bệnh</p></div>
                     </button>
                     <button class="nav-link" id="nav-comments-tab" data-bs-toggle="tab" data-bs-target="#nav-comments" type="button" role="tab" aria-controls="nav-comments" aria-selected="false">
-                        <div><i class="fas fa-comments"></i><br><span>Hỗ trợ chu đáo</span></div>
+                        <div><i class="fas fa-comments"></i><p>Hỗ trợ chu đáo</p></div>
                     </button>
                     <button class="nav-link" id="nav-clock-tab" data-bs-toggle="tab" data-bs-target="#nav-clock" type="button" role="tab" aria-controls="nav-clock" aria-selected="false">
-                        <div><i class="fas fa-clock"></i><br><span>Đặt lịch 24/7</span></div>
+                        <div><i class="fas fa-clock"></i><p>Đặt lịch 24/7</p></div>
                     </button>
                 </div>
             </nav>

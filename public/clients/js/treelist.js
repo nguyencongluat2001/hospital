@@ -7,7 +7,7 @@ $('ul').each(function(){
 $('li:last-child').each(function(){
   $this = $(this);
   // Check if LI has children
-  $this.closest('ul').css("display", "none");
+  $this.closest('ul.nested').css("display", "none");
   $this.closest('ul.treeview-animated-list').css("display", "block");
   if ($this.children('ul').length === 0){
   } else {
