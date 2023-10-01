@@ -93,7 +93,7 @@ class FacilitiesController extends Controller
     {
         $input = $request->all();
         $datas['datas'] = $this->hospitalService->where('code',$code)->first();
-        $datas['SystemClinics'] = $this->SystemClinicsService->where('code_hospital',$code)->get();
+        $datas['SystemClinics'] = $this->SystemClinicsService->where('code_hospital',$code)->orderBy('order','DESC')->get();
         return view('client.Facilities.Detail.home',$datas);
     }
      /// đặt lịch khám
