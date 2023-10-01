@@ -4,6 +4,14 @@
     #contact .service-tag {
         font-size: 20px;
     }
+    @media (max-width: 450px){
+        #contact .service-wrapper{
+            padding-top: 1rem!important;
+        }
+        #contact .service-tag {
+            font-size: 16px;
+        }
+    }
 </style>
 
 <div id="contact">

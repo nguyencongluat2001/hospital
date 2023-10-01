@@ -5,7 +5,7 @@
         border: 1px solid #ccc;
         text-align: center;
         padding: 1rem 2rem;
-        height: 18rem;
+        height: 20rem;
     }
 
     .patients-item i {
@@ -40,6 +40,65 @@
     #patients .col-pc-3 {
         width: 30%;
     }
+    @media (max-width: 991px){
+        .patients-item{
+            padding: 1rem 1rem;
+        }
+        .patients-item i{
+            font-size: 3rem;
+        }
+        .patients-item p b {
+            font-size: 20px;
+        }
+    }
+    @media (max-width: 768px){
+        #patients .service-wrapper{
+            padding-top: 1rem!important;
+        }
+        #patients h2{
+            font-size: 30px;
+        }
+        #patients .col-pc-3{
+            margin-top: 1rem;
+            width: 100%;
+        }
+        .patients-item {
+            height: 15rem;
+        }
+        .patients-item p b {
+            font-size: 16px;
+        }
+        .patients-item i {
+            font-size: 4rem;
+        }
+        .patients-item span p{
+            text-align: justify;
+        }
+    }
+    @media (max-width: 450px){
+        #patients .service-wrapper{
+            padding-top: 1rem!important;
+        }
+        #patients h2{
+            font-size: 30px;
+        }
+        #patients .col-pc-3{
+            margin-top: 1rem;
+            width: 100%;
+        }
+        .patients-item {
+            height: 18rem;
+        }
+        .patients-item p b {
+            font-size: 16px;
+        }
+        .patients-item i {
+            font-size: 4rem;
+        }
+        .patients-item span p{
+            text-align: justify;
+        }
+    }
 </style>
 
 <div id="patients">
@@ -53,17 +112,17 @@
                     <div class="col-pc-3 patients-item">
                         <i class="fas fa-user-nurse"></i>
                         <p><b>BÁC SĨ UY TÍN</b></p>
-                        <span>Mạng lưới bác sĩ chuyên khoa giỏi đã/đang công tác tại các viện lớn hàng đầu, với thông tin đã xác thực.</span>
+                        <span><p>Mạng lưới bác sĩ chuyên khoa giỏi đã/đang công tác tại các viện lớn hàng đầu, với thông tin đã xác thực.</p></span>
                     </div>
                     <div class="col-pc-3 patients-item">
                         <i class="fas fa-calendar-check"></i>
                         <p><b>ĐÚNG NGƯỜI ĐÚNG BỆNH</b></p>
-                        <span>Đầy đủ các chuyên khoa, thông tin bác sĩ chi tiết, các bài hướng dẫn dễ hiểu, người bệnh dễ dàng lựa chọn bác sĩ phù hợp.</span>
+                        <span><p>Đầy đủ các chuyên khoa, thông tin bác sĩ chi tiết, các bài hướng dẫn dễ hiểu, người bệnh dễ dàng lựa chọn bác sĩ phù hợp.</p></span>
                     </div>
                     <div class="col-pc-3 patients-item">
                         <i class="fas fa-comments"></i>
                         <p><b>HỖ TRỢ CHU ĐÁO</b></p>
-                        <span>Chúng tôi hỗ trợ bệnh nhân trong suốt quá trình trước khám, trong khi đi khám và sau khi đi khám một cách hiệu quả.</span>
+                        <span><p>Chúng tôi hỗ trợ bệnh nhân trong suốt quá trình trước khám, trong khi đi khám và sau khi đi khám một cách hiệu quả.</p></span>
                     </div>
                 </div>
                 <br><br>
@@ -71,17 +130,17 @@
                     <div class="col-pc-3 patients-item">
                         <i class="fas fa-clock"></i>
                         <p><b>ĐẶT LỊCH 24/7</b></p>
-                        <span>Lịch khám của bác sĩ hiển thị 24/7 giúp bạn chủ động lựa chọn lịch khám phù hợp.</span>
+                        <span><p>Lịch khám của bác sĩ hiển thị 24/7 giúp bạn chủ động lựa chọn lịch khám phù hợp.</p></span>
                     </div>
                     <div class="col-pc-3 patients-item">
                         <i class="fas fa-hand-holding-usd"></i>
                         <p><b>MIỄN PHÍ ĐẶT LỊCH</b></p>
-                        <span>Đặt khám qua Booking là miễn phí đặt lịch. Chi phí khám chữa bệnh, bạn thanh toán trực tiếp tại nơi khám.</span>
+                        <span><p>Đặt khám qua Booking là miễn phí đặt lịch. Chi phí khám chữa bệnh, bạn thanh toán trực tiếp tại nơi khám.</p></span>
                     </div>
                     <div class="col-pc-3 patients-item">
                         <i class="far fa-handshake"></i>
                         <p><b>KHÁM LẠI MIỄN PHÍ</b></p>
-                        <span>Nếu người bệnh không hài lòng với qui trình khám, tư vấn và phương án điều trị của bác sĩ.</span>
+                        <span><p>Nếu người bệnh không hài lòng với qui trình khám, tư vấn và phương án điều trị của bác sĩ.</p></span>
                     </div>
                 </div>
             </div>

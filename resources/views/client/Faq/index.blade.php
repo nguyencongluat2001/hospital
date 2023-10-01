@@ -1,10 +1,10 @@
 @extends('client.layouts.index')
 @section('body-client')
 <style>
-    #contact .service-tag {
+    #faq .service-tag {
         font-size: 20px;
     }
-    #contact .treeview-animated ul li{
+    #faq .treeview-animated ul li{
         list-style: none;
     }
     .showHideAll{
@@ -18,9 +18,32 @@
         color: #fff;
         cursor: pointer;
     }
+    @media (max-width: 450px){
+        #faq .service-wrapper{
+            padding-top: 1rem!important;
+        }
+        #faq h2{
+            font-size: 30px;
+        }
+        #faq .treeview-animated{
+            margin-top: 0!important;
+            margin-right: 0!important;
+            margin-left: 0!important;
+        }
+        #faq .showHideAll {
+            padding: 1rem;
+        }
+        #faq .showHideAll .showAll, #faq .showHideAll .hideAll{
+            width: 100%;
+            display: block;
+        }
+        #faq .treeview-animated ul{
+            padding-left: 1rem;
+        }
+    }
 </style>
 
-<div id="contact">
+<div id="faq">
     <section class="service-wrapper mt-5 pt-5">
         <div class="container">
             <div class="col-md-12 pt-3">
