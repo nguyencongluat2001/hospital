@@ -213,7 +213,7 @@
                                    <img class="recent-work-img card-img" style="width: 100px;object-fit: cover;" src="{{url('/clients/img/google-play-badge.svg')}}" alt="Card image">
                                </div>  
                                <div class="col-md-6 mb-4">
-                                  <img class="recent-work-img card-img" style="width: 95px;object-fit: cover;" src="{{url('/clients/img/app-store-badge-black.svg')}}" alt="Card image">
+                                  <img class="recent-work-img card-img" style="width: 93px;object-fit: cover;" src="{{url('/clients/img/app-store-badge-black.svg')}}" alt="Card image">
                                </div>
                             </div>
                             </center>
