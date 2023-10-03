@@ -233,6 +233,14 @@ class AppointmentAtHomeController extends Controller
                 ]
                 ];
         }
+        if($input['code'] == 'SINH_HOA'){
+            $data = [
+                '1' => [
+                    'code' => 'PACK12',
+                    'name' => 'Xét nghiệm sinh hóa cơ bản'
+                ]
+                ];
+        }
         if($input['code'] == 'UNG_THU'){
             $data = [
                 '1' => [
