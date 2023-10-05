@@ -155,7 +155,7 @@
             <div class="carousel-inner active pt-4">
                 <!-- Start Contact -->
                 <div class="list-hispital-home-one pt-5">
-                    <section class="banner-bg" style="padding-top: 30px;">
+                    <section class="banner-bg">
                         <!-- style="animation: lights 4s 750ms linear infinite;" -->
                         <center>
                             <span class="text-title-home anime-title" style=" padding-top: 20px;">ĐẶT LỊCH KHÁM NHANH</span> <br>
