@@ -163,7 +163,7 @@
                                 <span class="text-title-home">TẠI CÁC TUYẾN TRUNG ƯƠNG</span>
                             </div>
                         </center>
-                        <div class="banner-content col-lg-12 offset-2 col-8 m-lg-auto pb-5 ">
+                        <div class="banner-content col-lg-12 offset-2 col-8 m-lg-auto">
                              <div class="container">
                                 <div class="row">
                                     <div class="col-lg-5 mx-auto ">
@@ -260,7 +260,7 @@
 <!-- End Banner Hero -->
 <section class="service-wrapper py-3">
     <div class=" row d-flex align-items-center">
-        <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-left " style="padding-top:100px">
+        <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-left ">
             <div class="row g-lg-5 mb-4">
                 <!-- Start Recent Work -->
                 <!-- background: #00000075; -->
