@@ -313,7 +313,7 @@
                         <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                             <div style="background: radial-gradient(#000000c2, transparent);border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
                                 <h3 class="card-title" style="font-size: 23 !important;">{{$data->name_hospital}}</h3>
-                                <span style="color:#ecfaff;padding:10px;font-size: 14 !important;"><i class="fas fa-map-marker-alt"></i> {{$data->address}}</span><br><br>
+                                <!-- <span style="color:#ecfaff;padding:10px;font-size: 14 !important;"><i class="fas fa-map-marker-alt"></i> {{$data->address}}</span><br><br> -->
                                 <span style="color: #ffd100" class="btn btn-outline-light rounded-pill">Đặt lịch khám</span>
                             </div>
                         </div>

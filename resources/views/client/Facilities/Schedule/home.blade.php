@@ -2,7 +2,13 @@
 @section('body-client')
 <link rel="stylesheet" href="{{URL::asset('assets/datepicker/bootstrap-datepicker.min.css')}}">
 <script type="text/javascript" src="{{ URL::asset('assets/datepicker/bootstrap-datepicker.min.js') }}"></script>
+<link href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"rel="stylesheet"/>
+<link href="style.css" rel="stylesheet" />
 <style>
+     #map {
+        height: 100%;
+        width: 100%;
+    }
     #frmSendSchedule{
         width: 100%;
     }
@@ -73,14 +79,6 @@
         <!-- Start slider -->
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner active pt-5">
-                <!-- <div class="list-hispital-home-one pt-5">
-                        <section class="banner-bg">
-                            <span  class="text-title-home "><center> ĐĂNG KÝ KHÁM NHANH</center></span>
-                        </section>
-                        
-                     </div> -->
-
-                <!-- End Contact -->
                 <div class="carousel-item active list-hispital-home">
                     <div class=" row d-flex align-items-center">
                         <div class="banner-content col-lg-10 col-10 offset-1 m-lg-auto text-left ">
