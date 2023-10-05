@@ -59,6 +59,8 @@ class ScheduleService extends Service
                 'code_huyen' => isset($input['code_huyen'])?$input['code_huyen']:'', 
                 'code_xa' => isset($input['code_xa'])?$input['code_xa']:'', 
                 'address' => isset($input['address'])?$input['address']:'', 
+                'date_sampling' => isset($input['date_sampling'])?$input['date_sampling']:'', 
+                'hour_sampling' => isset($input['hour_sampling'])?$input['hour_sampling']:'', 
                 'code_introduce' => isset($input['code_introduce'])?$input['code_introduce']:'', 
                 'reason' => isset($input['reason'])?$input['reason']:'', 
                 'name_image' => isset($arrFile[0])?$arrFile[0]:'Chưa gửi ảnh thanh toán!', 

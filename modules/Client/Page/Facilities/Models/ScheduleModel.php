@@ -28,10 +28,11 @@ class ScheduleModel extends Model
            'code_huyen',
            'code_xa',
            'address',
+           'date_sampling',
+           'hour_sampling',
            'code_introduce',
            'reason',
            'name_image',
-        //    'status',
            'created_at',
            'updates_at'
     ];

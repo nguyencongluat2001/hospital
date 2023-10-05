@@ -295,6 +295,8 @@ JS_Schedule.prototype.sendPayment = function (data) {
     formdata.append('code_huyen', $("#code_huyen").val());
     formdata.append('code_xa', $("#code_xa").val());
     formdata.append('address', $("#address").val());
+    formdata.append('date_sampling', $("#date_sampling").val());
+    formdata.append('hour_sampling', $("#hour_sampling").val());
     formdata.append('code_introduce', $("#code_introduce").val());
     formdata.append('reason', $("#reason").val());
 

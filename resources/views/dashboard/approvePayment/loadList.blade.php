@@ -71,6 +71,8 @@ use Modules\System\Dashboard\Hospital\Models\SystemClinicsModel;
                                 <span style="color: red;font-weight: 600;">{{!empty($specialty['name_specialty'])?$specialty['name_specialty']:$data->code_specialty}}</span>
                             </span><br>
                             <span>Số tiền: <span style="color: #3b83c0;font-weight: 600;"> {{ !empty($data['money']) ? number_format($data['money'],0, '', ',') : '' }}</span> VNĐ </span><br>
+                            <span>Thời gian khám mong muốn: <span style="color: #000000;font-weight: 600;">{{ isset($data->hour_sampling) ? $data->hour_sampling : '' }} ngày {{ isset($data->date_sampling) ? $data->date_sampling : '' }}</span></span> <br>
+
                             <span>Banking: Chuyển khoản qua ngân hàng </span><br>
                         </td>
                         <td style="white-space: inherit;vertical-align: middle;" onclick="{select_row(this);}" align="center">
