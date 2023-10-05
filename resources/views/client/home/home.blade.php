@@ -165,7 +165,7 @@
                         </center>
 
                         <!-- <span  class="text-title-home anime-text-titel"><center> ĐẶT LỊCH KHÁM NHANH <br>TẠI CÁC TUYẾN TRUNG ƯƠNG</center></span> -->
-                        <div class="banner-content col-lg-8 offset-2 col-8 m-lg-auto pb-5 ">
+                        <div class="banner-content col-lg-10 offset-2 col-8 m-lg-auto pb-5 ">
                             
                              <div class="container">
                                 <div class="row">
@@ -173,15 +173,6 @@
                                                 <!-- <div class=" pt-2 box">
                                                     <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg" placeholder="Tìm kiếm từ khóa..." aria-label="Tìm kiếm từ khóa...">
                                                 </div> -->
-                                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-lg-4 mx-auto " style="display:flex">
-                                            <div class="input-group pt-2 box">
-                                                <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg rounded-pill rounded" placeholder="Từ kiếm tên chuyên khoa..." aria-label="Từ kiếm tên chuyên khoa..">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                                                 <div style="width: 100%;position: relative;z-index: 100;">
                                                     <input id="myInput" type="text" class="input form-control form-control-lg" placeholder="Tìm kiếm từ khóa..." aria-label="Tìm kiếm từ khóa..." onkeypress="filterSearch()">
                                                     @if(isset($search) && count($search) > 0)
