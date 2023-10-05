@@ -189,6 +189,14 @@
                                             <div style="font-size: 16px;color: #0c0c0c;font-weight: 600;">Gen</div>
                                         </a>
                                         </div>
+                                        <div class="scroll-item" onclick="JS_AppointmentAtHome.flow('THUONG')">
+                                            <a type="button" class="btn" style="color: #f2ffff;background: none;">
+                                            <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
+                                                <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/161340-iconxet-nghiem-y-hoc.png);background-size: 50px;background-repeat: no-repeat;background-position: center;"></div>
+                                            </div>
+                                            <div style="font-size: 16px;color: #0c0c0c;font-weight: 600;">Gói thường</div>
+                                        </a>
+                                        </div>
                                     </div>
                                 </center>
                                
