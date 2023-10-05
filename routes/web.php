@@ -18,6 +18,7 @@ use Modules\Client\Page\Role\Controllers\RoleController;
 use Modules\Client\Page\Faq\Controllers\FAQController;
 //Dashboard
 use Modules\System\Dashboard\Users\Controllers\UserController;
+use Modules\Client\Page\MapController;
 
 // use Modules\Client\Page\Home\Controllers\HomeController;
 /*
@@ -36,6 +37,8 @@ use Modules\System\Dashboard\Users\Controllers\UserController;
 // });
 // Route::get('/', [HomeController::class, 'index']);
 
+
+Route::get('mapReport',  [MapController::class,'mapReport']);
 
 Route::post('/system/home', [LoginController::class, 'checkLogin'])->name('checkLogin');
 Route::get('/login', [LoginController::class, 'logout'])->name('login');
