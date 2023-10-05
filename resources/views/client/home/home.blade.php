@@ -165,7 +165,7 @@
                         </center>
 
                         <!-- <span  class="text-title-home anime-text-titel"><center> ĐẶT LỊCH KHÁM NHANH <br>TẠI CÁC TUYẾN TRUNG ƯƠNG</center></span> -->
-                        <div class="banner-content col-lg-10 offset-2 col-8 m-lg-auto pb-5 ">
+                        <div class="banner-content col-lg-12 offset-2 col-8 m-lg-auto pb-5 ">
                             
                              <div class="container">
                                 <div class="row">
