@@ -328,7 +328,7 @@
                                         </div>
                                         <br>
                                         <center>
-                                            <span style="font-size:20px;font-family: serif;">Vị trí trên bản đồ</span>
+                                            <span style="font-size:20px;font-family: serif;">{{ !empty($datas->name_hospital)?$datas->name_hospital:'' }} trên bản đồ</span>
                                         </center>
                                     </div>
                                 </div>
@@ -344,6 +344,7 @@
 <center>
     <iframe style="width:70%;height:300px" src="https://booking46.com/mapReport" title="W3Schools Free Online Web Tutorials"></iframe>
 </center>
+<br>
 
 <div class="modal fade" id="editmodal" role="dialog"></div>
 <div class="modal " id="addfile" role="dialog"></div>
