@@ -155,7 +155,7 @@
             <div class="carousel-inner active pt-4">
                 <!-- Start Contact -->
                 <div class="list-hispital-home-one pt-5">
-                    <section class="banner-bg" style="padding-top: 50px;">
+                    <section class="banner-bg" style="padding-top: 30px;">
                         <!-- style="animation: lights 4s 750ms linear infinite;" -->
                         <center>
                             <span class="text-title-home anime-title" style=" padding-top: 20px;">ĐẶT LỊCH KHÁM NHANH</span> <br>
@@ -174,9 +174,9 @@
                                                     <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg" placeholder="Tìm kiếm từ khóa..." aria-label="Tìm kiếm từ khóa...">
                                                 </div> -->
                                                 <div style="width: 100%;position: relative;z-index: 100;">
-                                                    <input id="myInput" type="text" class="input form-control form-control-lg" placeholder="Tìm kiếm từ khóa..." aria-label="Tìm kiếm từ khóa..." onkeypress="filterSearch()">
+                                                    <input id="myInput" type="text"class="input form-control form-control-lg rounded-pill rounded" placeholder="Tìm kiếm từ khóa..." aria-label="Tìm kiếm từ khóa..." onkeypress="filterSearch()">
                                                     @if(isset($search) && count($search) > 0)
-                                                    <div id="overSearch" class="closed">
+                                                    <div id="overSearch" style="display:none" class="closed">
                                                         <ul>
                                                             @foreach($search as $value)
                                                             <a href="{{ $value['url'] }}" class="dropdown-item"><li>{{ $value['name'] }}</li></a>
