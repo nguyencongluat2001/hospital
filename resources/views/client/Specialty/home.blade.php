@@ -35,6 +35,18 @@
 #myTable tr.header, #myTable tr:hover {
   background-color: #f1f1f1;
 }
+@media (max-width: 450px){
+    #myTable tr td{
+        text-align: center;
+    }
+    #myTable tr td img{
+        width: 100% !important;
+    }
+    #myTable tr td span{
+        font-size: 30px !important;
+        padding-left: 0 !important;
+    }
+}
 </style>
 
 
