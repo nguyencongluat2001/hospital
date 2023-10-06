@@ -577,6 +577,13 @@ new Chart("myChart", {
         });
     }
 </script>
+<script  type="text/javascript">
+    $(document).ready(function() {
+        var placeholderText = '<?= $dataSearch ?>';
+        var arrData = placeholderText.split('!~!');
+        $('#myInput').placeholderTypewriter({text: arrData});  
+    })
+</script>
 <!-- <script type="text/javascript" src="{{ URL::asset('dist\js\backend\pages\JS_System_Security.js') }}"></script>
 <script>
       var JS_System_Security = new JS_System_Security();
