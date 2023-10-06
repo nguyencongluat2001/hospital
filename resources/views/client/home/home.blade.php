@@ -113,6 +113,13 @@
 }
 #myInput{
     background-color: #ffffffb5;
+    padding-left: 50px;
+    outline: none;
+}
+.form-control:focus{
+    outline: none;
+    border-color: #ffd52d;
+    box-shadow: none;
 }
 #overSearch{
     background-color: #fff;
@@ -139,6 +146,21 @@
 }
 #overSearch ul a:hover li{
     text-decoration: underline;
+}
+.form-search{
+    position: relative;
+}
+#txt_search:focus{
+    -webkit-box-shadow: unset;
+}
+#txt_search{
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    height: 100%;
+    position: absolute;
+    border-top: 4px solid #ffd52d;
+    border-left: 4px solid #ffd52d;
+    border-bottom: 4px solid #ffd52d;
 }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -167,8 +189,12 @@
                              <div class="container">
                                 <div class="row">
                                     <div class="col-lg-5 mx-auto ">
-                                        <div style="width: 100%;position: relative;z-index: 100;">
-                                            <input id="myInput" type="text" class="input form-control form-control-lg" placeholder="Tìm kiếm từ khóa..." aria-label="Tìm kiếm từ khóa..." onkeypress="filterSearch()">
+                                        <div style="width: 100%;position: relative;z-index: 10;">
+                                            <div class="form-search form-group">
+                                                <!-- <input type="text" class="form-control" name="search" id="search" style="height:40px" placeholder="Từ khóa tìm kiếm..." onkeydown="if (event.key == 'Enter'){JS_ApprovePayment.search();return false;}" fdprocessedid="wmlzr9"> -->
+                                                <button type="button" class="btn" id="txt_search"><i class="fas fa-search" aria-hidden="true"></i></button>
+                                                <input id="myInput" type="text" class="input form-control form-control-lg" placeholder="Tìm kiếm từ khóa..." aria-label="Tìm kiếm từ khóa..." onkeypress="filterSearch()" autocomplete="off">
+                                            </div>
                                             @if(isset($search) && count($search) > 0)
                                             <div id="overSearch" class="closed">
                                                 <ul>

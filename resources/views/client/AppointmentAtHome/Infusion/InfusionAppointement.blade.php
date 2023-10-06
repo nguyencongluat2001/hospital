@@ -22,6 +22,25 @@
   100%  {background-color:yellow; left:50%; top:0px;}
 
 }
+@media (max-width: 450px){
+    .title-appoinment {
+        font-size: 24px !important;
+        padding-top: 0 !important;
+    }
+    .objective-icon{
+        width: 12rem;
+        height: 6.5rem;
+    }
+    .objective h2, .objective .h3{
+        font-size: 22px !important;
+    }
+    .team-member ul li b{
+        font-size: 20px;
+    }
+    b, span, strong{
+        font-size: 1rem;
+    }
+}
 </style>
 <link rel="stylesheet" href="../clients/css/style.css">
     <!-- Start Banner Hero -->
@@ -80,7 +99,7 @@
         <div class="container">
             <div class="row d-flex align-items-center">
                 <div class="col-lg-6 text-start" >
-                    <h1 style="color: #7fd6ff!important;font-family: serif;" class="h2 py-5 typo-space-line">ĐIỂM KHÁC BIỆT KHI SỬ DỤNG DỊCH VỤ TRUYỀN DỊCH TẠI NHÀ</h1>
+                    <h1 style="color: #7fd6ff!important;font-family: serif;" class="h2 mt-5 py-5 typo-space-line title-appoinment">ĐIỂM KHÁC BIỆT KHI SỬ DỤNG DỊCH VỤ TRUYỀN DỊCH TẠI NHÀ</h1>
                     <p class="">
                     Tiện lợi: Việc làm truyền dịch tại nhà giúp tiết kiệm thời gian và công sức di chuyển đến cơ sở y tế. Người dùng có thể sắp xếp thời gian và địa điểm phù hợp cho việc làm truyền dịch.
                     </p>
@@ -170,7 +189,7 @@
 
     <!-- Start Team Member -->
     <section class="container py-5">
-    <h2 style="color: #7fd6ff!important;font-family: serif;" class="h2">BẢNG GIÁ DỊCH VỤ TẠI NHÀ - TIÊM THUỐC THEO CHỈ ĐỊNH CỦA BÁC SĨ</h2>
+    <h2 style="color: #7fd6ff!important;font-family: serif;" class="h2 title-appoinment">BẢNG GIÁ DỊCH VỤ TẠI NHÀ - TIÊM THUỐC THEO CHỈ ĐỊNH CỦA BÁC SĨ</h2>
         <div class="pt-5 pb-3 d-lg-flex gx-5" style="background: #bef4ff;padding: 5%;">
             <div class="col-lg-6">
                 <p class="text-muted " style="padding-left: 10%;">
@@ -220,7 +239,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 mx-auto my-4 p-3">
-                    <h1 style="color: #7fd6ff!important;font-family: serif;" class="h2">KHI NÀO CƠ THỂ CẦN TRUYỀN NƯỚC VÀ CÁC LOẠI DỊCH TRUYỀN PHỔ BIẾN?</h1>
+                    <h1 style="color: #7fd6ff!important;font-family: serif;" class="h2 title-appoinment">KHI NÀO CƠ THỂ CẦN TRUYỀN NƯỚC VÀ CÁC LOẠI DỊCH TRUYỀN PHỔ BIẾN?</h1>
                     <p><b>Truyền nước hay truyền dịch là truyền các chất có lợi vào cơ thể thông qua đường tĩnh mạch để hỗ trợ điều trị hoặc phục hồi sức khỏe. Việc truyền dịch chỉ thực hiện khi có sự đồng ý của bác sĩ chuyên khoa. Không nên tự ý truyền dịch bừa bãi, rất có thể sẽ gây ra nhiều biến chứng nguy hiểm như suy tim, phù phổi, nghiêm trọng hơn là tình trạng sốc phản vệ dẫn đến tử vong.</b></p>
                     <p><b>1. Khi nào cơ thể mới cần truyền nước?</b></p>
                     <p>Các chỉ số trong máu, muối, đường, chất điện giải,... ở cơ thể người đều có một mức giá trị nhất định, khi giá trị này giảm đi thì phải bù đắp thêm vào để không làm mất sự cân bằng. Lúc này chúng ta cần thực hiện xét nghiệm máu để kiểm tra chính xác lượng mất đi từ đó có những biện pháp bù đắp với liều lượng thích hợp. Do đó việc khám và xét nghiệm kiểm tra rất quan trọng trước khi truyền dịch, để có thể kiểm soát được lượng nước đưa vào cơ thể không ít hơn và cũng không nhiều hơn.</p>
