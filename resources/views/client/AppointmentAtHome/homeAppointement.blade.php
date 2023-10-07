@@ -122,7 +122,7 @@
                     <div class="carousel-item active list-hispital-home pt-3">
                         <div class=" row d-flex align-items-center">
                             <div class="banner-content col-lg-12 col-12 m-lg-auto text-left ">
-                                <!-- <div class="row g-lg-5 mb-4">
+                                {{-- <div class="row g-lg-5 mb-4">
                                     @foreach ($datas as $key => $data)
                                         <div class="col-md-4 mb-4">
                                             <a href="{{url('/client/appointmentathome/tab1/')}}/{{$datas['code'] ?? ''}}" class="card border-0 shadow-lg overflow-hidden">
@@ -141,7 +141,7 @@
                                         </div>
                                     @endforeach
 
-                                </div> -->
+                                </div> --}}
                                 <center>
                                     <div id="scroll">
                                         <div class="scroll-item" onclick="JS_AppointmentAtHome.flow('THUONG')">
