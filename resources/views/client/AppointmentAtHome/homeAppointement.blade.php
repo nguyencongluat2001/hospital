@@ -60,6 +60,25 @@
     ::-webkit-scrollbar-track {
         background: none;
     }
+@media (max-width: 450px){
+    .title-appoinment {
+        font-size: 24px !important;
+        padding-top: 0 !important;
+    }
+    .objective-icon{
+        width: 12rem;
+        height: 6.5rem;
+    }
+    .objective h2, .objective .h3{
+        font-size: 22px !important;
+    }
+    .team-member ul li b{
+        font-size: 20px;
+    }
+    b, span, strong{
+        font-size: 1rem;
+    }
+}
 </style>
 <link rel="stylesheet" href="../clients/css/style.css">
     <!-- Start Banner Hero -->
@@ -106,16 +125,16 @@
                                 <!-- <div class="row g-lg-5 mb-4">
                                     @foreach ($datas as $key => $data)
                                         <div class="col-md-4 mb-4">
-                                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$data['code']}}" class="card border-0 shadow-lg overflow-hidden">
+                                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$datas['code'] ?? ''}}" class="card border-0 shadow-lg overflow-hidden">
                                                 <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/laymautainha.jpeg')}}" alt="Card image">
                                                 <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                                     <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                                                        <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;">{{$data['name']}}</h3>
+                                                        <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;">{{$datas['name']}}</h3>
                                                     </div>
                                                 </div>
                                             </a>
                                             <center>
-                                                <a href="{{url('/client/appointmentathome/tab1/')}}/{{$data['code']}}">
+                                                <a href="{{url('/client/appointmentathome/tab1/')}}/{{$datas['code'] ?? ''}}">
                                                     <span style="background: #ffba4b; color: #0d1226;" class="btn btn-outline-light rounded-pill">Đặt lịch</span>
                                                  </a>
                                             </center>
@@ -217,14 +236,14 @@
         <div class="container">
             <div class="row d-flex align-items-center py-5">
                 <div class="col-lg-6 text-start" >
-                    <h1 style="color: #7fd6ff!important;font-family: serif;font-size:25px" class="py-5 typo-space-line">ĐIỂM KHÁC BIỆT KHI SỬ DỤNG DỊCH VỤ XÉT NGHIỆM TẠI NHÀ</h1>
+                    <h1 style="color: #7fd6ff!important;font-family: serif;font-size:25px" class="py-5 typo-space-line title-appoinment">ĐIỂM KHÁC BIỆT KHI SỬ DỤNG DỊCH VỤ XÉT NGHIỆM TẠI NHÀ</h1>
                     <p class="">
                     Tiện lợi: Việc làm xét nghiệm tại nhà giúp tiết kiệm thời gian và công sức di chuyển đến cơ sở y tế. Người dùng có thể sắp xếp thời gian và địa điểm phù hợp cho việc làm xét nghiệm.
                     </p>
                     <div class="row g-lg-5 mb-4" >
                         <!-- Start Recent Work -->
                         <div class="col-md-4 mb-4">
-                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$data['code']}}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$datas['code'] ?? ''}}" class="recent-work card border-0 shadow-lg overflow-hidden">
                                 <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/tuvan.jpeg')}}" alt="Card image">
                                 <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                     <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
@@ -236,7 +255,7 @@
                         <!-- End Recent Work -->
                         <!-- Start Recent Work -->
                         <div class="col-md-4 mb-4">
-                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$data['code']}}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$datas['code'] ?? ''}}" class="recent-work card border-0 shadow-lg overflow-hidden">
                                 <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/bank.jpeg')}}" alt="Card image">
                                 <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                     <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
@@ -248,7 +267,7 @@
                         <!-- End Recent Work -->
                         <!-- Start Recent Work -->
                         <div class="col-md-4 mb-4">
-                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$data['code']}}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$datas['code'] ?? ''}}" class="recent-work card border-0 shadow-lg overflow-hidden">
                                 <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/bacsi.jpeg')}}" alt="Card image">
                                 <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                     <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
@@ -260,7 +279,7 @@
                         <!-- End Recent Work -->
                         <!-- Start Recent Work -->
                         <div class="col-md-4 mb-4">
-                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$data['code']}}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$datas['code'] ?? ''}}" class="recent-work card border-0 shadow-lg overflow-hidden">
                                 <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/laymautainha.jpeg')}}" alt="Card image">
                                 <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                     <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
@@ -272,7 +291,7 @@
                         <!-- End Recent Work -->
                         <!-- Start Recent Work -->
                         <div class="col-md-4 mb-4">
-                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$data['code']}}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$datas['code'] ?? ''}}" class="recent-work card border-0 shadow-lg overflow-hidden">
                                 <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/nhanvien.jpeg')}}" alt="Card image">
                                 <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                     <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
@@ -284,7 +303,7 @@
                         <!-- End Recent Work -->
                         <!-- Start Recent Work -->
                         <div class="col-md-4 mb-4">
-                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$data['code']}}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$datas['code'] ?? ''}}" class="recent-work card border-0 shadow-lg overflow-hidden">
                                 <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/like.jpeg')}}" alt="Card image">
                                 <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                     <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
@@ -306,11 +325,11 @@
 
 
     <!-- Start Team Member -->
-    <section class="container py-5">
+    <section class="container">
         <div class="pt-5 pb-3 d-lg-flex align-items-center gx-5">
 
             <div class="col-lg-3">
-                <h2 style="color: #7fd6ff!important;font-family: serif;" class="h2 py-5 typo-space-line">ĐỘI NGŨ BÁC SĨ CỦA CHÚNG TÔI</h2>
+                <h2 style="color: #7fd6ff!important;font-family: serif;" class="h2 py-5 typo-space-line title-appoinment">ĐỘI NGŨ BÁC SĨ CỦA CHÚNG TÔI</h2>
                 <p class="text-muted ">
                 Đội ngũ y bác sĩ giỏi, giàu kinh nghiệm, tận tâm, nhiệt huyết. Cán bộ lấy mẫu chuyên nghiệp có chứng chỉ hành nghề. Mang lại cho bệnh nhân cảm giác thân thiện, thoải mái nhất.
                 </p>
@@ -319,20 +338,20 @@
             <div class="col-lg-9 row">
                 <div class="team-member col-md-4">
                     <center><img class="team-member-img img-fluid rounded-circle p-4"style="width:300px;height: 300px;object-fit: cover;" src="{{url('/clients/img/bacsi1.webp')}}" alt="Card image"></center>
-                    <ul class="team-member-caption list-unstyled text-center pt-4 text-muted ">
-                        <li>Văn Chung</li>
+                    <ul class="team-member-caption list-unstyled text-center pb-4 text-muted ">
+                        <li><b>Văn Chung</b></li>
                     </ul>
                 </div>
                 <div class="team-member col-md-4">
                     <center><img class="team-member-img img-fluid rounded-circle p-4"style="width:300px;height: 300px;object-fit: cover;" src="{{url('/clients/img/bacsi2.webp')}}" alt="Card image"></center>
-                    <ul class="team-member-caption list-unstyled text-center pt-4 text-muted ">
-                        <li>Hồng Ngân</li>
+                    <ul class="team-member-caption list-unstyled text-center pb-4 text-muted ">
+                        <li><b>Hồng Ngân</b></li>
                     </ul>
                 </div>
                 <div class="team-member col-md-4">
                     <center><img class="team-member-img img-fluid rounded-circle p-4"style="width:300px;height: 300px;object-fit: cover;" src="{{url('/clients/img/bacsi3.webp')}}" alt="Card image"></center>
-                    <ul class="team-member-caption list-unstyled text-center pt-4 text-muted ">
-                        <li>Quốc Anh</li>
+                    <ul class="team-member-caption list-unstyled text-center pb-4 text-muted ">
+                        <li><b>Quốc Anh</b></li>
                     </ul>
                 </div>
             </div>
@@ -348,22 +367,22 @@
 
                 <div class="objective col-lg-4">
                     <div class="objective-icon card m-auto py-4 mb-2 mb-sm-4 bg-warning shadow-lg">
-                        <i class="display-4 bx bxs-bulb text-light"></i>
+                        <i class=" bx bxs-bulb text-light fa-3x"></i>
                     </div>
                     <h2 class="objective-heading h3 mb-2 mb-sm-4 ">Khám tổng quát từ medlatec</h2>
                 </div>
 
                 <div class="objective col-lg-4 mt-sm-0 mt-4">
                     <div class="objective-icon card m-auto py-4 mb-2 mb-sm-4 bg-warning shadow-lg">
-                        <!-- <i class='display-4 bx bx-revision text-light'></i> -->
-                        <i class="fas fa-thermometer fa-4x" style="color:#ffffff"></i>
+                        <!-- <i class=' bx bx-revision text-light'></i> -->
+                        <i class="fas fa-thermometer fa-3x" style="color:#ffffff"></i>
                     </div>
                     <h2 class="objective-heading h3 mb-2 mb-sm-4 ">Truyền dịch y tế</h2>
                 </div>
 
                 <div class="objective col-lg-4 mt-sm-0 mt-4">
                     <div class="objective-icon card m-auto py-4 mb-2 mb-sm-4 bg-warning shadow-lg">
-                        <i class="display-4 bx bxs-select-multiple text-light"></i>
+                        <i class=" bx bxs-select-multiple text-light fa-3x"></i>
                     </div>
                     <h2 class="objective-heading h3 mb-2 mb-sm-4 ">Cấp cứu hồi sức</h2>
                 </div>
@@ -375,24 +394,24 @@
 
                 <div class="objective col-lg-4">
                     <div class="objective-icon card m-auto py-4 mb-2 mb-sm-4 bg-warning shadow-lg">
-                        <!-- <i class="display-4 bx bxs-bulb text-light"></i> -->
-                        <i class="fas fa-heartbeat fa-4x" style="color:#ffffff"></i>
+                        <!-- <i class=" bx bxs-bulb text-light"></i> -->
+                        <i class="fas fa-heartbeat fa-3x" style="color:#ffffff"></i>
                     </div>
-                    <h2 class="objective-heading h3 mb-2 mb-sm-4 ">Đo điện tim</h2>
+                    <h2 class="objective-heading h3 mb-2 mb-sm-4">Đo điện tim</h2>
                 </div>
 
                 <div class="objective col-lg-4 mt-sm-0 mt-4">
                     <div class="objective-icon card m-auto py-4 mb-2 mb-sm-4 bg-warning shadow-lg">
-                        <!-- <i class='display-4 bx bx-revision text-light'></i> -->
-                        <i class="fas fa-video fa-4x" style="color:#ffffff"></i>
+                        <!-- <i class=' bx bx-revision text-light'></i> -->
+                        <i class="fas fa-video fa-3x" style="color:#ffffff"></i>
                     </div>
                     <h2 class="objective-heading h3 mb-2 mb-sm-4 ">Chụp X-quang</h2>
                 </div>
 
                 <div class="objective col-lg-4 mt-sm-0 mt-4">
                     <div class="objective-icon card m-auto py-4 mb-2 mb-sm-4 bg-warning shadow-lg">
-                        <!-- <i class="display-4 bx bxs-select-multiple text-light"></i> -->
-                        <i class="fas fa-tint fa-4x" style="color:#ffffff"></i>
+                        <!-- <i class=" bx bxs-select-multiple text-light"></i> -->
+                        <i class="fas fa-tint fa-3x" style="color:#ffffff"></i>
                     </div>
                     <h2 class="objective-heading h3 mb-2 mb-sm-4 ">Xét nghiệm máu</h2>
                 </div>
@@ -407,7 +426,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 mx-auto my-4 p-3">
-                    <h1 style="color: #7fd6ff!important;font-family: serif;" class="h2 text-center">CHUYÊN GIA</h1>
+                    <h1 style="color: #7fd6ff!important;font-family: serif;" class="h2 text-center title-appoinment">CHUYÊN GIA</h1>
                     <p><b>PGS TS Nguyễn Nghiêm Luật “Thầy phù thủy” mang lại sự sống với nhiều công trình nghiên cứu y khoa</b></p>
                     <p><b>Ở tuổi 72, PGS.TS Nguyễn Nghiêm Luật vẫn vững bước tiến lên trong sự nghiệp Y tế, vừa là Thầy thuốc, vừa là Thầy giáo, Nhà Nghiên cứu Khoa học được nhiều người yêu mến và quý trọng.</b></p>
                     <img class="recent-work-img card-img" style="object-fit: cover;" src="{{url('/clients/img/giaosu.webp')}}" alt="Card image">

@@ -35,6 +35,55 @@
 #myTable tr.header, #myTable tr:hover {
   background-color: #f1f1f1;
 }
+
+#myTable tr td a {
+    display: flex;
+    align-items: center;
+}
+#myTable tr td a span{
+    width: calc(100% - 250px);
+    padding-left: 20px;
+}
+
+@media (max-width: 768px){
+    #myTable tr td{
+        text-align: center;
+    }
+    #myTable tr td img{
+        width: 100% !important;
+    }
+    #myTable tr td span{
+        width: 100% !important;
+        font-size: 30px !important;
+        padding-left: 0 !important;
+    }
+}
+@media (max-width: 540px){
+    #myTable tr td{
+        text-align: center;
+    }
+    #myTable tr td img{
+        width: 100% !important;
+    }
+    #myTable tr td span{
+        width: 100% !important;
+        font-size: 24px !important;
+        padding-left: 0 !important;
+    }
+}
+@media (max-width: 450px){
+    #myTable tr td{
+        text-align: center;
+    }
+    #myTable tr td img{
+        width: 100% !important;
+    }
+    #myTable tr td span{
+        width: 100% !important;
+        font-size: 22px !important;
+        padding-left: 0 !important;
+    }
+}
 </style>
 
     <!-- Start Banner Hero -->
@@ -88,10 +137,13 @@
                                                     @foreach ($datas as $key => $data)
                                                         <tr>
                                                             <td style="background: #ffffffeb;width:30%;vertical-align: middle;" align="center">
-                                                                <a class="pb-5" style="text-decoration: none" href="{{url('/facilities')}}/{{$data->code}}">
+                                                                <a class="pb-5 row" style="text-decoration: none" href="{{url('/facilities')}}/{{$data->code}}">
                                                                     <img  src="{{url('/file-image-client/avatar-hospital/')}}/{{ !empty($data->avatar)?$data->avatar:'' }}" alt="Image" style="height: 200px;width: 250px;object-fit: cover;">
-                                                                    <span style="padding-left:10px;font-size: 30px;font-family: -webkit-body;color: #1d3952;">{{ $key + 1 }}.&nbsp;{{$data->name_hospital}}</span>
-                                                                    <span style="padding-left:10px;font-size: 18px;font-family: -webkit-body;color: #ff0000;">({{$data->address}})</span><br>
+                                                                    <span>
+                                                                        <span style="padding-left:10px;font-size: 30px;font-family: -webkit-body;color: #1d3952;">{{ $key + 1 }}.&nbsp;{{$data->name_hospital}}</span>
+                                                                        <br>
+                                                                        <span style="padding-left:10px;font-size: 18px;font-family: -webkit-body;color: #ff0000;">({{$data->address}})</span><br>
+                                                                    </span>
                                                                 </a>
                                                             </td>
                                                             

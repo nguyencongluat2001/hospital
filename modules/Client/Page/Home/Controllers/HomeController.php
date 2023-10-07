@@ -47,6 +47,7 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
+        $dataSearch = '';
         $objResult = $this->hospitalService->where('current_status',1)->get()->take(3);
         $Specialty = $this->specialtyService->where('current_status',1)->get()->take(4);
         $datas['datas']= $objResult;
@@ -57,7 +58,9 @@ class HomeController extends Controller
                     'name' => $val['name'],
                     'url' => $val['url']
             ];
+            $dataSearch .= $val['name'] . '!~!';
         }
+        $datas['dataSearch'] = trim($dataSearch, '!~!');
         
         return view('client.home.home',$datas);
     }

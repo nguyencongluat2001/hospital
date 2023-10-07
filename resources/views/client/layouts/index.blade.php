@@ -161,6 +161,7 @@
     <script src="../clients/js/bootstrap.bundle.min.js"></script>
     <!-- Load jQuery require for isotope -->
     <script src="../clients/js/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ URL::asset('assets/js/placeholderTypewriter.js') }}"></script>
     <!-- Isotope -->
     <script src="../clients/js/isotope.pkgd.js"></script>
     <!-- Page Script -->
