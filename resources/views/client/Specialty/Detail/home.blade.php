@@ -69,7 +69,7 @@
               <center> Phòng khám</center>
         </span>
     </div>
-    <!-- <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-left pt-5">
+    {{-- <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-left pt-5">
         <div class="row g-lg-5 mb-4">
         @foreach ($hospital as $key => $data)
             <div class="col-md-6 mb-4">
@@ -97,7 +97,7 @@
             </div>
         @endforeach
         </div>
-    </div> -->
+    </div> --}}
         <!-- Start Service -->
 <section class="service-wrapper py-3">
     <div class="service-tag py-5 popular-specialties">
@@ -119,6 +119,7 @@
                             <li>Chuyên khoa: <span style="color:#38526f">{{$data['specialtys']}}</span></li>
                             <li>Thời gian khám: <span style="color:#38526f">{{$data['time']}}</span></li>
                             <li>Giá khám: <span style="color: #0090ff;font-weight: 600;">{{ !empty($data['money']) ? number_format($data['money'],0, '', ',') : '' }}</span> VND</li>
+                            <li>Bệnh viện/phòng khám: <span style="color: #0090ff;font-weight: 600;">{{ !empty($data['money']) ? number_format($data['money'],0, '', ',') : '' }}</span> VND</li>
                             <li>Thông tin: <span style="color:#38526f">{{$data['profile']}}</span></li>
                         </ul>
                         <!-- <span style="background:#90a9cd;font-weight: 600;" class="btn btn-outline-light rounded-pill">Đặt lịch khám</span> -->
