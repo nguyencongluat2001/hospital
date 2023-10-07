@@ -55,6 +55,7 @@ class SpecialtyController extends Controller
         $input = $request->all();
         $datas['datas'] = $this->SpecialtyService->where('code',$code)->first();
         $arrDatas = SystemClinicsModel::where('specialtys','like','%'.$datas['datas']['name_specialty'].'%')->get();
+        $datas['hospital'] = [];
         foreach($arrDatas as $val){
             $name_hospital = FacilitiesModel::where('code',$val['code_hospital'])->first();
             $datas['hospital'][] = [

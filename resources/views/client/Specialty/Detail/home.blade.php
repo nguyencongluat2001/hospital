@@ -33,12 +33,12 @@
                                                                     <div class="col-lg-12 ">
                                                                         <h5 style="color:#ffd877;font-size: 40px;font-family: serif;font-weight: 600;">Chuyên khoa: {{ !empty($datas->name_specialty)?$datas->name_specialty:'' }}</h5>
                                                                         <div class="form-wrapper col-md-12">
-                                                                            <!-- <select onchange="JS_Specialty.getHospital('{{$datas->code}}',this.value)" class="form-control input-sm chzn-select" name="code_specialty" id="code_specialty">
+                                                                            {{--  <select onchange="JS_Specialty.getHospital('{{$datas->code}}',this.value)" class="form-control input-sm chzn-select" name="code_specialty" id="code_specialty">
                                                                                 <option value="">--Chọn phòng khám--</option>
                                                                                 @foreach($hospital as $key => $values) 
                                                                                     <option value="{{$values['code']}}">{{$values['name_hospital']}}</option>
                                                                                 @endforeach 
-                                                                            </select> -->
+                                                                            </select> --}}
                                                                         </div>  <br>
                                                                         <div id="hospital">
                                                                         <!-- <span  onclick="JS_Specialty.warning()" class="btn rounded-pill btn-success text-light px-4 light-300">
