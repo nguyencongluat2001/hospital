@@ -240,15 +240,19 @@
                                                 </div>
                                                 @if (isset($_SESSION['role']) && $_SESSION['role'] == 'CTV')
                                                 <div class="row mt-3">
-                                                    <div class="form-input col-md-6 padding-style">
+                                                    <div class="form-input col-md-4 padding-style">
                                                         <input type="text" class="form-control required" placeholder="Mã bệnh nhân trên ống nghiệm..." name="code_patient" id="code_patient" oninput="inValid(this.id)">
                                                         <i class="fa fa-vial uname-icon padding-style"></i>
                                                         <span class="message-error uname-error">Mã bệnh nhân trên ống nghiệm không được để trống!</span>
                                                     </div>
-                                                    <div class="form-input col-md-6 padding-style">
+                                                    <div class="form-input col-md-4 padding-style">
                                                         <input type="text" class="form-control required" placeholder="Mã bác sĩ..." name="code_doctor" id="code_doctor" oninput="inValid(this.id)">
                                                         <i class="fa fa-user-nurse uname-icon padding-style"></i>
                                                         <span class="message-error uname-error">Mã bác sĩ không được để trống!</span>
+                                                    </div>
+                                                    <div class="form-input col-md-4 padding-style">
+                                                        <input type="text" class="form-control" placeholder="Mã giảm giá..." name="code_sale" id="code_sale" onchange="JS_AppointmentAtHome.r(this.value)" oninput="inValid(this.id)">
+                                                        <i class="fa fa-codepen uname-icon padding-style"></i>
                                                     </div>
                                                 </div>
                                                 <div class="form-wrapper col-md-12">

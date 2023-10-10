@@ -348,9 +348,12 @@ class AppointmentAtHomeController extends Controller
             }
         }
         $data['chiso'] = $arr;
+        if(!empty($input['code_sale']) && $input['code_sale'] == 'GHT6L8'){
+            $total_sale = $total/10;
+            $total = $total_sale*9;
+        }
         $data['total'] = number_format($total,0, '', ',');
         $data['total_number'] = $total;
-        // dd($data);
         return response()->json([
             'data' => $data,
             'status' => true

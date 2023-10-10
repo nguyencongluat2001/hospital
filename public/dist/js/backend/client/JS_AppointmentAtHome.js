@@ -302,6 +302,7 @@ JS_AppointmentAtHome.prototype.showPack = function () {
     });
     // var data = $(oForm).serialize();
     var data = '&code_indications=' + code_indications;
+    data += '&code_sale=' + this.code_sale;
     $.ajax({
         url: url,
         type: "GET",
@@ -397,4 +398,15 @@ JS_AppointmentAtHome.prototype.getInfioPatient = function (phone) {
             $("#changeAddress").html(htmls_address);
         }
     });
+}
+/**
+ * Load màn hình danh sách huyện
+ *
+ * @param oForm (tên form)
+ *
+ * @return void
+ */
+JS_AppointmentAtHome.prototype.getCodeSale = function (code_sale) {
+    this.code_sale = code_sale;
+    NclLib.loadding();
 }
