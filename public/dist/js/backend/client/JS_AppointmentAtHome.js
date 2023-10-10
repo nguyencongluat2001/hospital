@@ -408,5 +408,6 @@ JS_AppointmentAtHome.prototype.getInfioPatient = function (phone) {
  */
 JS_AppointmentAtHome.prototype.getCodeSale = function (code_sale) {
     this.code_sale = code_sale;
+    this.showPack();
     NclLib.loadding();
 }
