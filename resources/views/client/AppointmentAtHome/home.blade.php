@@ -251,7 +251,7 @@
                                                         <span class="message-error uname-error">Mã bác sĩ không được để trống!</span>
                                                     </div>
                                                     <div class="form-input col-md-4 padding-style">
-                                                        <input type="text" class="form-control" placeholder="Mã giảm giá..." name="code_sale" id="code_sale" onchange="JS_AppointmentAtHome.r(this.value)" oninput="inValid(this.id)">
+                                                        <input type="text" class="form-control" placeholder="Mã giảm giá..." name="code_sale" id="code_sale" onchange="JS_AppointmentAtHome.getCodeSale(this.value)" oninput="inValid(this.id)">
                                                         <i class="fa fa-codepen uname-icon padding-style"></i>
                                                     </div>
                                                 </div>
