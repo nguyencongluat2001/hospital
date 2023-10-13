@@ -145,7 +145,7 @@
 <link rel="stylesheet" href="../clients/css/style.css">
     <!-- Start Banner Hero -->
     <div class="banner-wrapper bg-light" >
-        <div id="index_banner" class="banner-vertical-center-index">
+        <div class="banner-vertical-center-index">
             <!-- Start slider -->
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner active pt-5" >
@@ -163,20 +163,20 @@
                                 <div class="row g-lg-5 mb-4">
                                     <div class="banner-wrapper w-100" style="background:#fffffffc;color:black">
                                         <div class="row g-lg-5 mb-4">
-                                            <div class="banner-wrapper w-100 py-3" style="background:#d5e9ffd6">
+                                            <div class="banner-wrapper w-100 py-3">
                                                 <div class="list-group wrapper pb-0 px-3">
                                                     <a class="col-sm-6 col-lg-12 text-decoration-none text-light">
                                                         <div class="d-lg-flex gx-5">
                                                             <div class="col-lg-2">
                                                                 <center>
-                                                                <img class="card-img-top" src="{{url('/clients/img/logoMed.webp')}}" style="width:150px;height:150px;object-fit: cover;" alt="...">
+                                                                <img class="card-img-top" src="{{url('/clients/img/logoMed.webp')}}" style="width:120px;object-fit: cover;" alt="...">
 
                                                                 </center>
                                                             </div>
                                                             <div class="col-lg-1 "></div>
                                                             <div class="col-lg-8 ">
                                                             <span  class="text-title-home" style="color:#000000"><center> Lấy mẫu tại nhà</center></span>
-                                                            <span  style="font-size:20px;color:#577391">Lấy mẫu xét nghiệm tại nhà giúp khách hàng chủ động tầm soát bệnh lý. Đồng thời tiết kiệm thời gian đi lại, chờ đợi kết quả với mức chi phí hợp lý.</span>
+                                                            <span  style="font-size:15px;color:#577391">Lấy mẫu xét nghiệm tại nhà giúp khách hàng chủ động tầm soát bệnh lý. Đồng thời tiết kiệm thời gian đi lại, chờ đợi kết quả với mức chi phí hợp lý.</span>
                                                         </div>
                                                         </div>
                                                     </a>
@@ -246,9 +246,9 @@
                                                         <span class="message-error uname-error">Mã bệnh nhân trên ống nghiệm không được để trống!</span>
                                                     </div>
                                                     <div class="form-input col-md-4 padding-style">
-                                                        <input type="text" class="form-control required" placeholder="Mã bác sĩ..." name="code_doctor" id="code_doctor" oninput="inValid(this.id)">
+                                                        <input type="text" class="form-control" placeholder="Mã bác sĩ..." name="code_doctor" id="code_doctor" oninput="inValid(this.id)">
                                                         <i class="fa fa-user-nurse uname-icon padding-style"></i>
-                                                        <span class="message-error uname-error">Mã bác sĩ không được để trống!</span>
+                                                        <!-- <span class="message-error uname-error">Mã bác sĩ không được để trống!</span> -->
                                                     </div>
                                                     <div class="form-input col-md-4 padding-style">
                                                         <input type="text" class="form-control" placeholder="Mã giảm giá..." name="code_sale" id="code_sale" onchange="JS_AppointmentAtHome.getCodeSale(this.value)" oninput="inValid(this.id)">
