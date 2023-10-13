@@ -38,10 +38,15 @@
                         </select>
                     </div> -->
                     <div class="col-md-3">
-                        <input type="text" class="form-control datepicker" name="fromdate" id="fromdate" placeholder="Từ ngày">
+                        <!-- <input type="text" class="form-control datepicker" name="fromdate" id="fromdate" placeholder="Từ ngày"> -->
+                        <input class="form-control input-sm" style="font-size: 13px;" type="date"
+                                id="fromdate" name="fromdate" value="<?php echo (new DateTime())->format('Y-m-d'); ?>" min="2010-01-01"
+                                max="2030-12-31">
                     </div>
                     <div class="col-md-3">
-                        <input type="text" class="form-control datepicker" name="todate" id="todate" placeholder="Đến ngày">
+                        <!-- <input type="text" class="form-control datepicker" name="todate" id="todate" placeholder="Đến ngày"> -->
+                        <input class="form-control input-sm" style="font-size: 13px;" type="date"
+                                id="todate" name="todate" value="<?php echo (new DateTime())->format('Y-m-d'); ?>" min="2010-01-01" max="2030-12-31">
                     </div>
                     <div class="col-md-7 row pt-3"> 
                         <div class="form-search form-group input-group">
@@ -58,12 +63,12 @@
     </section>
 </div>
 <div class="modal fade" id="addmodal" data-backdrop="static" role="dialog"></div>
-@section('js')
-<script>
+<!-- @section('js') -->
+<!-- <script>
     $('.datepicker').datepicker({
         format: 'dd/mm/yyyy'
     });
-</script>
+</script> -->
 <script src="{{URL::asset('dist/js/backend/pages/JS_AppointmentAtHome.js')}}"></script>
 <script type="text/javascript">
     var baseUrl = "{{ url('') }}";

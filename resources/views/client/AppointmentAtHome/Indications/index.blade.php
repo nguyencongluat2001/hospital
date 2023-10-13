@@ -26,7 +26,7 @@
                                                 {{-- @endif --}}
                                                 <div style="display:flex">
                                                     <div class="col-md-3" style="">
-                                                        <input class="form-control input-sm" style="height:30px;font-size: 13px;" type="date"
+                                                        <input class="form-control input-sm" style="font-size: 13px;" type="date"
                                                             id="fromDate" name="fromDate" value="<?php echo (new DateTime())->format('Y-m-d'); ?>" min="2010-01-01"
                                                             max="2030-12-31">
                                                     </div>
@@ -34,14 +34,19 @@
                                                         Đến
                                                     </div>
                                                     <div class="col-md-3">
-                                                        <input class="form-control input-sm" style="height:30px;font-size: 13px;" type="date"
+                                                        <input class="form-control input-sm" style="font-size: 13px;" type="date"
                                                             id="toDate" name="toDate" value="<?php echo (new DateTime())->format('Y-m-d'); ?>" min="2010-01-01" max="2030-12-31">
                                                     </div>
                                                 </div>
-                                                <div class="input-group" style="width:80%;height:10%;padding-top:10px">
-                                                    <input id="search" name="search" type="text" class="form-control" placeholder="Tìm kiếm mã, mã ống nghiệm, tên - sđt khách hàng...">
+                                                <br><br>
+                                                <div style="display:flex">
+                                                    <div class="col-md-3">
+                                                        <input id="search" name="search" type="text" class="form-control">
+                                                    </div>&nbsp;
+                                                    <div class="col-md-3">
+                                                        <button style="width:45px;height:38px" id="txt_search" name="txt_search" type="button" class="btn btn-dark"><i class="fas fa-search"></i></button>
+                                                    </div>
                                                 </div>
-                                                <button style="width:60px" id="txt_search" name="txt_search" type="button" class="btn btn-dark"><i class="fas fa-search"></i></button>
                                             </div>
                                             <!-- Màn hình danh sách -->
                                             <div class="row" id="table-container" style="padding-top:10px"></div>
@@ -68,5 +73,11 @@
             JS_listIndications.loadIndex(baseUrl);
         })
     </script>
+    <script  type="text/javascript">
+    $(document).ready(function() {
+        var placeholderText = ['Tìm kiếm theo mã','Tìm kiếm mã ống nghiệm','Tìm tên - sđt khách hàng'];
+        $('#search').placeholderTypewriter({text: placeholderText});  
+    })
+</script>
 @endsection
 

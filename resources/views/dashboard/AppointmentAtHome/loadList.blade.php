@@ -7,18 +7,6 @@
 <span>Doanh thu theo tiêu thức lọc: <span style="font-weight: 600; color: #ff8414;">{{$sumMoney}}</span> VND</span>
 <div class="table-responsive pmd-card pmd-z-depth ">
     <table id="table-data" class="table  table-bordered table-striped table-condensed dataTable no-footer">
-        <!-- <colgroup>
-            <col width="3%">
-            <col width="5%">
-            <col width="10%">
-            <col width="10%">
-            <col width="15%">
-            <col width="10%">
-            <col width="10%">
-            <col width="7%">
-            <col width="5%">
-            <col width="3%">
-        </colgroup> -->
         <thead>
             <tr>
                 <td align="center"><input type="checkbox" name="chk_all_item_id"

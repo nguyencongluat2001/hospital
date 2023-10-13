@@ -53,12 +53,12 @@ class AppointmentAtHomeModel extends Model
             //     return $query;
             case 'fromdate':
                 if(!empty($value)){
-                    $query->where('created_at', '>=', date('Y-m-d H:i:s', strtotime(NclLibraryHelper::_ddmmyyyyToyyyymmdd($value, 3))));
+                    $query->whereDate('created_at', '>=',$value);
                     return $query;
                 }
             case 'todate':
                 if(!empty($value)){
-                    $query->where('created_at', '<=', date('Y-m-d H:i:s', strtotime(NclLibraryHelper::_ddmmyyyyToyyyymmdd($value, 2))));
+                    $query->whereDate('created_at', '<=',$value);
                     return $query;
                 }
             default: 

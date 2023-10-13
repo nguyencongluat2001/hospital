@@ -54,12 +54,12 @@ class AppointmentAtHomeModel extends Model
                 return $query;
             case 'fromdate':
                 if(!empty($value)){
-                    $query->where('created_at', '>=', $value);
+                    $query->whereDate('created_at', '>=', $value);
                     return $query;
                 }
             case 'todate':
                 if(!empty($value)){
-                    $query->where('created_at', '<=', $value);
+                    $query->whereDate('created_at', '<=', $value);
                     return $query;
                 }
             default:

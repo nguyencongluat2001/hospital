@@ -389,15 +389,17 @@ class AppointmentAtHomeController extends Controller
         $data = array();
         $arrInput['sort'] = 'created_at';
         $arrInput['code'] = !empty($_SESSION['code'])?$_SESSION['code']:'';
-        $arrInput['fromdate'] = $arrInput['fromDate'].' 00:00:00';
-        $arrInput['todate'] = $arrInput['toDate'].' 23:59:00';
         if(empty($_SESSION['code'])){
             $objResult = [];
         }else{
             $objResult = $this->AppointmentAtHomeService->filter($arrInput);
         }
         $date = date('Y-m-d');
-        $turnover = $this->AppointmentAtHomeService->where('code_ctv',$_SESSION['code'])->where('created_at','LIKE','%'.$date.'%')->sum('money');
+        $turnover = $this->AppointmentAtHomeService
+                         ->where('code_ctv',$_SESSION['code'])
+                         ->whereDate('created_at', '>=', $arrInput['fromDate'])
+                         ->whereDate('created_at', '<=', $arrInput['toDate'])
+                         ->sum('money');
         $turnover_convert = number_format($turnover,0, '', ',');
         $data['datas'] = $objResult;
         $data['turnover_convert'] = $turnover_convert;

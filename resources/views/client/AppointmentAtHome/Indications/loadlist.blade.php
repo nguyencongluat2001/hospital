@@ -13,7 +13,7 @@ use Modules\System\Recordtype\Helpers\WorkflowHelper;
             <col width="90%">
             <col width="10%">
         </colgroup>
-        <span style="font-size: 25px;font-family: initial;">Doanh thu theo ngày: <span style="color:#ffa723;font-size: 25px;font-weight: 500;">{{$turnover_convert}}</span> <span>VND</span></span>
+        <span style="font-size: 20px;font-family: initial;">Doanh thu: <span style="color:#ffa723;font-size: 20px;font-weight: 500;">{{$turnover_convert}}</span> <sup style="font-size:10px">VND</sup></span>
         <thead>
             <tr style="background: #243649;color: #ffa700;">
                 <td style="white-space: inherit;vertical-align: middle;" align="center"><b>Thông tin chỉ định</b></td>
