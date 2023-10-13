@@ -37,13 +37,17 @@ class AppointmentAtHomeController extends Controller
         $data = array();
         $input['sort'] = 'created_at';
         $objResult = $this->AppointmentAtHomeService->filter($input);
-        // $sumMoney = $objResult->sum('money');
-        // if($sumMoney >= 0){
-        //     $sumMoney = number_format($sumMoney,0, '', ',');
-        // }else{
-        //     $sumMoney = 0;
-        // }
-        $sumMoney = '';
+        
+        $turnover = $this->AppointmentAtHomeService
+                ->where('type_at_home','XET_NGHIEM')
+                ->whereDate('created_at', '>=', $input['fromdate'])
+                ->whereDate('created_at', '<=', $input['todate'])
+                ->sum('money');
+        if($turnover >= 0){
+            $sumMoney = number_format($turnover,0, '', ',');
+        }else{
+            $sumMoney = 0;
+        }
         $data['sumMoney'] = $sumMoney;
         $data['datas'] = $objResult;
         return view('dashboard.AppointmentAtHome.loadList', $data)->render();
