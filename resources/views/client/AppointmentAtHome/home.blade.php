@@ -264,7 +264,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div id="style-1" style="padding-right:10px;">
+                                                    <div id="style-1">
                                                         <div class="table-responsive pmd-card pmd-z-depth table-container" style="padding:0px">
                                                             <table id="myTable" class="table  table-bordered table-striped table-condensed dataTable no-footer">
                                                                 <!-- <thead>
