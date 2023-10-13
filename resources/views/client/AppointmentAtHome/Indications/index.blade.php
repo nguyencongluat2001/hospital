@@ -26,15 +26,15 @@
                                                 {{-- @endif --}}
                                                 <div style="display:flex">
                                                     <div class="col-md-3" style="">
-                                                        <input class="form-control input-sm" style="font-size: 13px;" type="date"
+                                                        <input class="form-control input-sm" style="height:40px;font-size: 13px;" type="date"
                                                             id="fromDate" name="fromDate" value="<?php echo (new DateTime())->format('Y-m-d'); ?>" min="2010-01-01"
                                                             max="2030-12-31">
                                                     </div>
-                                                    <div style="margin-top:5px ;font-size: 13px; color:#555555;paddingh-left:10px">
-                                                        Đến
+                                                    <div style="margin-top:10px ;font-size: 13px; color:#555555;paddingh-left:10px">
+                                                    &nbsp;<i class="fas fa-long-arrow-alt-right"></i>&nbsp;
                                                     </div>
                                                     <div class="col-md-3">
-                                                        <input class="form-control input-sm" style="font-size: 13px;" type="date"
+                                                        <input class="form-control input-sm" style="height:40px;font-size: 13px;" type="date"
                                                             id="toDate" name="toDate" value="<?php echo (new DateTime())->format('Y-m-d'); ?>" min="2010-01-01" max="2030-12-31">
                                                     </div>
                                                 </div>
