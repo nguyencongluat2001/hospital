@@ -17,7 +17,7 @@ use Modules\System\Recordtype\Helpers\WorkflowHelper;
         <thead>
             <tr style="background: #243649;color: #ffa700;">
                 <td style="white-space: inherit;vertical-align: middle;" align="center"><b>Thông tin chỉ định</b></td>
-                <td style="white-space: inherit;vertical-align: middle;" align="center"><b>Chi tiết</b></td>
+                <td style="white-space: inherit;vertical-align: middle;" align="center"><b>#</b></td>
             </tr>
         </thead>
         <tbody id="body_data">
