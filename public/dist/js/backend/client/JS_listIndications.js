@@ -33,6 +33,18 @@ JS_listIndications.prototype.loadIndex = function () {
         var perPage = $(oForm).find('#cbo_nuber_record_page').val();
         myClass.loadList(oForm, page, perPage);
     });
+    // form load
+    $(oForm).find('#fromDate').change(function() {
+        var page = $(oForm).find('#limit').val();
+        var perPage = $(oForm).find('#cbo_nuber_record_page').val();
+        myClass.loadList(oForm, page, perPage);
+    });
+    // form load
+    $(oForm).find('#toDate').change(function() {
+        var page = $(oForm).find('#limit').val();
+        var perPage = $(oForm).find('#cbo_nuber_record_page').val();
+        myClass.loadList(oForm, page, perPage);
+    });
     $(oForm).find('#txt_search').click(function () {
         /* ENTER PRESSED*/
             var page = $(oForm).find('#limit').val();
@@ -144,6 +156,8 @@ JS_listIndications.prototype.loadList = function (oForm = '#frmIndications', num
     var data = $(oForm).serialize();
     data += '&offset=' + numberPage;
     data += '&limit=' + perPage;
+    NclLib.loadding();
+
     $.ajax({
         url: url,
         type: "GET",
