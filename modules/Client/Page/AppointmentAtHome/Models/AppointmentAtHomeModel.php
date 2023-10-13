@@ -52,12 +52,12 @@ class AppointmentAtHomeModel extends Model
             case 'code':
                 $query->where('code_ctv', $value);
                 return $query;
-            case 'fromdate':
+            case 'fromDate':
                 if(!empty($value)){
                     $query->whereDate('created_at', '>=', $value);
                     return $query;
                 }
-            case 'todate':
+            case 'toDate':
                 if(!empty($value)){
                     $query->whereDate('created_at', '<=', $value);
                     return $query;
