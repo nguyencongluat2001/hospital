@@ -37,12 +37,12 @@ class AppointmentAtHomeController extends Controller
         $data = array();
         $input['sort'] = 'created_at';
         $objResult = $this->AppointmentAtHomeService->filter($input);
-        
-        $turnover = $this->AppointmentAtHomeService
-                ->where('type_at_home','XET_NGHIEM')
-                ->whereDate('created_at', '>=', $input['fromdate'])
-                ->whereDate('created_at', '<=', $input['todate'])
-                ->sum('money');
+        $turnover = $objResult->sum('money');
+        // $turnover = $this->AppointmentAtHomeService
+        //         ->where('type_at_home','XET_NGHIEM')
+        //         ->whereDate('created_at', '>=', $input['fromdate'])
+        //         ->whereDate('created_at', '<=', $input['todate'])
+        //         ->sum('money');
         if($turnover >= 0){
             $sumMoney = number_format($turnover,0, '', ',');
         }else{
