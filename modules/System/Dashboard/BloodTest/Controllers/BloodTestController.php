@@ -55,6 +55,7 @@ class BloodTestController extends Controller
         $arrInput['limit'] = 300;
         $data = array();
         $param = $arrInput;
+        $param['sort'] = 'created_at';
         $objResult = $this->BloodTestService->filter($param);
         $data['datas'] = $objResult;
         $data['param'] = $param;

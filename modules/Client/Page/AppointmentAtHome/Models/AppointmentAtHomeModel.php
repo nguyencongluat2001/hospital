@@ -33,7 +33,7 @@ class AppointmentAtHomeModel extends Model
             'date_birthday',
             'link_excel',
             'created_at',
-            'updates_at'
+            'updated_at'
     ];
 
     public function filter($query, $param, $value)

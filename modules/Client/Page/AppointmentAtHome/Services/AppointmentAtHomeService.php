@@ -60,7 +60,7 @@ class AppointmentAtHomeService extends Service
                 'status'=> 0,
                 'date_birthday'=> !empty($input['date_birthday'])?$input['date_birthday']:'',
                 'created_at' => date("Y/m/d H:i:s"),
-                'update_at' => date("Y/m/d H:i:s")
+                'updated_at' => date("Y/m/d H:i:s")
             ];
             if(!empty($_SESSION['role'])){
                 $param['code_ctv'] = $_SESSION['code'];
