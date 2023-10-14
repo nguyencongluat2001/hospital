@@ -46,7 +46,7 @@ class AppointmentAtHomeController extends Controller
                     $query->where('name', 'like', '%' . $this->value . '%')
                     ->orWhere('code', 'like', '%' . $this->value . '%')
                     ->orWhere('phone', 'like', '%' . $this->value . '%')
-                    ->orWhere('code_patient', 'like', '%' . $this->value . '%');
+                    ->orWhere('code_ctv', 'like', '%' . $this->value . '%');
                 })
                 ->whereDate('created_at', '>=', $input['fromdate'])
                 ->whereDate('created_at', '<=', $input['todate'])
