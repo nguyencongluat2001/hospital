@@ -99,6 +99,71 @@ class AppointmentAtHomeController extends Controller
         $datas['type_chidinh'] = $arr;
         return view('client.AppointmentAtHome.home',$datas);
     }
+      // dịch vụ xét nghiệm, truyền dịch tại nhà
+     /**
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function index_edit(Request $request ,$code)
+    {
+        $input = $request->all();
+        $getInfo = $this->AppointmentAtHomeService->find($code);
+        // dd($getInfo);
+        // $data['datas'] = $this->BloodTestService->where('code',$code)->get()->toArray();
+        $price = PriceTestModel::where('code_blood',$code)->get()->toArray();
+
+        $total = 0;
+        foreach($price as $item){
+            $total = $total+= $item['price'];
+        }
+        $datas['total'] = !empty($total)?number_format($total,0, '', ','):0;
+        $datas['money'] = $total;
+        $datas['code'] = $code;
+        $datas['count'] = count($price);
+        $datas['code_blood'] = $code;
+        $datas['type_xetnghiem'] =  $this->BloodTestService->whereIn('code',['PACK1','PACK2','PACK3','PACK4','PACK5','PACK6','PACK7','PACK8','PACK9','PACK10','PACK11','PACK12','PACK13','PACK14','PACK15','PACK16','PACK17','PACK18','PACK19','PACK20','PACK21','PACK22'])->orderby('created_at','DESC')->get()->toArray();
+        $BloodTest =  $this->BloodTestService->where('sex',1)->orWhere('sex',2)->orderby('created_at','DESC')->get()->toArray();
+        // dd($price,$BloodTest,$total);
+        $i = 1;
+        foreach($BloodTest as $val){
+            $price = PriceTestModel::where('code',$val['code'])->first();
+            if(empty($price) || $price == null ){
+                $price = PriceTestModel::where('code_blood',$val['code'])->get()->toArray();
+                $total = 0;
+                foreach($price as $item){
+                    $total = $total+= $item['price'];
+                }
+            }
+            $arr[] = [
+                'code'=> $val['code'],
+                'name'=> $val['name'],
+                'checker'=> 1,
+                'price'=> !empty($price->price)?number_format($price->price): number_format($total)
+            ];
+        }
+        foreach($arr as $child_val){
+            $arr_code_indications = explode(',',$getInfo->code_indications);
+            $result = array_search($child_val['code'], $arr_code_indications);
+            
+            if ($result !== false) {
+                $checker = 1;
+            } else {
+                $checker = 2;
+            }
+            $arrData[] = [
+                'code'=> $child_val['code'],
+                'name'=> $child_val['name'],
+                'checker'=> $checker,
+                'price'=> $child_val['price'],
+            ];
+        }
+        $datas['type_chidinh'] = $arrData;
+        $datas['getInfo'] = $getInfo;
+
+        return view('client.AppointmentAtHome.home',$datas);
+    }
      /**
      * dat lich
      *

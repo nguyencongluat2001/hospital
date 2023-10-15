@@ -192,6 +192,7 @@
                                                 <!-- <input type="hidden" id="code" name="code" value="{{ !empty($datas->code)?$datas->code:'' }}"> -->
                                                 <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
                                                 <input type="hidden" id="type_at_home" name="type_at_home" value="XET_NGHIEM">
+                                                <input type="hidden" id="id" name="id" value="{{!empty($getInfo->id)?$getInfo->id:''}}">
                                                 <div id="iss_money"></div>
                                                 <!-- <div class="row">
                                                     <div class="form-wrapper col-md-6">
@@ -211,13 +212,13 @@
                                                 </div> -->
                                                  <div class="row mt-3">
                                                     <div class="form-input col-md-3 padding-style">
-                                                        <input type="text" class="form-control required" onchange="JS_AppointmentAtHome.getInfioPatient(this.value)" placeholder="Số điện thoại..." name="phone" id="phone" oninput="inValid(this.id)">
+                                                        <input type="text" class="form-control required" onchange="JS_AppointmentAtHome.getInfioPatient(this.value)" placeholder="Số điện thoại..." name="phone" id="phone" value="{{!empty($getInfo->phone)?$getInfo->phone:''}}" oninput="inValid(this.id)">
                                                         <i class="fas fa-phone phone-icon padding-style"></i>
                                                         <span class="message-error phone-error">Số điện thoại không được để trống!</span>
                                                     </div>
                                                     <div class="form-input col-md-3 padding-style" >
                                                         <div id="changeName">
-                                                            <input type="text" class="form-control required" placeholder="Họ và tên bệnh nhân..." name="name" id="name" oninput="inValid(this.id)">
+                                                            <input type="text" class="form-control required" placeholder="Họ và tên bệnh nhân..." name="name" id="name" value="{{!empty($getInfo->name)?$getInfo->name:''}}" oninput="inValid(this.id)">
                                                             <i class="fa fa-user uname-icon padding-style"></i>
                                                         </div>
                                                         <span class="message-error uname-error">Họ và tên bệnh nhân không được để trống!</span>
@@ -225,7 +226,7 @@
                                                     <div class="form-input col-md-3  padding-style">
                                                         <!-- <label for=""></label> -->
                                                         <div id="change_Date_birthday">
-                                                            <input type="text" class="form-control required" placeholder="Năm sinh..." name="date_birthday" id="date_birthday" oninput="inValid(this.id)">
+                                                            <input type="text" class="form-control required" placeholder="Năm sinh..." name="date_birthday" id="date_birthday" value="{{!empty($getInfo->date_birthday)?$getInfo->date_birthday:''}}" oninput="inValid(this.id)">
                                                             <i class="fas fa-birthday-cake  padding-style"></i>
                                                         </div>
                                                         <!-- <i class="fa fa-calendar-alt uname-icon"></i> -->
@@ -233,20 +234,20 @@
                                                         <span class="message-error uname-error">Năm sinh không được để trống!</span>
                                                     </div>
                                                     <div class="form-input col-md-3 padding-style">
-                                                        <input type="radio" value="1" name="sex" id="sex" />  <span style="padding-left:5px" >Nam</span>&emsp;
-                                                        <input  type="radio" value="2" name="sex" id="sex"  /> <span style="padding-left:5px" >Nữ</span>
+                                                        <input type="radio" value="1" name="sex" id="sex" {{(isset($getInfo['sex']) && $getInfo['sex'] == '1') ? 'checked' : ''}}/>  <span style="padding-left:5px" >Nam</span>&emsp;
+                                                        <input  type="radio" value="2" name="sex" id="sex"  {{(isset($getInfo['sex']) && $getInfo['sex'] == '2') ? 'checked' : ''}}/> <span style="padding-left:5px" >Nữ</span>
                                                         <span class="message-error phone-error">Giới tính không được để trống!</span>
                                                     </div>
                                                 </div>
                                                 @if (isset($_SESSION['role']) && $_SESSION['role'] == 'CTV')
                                                 <div class="row mt-3">
                                                     <div class="form-input col-md-4 padding-style">
-                                                        <input type="text" class="form-control required" placeholder="Mã bệnh nhân trên ống nghiệm..." name="code_patient" id="code_patient" oninput="inValid(this.id)">
+                                                        <input type="text" class="form-control required" placeholder="Mã bệnh nhân trên ống nghiệm..." name="code_patient" id="code_patient" value="{{!empty($getInfo->code_patient)?$getInfo->code_patient:''}}" oninput="inValid(this.id)">
                                                         <i class="fa fa-vial uname-icon padding-style"></i>
                                                         <span class="message-error uname-error">Mã bệnh nhân trên ống nghiệm không được để trống!</span>
                                                     </div>
                                                     <div class="form-input col-md-4 padding-style">
-                                                        <input type="text" class="form-control" placeholder="Mã bác sĩ..." name="code_doctor" id="code_doctor" oninput="inValid(this.id)">
+                                                        <input type="text" class="form-control" placeholder="Mã bác sĩ..." name="code_doctor" id="code_doctor" value="{{!empty($getInfo->code_doctor)?$getInfo->code_doctor:''}}" oninput="inValid(this.id)">
                                                         <i class="fa fa-user-nurse uname-icon padding-style"></i>
                                                         <!-- <span class="message-error uname-error">Mã bác sĩ không được để trống!</span> -->
                                                     </div>
@@ -279,7 +280,7 @@
                                                                             <tr>
                                                                                 <!-- <td style="white-space: inherit;vertical-align: middle;" align="center"></td> -->
                                                                                 <td style="white-space: inherit;vertical-align: middle;" >
-                                                                                <input onclick="JS_AppointmentAtHome.showPack('{{$code_blood}}')" type="checkbox" value="{{ isset($values['code']) ? $values['code'] : '' }}" name="code_indications" id="code_indications"/> 
+                                                                                <input onclick="JS_AppointmentAtHome.showPack('{{$code_blood}}')" type="checkbox" value="{{ isset($values['code']) ? $values['code'] : '' }}" name="code_indications" id="code_indications" {{(isset($values['checker']) && $values['checker'] == '1') ? 'checked' : ''}}/> 
                                                                                 <span style="color:red">{{ isset($values['code']) ? $values['code'] : '' }}</span> - <span style="color:#ff8a06">{{ isset($values['price']) ? $values['price'] : '' }}  </span> <span style="font-size:10px">VND </span>  <br>
                                                                                 <span style="font-size:12px"> ( {{ isset($values['name']) ? $values['name'] : '' }} )</span> 
                                                                                 </td>
@@ -320,7 +321,7 @@
                                                     <!-- onfocus="(this.type='date')"
                                                             onblur="(this.type='text')" -->
                                                         <label for="">Ngày lấy mẫu</label>
-                                                        <input type="date" class="form-control required" placeholder="Ngày lấy mẫu..." name="date_sampling" id="date_sampling" oninput="inValid(this.id)">
+                                                        <input type="date" class="form-control required" placeholder="Ngày lấy mẫu..." name="date_sampling" id="date_sampling" value="{{!empty($getInfo->date_sampling)?$getInfo->date_sampling:''}} oninput="inValid(this.id)">
                                                         <!-- <i class="fa fa-calendar-alt uname-icon padding-style"></i> -->
                                                         <span class="message-error uname-error">Ngày lấy mẫu không được để trống!</span>
                                                     </div>
@@ -365,7 +366,7 @@
                                                 <div class="row mt-3">
                                                     <div class="form-input col-md-12 padding-style">
                                                         <div id="changeAddress">
-                                                            <input type="text" class="form-control required" placeholder="Địa chỉ chi tiết..." name="address" id="address" oninput="inValid(this.id)">
+                                                            <input type="text" class="form-control required" placeholder="Địa chỉ chi tiết..." name="address" id="address" value="{{!empty($getInfo->address)?$getInfo->address:''}}" oninput="inValid(this.id)">
                                                             <i class="fa fa-map-marker-alt uname-icon padding-style"></i>
                                                         </div>
                                                         <span class="message-error uname-error">Địa chỉ chi tiết không được để trống!</span>
@@ -373,7 +374,7 @@
                                                 </div>
                                                 <div class="row mt-3">
                                                     <div class="form-input col-md-12 padding-style">
-                                                        <textarea style="height:100px" class="form-control required" placeholder="Triệu chứng lâm sàng ..." name="reason" id="reason" oninput="inValid(this.id)"rows="4" cols="50"></textarea>
+                                                        <textarea style="height:100px" class="form-control required" placeholder="Triệu chứng lâm sàng ..." name="reason" id="reason" value="{{!empty($getInfo->reason)?$getInfo->reason:''}}" oninput="inValid(this.id)"rows="4" cols="50"></textarea>
                                                         <i class="fas fa-comment-dots uname-icon padding-style"></i>
                                                         <span class="message-error uname-error">Triệu chứng lâm sàng không được để trống!</span>
                                                     </div>
@@ -487,6 +488,9 @@
     var JS_AppointmentAtHome = new JS_AppointmentAtHome(baseUrl, 'client', 'appointmentathome');
     $(document).ready(function($) {
         JS_AppointmentAtHome.loadIndex(baseUrl);
+    })
+    $(document).ready(function($) {
+        JS_AppointmentAtHome.showPack();
     })
 </script>
 @endsection

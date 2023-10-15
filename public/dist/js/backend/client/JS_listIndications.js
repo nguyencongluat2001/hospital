@@ -190,26 +190,17 @@ JS_listIndications.prototype.loadList = function (oForm = '#frmIndications', num
  * @return void
  */
 JS_listIndications.prototype.edit = function (id) {
-    var url = this.urlPath + '/editCategory';
-    var myClass = this;
+    var url = this.urlPath + '/appointmentathome/'+ id;
+    // var myClass = this;
     var data = '_token=' + $('#frmIndications #_token').val();
     data += '&id=' + id;
     var i = 0;
     $.ajax({
         url: url,
-        type: "POST",
+        type: "GET",
         data: data,
         success: function (arrResult) {
-            if(arrResult['success'] == false){
-                NclLib.alertMessageBackend('danger', 'Lỗi', arrResult['message']);
-                return false;
-            }
-            $('#editmodalCategory').html(arrResult);
-            $('#editmodalCategory').modal('show');
-            $('form#frmAddCategory').find('#btn_create').click(function () {
-                myClass.store('form#frmAddCategory');
-            })
-
+            window.location.replace(url);
         }
     });
 }

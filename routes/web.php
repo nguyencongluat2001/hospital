@@ -140,7 +140,8 @@ Route::prefix('/client')->group(function () {
         // đặt lịch xét nghiệm , truyền tại nhà
         route::prefix('appointmentathome')->group(function(){
             Route::get('/index',[AppointmentAtHomeController::class,'index']);
-            
+            Route::get('/appointmentathome/{code}', [AppointmentAtHomeController::class, 'index_edit']);
+
             Route::get('/indexApointment',[AppointmentAtHomeController::class,'indexApointment']);
             Route::get('/tab1/{code}',[AppointmentAtHomeController::class,'tab1']);
 

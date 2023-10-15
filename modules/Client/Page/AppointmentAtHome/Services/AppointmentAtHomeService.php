@@ -40,7 +40,6 @@ class AppointmentAtHomeService extends Service
             // $code_schedule = $random.'_'.date("d").'_'.date("m").'_'.date("Y");
             $code = $random.date("d").date("m").date("Y");
             $param = [
-                'id' => (string)Str::uuid(),
                 'code'=> $code,
                 'code_patient'=> !empty($input['code_patient'])?$input['code_patient']:'',
                 'code_indications'=> !empty($input['code_indications'])?$input['code_indications']:'',
@@ -65,7 +64,13 @@ class AppointmentAtHomeService extends Service
             if(!empty($_SESSION['role'])){
                 $param['code_ctv'] = $_SESSION['code'];
             }
-            $create = $this->create($param);
+            if(!empty($input['id'] && $input['id'] != null)){
+                $create = $this->where('id',$input['id'])->update($param);
+            }else{
+                $param['id'] = (string)Str::uuid();
+                $create = $this->create($param);
+
+            }
             // thoong tin benh nhan
             $paramPatient = [
                 'code'=> $code,

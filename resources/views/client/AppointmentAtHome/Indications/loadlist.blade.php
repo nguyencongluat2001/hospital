@@ -57,6 +57,9 @@ use Modules\System\Recordtype\Helpers\WorkflowHelper;
                             <button onclick="JS_listIndications.exportExcel('{{$id}}')" class="btn"  type="button">
                                 <i style="color:#ffdb2e" class="fas fa-file-download"></i>
                             </button>
+                            <button onclick="JS_listIndications.edit('{{$id}}')" class="btn"  type="button">
+                                <i style="color:#2d5372" class="fas fa-marker"></i>
+                            </button>
                         </td>
                     </tr>
                    
