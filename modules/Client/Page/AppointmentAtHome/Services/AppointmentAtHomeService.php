@@ -164,11 +164,13 @@ class AppointmentAtHomeService extends Service
         $objPHPExcel->setActiveSheetIndex(0)->setCellValue("C13", $input['datas']['money'].' VND');
         $j = 1;
         $i = 15;
+        // dd($input['price']);
         foreach ($input['price'] as $value) {
+            $price = number_format($value['price'],0, '', ',');
             $objPHPExcel->setActiveSheetIndex(0)
                 ->setCellValue("A$i", $j)
                 ->setCellValue("B$i", $value['code'])
-                ->setCellValue("C$i", $value['name']);
+                ->setCellValue("C$i", $value['name']. ' - ('.$price.' VND)');
             $i++;
             $j++;
         }
