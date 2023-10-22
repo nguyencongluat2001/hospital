@@ -31,7 +31,7 @@
                                                 <button style="width:60px" id="txt_search" name="txt_search" type="button" class="btn btn-dark"><i class="fas fa-search"></i></button> -->
                                             </div>
                                             <!-- Màn hình danh sách -->
-                                            <span style="font-size:30px;font-family: initial;color:#3e3e99">Doanh thu 2023</span> <br>
+                                            <span style="font-size:30px;font-family: initial;color:#3e3e99">Báo cáo doanh thu</span> <br>
                                             <div id="total"></div>
                                             <canvas id="myChart" style="width:100%;max-width:950px"></canvas>
                                         </div>

@@ -395,10 +395,10 @@
                                                             <img style="width:100%;" class="card-img " src="../clients/img/qrluatnc.jpg" alt="Card image">
                                                         </div>
                                                         <div class="form-wrapper col-md-9 pt-3">
-                                                            <span>Số Tài khoản: 097871279812</span><br>
-                                                            <span>Tên chủ Tài khoản: Công ty Cổ phần Công nghệ Booking</span><br>
-                                                            <span>Ngân Hàng: Ngân hàng Thương mại cổ phần kỹ Thương Việt Nam (techcombank)</span><br>
-                                                            <span>Chi nhánh: Hội sở chính</span><br>
+                                                            <span>Số Tài khoản: 21210001038390</span><br>
+                                                            <span>Tên chủ Tài khoản: Nguyễn Thị Ngân</span><br>
+                                                            <span>Ngân Hàng: Ngân hàng BIDV</span><br>
+                                                            <span>Chi nhánh: Tây Hồ</span><br>
                                                             <span>Nội dung thanh toán:Tên khách hàng - số điện thoại - mã đặt lịch</span><br>
                                                         </div>
                                                     </div>
