@@ -178,26 +178,31 @@
                 <!-- Start Contact -->
                 <div class="list-hispital-home-one pt-5">
                     <section class="banner-bg">
-                        <div style="display:flex">
-                            <div style="width:15%;padding-left:10%;color:#8bebff">
-                                <i class="fas fa-syringe"></i>
+                        <div class="anime-car" style="display:flex">
+                            <div style="width:75%;padding-left:1%;color: #e0f7ffd9;font-family: 'Font Awesome 5 Brands';">
+                                <!-- <i class="fas fa-syringe"></i> -->
+                                <span style="font-size: 13px" id="time"></span>
+
                             </div>
-                            <div style="width:75%;padding-left:5%;color:#e1fff7">
+                            <!-- <div style="width:75%;color:#e1fff7">
                                 <marquee direction="right" scrollamount="5">
                                     <span>
                                         <i class="fas fa-ambulance"></i>
                                     </span> 
                                 </marquee>
-                            </div>
-                            <div style="width:15%;color:#ffb0d6">
+                            </div> -->
+                            <div style="width:15%;color:#ffd5d5">
                                 <!-- <i class="fas fa-user-nurse"></i> -->
                                 <i class="fas fa-heartbeat"></i>
+                                <i class="fas fa-heartbeat"></i>
+                                <i class="fas fa-heartbeat"></i>
+
                             </div>
                         </div>
                         
                         <!-- style="animation: lights 4s 750ms linear infinite;" -->
                         <center>
-                            <span class="text-title-home anime-title" style=" padding-top: 0px;">ĐẶT LỊCH KHÁM NHANH</span> <br>
+                            <span class="text-title-home anime-title" style=" padding-top: 20px;">ĐẶT LỊCH KHÁM NHANH</span> <br>
                             <div class="text-title-home anime-title">
                                 <span class="text-title-home">TẠI CÁC TUYẾN TRUNG ƯƠNG</span>
                             </div>
@@ -564,6 +569,45 @@ new Chart("myChart", {
 <script type="text/javascript" src="{{ URL::asset('dist/js/backend/client/JS_Home.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('dist/js/backend/client/JS_Facilities.js') }}"></script>
 <script src='../assets/js/jquery.js'></script>
+<script type="text/javascript" charset="utf-8">
+        let a;
+        let time;
+        var date = new Date().toLocaleDateString('en-GB')
+        var dayvn = new Date();
+        // Lấy số thứ tự của ngày hiện tại
+        var current_day = dayvn.getDay();
+        // Biến lưu tên của thứ
+        var day_name = '';
+
+        // Lấy tên thứ của ngày hiện tại
+        switch (current_day) {
+            case 0:
+                day_name = "Chủ nhật";
+                break;
+            case 1:
+                day_name = "Thứ hai";
+                break;
+            case 2:
+                day_name = "Thứ ba";
+                break;
+            case 3:
+                day_name = "Thứ tư";
+                break;
+            case 4:
+                day_name = "Thứ năm";
+                break;
+            case 5:
+                day_name = "Thứ sau";
+                break;
+            case 6:
+                day_name = "Thứ bảy";
+        }
+        setInterval(() => {
+            a = new Date();
+            time = day_name + ', ngày ' + date + ' ' + a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+            document.getElementById('time').innerHTML = time;
+        }, 1000);
+    </script>
 <script type="text/javascript">
     var baseUrl = "{{ url('') }}";
     var JS_Home = new JS_Home(baseUrl, 'client', 'home');
