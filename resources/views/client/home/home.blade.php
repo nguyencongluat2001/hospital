@@ -178,9 +178,26 @@
                 <!-- Start Contact -->
                 <div class="list-hispital-home-one pt-5">
                     <section class="banner-bg">
+                        <div style="display:flex">
+                            <div style="width:15%;padding-left:10%;color:#8bebff">
+                                <i class="fas fa-syringe"></i>
+                            </div>
+                            <div style="width:75%;padding-left:5%;color:#e1fff7">
+                                <marquee direction="right" scrollamount="5">
+                                    <span>
+                                        <i class="fas fa-ambulance"></i>
+                                    </span> 
+                                </marquee>
+                            </div>
+                            <div style="width:15%;color:#ffb0d6">
+                                <!-- <i class="fas fa-user-nurse"></i> -->
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                        </div>
+                        
                         <!-- style="animation: lights 4s 750ms linear infinite;" -->
                         <center>
-                            <span class="text-title-home anime-title" style=" padding-top: 20px;">ĐẶT LỊCH KHÁM NHANH</span> <br>
+                            <span class="text-title-home anime-title" style=" padding-top: 0px;">ĐẶT LỊCH KHÁM NHANH</span> <br>
                             <div class="text-title-home anime-title">
                                 <span class="text-title-home">TẠI CÁC TUYẾN TRUNG ƯƠNG</span>
                             </div>
