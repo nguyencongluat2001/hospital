@@ -132,7 +132,7 @@
         color: #ff4d00;
     }
     #menu_user{
-        background-color: #20538e;
+        background-color: #f6fffc8f;
         padding: 0.5rem 1rem;
         border-radius: 10px;
     }
@@ -206,7 +206,7 @@
                     @guest
                     @if (Route::has('login'))
                     <div class="hover-text">
-                        <a class="nav-link " href="{{ route('login') }}"><i class="fas fa-sign-in-alt fa-1x"></i></a>
+                        <a class="nav-link " href="{{ route('login') }}"><i style="color:#ffb783" class="fas fa-sign-in-alt fa-1x"></i></a>
                     </div>
                     <!-- <span class="tooltip-text" id="top">Đăng nhập</span> -->
 
@@ -241,7 +241,17 @@
                                     </a> -->
                             <a class="dropdown-item" href="{{ URL::asset('appointmentathome/tainha') }}">
                                 <p>
-                                    {{ __('Nhập chỉ định xét nghiệm') }}
+                                <i class="fas fa-pen-alt"></i>{{ __('Nhập chỉ định') }}
+                                </p>
+                            </a>
+                            <a class="dropdown-item" href="{{ URL::asset('client/appointmentathome/list_Indications')}}">
+                                <p>
+                                <i class="fas fa-clipboard-list"></i> {{ __('Danh sách chỉ định') }}
+                                </p>
+                            </a>
+                            <a class="dropdown-item" href="{{ URL::asset('client/appointmentathome/chart')}}">
+                                <p>
+                                <i class="fas fa-hand-holding-usd"></i> {{ __('Quản lý kinh doanh') }}
                                 </p>
                             </a>
                             <!-- <a class="dropdown-item">
@@ -256,22 +266,12 @@
                                     </a> -->
                             <a class="dropdown-item">
                                 <p>
-                                    {{ __('Mã CTV:') }} <span style="color:red;font-weight: 500;"> @if(!empty($_SESSION['code'])){{ $_SESSION['code'] }}@endif</span>
-                                </p>
-                            </a>
-                            <a class="dropdown-item" href="{{ URL::asset('client/appointmentathome/chart')}}">
-                                <p>
-                                    {{ __('Quản lý kinh doanh') }}
-                                </p>
-                            </a>
-                            <a class="dropdown-item" href="{{ URL::asset('client/appointmentathome/list_Indications')}}">
-                                <p>
-                                    {{ __('Danh sách chỉ định') }}
+                                <i class="fab fa-cc-discover"></i>  {{ __('Mã CTV:') }} <span style="color:red;font-weight: 500;"> @if(!empty($_SESSION['code'])){{ $_SESSION['code'] }}@endif</span>
                                 </p>
                             </a>
                             <a class="dropdown-item" href="{{ URL::asset('client/infor/index')}}">
                                 <p>
-                                    {{ __('Thông tin cá nhân') }}
+                                <i class="fas fa-user-nurse"></i> {{ __('Thông tin cá nhân') }}
                                 </p>
                             </a>
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
