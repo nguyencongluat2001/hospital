@@ -162,6 +162,24 @@
     border-left: 4px solid #ffd52d;
     border-bottom: 4px solid #ffd52d;
 }
+.timeLoad{
+    width: 75%;
+    color: #e0f7ffd9;
+    font-family: 'Font Awesome 5 Brands';
+}
+.icon-heart{
+    width: 25%;
+    color:#ffd5d5;
+    text-align: right;
+}
+.list-hispital-home-one .container{
+    margin-top: 2rem;
+}
+@media (max-width: 450px){
+    .list-hispital-home-one .container{
+        margin-top: unset;
+    }
+}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
@@ -178,27 +196,18 @@
                 <!-- Start Contact -->
                 <div class="list-hispital-home-one pt-5">
                     <section class="banner-bg">
-                        <div class="anime-car" style="display:flex">
-                            <div style="width:75%;padding-left:1%;color: #e0f7ffd9;font-family: 'Font Awesome 5 Brands';">
-                                <!-- <i class="fas fa-syringe"></i> -->
-                                <span style="font-size: 13px" id="time"></span>
-
+                        <div class="container">
+                        <div class="row">
+                            <div class="col-md-9 timeLoad">
+                                <span style="font-size: 16px" id="time"></span>
                             </div>
-                            <!-- <div style="width:75%;color:#e1fff7">
-                                <marquee direction="right" scrollamount="5">
-                                    <span>
-                                        <i class="fas fa-ambulance"></i>
-                                    </span> 
-                                </marquee>
-                            </div> -->
-                            <div style="width:15%;color:#ffd5d5">
-                                <!-- <i class="fas fa-user-nurse"></i> -->
+                            <div class="col-md-3 icon-heart">
                                 <i class="fas fa-heartbeat"></i>
                                 <i class="fas fa-heartbeat"></i>
                                 <i class="fas fa-heartbeat"></i>
 
                             </div>
-                        </div>
+                        </div></div>
                         
                         <!-- style="animation: lights 4s 750ms linear infinite;" -->
                         <center>
@@ -307,7 +316,7 @@
 </div>
 <!-- End Banner Hero -->
 <section class="service-wrapper py-3">
-    <div class=" row d-flex align-items-center">
+    <div class=" d-flex align-items-center">
         <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-left ">
             <div class="row g-lg-5 mb-4">
                 <!-- Start Recent Work -->
@@ -346,7 +355,7 @@
 
         </div>
     </div>
-    <div class=" row d-flex align-items-center">
+    <div class=" d-flex align-items-center">
         <!-- <div class="rowx">
             <span class="h2 text-center col-12 py-2" style="font-family:emoji">
                 <center> Cơ sở y tế</center>
@@ -500,11 +509,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
 <script>
-      $(document).ready(function () {
-      $('#select-state').selectize({
-          sortField: 'text'
-      });
-  });
+//       $(document).ready(function () {
+//       $('#select-state').selectize({
+//           sortField: 'text'
+//       });
+//   });
     //search home
 var expanded = false;
 function showCheckboxes1() {
@@ -640,7 +649,7 @@ new Chart("myChart", {
 </script>
 <script  type="text/javascript">
     $(document).ready(function() {
-        var placeholderText = '<?= $dataSearch ?>';
+        var placeholderText = '<?= $dataSearch ?? "" ?>';
         var arrData = placeholderText.split('!~!');
         $('#myInput').placeholderTypewriter({text: arrData});  
     })
