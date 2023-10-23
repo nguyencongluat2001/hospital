@@ -137,6 +137,15 @@
         border-radius: 10px;
 
     }
+    #menu_user .navbar-nav.acc_auth .hover-text a{
+        color: #fff;
+    }
+    #menu_user.btnUserRadius{
+        border-radius: 50%;
+        padding: 0;
+        width: 40px;
+        height: 40px;
+    }
 </style>
 <!-- Header -->
 <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow" style="top:0;padding-top:0px !important;padding-bottom: 0px !important;background:#ffffff!important;position: fixed;width: 100%;z-index: 1000;">
@@ -196,7 +205,7 @@
             </div>
         </div>
         <center>
-            <div id="{{isset($_SESSION['id']) ? 'menu_user' : 'btn_addMenu'}}" class="navbar navbar-expand-md shadow-sm menu_layout">
+            <div id="{{isset($_SESSION['id']) ? 'menu_user' : 'btn_addMenu'}}" class="navbar navbar-expand-md shadow-sm menu_layout {{isset($_SESSION['id']) ? 'btnUserRadius' : '' }}">
                 <!-- <button type="button" onclick="Js_Main.addMenu(this)" class="btn btn-light icon-menu-home" >Menu</button>  -->
                 <ul class="navbar-nav acc_auth">
                     <!-- Authentication Links -->
