@@ -135,17 +135,11 @@
         background-color: #20538e;
         padding: 0.5rem 1rem;
         border-radius: 10px;
-
     }
     #menu_user .navbar-nav.acc_auth .hover-text a{
         color: #fff;
     }
-    #menu_user.btnUserRadius{
-        border-radius: 50%;
-        padding: 0;
-        width: 40px;
-        height: 40px;
-    }
+
 </style>
 <!-- Header -->
 <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow" style="top:0;padding-top:0px !important;padding-bottom: 0px !important;background:#ffffff!important;position: fixed;width: 100%;z-index: 1000;">
