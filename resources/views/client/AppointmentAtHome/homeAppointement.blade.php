@@ -4,6 +4,9 @@
     form{
         width:80%;
     }
+    .expert .card-img{
+        width: unset !important;
+    }
 </style>
 <style> 
 .test {
@@ -422,14 +425,14 @@
     <!-- End Aim -->
 
     <!-- Start Contact -->
-    <section class="banner-bg bg-light">
+    <section class="banner-bg bg-light expert">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 mx-auto my-4 p-3">
+                <div class="mx-auto my-4 p-3" style="text-align: justify;">
                     <h1 style="color: #7fd6ff!important;font-family: serif;" class="h2 text-center title-appoinment">CHUYÊN GIA</h1>
                     <p><b>PGS TS Nguyễn Nghiêm Luật “Thầy phù thủy” mang lại sự sống với nhiều công trình nghiên cứu y khoa</b></p>
                     <p><b>Ở tuổi 72, PGS.TS Nguyễn Nghiêm Luật vẫn vững bước tiến lên trong sự nghiệp Y tế, vừa là Thầy thuốc, vừa là Thầy giáo, Nhà Nghiên cứu Khoa học được nhiều người yêu mến và quý trọng.</b></p>
-                    <img class="recent-work-img card-img" style="object-fit: cover;" src="{{url('/clients/img/giaosu.webp')}}" alt="Card image">
+                    <div align="center"><img class="recent-work-img card-img" style="object-fit: cover;" src="{{url('/clients/img/giaosu.webp')}}" alt="Card image"></div>
                     <br>
                     <p></p>
                     <p>PGS. TS Nguyễn Nghiêm Luật sinh ngày 14/10/1945, quê ở Lạng Sơn. Từ những năm 1970, sau khi tốt nghiệp, thầy đã là giảng viên bộ môn Hóa Sinh trường Đại học Y Hà Nội và không ngừng học hỏi, tìm tòi nghiên cứu khoa học và tiếp tục học lên cao với những công trình nghiên cứu mang tính ứng dụng và thực tiễn cao trong y học và cuộc sống. Từ tháng 10/1982 - 9/1983, PGS.TS Nguyễn Nghiêm Luật là Nghiên cứu sinh, Khoa Tiếng Anh, Trường Đại học Ngoại ngữ Hà Nội. Từ tháng 10/1983 - 5/1988 là Nghiên cứu sinh, Trường Đại học Y Szemmelweis, Budapest, Hungary. Bằng kinh nghiệm và năng lực của mình, năm 1999, PGS. TS Nguyễn Nghiêm Luật được tín nhiệm chức Phó Trưởng bộ môn Hóa Sinh trường Đại học Y Hà Nội. PGS.TS Nguyễn Nghiêm Luật còn là chủ biên của hai cuốn sách (Thực tập Hóa Sinh, Nhà xuất bản Y học, 2003 và Hóa Sinh Y học, Nhà xuất bản Y học, 2007) và tham gia biên soạn 7 cuốn sách Hóa sinh và Chuyên đề Hóa sinh.</p>

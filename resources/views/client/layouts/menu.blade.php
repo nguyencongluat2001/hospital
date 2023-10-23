@@ -53,7 +53,7 @@
 
     #navbar-toggler {
         position: absolute;
-        left: 0;
+        right: 0;
     }
 
     #navbar-toggler {
@@ -87,12 +87,55 @@
 
     @keyframes menu-show {
         0% {
-            left: -200px;
+            right: -200px;
         }
 
         100% {
-            left: 0;
+            right: 0;
         }
+    }
+    #dropdownMenu{
+        position: absolute;
+        transform-origin: top center;
+        animation: rotateX .5s ease-in-out
+    }
+    @keyframes rotateX {
+        0% {
+            opacity: 0;
+            transform: rotateX(-90deg);
+        }
+        50% {
+            transform: rotateX(-20deg);
+        }
+        100% {
+            opacity: 1;
+            transform: rotateX(0deg);
+        }
+    }
+    #btn_addMenu{
+        border-radius: 50%;
+        background-color: #20538e;
+        padding: 0;
+        width: 40px;
+        height: 40px;
+    }
+    #btn_addMenu .navbar-nav.acc_auth{
+        width: 100%;
+    }
+    #btn_addMenu .navbar-nav.acc_auth .hover-text{
+        width: 100%;
+    }
+    #btn_addMenu .navbar-nav.acc_auth .hover-text a{
+        color: #fff;
+    }
+    #btn_addMenu .navbar-nav.acc_auth .hover-text:hover a{
+        color: #ff4d00;
+    }
+    #menu_user{
+        background-color: #20538e;
+        padding: 0.5rem 1rem;
+        border-radius: 10px;
+
     }
 </style>
 <!-- Header -->
@@ -153,14 +196,14 @@
             </div>
         </div>
         <center>
-            <div id="btn_addMenu" class="navbar navbar-expand-md shadow-sm menu_layout">
+            <div id="{{isset($_SESSION['id']) ? 'menu_user' : 'btn_addMenu'}}" class="navbar navbar-expand-md shadow-sm menu_layout">
                 <!-- <button type="button" onclick="Js_Main.addMenu(this)" class="btn btn-light icon-menu-home" >Menu</button>  -->
-                <ul class="navbar-nav ms-auto acc_auth">
+                <ul class="navbar-nav acc_auth">
                     <!-- Authentication Links -->
                     @guest
                     @if (Route::has('login'))
                     <div class="hover-text">
-                        <a style="color:#ff4d00" class="nav-link " href="{{ route('login') }}"><i class="fas fa-sign-in-alt fa-1x"></i></a>
+                        <a class="nav-link " href="{{ route('login') }}"><i class="fas fa-sign-in-alt fa-1x"></i></a>
                     </div>
                     <!-- <span class="tooltip-text" id="top">Đăng nhập</span> -->
 
@@ -187,7 +230,7 @@
                         </span>
 
 
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu dropdown-menu-end" id="dropdownMenu" aria-labelledby="navbarDropdown">
                             <!-- <a class="dropdown-item" href="{{ URL::asset('/system/userInfo/index') }}">
                                             <p>
                                                 {{ __('Thông tin cá nhân') }}
