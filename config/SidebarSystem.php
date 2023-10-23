@@ -75,11 +75,11 @@ return [
         'a'    => 'nav-link link-faq',
         'href' => '/system/faq/index',
     ],
-    'report' => [
-        'name' => 'Báo cáo KPI',
+    'sql' => [
+        'name' => 'Quản trị DATA',
         'icon' => 'fas fa-hand-holding-usd',
-        'a'    => 'nav-link link-report',
-        'href' => '/system/report/index',
+        'a'    => 'nav-link link-sql',
+        'href' => '/system/sql/index',
     ],
    ],
    "EMPLOYEE" => [

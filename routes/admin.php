@@ -22,6 +22,7 @@ use Modules\System\Dashboard\AppointmentAtHome\Controllers\AppointmentAtHomeCont
 use Modules\System\Dashboard\BloodTest\Controllers\BloodTestController;
 use Modules\System\Dashboard\BloodTest\Controllers\PriceTestController;
 use Modules\System\Dashboard\Faq\Controllers\FaqController;
+use Modules\System\Dashboard\Sql\Controllers\SqlController;
 use Modules\System\Dashboard\UrlSearch\Controllers\UrlSearchController;
 
 
@@ -194,6 +195,15 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
                 Route::get('/create',[FaqController::class,'add']);
                 Route::post('/update',[FaqController::class,'update']);
                 Route::post('/delete',[FaqController::class,'delete']);
+            });
+             //quản trị data
+             Route::prefix('/sql')->group(function () {
+                //Hospital
+                Route::get('/index', [SqlController::class, 'index']);
+                Route::get('/loadList',[SqlController::class,'loadList']);
+                Route::get('/create',[SqlController::class,'add']);
+                Route::post('/update',[SqlController::class,'update']);
+                Route::post('/delete',[SqlController::class,'delete']);
             });
         });
     });
