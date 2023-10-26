@@ -99,9 +99,9 @@ class LoginController extends Controller
         }
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return view('auth.signin');
+        return redirect()->route('login');
     }
-    public function showLoginForm  (Request $request)
+    public function login  (Request $request)
     {
         return view('auth.signin');
     }

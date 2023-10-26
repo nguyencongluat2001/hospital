@@ -132,6 +132,15 @@
 #overSearch ul{
     padding-left: 0;
     margin-bottom: 0;
+    max-height: 45vh;
+    overflow-y: scroll;
+}
+#overSearch ul::-webkit-scrollbar {
+    width: 0.4rem;
+}
+#overSearch ul::-webkit-scrollbar-thumb {
+    background: #ffd52d;
+    border-radius: 0.2rem;
 }
 #overSearch .dropdown-item:active{
     background-color: #fff;

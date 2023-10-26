@@ -41,7 +41,7 @@ use Modules\Client\Page\MapController;
 Route::get('mapReport',  [MapController::class,'mapReport']);
 
 Route::post('/system/home', [LoginController::class, 'checkLogin'])->name('checkLogin');
-Route::get('/login', [LoginController::class, 'logout'])->name('login');
+Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::get('/system/login', [LoginController::class, 'logout'])->name('fromLogin');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::post('register/send-otp/sent_OTP', [UserController::class, 'sent_OTP']);
