@@ -53,7 +53,7 @@
 
     #navbar-toggler {
         position: absolute;
-        right: 0;
+        left: 0;
     }
 
     #navbar-toggler {
@@ -87,11 +87,11 @@
 
     @keyframes menu-show {
         0% {
-            right: -200px;
+            left: -200px;
         }
 
         100% {
-            right: 0;
+            left: 0;
         }
     }
     #dropdownMenu{
