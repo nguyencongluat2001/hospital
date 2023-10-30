@@ -21,6 +21,20 @@
     <div id="form_chat">
         <input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
         <section class="">
+            <div id="chatMesss" onclick="openPhone()">
+                <!-- <label for="checkbox1"> -->
+                <img width="" height="50px" style="background-color: none"
+                    src="../clients/img/phone.png" alt="">
+                </label>
+            </div>
+            <br>
+            <div id="chatMesss" onclick="openMessage()">
+                <!-- <label for="checkbox1"> -->
+                <img width="" height="50px" style="background-color: none"
+                    src="../clients/img/icon_messager.jpg" alt="">
+                </label>
+            </div>
+            <br>
             <div id="chatZalo" class="chatZaloClose">
                 <label for="checkbox1">
                 <img width="" height="50px" style="background-color: none"
@@ -75,6 +89,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/8.2.0/pusher.min.js"></script>
 <script>
+     function openMessage(){
+        var url = 'https://www.facebook.com/luat.nguyencong.3388?mibextid=LQQJ4d';
+        window.open(url, '_blank');
+    }
+     function openPhone(){
+        var phone = 'tel:024 39036555';
+        window.open(phone,'_blank');
+    }
     function showMessage(phone){
         $.ajax({
             url: '/chat/showMessage',
