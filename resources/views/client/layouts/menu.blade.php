@@ -288,9 +288,12 @@
                         </div>
                     </li>
                     @else
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a style="color:#ff9d00" class="nav-link" href="{{ route('login') }}">{{ __('Đăng nhập') }}</a>
-                    </li>
+                    </li> -->
+                    <div class="hover-text">
+                        <a class="nav-link " href="{{ route('login') }}"><i style="color:#ffb783" class="fas fa-sign-in-alt fa-1x"></i></a>
+                    </div>
                     @endif
                     @endguest
                 </ul>

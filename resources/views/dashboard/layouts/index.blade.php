@@ -105,9 +105,12 @@
                     <!-- Authentication Links -->
                     @guest
                         @if (Route::has('login'))
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Đăng nhập') }}</a>
-                            </li>
+                            </li> -->
+                            <div class="hover-text">
+                                <a class="nav-link " href="{{ route('login') }}"><i style="color:#ffb783" class="fas fa-sign-in-alt fa-1x"></i></a>
+                            </div>
                         @endif
 
                         @if (Route::has('register'))
@@ -186,9 +189,12 @@
                                 <!-- Authentication Links -->
                                 @guest
                                     @if (Route::has('login'))
-                                        <li class="nav-item">
+                                        <!-- <li class="nav-item">
                                             <a class="nav-link" href="{{ route('login') }}">{{ __('Đăng nhập') }}</a>
-                                        </li>
+                                        </li> -->
+                                        <div class="hover-text">
+                                            <a class="nav-link " href="{{ route('login') }}"><i style="color:#ffb783" class="fas fa-sign-in-alt fa-1x"></i></a>
+                                        </div>
                                     @endif
 
                                     @if (Route::has('register'))
