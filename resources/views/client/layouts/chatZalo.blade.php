@@ -35,13 +35,13 @@
                     src="../clients/img/zalo.png" alt="">
                 </label>
             </div>
+            <br>
             <div id="chatMesss" onclick="openPhone()">
                 <!-- <label for="checkbox1"> -->
                 <img width="" height="50px" style="background-color: none"
                     src="../clients/img/phone.png" alt="">
                 </label>
             </div>
-            <br>
         </section>
         <section class="avenue-messenger chatZalo transform" id="pDetails">
             <div class="menu">
