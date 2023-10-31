@@ -53,7 +53,7 @@
                 </div>
                 <div class="agent-face">
                     <div class="half">
-                        <img class="agent circle" src="https://vcdn.subiz-cdn.com/widget-v4/public/assets/img/default_avatar.5b74dc1.png" alt="Jesse Tino">
+                        <img class="agent circle" src="../clients/img/support.jpg" alt="Jesse Tino">
                     </div>
                 </div>
             </div>
