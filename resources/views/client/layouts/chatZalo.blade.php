@@ -29,7 +29,12 @@
                 </label>
             </div>
             <br>
-
+            <div id="chatZalo" class="chatZaloClose">
+                <label for="checkbox1">
+                <img width="" height="50px" style="background-color: none"
+                    src="../clients/img/zalo.png" alt="">
+                </label>
+            </div>
             <div id="chatMesss" onclick="openPhone()">
                 <!-- <label for="checkbox1"> -->
                 <img width="" height="50px" style="background-color: none"
@@ -37,12 +42,6 @@
                 </label>
             </div>
             <br>
-            <div id="chatZalo" class="chatZaloClose">
-                <label for="checkbox1">
-                <img width="" height="50px" style="background-color: none"
-                    src="../clients/img/zalo.png" alt="">
-                </label>
-            </div>
         </section>
         <section class="avenue-messenger chatZalo transform" id="pDetails">
             <div class="menu">
