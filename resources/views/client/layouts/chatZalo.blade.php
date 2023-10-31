@@ -21,6 +21,13 @@
     <div id="form_chat">
         <input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
         <section class="">
+            
+            <div id="chatMesss" onclick="openMessage()">
+                <!-- <label for="checkbox1"> -->
+                <img width="" height="50px" style="background-color: none"
+                    src="../clients/img/icon_messager.jpg" alt="">
+                </label>
+            </div>
             <div id="chatMesss" onclick="openPhone()">
                 <!-- <label for="checkbox1"> -->
                 <img width="" height="50px" style="background-color: none"
@@ -28,13 +35,8 @@
                 </label>
             </div>
             <br>
-            <div id="chatMesss" onclick="openMessage()">
-                <!-- <label for="checkbox1"> -->
-                <img width="" height="50px" style="background-color: none"
-                    src="../clients/img/icon_messager.jpg" alt="">
-                </label>
-            </div>
             <br>
+            
             <div id="chatZalo" class="chatZaloClose">
                 <label for="checkbox1">
                 <img width="" height="50px" style="background-color: none"

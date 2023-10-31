@@ -31,7 +31,7 @@ foreach($customerCare as $key => $value){
         @endif
         <div class="input-group-btn messageClose" id="messageCustomer">
             <label class="" for="message">
-                <img width="70px" height="70px" style="background-color: none" src="../clients/img/chatnhanh.png" alt="">
+                <img width="70px" height="70px" style="background-color: none" src="../clients/img/support.jpg" alt="">
             </label>
         </div>
     </span>
