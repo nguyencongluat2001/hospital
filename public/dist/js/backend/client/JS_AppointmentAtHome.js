@@ -159,14 +159,14 @@ JS_AppointmentAtHome.prototype.add = function (oForm) {
         NclLib.alerMesageClient(nameMessage,icon,color,background);
         return false;
     }
-    if ($("#hour_sampling").val() == '') {
-        var nameMessage = 'Giờ lấy mẫu không được để trống!';
-        var icon = 'warning';
-        var color = '#ffd200';
-        var background = 'rgb(33 41 68)';
-        NclLib.alerMesageClient(nameMessage,icon,color,background);
-        return false;
-    }
+    // if ($("#hour_sampling").val() == '') {
+    //     var nameMessage = 'Giờ lấy mẫu không được để trống!';
+    //     var icon = 'warning';
+    //     var color = '#ffd200';
+    //     var background = 'rgb(33 41 68)';
+    //     NclLib.alerMesageClient(nameMessage,icon,color,background);
+    //     return false;
+    // }
     if ($("#address").val() == '') {
         var nameMessage = 'Địa chỉ chi tiết không được để trống!';
         var icon = 'warning';
@@ -175,14 +175,14 @@ JS_AppointmentAtHome.prototype.add = function (oForm) {
         NclLib.alerMesageClient(nameMessage,icon,color,background);
         return false;
     }
-    if ($("#reason").val() == '') {
-        var nameMessage = 'Bạn chưa nêu lý do khám!';
-        var icon = 'warning';
-        var color = '#ffd200';
-        var background = 'rgb(33 41 68)';
-        NclLib.alerMesageClient(nameMessage,icon,color,background);
-        return false;
-    }
+    // if ($("#reason").val() == '') {
+    //     var nameMessage = 'Bạn chưa nêu lý do khám!';
+    //     var icon = 'warning';
+    //     var color = '#ffd200';
+    //     var background = 'rgb(33 41 68)';
+    //     NclLib.alerMesageClient(nameMessage,icon,color,background);
+    //     return false;
+    // }
     $.ajax({
         url: url,
         type: "POST",

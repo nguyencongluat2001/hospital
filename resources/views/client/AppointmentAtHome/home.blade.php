@@ -327,7 +327,7 @@
                                                     </div>
                                                     <div class="form-input col-md-6 padding-style">
                                                         <label for="">Giờ lấy mẫu</label>
-                                                        <select style="color:#757e87" class="form-control input-sm chzn-select required" name="hour_sampling" id="hour_sampling">
+                                                        <select style="color:#757e87" class="form-control input-sm chzn-select" name="hour_sampling" id="hour_sampling">
                                                             <option  value=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chọn giờ lấy mẫu  </option>
                                                             <option value="05h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;05 giờ 30 phút</option>
                                                             <option value="06h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;06 giờ 00 phút</option>
@@ -374,9 +374,9 @@
                                                 </div>
                                                 <div class="row mt-3">
                                                     <div class="form-input col-md-12 padding-style">
-                                                        <textarea style="height:100px" class="form-control required" placeholder="Triệu chứng lâm sàng ..." name="reason" id="reason" value="{{!empty($getInfo->reason)?$getInfo->reason:''}}" oninput="inValid(this.id)"rows="4" cols="50"></textarea>
+                                                        <textarea style="height:100px" class="form-control" placeholder="Triệu chứng lâm sàng ..." name="reason" id="reason" value="{{!empty($getInfo->reason)?$getInfo->reason:''}}" oninput="inValid(this.id)"rows="4" cols="50"></textarea>
                                                         <i class="fas fa-comment-dots uname-icon padding-style"></i>
-                                                        <span class="message-error uname-error">Triệu chứng lâm sàng không được để trống!</span>
+                                                        <!-- <span class="message-error uname-error">Triệu chứng lâm sàng không được để trống!</span> -->
                                                     </div>
                                                 </div>
                                                 <!-- // -->
