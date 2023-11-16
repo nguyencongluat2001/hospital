@@ -166,7 +166,7 @@
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
     height: 100%;
-    /* position: absolute; */
+    position: absolute;
     border-top: 4px solid #ffd52d;
     border-left: 4px solid #ffd52d;
     border-bottom: 4px solid #ffd52d;
