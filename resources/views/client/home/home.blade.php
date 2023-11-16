@@ -114,7 +114,7 @@
 #myInput{
     background-color: #ffffffb5;
     padding-left: 50px;
-    /* outline: none; */
+    outline: none;
 }
 .form-control:focus{
     outline: none;
