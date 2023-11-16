@@ -61,7 +61,6 @@ class HomeController extends Controller
             $dataSearch .= $val['name'] . '!~!';
         }
         $datas['dataSearch'] = trim($dataSearch, '!~!');
-        
         return view('client.home.home',$datas);
     }
     

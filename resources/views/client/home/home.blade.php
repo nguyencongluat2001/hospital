@@ -326,7 +326,7 @@
 <!-- End Banner Hero -->
 <section class="service-wrapper py-3">
     <div class=" d-flex align-items-center">
-        <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-left ">
+        <div class="banner-content col-lg-10 col-10 offset-1 m-lg-auto text-left ">
             <div class="row g-lg-5 mb-4">
                 <!-- Start Recent Work -->
                 <!-- background: #00000075; -->
@@ -335,8 +335,10 @@
                         <img class="recent-work-img card-img" style="height: 250px;object-fit: cover;" src="{{url('/clients/img/laymautainha.jpeg')}}" alt="Card image">
                         <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                             <div style="border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                                <h3 style="font-size: 23 !important;font-family: serif;color: white;font-weight: 700;">Dịch vụ lấy máu tại nhà</h3>
-                                <span style="color:#caefff" class="blogReader">Lấy mẫu xét nghiệm tại nhà giúp khách hàng chủ động tầm soát bệnh lý. Đồng thời tiết kiệm thời gian đi lại, chờ đợi kết quả với mức chi phí hợp lý.</span> <br>
+                               <div style="background: #ffe040;padding: 10px;border-radius: 10px; color: #002671;">
+                                    <h3 style="font-size: 23 !important;font-family: serif;color: #3089d6;font-weight: 700;">Dịch vụ lấy máu tại nhà</h3>
+                                    <span class="blogReader">Giúp khách hàng chủ động tầm soát bệnh lý. Đồng thời tiết kiệm thời gian đi lại, chờ đợi kết quả với mức chi phí hợp lý.</span> <br>
+                               </div>
                                 <center>
                                         <span style="background: #f1fffd;color: #0d1226;width: 150px;" class="btn btn-outline-light rounded-pill">Đặt lịch</span>
                                 </center>
@@ -350,8 +352,10 @@
                         <img class="recent-work-img card-img" style="height: 250px;object-fit: cover;" src="{{url('/clients/img/truyentainha1.jpeg')}}" alt="Card image">
                         <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                             <div style="border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                                <h3 style="font-size: 23 !important;font-family: serif;color: white;font-weight: 700;">Dịch vụ truyền dịch tại nhà</h3>
-                                <span style="color:#caefff" class="blogReader">Truyền dịch tại nhà giúp khách hàng được chăm sóc tại chính ngôi nhà của bạn hơn thế tiết kiệm thời gian đi lại, mức chi phí hợp lý.</span> <br>
+                                <div style="background: #ffe040;padding: 10px;border-radius: 10px; color: #002671;">
+                                    <h3 style="font-size: 23 !important;font-family: serif;color: #3089d6;font-weight: 700;">Dịch vụ truyền dịch tại nhà</h3>
+                                    <span  class="blogReader">Giúp khách hàng được chăm sóc tại chính ngôi nhà của bạn hơn thế tiết kiệm thời gian đi lại, mức chi phí hợp lý.</span> <br>
+                                </div>
                                 <center>
                                         <span style="background: #f1fffd;color: #0d1226;width: 150px;" class="btn btn-outline-light rounded-pill">Đặt lịch</span>
                                 </center>
@@ -370,17 +374,19 @@
                 <center> Cơ sở y tế</center>
             </span>
         </div> -->
-        <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-left pt-5">
+        <div class="banner-content col-lg-10 col-10 offset-1 m-lg-auto text-left pt-5">
             <div class="row g-lg-5 mb-4">
                 @foreach ($datas as $key => $data)
                 <div class="col-md-4 mb-4">
                     <a href="{{url('/facilities')}}/{{$data->code}}" class="recent-work card border-0 shadow-lg overflow-hidden">
                         <img class="recent-work-img card-img" style="height: 250px;object-fit: cover;" src="{{url('/file-image-client/avatar-hospital/')}}/{{ !empty($data->avatar)?$data->avatar:'' }}" alt="Card image">
                         <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                            <div style="background: radial-gradient(#000000c2, transparent);border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                                <h3 class="card-title" style="font-size: 23 !important;">{{$data->name_hospital}}</h3>
-                                <!-- <span style="color:#ecfaff;padding:10px;font-size: 14 !important;"><i class="fas fa-map-marker-alt"></i> {{$data->address}}</span><br><br> -->
-                                <span style="color: #ffd100" class="btn btn-outline-light rounded-pill">Đặt lịch khám</span>
+                            <div style="background: white;border-radius: 5px;width: 100%;padding: 15px;" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                <center>
+                                    <h3 class="card-title" style="color:#3e9bc4;font-size: 23px !important;font-weight: 700;">{{$data->name_hospital}}</h3>
+                                    <!-- <span style="color:#ecfaff;padding:10px;font-size: 14 !important;"><i class="fas fa-map-marker-alt"></i> {{$data->address}}</span><br><br> -->
+                                    <span style="color: #ffd100;background: #3785d1;" class="btn btn-outline-light rounded-pill">Đặt lịch khám</span>
+                                </center>
                             </div>
                         </div>
                     </a>
@@ -395,9 +401,9 @@
     </div>
     <div class="container-fluid pb-3">
         <div class="row">
-            <h2 class="h2 text-center col-12 py-2">Vai trò của Booking</h2>
+            <h2 class="h2 text-center col-12 py-2">Vai trò</h2>
         </div>
-        <p class="col-10 offset-1 col-lg-10 text-start pb-3 text-muted px-2">
+        <p class="col-8 offset-2 col-lg-8 text-start pb-3 text-muted px-2">
             &nbsp; &nbsp;&nbsp; BookingCare giúp bệnh nhân dễ dàng lựa chọn đúng bác sĩ từ mạng lưới bác sĩ chuyên khoa giỏi, với thông tin đã xác thực và đặt lịch nhanh chóng. Bác sĩ chuyên khoa giỏi, được nhiều bệnh nhân tin tưởng, đồng nghiệp đánh giá cao, có uy tín trong ngành. Các bác sĩ đã, đang công tác tại các bệnh viện hàng đầu như: Bệnh viện Bạch Mai, Bệnh Viện Việt Đức, Bệnh viện TW Quân đội 108, Bệnh viện Quân Y 103, Bệnh viện Nhi TW, Bệnh viện Tai Mũi Họng TW, Viện Tim mạch Việt Nam, Bệnh viện Chợ Rẫy, Bệnh viện Đại học Y dược TP.HCM, Bệnh viện Nhân dân 115…
             .Các bác sĩ có lịch khám tại các bệnh viện công lớn hoặc phòng khám tư nhân uy tín, được chọn lọc kỹ lưỡng tại Hà Nội và TP.HCM. Bên cạnh đó, hệ thống ghi nhận ý kiến đánh giá phản hồi của bệnh nhân sau khi đi khám và phương án điều trị của từng bác sĩ. Từ đó chúng tôi có thêm thông tin để giới thiệu trên hệ thống những bác sĩ uy tín, chuyên môn cao. <br>
         </p>
@@ -430,7 +436,7 @@
 <section class="service-wrapper py-3">
     <div class="service-tag py-5 popular-specialties">
         <div class="col-md-12">
-            <h2 class="h2 text-center col-12 py-2">Chuyên khoa phổ biến</h2>
+            <h2 class="h2 text-center col-12 py-2">Chuyên khoa</h2>
         </div>
         <div class="container py-5">
             <div class="row gx-sm-3 gx-lg-5 gy-lg-5 gy-3 pb-3 projects">
@@ -457,7 +463,7 @@
 <section class="service-wrapper py-3">
     <div class="service-tag py-5 popular-specialties">
         <div class="col-md-12">
-            <h2 class="h2 text-center col-12 py-2">Bác sĩ nổi bật</h2>
+            <h2 class="h2 text-center col-12 py-2">Bác sĩ</h2>
         </div>
         <div class="pt-2 py-5 pb-3 d-lg-flex align-items-center gx-5" style="padding:10%">
             <div class="col-lg-12 row align-items-center">

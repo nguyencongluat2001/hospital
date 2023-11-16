@@ -30,8 +30,6 @@ JS_Home.prototype.loadIndex = function () {
     NclLib.menuActive('.link-home');
     $('.chzn-select').chosen({ height: '100%', width: '100%' });
 
-    //lấy tất cả chỉ số theo tiêu thức lọc
-    myClass.loadList();
     //lấy danh sách bài viết
     myClass.loadListBlog(oFormBlog);
     
