@@ -248,6 +248,15 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-4 mx-auto " style="display:flex">
+                                            <div class="input-group pt-2 box">
+                                                <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg rounded-pill rounded" placeholder="Từ kiếm tên chuyên khoa..." aria-label="Từ kiếm tên chuyên khoa..">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             <center>
                             <div class="banner-content col-lg-4 offset-1 col-10 m-lg-auto text-center " style="display: flex ;padding-top:50px">
                                <div class="col-md-6 mb-4">
