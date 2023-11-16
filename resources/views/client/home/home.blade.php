@@ -225,8 +225,7 @@
                                 <span class="text-title-home">TẠI CÁC TUYẾN TRUNG ƯƠNG</span>
                             </div>
                         </center>
-                        <!-- <div class="banner-content col-lg-12 offset-2 col-8 m-lg-auto"> -->
-                        <div class="">
+                        <div class="banner-content col-lg-12 offset-2 col-8 m-lg-auto">
                              <div class="container">
                                 <div class="row">
                                     <div class="col-lg-5 mx-auto ">
