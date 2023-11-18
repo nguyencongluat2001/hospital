@@ -263,7 +263,7 @@
                     </section>
                 </div>
                 <!-- End Contact -->
-                <div class="carousel-item active list-hispital-home pt-3" >
+                <div class="carousel-item active list-hispital-home pt-5" >
                     <div class=" row d-flex align-items-center">
                         <div class="banner-content col-lg-8 offset-1 col-10 m-lg-auto text-center ">
                          <div class="row g-lg-5 mb-4">
