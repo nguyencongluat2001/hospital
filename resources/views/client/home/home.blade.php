@@ -230,7 +230,7 @@
                              <div class="container">
                                 <div class="row">
                                     <div class="col-lg-5 mx-auto ">
-                                        <div style="width: 100%;position: relative;">
+                                        <div style="width: 100%;position: relative;z-index:10">
                                             <div class="form-search form-group">
                                                 <!-- <input type="text" class="form-control" name="search" id="search" style="height:40px" placeholder="Từ khóa tìm kiếm..." onkeydown="if (event.key == 'Enter'){JS_ApprovePayment.search();return false;}" fdprocessedid="wmlzr9"> -->
                                                 <button type="button" class="btn" id="txt_search"><i class="fas fa-search" aria-hidden="true"></i></button>
