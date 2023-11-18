@@ -265,7 +265,7 @@ footer a.text-light:hover {
   /* padding: 10px;
   width: 100%;
   height: 50px; */
-  background: #fff18bb5;
+  /* background: #fff18bb5;
   border: 4px solid #ffd52d;
   border-radius: 50px;
   box-sizing: border-box;
@@ -273,7 +273,7 @@ footer a.text-light:hover {
   font-size: 14px;
   color: #5f8eb1;
   outline: none;
-  transition: .5s;
+  transition: .5s; */
 }
 .box i{
   position: absolute;
