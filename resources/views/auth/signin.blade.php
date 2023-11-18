@@ -14,18 +14,18 @@
 </style>
 <link rel="stylesheet" href="../clients/css/style.css">
 
-<div class="mt-2 mb-2" style="padding-top:13%; background-image: url('/clients/img/thdog-photo.jpg');background-size: cover;">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-7" style="height:600px">
-                <div class="card" style="background:#20364b94;">
-                    <div class="wrapper" style=" display: flex; justify-content: center;">
+<div class="mt-2" style="background-image: url('/clients/img/thdog-photo.jpg');background-size: cover;">
+    <div style="background:#20364b94;">
+        <div class="row justify-content-center" style="height:800px; ">
+            <div class="col-md-7" style="">
+                <!-- <div class="card" style="background:#20364b94;"> -->
+                    <div class="wrapper" style="display: flex; justify-content: center;padding-top:180px; ">
                         <!-- <div class="inner"> -->
                         <form method="POST" action="{{ route('checkLogin') }}" autocomplete="off">
                             <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
                             <div class="form-group" align="center">
                                 <div class="col-md-12 mt-3 mb-3">
-                                    <h3 class="text-uppercase" style="font-family: Serif;color:#ffffff">Đăng nhập</h3>
+                                    <h3 class="text-uppercase" style="font-family: Serif;color:#ffd862">Đăng nhập</h3>
                                 </div>
                             </div>
                             
@@ -69,7 +69,7 @@
                         </form>
                         <!-- </div> -->
                     </div>
-                </div>
+                <!-- </div> -->
             </div>
         </div>
     </div>
