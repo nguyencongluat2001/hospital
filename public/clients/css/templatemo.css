@@ -268,12 +268,12 @@ footer a.text-light:hover {
   background: #fff18bb5;
   border: 4px solid #ffd52d;
   border-radius: 50px;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
   font-family: 'FontAwesome';
   font-size: 14px;
   color: #5f8eb1;
   outline: none;
-  transition: .5s;
+  /* transition: .5s; */
 }
 .box i{
   position: absolute;
