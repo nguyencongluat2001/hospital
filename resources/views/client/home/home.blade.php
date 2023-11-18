@@ -233,7 +233,7 @@
                                             <div class="form-search form-group">
                                                 <!-- <input type="text" class="form-control" name="search" id="search" style="height:40px" placeholder="Từ khóa tìm kiếm..." onkeydown="if (event.key == 'Enter'){JS_ApprovePayment.search();return false;}" fdprocessedid="wmlzr9"> -->
                                                 <button type="button" class="btn" id="txt_search"><i class="fas fa-search" aria-hidden="true"></i></button>
-                                                <input id="myInput" type="text" class="input form-control form-control-lg" placeholder="Tìm kiếm từ khóa..." aria-label="Tìm kiếm từ khóa..." onkeypress="filterSearch()" autocomplete="off">
+                                                <input id="myInput" type="text" class=" form-control form-control-lg" placeholder="Tìm kiếm từ khóa..." aria-label="Tìm kiếm từ khóa..." onkeypress="filterSearch()" autocomplete="off">
                                             </div>
                                             @if(isset($search) && count($search) > 0)
                                             <div id="overSearch" class="closed">
