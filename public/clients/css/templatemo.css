@@ -270,8 +270,8 @@ footer a.text-light:hover {
   border-radius: 50px;
   box-sizing: border-box;
   font-family: 'FontAwesome';
-  /* font-size: 14px;
-  color: #5f8eb1;
+  font-size: 14px;
+  /* color: #5f8eb1;
   outline: none;
    transition: .5s; */
 }
