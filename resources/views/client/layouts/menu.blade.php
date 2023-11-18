@@ -114,7 +114,7 @@
     }
     #btn_addMenu{
         border-radius: 50%;
-        background-color: #20538e;
+        background-color: #ffffff;
         padding: 0;
         width: 40px;
         height: 40px;
@@ -153,14 +153,14 @@
         <!-- <a class="" style="width: 7%;" href="{{url('/')}}">
                 <img class="card-img " src="../clients/img/logo.png" alt="Card image">
             </a> -->
-        <div style="width:8%">
+        <div class="image-logo">
             <img class="card-img " src="../clients/img/logo.png" alt="Card image">
         </div>
 
-        <a class="navbar-brand h1" href="{{ url('/') }}">
+        <a class="navbar-brand h1 navbar-brand-text" href="{{ url('/') }}">
             <!-- <img class="card-img " src="../clients/img/logo.png" alt="Card image"> -->
             <!-- <i class='bx bx-buildings bx-sm text-dark'></i> -->
-            <span style="color: #ffbc00!important;" class="text-dark h5">Booking</span> <sup style="color:#32a5c2"></sup>
+            <span style="color: #ffbc00!important;" class="text-dark h4">Booking</span> <sup style="color:#32a5c2"></sup>
         </a>
 
 

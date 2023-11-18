@@ -296,10 +296,6 @@
                                     </div>
                                     <div style="color: #121213bf;font-weight: 600;font-size: 13px;">Truyền dịch</div>
                                 </a>
-                                <!-- <a href="{{ url('/package') }}" type="button" class="btn btn-light icon-menu-home" style="width:140px;color: #f2ffff;background: none;">
-                                    <i class="fas fa-file-medical"></i>   <br>
-                                    <span>Gói khám</span><br>
-                                    </a> -->
                                 <a href="{{ url('/searchschedule') }}" type="button" class="btn icon-menu-home" style="width:140px;color: #f2ffff;background: none;">
                                     <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
                                         <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/tra-cuu.png);background-size: 40px;background-repeat: no-repeat;background-position: center;"></div>
@@ -312,10 +308,8 @@
                                     </div>
                                     <div style="color: #121213bf;font-weight: 600;font-size: 13px;">Đánh giá</div>
                                 </a>
-                            </div><!-- End Recent Work -->
+                            </div>
                         </div>                               
-                            <!-- <center><span class="famous-saying">"Chỉ khi người giàu ốm họ mới thực hiểu sự bất lực của giàu sang"</span></center> -->
-
                         </div>
                     </div>
                 </div>
