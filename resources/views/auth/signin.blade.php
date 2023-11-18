@@ -8,7 +8,7 @@
     }
 
     .form-control {
-        color: #fff079;
+        color: #000000;
         background:#ffffff !important;
     }
 </style>
@@ -24,7 +24,7 @@
                             <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
                             <div class="form-group" align="center">
                                 <div class="col-md-12 mt-3 mb-3">
-                                    <h3 class="text-uppercase" style="font-family: Serif;color:#ffd862">Đăng nhập</h3>
+                                    <h3 class="text-uppercase" style="font-family: Serif;color:#ffd862;font-weight: 600;">Đăng nhập</h3>
                                 </div>
                             </div>
                             
@@ -56,7 +56,7 @@
                                 </div>
                                 @endif
                                 <div class="col-md-12 mb-3" style="display: flex;justify-content: space-between;">
-                                    <button type="submit" class="btn btn-primary" style="background-color: #ffb600">
+                                    <button type="submit" class="btn btn-primary" style="background-color: #ffb600;color: white;">
                                         {{ __('Đăng nhập') }}
                                     </button>
                                 </div>

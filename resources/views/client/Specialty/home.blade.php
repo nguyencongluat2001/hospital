@@ -55,15 +55,14 @@
     <form action="" method="GET" id="frmSpecialty">
     <input style="display:none" type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
         <div class="banner-wrapper bg-light" >
-            <div id="index_banner_facilities" class="banner-vertical-center-index">
+        <!-- id="index_banner_facilities" -->
+            <div  class="banner-vertical-center-index" style="background-image: url('/clients/img/bookingcare-cover-4.jpg');background-size: cover;background-position: center center;">
             <!-- <div class="banner-vertical-center-index" style="background:#163048d4"> -->
-                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner active pt-4" >
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="background: #5a7d924a;">
                         <div class="list-hispital-home-one pt-5">
                             <section class="banner-bg">
-                                <!-- <span  class="text-title-home "><center> CHUYÊN KHOA -  PHÒNG KHÁM</center></span> -->
                                 <center>
-                                    <span class="text-title-home anime-title" style=" padding-top: 20px;">ĐẶT LỊCH KHÁM NHANH</span> <br>
+                                    <span class="text-title-home anime-title" style=" padding-top: 30px;">ĐẶT LỊCH KHÁM NHANH</span> <br>
                                     <div class="text-title-home anime-title"> 
                                         <span  class="text-title-home anime-title-span">CHUYÊN KHOA -  PHÒNG KHÁM</span>
                                     </div>
@@ -79,40 +78,31 @@
                                 </div>
                             </section>
                         </div>
-
-                        <div class="carousel-item active list-hispital-home pt-5">
-                            <div class=" row d-flex align-items-center">
-                                <div class="banner-content col-lg-12 col-12 m-lg-auto text-left ">
-                                        <!-- Start Our Work -->
-                                        <section class="container">
-                                            <table id="myTable" class="table  table-bordered table-striped table-condensed dataTable no-footer">
-                                                <tbody>
-                                                    @foreach ($datas as $key => $data)
-                                                        <tr>
-                                                            <td style="background: #ffffffeb;width:30%;vertical-align: middle;" align="center">
-                                                                <a class="pb-5" style="text-decoration: none" href="{{url('/specialty')}}/{{$data->code}}">
-                                                                    <img  src="{{url('/file-image-client/avatar-specialty/')}}/{{ !empty($data->avatar)?$data->avatar:'' }}" alt="Image" style="height: 180px;width: 180px;object-fit: cover;">
-                                                                    <span style="padding-left:10px;font-size: 40px;font-family: -webkit-body;color: #1d3952;">{{ $key + 1 }}.&nbsp;{{$data->name_specialty}}</span> <br>
-                                                                    <!-- <a class="pb-5"  href="{{url('/specialty')}}/{{$data->code}}">
-                                                                        <span style="background: #32870b;color: #ffffff;" class="btn btn-outline-light rounded-pill">Xem chi tiết</span>
-                                                                    </a> -->
-                                                                </a>
-                                                            </td>
-                                                            
-                                                            <!-- <td style="background: #ffffffeb;width:70%;vertical-align: middle;" align="center">
-                                                                <span style="padding-left:10px;font-size: 40px;font-family: -webkit-body;color: #1d3952;">{{ $key + 1 }}.&nbsp;{{$data->name_specialty}}</span> <br>
-                                                                <a class="pb-5"  href="{{url('/specialty')}}/{{$data->code}}">
-                                                                    <span style="background: #32870b;color: #ffffff;" class="btn btn-outline-light rounded-pill">Xem chi tiết</span>
-                                                                </a>
-                                                            </td> -->
-                                                        </tr>
-                                                    @endforeach
-                                                </tbody>
-                                            </table>
-                                        </section>
-                                        <!-- End Our Work -->
-                                    </div>
-                                </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-inner active" >
+                <div class="carousel-item active list-hispital-home pt-5">
+                    <div class=" row d-flex align-items-center">
+                        <div class="banner-content col-lg-12 col-12 m-lg-auto text-left ">
+                                <!-- Start Our Work -->
+                                <section class="container">
+                                    <table id="myTable" class="table  table-bordered table-striped table-condensed dataTable no-footer">
+                                        <tbody>
+                                            @foreach ($datas as $key => $data)
+                                                <tr>
+                                                    <td style="background: #ffffffeb;width:30%;vertical-align: middle;" align="center">
+                                                        <a class="pb-5" style="text-decoration: none" href="{{url('/specialty')}}/{{$data->code}}">
+                                                            <img  src="{{url('/file-image-client/avatar-specialty/')}}/{{ !empty($data->avatar)?$data->avatar:'' }}" alt="Image" style="height: 180px;width: 180px;object-fit: cover;">
+                                                            <span style="padding-left:10px;font-size: 40px;font-family: -webkit-body;color: #1d3952;">{{ $key + 1 }}.&nbsp;{{$data->name_specialty}}</span> <br>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </section>
+                                <!-- End Our Work -->
                             </div>
                         </div>
                     </div>
