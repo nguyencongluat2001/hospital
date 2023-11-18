@@ -21,10 +21,10 @@
         color:#ffffff;
     }
     .form-control{
-        color:#fff079;
+        color:#ffffff;
     }
 </style>
-<div class="container mt-2 mb-2">
+<div class="container mt-2 mb-2" >
     <div class="row justify-content-center">
         <div class="col-md-7">
             <div class="card" style="background:#000000d6;">

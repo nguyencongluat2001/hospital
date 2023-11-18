@@ -160,7 +160,7 @@
         <a class="navbar-brand h1 navbar-brand-text" href="{{ url('/') }}">
             <!-- <img class="card-img " src="../clients/img/logo.png" alt="Card image"> -->
             <!-- <i class='bx bx-buildings bx-sm text-dark'></i> -->
-            <span style="color: #ffbc00!important;" class="text-dark h4">Booking</span> <sup style="color:#32a5c2"></sup>
+            <span style="color: #ffbc00!important;font-family: serif;" class="text-dark h4">Booking</span> <sup style="color:#32a5c2"></sup>
         </a>
 
 

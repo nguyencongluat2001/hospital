@@ -21,12 +21,11 @@
         color:#ffffff;
     }
     .form-control{
-        color:#fff079;
+        color:#ffffff;
     }
 </style>
-<div class="container mt-2 mb-2 " style="padding-top:4%">
+<div class=" mt-2 mb-2 "style="padding-top:4%; background-image: url('/clients/img/thdog-photo.jpg');background-size: cover;">
     <div class="row justify-content-center" >
-       
         <div class="col-md-10 mt-3">
             <div class="">
                 <form id="frmRegister">

@@ -1,4 +1,4 @@
-<div class="card" style="background:#3f5d79;">
+<div class="card" style="background:#20364b94;">
     <div class="form-group" align="center">
         <div class="col-md-12 mt-4 mb-3">
             <h3 class="text-uppercase" style="font-family: Serif;color:#ffffff">Thành công</h3>

@@ -9,15 +9,16 @@
 
     .form-control {
         color: #fff079;
+        background:#ffffff !important;
     }
 </style>
 <link rel="stylesheet" href="../clients/css/style.css">
 
-<div class="mt-2 mb-2" style="padding-top:13%; background-image: url('/file-image/bg-login.jpg');background-size: cover;">
+<div class="mt-2 mb-2" style="padding-top:13%; background-image: url('/clients/img/thdog-photo.jpg');background-size: cover;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-7" style="height:400px">
-                <div class="card" style="background:#3f5d79;">
+                <div class="card" style="background:#20364b94;">
                     <div class="wrapper" style=" display: flex; justify-content: center;">
                         <!-- <div class="inner"> -->
                         <form method="POST" action="{{ route('checkLogin') }}" autocomplete="off">
@@ -27,9 +28,10 @@
                                     <h3 class="text-uppercase" style="font-family: Serif;color:#ffffff">Đăng nhập</h3>
                                 </div>
                             </div>
+                            
                             <div class="form-wrapper row {{!isset($data['email']) ? 'mb-3' : ''}}">
-                                <label for="">Địa chỉ Email <span class="request_star">*</span></label>
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" autofocus placeholder="Địa chỉ email...">
+                                <label for="">Email <span class="request_star">*</span></label>
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" autofocus placeholder="Email...">
                                 @if(isset($data['email'])) <span style="color: red">{{$data['email']}}</span> @endif
                             </div>
                             <div class="form-wrapper row {{!isset($data['password']) ? 'mb-3' : ''}}">
@@ -55,13 +57,13 @@
                                 </div>
                                 @endif
                                 <div class="col-md-12 mb-3" style="display: flex;justify-content: space-between;">
-                                    <button type="submit" class="btn btn-primary" style="background-color: slategrey">
+                                    <button type="submit" class="btn btn-primary" style="background-color: #ffb600">
                                         {{ __('Đăng nhập') }}
                                     </button>
                                 </div>
 
                                 <div class="col-md-12">
-                                    <span class="text-white">Bạn chưa có tài khoản? <i><a href="{{route('register')}}" style="color:#8b9ac5">Đăng ký ngay</a></i></span>
+                                    <span class="text-white">Bạn chưa có tài khoản? <i><a href="{{route('register')}}" style="color:#84ffda">Đăng ký ngay</a></i></span>
                                 </div>
                             </div>
                         </form>
