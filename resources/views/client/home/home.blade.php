@@ -203,7 +203,7 @@
                 </ol> -->
             <div class="carousel-inner active pt-4">
                 <!-- Start Contact -->
-                <div class="list-hispital-home-one pt-3">
+                <div class="list-hispital-home-one pt-5">
                     <section class="banner-bg">
                         <!-- <div class="container">
                             <div class="row">
@@ -226,7 +226,7 @@
                                 <span class="text-title-home">TẠI CÁC TUYẾN TRUNG ƯƠNG</span>
                             </div>
                         </center>
-                        <div class="banner-content col-lg-12 offset-1 col-10 m-lg-auto">
+                        <div class="banner-content col-lg-12 offset-1 col-10 m-lg-auto pt-3">
                              <div class="container">
                                 <div class="row">
                                     <div class="col-lg-5 mx-auto ">
@@ -285,7 +285,7 @@
                                     <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
                                         <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/xet-nghiem.png);background-size: 40px;background-repeat: no-repeat;background-position: center;"></div>
                                     </div>
-                                    <div style="color: #121213bf;font-weight: 600;font-size: 17px;">Xét nghiệm tại nhà</div>
+                                    <div style="color: #121213bf;font-weight: 600;font-size: 17px;">Xét nghiệm</div>
                                 </a>
                             </div>
 
