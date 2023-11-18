@@ -203,7 +203,7 @@
                 </ol> -->
             <div class="carousel-inner active pt-4">
                 <!-- Start Contact -->
-                <div class="list-hispital-home-one pt-5">
+                <div class="list-hispital-home-one pt-3">
                     <section class="banner-bg">
                         <!-- <div class="container">
                             <div class="row">
@@ -248,18 +248,17 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row pt-2">
+                                    <div class="col-lg-5 mx-auto " style="display:flex;width: 250px;">
+                                        <div style="width:50%">
+                                            <img class="recent-work-img card-img" style="width: 100px;object-fit: cover;" src="{{url('/clients/img/google-play-badge.svg')}}" alt="Card image">
+                                        </div>  
+                                        <div style="width:50%">
+                                            <img class="recent-work-img card-img" style="width: 93px;object-fit: cover;" src="{{url('/clients/img/app-store-badge-black.svg')}}" alt="Card image">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <center>
-                            <div class="banner-content col-lg-4 offset-1 col-10 m-lg-auto text-center " style="display: flex ;padding-top:50px">
-                               <div class="col-md-6 mb-4">
-                                   <img class="recent-work-img card-img" style="width: 100px;object-fit: cover;" src="{{url('/clients/img/google-play-badge.svg')}}" alt="Card image">
-                               </div>  
-                               <div class="col-md-6 mb-4">
-                                  <img class="recent-work-img card-img" style="width: 93px;object-fit: cover;" src="{{url('/clients/img/app-store-badge-black.svg')}}" alt="Card image">
-                               </div>
-                            </div>
-                            </center>
-                            
                         </div>
                     </section>
                 </div>

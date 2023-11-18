@@ -397,8 +397,24 @@ footer a.text-light:hover {
     font-size: 33px !important;
   }
 } */
-@media (min-width: 426px) {
+@media (min-width:1440px) and (max-width:2560px ) {
+ 
+}
+@media (min-width:769px) and (max-width:1439px ) {
+  
+}
+@media (min-width:426px) and (max-width:768px ) {
   .anime-car{
     display: none !important;
   }
+  
+}
+@media (min-width:376px) and (max-width:425px ) {
+  
+}
+@media (min-width:321px) and (max-width:375px ) {
+  
+}
+@media (max-width:320px ) {
+  
 }
