@@ -248,7 +248,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row pt-2">
+                                <div class="row pt-5">
                                     <div class="col-lg-5 mx-auto " style="display:flex;width: 250px;">
                                         <div style="width:50%">
                                             <img class="recent-work-img card-img" style="width: 100px;object-fit: cover;" src="{{url('/clients/img/google-play-badge.svg')}}" alt="Card image">
