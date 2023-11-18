@@ -205,18 +205,19 @@
                 <!-- Start Contact -->
                 <div class="list-hispital-home-one pt-5">
                     <section class="banner-bg">
-                        <div class="container">
-                        <div class="row">
-                            <div class="col-md-9 timeLoad">
-                                <span style="font-size: 16px" id="time"></span>
-                            </div>
-                            <div class="col-md-3 icon-heart">
-                                <i class="fas fa-heartbeat"></i>
-                                <i class="fas fa-heartbeat"></i>
-                                <i class="fas fa-heartbeat"></i>
+                        <!-- <div class="container">
+                            <div class="row">
+                                <div class="col-md-9 timeLoad">
+                                    <span style="font-size: 16px" id="time"></span>
+                                </div>
+                                <div class="col-md-3 icon-heart">
+                                    <i class="fas fa-heartbeat"></i>
+                                    <i class="fas fa-heartbeat"></i>
+                                    <i class="fas fa-heartbeat"></i>
 
+                                </div>
                             </div>
-                        </div></div>
+                        </div> -->
                         
                         <!-- style="animation: lights 4s 750ms linear infinite;" -->
                         <center>
@@ -225,11 +226,11 @@
                                 <span class="text-title-home">TẠI CÁC TUYẾN TRUNG ƯƠNG</span>
                             </div>
                         </center>
-                        <div class="banner-content col-lg-12 offset-2 col-8 m-lg-auto">
+                        <div class="banner-content col-lg-12 offset-1 col-10 m-lg-auto">
                              <div class="container">
                                 <div class="row">
                                     <div class="col-lg-5 mx-auto ">
-                                        <div style="width: 100%;position: relative;z-index: 10;">
+                                        <div style="width: 100%;position: relative;">
                                             <div class="form-search form-group">
                                                 <!-- <input type="text" class="form-control" name="search" id="search" style="height:40px" placeholder="Từ khóa tìm kiếm..." onkeydown="if (event.key == 'Enter'){JS_ApprovePayment.search();return false;}" fdprocessedid="wmlzr9"> -->
                                                 <button type="button" class="btn" id="txt_search"><i class="fas fa-search" aria-hidden="true"></i></button>
