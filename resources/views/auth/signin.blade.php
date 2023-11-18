@@ -17,7 +17,7 @@
 <div class="mt-2 mb-2" style="padding-top:13%; background-image: url('/clients/img/thdog-photo.jpg');background-size: cover;">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-7 form-signin" style="height:500px">
+            <div class="col-md-7" style="height:400px">
                 <div class="card" style="background:#20364b94;">
                     <div class="wrapper" style=" display: flex; justify-content: center;">
                         <!-- <div class="inner"> -->
