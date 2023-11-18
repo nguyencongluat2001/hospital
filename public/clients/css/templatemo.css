@@ -411,7 +411,7 @@ footer a.text-light:hover {
     display: none !important;
   }
   .navbar-brand-text{
-    width: 30%;
+    width: 40%;
   }
   .image-logo{
     width:8%
@@ -420,7 +420,7 @@ footer a.text-light:hover {
 }
 @media (min-width:375px) and (max-width:424px ) {
   .navbar-brand-text{
-    width: 30%;
+    width: 40%;
   }
   .image-logo{
     width:10%
