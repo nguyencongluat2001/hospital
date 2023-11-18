@@ -21,7 +21,7 @@
                                         <div class="col-lg-6 mx-auto " style="display:flex">
                                             <div class="input-group pt-2 box">
                                             <!-- input form-control form-control-lg rounded-pill rounded -->
-                                                  <input name="search" id="search" style="background:#ffffffb5" type="text" class="" placeholder="Tìm kiếm theo số điện thoại hoặc mã đặt lịch..." aria-label="Tìm kiếm theo số điện thoại hoặc mã đặt lịch..">
+                                                  <input name="search" id="search" style="background:#ffffffb5" type="text" class="input form-control" placeholder="Tìm kiếm theo số điện thoại hoặc mã đặt lịch..." aria-label="Tìm kiếm theo số điện thoại hoặc mã đặt lịch..">
                                             </div>
                                             <span class="input-group-btn pt-2" style="padding-left:15px">
                                                 <button onclick="JS_SearchSchedule.loadList()" style="font-size: 25px;border-radius: 20%;width: 50px;height: 100%;;background: #ffc000;" type="button" class=" btn-dark" id="txt_search"><i class="fas fa-search"></i></button>
