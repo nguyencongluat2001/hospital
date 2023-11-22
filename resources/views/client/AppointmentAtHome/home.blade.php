@@ -234,8 +234,8 @@
                                                         <span class="message-error uname-error">Năm sinh không được để trống!</span>
                                                     </div>
                                                     <div class="form-input col-md-3 padding-style">
-                                                        <input type="radio" value="1" name="sex" id="sex" {{(isset($getInfo['sex']) && $getInfo['sex'] == '1') ? 'checked' : ''}}/>  <span style="padding-left:5px" >Nam</span>&emsp;
-                                                        <input  type="radio" value="2" name="sex" id="sex"  {{(isset($getInfo['sex']) && $getInfo['sex'] == '2') ? 'checked' : ''}}/> <span style="padding-left:5px" >Nữ</span>
+                                                        <input type="radio" value="1" name="sex" id="sex" {{(isset($getInfo->sex) && $getInfo->sex == '1') ? 'checked' : ''}}/>  <span style="padding-left:5px" >Nam</span>&emsp;
+                                                        <input  type="radio" value="2" name="sex" id="sex"  {{(isset($getInfo->sex) && $getInfo->sex == '2') ? 'checked' : ''}}/> <span style="padding-left:5px" >Nữ</span>
                                                         <span class="message-error phone-error">Giới tính không được để trống!</span>
                                                     </div>
                                                 </div>
@@ -321,7 +321,7 @@
                                                     <!-- onfocus="(this.type='date')"
                                                             onblur="(this.type='text')" -->
                                                         <label for="">Ngày lấy mẫu</label>
-                                                        <input type="date" class="form-control required" placeholder="Ngày lấy mẫu..." name="date_sampling" id="date_sampling" value="{{!empty($getInfo->date_sampling)?$getInfo->date_sampling:''}} oninput="inValid(this.id)">
+                                                        <input type="date" class="form-control required" placeholder="Ngày lấy mẫu..." name="date_sampling" id="date_sampling" value="{{!empty($getInfo->date_sampling)?date('Y-m-d', strtotime($getInfo->date_sampling)):''}}" oninput="inValid(this.id)">
                                                         <!-- <i class="fa fa-calendar-alt uname-icon padding-style"></i> -->
                                                         <span class="message-error uname-error">Ngày lấy mẫu không được để trống!</span>
                                                     </div>
@@ -329,35 +329,35 @@
                                                         <label for="">Giờ lấy mẫu</label>
                                                         <select style="color:#757e87" class="form-control input-sm chzn-select" name="hour_sampling" id="hour_sampling">
                                                             <option  value=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chọn giờ lấy mẫu  </option>
-                                                            <option value="05h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;05 giờ 30 phút</option>
-                                                            <option value="06h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;06 giờ 00 phút</option>
-                                                            <option value="06h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;06 giờ 30 phút</option>
-                                                            <option value="07h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;07 giờ 00 phút</option>
-                                                            <option value="07h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;07 giờ 30 phút</option>
-                                                            <option value="08h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;08 giờ 00 phút</option>
-                                                            <option value="08h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;08 giờ 30 phút</option>
-                                                            <option value="09h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;09 giờ 00 phút</option>
-                                                            <option value="09h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;00 giờ 30 phút</option>
-                                                            <option value="10h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10 giờ 00 phút</option>
-                                                            <option value="10h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10 giờ 30 phút</option>
-                                                            <option value="11h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11 giờ 00 phút</option>
-                                                            <option value="11h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11 giờ 30 phút</option>
-                                                            <option value="13h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13 giờ 30 phút</option>
-                                                            <option value="14h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14 giờ 00 phút</option>
-                                                            <option value="14h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14 giờ 30 phút</option>
-                                                            <option value="15h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15 giờ 00 phút</option>
-                                                            <option value="15h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15 giờ 30 phút</option>
-                                                            <option value="16h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;16 giờ 00 phút</option>
-                                                            <option value="16h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;16 giờ 30 phút</option>
-                                                            <option value="17h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17 giờ 00 phút</option>
-                                                            <option value="17h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17 giờ 30 phút</option>
-                                                            <option value="18h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18 giờ 00 phút</option>
-                                                            <option value="17h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17 giờ 30 phút</option>
-                                                            <option value="18h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18 giờ 00 phút</option>
-                                                            <option value="18h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18 giờ 30 phút</option>
-                                                            <option value="19h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;19 giờ 00 phút</option>
-                                                            <option value="19h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;19 giờ 30 phút</option>
-                                                            <option value="20h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20 giờ 00 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '05h30' ? 'selected' : ''}} value="05h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;05 giờ 30 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '06h00' ? 'selected' : ''}} value="06h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;06 giờ 00 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '06h30' ? 'selected' : ''}} value="06h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;06 giờ 30 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '07h00' ? 'selected' : ''}} value="07h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;07 giờ 00 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '07h30' ? 'selected' : ''}} value="07h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;07 giờ 30 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '08h00' ? 'selected' : ''}} value="08h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;08 giờ 00 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '08h30' ? 'selected' : ''}} value="08h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;08 giờ 30 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '09h00' ? 'selected' : ''}} value="09h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;09 giờ 00 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '09h30' ? 'selected' : ''}} value="09h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;00 giờ 30 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '10h00' ? 'selected' : ''}} value="10h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10 giờ 00 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '10h30' ? 'selected' : ''}} value="10h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10 giờ 30 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '11h00' ? 'selected' : ''}} value="11h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11 giờ 00 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '11h30' ? 'selected' : ''}} value="11h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11 giờ 30 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '13h30' ? 'selected' : ''}} value="13h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13 giờ 30 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '14h00' ? 'selected' : ''}} value="14h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14 giờ 00 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '14h30' ? 'selected' : ''}} value="14h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14 giờ 30 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '15h00' ? 'selected' : ''}} value="15h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15 giờ 00 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '15h30' ? 'selected' : ''}} value="15h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15 giờ 30 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '16h00' ? 'selected' : ''}} value="16h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;16 giờ 00 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '16h30' ? 'selected' : ''}} value="16h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;16 giờ 30 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '17h00' ? 'selected' : ''}} value="17h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17 giờ 00 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '17h30' ? 'selected' : ''}} value="17h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17 giờ 30 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '18h00' ? 'selected' : ''}} value="18h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18 giờ 00 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '17h30' ? 'selected' : ''}} value="17h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17 giờ 30 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '18h00' ? 'selected' : ''}} value="18h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18 giờ 00 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '18h30' ? 'selected' : ''}} value="18h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18 giờ 30 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '19h00' ? 'selected' : ''}} value="19h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;19 giờ 00 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '19h30' ? 'selected' : ''}} value="19h30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;19 giờ 30 phút</option>
+                                                            <option {{isset($getInfo->hour_sampling) && $getInfo->hour_sampling == '20h00' ? 'selected' : ''}} value="20h00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20 giờ 00 phút</option>
                                                         </select>
                                                         <!-- <i class="fa fa-hourglass-half uname-icon padding-style"></i> -->
                                                         <span class="message-error uname-error">Giờ lấy mẫu không được để trống!</span>
@@ -374,7 +374,7 @@
                                                 </div>
                                                 <div class="row mt-3">
                                                     <div class="form-input col-md-12 padding-style">
-                                                        <textarea style="height:100px" class="form-control" placeholder="Triệu chứng lâm sàng ..." name="reason" id="reason" value="{{!empty($getInfo->reason)?$getInfo->reason:''}}" oninput="inValid(this.id)"rows="4" cols="50"></textarea>
+                                                        <textarea style="height:100px" class="form-control" placeholder="Triệu chứng lâm sàng ..." name="reason" id="reason" value="" oninput="inValid(this.id)"rows="4" cols="50">{{!empty($getInfo->reason)?$getInfo->reason:''}}</textarea>
                                                         <i class="fas fa-comment-dots uname-icon padding-style"></i>
                                                         <!-- <span class="message-error uname-error">Triệu chứng lâm sàng không được để trống!</span> -->
                                                     </div>
@@ -387,7 +387,7 @@
                                                         
                                                     </div>
                                                 </div>
-                                                <input type="radio" onchange="JS_AppointmentAtHome.getTypeBank(this.value)" value="BANK" name="type_payment" id="type_payment"/> <span style="padding-left:5px" >Chuyển khoản ngân hàng bằng mã QR</span><br>
+                                                <input {{(isset($getInfo->type_payment) && $getInfo->type_payment == 'BANK') ? 'checked' : ''}} type="radio" onchange="JS_AppointmentAtHome.getTypeBank(this.value)" value="BANK" name="type_payment" id="type_payment"/> <span style="padding-left:5px" >Chuyển khoản ngân hàng bằng mã QR</span><br>
                                                 <!-- <div id="bank"></div> -->
                                                 <div id="bank" class="hiddel">
                                                     <div class="row" style="background: #ffc686;">
@@ -403,8 +403,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            
-                                                <input  type="radio" onchange="JS_AppointmentAtHome.getTypeBank('tienmat')" value="TIEN_MAT" name="type_payment" id="type_payment"/> <span style="padding-left:5px" >Thanh toán tiền mặt</span>
+                                                <input {{(isset($getInfo->type_payment) && $getInfo->type_payment == 'TIEN_MAT') ? 'checked' : ''}} type="radio" onchange="JS_AppointmentAtHome.getTypeBank('tienmat')" value="TIEN_MAT" name="type_payment" id="type_payment"/> <span style="padding-left:5px" >Thanh toán tiền mặt</span>
                                                 <div id="tienmat" class="hiddel">
                                                 </div>
                                                 @endif
