@@ -58,16 +58,17 @@ class AppointmentAtHomeService extends Service
                 'type_payment'=> !empty($input['type_payment'])?$input['type_payment']:'',
                 'status'=> 0,
                 'date_birthday'=> !empty($input['date_birthday'])?$input['date_birthday']:'',
-                'created_at' => date("Y/m/d H:i:s"),
-                'updated_at' => date("Y/m/d H:i:s")
             ];
             if(!empty($_SESSION['role'])){
                 $param['code_ctv'] = $_SESSION['code'];
             }
             if(!empty($input['id'] && $input['id'] != null)){
+                $param['updated_at'] = date("Y/m/d H:i:s");
                 $create = $this->where('id',$input['id'])->update($param);
             }else{
                 $param['id'] = (string)Str::uuid();
+                $param['created_at'] = date("Y/m/d H:i:s");
+                $param['updated_at'] = date("Y/m/d H:i:s");
                 $create = $this->create($param);
 
             }

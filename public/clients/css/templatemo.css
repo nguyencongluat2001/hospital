@@ -391,7 +391,6 @@ footer a.text-light:hover {
     100% {opacity:0;width:355px;}
 }
 
-
 /* @media (max-width: 3026px) and (min-width: 426px) {
   .anime-ca{
     font-size: 33px !important;
@@ -402,42 +401,42 @@ footer a.text-light:hover {
     width:8%
  }
 }
-@media (min-width:769px) and (max-width:1439px ) {
+@media (min-width:768px) and (max-width:1439px ) {
   .image-logo{
     width:8%
  }
 }
-@media (min-width:426px) and (max-width:768px ) {
+@media (min-width:425px) and (max-width:767px ) {
   .anime-car{
     display: none !important;
   }
   .navbar-brand-text{
-    width: 70%;
+    width: 40%;
   }
   .image-logo{
     width:8%
  }
   
 }
-@media (min-width:376px) and (max-width:425px ) {
+@media (min-width:375px) and (max-width:424px ) {
   .navbar-brand-text{
-    width: 70%;
+    width: 40%;
   }
   .image-logo{
     width:10%
  }
 }
-@media (min-width:321px) and (max-width:375px ) {
+@media (min-width:321px) and (max-width:374px ) {
   .navbar-brand-text{
-    width: 70%;
+    width: 40%;
   }
   .image-logo{
     width:10%
  }
 }
-@media (max-width:320px ) {
+@media (max-width:319px ) {
   .navbar-brand-text{
-    width: 60%;
+    width: 40%;
   }
   .image-logo{
     width:10%

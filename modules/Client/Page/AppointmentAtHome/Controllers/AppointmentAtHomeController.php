@@ -161,7 +161,7 @@ class AppointmentAtHomeController extends Controller
         }
         $datas['type_chidinh'] = $arrData;
         $datas['getInfo'] = $getInfo;
-
+        // dd($datas);
         return view('client.AppointmentAtHome.home',$datas);
     }
      /**

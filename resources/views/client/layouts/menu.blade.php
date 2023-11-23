@@ -153,7 +153,7 @@
         <!-- <a class="" style="width: 7%;" href="{{url('/')}}">
                 <img class="card-img " src="../clients/img/logo.png" alt="Card image">
             </a> -->
-        <div class="image-logo">
+        <div class="image-logo" style="width:8%">
             <img class="card-img " src="../clients/img/logo.png" alt="Card image">
         </div>
 
