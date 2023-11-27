@@ -293,7 +293,9 @@ JS_AppointmentAtHome.prototype.getTypeBank = function (type) {
  */
 JS_AppointmentAtHome.prototype.showPack = function () {
     NclLib.loadding();
+   
     var url = this.urlPath + '/showPack';
+    $('#myInput').val('');
     var myClass = this;
     var oForm = 'form#frmSendSchedule';
     var code_indications = [];
