@@ -262,6 +262,11 @@
                                                         <div class="col-lg-6 mx-auto " style="display:flex">
                                                             <div class="input-group pt-2 box">
                                                                 <input id="myInput" onkeyup="myFunction()"style="background:#ffffffb5" type="text" class="input form-control form-control-lg" placeholder="Tìm kiếm gói - tên chỉ số" aria-label="Tìm kiếm gói - tên chỉ số">
+                                                                <span  onclick="JS_AppointmentAtHome.remoteSearch('1')">
+                                                                    <!-- <i style="color:#ffb000" class="fas fa-undo-alt fa-2x"></i> -->
+                                                                    <!-- <i style="padding:5px;color:#ffb000"  class="fas fa-backspace fa-2x"></i> -->
+                                                                    <span class="icon-remote" style="padding-left: 10px;color: #ff0000;font-size: 20px;font-weight: 600;"> x </span>
+                                                                </span>
                                                             </div>
                                                         </div>
                                                     </div>

@@ -411,3 +411,15 @@ JS_AppointmentAtHome.prototype.getCodeSale = function (code_sale) {
     this.showPack();
     NclLib.loadding();
 }
+/**
+     * Hàm xóa dữ liệu search
+     *
+     * @param oForm (tên form)
+     *
+     * @return void
+     */
+JS_AppointmentAtHome.prototype.remoteSearch = function () {
+    $('#myInput').val('');
+    var myClass = this;
+    this.showPack();
+}
