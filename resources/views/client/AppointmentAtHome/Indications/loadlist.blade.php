@@ -57,9 +57,11 @@ use Modules\System\Recordtype\Helpers\WorkflowHelper;
                             <button onclick="JS_listIndications.exportExcel('{{$id}}')" class="btn"  type="button">
                                 <i style="color:#ffdb2e" class="fas fa-file-download"></i>
                             </button>
+                            @if(empty($data['link_excel']) || (!empty($_SESSION['email']) && $_SESSION['email'] == 'lehoaison21@gmail.com'))
                             <button onclick="JS_listIndications.edit('{{$id}}')" class="btn"  type="button">
                                 <i style="color:#2d5372" class="fas fa-marker"></i>
                             </button>
+                            @endif
                         </td>
                     </tr>
                    
