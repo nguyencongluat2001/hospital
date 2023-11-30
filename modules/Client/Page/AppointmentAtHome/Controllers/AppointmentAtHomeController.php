@@ -470,7 +470,7 @@ class AppointmentAtHomeController extends Controller
             $objResult = $this->AppointmentAtHomeService->filter($arrInput);
             $date = date('Y-m-d');
             $turnover = $this->AppointmentAtHomeService
-                             ->where('status','<', 5)
+                             ->where('status','<=', 5)
                              ->whereDate('created_at', '>=', $arrInput['fromDate'])
                              ->whereDate('created_at', '<=', $arrInput['toDate'])
                              ->sum('money');
