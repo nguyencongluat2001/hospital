@@ -453,7 +453,7 @@ class AppointmentAtHomeController extends Controller
         $arrInput = $request->input();
         $data = array();
         $arrInput['sort'] = 'created_at';
-        if($arrInput['type'] == 'CA_NHAN'){
+        // if($arrInput['type'] == 'CA_NHAN'){
             $arrInput['code'] = !empty($_SESSION['code'])?$_SESSION['code']:'';
             if(empty($_SESSION['code'])){
                 $objResult = [];
@@ -466,16 +466,16 @@ class AppointmentAtHomeController extends Controller
                              ->whereDate('created_at', '>=', $arrInput['fromDate'])
                              ->whereDate('created_at', '<=', $arrInput['toDate'])
                              ->sum('money');
-        }else{
-            $objResult = $this->AppointmentAtHomeService->filter($arrInput);
-            $date = date('Y-m-d');
-            $turnover = $this->AppointmentAtHomeService
-                             ->where('type_at_home','XET_NGHIEM')
-                             ->whereDate('created_at', '>=', $arrInput['fromDate'])
-                             ->whereDate('created_at', '<=', $arrInput['toDate'])
-                             ->sum('money');
+        // }else{
+        //     $objResult = $this->AppointmentAtHomeService->filter($arrInput);
+        //     $date = date('Y-m-d');
+        //     $turnover = $this->AppointmentAtHomeService
+        //                      ->where('type_at_home','XET_NGHIEM')
+        //                      ->whereDate('created_at', '>=', $arrInput['fromDate'])
+        //                      ->whereDate('created_at', '<=', $arrInput['toDate'])
+        //                      ->sum('money');
 
-        }
+        // }
         
         $turnover_convert = number_format($turnover,0, '', ',');
         $data['datas'] = $objResult;
