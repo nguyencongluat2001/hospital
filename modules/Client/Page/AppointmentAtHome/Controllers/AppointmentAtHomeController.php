@@ -453,7 +453,17 @@ class AppointmentAtHomeController extends Controller
         $arrInput = $request->input();
         $data = array();
         $arrInput['sort'] = 'created_at';
-        // if($arrInput['type'] == 'CA_NHAN'){
+        $turnover = 0;
+        $objResult = [];
+        if(!empty($arrInput['type']) && $arrInput['type'] == 'TAT_CA'){
+            $objResult = $this->AppointmentAtHomeService->filter($arrInput);
+            $date = date('Y-m-d');
+            $turnover = $this->AppointmentAtHomeService
+                             ->where('type_at_home','XET_NGHIEM')
+                             ->whereDate('created_at', '>=', $arrInput['fromDate'])
+                             ->whereDate('created_at', '<=', $arrInput['toDate'])
+                             ->sum('money');
+        }elseif(!empty($_SESSION['code']) && $_SESSION['code'] != ''){
             $arrInput['code'] = !empty($_SESSION['code'])?$_SESSION['code']:'';
             if(empty($_SESSION['code'])){
                 $objResult = [];
@@ -462,20 +472,12 @@ class AppointmentAtHomeController extends Controller
             }
             $date = date('Y-m-d');
             $turnover = $this->AppointmentAtHomeService
-                             ->where('code_ctv',$_SESSION['code'])
-                             ->whereDate('created_at', '>=', $arrInput['fromDate'])
-                             ->whereDate('created_at', '<=', $arrInput['toDate'])
-                             ->sum('money');
-        // }else{
-        //     $objResult = $this->AppointmentAtHomeService->filter($arrInput);
-        //     $date = date('Y-m-d');
-        //     $turnover = $this->AppointmentAtHomeService
-        //                      ->where('type_at_home','XET_NGHIEM')
-        //                      ->whereDate('created_at', '>=', $arrInput['fromDate'])
-        //                      ->whereDate('created_at', '<=', $arrInput['toDate'])
-        //                      ->sum('money');
+                            ->where('code_ctv',$_SESSION['code'])
+                            ->whereDate('created_at', '>=', $arrInput['fromDate'])
+                            ->whereDate('created_at', '<=', $arrInput['toDate'])
+                            ->sum('money');
 
-        // }
+        }
         
         $turnover_convert = number_format($turnover,0, '', ',');
         $data['datas'] = $objResult;
