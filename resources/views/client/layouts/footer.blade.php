@@ -83,10 +83,10 @@
                     <h2 class="h4 pb-lg-3 text-light light-300">LIÊN HỆ</h2>
                     <ul class="list-unstyled text-light light-300">
                          <li class="pb-2">
-                            <i class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-light py-1" href="tel:024 39036555">Công ty TNHH dịch vụ y tế <br> BOOKING HOSPITAL </a>
+                            <i class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-light py-1" href="tel:02439921333">Công ty TNHH dịch vụ y tế <br> BOOKING HOSPITAL </a>
                         </li>
                         <li class="pb-2">
-                            <i class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-light py-1" href="tel:024 39036555">024 39036555</a>
+                            <i class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-light py-1" href="tel:02439921333">02439921333</a>
                         </li>
                         <li class="pb-2">
                             <i class='bx-fw bx bx-mail-send bx-xs'></i><a class="text-decoration-none text-light py-1" href="mailto:info@company.com">info@company.com</a>

@@ -370,7 +370,7 @@ class AppointmentAtHomeController extends Controller
             $data = [
                 '1' => [
                     'code' => 'PACK13',
-                    'name' => 'Xét nghiệm thuòng'
+                    'name' => 'Đặt lịch tại nhà'
                 ]
                 ];
         }
