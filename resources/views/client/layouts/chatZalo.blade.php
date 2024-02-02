@@ -81,9 +81,9 @@
 
         </section>
     </div>
-    <div id="customerCare">
+    <!-- <div id="customerCare">
         @include('client.layouts.chat')
-    </div>
+    </div> -->
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
