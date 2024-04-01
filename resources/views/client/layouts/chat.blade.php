@@ -21,7 +21,7 @@ foreach($customerCare as $key => $value){
 }
 
 @endphp
-<form action="" method="POST" id="frmChat_box" autocomplete="off">
+<!-- <form action="" method="POST" id="frmChat_box" autocomplete="off">
     <input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
     <span class="form-group input-group" style="align-items: center;">
         @if(isset($notification))
@@ -50,7 +50,6 @@ foreach($customerCare as $key => $value){
                 </span>
             </div>
         </div>
-        <!-- Màn hình danh sách -->
         <div class="table-responsive">
             <div id="table-container-box">
                 @if(!isset($customerCare) || (count($customerCare) > 0) && isset($customerCare))
@@ -106,4 +105,4 @@ foreach($customerCare as $key => $value){
             </div>
         </div>
     </section>
-</form>
+</form> -->

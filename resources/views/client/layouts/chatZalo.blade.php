@@ -21,11 +21,10 @@
     <div id="form_chat">
         <input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
         <section class="">
-            
-            <div id="chatMesss" onclick="openMessage()">
+            <div id="chatMesss" onclick="openPhone()">
                 <!-- <label for="checkbox1"> -->
                 <img width="" height="50px" style="background-color: none"
-                    src="../clients/img/icon_messager.jpg" alt="">
+                    src="../clients/img/phone.png" alt="">
                 </label>
             </div>
             <br>
@@ -36,10 +35,10 @@
                 </label>
             </div>
             <br>
-            <div id="chatMesss" onclick="openPhone()">
+            <div id="chatMesss" onclick="openMessage()">
                 <!-- <label for="checkbox1"> -->
                 <img width="" height="50px" style="background-color: none"
-                    src="../clients/img/phone.png" alt="">
+                    src="../clients/img/icon_messager.jpg" alt="">
                 </label>
             </div>
         </section>
@@ -82,9 +81,9 @@
 
         </section>
     </div>
-    <div id="customerCare">
+    <!-- <div id="customerCare">
         @include('client.layouts.chat')
-    </div>
+    </div> -->
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
@@ -95,7 +94,7 @@
         window.open(url, '_blank');
     }
      function openPhone(){
-        var phone = 'tel:024 39036555';
+        var phone = 'tel:02439921333';
         window.open(phone,'_blank');
     }
     function showMessage(phone){
