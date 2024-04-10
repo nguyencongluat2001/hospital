@@ -144,7 +144,7 @@ class AppointmentAtHomeService extends Service
         $objPHPExcel = \PhpOffice\PhpSpreadsheet\IOFactory::load(base_path() . "/resources/public/template/TemCXLog.xlsx");
         $objWorksheet_template = $objPHPExcel->getActiveSheet();
         $provinceSheet = $objPHPExcel->setActiveSheetIndex(0);
-        $namefile = $input['datas']['code_patient'].'.Xls';
+        $namefile = date('Y').date('m').date('d').date('H').date('i').date('s').$input['datas']['code_patient'].'.Xls';
 
         if($input['datas']['sex'] == 1){
             $gioitinh = 'Nam';
