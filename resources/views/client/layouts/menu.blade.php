@@ -154,34 +154,35 @@
                 <img class="card-img " src="../clients/img/logo.png" alt="Card image">
             </a> -->
         <div class="image-logo" style="width:8%">
-            <img class="card-img " src="../clients/img/logo.png" alt="Card image">
+            <img class="card-img " src="../clients/img/Logo_medhanoi.png" alt="Card image">
         </div>
 
         <a class="navbar-brand h1 navbar-brand-text" href="{{ url('/') }}">
             <!-- <img class="card-img " src="../clients/img/logo.png" alt="Card image"> -->
             <!-- <i class='bx bx-buildings bx-sm text-dark'></i> -->
-            <span style="color: #ffbc00!important;font-family: serif;" class="text-dark h4">Booking</span> <sup style="color:#32a5c2"></sup>
+            <!-- <span style="color: #ffbc00!important;font-family: serif;" class="text-dark h4">Booking</span> <sup style="color:#32a5c2"></sup> -->
         </a>
 
 
         <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="navbar-toggler-success">
             <div class="flex-fill mx-xl-2">
-                <ul class="nav navbar-nav d-flex justify-content-between mx-xl-2 text-center text-dark">
+                <center>
+                <ul class="nav navbar-nav d-flex justify-content-between mx-xl-2 text-center text-dark" style="width:700px">
                     <li class="nav-item">
-                        <a class="nav-link link-home btn-outline-info rounded-pill" href="{{ url('/') }}"> <span class="text-menu-header"> <i class="fas fa-home"></i> Trang chủ </span> <br> <span class="text-12">Hạng mục nổi bật</span> </a>
+                        <a class="nav-link link-home btn-outline-info rounded-pill" href="{{ url('/') }}"> <span class="text-menu-header"> <i class="fas fa-home"></i> Trang chủ </span> <br> <span class="text-12"></span> </a>
                     </li>
 
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link link-specialty btn-outline-info rounded-pill" href="{{ url('/specialty') }}"> <span class="text-menu-header"><i class="fas fa-suitcase"></i> Chuyên khoa </span> <br> <span class="text-12">Tìm theo chuyên khoa</span> </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link link-facilities btn-outline-info rounded-pill" href="{{ url('/facilities') }}"> <span class="text-menu-header"><i class="fas fa-clinic-medical"></i> Cơ sở y tế</span> <br> <span class="text-12">Chọn bệnh viện</span> </a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link link-bloodtest btn-outline-info rounded-pill" href="{{ url('/client/appointmentathome/indexApointment') }}"> <span class="text-menu-header"><i class="fas fa-tint"></i> Xét nghiệm Lấy máu tại nhà</span> <br> <span class="text-12"></span> </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link-bloodtest btn-outline-info rounded-pill" href="{{ url('/client/appointmentathome/indexApointment') }}"> <span class="text-menu-header"><i class="fas fa-tint"></i> Xét nghiệm </span> <br> <span class="text-12">Lấy máu tại nhà</span> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link link-infusion btn-outline-info rounded-pill" href="{{ url('/client/appointmentathome/indexInfusion') }}"> <span class="text-menu-header"><i class="fas fa-thermometer"></i> Truyền dịch </span> <br> <span class="text-12">Truyền dịch tại nhà</span> </a>
+                        <a class="nav-link link-infusion btn-outline-info rounded-pill" href="{{ url('/client/appointmentathome/indexInfusion') }}"> <span class="text-menu-header"><i class="fas fa-thermometer"></i> Truyền dịch tại nhà</span> <br> <span class="text-12"></span> </a>
                     </li>
                     <!-- <li class="nav-item">
                             <a class="nav-link btn-outline-info rounded-pill" href="work.html"> <span class="text-menu-header">Bác sĩ </span> <br> <span class="text-12">Chọn bác sĩ giỏi</span></a>
@@ -190,12 +191,14 @@
                             <a class="nav-link link-package btn-outline-info rounded-pill" href="{{ url('/package') }}"> <span class="text-menu-header"><i class="fas fa-file-medical"></i> Gói khám </span> <br> <span class="text-12">Khám sức khỏe tổng quát</span></a>
                         </li> -->
                     <li class="nav-item">
-                        <a class="nav-link link-searchschedule btn-outline-info rounded-pill" href="{{ url('/searchschedule') }}"> <span class="text-menu-header"><i class="fas fa-search-plus"></i> Tra cứu </span> <br> <span class="text-12">Tra cứu lịch hẹn</span></a>
+                        <a class="nav-link link-searchschedule btn-outline-info rounded-pill" href="{{ url('/searchschedule') }}"> <span class="text-menu-header"><i class="fas fa-search-plus"></i> Tra cứu lịch hẹn </span> <br> <span class="text-12"></span></a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link link-contact btn-outline-info rounded-pill" href="{{ url('/contact') }}"> <span class="text-menu-header"><i class="fas fa-comment-medical"></i> Đánh giá </span> <br> <span class="text-12">Đánh giá dịch vụ</span></a>
                     </li> -->
                 </ul>
+                </center>
+                
             </div>
         </div>
         <center>
@@ -319,12 +322,12 @@
                 <li class="nav-item">
                     <a class="nav-link link-home btn-outline-info" href="{{ url('/') }}"> <span class="text-menu-header"> <i class="fas fa-home"></i> Trang chủ </span> <br> <span class="text-12">Hạng mục nổi bật</span> </a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link link-specialty btn-outline-info" href="{{ url('/specialty') }}"> <span class="text-menu-header"><i class="fas fa-suitcase"></i> Chuyên khoa </span> <br> <span class="text-12">Tìm theo chuyên khoa</span> </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link link-facilities btn-outline-info" href="{{ url('/facilities') }}"> <span class="text-menu-header"><i class="fas fa-clinic-medical"></i> Cơ sở y tế</span> <br> <span class="text-12">Chọn bệnh viện</span> </a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link link-bloodtest btn-outline-info" href="{{ url('/client/appointmentathome/indexApointment') }}"> <span class="text-menu-header"><i class="fas fa-tint"></i> Xét nghiệm </span> <br> <span class="text-12">Lấy máu tại nhà</span> </a>
                 </li>

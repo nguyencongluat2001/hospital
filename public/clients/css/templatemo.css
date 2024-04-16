@@ -47,16 +47,26 @@ p, a {font-weight: 400;}
   left: 50%;
   margin-left: -75px;
 }
+
+#main_nav .nav-item .nav-link:hover {color: #fff;}
+/* Home */
+/* #index_banner {
+   background-image: url('../../clients/img/booking-cover-3.jpg');
+  background-position: center center; background-size: cover;
+  height: 100%;
+} */
 /* Main Nav */
 #main_nav .nav-item .nav-link:hover {color: #fff;}
 /* Home */
 #index_banner {
   /* background-image: url('../../clients/img/booking-cover-3.jpg'); */
-  background-image: url('../../clients/img/booking-cover-3.jpg');
-  background-position: center center; background-size: cover;
+    /* background-image: url('../../clients/img/booking-cover-3.jpg'); */
+  background-image: url('../../clients/img/Banner_medhn.png');
+  background-position: center; 
+  background-size: cover;
   height: 100%;
   /* min-height: 60vh; */
-  width: 100%;
+  /* width: 100% auto; */
   /* opacity: 0.5; */
 }
 
@@ -87,7 +97,7 @@ p, a {font-weight: 400;}
 }
 #index_banner .carousel-inner {
   /* height: 80vh; */
-  background: #1d363d57;
+  /* background: #1d363d57; */
 }
 #index_banner .carousel-indicators li,
 #index_banner .carousel-indicators.active {
@@ -236,9 +246,9 @@ footer a.text-light:hover {
   background-image: linear-gradient(rgba(0, 0, 0, 0.25),rgba(255, 255, 255, 0.1));
 }
 .list-hispital-home{
-    background-image: linear-gradient(rgba(255, 255, 255, 0.1),rgba(255, 255, 255, 0.9),rgba(255, 255, 255, 1));
+    background-image: linear-gradient(rgba(255 255 255 / 0%),rgba(255, 255, 255, 0.9),rgba(255, 255, 255, 1));
     padding-top: 30px;
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
 }
 .text-menu-header{
   font-weight: 500;
@@ -400,11 +410,18 @@ footer a.text-light:hover {
  .image-logo{
     width:8%
  }
+ .css-height{
+  height:500px
+}
 }
 @media (min-width:768px) and (max-width:1439px ) {
   .image-logo{
     width:8%
- }
+  }
+  .css-height{
+    height:200px
+  }
+ 
 }
 @media (min-width:425px) and (max-width:767px ) {
   .anime-car{
@@ -416,6 +433,9 @@ footer a.text-light:hover {
   .image-logo{
     width:8%
  }
+ .css-height{
+  height:50px
+}
   
 }
 @media (min-width:375px) and (max-width:424px ) {
@@ -433,6 +453,9 @@ footer a.text-light:hover {
   .image-logo{
     width:10%
  }
+ .css-height{
+  height:50px
+ }
 }
 @media (max-width:319px ) {
   .navbar-brand-text{
@@ -440,5 +463,8 @@ footer a.text-light:hover {
   }
   .image-logo{
     width:10%
+ }
+ .css-height{
+  height:100px
  }
 }

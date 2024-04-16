@@ -62,6 +62,7 @@ Route::prefix('register')->group(function () {
 
 // Trang chủ
 Route::get('/', [ClientHomeController::class, 'index']);
+// Route::get('/', [AppointmentAtHomeController::class,'indexApointment']);
 // Trang chủ cơ sở bệnh viện
 Route::get('/facilities', [FacilitiesController::class, 'index']);
 Route::get('/facilities/{code}', [FacilitiesController::class, 'detailIndex']);

@@ -203,7 +203,7 @@
                 </ol> -->
             <div class="carousel-inner active pt-4">
                 <!-- Start Contact -->
-                <div class="list-hispital-home-one pt-5">
+                <div class="css-height pt-5">
                     <section class="banner-bg">
                         <!-- <div class="container">
                             <div class="row">
@@ -220,7 +220,7 @@
                         </div> -->
                         
                         <!-- style="animation: lights 4s 750ms linear infinite;" -->
-                        <center>
+                        <!-- <center>
                             <span class="text-title-home anime-title" style=" padding-top: 20px;">ĐẶT LỊCH KHÁM NHANH</span> <br>
                             <div class="text-title-home anime-title">
                                 <span class="text-title-home">TẠI CÁC TUYẾN TRUNG ƯƠNG</span>
@@ -232,7 +232,6 @@
                                     <div class="col-lg-5 mx-auto ">
                                         <div style="width: 100%;position: relative;z-index:10">
                                             <div class="form-search form-group">
-                                                <!-- <input type="text" class="form-control" name="search" id="search" style="height:40px" placeholder="Từ khóa tìm kiếm..." onkeydown="if (event.key == 'Enter'){JS_ApprovePayment.search();return false;}" fdprocessedid="wmlzr9"> -->
                                                 <button type="button" class="btn" id="txt_search"><i class="fas fa-search" aria-hidden="true"></i></button>
                                                 <input id="myInput" type="text" class="input form-control form-control-lg" placeholder="Tìm kiếm từ khóa..." aria-label="Tìm kiếm từ khóa..." onkeypress="filterSearch()" autocomplete="off">
                                             </div>
@@ -259,7 +258,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </section>
                 </div>
                 <!-- End Contact -->

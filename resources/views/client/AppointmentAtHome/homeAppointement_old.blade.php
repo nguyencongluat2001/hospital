@@ -47,8 +47,8 @@
     } */
     
     .icon-dichvu{
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     border: 1px solid #fff;
     display: flex;
     align-items: center;
@@ -95,13 +95,17 @@
                 </ol> -->
                 <div class="carousel-inner active pt-4" >
                      <!-- Start Contact -->
-                     <div class="css-height pt-5">
-                        <!-- <section class="banner-bg">
+                     <div class="list-hispital-home-one pt-5">
+                        <section class="banner-bg">
+                        <!-- style="animation: lights 4s 750ms linear infinite;" -->
                                 <center>
-                                    <span class="text-title-home anime-title" style=" padding-top: 20px;"> XÉT NGHIỆM TẠI NHÀ<br> DỊCH VỤ TỐT - KẾT QUẢ NHANH</span> <br>
+                                    <span class="text-title-home anime-title" style=" padding-top: 20px;"> XÉT NGHIỆM Y HỌC<br> LẤY MÁU TẠI NHÀ</span> <br>
+                                    <!-- <div class="text-title-home anime-title"> 
+                                        <span  class="text-title-home anime-title-span">TẠI CÁC TUYẾN TRUNG ƯƠNG</span>
+                                    </div> -->
                                 </center>
-                            <span  class="text-title-home "><center> XÉT NGHIỆM TẠI NHÀ </center></span>
-                            <div class="container">
+                            <!-- <span  class="text-title-home "><center> XÉT NGHIỆM TẠI NHÀ </center></span> -->
+                            <!-- <div class="container">
                                 <div class="row">
                                     <div class="col-lg-4 mx-auto ">
                                         <form action="#" method="get">
@@ -112,8 +116,8 @@
                                         </form>
                                     </div>
                                 </div>
-                            </div>
-                        </section> -->
+                            </div> -->
+                        </section>
                      </div>
                      <!-- <div class="test"></div> -->
 
