@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>medhanoi</title>
+    <title>MEDHANOI.COM</title>
     <meta charset="utf-8">
     <base href="{{ asset('') }}">
     @if(request()->isSecure())
