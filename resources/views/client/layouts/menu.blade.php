@@ -344,7 +344,7 @@
                     <a class="nav-link link-patients btn-outline-info" href="{{ url('/patients') }}"> <span class="text-menu-header"><i class="fas fa-procedures"></i> Dành cho bệnh nhân </span> <br> <span class="text-12">Dành cho bệnh nhân</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link link-package btn-outline-info" href="{{ url('/vai-tro') }}"> <span class="text-menu-header"><i class="fas fa-dice-d6"></i> Vai trò </span> <br> <span class="text-12">Vai trò của Booking46</span></a>
+                    <a class="nav-link link-package btn-outline-info" href="{{ url('/vai-tro') }}"> <span class="text-menu-header"><i class="fas fa-dice-d6"></i> Vai trò </span> <br> <span class="text-12">Vai trò của medhanoi</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link link-package btn-outline-info" href="{{ url('/lien-he') }}"> <span class="text-menu-header"><i class="fas fa-phone"></i> Liên hệ </span> <br> <span class="text-12">Liên hệ</span></a>

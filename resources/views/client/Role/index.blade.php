@@ -226,7 +226,7 @@
                 </div>
                 <div class="tab-pane fade" id="nav-clock" role="tabpanel" aria-labelledby="nav-clock-tab">
                     <h2>Đặt lịch 24/7</h2>
-                    <p>Booking46.vn hoạt động liên tục 24 giờ một ngày, 7 ngày một tuần, và 365 ngày một năm, kể cả ngày nghỉ và ngày lễ để bạn có thể đặt lịch trực tuyến. Đây là một lợi thế lớn của hệ thống đặt lịch khám trên Internet, hoạt động liên tục 24/7 thay vì chỉ giới hạn trong giờ hành chính như dịch vụ truyền thống.</p>
+                    <p>medhanoi.com hoạt động liên tục 24 giờ một ngày, 7 ngày một tuần, và 365 ngày một năm, kể cả ngày nghỉ và ngày lễ để bạn có thể đặt lịch trực tuyến. Đây là một lợi thế lớn của hệ thống đặt lịch khám trên Internet, hoạt động liên tục 24/7 thay vì chỉ giới hạn trong giờ hành chính như dịch vụ truyền thống.</p>
                     <p>Cụ thể như sau:</p>
                     <p>Đặt lịch trực tuyến: 24 giờ/ngày, 7 ngày/tuần, 365 ngày/năm. Người dùng đặt khám trực tuyến bằng cách chọn chuyên khoa, bác sĩ, bệnh viện hoặc phòng khám theo nhu cầu khám chữa bệnh.</p>
                     <p>Từ 6h30 - 18h00 hàng ngày (trừ ngày nghỉ, ngày lễ, Tết): Đội ngũ hỗ trợ của Booking sẽ hỗ trợ trực tiếp với những trường hợp khó khăn lựa chọn chuyên khoa, bác sĩ để đặt khám.</p>

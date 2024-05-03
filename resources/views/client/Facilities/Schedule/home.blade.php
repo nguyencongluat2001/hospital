@@ -342,7 +342,7 @@
     </div>
 </div>
 <center>
-    <iframe style="width:70%;height:300px" src="https://booking46.com/mapReport" title="W3Schools Free Online Web Tutorials"></iframe>
+    <iframe style="width:70%;height:300px" src="https://medhanoi.com/mapReport" title="W3Schools Free Online Web Tutorials"></iframe>
 </center>
 <br>
 
