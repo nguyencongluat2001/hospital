@@ -33,7 +33,7 @@
                 <tbody>
                     <tr>
                         <td>Điện thoại</td>
-                        <td><a href="tel:02439036555">02439921333</a></td>
+                        <td><a href="tel:02439036555">02439935556</a></td>
                     </tr>
                     <tr>
                         <td>Email</td>

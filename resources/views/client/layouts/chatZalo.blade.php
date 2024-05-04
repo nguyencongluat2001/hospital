@@ -94,7 +94,7 @@
         window.open(url, '_blank');
     }
      function openPhone(){
-        var phone = 'tel:02439921333';
+        var phone = 'tel:02439935556';
         window.open(phone,'_blank');
     }
     function showMessage(phone){
