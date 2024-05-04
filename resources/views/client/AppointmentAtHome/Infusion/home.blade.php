@@ -10,17 +10,10 @@
 </style>
 <link rel="stylesheet" href="../clients/css/style.css">
     <!-- Start Banner Hero -->
-    <div class="banner-wrapper bg-light" >
-        <div id="index_banner" class="banner-vertical-center-index">
-            <!-- Start slider -->
+    <div class="bg-light" >
+        <!-- <div id="index_banner" class="banner-vertical-center-index"> -->
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner active pt-5" >
-                     <!-- <div class="list-hispital-home-one pt-5">
-                        <section class="banner-bg">
-                            <span  class="text-title-home "><center> ĐĂNG KÝ KHÁM NHANH</center></span>
-                        </section>
-                        
-                     </div> -->
+                <div class="carousel-inner active" >
                      
                     <!-- End Contact -->
                     <div class="carousel-item active list-hispital-home" >
@@ -28,7 +21,7 @@
                             <div class="banner-content col-lg-8 col-10 offset-1 m-lg-auto text-left ">
                                 <div class="row g-lg-5 mb-4">
                                     <div class="banner-wrapper w-100" style="background:#ffffffba;color:black">
-                                        <div class="row g-lg-5 mb-4">
+                                        <!-- <div class="row g-lg-5 mb-4">
                                             <div class="banner-wrapper w-100 py-3" style="background:#15283dd6">
                                                 <div class="list-group wrapper pb-0 px-3">
                                                     <a class="col-sm-6 col-lg-12 text-decoration-none text-light">
@@ -39,7 +32,27 @@
                                                             <div class="col-lg-1 "></div>
                                                             <div class="col-lg-8 ">
                                                             <span  class="text-title-home" style="color:#ff9300"><center> Truyền dịch tại nhà - Tiêm thuốc theo chỉ định của bác sĩ</center></span>
-                                                            <!-- <span  style="font-size:20px">Việc làm truyền dịch tại nhà giúp tiết kiệm thời gian và công sức di chuyển đến cơ sở y tế. Người dùng có thể sắp xếp thời gian và địa điểm phù hợp cho việc làm truyền dịch.</span> -->
+                                                        </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <div class="row g-lg-5 mb-4">
+                                            <div class="banner-wrapper w-100 py-3">
+                                                <div class="list-group wrapper pb-0 px-3">
+                                                    <a class="col-sm-6 col-lg-12 text-decoration-none text-light">
+                                                        <div class="d-lg-flex gx-5">
+                                                            <div class="col-lg-1">
+                                                                <!-- <center>
+                                                                <img class="card-img-top" src="{{url('/clients/img/logoMed.webp')}}" style="width:120px;object-fit: cover;" alt="...">
+
+                                                                </center> -->
+                                                            </div>
+                                                            <div class="col-lg-1 "></div>
+                                                            <div class="col-lg-8 ">
+                                                            <span  class="text-title-home" style="color:#000000"><center> Truyền dịch tại nhà</center></span>
+                                                            <span  style="font-size:15px;color:#577391">Truyền dịch tại nhà theo chỉ định của bác sĩ.</span>
                                                         </div>
                                                         </div>
                                                     </a>
@@ -143,7 +156,7 @@
                     <!-- Start Banner Hero -->
                 </div>
             </div>
-        </div>
+        <!-- </div> -->
     </div>
 <div class="modal fade" id="editmodal" role="dialog"></div>
 <div class="modal " id="addfile" role="dialog"></div>

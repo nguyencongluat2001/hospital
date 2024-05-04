@@ -410,10 +410,10 @@ footer a.text-light:hover {
 } */
 @media (max-width:2560px ) {
   #index_banner .carousel-inner {
-    height: 93vh;
+    height: 66vh;
   }
   .banner-wrapper{
-    margin-top: 0px !important;
+    margin-top: 89px !important;
   }
  .image-logo{
     width:8%
@@ -463,7 +463,7 @@ footer a.text-light:hover {
 }
 @media (max-width:767px ) {
   #index_banner .carousel-inner {
-    height: 29vh;
+    height: 19vh;
     /* background: #1d363d57; */
   }
   .banner-wrapper{
@@ -485,7 +485,7 @@ footer a.text-light:hover {
 }
 @media (max-width:425px ) {
   #index_banner .carousel-inner {
-    height: 10rem;
+    height: 9rem;
     /* background: #1d363d57; */
   }
   .banner-wrapper{

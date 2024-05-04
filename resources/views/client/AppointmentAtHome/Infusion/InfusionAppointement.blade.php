@@ -45,7 +45,7 @@
 <link rel="stylesheet" href="../clients/css/style.css">
     <!-- Start Banner Hero -->
     <!-- Start Banner Hero -->
-    <div class="banner-wrapper bg-light" >
+    <div class="banner-wrapper bg-light" style="margin-top: 1rem;">
         <div id="index_banner" class="banner-vertical-center-index">
             <!-- Start slider -->
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -54,46 +54,48 @@
                 </ol> -->
                 <div class="carousel-inner active pt-4" >
                      <!-- Start Contact -->
-                     <div class="list-hispital-home-one pt-5">
+                     <!-- <div class="list-hispital-home-one pt-5">
                         <section class="banner-bg">
-                        <!-- style="animation: lights 4s 750ms linear infinite;" -->
-                            <center>
-                                <span class="text-title-home anime-title" style=" padding-top: 20px;"> TRUYỀN DỊCH TẠI NHÀ</span> <br>
-                            </center>
                         </section>
-                     </div>
-                     <!-- <div class="test"></div> -->
-
-                    <!-- End Contact -->
-                    <div class="carousel-item active list-hispital-home pt-3">
-                        <div class=" row d-flex align-items-center">
-                            <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-center ">
-                                <div class="row g-lg-5 mb-4">
-                                    
-                                <center>
-                                    <div class="col-md-6 mb-4">
-                                        <a href="{{url('/client/appointmentathome/tab2/')}}/truyendich" class="card border-0 shadow-lg overflow-hidden">
-                                            <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/laymautainha.jpeg')}}" alt="Card image">
-                                            <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                                                <div style="background: #00000091;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                                                    <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;">Dịch vụ truyền dịch tại nhà - Tiêm thuốc theo chỉ định của bác sĩ</h3>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <br>
-                                        <a href="{{url('/client/appointmentathome/tab2/')}}/truyendich">
-                                            <span style="padding: 25px;;background: #ffba4b; color: #0d1226;" class="btn btn-outline-light rounded-pill">Đặt lịch truyền</span>
-                                        </a>
-                                    </div>
-                                </center>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                     </div> -->
                 </div>
             </div>
         </div>
     </div>
+    <center>
+        <!-- <div class="col-md-6 mb-4 pt-4">
+            <a href="{{url('/client/appointmentathome/tab2/')}}/truyendich" class="card border-0 shadow-lg overflow-hidden">
+                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/laymautainha.jpeg')}}" alt="Card image">
+                <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                    <div style="background: #00000091;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                        <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;">Dịch vụ truyền dịch tại nhà - Tiêm thuốc theo chỉ định của bác sĩ</h3>
+                    </div>
+                </div>
+            </a>
+            <br>
+            <a href="{{url('/client/appointmentathome/tab2/')}}/truyendich">
+                <span style="padding: 25px;;background: #ffba4b; color: #0d1226;" class="btn btn-outline-light rounded-pill">Đặt lịch truyền</span>
+            </a>
+        </div> -->
+
+        <div class="col-md-6 mb-4">
+                    <a href="{{url('/client/appointmentathome/tab2/')}}/truyendich" class="recent-work card border-0 shadow-lg overflow-hidden">
+                        <img class="recent-work-img card-img" style="height: 250px;object-fit: cover;" src="{{url('/clients/img/truyentainha1.jpeg')}}" alt="Card image">
+                        <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                            <div style="border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                <div style="background: #486289a8;padding: 10px;border-radius: 10px;color: #ffffff;">
+                                    <h3 style="font-size: 23 !important;font-family: serif;color: #ffffff;font-weight: 700;">Dịch vụ truyền dịch tại nhà</h3>
+                                    <span  class="blogReader">Giúp khách hàng được chăm sóc tại chính ngôi nhà của bạn hơn thế tiết kiệm thời gian đi lại, mức chi phí hợp lý.</span> <br>
+                                    <center>
+                                            <span style="background: #f1fffd;color: #ff6a20;font-weight: 700;width: 150px;" class="btn btn-outline-light rounded-pill">Đặt lịch truyền</span>
+                                    </center>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </a>
+                </div>
+    </center>
     <!-- Start Banner Hero -->
     <section class="bg-light w-100">
         <div class="container">

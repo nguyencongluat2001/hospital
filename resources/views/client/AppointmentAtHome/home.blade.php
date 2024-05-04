@@ -144,11 +144,11 @@
 </style>
 <link rel="stylesheet" href="../clients/css/style.css">
     <!-- Start Banner Hero -->
-    <div class="banner-wrapper bg-light" >
+    <div class="bg-light" >
         <div class="banner-vertical-center-index">
             <!-- Start slider -->
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner active pt-5" >
+                <div class="carousel-inner active" >
                      <!-- <div class="list-hispital-home-one pt-5">
                         <section class="banner-bg">
                             <span  class="text-title-home "><center> ĐĂNG KÝ KHÁM NHANH</center></span>
@@ -167,11 +167,11 @@
                                                 <div class="list-group wrapper pb-0 px-3">
                                                     <a class="col-sm-6 col-lg-12 text-decoration-none text-light">
                                                         <div class="d-lg-flex gx-5">
-                                                            <div class="col-lg-2">
-                                                                <center>
+                                                            <div class="col-lg-1">
+                                                                <!-- <center>
                                                                 <img class="card-img-top" src="{{url('/clients/img/logoMed.webp')}}" style="width:120px;object-fit: cover;" alt="...">
 
-                                                                </center>
+                                                                </center> -->
                                                             </div>
                                                             <div class="col-lg-1 "></div>
                                                             <div class="col-lg-8 ">

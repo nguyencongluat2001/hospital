@@ -34,6 +34,7 @@
   overflow-y: hidden;
   white-space: nowrap;
   scroll-snap-type: x mandatory;
+  background:#ffefd2;
 }
 .scroll-item {
   margin: 2px;
