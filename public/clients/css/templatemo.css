@@ -63,8 +63,10 @@ p, a {font-weight: 400;}
     /* background-image: url('../../clients/img/booking-cover-3.jpg'); */
   background-image: url('../../clients/img/Banner_medhn.png');
   background-position: center; 
-  background-size: cover;
-  height: 100%;
+  /* background-size: cover; */
+  background-size: 100%;
+  background-repeat: no-repeat;
+  /* height: 100%; */
   /* min-height: 60vh; */
   /* width: 100% auto; */
   /* opacity: 0.5; */
@@ -96,7 +98,7 @@ p, a {font-weight: 400;}
   font-size: 4em;
 }
 #index_banner .carousel-inner {
-  /* height: 80vh; */
+  height: 34rem;
   /* background: #1d363d57; */
 }
 #index_banner .carousel-indicators li,
@@ -406,7 +408,7 @@ footer a.text-light:hover {
     font-size: 33px !important;
   }
 } */
-@media (min-width:1440px) and (max-width:2560px ) {
+@media (max-width:2560px ) {
  .image-logo{
     width:8%
  }
@@ -414,7 +416,13 @@ footer a.text-light:hover {
   height:500px
 }
 }
-@media (min-width:768px) and (max-width:1439px ) {
+@media (max-width:1439px ) {
+  #index_banner .carousel-inner {
+    height: 93vh;
+  }
+  .banner-wrapper{
+    margin-top: 55px !important;
+  }
   .image-logo{
     width:8%
   }
@@ -423,7 +431,38 @@ footer a.text-light:hover {
   }
  
 }
-@media (min-width:425px) and (max-width:767px ) {
+@media (max-width:1024px ) {
+  #index_banner .carousel-inner {
+    height: 24rem;
+  }
+  .banner-wrapper{
+    margin-top: 63px !important;
+  }
+  .image-logo{
+    width:8%
+  }
+  .css-height{
+    height:200px
+  }
+ 
+}
+@media (max-width:768px ) {
+  #index_banner .carousel-inner {
+    height: 18rem;;
+    /* background: #1d363d57; */
+  }
+  .banner-wrapper{
+    margin-top: 55px !important;
+  }
+}
+@media (max-width:767px ) {
+  #index_banner .carousel-inner {
+    height: 29vh;
+    /* background: #1d363d57; */
+  }
+  .banner-wrapper{
+    margin-top: 40px !important;
+  }
   .anime-car{
     display: none !important;
   }
@@ -438,7 +477,14 @@ footer a.text-light:hover {
 }
   
 }
-@media (min-width:375px) and (max-width:424px ) {
+@media (max-width:425px ) {
+  #index_banner .carousel-inner {
+    height: 10rem;
+    /* background: #1d363d57; */
+  }
+  .banner-wrapper{
+    margin-top: 40px !important;
+  }
   .navbar-brand-text{
     width: 40%;
   }
@@ -446,7 +492,14 @@ footer a.text-light:hover {
     width:10%
  }
 }
-@media (min-width:321px) and (max-width:374px ) {
+@media (max-width:375px ) {
+  #index_banner .carousel-inner {
+    height: 16vh;
+    /* background: #1d363d57; */
+  }
+  .banner-wrapper{
+    margin-top: 40px !important;
+  }
   .navbar-brand-text{
     width: 40%;
   }
@@ -457,7 +510,14 @@ footer a.text-light:hover {
   height:50px
  }
 }
-@media (max-width:319px ) {
+@media (max-width:320px ) {
+  #index_banner .carousel-inner {
+    height: 14vh;
+    /* background: #1d363d57; */
+  }
+  .banner-wrapper{
+    margin-top: 40px !important;
+  }
   .navbar-brand-text{
     width: 40%;
   }

@@ -2,7 +2,7 @@
 use Modules\System\Dashboard\CustomerCare\Models\CustomerCareModel;
 @endphp
 
-@php
+{{--@php
 $ip = gethostbyname(trim(exec("hostname")));
 $columnSelect = ['phone', 'ip', \DB::raw("DATE_FORMAT(created_at, '%Y-%m-%d %H:00:00') as created_at")];
 $columnGroup = ['phone', 'ip', \DB::raw("DATE_FORMAT(created_at, '%Y-%m-%d %H:00:00')")];
@@ -20,7 +20,7 @@ foreach($customerCare as $key => $value){
     }
 }
 
-@endphp
+@endphp--}}
 <!-- <form action="" method="POST" id="frmChat_box" autocomplete="off">
     <input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
     <span class="form-group input-group" style="align-items: center;">

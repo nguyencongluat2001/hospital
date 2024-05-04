@@ -194,7 +194,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" /> -->
 <!-- Start Banner Hero -->
-<div class="banner-wrapper bg-light">
+<div class="banner-wrapper bg-light" style="margin-top: 90px;">
     <div id="index_banner" class="banner-vertical-center-index">
         <!-- Start slider -->
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -262,7 +262,7 @@
                     </section>
                 </div>
                 <!-- End Contact -->
-                <div class="carousel-item active list-hispital-home pt-5" >
+                <!-- <div class="carousel-item active list-hispital-home pt-5" >
                     <div class=" row d-flex align-items-center">
                         <div class="banner-content col-lg-8 offset-1 col-10 m-lg-auto text-center ">
                          <div class="row g-lg-5 mb-4">
@@ -311,108 +311,61 @@
                         </div>                               
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
 </div>
 <!-- End Banner Hero -->
 <section class="service-wrapper py-3">
+    
     <div class=" d-flex align-items-center">
         <div class="banner-content col-lg-10 col-10 offset-1 m-lg-auto text-left ">
             <div class="row g-lg-5 mb-4">
-                <!-- Start Recent Work -->
-                <!-- background: #00000075; -->
                 <div class="col-md-6 mb-4">
                     <a href="{{url('/client/appointmentathome/indexApointment')}}" class="recent-work card border-0 shadow-lg overflow-hidden">
                         <img class="recent-work-img card-img" style="height: 250px;object-fit: cover;" src="{{url('/clients/img/laymautainha.jpeg')}}" alt="Card image">
                         <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                             <div style="border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                               <div style="background: #ffe040;padding: 10px;border-radius: 10px; color: #002671;">
-                                    <h3 style="font-size: 23 !important;font-family: serif;color: #3089d6;font-weight: 700;">Dịch vụ lấy máu tại nhà</h3>
+                               <div style="background: #486289a8;padding: 10px;border-radius: 10px;color: #ffffff;">
+                                    <h3 style="font-size: 23 !important;font-family: serif;color: #ffffff;font-weight: 700;">Dịch vụ lấy máu tại nhà</h3>
                                     <span class="blogReader">Giúp khách hàng chủ động tầm soát bệnh lý. Đồng thời tiết kiệm thời gian đi lại, chờ đợi kết quả với mức chi phí hợp lý.</span> <br>
-                               </div>
-                                <center>
-                                        <span style="background: #f1fffd;color: #0d1226;width: 150px;" class="btn btn-outline-light rounded-pill">Đặt lịch</span>
+                                    <center>
+                                        <span style="background: #f1fffd;color: #ff6a20;font-weight: 700;width: 150px;" class="btn btn-outline-light rounded-pill">Đặt lịch</span>
                                 </center>
+                               </div>
                             </div>
                         </div>
                     </a>
-                </div><!-- End Recent Work -->
-                <!-- Start Recent Work -->
+                </div>
                 <div class="col-md-6 mb-4">
                     <a href="{{url('/client/appointmentathome/tab2/')}}/truyendich" class="recent-work card border-0 shadow-lg overflow-hidden">
                         <img class="recent-work-img card-img" style="height: 250px;object-fit: cover;" src="{{url('/clients/img/truyentainha1.jpeg')}}" alt="Card image">
                         <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                             <div style="border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                                <div style="background: #ffe040;padding: 10px;border-radius: 10px; color: #002671;">
-                                    <h3 style="font-size: 23 !important;font-family: serif;color: #3089d6;font-weight: 700;">Dịch vụ truyền dịch tại nhà</h3>
+                                <div style="background: #486289a8;padding: 10px;border-radius: 10px;color: #ffffff;">
+                                    <h3 style="font-size: 23 !important;font-family: serif;color: #ffffff;font-weight: 700;">Dịch vụ truyền dịch tại nhà</h3>
                                     <span  class="blogReader">Giúp khách hàng được chăm sóc tại chính ngôi nhà của bạn hơn thế tiết kiệm thời gian đi lại, mức chi phí hợp lý.</span> <br>
+                                    <center>
+                                            <span style="background: #f1fffd;color: #ff6a20;font-weight: 700;width: 150px;" class="btn btn-outline-light rounded-pill">Đặt lịch</span>
+                                    </center>
                                 </div>
-                                <center>
-                                        <span style="background: #f1fffd;color: #0d1226;width: 150px;" class="btn btn-outline-light rounded-pill">Đặt lịch</span>
-                                </center>
-                            </div>
-                        </div>
-                    </a>
-                </div><!-- End Recent Work -->
-            </div>
-            <!-- <center><span class="famous-saying">"Chỉ khi người giàu ốm họ mới thực hiểu sự bất lực của giàu sang"</span></center> -->
-
-        </div>
-    </div>
-    <div class=" d-flex align-items-center">
-        <!-- <div class="rowx">
-            <span class="h2 text-center col-12 py-2" style="font-family:emoji">
-                <center> Cơ sở y tế</center>
-            </span>
-        </div> -->
-        <div class="banner-content col-lg-10 col-10 offset-1 m-lg-auto text-left pt-5">
-            <div class="row g-lg-5 mb-4">
-                @foreach ($datas as $key => $data)
-                <div class="col-md-4 mb-4">
-                    <a href="{{url('/facilities')}}/{{$data->code}}" class="recent-work card border-0 shadow-lg overflow-hidden">
-                        <img class="recent-work-img card-img" style="height: 250px;object-fit: cover;" src="{{url('/file-image-client/avatar-hospital/')}}/{{ !empty($data->avatar)?$data->avatar:'' }}" alt="Card image">
-                        <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                            <div style="background: white;border-radius: 5px;width: 100%;padding: 15px;" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                                <center>
-                                    <h3 class="card-title" style="color:#3e9bc4;font-size: 23px !important;font-weight: 700;">{{$data->name_hospital}}</h3>
-                                    <!-- <span style="color:#ecfaff;padding:10px;font-size: 14 !important;"><i class="fas fa-map-marker-alt"></i> {{$data->address}}</span><br><br> -->
-                                    <span style="color: #ffd100;background: #3785d1;" class="btn btn-outline-light rounded-pill">Đặt lịch khám</span>
-                                </center>
+                               
                             </div>
                         </div>
                     </a>
                 </div>
-                @endforeach
-
-                <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-center py-2 pb-2">
-                    <a class="banner-button btn rounded-pill btn-outline-primary btn-lg px-4 " href="{{url('/facilities')}}" role="button">Xem thêm <i class="fas fa-hand-point-right"></i></a>
-                </div>
             </div>
         </div>
-    </div>
-    <div class="container-fluid pb-3">
-        <div class="row">
-            <h2 class="h2 text-center col-12 py-2">Vai trò</h2>
-        </div>
-        <p class="col-8 offset-2 col-lg-8 text-start pb-3 text-muted px-2">
-            &nbsp; &nbsp;&nbsp; Booking Hospital giúp bệnh nhân dễ dàng lựa chọn đúng bác sĩ từ mạng lưới bác sĩ chuyên khoa giỏi, với thông tin đã xác thực và đặt lịch nhanh chóng. Bác sĩ chuyên khoa giỏi, được nhiều bệnh nhân tin tưởng, đồng nghiệp đánh giá cao, có uy tín trong ngành. Các bác sĩ đã, đang công tác tại các bệnh viện hàng đầu như: Bệnh viện Bạch Mai, Bệnh Viện Việt Đức, Bệnh viện TW Quân đội 108, Bệnh viện Quân Y 103, Bệnh viện Nhi TW, Bệnh viện Tai Mũi Họng TW, Viện Tim mạch Việt Nam, Bệnh viện Chợ Rẫy, Bệnh viện Đại học Y dược TP.HCM, Bệnh viện Nhân dân 115…
-            .Các bác sĩ có lịch khám tại các bệnh viện công lớn hoặc phòng khám tư nhân uy tín, được chọn lọc kỹ lưỡng tại Hà Nội và TP.HCM. Bên cạnh đó, hệ thống ghi nhận ý kiến đánh giá phản hồi của bệnh nhân sau khi đi khám và phương án điều trị của từng bác sĩ. Từ đó chúng tôi có thêm thông tin để giới thiệu trên hệ thống những bác sĩ uy tín, chuyên môn cao. <br>
-        </p>
     </div>
 </section>
 
 <!-- Start Banner Hero -->
-<div class="banner-wrapper">
+<!-- <div class="banner-wrapper">
     <div class="banner-vertical-center-index container-fluid">
-        <!-- Start slider -->
         <div id="carouselExampleIndicators1" class="carousel slide">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <!-- <div class="row">
-                             <h2 class="h2 text-center col-12">Bài viết nổi bật</h2>
-                        </div> -->
                     <div class=" row d-flex align-items-center">
                         <div class="banner-content col-lg-10 col-10 offset-1 m-lg-auto text-left py-5 pb-5">
                             <div id="table-blog-container"></div>
@@ -421,12 +374,11 @@
                 </div>
             </div>
         </div>
-        <!-- End slider -->
     </div>
-</div>
+</div> -->
 <!-- End Banner Hero -->
 <!-- Start Service -->
-<section class="service-wrapper py-3">
+<!-- <section class="service-wrapper py-3">
     <div class="service-tag py-5 popular-specialties">
         <div class="col-md-12">
             <h2 class="h2 text-center col-12 py-2">Chuyên khoa</h2>
@@ -434,7 +386,6 @@
         <div class="container py-5">
             <div class="row gx-sm-3 gx-lg-5 gy-lg-5 gy-3 pb-3 projects">
                 @foreach ($Specialty as $key => $data)
-                <!-- Start Recent Work -->
                 <div class="col-xl-3 col-md-4 col-sm-6 project ui branding">
                     <a href="{{url('/specialty')}}/{{$data->code}}" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
                         <img class="service card-img" style="height: 250px;object-fit: cover;" src="{{url('/file-image-client/avatar-specialty/')}}/{{ !empty($data->avatar)?$data->avatar:'' }}" alt="Card image">
@@ -445,12 +396,201 @@
                             </div>
                         </div>
                     </a>
-                </div><!-- End Recent Work -->
+                </div>
                 @endforeach
             </div>
         </div>
     </div>
-</section>
+</section> -->
+ <!-- Start Banner Hero -->
+ <section class="bg-light w-100">
+        <div class="container">
+            <div class="row d-flex align-items-center py-5">
+                <div class="col-lg-6 text-start" >
+                    <h1 style="color: #7fd6ff!important;font-family: serif;font-size:25px" class="py-5 typo-space-line title-appoinment">ĐIỂM KHÁC BIỆT KHI SỬ DỤNG DỊCH VỤ XÉT NGHIỆM TẠI NHÀ</h1>
+                    <p class="">
+                    Tiện lợi: Việc làm xét nghiệm tại nhà giúp tiết kiệm thời gian và công sức di chuyển đến cơ sở y tế. Người dùng có thể sắp xếp thời gian và địa điểm phù hợp cho việc làm xét nghiệm.
+                    </p>
+                    <div class="row g-lg-5 mb-4" >
+                        <!-- Start Recent Work -->
+                        <div class="col-md-4 mb-4">
+                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$datas['code'] ?? ''}}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/tuvan.jpeg')}}" alt="Card image">
+                                <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                                    <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                        <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="fas fa-headset"></i> Tư vấn miễn phí</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- End Recent Work -->
+                        <!-- Start Recent Work -->
+                        <div class="col-md-4 mb-4">
+                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$datas['code'] ?? ''}}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/bank.jpeg')}}" alt="Card image">
+                                <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                                    <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                        <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="fas fa-dollar-sign"></i> Giá cả phải chăng</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- End Recent Work -->
+                        <!-- Start Recent Work -->
+                        <div class="col-md-4 mb-4">
+                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$datas['code'] ?? ''}}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/bacsi.jpeg')}}" alt="Card image">
+                                <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                                    <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                        <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="fas fa-hospital-user"></i> Bác sĩ chuyên môn giỏi</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- End Recent Work -->
+                        <!-- Start Recent Work -->
+                        <div class="col-md-4 mb-4">
+                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$datas['code'] ?? ''}}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/laymautainha.jpeg')}}" alt="Card image">
+                                <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                                    <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                        <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="fas fa-user-nurse"></i> Nhân viên chuyên nghiệp</h3>
+                                    </div>  
+                                </div>
+                            </a>
+                        </div>
+                        <!-- End Recent Work -->
+                        <!-- Start Recent Work -->
+                        <div class="col-md-4 mb-4">
+                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$datas['code'] ?? ''}}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/nhanvien.jpeg')}}" alt="Card image">
+                                <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                                    <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                        <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="fas fa-blender-phone"></i> Phục vụ 24/24</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- End Recent Work -->
+                        <!-- Start Recent Work -->
+                        <div class="col-md-4 mb-4">
+                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$datas['code'] ?? ''}}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/like.jpeg')}}" alt="Card image">
+                                <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                                    <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                        <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="far fa-hand-point-right"></i> Hơn 5000 khách hàng hài lòng</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- End Recent Work -->
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="../clients/img/work.svg">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Banner Hero -->
+
+
+    <!-- Start Team Member -->
+    <section class="container">
+        <div class="pt-5 pb-3 d-lg-flex align-items-center gx-5">
+
+            <div class="col-lg-3">
+                <h2 style="color: #7fd6ff!important;font-family: serif;" class="h2 py-5 typo-space-line title-appoinment">ĐỘI NGŨ BÁC SĨ CỦA CHÚNG TÔI</h2>
+                <p class="text-muted ">
+                Đội ngũ y bác sĩ giỏi, giàu kinh nghiệm, tận tâm, nhiệt huyết. Cán bộ lấy mẫu chuyên nghiệp có chứng chỉ hành nghề. Mang lại cho bệnh nhân cảm giác thân thiện, thoải mái nhất.
+                </p>
+            </div>
+
+            <div class="col-lg-9 row">
+                <div class="team-member col-md-4">
+                    <center><img class="team-member-img img-fluid rounded-circle p-4"style="width:300px;height: 300px;object-fit: cover;" src="{{url('/clients/img/bacsi1.webp')}}" alt="Card image"></center>
+                    <ul class="team-member-caption list-unstyled text-center pb-4 text-muted ">
+                        <li><b>Văn Chung</b></li>
+                    </ul>
+                </div>
+                <div class="team-member col-md-4">
+                    <center><img class="team-member-img img-fluid rounded-circle p-4"style="width:300px;height: 300px;object-fit: cover;" src="{{url('/clients/img/bacsi2.webp')}}" alt="Card image"></center>
+                    <ul class="team-member-caption list-unstyled text-center pb-4 text-muted ">
+                        <li><b>Hồng Ngân</b></li>
+                    </ul>
+                </div>
+                <div class="team-member col-md-4">
+                    <center><img class="team-member-img img-fluid rounded-circle p-4"style="width:300px;height: 300px;object-fit: cover;" src="{{url('/clients/img/bacsi3.webp')}}" alt="Card image"></center>
+                    <ul class="team-member-caption list-unstyled text-center pb-4 text-muted ">
+                        <li><b>Quốc Anh</b></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- End Team Member -->
+
+    <!-- Start Aim -->
+    <section class="banner-bg bg-white py-5">
+        <div class="container my-4">
+            <div class="row text-center">
+
+                <div class="objective col-lg-4">
+                    <div class="objective-icon card m-auto py-4 mb-2 mb-sm-4 bg-warning shadow-lg">
+                        <i class=" bx bxs-bulb text-light fa-3x"></i>
+                    </div>
+                    <h2 class="objective-heading h3 mb-2 mb-sm-4 ">Khám tổng quát từ medlatec</h2>
+                </div>
+
+                <div class="objective col-lg-4 mt-sm-0 mt-4">
+                    <div class="objective-icon card m-auto py-4 mb-2 mb-sm-4 bg-warning shadow-lg">
+                        <!-- <i class=' bx bx-revision text-light'></i> -->
+                        <i class="fas fa-thermometer fa-3x" style="color:#ffffff"></i>
+                    </div>
+                    <h2 class="objective-heading h3 mb-2 mb-sm-4 ">Truyền dịch y tế</h2>
+                </div>
+
+                <div class="objective col-lg-4 mt-sm-0 mt-4">
+                    <div class="objective-icon card m-auto py-4 mb-2 mb-sm-4 bg-warning shadow-lg">
+                        <i class=" bx bxs-select-multiple text-light fa-3x"></i>
+                    </div>
+                    <h2 class="objective-heading h3 mb-2 mb-sm-4 ">Cấp cứu hồi sức</h2>
+                </div>
+
+            </div>
+        </div>
+        <div class="container my-4">
+            <div class="row text-center">
+
+                <div class="objective col-lg-4">
+                    <div class="objective-icon card m-auto py-4 mb-2 mb-sm-4 bg-warning shadow-lg">
+                        <!-- <i class=" bx bxs-bulb text-light"></i> -->
+                        <i class="fas fa-heartbeat fa-3x" style="color:#ffffff"></i>
+                    </div>
+                    <h2 class="objective-heading h3 mb-2 mb-sm-4">Đo điện tim</h2>
+                </div>
+
+                <div class="objective col-lg-4 mt-sm-0 mt-4">
+                    <div class="objective-icon card m-auto py-4 mb-2 mb-sm-4 bg-warning shadow-lg">
+                        <!-- <i class=' bx bx-revision text-light'></i> -->
+                        <i class="fas fa-video fa-3x" style="color:#ffffff"></i>
+                    </div>
+                    <h2 class="objective-heading h3 mb-2 mb-sm-4 ">Chụp X-quang</h2>
+                </div>
+
+                <div class="objective col-lg-4 mt-sm-0 mt-4">
+                    <div class="objective-icon card m-auto py-4 mb-2 mb-sm-4 bg-warning shadow-lg">
+                        <!-- <i class=" bx bxs-select-multiple text-light"></i> -->
+                        <i class="fas fa-tint fa-3x" style="color:#ffffff"></i>
+                    </div>
+                    <h2 class="objective-heading h3 mb-2 mb-sm-4 ">Xét nghiệm máu</h2>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End Aim -->
 <!-- End Service -->
 <!-- Start Service -->
 <section class="service-wrapper py-3">

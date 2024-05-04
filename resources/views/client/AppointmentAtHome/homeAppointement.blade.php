@@ -47,8 +47,8 @@
     } */
     
     .icon-dichvu{
-    width: 90px;
-    height: 90px;
+    width: 60px;
+    height: 60px;
     border: 1px solid #fff;
     display: flex;
     align-items: center;
@@ -86,7 +86,7 @@
 <link rel="stylesheet" href="../clients/css/style.css">
     <!-- Start Banner Hero -->
     <!-- Start Banner Hero -->
-    <div class="banner-wrapper bg-light" >
+    <div class="banner-wrapper bg-light" style="margin-top: 1rem;">
         <div id="index_banner" class="banner-vertical-center-index">
             <!-- Start slider -->
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -118,7 +118,7 @@
                      <!-- <div class="test"></div> -->
 
                     <!-- End Contact -->
-                    <div class="carousel-item active list-hispital-home pt-3">
+                    <!-- <div class="carousel-item active list-hispital-home pt-3"> -->
                         <div class=" row d-flex align-items-center">
                             <div class="banner-content col-lg-12 col-12 m-lg-auto text-left ">
                                 {{-- <div class="row g-lg-5 mb-4">
@@ -141,7 +141,7 @@
                                     @endforeach
 
                                 </div> --}}
-                                <center>
+                                <!-- <center>
                                     <div id="scroll">
                                         <div class="scroll-item" onclick="JS_AppointmentAtHome.flow('THUONG')">
                                             <a type="button" class="btn" style="color: #f2ffff;background: none;">
@@ -216,20 +216,92 @@
                                         </a>
                                         </div>
                                     </div>
-                                </center>
+                                </center> -->
                                
                                 <!-- <center><span class="famous-saying">"Chỉ khi người giàu ốm họ mới thực hiểu sự bất lực của giàu sang"</span></center> -->
                             </div>
                         </div>
-                    </div>
-                   
-
-
-
+                    <!-- </div> -->
                 </div>
             </div>
         </div>
     </div>
+    <center>
+        <div id="scroll">
+            <div class="scroll-item" onclick="JS_AppointmentAtHome.flow('THUONG')">
+                <a type="button" class="btn" style="color: #f2ffff;background: none;">
+                <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
+                    <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/datlictainha.png);background-size: 50px;background-repeat: no-repeat;background-position: center;"></div>
+                </div>
+                <div style="font-size: 16px;color: #0c0c0c;font-weight: 600;">Đặt lịch tại nhà</div>
+            </a>
+            </div>
+            <div class="scroll-item" onclick="JS_AppointmentAtHome.flow('TONG_QUAT')">
+                <a type="button" class="btn" style="color: #f2ffff;background: none;">
+                <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
+                    <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/tongquat.webp);background-size: 80px;background-repeat: no-repeat;background-position: center;"></div>
+                </div>
+                <div style="font-size: 16px;color: #0c0c0c;font-weight: 600;">Tổng quát</div>
+            </a>
+            </div>
+            <div class="scroll-item" onclick="JS_AppointmentAtHome.flow('SINH_HOA')">
+                <a type="button" class="btn" style="color: #f2ffff;background: none;">
+                <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
+                    <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/161340-iconxet-nghiem-y-hoc.png);background-size: 50px;background-repeat: no-repeat;background-position: center;"></div>
+                </div>
+                <div style="font-size: 16px;color: #0c0c0c;font-weight: 600;">Sinh hoá cơ bản</div>
+            </a>
+            </div>
+            <div class="scroll-item" onclick="JS_AppointmentAtHome.flow('UNG_THU')">
+                <a type="button" class="btn" style="color: #f2ffff;background: none;">
+                <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
+                    <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/ungthu.webp);background-size: 80px;background-repeat: no-repeat;background-position: center;"></div>
+                </div>
+                <div style="font-size: 16px;color: #0c0c0c;font-weight: 600;">Ung thư</div>
+            </a>
+            </div>
+            <div class="scroll-item" onclick="JS_AppointmentAtHome.flow('CUM')">
+                <a type="button" class="btn" style="color: #f2ffff;background: none;">
+                <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
+                    <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/cumvasot.webp);background-size: 80px;background-repeat: no-repeat;background-position: center;"></div>
+                </div>
+                <div style="font-size: 16px;color: #0c0c0c;font-weight: 600;">Cúm và sốt</div>
+            </a>
+            </div>
+            <div class="scroll-item">
+                <a href="{{url('appointmentathome/1')}}" type="button" class="btn" style="color: #f2ffff;background: none;">
+                <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
+                    <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/diung.webp);background-size: 80px;background-repeat: no-repeat;background-position: center;"></div>
+                </div>
+                <div style="font-size: 16px;color: #0c0c0c;font-weight: 600;">Dị ứng</div>
+            </a>
+            </div>
+            <div class="scroll-item" onclick="JS_AppointmentAtHome.flow('GAN')">
+                <a type="button" class="btn" style="color: #f2ffff;background: none;">
+                <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
+                    <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/gan.webp);background-size: 80px;background-repeat: no-repeat;background-position: center;"></div>
+                </div>
+                <div style="font-size: 16px;color: #0c0c0c;font-weight: 600;">Gan</div>
+            </a>
+            </div>
+            <div class="scroll-item">
+                <a href="{{url('appointmentathome/PACK3')}}" type="button" class="btn" style="color: #f2ffff;background: none;">
+                <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
+                    <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/thaiky.webp);background-size: 80px;background-repeat: no-repeat;background-position: center;"></div>
+                </div>
+                <div style="font-size: 16px;color: #0c0c0c;font-weight: 600;">Thai kỳ</div>
+            </a>
+            </div>
+            <div class="scroll-item">
+                <a href="{{url('appointmentathome/1')}}" type="button" class="btn" style="color: #f2ffff;background: none;">
+                <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
+                    <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/gen.webp);background-size: 80px;background-repeat: no-repeat;background-position: center;"></div>
+                </div>
+                <div style="font-size: 16px;color: #0c0c0c;font-weight: 600;">Gen</div>
+            </a>
+            </div>
+        </div>
+    </center>
     <!-- Start Banner Hero -->
     <section class="bg-light w-100">
         <div class="container">
