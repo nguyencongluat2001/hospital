@@ -409,6 +409,12 @@ footer a.text-light:hover {
   }
 } */
 @media (max-width:2560px ) {
+  #index_banner .carousel-inner {
+    height: 93vh;
+  }
+  .banner-wrapper{
+    margin-top: 0px !important;
+  }
  .image-logo{
     width:8%
  }
@@ -416,12 +422,12 @@ footer a.text-light:hover {
   height:500px
 }
 }
-@media (max-width:1439px ) {
+@media (max-width:1440px ) {
   #index_banner .carousel-inner {
-    height: 93vh;
+    height: 49vh;
   }
   .banner-wrapper{
-    margin-top: 55px !important;
+    margin-top: 89px !important;
   }
   .image-logo{
     width:8%
