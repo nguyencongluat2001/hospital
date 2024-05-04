@@ -2,9 +2,9 @@
 @section('body-client')
 <br>
 <br>
-    <div class="banner-wrapper bg-light" >
+    <div class=" bg-light pt-5" >
         <div id="" class="banner-vertical-center-index">
-            <div class="carousel-inner active pt-5" >
+            <div class="carousel-inner active" >
                 <div class="banner-content col-lg-8 col-10 offset-1 m-lg-auto text-left ">
                     <div class="container-fluid pt-5"style="background: white;">
                         <div class="row"  >
