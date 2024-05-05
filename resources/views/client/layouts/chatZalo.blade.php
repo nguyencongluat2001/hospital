@@ -89,7 +89,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/8.2.0/pusher.min.js"></script>
 <script>
      function openMessage(){
-        var url = 'https://www.facebook.com/luat.nguyencong.3388?mibextid=LQQJ4d';
+        var url = 'https://www.facebook.com/profile.php?id=100094072423686&mibextid=LQQJ4d';
         window.open(url, '_blank');
     }
      function openPhone(){

@@ -603,12 +603,11 @@ if (!expanded) {
 
 
 //
-var xValues = ["Xét nghiệm tại nhà", "Truyền dịch tại nhà","Khám nhanh"];
-var yValues = [2035, 249, 445];
+var xValues = ["Xét nghiệm tại nhà", "Truyền dịch tại nhà"];
+var yValues = [12035, 1049];
 var barColors = [
   "#ff0072",
   "#73ced4",
-  "#ffae35",
 ];
 
 new Chart("myChart", {
