@@ -228,7 +228,7 @@
         </div>
     </div>
     <center>
-        <div id="scroll">
+        <div id="scroll" style="padding-top: 20px;">
             <div class="scroll-item" onclick="JS_AppointmentAtHome.flow('THUONG')">
                 <a type="button" class="btn" style="color: #f2ffff;background: none;">
                 <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
