@@ -19,13 +19,7 @@
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <input type="hidden" name="id" id="id" value="{{!empty($datas->id) ? $datas->id : ''}}">
     <div class="modal-dialog modal-lg">
-    <div class="modal-content card" style="background:#fff0;border: 1px solid rgb(0 0 0 / 0%)">
-            <div class="modal-header">
-                <h5 class="modal-title" style="font-size:30px;font-family: math;color:#224077">Chọn gói xét nghiệm</h5>
-                <!-- <button type="button" class="btn btn-sm" data-bs-dismiss="modal">
-                    X
-                </button> -->
-            </div>
+    <div class="modal-content card" style="background:#fff0;border: 0px solid rgb(0 0 0 / 0%)">
             <div class="modal-body">
                 {{-- <table id="myTable" class="table  table-bordered table-striped table-condensed dataTable no-footer">
                     <tbody id="body_data" style="background: #fdffff;">
