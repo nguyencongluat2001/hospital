@@ -191,7 +191,7 @@
                             <a class="nav-link link-package btn-outline-info rounded-pill" href="{{ url('/package') }}"> <span class="text-menu-header"><i class="fas fa-file-medical"></i> Gói khám </span> <br> <span class="text-12">Khám sức khỏe tổng quát</span></a>
                         </li> -->
                     <li class="nav-item">
-                        <a class="nav-link link-searchschedule btn-outline-info rounded-pill" href="{{ url('/searchschedule') }}"> <span class="text-menu-header"><i class="fas fa-search-plus"></i> Tra cứu lịch hẹn </span> <br> <span class="text-12"></span></a>
+                        <a class="nav-link link-searchschedule btn-outline-info rounded-pill" href="{{ url('/searchschedule') }}"> <span class="text-menu-header"><i class="fas fa-search-plus"></i> Tra cứu kết quả </span> <br> <span class="text-12"></span></a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link link-contact btn-outline-info rounded-pill" href="{{ url('/contact') }}"> <span class="text-menu-header"><i class="fas fa-comment-medical"></i> Đánh giá </span> <br> <span class="text-12">Đánh giá dịch vụ</span></a>
@@ -335,7 +335,7 @@
                     <a class="nav-link link-infusion btn-outline-info" href="{{ url('/client/appointmentathome/indexInfusion') }}"> <span class="text-menu-header"><i class="fas fa-thermometer"></i> Truyền dịch </span> <br> <span class="text-12">Truyền dịch tại nhà</span> </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link link-searchschedule btn-outline-info" href="{{ url('/searchschedule') }}"> <span class="text-menu-header"><i class="fas fa-search-plus"></i> Tra cứu </span> <br> <span class="text-12">Tra cứu lịch hẹn</span></a>
+                    <a class="nav-link link-searchschedule btn-outline-info" href="{{ url('/searchschedule') }}"> <span class="text-menu-header"><i class="fas fa-search-plus"></i> Tra cứu </span> <br> <span class="text-12">Tra cứu kết quả</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link link-contact btn-outline-info" href="{{ url('/contact') }}"> <span class="text-menu-header"><i class="fas fa-comment-medical"></i> Đánh giá </span> <br> <span class="text-12">Đánh giá dịch vụ</span></a>
