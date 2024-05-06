@@ -49,3 +49,34 @@ JS_SearchSchedule.prototype.loadList = function (value) {
         }
     });
 }
+/**
+ * Load màn hình danh sách
+ *
+ * @param oForm (tên form)
+ *
+ * @return void
+ */
+JS_SearchSchedule.prototype.getFile = function (value) {
+    NclLib.loadding();
+    var myClass = this;
+    var url = this.urlPath + '/getFile';
+    var oForm = 'form#frmSendSchedule';
+    var data = $(oForm).serialize();
+    console.log(data)
+    $.ajax({
+        url: url,
+        type: "POST",
+        cache: true,
+        data: data,
+        success: function (arrResult) {
+            if (arrResult['status'] == true) {
+                window.open(arrResult['result']['Filepdf']);
+            } else {
+                var nameMessage = 'Thất bại!, thông tin chưa chính xác!';
+                var icon = 'warning';
+                var color = '#344767';
+                NclLib.alerMesage(nameMessage,icon,color);
+            }
+        }
+    });
+}

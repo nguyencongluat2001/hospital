@@ -59,6 +59,7 @@ Route::prefix('register')->group(function () {
 });
 
 // Auth::routes();
+Route::post('client/searchschedule/getFile', [SearchScheduleController::class, 'getFile']);
 
 // Trang chủ
 Route::get('/', [ClientHomeController::class, 'index']);

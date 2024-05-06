@@ -114,4 +114,25 @@ class SearchScheduleController extends Controller
         $data['datas_athome'] = $param_s;
         return view("client.SearchSchedule.loadlist", $data)->render();
     }
+    
+     /**
+     * lấy file kết quả
+     *
+     * @param Request $request
+     *
+     * @return json $return
+     */
+    public function getFile(Request $request)
+    { 
+        $arrInput = $request->input();
+            $param = [
+                'sid'=> $arrInput['sid'],
+                'pwd'=> $arrInput['pwd']
+            ];
+            $response = Http::withBody(json_encode($param),'application/json')->post('27.72.61.137:8989/api/LIS/PdfDownload');
+            $response = $response->getBody()->getContents();
+            $response = json_decode($response,true);
+            return response()->json($response);
+
+    }
 }

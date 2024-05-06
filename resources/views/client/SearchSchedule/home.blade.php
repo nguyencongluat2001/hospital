@@ -190,20 +190,20 @@
                                                 <div id="iss_money"></div>
                                                  <div class="row">
                                                     <div class="form-input col-md-12 padding-style">
-                                                        <input type="text" class="form-control required" onchange="JS_AppointmentAtHome.getInfioPatient(this.value)" placeholder="Mã tra cứu của bạn" name="phone" id="phone" value="" oninput="inValid(this.id)">
+                                                        <input type="text" class="form-control required" placeholder="Mã tra cứu của bạn" name="sid" id="sid" value="" oninput="inValid(this.id)">
                                                         <i class="fas fa-code phone-icon padding-style"></i>
                                                         <span class="message-error phone-error">Mã tra cứu không được để trống!</span>
                                                     </div>
                                                     <div class="form-input col-md-12 padding-style" >
                                                         <div id="changeName">
-                                                            <input type="text" class="form-control required" placeholder="Mã bảo mật của bạn" name="name" id="name" value="" oninput="inValid(this.id)">
+                                                            <input type="text" class="form-control required" placeholder="Mã bảo mật của bạn" name="pwd" id="pwd" value="" oninput="inValid(this.id)">
                                                             <i class="fa fa-user-lock uname-icon padding-style"></i>
                                                         </div>
                                                         <span class="message-error uname-error">Mã bảo mật không được để trống!</span>
                                                     </div>
                                                     <center>
                                                     <div class="pt-3 mb-3" style="width:150px">
-                                                        <button type="button" onclick="JS_AppointmentAtHome.add()" class=" btn-primary" id="btn_register" style="background-color: #1d93e3;font-family: sans-serif;">
+                                                        <button type="button" onclick="JS_SearchSchedule.getFile()" class=" btn-primary" id="btn_register" style="background-color: #1d93e3;font-family: sans-serif;">
                                                             {{ __('Tra cứu') }}
                                                         </button>
                                                     </div>
