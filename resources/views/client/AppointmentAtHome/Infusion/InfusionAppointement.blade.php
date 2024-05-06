@@ -45,39 +45,10 @@
 <link rel="stylesheet" href="../clients/css/style.css">
     <!-- Start Banner Hero -->
     <!-- Start Banner Hero -->
-    <div class="banner-wrapper bg-light" style="margin-top: 1rem;">
-        <div id="index_banner" class="banner-vertical-center-index">
-            <!-- Start slider -->
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                <!-- <ol class="carousel-indicators">
-                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
-                </ol> -->
-                <div class="carousel-inner active pt-4" >
-                     <!-- Start Contact -->
-                     <!-- <div class="list-hispital-home-one pt-5">
-                        <section class="banner-bg">
-                        </section>
-                     </div> -->
-                </div>
-            </div>
-        </div>
+    <div class="image-logo" style="width:100%;background-position: center; background-size: 100%;background-repeat: no-repeat;height: 100%;">
+        <img class="card-img " src="../clients/img/Banner_medhn.png" alt="Card image">
     </div>
     <center>
-        <!-- <div class="col-md-6 mb-4 pt-4">
-            <a href="{{url('/client/appointmentathome/tab2/')}}/truyendich" class="card border-0 shadow-lg overflow-hidden">
-                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/laymautainha.jpeg')}}" alt="Card image">
-                <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                    <div style="background: #00000091;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                        <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;">Dịch vụ truyền dịch tại nhà - Tiêm thuốc theo chỉ định của bác sĩ</h3>
-                    </div>
-                </div>
-            </a>
-            <br>
-            <a href="{{url('/client/appointmentathome/tab2/')}}/truyendich">
-                <span style="padding: 25px;;background: #ffba4b; color: #0d1226;" class="btn btn-outline-light rounded-pill">Đặt lịch truyền</span>
-            </a>
-        </div> -->
-
         <div class="col-md-6 mb-4">
                     <a href="{{url('/client/appointmentathome/tab2/')}}/truyendich" class="recent-work card border-0 shadow-lg overflow-hidden">
                         <img class="recent-work-img card-img" style="height: 250px;object-fit: cover;" src="{{url('/clients/img/truyentainha1.jpeg')}}" alt="Card image">

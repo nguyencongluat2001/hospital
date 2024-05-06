@@ -87,17 +87,15 @@
 <link rel="stylesheet" href="../clients/css/style.css">
     <!-- Start Banner Hero -->
     <!-- Start Banner Hero -->
-    <div class="banner-wrapper bg-light" style="margin-top: 1rem;">
+<div class="image-logo" style="width:100%;background-position: center; background-size: 100%;background-repeat: no-repeat;height: 100%;">
+    <img class="card-img " src="../clients/img/Banner_medhn.png" alt="Card image">
+</div>
+    <!-- <div class="banner-wrapper bg-light" style="margin-top: 1rem;">
         <div id="index_banner" class="banner-vertical-center-index">
-            <!-- Start slider -->
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                <!-- <ol class="carousel-indicators">
-                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
-                </ol> -->
                 <div class="carousel-inner active pt-4" >
-                     <!-- Start Contact -->
                      <div class="css-height pt-5">
-                        <!-- <section class="banner-bg">
+                        <section class="banner-bg">
                                 <center>
                                     <span class="text-title-home anime-title" style=" padding-top: 20px;"> XÉT NGHIỆM TẠI NHÀ<br> DỊCH VỤ TỐT - KẾT QUẢ NHANH</span> <br>
                                 </center>
@@ -114,119 +112,37 @@
                                     </div>
                                 </div>
                             </div>
-                        </section> -->
+                        </section>
                      </div>
-                     <!-- <div class="test"></div> -->
-
-                    <!-- End Contact -->
-                    <!-- <div class="carousel-item active list-hispital-home pt-3"> -->
-                        <div class=" row d-flex align-items-center">
-                            <div class="banner-content col-lg-12 col-12 m-lg-auto text-left ">
-                                {{-- <div class="row g-lg-5 mb-4">
-                                    @foreach ($datas as $key => $data)
-                                        <div class="col-md-4 mb-4">
-                                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$datas['code'] ?? ''}}" class="card border-0 shadow-lg overflow-hidden">
-                                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/laymautainha.jpeg')}}" alt="Card image">
-                                                <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                                                    <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                                                        <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;">{{$datas['name']}}</h3>
-                                                    </div>
+                    <div class=" row d-flex align-items-center">
+                        <div class="banner-content col-lg-12 col-12 m-lg-auto text-left ">
+                            {{-- <div class="row g-lg-5 mb-4">
+                                @foreach ($datas as $key => $data)
+                                    <div class="col-md-4 mb-4">
+                                        <a href="{{url('/client/appointmentathome/tab1/')}}/{{$datas['code'] ?? ''}}" class="card border-0 shadow-lg overflow-hidden">
+                                            <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/laymautainha.jpeg')}}" alt="Card image">
+                                            <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                                                <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                                    <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;">{{$datas['name']}}</h3>
                                                 </div>
-                                            </a>
-                                            <center>
-                                                <a href="{{url('/client/appointmentathome/tab1/')}}/{{$datas['code'] ?? ''}}">
-                                                    <span style="background: #ffba4b; color: #0d1226;" class="btn btn-outline-light rounded-pill">Đặt lịch</span>
-                                                 </a>
-                                            </center>
-                                        </div>
-                                    @endforeach
-
-                                </div> --}}
-                                <!-- <center>
-                                    <div id="scroll">
-                                        <div class="scroll-item" onclick="JS_AppointmentAtHome.flow('THUONG')">
-                                            <a type="button" class="btn" style="color: #f2ffff;background: none;">
-                                            <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
-                                                <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/datlictainha.png);background-size: 50px;background-repeat: no-repeat;background-position: center;"></div>
                                             </div>
-                                            <div style="font-size: 16px;color: #0c0c0c;font-weight: 600;">Đặt lịch tại nhà</div>
                                         </a>
-                                        </div>
-                                        <div class="scroll-item" onclick="JS_AppointmentAtHome.flow('TONG_QUAT')">
-                                            <a type="button" class="btn" style="color: #f2ffff;background: none;">
-                                            <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
-                                                <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/tongquat.webp);background-size: 80px;background-repeat: no-repeat;background-position: center;"></div>
-                                            </div>
-                                            <div style="font-size: 16px;color: #0c0c0c;font-weight: 600;">Tổng quát</div>
-                                        </a>
-                                        </div>
-                                        <div class="scroll-item" onclick="JS_AppointmentAtHome.flow('SINH_HOA')">
-                                            <a type="button" class="btn" style="color: #f2ffff;background: none;">
-                                            <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
-                                                <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/161340-iconxet-nghiem-y-hoc.png);background-size: 50px;background-repeat: no-repeat;background-position: center;"></div>
-                                            </div>
-                                            <div style="font-size: 16px;color: #0c0c0c;font-weight: 600;">Sinh hoá cơ bản</div>
-                                        </a>
-                                        </div>
-                                        <div class="scroll-item" onclick="JS_AppointmentAtHome.flow('UNG_THU')">
-                                            <a type="button" class="btn" style="color: #f2ffff;background: none;">
-                                            <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
-                                                <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/ungthu.webp);background-size: 80px;background-repeat: no-repeat;background-position: center;"></div>
-                                            </div>
-                                            <div style="font-size: 16px;color: #0c0c0c;font-weight: 600;">Ung thư</div>
-                                        </a>
-                                        </div>
-                                        <div class="scroll-item" onclick="JS_AppointmentAtHome.flow('CUM')">
-                                            <a type="button" class="btn" style="color: #f2ffff;background: none;">
-                                            <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
-                                                <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/cumvasot.webp);background-size: 80px;background-repeat: no-repeat;background-position: center;"></div>
-                                            </div>
-                                            <div style="font-size: 16px;color: #0c0c0c;font-weight: 600;">Cúm và sốt</div>
-                                        </a>
-                                        </div>
-                                        <div class="scroll-item">
-                                            <a href="{{url('appointmentathome/1')}}" type="button" class="btn" style="color: #f2ffff;background: none;">
-                                            <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
-                                                <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/diung.webp);background-size: 80px;background-repeat: no-repeat;background-position: center;"></div>
-                                            </div>
-                                            <div style="font-size: 16px;color: #0c0c0c;font-weight: 600;">Dị ứng</div>
-                                        </a>
-                                        </div>
-                                        <div class="scroll-item" onclick="JS_AppointmentAtHome.flow('GAN')">
-                                            <a type="button" class="btn" style="color: #f2ffff;background: none;">
-                                            <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
-                                                <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/gan.webp);background-size: 80px;background-repeat: no-repeat;background-position: center;"></div>
-                                            </div>
-                                            <div style="font-size: 16px;color: #0c0c0c;font-weight: 600;">Gan</div>
-                                        </a>
-                                        </div>
-                                        <div class="scroll-item">
-                                            <a href="{{url('appointmentathome/PACK3')}}" type="button" class="btn" style="color: #f2ffff;background: none;">
-                                            <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
-                                                <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/thaiky.webp);background-size: 80px;background-repeat: no-repeat;background-position: center;"></div>
-                                            </div>
-                                            <div style="font-size: 16px;color: #0c0c0c;font-weight: 600;">Thai kỳ</div>
-                                        </a>
-                                        </div>
-                                        <div class="scroll-item">
-                                            <a href="{{url('appointmentathome/1')}}" type="button" class="btn" style="color: #f2ffff;background: none;">
-                                            <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
-                                                <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/gen.webp);background-size: 80px;background-repeat: no-repeat;background-position: center;"></div>
-                                            </div>
-                                            <div style="font-size: 16px;color: #0c0c0c;font-weight: 600;">Gen</div>
-                                        </a>
-                                        </div>
+                                        <center>
+                                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$datas['code'] ?? ''}}">
+                                                <span style="background: #ffba4b; color: #0d1226;" class="btn btn-outline-light rounded-pill">Đặt lịch</span>
+                                                </a>
+                                        </center>
                                     </div>
-                                </center> -->
-                               
-                                <!-- <center><span class="famous-saying">"Chỉ khi người giàu ốm họ mới thực hiểu sự bất lực của giàu sang"</span></center> -->
-                            </div>
+                                @endforeach
+
+                            </div> --}}
+                            <center><span class="famous-saying">"Chỉ khi người giàu ốm họ mới thực hiểu sự bất lực của giàu sang"</span></center>
                         </div>
-                    <!-- </div> -->
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <center>
         <div id="scroll" style="padding-top: 20px;">
             <div class="scroll-item" onclick="JS_AppointmentAtHome.flow('THUONG')">
