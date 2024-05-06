@@ -194,18 +194,17 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" /> -->
 <!-- Start Banner Hero -->
-<div class="banner-wrapper bg-light" style="margin-top: 90px;">
+<div class="image-logo" style="width:100%;background-position: center; background-size: 100%;background-repeat: no-repeat;height: 100%;">
+    <img class="card-img " src="../clients/img/Banner_medhn.png" alt="Card image">
+</div>
+<!-- home cũ -->
+<!-- <div class="banner-wrapper bg-light" style="">
     <div id="index_banner" class="banner-vertical-center-index">
-        <!-- Start slider -->
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <!-- <ol class="carousel-indicators">
-                    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
-                </ol> -->
             <div class="carousel-inner active pt-4">
-                <!-- Start Contact -->
                 <div class="css-height pt-5">
                     <section class="banner-bg">
-                        <!-- <div class="container">
+                        <div class="container">
                             <div class="row">
                                 <div class="col-md-9 timeLoad">
                                     <span style="font-size: 16px" id="time"></span>
@@ -217,10 +216,8 @@
 
                                 </div>
                             </div>
-                        </div> -->
-                        
-                        <!-- style="animation: lights 4s 750ms linear infinite;" -->
-                        <!-- <center>
+                        </div>
+                        <center>
                             <span class="text-title-home anime-title" style=" padding-top: 20px;">ĐẶT LỊCH KHÁM NHANH</span> <br>
                             <div class="text-title-home anime-title">
                                 <span class="text-title-home">TẠI CÁC TUYẾN TRUNG ƯƠNG</span>
@@ -258,11 +255,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                     </section>
                 </div>
-                <!-- End Contact -->
-                <!-- <div class="carousel-item active list-hispital-home pt-5" >
+                <div class="carousel-item active list-hispital-home pt-5" >
                     <div class=" row d-flex align-items-center">
                         <div class="banner-content col-lg-8 offset-1 col-10 m-lg-auto text-center ">
                          <div class="row g-lg-5 mb-4">
@@ -311,11 +307,11 @@
                         </div>                               
                         </div>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <center>
         <div id="scroll" style="display:flex;">
             <div class="col-md-6 mb-4" style="padding: 10px;">

@@ -142,7 +142,9 @@
 
 </style>
 <!-- Header -->
-<nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow" style="top:0;padding-top:0px !important;padding-bottom: 0px !important;background:#ffffff!important;position: fixed;width: 100%;z-index: 1000;">
+<!-- <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow" style="top:0;padding-top:0px !important;padding-bottom: 0px !important;background:#ffffff!important;position: fixed;width: 100%;z-index: 1000;"> -->
+
+<nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow" style="top:0;padding-top:0px !important;padding-bottom: 0px !important;background:#ffffff!important;width: 100%;z-index: 1000;">
     <div class="container d-flex justify-content-between align-items-center">
         {{--<div style="background: #ffffff00;font-family: ui-monospace;width: 50px;color: black;height: 30px;margin: 0 !important;" data-bs-toggle="collapse" data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <!-- <span class="navbar-toggler-icon"></span> -->
