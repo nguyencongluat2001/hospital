@@ -21,6 +21,7 @@
     <div id="form_chat">
         <input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
         <section class="">
+        <a href="tel:555-555-5555"><img src="path/to/phone/icon.jpg" alt="Call 555-555-5555" /></a>
             <div id="chatMesss" onclick="openPhone()">
                 <!-- <label for="checkbox1"> -->
                 <img width="" height="50px" style="background-color: none"
