@@ -48,9 +48,9 @@ class AppointmentAtHomeModel extends Model
             case 'type_at_home':
                  $query->where('type_at_home', $value);
                 return $query;
-            // case 'status':
-            //     $query->where('status', $value);
-            //     return $query;
+            case 'status':
+                $query->where('status', $value);
+                return $query;
             case 'fromdate':
                 if(!empty($value)){
                     $query->whereDate('created_at', '>=',$value);
