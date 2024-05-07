@@ -129,7 +129,7 @@ class SearchScheduleController extends Controller
                 'sid'=> $arrInput['sid'],
                 'pwd'=> $arrInput['pwd']
             ];
-            $response = Http::withBody(json_encode($param),'application/json')->post('27.72.61.137:8989/api/LIS/PdfDownload');
+            $response = Http::withBody(json_encode($param),'application/json')->post('27.72.61.137:7979/api/LIS/PdfDownload');
             $response = $response->getBody()->getContents();
             $response = json_decode($response,true);
             return response()->json($response);
