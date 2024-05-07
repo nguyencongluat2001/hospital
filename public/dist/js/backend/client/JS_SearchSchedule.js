@@ -62,7 +62,6 @@ JS_SearchSchedule.prototype.getFile = function (value) {
     var url = this.urlPath + '/getFile';
     var oForm = 'form#frmSendSchedule';
     var data = $(oForm).serialize();
-    console.log(data)
     $.ajax({
         url: url,
         type: "POST",
