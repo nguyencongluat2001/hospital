@@ -34,7 +34,7 @@
                             id="status">
                             <option value="">--Trạng thái--</option>
                             <option value="1">Đã thu tiền</option>
-                            <option value="2">Chưa thu tiền</option>
+                            <option value="0">Chưa thu tiền</option>
                         </select>
                     </div>
                     <div class="col-md-3">
