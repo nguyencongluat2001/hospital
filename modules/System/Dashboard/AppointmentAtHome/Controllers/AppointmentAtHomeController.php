@@ -34,7 +34,7 @@ class AppointmentAtHomeController extends Controller
         // $update = $this->AppointmentAtHomeService->where('code','20721217082023')->update(['money'=> 735000]);
         $input = $request->input();
         $data = array();
-        $input['status'] = 1;
+        // $input['status'] = 1;
         $input['sort'] = 'created_at';
         if($input['status'] == null || $input['status'] == ''){
             unset($input['status']);
