@@ -178,18 +178,21 @@ JS_About.prototype.loadListPTCP = function (oFormBlog,numberPage = 1, perPage = 
  *
  * @return void
  */
-JS_About.prototype.reader = function (id) {
+JS_About.prototype.blogReader = function (id) {
     var myClass = this;
-    var url = myClass.baseUrl + '/client/about/reader';
-    var data = '_token=' +  $('#_token').val();
-    data += '&id=' +  id;
-    $.ajax({
-        url: url,
-        type: "POST",
-        data: data,
-        success: function (arrResult) {
-            $('#reader').html(arrResult);
-            $('#reader').modal('show');
-        }
-    });
+    console.log(123)
+    window.location.replace(myClass.baseUrl + '/client/about/reader/' + id);
+    // var myClass = this;
+    // var url = myClass.baseUrl + '/client/about/reader';
+    // var data = '_token=' +  $('#_token').val();
+    // data += '&id=' +  id;
+    // $.ajax({
+    //     url: url,
+    //     type: "POST",
+    //     data: data,
+    //     success: function (arrResult) {
+    //         $('#reader').html(arrResult);
+    //         $('#reader').modal('show');
+    //     }
+    // });
 }

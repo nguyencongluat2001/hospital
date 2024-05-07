@@ -29,14 +29,14 @@
                             <option value="TRUYEN_DICH">Truyền dịch</option>
                         </select>
                     </div>
-                    <!-- <div class="col-md-3">
+                    <div class="col-md-3">
                         <select class="form-control input-sm chzn-select" name="status"
                             id="status">
                             <option value="">--Trạng thái--</option>
-                            <option value="1">Đã liên hệ</option>
-                            <option value="0">Chưa liên hệ</option>
+                            <option value="1">Đã thu tiền</option>
+                            <option value="0">Chưa thu tiền</option>
                         </select>
-                    </div> -->
+                    </div>
                     <div class="col-md-3">
                         <!-- <input type="text" class="form-control datepicker" name="fromdate" id="fromdate" placeholder="Từ ngày"> -->
                         <input class="form-control input-sm" style="font-size: 13px;" type="date"

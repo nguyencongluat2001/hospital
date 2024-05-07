@@ -216,3 +216,27 @@ JS_Home.prototype.getSearch = function (url) {
     var myClass = this;
     // window.location.replace(myClass.baseUrl+'/searchschedule');
 }
+/* Đọc thêm
+*
+* @param oForm (tên form)
+*
+* @return void
+*/
+JS_Home.prototype.blogReader = function (id) {
+   var myClass = this;
+   console.log(2123)
+   window.location.replace(myClass.baseUrl + '/client/about/reader/' + id);
+   // var myClass = this;
+   // var url = myClass.baseUrl + '/client/about/reader';
+   // var data = '_token=' +  $('#_token').val();
+   // data += '&id=' +  id;
+   // $.ajax({
+   //     url: url,
+   //     type: "POST",
+   //     data: data,
+   //     success: function (arrResult) {
+   //         $('#reader').html(arrResult);
+   //         $('#reader').modal('show');
+   //     }
+   // });
+}

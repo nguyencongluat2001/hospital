@@ -16,6 +16,8 @@ use Modules\Client\Page\Infor\Controllers\InforController;
 use Modules\Client\Page\Patient\Controllers\PatientController;
 use Modules\Client\Page\Role\Controllers\RoleController;
 use Modules\Client\Page\Faq\Controllers\FAQController;
+use Modules\Client\Page\About\Controllers\AboutController;
+
 //Dashboard
 use Modules\System\Dashboard\Users\Controllers\UserController;
 use Modules\Client\Page\MapController;
@@ -254,6 +256,9 @@ Route::prefix('/client')->group(function () {
     Route::prefix('des')->group(function () {
         Route::get('index', [DesController::class, 'index']);
     });
+    // Route::prefix('about')->group(function () {
+    //     Route::get('/reader/{id}', [AboutController::class, 'reader']);
+    // });
 });
 
 

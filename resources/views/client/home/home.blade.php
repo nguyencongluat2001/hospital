@@ -393,23 +393,7 @@
     </div>
 </section> -->
 
-<!-- Start Banner Hero -->
-<!-- <div class="banner-wrapper">
-    <div class="banner-vertical-center-index container-fluid">
-        <div id="carouselExampleIndicators1" class="carousel slide">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class=" row d-flex align-items-center">
-                        <div class="banner-content col-lg-10 col-10 offset-1 m-lg-auto text-left py-5 pb-5">
-                            <div id="table-blog-container"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-<!-- End Banner Hero -->
+
 <!-- Start Service -->
 <!-- <section class="service-wrapper py-3">
     <div class="service-tag py-5 popular-specialties">
@@ -530,6 +514,23 @@
     </section>
     <!-- End Banner Hero -->
 <!-- End Service -->
+<!-- Start Banner Hero -->
+<div class="banner-wrapper">
+    <div class="banner-vertical-center-index container-fluid">
+        <div id="carouselExampleIndicators1" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class=" row d-flex align-items-center">
+                        <div class="banner-content col-lg-10 col-10 offset-1 m-lg-auto text-left py-5 pb-5">
+                            <div id="table-blog-container"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Banner Hero -->
 <!-- Start Contact -->
 <section class="banner-bg bg-light expert">
         <div class="container">
@@ -659,33 +660,33 @@ new Chart("myChart", {
         var day_name = '';
 
         // Lấy tên thứ của ngày hiện tại
-        switch (current_day) {
-            case 0:
-                day_name = "Chủ nhật";
-                break;
-            case 1:
-                day_name = "Thứ hai";
-                break;
-            case 2:
-                day_name = "Thứ ba";
-                break;
-            case 3:
-                day_name = "Thứ tư";
-                break;
-            case 4:
-                day_name = "Thứ năm";
-                break;
-            case 5:
-                day_name = "Thứ sau";
-                break;
-            case 6:
-                day_name = "Thứ bảy";
-        }
-        setInterval(() => {
-            a = new Date();
-            time = day_name + ', ngày ' + date + ' ' + a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
-            document.getElementById('time').innerHTML = time;
-        }, 1000);
+        // switch (current_day) {
+        //     case 0:
+        //         day_name = "Chủ nhật";
+        //         break;
+        //     case 1:
+        //         day_name = "Thứ hai";
+        //         break;
+        //     case 2:
+        //         day_name = "Thứ ba";
+        //         break;
+        //     case 3:
+        //         day_name = "Thứ tư";
+        //         break;
+        //     case 4:
+        //         day_name = "Thứ năm";
+        //         break;
+        //     case 5:
+        //         day_name = "Thứ sau";
+        //         break;
+        //     case 6:
+        //         day_name = "Thứ bảy";
+        // }
+        // setInterval(() => {
+        //     a = new Date();
+        //     time = day_name + ', ngày ' + date + ' ' + a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+        //     document.getElementById('time').innerHTML = time;
+        // }, 1000);
     </script>
 <script type="text/javascript">
     var baseUrl = "{{ url('') }}";
