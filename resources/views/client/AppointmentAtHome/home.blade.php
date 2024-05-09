@@ -307,9 +307,9 @@
                                                         @endforeach 
                                                     </select>
                                                 </div>
-                                                <div class="row">
+                                                <!-- <div class="row">
                                                     <div class="form-wrapper col-md-4">
-                                                        <label for="">Giá gói khám <span class="request_star">*</span></label>
+                                                        <label for="">Giá xét nghiệm <span class="request_star">*</span></label>
                                                         <div id="price">
                                                              <input  type="hidden" class="form-control" id="money" name="money" value="{{$money}}" autofocus> 
                                                              <input  disabled type="text" class="form-control" value="{{$total}} VND" autofocus> 
@@ -319,7 +319,7 @@
                                                         <label for="">Gồm {{$count}} chỉ số</label>
                                                         <button onclick="JS_AppointmentAtHome.showInfor('{{$code_blood}}')" type="button" style="width: 120px;" class="btn-warning"><i class="fas fa-hand-point-right"></i> &nbsp;Chi tiết</button>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 @endif
                                                 <div class="row mt-3">
                                                     <div class="form-input col-md-6 padding-style">

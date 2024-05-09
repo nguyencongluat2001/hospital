@@ -95,7 +95,7 @@
                 <div class="row pt-2">
                     <div class="col-lg-6 col-sm-12">
                         <p class="text-lg-start text-center text-light light-300">
-                        CÔNG TY TNHH DỊCH VỤ Y TẾ MEDHN
+                        CÔNG TY TNHH DỊCH VỤ Y TẾ MEDHANOI
                         </p>
                     </div>
                 </div>

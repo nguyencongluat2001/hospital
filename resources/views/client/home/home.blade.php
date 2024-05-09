@@ -434,7 +434,7 @@
                     <div class="row g-lg-5 mb-4" >
                         <!-- Start Recent Work -->
                         <div class="col-md-4 mb-4">
-                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$datas['code'] ?? ''}}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                            <a href="tel:02439935556" class="recent-work card border-0 shadow-lg overflow-hidden">
                                 <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/tuvan.jpeg')}}" alt="Card image">
                                 <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                     <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
@@ -446,7 +446,7 @@
                         <!-- End Recent Work -->
                         <!-- Start Recent Work -->
                         <div class="col-md-4 mb-4">
-                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$datas['code'] ?? ''}}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                            <a class="recent-work card border-0 shadow-lg overflow-hidden">
                                 <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/bank.jpeg')}}" alt="Card image">
                                 <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                     <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
@@ -458,7 +458,7 @@
                         <!-- End Recent Work -->
                         <!-- Start Recent Work -->
                         <div class="col-md-4 mb-4">
-                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$datas['code'] ?? ''}}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                            <a class="recent-work card border-0 shadow-lg overflow-hidden">
                                 <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/bacsi.jpeg')}}" alt="Card image">
                                 <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                     <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
@@ -470,7 +470,7 @@
                         <!-- End Recent Work -->
                         <!-- Start Recent Work -->
                         <div class="col-md-4 mb-4">
-                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$datas['code'] ?? ''}}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                            <a class="recent-work card border-0 shadow-lg overflow-hidden">
                                 <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/laymautainha.jpeg')}}" alt="Card image">
                                 <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                     <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
@@ -482,7 +482,7 @@
                         <!-- End Recent Work -->
                         <!-- Start Recent Work -->
                         <div class="col-md-4 mb-4">
-                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$datas['code'] ?? ''}}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                            <a class="recent-work card border-0 shadow-lg overflow-hidden">
                                 <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/nhanvien.jpeg')}}" alt="Card image">
                                 <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                     <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
@@ -494,7 +494,7 @@
                         <!-- End Recent Work -->
                         <!-- Start Recent Work -->
                         <div class="col-md-4 mb-4">
-                            <a href="{{url('/client/appointmentathome/tab1/')}}/{{$datas['code'] ?? ''}}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                            <a class="recent-work card border-0 shadow-lg overflow-hidden">
                                 <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/like.jpeg')}}" alt="Card image">
                                 <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                     <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
