@@ -62,6 +62,7 @@ Route::prefix('register')->group(function () {
 
 // Auth::routes();
 Route::post('client/searchschedule/getFile', [SearchScheduleController::class, 'getFile']);
+Route::post('/getTKQ', [SearchScheduleController::class, 'getTKQ']);
 
 // Trang chủ
 Route::get('/', [ClientHomeController::class, 'index']);
@@ -256,6 +257,7 @@ Route::prefix('/client')->group(function () {
     Route::prefix('des')->group(function () {
         Route::get('index', [DesController::class, 'index']);
     });
+    
     // Route::prefix('about')->group(function () {
     //     Route::get('/reader/{id}', [AboutController::class, 'reader']);
     // });

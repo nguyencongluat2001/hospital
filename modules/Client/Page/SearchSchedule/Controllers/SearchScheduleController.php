@@ -122,19 +122,19 @@ class SearchScheduleController extends Controller
      *
      * @return json $return
      */
-    // public function getFile(Request $request)
-    // { 
-    //     $arrInput = $request->input();
-    //         $param = [
-    //             'sid'=> $arrInput['sid'],
-    //             'pwd'=> $arrInput['pwd']
-    //         ];
-    //         $response = Http::withBody(json_encode($param),'application/json')->post('27.72.61.137:7979/api/LIS/PdfDownload');
-    //         $response = $response->getBody()->getContents();
-    //         $response = json_decode($response,true);
-    //         return response()->json($response);
+    public function getFile(Request $request)
+    { 
+        $arrInput = $request->input();
+            $param = [
+                'sid'=> $arrInput['sid'],
+                'pwd'=> $arrInput['pwd']
+            ];
+            $response = Http::withBody(json_encode($param),'application/json')->post('27.72.61.137:7979/api/LIS/PdfDownload');
+            $response = $response->getBody()->getContents();
+            $response = json_decode($response,true);
+            return response()->json($response);
 
-    // }
+    }
         
      /**
      * lấy file kết quả
@@ -143,7 +143,7 @@ class SearchScheduleController extends Controller
      *
      * @return json $return
      */
-    public function getFile(Request $request)
+    public function getTKQ(Request $request)
     { 
         $arrInput = $request->input();
             $param = [
