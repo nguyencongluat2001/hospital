@@ -419,9 +419,9 @@
         </div>
     </div>
 </section> -->
-<div class="image-logo" style="width:100%">
+<!-- <div class="image-logo" style="width:100%">
     <img class="card-img " src="../clients/img/image-index.png" alt="Card image">
-</div>
+</div> -->
  <!-- Start Banner Hero -->
  <section class="bg-light w-100">
         <div class="container">
