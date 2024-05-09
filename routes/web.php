@@ -62,7 +62,7 @@ Route::prefix('register')->group(function () {
 
 // Auth::routes();
 Route::post('client/searchschedule/getFile', [SearchScheduleController::class, 'getFile']);
-Route::get('/getTKQ', [SearchScheduleController::class, 'getTKQ']);
+Route::get('/api/getTKQ', [SearchScheduleController::class, 'getTKQ']);
 
 // Trang chủ
 Route::get('/', [ClientHomeController::class, 'index']);
