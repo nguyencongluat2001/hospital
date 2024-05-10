@@ -149,7 +149,7 @@ class SearchScheduleController extends Controller
                 'username'=> $arrInput['username'],
                 // 'pwd'=> $arrInput['pwd']
             ];
-            $response = Http::withBody(json_encode($param),'application/json')->get('118.70.182.89:89/api/PACS/login');
+            $response = Http::withBody(json_encode($param),'application/json')->post('118.70.182.89:89/api/PACS/login');
             $response = $response->getBody()->getContents();
             $response = json_decode($response,true);
             return response()->json($response);
