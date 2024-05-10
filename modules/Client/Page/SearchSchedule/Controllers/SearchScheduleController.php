@@ -166,7 +166,7 @@ class SearchScheduleController extends Controller
     { 
             $arrInput = $request->input();
             $mabn = 'mabn='.$arrInput['mabn'];
-            $response = Http::withBody(json_encode($mabn),'application/json')->get('118.70.182.89:89/api/PACS/ViewChiDinh?'.$mabn.'');
+            $response = Http::withBody('','application/json')->get('118.70.182.89:89/api/PACS/ViewChiDinh?'.$mabn.'');
             $response = $response->getBody()->getContents();
             $response = json_decode($response,true);
             return response()->json($response);
