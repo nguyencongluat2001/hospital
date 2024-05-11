@@ -135,7 +135,26 @@ class SearchScheduleController extends Controller
             return response()->json($response);
 
     }
-        
+        /**
+     * login  file kết quả
+     *
+     * @param Request $request
+     *
+     * @return json $return
+     */
+    public function login(Request $request)
+    { 
+        $arrInput = $request->input();
+            $param = [
+                'username'=> $arrInput['username'],
+                // 'pwd'=> $arrInput['pwd']
+            ];
+            $response = Http::withBody(json_encode($param),'application/json')->post('118.70.182.89:89/api/PACS/login');
+            $response = $response->getBody()->getContents();
+            $response = json_decode($response,true);
+            return response()->json($response);
+
+    } 
      /**
      * lấy file kết quả
      *
@@ -145,12 +164,9 @@ class SearchScheduleController extends Controller
      */
     public function getTKQ(Request $request)
     { 
-        $arrInput = $request->input();
-            $param = [
-                'username'=> '144563',
-                // 'pwd'=> $arrInput['pwd']
-            ];
-            $response = Http::withBody(json_encode($param),'application/json')->post('118.70.182.89:89/api/PACS/login');
+            $arrInput = $request->input();
+            $mabn = 'mabn='.$arrInput['mabn'];
+            $response = Http::withBody('','application/json')->get('118.70.182.89:89/api/PACS/ViewChiDinh?'.$mabn.'');
             $response = $response->getBody()->getContents();
             $response = json_decode($response,true);
             return response()->json($response);
