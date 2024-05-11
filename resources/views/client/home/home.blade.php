@@ -423,7 +423,7 @@
     <img class="card-img " src="../clients/img/image-index.png" alt="Card image">
 </div> -->
  <!-- Start Banner Hero -->
- <section class="bg-light w-100">
+ <section class="w-100">
         <div class="container">
             <div class="row d-flex align-items-center">
                 <div class="col-lg-6 text-start" >
@@ -447,7 +447,7 @@
                         <!-- Start Recent Work -->
                         <div class="col-md-4 mb-4">
                             <a class="recent-work card border-0 shadow-lg overflow-hidden">
-                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/6.jpg')}}" alt="Card image">
+                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/2.jpg')}}" alt="Card image">
                                 <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                     <div style="background: #000000a1;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
                                         <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="fas fa-dollar-sign"></i> Giá cả phải chăng</h3>
@@ -495,7 +495,7 @@
                         <!-- Start Recent Work -->
                         <div class="col-md-4 mb-4">
                             <a class="recent-work card border-0 shadow-lg overflow-hidden">
-                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/7.jpg')}}" alt="Card image">
+                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/8.jpg')}}" alt="Card image">
                                 <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                     <div style="background: #000000a1;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
                                         <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="far fa-hand-point-right"></i> Hơn 5000 khách hàng hài lòng</h3>
@@ -507,7 +507,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <img src="../clients/img/work.svg">
+                    <img src="../clients/img/6.jpg">
                 </div>
             </div>
         </div>
