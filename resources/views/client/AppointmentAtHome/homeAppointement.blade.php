@@ -304,7 +304,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <img src="../clients/img/6.jpg">
+                    <img style="width: 100%;" src="../clients/img/6.jpg">
                 </div>
             </div>
         </div>
