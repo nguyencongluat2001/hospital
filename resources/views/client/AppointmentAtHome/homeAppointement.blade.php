@@ -122,7 +122,7 @@
                                         <a href="{{url('/client/appointmentathome/tab1/')}}/{{$datas['code'] ?? ''}}" class="card border-0 shadow-lg overflow-hidden">
                                             <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/laymautainha.jpeg')}}" alt="Card image">
                                             <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                                                <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                                <div style="background: #000000a1;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
                                                     <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;">{{$datas['name']}}</h3>
                                                 </div>
                                             </div>
@@ -232,9 +232,9 @@
                         <!-- Start Recent Work -->
                         <div class="col-md-4 mb-4">
                             <a href="tel:02439935556" class="recent-work card border-0 shadow-lg overflow-hidden">
-                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/tuvan.jpeg')}}" alt="Card image">
+                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/1.jpg')}}" alt="Card image">
                                 <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                                    <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                    <div style="background: #000000a1;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
                                         <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="fas fa-headset"></i> Tư vấn miễn phí</h3>
                                     </div>
                                 </div>
@@ -244,9 +244,9 @@
                         <!-- Start Recent Work -->
                         <div class="col-md-4 mb-4">
                             <a class="recent-work card border-0 shadow-lg overflow-hidden">
-                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/bank.jpeg')}}" alt="Card image">
+                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/2.jpg')}}" alt="Card image">
                                 <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                                    <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                    <div style="background: #000000a1;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
                                         <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="fas fa-dollar-sign"></i> Giá cả phải chăng</h3>
                                     </div>
                                 </div>
@@ -256,9 +256,9 @@
                         <!-- Start Recent Work -->
                         <div class="col-md-4 mb-4">
                             <a class="recent-work card border-0 shadow-lg overflow-hidden">
-                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/bacsi.jpeg')}}" alt="Card image">
+                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/3.jpg')}}" alt="Card image">
                                 <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                                    <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                    <div style="background: #000000a1;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
                                         <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="fas fa-hospital-user"></i> Bác sĩ chuyên môn giỏi</h3>
                                     </div>
                                 </div>
@@ -268,9 +268,9 @@
                         <!-- Start Recent Work -->
                         <div class="col-md-4 mb-4">
                             <a class="recent-work card border-0 shadow-lg overflow-hidden">
-                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/laymautainha.jpeg')}}" alt="Card image">
+                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/4.jpg')}}" alt="Card image">
                                 <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                                    <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                    <div style="background: #000000a1;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
                                         <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="fas fa-user-nurse"></i> Nhân viên chuyên nghiệp</h3>
                                     </div>  
                                 </div>
@@ -280,9 +280,9 @@
                         <!-- Start Recent Work -->
                         <div class="col-md-4 mb-4">
                             <a class="recent-work card border-0 shadow-lg overflow-hidden">
-                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/nhanvien.jpeg')}}" alt="Card image">
+                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/5.jpg')}}" alt="Card image">
                                 <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                                    <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                    <div style="background: #000000a1;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
                                         <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="fas fa-blender-phone"></i> Phục vụ 24/24</h3>
                                     </div>
                                 </div>
@@ -292,9 +292,9 @@
                         <!-- Start Recent Work -->
                         <div class="col-md-4 mb-4">
                             <a class="recent-work card border-0 shadow-lg overflow-hidden">
-                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/like.jpeg')}}" alt="Card image">
+                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/6.jpg')}}" alt="Card image">
                                 <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                                    <div style="background: #00000045;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                    <div style="background: #000000a1;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
                                         <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="far fa-hand-point-right"></i> Hơn 5000 khách hàng hài lòng</h3>
                                     </div>
                                 </div>
