@@ -232,7 +232,7 @@
                         <!-- Start Recent Work -->
                         <div class="col-md-4 mb-4">
                             <a href="tel:02439935556" class="recent-work card border-0 shadow-lg overflow-hidden">
-                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/1.jpg')}}" alt="Card image">
+                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/7.jpg')}}" alt="Card image">
                                 <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                     <div style="background: #000000a1;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
                                         <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="fas fa-headset"></i> Tư vấn miễn phí</h3>
@@ -256,7 +256,7 @@
                         <!-- Start Recent Work -->
                         <div class="col-md-4 mb-4">
                             <a class="recent-work card border-0 shadow-lg overflow-hidden">
-                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/3.jpg')}}" alt="Card image">
+                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/1.jpg')}}" alt="Card image">
                                 <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                     <div style="background: #000000a1;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
                                         <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="fas fa-hospital-user"></i> Bác sĩ chuyên môn giỏi</h3>
