@@ -13,10 +13,7 @@
 @endif
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="../clients/img/apple-icon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="../clients/img/Logo_medhanoi.png">
-    <link rel="shortcut icon" type="image/x-icon" href="../clients/img/LogoFinTop_notbg.jpg">
-    <meta property="og:image" content="../clients/img/LogoFinTop_notbg.jpg">
-
+    <link rel="icon" href="../clients/img/Logo_medhanoi.png" type="image/png">
     <!-- Load Require CSS -->
     {{-- @yield('css') --}}
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
