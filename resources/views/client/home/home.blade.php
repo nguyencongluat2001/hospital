@@ -384,7 +384,7 @@
                     <!-- Start Recent Work -->
                     <div class="col-md-6 mb-4">
                         <a href="{{url('/client/appointmentathome/indexApointment')}}" class="recent-work card border-0 shadow-lg overflow-hidden">
-                            <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/laymautainha.jpeg')}}" alt="Card image">
+                            <img class="recent-work-img card-img" style="height: 100px;object-fit: cover;" src="{{url('/clients/img/laymautainha.jpeg')}}" alt="Card image">
                             <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                 <div style="background: #f1fffd;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
                                 <span style="background: #f1fffd;color: #0066ff;font-weight: 700;" class="btn btn-outline-light"><i style="color: #0066ff;" class="far fa-hand-point-right"></i> Đặt lịch xét nghiệm tại nhà</span>
@@ -396,7 +396,7 @@
                     <!-- Start Recent Work -->
                     <div class="col-md-6 mb-4">
                         <a href="{{url('/client/appointmentathome/tab2/')}}/truyendich" class="recent-work card border-0 shadow-lg overflow-hidden">
-                            <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/truyentainha1.jpeg')}}" alt="Card image">
+                            <img class="recent-work-img card-img" style="height: 100px;object-fit: cover;" src="{{url('/clients/img/truyentainha1.jpeg')}}" alt="Card image">
                             <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                                 <div style="background: #f1fffd;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
                                 <span style="background: #f1fffd;color: #0066ff;font-weight: 700;" class="btn btn-outline-light"><i style="color: #0066ff;" class="far fa-hand-point-right"></i> Đặt lịch truyền dịch tại nhà</span>
