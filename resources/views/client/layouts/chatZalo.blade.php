@@ -36,7 +36,6 @@
             </div>
             <br>
             <div id="chatMesss" onclick="openMessage()">
-                <!-- <label for="checkbox1"> -->
                 <img width="" height="50px" style="background-color: none"
                     src="../clients/img/icon_messager.jpg" alt="">
                 </label>
@@ -81,9 +80,6 @@
 
         </section>
     </div>
-    <!-- <div id="customerCare">
-        @include('client.layouts.chat')
-    </div> -->
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/8.2.0/pusher.min.js"></script>
