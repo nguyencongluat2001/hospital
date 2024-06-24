@@ -420,7 +420,7 @@
                                             <div class=" g-lg-12 mb-4">
                                                 <div class="banner-wrapper w-100" style="background:#fffffffc;color:black">
                                                     <div class="row g-lg-5 mb-4">
-                                                        <div class="banner-wrapper w-100 py-3">
+                                                        <div class="banner-wrapper w-100">
                                                             <div class="list-group wrapper pb-0 px-3">
                                                                 <a class="col-sm-6 col-lg-12 text-decoration-none text-light">
                                                                 <center>
