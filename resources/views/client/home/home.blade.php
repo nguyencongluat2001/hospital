@@ -190,328 +190,389 @@
     }
 }
 </style>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" /> -->
-<!-- Start Banner Hero -->
+<style>
+    form{
+        width:80%;
+    }
+    .form-control:disabled{
+        background-color:#ffffff
+    }
+    .hiddel{
+        display: none;
+    }
+    .show{
+        display: block;
+    }
+
+      .scrollbar
+    {
+      margin-left: 30px;
+      /* float: left; */
+      height: 300px;
+      /* width: 65px; */
+      /* background: #F5F5F5; */
+      overflow-y: scroll;
+      margin-bottom: 25px;
+    }
+
+    .force-overflow
+    {
+      min-height: 400px;
+    }
+
+    #wrapper
+    {
+      text-align: center;
+      width: 500px;
+      margin: auto;
+    }
+
+    /*
+    *  STYLE 2
+    */
+
+    #style-2::-webkit-scrollbar-track
+    {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+      border-radius: 10px;
+      background-color: #F5F5F5;
+    }
+
+    #style-2::-webkit-scrollbar
+    {
+      width: 12px;
+      background-color: #F5F5F5;
+    }
+
+    /* #style-2::-webkit-scrollbar-thumb
+    {
+      border-radius: 10px;
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+      background-color: #D62929;
+    } */
+    .tv-lightweight-charts{
+      width: 100%;
+      padding-right: var(--bs-gutter-x, 0.5rem) !important;
+      padding-left: var(--bs-gutter-x,0.5rem)!important;
+      margin-right: auto!important;
+      margin-left: auto!important;
+    }
+    /* .table{
+        border-color: #670000;
+    } */
+    .table-responsive.pmd-card.pmd-z-depth{
+      height: 100%;
+      max-height: 400px;
+    }
+    #style-1 #table-data thead tr td{
+      position: sticky;
+      top: 0;
+      background: #92241a;
+    }
+
+    #frmSendSchedule{
+        width: 100%;
+    }
+    #carouselExampleIndicators input[type=text], input[type=email], input[type=password], input[type=date] {
+        padding: 12px 40px;
+        display: inline-block;
+        border: 1px solid #ccc;
+    }
+    #carouselExampleIndicators textarea{
+        padding: 5px 40px;
+        display: inline-block;
+        border: 1px solid #ccc;
+    }
+
+    /* Set a style for the buttons*/
+    #carouselExampleIndicators button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    /* Set a hover effect for the button*/
+    #carouselExampleIndicators button:hover {
+        opacity: 0.8;
+    }
+
+    /* Set extra style for the cancel button*/
+    #carouselExampleIndicators .container {
+        padding: 16px;
+    }
+
+    #carouselExampleIndicators .form-input {
+        position: relative;
+    }
+
+    #carouselExampleIndicators .form-input i {
+        position: absolute;
+        left: 24px;
+        top: 12px;
+        color: gray;
+    }
+    .message-error{
+        display: none;
+        color: red;
+    }
+    .error-input{
+        border: 1px solid red;
+    }
+    .error-icon{
+        color: red !important;
+    }
+    .error-input::placeholder{
+        color: red;
+    }
+    .padding-style{
+        padding-top:15px
+    }
+</style>
+<link rel="stylesheet" href="../clients/css/style.css">
 <div class="image-logo" style="width:100%;background-position: center; background-size: 100%;background-repeat: no-repeat;height: 100%;">
     <img class="card-img " src="../clients/img/Banner_medhn.png" alt="Card image">
 </div>
-<!-- home cũ -->
-<!-- <div class="banner-wrapper bg-light" style="">
-    <div id="index_banner" class="banner-vertical-center-index">
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner active pt-4">
-                <div class="css-height pt-5">
-                    <section class="banner-bg">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-9 timeLoad">
-                                    <span style="font-size: 16px" id="time"></span>
-                                </div>
-                                <div class="col-md-3 icon-heart">
-                                    <i class="fas fa-heartbeat"></i>
-                                    <i class="fas fa-heartbeat"></i>
-                                    <i class="fas fa-heartbeat"></i>
-
-                                </div>
-                            </div>
-                        </div>
+<!-- <center> -->
+    <!-- <div id="scroll" style="display:flex;">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-6 mb-4" style="padding: 10px;">
+            <a href="{{url('/client/appointmentathome/indexApointment')}}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                <img class="recent-work-img card-img" style="height: 200px;object-fit: cover;" src="{{url('/clients/img/laymautainha.jpeg')}}" alt="Card image">
+                <div class="recent-work-vertical d-flex align-items-end" style="position: absolute; top: 0; bottom: 0;border-radius: calc(.25rem - 1px);">
+                    <div style="border-radius: 5px">
                         <center>
-                            <span class="text-title-home anime-title" style=" padding-top: 20px;">ĐẶT LỊCH KHÁM NHANH</span> <br>
-                            <div class="text-title-home anime-title">
-                                <span class="text-title-home">TẠI CÁC TUYẾN TRUNG ƯƠNG</span>
+                            <div style="background: #486289a8;padding: 10px;border-radius: 10px;color: #ffffff;">
+                                <h3 style="font-size: 23 !important;font-family: serif;color: #ffffff;font-weight: 700;">Dịch vụ lấy máu tại nhà</h3>
+                                <span class="blogReader">Chủ động tầm soát bệnh lý - tiết kiệm thời gian đi lại - chi phí hợp lý.</span> <br>
+                                    <span style="background: #f1fffd;color: #ff6a20;font-weight: 700;width: 150px;" class="btn btn-outline-light rounded-pill">Đặt lịch</span>
                             </div>
                         </center>
-                        <div class="banner-content col-lg-12 offset-1 col-10 m-lg-auto pt-3">
-                             <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-5 mx-auto ">
-                                        <div style="width: 100%;position: relative;z-index:10">
-                                            <div class="form-search form-group">
-                                                <button type="button" class="btn" id="txt_search"><i class="fas fa-search" aria-hidden="true"></i></button>
-                                                <input id="myInput" type="text" class="input form-control form-control-lg" placeholder="Tìm kiếm từ khóa..." aria-label="Tìm kiếm từ khóa..." onkeypress="filterSearch()" autocomplete="off">
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 col-6 mb-4" style="padding: 10px;">
+            <a href="{{url('/client/appointmentathome/tab2/')}}/truyendich" class="recent-work card border-0 shadow-lg overflow-hidden">
+                <img class="recent-work-img card-img" style="height: 200px;object-fit: cover;" src="{{url('/clients/img/truyentainha1.jpeg')}}" alt="Card image">
+                <div class="recent-work-vertical d-flex align-items-end" style="position: absolute; top: 0; bottom: 0;border-radius: calc(.25rem - 1px);">
+                    <div style="border-radius: 5px">
+                        <center>
+                            <div style="background: #486289a8;padding: 10px;border-radius: 10px;color: #ffffff;">
+                                <h3 style="font-size: 23 !important;font-family: serif;color: #ffffff;font-weight: 700;">Dịch vụ truyền dịch tại nhà</h3>
+                                <span  class="blogReader">Được chăm sóc tại nhà - tiết kiệm thời gian đi lại - mức chi phí hợp lý.</span> <br>
+                                        <span style="background: #f1fffd;color: #ff6a20;font-weight: 700;width: 150px;" class="btn btn-outline-light rounded-pill">Đặt lịch</span>
+                                
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div> -->
+    <section class="w-100">
+    <div class="container">
+        <div class="row d-flex align-items-center">
+            <div class="col-lg-6 text-start" >
+                <h1 style="color: #7fd6ff!important;font-family: serif;font-size:25px" class="py-2 title-appoinment">DỊCH VỤ TẠI NHÀ</h1>
+                <p>
+                Xét nghiệm tại nhà giúp tiết kiệm thời gian và công sức di chuyển đến cơ sở y tế. Người dùng có thể sắp xếp thời gian và địa điểm phù hợp cho việc làm xét nghiệm.
+                </p>
+                <div class="row g-lg-5 mb-4" >
+                    <!-- Start Recent Work -->
+                    <div class="col-md-6 mb-4">
+                        <a href="{{url('/client/appointmentathome/indexApointment')}}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                            <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/laymautainha.jpeg')}}" alt="Card image">
+                            <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                                <div style="background: #f1fffd;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                <span style="background: #f1fffd;color: #0066ff;font-weight: 700;" class="btn btn-outline-light"><i style="color: #0066ff;" class="far fa-hand-point-right"></i> Đặt lịch xét nghiệm tại nhà</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- End Recent Work -->
+                    <!-- Start Recent Work -->
+                    <div class="col-md-6 mb-4">
+                        <a href="{{url('/client/appointmentathome/tab2/')}}/truyendich" class="recent-work card border-0 shadow-lg overflow-hidden">
+                            <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/truyentainha1.jpeg')}}" alt="Card image">
+                            <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                                <div style="background: #f1fffd;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                <span style="background: #f1fffd;color: #0066ff;font-weight: 700;" class="btn btn-outline-light"><i style="color: #0066ff;" class="far fa-hand-point-right"></i> Đặt lịch truyền dịch tại nhà</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- End Recent Work -->
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <!-- <img style="width:100%" src="../clients/img/6.jpg"> -->
+                <div class="bg-light" >
+                    <div class="banner-vertical-center-index">
+                        <!-- Start slider -->
+                        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner active" >
+                                <div class="carousel-item active list-hispital-home" >
+                                    <div class=" d-flex align-items-center">
+                                        <div class="banner-content col-lg-12 col-10 offset-1 m-lg-auto text-left ">
+                                            <div class=" g-lg-12 mb-4">
+                                                <div class="banner-wrapper w-100" style="background:#fffffffc;color:black">
+                                                    <div class="row g-lg-5 mb-4">
+                                                        <div class="banner-wrapper w-100 py-3">
+                                                            <div class="list-group wrapper pb-0 px-3">
+                                                                <a class="col-sm-6 col-lg-12 text-decoration-none text-light">
+                                                                <center>
+                                                                    <div class="d-lg-flex gx-5">
+                                                                        <div class="col-lg-1">
+                                                                        </div>
+                                                                        <div class="col-lg-1 "></div>
+                                                                        <div class="col-lg-8 ">
+                                                                        <span  class="text-title-home" style="color:#000000"> Tra cứu kết quả</span> <br>
+                                                                        <span  style="font-size:15px;color:#577391">Quý khách vui lòng điền đầy đủ thông tin.<br> <span style="color:red">Lưu ý: Chức năng tra cứu dành cho khách hàng của Medhanoi</span></span>
+                                                                    </div>
+                                                                    </center>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="wrapper" style="display: flex; justify-content: center;">
+                                                        <form id="frmSendSchedule" method="POST"  autocomplete="off">
+                                                            @csrf
+                                                            <!-- <input type="hidden" id="code" name="code" value="{{ !empty($datas->code)?$datas->code:'' }}"> -->
+                                                            <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
+                                                            <input type="hidden" id="type_at_home" name="type_at_home" value="">
+                                                            <div id="iss_money"></div>
+                                                            <div class="row">
+                                                                <div class="form-input col-md-12 padding-style">
+                                                                    <input type="text" class="form-control required" placeholder="Mã tra cứu của bạn" name="sid" id="sid" value="" oninput="inValid(this.id)">
+                                                                    <i class="fas fa-code phone-icon padding-style"></i>
+                                                                    <span class="message-error phone-error">Mã tra cứu không được để trống!</span>
+                                                                </div>
+                                                                <div class="form-input col-md-12 padding-style" >
+                                                                    <div id="changeName">
+                                                                        <input type="text" class="form-control required" placeholder="Mã bảo mật của bạn" name="pwd" id="pwd" value="" oninput="inValid(this.id)">
+                                                                        <i class="fa fa-user-lock uname-icon padding-style"></i>
+                                                                    </div>
+                                                                    <span class="message-error uname-error">Mã bảo mật không được để trống!</span>
+                                                                </div>
+                                                                <center>
+                                                                <div class="pt-3 mb-3" style="width:150px">
+                                                                    <button type="button" onclick="JS_SearchSchedule.getFile()" class=" btn-primary" id="btn_register" style="background-color: #1d93e3;font-family: sans-serif;">
+                                                                        {{ __('Tra cứu') }}
+                                                                    </button>
+                                                                </div>
+                                                                </center>
+                                                        </form>
+                                                    </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            @if(isset($search) && count($search) > 0)
-                                            <div id="overSearch" class="closed">
-                                                <ul>
-                                                    @foreach($search as $value)
-                                                    <a href="{{ $value['url'] }}" class="dropdown-item"><li>{{ $value['name'] }}</li></a>
-                                                    @endforeach
-                                                </ul>
-                                            </div>
-                                            @endif
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row pt-5">
-                                    <div class="col-lg-5 mx-auto " style="display:flex;width: 250px;">
-                                        <div style="width:50%">
-                                            <img class="recent-work-img card-img" style="width: 100px;object-fit: cover;" src="{{url('/clients/img/google-play-badge.svg')}}" alt="Card image">
-                                        </div>  
-                                        <div style="width:50%">
-                                            <img class="recent-work-img card-img" style="width: 93px;object-fit: cover;" src="{{url('/clients/img/app-store-badge-black.svg')}}" alt="Card image">
-                                        </div>
-                                    </div>
-                                </div>
+                                <!-- Start Banner Hero -->
                             </div>
-                        </div>
-                    </section>
-                </div>
-                <div class="carousel-item active list-hispital-home pt-5" >
-                    <div class=" row d-flex align-items-center">
-                        <div class="banner-content col-lg-8 offset-1 col-10 m-lg-auto text-center ">
-                         <div class="row g-lg-5 mb-4">
-
-                            <div class="col-md-6 mb-4" style="display: flex; justify-content: space-between; align-items: flex-start;">
-                                <a href="{{ url('/specialty') }}" type="button" class="btn icon-menu-home" style="width:140px;color: #f2ffff;background: none;">
-                                    <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
-                                        <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/chuyen-khoa.png);background-size: 40px;background-repeat: no-repeat;background-position: center;"></div>
-                                    </div>
-                                    <div style="color: #121213bf;font-weight: 600;font-size: 13px;">Chuyên khoa</div>
-                                </a>
-                                <a href="{{ url('/facilities') }}" type="button" class="btn icon-menu-home" style="width:140px;color: #f2ffff;background: none;">
-                                    <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
-                                        <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/co-so-y-te.png);background-size: 40px;background-repeat: no-repeat;background-position: center;"></div>
-                                    </div>
-                                    <div style="color: #121213bf;font-weight: 600;font-size: 13px;">Bệnh viện</div>
-                                </a>
-                                <a href="{{ url('/client/appointmentathome/indexApointment') }}" type="button" class="btn icon-menu-home" style="width:140px;color: #f2ffff;background: none;">
-                                    <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
-                                        <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/xet-nghiem.png);background-size: 40px;background-repeat: no-repeat;background-position: center;"></div>
-                                    </div>
-                                    <div style="color: #121213bf;font-weight: 600;font-size: 13px;">Xét nghiệm</div>
-                                </a>
-                            </div>
-
-                            <div class="col-md-6 mb-4" style="display: flex; justify-content: space-between; align-items: flex-start;">
-                                <a href="{{ url('/client/appointmentathome/indexInfusion') }}" type="button" class="btn icon-menu-home" style="width:140px;color: #f2ffff;background: none;">
-                                    <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
-                                        <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/truyen-dich.png);background-size: 40px;background-repeat: no-repeat;background-position: center;"></div>
-                                    </div>
-                                    <div style="color: #121213bf;font-weight: 600;font-size: 13px;">Truyền dịch</div>
-                                </a>
-                                <a href="{{ url('/searchschedule') }}" type="button" class="btn icon-menu-home" style="width:140px;color: #f2ffff;background: none;">
-                                    <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
-                                        <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/tra-cuu.png);background-size: 40px;background-repeat: no-repeat;background-position: center;"></div>
-                                    </div>
-                                    <div style="color: #121213bf;font-weight: 600;font-size: 13px;">Tra cứu</div>
-                                </a>
-                                <a href="{{ url('/contact') }}" type="button" class="btn icon-menu-home" style="width:140px;color: #f2ffff;background: none;">
-                                    <div style="width: 100%; display: flex;justify-content: center;align-items: center;">
-                                        <div class="icon-dichvu" style="background-image: url(../../../../assets/images/icon/danh-gia.png);background-size: 40px;background-repeat: no-repeat;background-position: center;"></div>
-                                    </div>
-                                    <div style="color: #121213bf;font-weight: 600;font-size: 13px;">Đánh giá</div>
-                                </a>
-                            </div>
-                        </div>                               
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div> -->
-<center>
-        <div id="scroll" style="display:flex;">
-            <div class="col-md-6 mb-4" style="padding: 10px;">
-                <a href="{{url('/client/appointmentathome/indexApointment')}}" class="recent-work card border-0 shadow-lg overflow-hidden">
-                    <img class="recent-work-img card-img" style="height: 200px;object-fit: cover;" src="{{url('/clients/img/laymautainha.jpeg')}}" alt="Card image">
-                    <div class="recent-work-vertical d-flex align-items-end" style="position: absolute; top: 0; bottom: 0;border-radius: calc(.25rem - 1px);">
-                        <div style="border-radius: 5px">
-                           <center>
-                                <div style="background: #486289a8;padding: 10px;border-radius: 10px;color: #ffffff;">
-                                    <h3 style="font-size: 23 !important;font-family: serif;color: #ffffff;font-weight: 700;">Dịch vụ lấy máu tại nhà</h3>
-                                    <span class="blogReader">Chủ động tầm soát bệnh lý - tiết kiệm thời gian đi lại - chi phí hợp lý.</span> <br>
-                                        <span style="background: #f1fffd;color: #ff6a20;font-weight: 700;width: 150px;" class="btn btn-outline-light rounded-pill">Đặt lịch</span>
-                                </div>
-                            </center>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6 mb-4" style="padding: 10px;">
-                <a href="{{url('/client/appointmentathome/tab2/')}}/truyendich" class="recent-work card border-0 shadow-lg overflow-hidden">
-                    <img class="recent-work-img card-img" style="height: 200px;object-fit: cover;" src="{{url('/clients/img/truyentainha1.jpeg')}}" alt="Card image">
-                    <div class="recent-work-vertical d-flex align-items-end" style="position: absolute; top: 0; bottom: 0;border-radius: calc(.25rem - 1px);">
-                        <div style="border-radius: 5px">
-                            <center>
-                                <div style="background: #486289a8;padding: 10px;border-radius: 10px;color: #ffffff;">
-                                    <h3 style="font-size: 23 !important;font-family: serif;color: #ffffff;font-weight: 700;">Dịch vụ truyền dịch tại nhà</h3>
-                                    <span  class="blogReader">Được chăm sóc tại nhà - tiết kiệm thời gian đi lại - mức chi phí hợp lý.</span> <br>
-                                            <span style="background: #f1fffd;color: #ff6a20;font-weight: 700;width: 150px;" class="btn btn-outline-light rounded-pill">Đặt lịch</span>
-                                    
-                                </div>
-                            </center>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </center>
-<!-- End Banner Hero -->
-<!-- <section class="service-wrapper py-3">
-    
-    <div class=" d-flex align-items-center">
-        <div class="banner-content col-lg-10 col-10 offset-1 m-lg-auto text-left ">
-            <div class="row g-lg-5 mb-4">
-                <div class="col-md-6 mb-4">
-                    <a href="{{url('/client/appointmentathome/indexApointment')}}" class="recent-work card border-0 shadow-lg overflow-hidden">
-                        <img class="recent-work-img card-img" style="height: 250px;object-fit: cover;" src="{{url('/clients/img/laymautainha.jpeg')}}" alt="Card image">
-                        <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                            <div style="border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                               <div style="background: #486289a8;padding: 10px;border-radius: 10px;color: #ffffff;">
-                                    <h3 style="font-size: 23 !important;font-family: serif;color: #ffffff;font-weight: 700;">Dịch vụ lấy máu tại nhà</h3>
-                                    <span class="blogReader">Chủ động tầm soát bệnh lý - tiết kiệm thời gian đi lại - chi phí hợp lý.</span> <br>
-                                    <center>
-                                        <span style="background: #f1fffd;color: #ff6a20;font-weight: 700;width: 150px;" class="btn btn-outline-light rounded-pill">Đặt lịch</span>
-                                </center>
-                               </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <a href="{{url('/client/appointmentathome/tab2/')}}/truyendich" class="recent-work card border-0 shadow-lg overflow-hidden">
-                        <img class="recent-work-img card-img" style="height: 250px;object-fit: cover;" src="{{url('/clients/img/truyentainha1.jpeg')}}" alt="Card image">
-                        <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                            <div style="border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                                <div style="background: #486289a8;padding: 10px;border-radius: 10px;color: #ffffff;">
-                                    <h3 style="font-size: 23 !important;font-family: serif;color: #ffffff;font-weight: 700;">Dịch vụ truyền dịch tại nhà</h3>
-                                    <span  class="blogReader">Được chăm sóc tại nhà của bạn hơn thế tiết kiệm thời gian đi lại, mức chi phí hợp lý.</span> <br>
-                                    <center>
-                                            <span style="background: #f1fffd;color: #ff6a20;font-weight: 700;width: 150px;" class="btn btn-outline-light rounded-pill">Đặt lịch</span>
-                                    </center>
-                                </div>
-                               
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
-
-
-<!-- Start Service -->
-<!-- <section class="service-wrapper py-3">
-    <div class="service-tag py-5 popular-specialties">
-        <div class="col-md-12">
-            <h2 class="h2 text-center col-12 py-2">Chuyên khoa</h2>
-        </div>
-        <div class="container py-5">
-            <div class="row gx-sm-3 gx-lg-5 gy-lg-5 gy-3 pb-3 projects">
-                @foreach ($Specialty as $key => $data)
-                <div class="col-xl-3 col-md-4 col-sm-6 project ui branding">
-                    <a href="{{url('/specialty')}}/{{$data->code}}" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                        <img class="service card-img" style="height: 250px;object-fit: cover;" src="{{url('/file-image-client/avatar-specialty/')}}/{{ !empty($data->avatar)?$data->avatar:'' }}" alt="Card image">
-                        <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                            <div class="service-work-content text-left text-light">
-                                <span class="btn btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300" style="color: #ffd100;">Đặt lịch</span>
-                                <p class="card-text">Chuyên khoa: {{$data->name_specialty}}</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-</section> -->
-<!-- <div class="image-logo" style="width:100%">
-    <img class="card-img " src="../clients/img/image-index.png" alt="Card image">
-</div> -->
+</section>
+<!-- </center> -->
  <!-- Start Banner Hero -->
  <section class="w-100">
-        <div class="container">
-            <div class="row d-flex align-items-center">
-                <div class="col-lg-6 text-start" >
-                    <h1 style="color: #7fd6ff!important;font-family: serif;font-size:25px" class="py-5 typo-space-line title-appoinment">ĐIỂM KHÁC BIỆT KHI SỬ DỤNG DỊCH VỤ XÉT NGHIỆM TẠI NHÀ</h1>
-                    <p class="">
-                    Tiện lợi: Việc làm xét nghiệm tại nhà giúp tiết kiệm thời gian và công sức di chuyển đến cơ sở y tế. Người dùng có thể sắp xếp thời gian và địa điểm phù hợp cho việc làm xét nghiệm.
-                    </p>
-                    <div class="row g-lg-5 mb-4" >
-                        <!-- Start Recent Work -->
-                        <div class="col-md-4 mb-4">
-                            <a href="tel:02439935556" class="recent-work card border-0 shadow-lg overflow-hidden">
-                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/7.jpg')}}" alt="Card image">
-                                <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                                    <div style="background: #000000a1;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                                        <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="fas fa-headset"></i> Tư vấn miễn phí</h3>
-                                    </div>
+    <div class="container">
+        <div class="row d-flex align-items-center">
+            <div class="col-lg-6 text-start" >
+                <h1 style="color: #7fd6ff!important;font-family: serif;font-size:25px" class="py-5 typo-space-line title-appoinment">ĐIỂM KHÁC BIỆT KHI SỬ DỤNG DỊCH VỤ XÉT NGHIỆM TẠI NHÀ</h1>
+                <p class="">
+                Tiện lợi: Việc làm xét nghiệm tại nhà giúp tiết kiệm thời gian và công sức di chuyển đến cơ sở y tế. Người dùng có thể sắp xếp thời gian và địa điểm phù hợp cho việc làm xét nghiệm.
+                </p>
+                <div class="row g-lg-5 mb-4" >
+                    <!-- Start Recent Work -->
+                    <div class="col-md-4 mb-4">
+                        <a href="tel:02439935556" class="recent-work card border-0 shadow-lg overflow-hidden">
+                            <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/7.jpg')}}" alt="Card image">
+                            <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                                <div style="background: #000000a1;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                    <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="fas fa-headset"></i> Tư vấn miễn phí</h3>
                                 </div>
-                            </a>
-                        </div>
-                        <!-- End Recent Work -->
-                        <!-- Start Recent Work -->
-                        <div class="col-md-4 mb-4">
-                            <a class="recent-work card border-0 shadow-lg overflow-hidden">
-                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/2.jpg')}}" alt="Card image">
-                                <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                                    <div style="background: #000000a1;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                                        <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="fas fa-dollar-sign"></i> Giá cả phải chăng</h3>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- End Recent Work -->
-                        <!-- Start Recent Work -->
-                        <div class="col-md-4 mb-4">
-                            <a class="recent-work card border-0 shadow-lg overflow-hidden">
-                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/1.jpg')}}" alt="Card image">
-                                <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                                    <div style="background: #000000a1;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                                        <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="fas fa-hospital-user"></i> Bác sĩ chuyên môn giỏi</h3>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- End Recent Work -->
-                        <!-- Start Recent Work -->
-                        <div class="col-md-4 mb-4">
-                            <a class="recent-work card border-0 shadow-lg overflow-hidden">
-                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/4.jpg')}}" alt="Card image">
-                                <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                                    <div style="background: #000000a1;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                                        <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="fas fa-user-nurse"></i> Nhân viên chuyên nghiệp</h3>
-                                    </div>  
-                                </div>
-                            </a>
-                        </div>
-                        <!-- End Recent Work -->
-                        <!-- Start Recent Work -->
-                        <div class="col-md-4 mb-4">
-                            <a class="recent-work card border-0 shadow-lg overflow-hidden">
-                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/5.jpg')}}" alt="Card image">
-                                <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                                    <div style="background: #000000a1;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                                        <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="fsas fa-blender-phone"></i> Phục vụ 24/24</h3>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- End Recent Work -->
-                        <!-- Start Recent Work -->
-                        <div class="col-md-4 mb-4">
-                            <a class="recent-work card border-0 shadow-lg overflow-hidden">
-                                <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/8.jpg')}}" alt="Card image">
-                                <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
-                                    <div style="background: #000000a1;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
-                                        <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="far fa-hand-point-right"></i> Hơn 5000 khách hàng hài lòng</h3>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- End Recent Work -->
+                            </div>
+                        </a>
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <img style="width:100%" src="../clients/img/6.jpg">
+                    <!-- End Recent Work -->
+                    <!-- Start Recent Work -->
+                    <div class="col-md-4 mb-4">
+                        <a class="recent-work card border-0 shadow-lg overflow-hidden">
+                            <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/2.jpg')}}" alt="Card image">
+                            <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                                <div style="background: #000000a1;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                    <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="fas fa-dollar-sign"></i> Giá cả phải chăng</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- End Recent Work -->
+                    <!-- Start Recent Work -->
+                    <div class="col-md-4 mb-4">
+                        <a class="recent-work card border-0 shadow-lg overflow-hidden">
+                            <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/1.jpg')}}" alt="Card image">
+                            <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                                <div style="background: #000000a1;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                    <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="fas fa-hospital-user"></i> Bác sĩ chuyên môn giỏi</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- End Recent Work -->
+                    <!-- Start Recent Work -->
+                    <div class="col-md-4 mb-4">
+                        <a class="recent-work card border-0 shadow-lg overflow-hidden">
+                            <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/4.jpg')}}" alt="Card image">
+                            <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                                <div style="background: #000000a1;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                    <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="fas fa-user-nurse"></i> Nhân viên chuyên nghiệp</h3>
+                                </div>  
+                            </div>
+                        </a>
+                    </div>
+                    <!-- End Recent Work -->
+                    <!-- Start Recent Work -->
+                    <div class="col-md-4 mb-4">
+                        <a class="recent-work card border-0 shadow-lg overflow-hidden">
+                            <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/5.jpg')}}" alt="Card image">
+                            <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                                <div style="background: #000000a1;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                    <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="fas fa-headset"></i> Phục vụ 24/24</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- End Recent Work -->
+                    <!-- Start Recent Work -->
+                    <div class="col-md-4 mb-4">
+                        <a class="recent-work card border-0 shadow-lg overflow-hidden">
+                            <img class="recent-work-img card-img" style="height: 150px;object-fit: cover;" src="{{url('/clients/img/8.jpg')}}" alt="Card image">
+                            <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                                <div style="background: #000000a1;border-radius: 5px" class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                    <h3 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;"><i class="far fa-hand-point-right"></i> Hơn 5000 khách hàng hài lòng</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- End Recent Work -->
                 </div>
             </div>
+            <div class="col-lg-6">
+                <img style="width:100%" src="../clients/img/6.jpg">
+            </div>
         </div>
-    </section>
+    </div>
+</section>
     <!-- End Banner Hero -->
 <!-- End Service -->
 <!-- Start Banner Hero -->
@@ -561,25 +622,50 @@
             </div>
         </div>
     </section>
-    <!-- End Contact -->
-<section class="service-wrapper py-3">
-    <!-- <div class="service-tag py-5 popular-specialties">
-        <div class="col-md-12">
-            <h2 class="h2 text-center col-12 py-2">Thông tin chỉ số</h2>
-        </div>
-        <div class="pt-2 py-5 pb-3 d-lg-flex align-items-center gx-5" style="padding:10%">
-            <div class="col-lg-12 row align-items-center"> -->
-                <center>
-                <canvas id="myChart" style="width:100%;max-width:500px;width:500px !important;height:500px !important"></canvas>
-
-                </center>
-            <!-- </div>
-        </div>
-    </div>
-    </div> -->
-</section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-
+<div class="modal fade" id="editmodal" role="dialog"></div>
+<div class="modal " id="addfile" role="dialog"></div>
+<div class="modal " id="show" role="dialog"></div>
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+function inValid(id){
+        console.log(id);
+        if($("#" + id).val() != ''){
+            $('.' + id + '-error').css("display", "none");
+            $('.' + id + '-icon').removeClass("error-icon");
+        }
+    }
+$("#frmSendSchedule div.form-input").each(function(key, value){
+        $(this,'input').focusout(function(){
+            if($(this).find('input').hasClass('required') && $(this).find('input').val() == ''){
+                $(this).find('.message-error').css("display", "block");
+                $(this).find('input').addClass('error-input');
+                $(this).find('i').addClass('error-icon');
+            }else if($(this).find('textarea').hasClass('required') && $(this).find('textarea').val() == ''){
+                $(this).find('.message-error').css("display", "block");
+                $(this).find('input').addClass('error-input');
+                $(this).find('i').addClass('error-icon');
+            }
+        });
+    });
+</script>
 <script>
 //       $(document).ready(function () {
 //       $('#select-state').selectize({
