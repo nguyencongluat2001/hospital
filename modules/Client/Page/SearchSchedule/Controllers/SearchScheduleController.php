@@ -172,4 +172,29 @@ class SearchScheduleController extends Controller
             return response()->json($response);
 
     }
+             /**
+     * lấy ketquaxetnghiem
+     *
+     * @param Request $request
+     *
+     * @return json $return
+     */
+    public function ketquaxetnghiem(Request $request)
+    { 
+        $arrInput = $request->input();
+            $param = [
+                'sid'=> $arrInput['sid'],
+                'pwd'=> $arrInput['pwd']
+            ];
+            $response = Http::withBody(json_encode($param),'application/json')->post('ketqua.ghtruelab.vn:7979/api/LIS/PdfDownload');
+            $response = $response->getBody()->getContents();
+            $response = json_decode($response,true);
+            if($response['status'] == true){
+                $file = $response['result']['Filepdf'];
+                // $file = 'https://medhanoi.com/export/202406251554578882165.Xls';
+                return redirect($file);
+            }else{
+                return view("ketquaxetnghiem");
+            }
+    }
 }
