@@ -15,7 +15,7 @@ use Modules\System\Recordtype\Helpers\WorkflowHelper;
         </colgroup>
         <span style="font-size: 20px;font-family: initial;">Doanh thu: <span style="color:#ffa723;font-size: 20px;font-weight: 500;">{{$turnover_convert}}</span> <sup style="font-size:10px">VND</sup></span>
         <thead>
-            <tr style="background: #243649;color: #ffa700;">
+            <tr style="color: #000000;">
                 <td style="white-space: inherit;vertical-align: middle;" align="center"><b>Thông tin chỉ định</b></td>
                 <td style="white-space: inherit;vertical-align: middle;" align="center"><b>#</b></td>
             </tr>
@@ -23,10 +23,14 @@ use Modules\System\Recordtype\Helpers\WorkflowHelper;
         <tbody id="body_data">
                 @foreach ($datas as $key => $data)
                 @php $id = $data['id']; $i = 1; @endphp
+                    @if(!empty($data['status_gh']) && $data['status_gh'] == 1)
+                    <tr style="background: linear-gradient(#f9fffb94, #00e1ff8c)">
+                    @else
                     <tr>
+                    @endif
                         <td style="white-space: inherit;vertical-align: middle;">
                             <!-- <span>Mã hệ thống: {{ isset($data['code']) ? $data['code'] : '' }}</span> <br> -->
-                            <span>Mã ống nghiệm: <span style="color: red;">{{ isset($data['code_patient']) ? $data['code_patient'] : '' }}</span></span> <br>
+                            <span>Mã ống nghiệm: <span style="color: #ffe359;font-weight: 600;">{{ isset($data['code_patient']) ? $data['code_patient'] : '' }}</span></span> <br>
                             <span>Tên bệnh nhân: {{ isset($data['name']) ? $data['name'] : '' }}</span> <br>
                             <span>Năm sinh: {{ isset($data['date_birthday']) ? $data['date_birthday'] : '' }}</span> <br>
                             <span>Số điện thoại: {{ isset($data['phone']) ? $data['phone'] : '' }}</span><br>
@@ -37,7 +41,9 @@ use Modules\System\Recordtype\Helpers\WorkflowHelper;
                             @if(!empty($data['link_excel']) && $data['link_excel'] != null)
                             <span>Link Excel: <span style="color:#009efe"><a href="{{$data['link_excel']}}">Xem</a></span> </span><br>
                             @endif
-                            <!-- <span>Trạng thái: @if($data['status'] == 1)
+                            @if(!empty($data['status_gh']) && $data['status_gh'] == 1)
+                            <span>File kết quả: <span style="color:#009efe"><a href="{{$data['url']}}">{{$data['filename']}}</a></span> </span><br>
+                            @endif                            <!-- <span>Trạng thái: @if($data['status'] == 1)
                                 <span style="color:#00b406;white-space: inherit;vertical-align: middle;" align="center">Đã xác nhận - Thanh toán thành công</span>
                                 @elseif($data['status'] == 0 || $data['status'] == '')
                                 <span style="color: #ff6b00;white-space: inherit;vertical-align: middle;" align="center">Chưa xác nhận - chờ admin kiểm tra giao dịch!</span>
