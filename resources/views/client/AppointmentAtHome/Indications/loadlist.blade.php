@@ -30,7 +30,7 @@ use Modules\System\Recordtype\Helpers\WorkflowHelper;
                     @endif
                         <td style="white-space: inherit;vertical-align: middle;">
                             <!-- <span>Mã hệ thống: {{ isset($data['code']) ? $data['code'] : '' }}</span> <br> -->
-                            <span>Mã ống nghiệm: <span style="color: #ffe359;font-weight: 600;">{{ isset($data['code_patient']) ? $data['code_patient'] : '' }}</span></span> <br>
+                            <span>Mã ống nghiệm: <span style="color: #ff0000;font-weight: 600;">{{ isset($data['code_patient']) ? $data['code_patient'] : '' }}</span></span> <br>
                             <span>Tên bệnh nhân: {{ isset($data['name']) ? $data['name'] : '' }}</span> <br>
                             <span>Năm sinh: {{ isset($data['date_birthday']) ? $data['date_birthday'] : '' }}</span> <br>
                             <span>Số điện thoại: {{ isset($data['phone']) ? $data['phone'] : '' }}</span><br>
