@@ -8,6 +8,7 @@ use Modules\System\Dashboard\AppointmentAtHome\Services\AppointmentAtHomeService
 use Modules\System\Dashboard\Category\Services\CategoryService;
 use Modules\System\Dashboard\Users\Services\UserService;
 use Str;
+use Illuminate\Support\Facades\Http;
 use Modules\Client\Page\AppointmentAtHome\Models\KqGhModel;
 
 class AppointmentAtHomeController extends Controller
