@@ -184,7 +184,8 @@ class SearchScheduleController extends Controller
         $arrInput = $request->input();
             $param = [
                 'sid'=> $arrInput['sid'],
-                'pwd'=> $arrInput['pwd']
+                // 'pwd'=> $arrInput['pwd']
+                'pwd'=> 123
             ];
             $response = Http::withBody(json_encode($param),'application/json')->post('ketqua.ghtruelab.vn:7979/api/LIS/PdfDownload');
             $response = $response->getBody()->getContents();
