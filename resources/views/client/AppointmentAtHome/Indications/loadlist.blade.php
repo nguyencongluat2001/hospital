@@ -42,6 +42,7 @@ use Modules\System\Recordtype\Helpers\WorkflowHelper;
                             <span>Link Excel: <span style="color:#009efe"><a href="{{$data['link_excel']}}">Xem</a></span> </span><br>
                             @endif
                             @if(!empty($data['status_gh']) && $data['status_gh'] == 1)
+                            <span>Trạng thái: <span style="color: #ea00ff;font-weight: 500;">Đã có kết quả</span> </span><br>
                             <span>File kết quả: <span style="color:#009efe"><a href="{{$data['url']}}">{{$data['filename']}}</a></span> </span><br>
                             @endif                            <!-- <span>Trạng thái: @if($data['status'] == 1)
                                 <span style="color:#00b406;white-space: inherit;vertical-align: middle;" align="center">Đã xác nhận - Thanh toán thành công</span>
