@@ -23,7 +23,7 @@
                 @foreach ($datas as $key => $data)
                 @php $id = $data->id; $i = 1; @endphp
                     @if($data->status == 1)
-                    <tr style="background:#91ffb9">
+                    <tr style="background:#ceffdf">
                     @else 
                     <tr>
                     @endif
@@ -44,7 +44,7 @@
                             <span>Trạng thái thanh toán: {{ $data->status == 1 ? 'Đã xác nhận' : 'Chưa xác nhận' }}</span> <br>
                             @if(!empty($data['status_gh']) && $data['status_gh'] == 1)
                             <span>Trạng thái kết quả: <span style="color: #ea00ff;font-weight: 500;">Đã có kết quả</span> </span><br>
-                            <span>File kết quả: <span style="color:#009efe"><a href="{{$data['url']}}">{{$data['filename']}}</a></span> </span><br>
+                            <span>File kết quả: <span style="color:#009efe"><a style="color:#00baff !important" href="{{$data['url']}}">{{$data['filename']}}</a></span> </span><br>
                             @endif  
                         </td>
                         @if($_SESSION['role'] == 'ADMIN')
