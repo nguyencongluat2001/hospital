@@ -43,7 +43,7 @@
                             <span>CTV chỉ định: {{ isset($data->code_ctv) ? $data->code_ctv : '' }}</span> <br>
                             <span>Trạng thái thanh toán: {{ $data->status == 1 ? 'Đã xác nhận' : 'Chưa xác nhận' }}</span> <br>
                             @if(!empty($data['status_gh']) && $data['status_gh'] == 1)
-                            <span>Trạng thái kết quả: <span style="color: #ea00ff;font-weight: 500;">Đã có kết quả</span> </span><br>
+                            <span>Trạng thái kết quả: <span style="color: #ea00ff;font-weight: 600;">Đã có kết quả</span> </span><br>
                             <span>File kết quả: <span style="color:#009efe"><a style="color:#00baff !important" href="{{$data['url']}}">{{$data['filename']}}</a></span> </span><br>
                             @endif  
                         </td>
