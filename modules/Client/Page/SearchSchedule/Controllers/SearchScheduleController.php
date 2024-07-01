@@ -125,14 +125,48 @@ class SearchScheduleController extends Controller
     public function getFile(Request $request)
     { 
         $arrInput = $request->input();
-            $param = [
-                'sid'=> $arrInput['sid'],
-                'pwd'=> $arrInput['pwd']
-            ];
-            $response = Http::withBody(json_encode($param),'application/json')->post('ketqua.ghtruelab.vn:7979/api/LIS/PdfDownload');
-            $response = $response->getBody()->getContents();
-            $response = json_decode($response,true);
-            return response()->json($response);
+        $check = AppointmentAtHomeModel::where('code_patient',$arrInput['sid'])->first();
+        if($arrInput['sid'] == ''){
+            $message = 'Mã tra cứu không được để trống!';
+            $data['result'] = [
+                'status' => false,
+                'message' => $message
+               ];
+            return response()->json($data);
+        }
+        if(!empty($check) && $check->code_patient != $arrInput['sid']){
+            $message = 'Mã tra cứu không chính xác!';
+            $data['result'] = [
+                'status' => false,
+                'message' => $message
+               ];
+            return response()->json($data);
+        }
+        if($arrInput['phone'] == ''){
+            $message = 'Số điện thoại không được để trống!';
+            $data['result'] = [
+                'status' => false,
+                'message' => $message
+               ];
+            return response()->json($data);
+        }
+        
+        if(!empty($check) && $check->phone != $arrInput['phone']){
+            $message = 'Số điện thoại không chính xác!';
+            $data['result'] = [
+                'status' => false,
+                'message' => $message
+               ];
+            return response()->json($data);
+        }
+        $param = [
+            'sid'=> $arrInput['sid'],
+            'pwd'=> $arrInput['phone']
+        ];
+        $response = Http::withBody(json_encode($param),'application/json')->post('ketqua.ghtruelab.vn:7979/api/LIS/PdfDownload');
+        $response = $response->getBody()->getContents();
+        $response = json_decode($response,true);
+        return response()->json($response);
 
     }
         /**

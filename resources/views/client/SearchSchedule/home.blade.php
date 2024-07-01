@@ -196,10 +196,10 @@
                                                     </div>
                                                     <div class="form-input col-md-12 padding-style" >
                                                         <div id="changeName">
-                                                            <input type="text" class="form-control required" placeholder="Mã bảo mật của bạn" name="pwd" id="pwd" value="" oninput="inValid(this.id)">
+                                                            <input type="text" class="form-control required" placeholder="Số điện thoại của bạn" name="phone" id="phone" value="" oninput="inValid(this.id)">
                                                             <i class="fa fa-user-lock uname-icon padding-style"></i>
                                                         </div>
-                                                        <span class="message-error uname-error">Mã bảo mật không được để trống!</span>
+                                                        <span class="message-error uname-error">Số điện thoại của bạn không được để trống!</span>
                                                     </div>
                                                     <center>
                                                     <div class="pt-3 mb-3" style="width:150px">

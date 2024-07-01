@@ -71,7 +71,7 @@ JS_SearchSchedule.prototype.getFile = function (value) {
             if (arrResult['status'] == true) {
                 window.open(arrResult['result']['Filepdf']);
             } else {
-                var nameMessage = 'Thất bại!, thông tin chưa chính xác!';
+                var nameMessage = arrResult['result']['message'];
                 var icon = 'warning';
                 var color = '#344767';
                 NclLib.alerMesage(nameMessage,icon,color);

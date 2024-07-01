@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Modules\System\Dashboard\AppointmentAtHome\Services\AppointmentAtHomeService;
 use Modules\System\Dashboard\Category\Services\CategoryService;
 use Modules\System\Dashboard\Users\Services\UserService;
+use Str;
+use Modules\Client\Page\AppointmentAtHome\Models\KqGhModel;
 
 class AppointmentAtHomeController extends Controller
 {
@@ -54,6 +56,55 @@ class AppointmentAtHomeController extends Controller
                 ->whereDate('created_at', '>=', $input['fromdate'])
                 ->whereDate('created_at', '<=', $input['todate'])
                 ->sum('money');
+        foreach($objResult as $val){
+            try{
+                $check = KqGhModel::where('code',$val['code_patient'])->first();
+                if(!empty($check)){
+                    $val->status_gh = 1;
+                    $val->url = $check['url'];
+                    $val->filename = $check['namefile'];
+                }else{
+                    $param = [
+                        'sid'=> $val['code_patient'],
+                        // 'pwd'=> $arrInput['pwd']
+                        'pwd'=> 123
+                    ];
+                    $response = Http::withBody(json_encode($param),'application/json')->post('ketqua.ghtru2elab.vn:7979/api/LIS/PdfDownload');
+                    $response = $response->getBody()->getContents();
+                    $response = json_decode($response,true);
+                    if($response['status'] == true){
+                        $file = $response['result']['Filepdf'];
+                        $check = KqGhModel::where('code',$val['code_patient'])->first();
+                        $arr = [
+                            'id'=> (string)Str::uuid(),
+                            'code'=> $val['code_patient'],
+                            'namefile'=> $response['result']['filename'],
+                            'url'=> $response['result']['Filepdf'],
+                            'status'=> 1,
+                            'created_at' => date("Y/m/d H:i:s"),
+                            'updated_at' => date("Y/m/d H:i:s")
+                        ];
+                        if(empty($check)){
+                            KqGhModel::create($arr);
+                        }
+                        $val->status_gh = 1;
+                        $val->url = $response['result']['Filepdf'];
+                        $val->filename = $response['result']['filename'];
+                    }else{
+                        $val->status_gh = 2;
+                    }
+                }
+            } catch (\Exception $e) {
+                $check = KqGhModel::where('code',$val['code_patient'])->first();
+                if(!empty($check)){
+                    $val->status_gh = 1;
+                    $val->url = $check['url'];
+                    $val->filename = $check['namefile'];
+                }else{
+                    $val->status_gh = 2;
+                }
+            }
+        }
         if($turnover >= 0){
             $sumMoney = number_format($turnover,0, '', ',');
         }else{

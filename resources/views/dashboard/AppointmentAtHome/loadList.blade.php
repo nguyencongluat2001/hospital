@@ -41,7 +41,11 @@
                             Ngày <span style="font-weight: 600;">{{Carbon\Carbon::parse($data->date_sampling)->format('d-m-Y')}}</span>
                               - Tại <span style="font-weight: 600;">{{ isset($data->address) ? $data->address : '' }}</span>  </span> <br>
                             <span>CTV chỉ định: {{ isset($data->code_ctv) ? $data->code_ctv : '' }}</span> <br>
-                            <span>Trạng thái: {{ $data->status == 1 ? 'Đã xác nhận' : 'Chưa xác nhận' }}</span> <br>
+                            <span>Trạng thái thanh toán: {{ $data->status == 1 ? 'Đã xác nhận' : 'Chưa xác nhận' }}</span> <br>
+                            @if(!empty($data['status_gh']) && $data['status_gh'] == 1)
+                            <span>Trạng thái kết quả: <span style="color: #ea00ff;font-weight: 500;">Đã có kết quả</span> </span><br>
+                            <span>File kết quả: <span style="color:#009efe"><a href="{{$data['url']}}">{{$data['filename']}}</a></span> </span><br>
+                            @endif  
                         </td>
                         @if($_SESSION['role'] == 'ADMIN')
                         <td style="white-space: inherit;vertical-align: middle;" onclick="{select_row(this);}" align="center">

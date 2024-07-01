@@ -453,10 +453,10 @@
                                                                 </div>
                                                                 <div class="form-input col-md-12 padding-style" >
                                                                     <div id="changeName">
-                                                                        <input type="text" class="form-control required" placeholder="Mã bảo mật của bạn" name="pwd" id="pwd" value="" oninput="inValid(this.id)">
+                                                                        <input type="text" class="form-control required" placeholder="Số điện thoại đăng ký" name="phone" id="phone" value="" oninput="inValid(this.id)">
                                                                         <i class="fa fa-user-lock uname-icon padding-style"></i>
                                                                     </div>
-                                                                    <span class="message-error uname-error">Mã bảo mật không được để trống!</span>
+                                                                    <span class="message-error uname-error">Số điện thoại đăng ký để trống!</span>
                                                                 </div>
                                                                 <center>
                                                                 <div class="pt-3 mb-3" style="width:150px">
@@ -818,5 +818,13 @@ new Chart("myChart", {
                  JS_System_Security.security();
       })
 </script> -->
-
+<script type="text/javascript" src="{{ URL::asset('dist/js/backend/client/JS_SearchSchedule.js') }}"></script>
+<script src='../assets/js/jquery.js'></script>
+<script type="text/javascript">
+    var baseUrl = "{{ url('') }}";
+    var JS_SearchSchedule = new JS_SearchSchedule(baseUrl, 'client', 'searchschedule');
+    $(document).ready(function($) {
+        JS_SearchSchedule.loadIndex(baseUrl);
+    })
+</script>
 @endsection
