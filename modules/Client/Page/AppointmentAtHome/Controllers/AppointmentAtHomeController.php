@@ -481,7 +481,7 @@ class AppointmentAtHomeController extends Controller
 
         }
         foreach($objResult as $val){
-            // try{
+            try{
                 $check = KqGhModel::where('code',$val['code_patient'])->first();
                 if(!empty($check)){
                     $val->status_gh = 1;
@@ -493,7 +493,7 @@ class AppointmentAtHomeController extends Controller
                         // 'pwd'=> $arrInput['pwd']
                         'pwd'=> 123
                     ];
-                    $response = Http::withBody(json_encode($param),'application/json')->post('ketqua.ghtru2elab.vn:7979/api/LIS/PdfDownload');
+                    $response = Http::withBody(json_encode($param),'application/json')->post('ketqua.ghtruelab.vn:7979/api/LIS/PdfDownload');
                     $response = $response->getBody()->getContents();
                     $response = json_decode($response,true);
                     if($response['status'] == true){
@@ -518,16 +518,16 @@ class AppointmentAtHomeController extends Controller
                         $val->status_gh = 2;
                     }
                 }
-            // } catch (\Exception $e) {
-            //     $check = KqGhModel::where('code',$val['code_patient'])->first();
-            //     if(!empty($check)){
-            //         $val->status_gh = 1;
-            //         $val->url = $check['url'];
-            //         $val->filename = $check['namefile'];
-            //     }else{
-            //         $val->status_gh = 2;
-            //     }
-            // }
+            } catch (\Exception $e) {
+                $check = KqGhModel::where('code',$val['code_patient'])->first();
+                if(!empty($check)){
+                    $val->status_gh = 1;
+                    $val->url = $check['url'];
+                    $val->filename = $check['namefile'];
+                }else{
+                    $val->status_gh = 2;
+                }
+            }
         }
         $turnover_convert = number_format($turnover,0, '', ',');
         $data['datas'] = $objResult;
