@@ -11,6 +11,7 @@ use Modules\System\Dashboard\BloodTest\Models\PriceTestModel;
 use DB;
 use Str;
 use Modules\Client\Page\AppointmentAtHome\Models\PatientModel;
+use Modules\Base\Helpers\ForgetPassWordMailHelper;
 
 
 
@@ -89,6 +90,9 @@ class AppointmentAtHomeService extends Service
             }else{
                 $paramPatient['id'] = (string)Str::uuid();
                 $createPatient = PatientModel::create($paramPatient);
+            }
+            if(empty($_SESSION['role'])){
+                $sebdMailToCTV = $this->sendMail($input);
             }
             DB::commit();
             return true;
@@ -254,5 +258,20 @@ class AppointmentAtHomeService extends Service
             ];
         }
         return $data;
+    }
+    // gửi thông báo đến cộng tác viên khi có tin nhắn mới
+    public function sendMail($input)
+    {
+        $phone = $input['phone'];
+        // $stringHtml = file_get_contents(base_path() . '\storage\templates\chat\tem_forget.html');
+        // Lấy dữ liệu
+        $data['date'] = 'Ngày ' . date('d') . ' tháng ' . date('m') . ' năm ' . date('Y');
+        $data['email'] = 'nguyennganchibi92@gmail.com';
+        // $data['phone'] = $phone;
+        $data['mailto'] = 'nguyennganchibi92@gmail.com';
+        $data['message'] = "Có lịch đặt xét nghiệm mới! liên hệ khách hàng qua số điện thoại" . " " . $phone;
+        $data['subject'] = 'Phần mềm đặt lịch xét nghiệm , truyền dịch tại nhà';
+        // Gửi mail
+        (new ForgetPassWordMailHelper($data['email'], $data['email'], '', $data))->send($data);
     }
 }

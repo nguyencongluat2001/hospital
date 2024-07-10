@@ -183,6 +183,7 @@ JS_AppointmentAtHome.prototype.add = function (oForm) {
     //     NclLib.alerMesageClient(nameMessage,icon,color,background);
     //     return false;
     // }
+    NclLib.loadding();
     $.ajax({
         url: url,
         type: "POST",

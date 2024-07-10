@@ -45,12 +45,11 @@
     <div>
         <div class="row">
             <div class="info-conter">
-                <p>Có tin nhắn mới từ số điện thoại: {{ $data['phone'] }}</b></p>
-                <p>Tin nhắn: <b>{{ $data['message'] }}</b></p>
+                <p>Thông báo: <b>{{ $data['message'] }}</b></p>
             </div>
         </div>
         <br>
-        <p>Email được gửi tự động bởi phần mềm đặt lịch khám nhanh tại các tuyến trung ương. Vui lòng kiểm phản hồi tin nhắn khách hàng.
+        <p>Email được gửi tự động bởi phần mềm xét nghiệm tại nhà. Vui lòng kiểm phản hồi liên hệ khách hàng.
         </p>
     </div>
 
