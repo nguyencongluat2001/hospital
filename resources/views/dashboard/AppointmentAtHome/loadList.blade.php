@@ -35,7 +35,7 @@
                             <span>Tên bệnh nhân: <span style="font-weight: 600;">{{ isset($data->name) ? $data->name : '' }}</span></span> <br>
                             <span>Năm sinh: {{ isset($data->date_birthday) ? $data->date_birthday : '' }}</span> <br>
                             <span>Số điện thoại: {{ isset($data->phone) ? $data->phone : '' }}</span><br>
-                            <span>Mã ống nghiệm: <span style="font-weight: 600;">{{ isset($data->code) ? $data->code : '' }}</span></span> <br>
+                            <span>Mã code: <span style="font-weight: 600;">{{ isset($data->code) ? $data->code : '' }}</span></span> <br>
                             <span>Số tiền:  <span style="font-weight: 600;color:#ff6200">{{ !empty($data->money) ? number_format($data->money,0, '', ',') : '' }}</span> VNĐ </span><br>
                             <span>Lấy mẫu: Lúc <span style="font-weight: 600;">{{ isset($data->hour_sampling) ? $data->hour_sampling : '' }}</span>
                             Ngày <span style="font-weight: 600;">{{Carbon\Carbon::parse($data->date_sampling)->format('d-m-Y')}}</span>

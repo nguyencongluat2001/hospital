@@ -72,7 +72,7 @@
             <span class="ms-1 font-weight-bold"></span>
         </a> -->
         <a class="navbar-brand m-0" href="{{url('/')}}">
-            <img src="../clients\img\logo.png" alt="main_logo" style="width:80%;padding-left:20%">
+            <img src="../clients/img/Logo_medhanoi.png" alt="main_logo" style="width:80%;padding-left:20%">
         </a>
 
         </div>
