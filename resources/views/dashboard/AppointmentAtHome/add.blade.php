@@ -53,7 +53,7 @@
                     </div> -->
                     <div class="row">
                         <div class="form-wrapper col-md-12">
-                            <label for="">Mã bệnh nhân trên ống nghiệm</label> <br>
+                            <label for="">Mã code</label> <br>
                             <input disabled type="text" class="form-control" value="{{!empty($datas['code_patient']) ? $datas['code_patient'] : ''}}">
                         </div>
                     </div>

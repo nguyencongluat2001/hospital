@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="../clients/img/apple-icon.png">
     <link rel="icon" href="../clients/img/Logo_medhanoi.png" type="image/png">
+    <meta property="og:image" content="{{url('/clients/img/Logo_medhanoi.png')}}" />
     <!-- Load Require CSS -->
     {{-- @yield('css') --}}
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
