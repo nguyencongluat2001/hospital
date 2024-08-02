@@ -17,8 +17,9 @@
     <meta property="og:image" content="{{url('/clients/img/Logo_medhanoi.png')}}" />
     <!-- Load Require CSS -->
     {{-- @yield('css') --}}
-    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script> -->
 
+    <link href="../clients/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="../clients/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font CSS -->
     <link href="../clients/css/boxicon.min.css" rel="stylesheet">
