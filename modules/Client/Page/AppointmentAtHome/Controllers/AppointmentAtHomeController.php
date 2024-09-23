@@ -465,7 +465,7 @@ class AppointmentAtHomeController extends Controller
                              ->whereDate('created_at', '>=', $arrInput['fromDate'])
                              ->whereDate('created_at', '<=', $arrInput['toDate'])
                              ->sum('money');
-        }elseif(!empty($_SESSION['code']) && $_SESSION['code'] != ''){
+        }elseif(!empty($_SESSION['code']) && $_SESSION['code'] != '' && $arrInput['type'] == 'CA_NHAN'){
             $arrInput['code'] = !empty($_SESSION['code'])?$_SESSION['code']:'';
             if(empty($_SESSION['code'])){
                 $objResult = [];
@@ -479,6 +479,22 @@ class AppointmentAtHomeController extends Controller
                             ->whereDate('created_at', '<=', $arrInput['toDate'])
                             ->sum('money');
 
+        }elseif($arrInput['type'] == 'BAC_SI'){
+            // dd(1);
+            $arrInput['code'] = !empty($_SESSION['code'])?$_SESSION['code']:'';
+            if(empty($_SESSION['code'])){
+                $objResult = [];
+            }else{
+                $arrInput['code_doctor'] = 1;
+                $objResult = $this->AppointmentAtHomeService->filter($arrInput);
+            }
+            $date = date('Y-m-d');
+            $turnover = $this->AppointmentAtHomeService
+                            ->where('code_ctv',$_SESSION['code'])
+                            ->whereNotNull('code_doctor')
+                            ->whereDate('created_at', '>=', $arrInput['fromDate'])
+                            ->whereDate('created_at', '<=', $arrInput['toDate'])
+                            ->sum('money');
         }
         foreach($objResult as $val){
             try{

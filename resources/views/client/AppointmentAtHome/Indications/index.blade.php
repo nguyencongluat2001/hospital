@@ -44,7 +44,18 @@
                                                     <div class="col-md-6" style="width:210px">
                                                         <select onchange="JS_listIndications.loadList()" class="form-control input-sm chzn-select" name="type" id="type">
                                                             <option value='CA_NHAN'> Cá nhân </option>
+                                                            <option value='BAC_SI'>Có mã bác sĩ </option>
                                                             <option value='TAT_CA'> Tất cả </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                @else
+                                                <br><br><br>
+                                                <div style="display:flex">
+                                                    <div class="col-md-6" style="width:210px">
+                                                        <select onchange="JS_listIndications.loadList()" class="form-control input-sm chzn-select" name="type" id="type">
+                                                            <option value='CA_NHAN'> Cá nhân </option>
+                                                            <option value='BAC_SI'>Có mã bác sĩ </option>
                                                         </select>
                                                     </div>
                                                 </div>

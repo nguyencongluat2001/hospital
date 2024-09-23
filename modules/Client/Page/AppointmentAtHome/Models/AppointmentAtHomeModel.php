@@ -55,6 +55,9 @@ class AppointmentAtHomeModel extends Model
             case 'status':
                 $query->where('status', $value);
                 return $query;
+            case 'code_doctor':
+                $query->whereNotNull('code_doctor');
+                return $query;
             case 'fromDate':
                 if(!empty($value)){
                     $query->whereDate('created_at', '>=', $value);
