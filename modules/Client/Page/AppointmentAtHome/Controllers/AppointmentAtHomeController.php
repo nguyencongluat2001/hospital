@@ -480,7 +480,6 @@ class AppointmentAtHomeController extends Controller
                             ->sum('money');
 
         }elseif($arrInput['type'] == 'BAC_SI'){
-            // dd(1);
             $arrInput['code'] = !empty($_SESSION['code'])?$_SESSION['code']:'';
             if(empty($_SESSION['code'])){
                 $objResult = [];

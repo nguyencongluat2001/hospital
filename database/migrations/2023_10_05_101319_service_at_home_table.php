@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('schedule', function (Blueprint $table) {
-            $table->string('date_sampling')->nullable();
-            $table->string('hour_sampling')->nullable();
+        Schema::table('service_at_home', function (Blueprint $table) {
+            $table->string('code_doctor')->nullable();
         });
     }
 
@@ -22,7 +21,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('schedule', function (Blueprint $table) {
+        Schema::table('service_at_home', function (Blueprint $table) {
             //z
         });
     }
