@@ -573,7 +573,11 @@ class AppointmentAtHomeController extends Controller
     {
         $input = $request->all();
         $day = date("Y-m-d");
-        $data = $this->AppointmentAtHomeService->where('type_at_home','XET_NGHIEM')->where('appointment','LIKE','%'.$day.'%')->get(); 
+        if($_SESSION['code'] == 'YE08'){
+            $data = $this->AppointmentAtHomeService->where('type_at_home','XET_NGHIEM')->where('appointment','LIKE','%'.$day.'%')->get(); 
+        }else{
+            $data = $this->AppointmentAtHomeService->where('type_at_home','XET_NGHIEM')->where('appointment','LIKE','%'.$day.'%')->where('code_ctv',$_SESSION['code'])->get(); 
+        }
         foreach($data as $val){
             $check = KqGhModel::where('code',$val['code_patient'])->first();
             if(!empty($check)){
