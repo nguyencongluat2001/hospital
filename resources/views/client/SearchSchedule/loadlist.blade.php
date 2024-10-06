@@ -94,7 +94,7 @@
                         <td style="wwhite-space: inherit;vertical-align: middle;">
                             <span>Thời gian tạo lịch: {{ isset($data['created_at']) ? $data['created_at'] : '' }}</span> <br>
                             <span>Loại xét nghiệm: <b>{{ isset($data['type']) ? $data['type'] : '' }}</b></span> <br>
-                            <span>Ngày lấy mẫu: <b>{{ isset($data['date_sampling']) ? $data['date_sampling'] : '' }}</b> (Fomart Tháng - Ngày - Năm)</span> <br>
+                            <span>Ngày lấy mẫu: <b>{{ isset($data['date_sampling']) ? $data['date_sampling'] : '' }}</b> ( Tháng - Ngày - Năm)</span> <br>
                             <span>Giờ lấy mẫu: <b>{{ isset($data['hour_sampling']) ? $data['hour_sampling'] : '' }} Phút</b></span> <br>
                             <span>Số tiền: <b>{{ isset($data['money']) ? $data['money'] : '' }} VND</b></span> <br>
                             <span>Thanh toán: <b>Tại nhà</b></span> <br>

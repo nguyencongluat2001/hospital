@@ -94,7 +94,7 @@
                     @endif
                     <div class="row">
                         <div class="form-wrapper col-md-6">
-                            <label for="">Ngày lấy mẫu (Fomart Tháng - Ngày - Năm)</label> <br>
+                            <label for="">Ngày lấy mẫu ( Tháng - Ngày - Năm)</label> <br>
                             <input disabled type="text" class="form-control" value="{{!empty($datas['date_sampling']) ? $datas['date_sampling'] : ''}}">
                         </div>
                         <div class="form-wrapper col-md-6">

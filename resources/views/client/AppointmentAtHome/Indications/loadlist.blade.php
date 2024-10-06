@@ -46,11 +46,9 @@ use Modules\System\Recordtype\Helpers\WorkflowHelper;
                             <span>File kết quả: <span style="color:#009efe"><a href="{{$data['url']}}">{{$data['filename']}}</a></span> </span><br>
                             @endif 
                             <div class="row form-group">
-                                <span class="col-md-2 control-label required">Nhập ngày hẹn:</span>
-                                <div class="col-md-3">
-                                    <input class="form-control" onchange="JS_listIndications.nhapngayhen('{{$id}}',event)" type="date" value="{{isset($data['appointment']) ? $data['appointment'] : ''}}" name="appointment" id="appointment"
-                                    placeholder="Nhập ngày hẹn xét nghiệm..." />
-                                </div>
+                                <span class="control-label required">Nhập ngày hẹn ( Tháng - Ngày - Năm) <input style="width: 200px;" class="form-control" onchange="JS_listIndications.nhapngayhen('{{$id}}',event)" type="date" value="{{isset($data['appointment']) ? $data['appointment'] : ''}}" name="appointment" id="appointment"
+                                placeholder="Nhập ngày hẹn xét nghiệm..." /></span>
+                                    
                             </div>
 
                                  <!-- <span>Trạng thái: @if($data['status'] == 1)
