@@ -25,6 +25,7 @@ class AppointmentAtHomeModel extends Model
             'sex',
             'date_sampling',
             'hour_sampling',
+            'appointment', //ngày hẹn xn lại
             'address',
             'reason',
             'type_payment',

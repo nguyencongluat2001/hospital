@@ -256,6 +256,38 @@ JS_listIndications.prototype.delete = function (id) {
  *
  * @return void
  */
+JS_listIndications.prototype.nhapngayhen = function(id,appointment) {
+    var url = this.urlPath + '/nhapngayhen';
+    var myClass = this;
+    var data = '_token=' + $('#frmIndications #_token').val();
+    data += '&id=' + id;
+    data += '&appointment=' + appointment.target.value;
+    $.ajax({
+        url: url,
+        type: "POST",
+        data: data,
+        success: function(arrResult) {
+            // if (arrResult['success'] == true) {
+            //     NclLib.alertMessageBackend('success', 'Thông báo', 'Cập nhật ngày hẹns thành công');
+            //     myClass.loadList(oFormCreate);
+            // }
+            if (arrResult['success'] == true) {
+                var nameMessage = 'Cập nhật ngày hẹn thành công!';
+                var icon = 'success';
+                var color = '#f5ae67';
+                NclLib.alerMesage(nameMessage,icon,color);
+        }
+
+        }
+    });
+}
+/**
+ * Hàm hiển thị modal edit
+ *
+ * @param oForm (tên form)
+ *
+ * @return void
+ */
 JS_listIndications.prototype.showDetail = function(id) {
     var url = this.urlPath + '/showDetail';
     var myClass = this;

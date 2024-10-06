@@ -325,7 +325,7 @@
                                                     <div class="form-input col-md-6 padding-style">
                                                     <!-- onfocus="(this.type='date')"
                                                             onblur="(this.type='text')" -->
-                                                        <label for="">Ngày lấy mẫu</label>
+                                                        <label for="">Ngày lấy mẫu (Fomart Tháng - Ngày - Năm)</label>
                                                         <input type="date" class="form-control required" placeholder="Ngày lấy mẫu..." name="date_sampling" id="date_sampling" value="{{!empty($getInfo->date_sampling)?date('Y-m-d', strtotime($getInfo->date_sampling)):''}}" oninput="inValid(this.id)">
                                                         <!-- <i class="fa fa-calendar-alt uname-icon padding-style"></i> -->
                                                         <span class="message-error uname-error">Ngày lấy mẫu không được để trống!</span>

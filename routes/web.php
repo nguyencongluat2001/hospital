@@ -168,6 +168,7 @@ Route::prefix('/client')->group(function () {
             Route::get('/list_Indications', [AppointmentAtHomeController::class,'list_Indications']);
             Route::get('/loadList_Indications', [AppointmentAtHomeController::class,'loadList_Indications']);
             Route::get('/showDetail', [AppointmentAtHomeController::class,'showDetail']);
+            Route::get('/nhapngayhen', [AppointmentAtHomeController::class,'nhapngayhen']);
             Route::get('/pdf', [AppointmentAtHomeController::class,'pdf']);
             Route::post('/delete', [AppointmentAtHomeController::class,'delete']);
             Route::post('/exportExcel', [AppointmentAtHomeController::class,'exportExcel']);
@@ -175,8 +176,11 @@ Route::prefix('/client')->group(function () {
             Route::get('/chart',[AppointmentAtHomeController::class,'chart']);
             Route::get('/report',[AppointmentAtHomeController::class,'report']);
 
-
-
+            //danh sách lịch chỉ định
+            Route::get('/lichhen', [AppointmentAtHomeController::class,'lichhen']);
+            Route::post('/nhapngayhen', [AppointmentAtHomeController::class,'nhapngayhen']);
+            // Route::get('/loadlichhen', [AppointmentAtHomeController::class,'loadlichhen']);
+            
             // Truyền dịch
             Route::get('/indexInfusion',[AppointmentAtHomeController::class,'indexInfusion']);
             Route::get('/tab2/{code}',[AppointmentAtHomeController::class,'indexInfusion_form']);

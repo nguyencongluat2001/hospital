@@ -44,7 +44,16 @@ use Modules\System\Recordtype\Helpers\WorkflowHelper;
                             @if(!empty($data['status_gh']) && $data['status_gh'] == 1)
                             <span>Trạng thái: <span style="color: #ea00ff;font-weight: 500;">Đã có kết quả</span> </span><br>
                             <span>File kết quả: <span style="color:#009efe"><a href="{{$data['url']}}">{{$data['filename']}}</a></span> </span><br>
-                            @endif                            <!-- <span>Trạng thái: @if($data['status'] == 1)
+                            @endif 
+                            <div class="row form-group">
+                                <span class="col-md-2 control-label required">Nhập ngày hẹn</span>
+                                <div class="col-md-3">
+                                    <input class="form-control" onchange="JS_listIndications.nhapngayhen('{{$id}}',event)" type="date" value="{{isset($data['appointment']) ? $data['appointment'] : ''}}" name="appointment" id="appointment"
+                                    placeholder="Nhập ngày hẹn xét nghiệm..." />
+                                </div>
+                            </div>
+
+                                 <!-- <span>Trạng thái: @if($data['status'] == 1)
                                 <span style="color:#00b406;white-space: inherit;vertical-align: middle;" align="center">Đã xác nhận - Thanh toán thành công</span>
                                 @elseif($data['status'] == 0 || $data['status'] == '')
                                 <span style="color: #ff6b00;white-space: inherit;vertical-align: middle;" align="center">Chưa xác nhận - chờ admin kiểm tra giao dịch!</span>

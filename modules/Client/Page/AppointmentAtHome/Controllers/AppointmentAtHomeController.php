@@ -561,6 +561,34 @@ class AppointmentAtHomeController extends Controller
     }
 
 
+    ///lịch hẹn
+    /**
+     * dat lich
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function lichhen(Request $request)
+    {
+        $input = $request->all();
+        $day = date("Y-m-d");
+        $data = $this->AppointmentAtHomeService->where('type_at_home','XET_NGHIEM')->where('appointment','LIKE','%'.$day.'%')->get(); 
+        foreach($data as $val){
+            $check = KqGhModel::where('code',$val['code_patient'])->first();
+            if(!empty($check)){
+                $val->status_gh = 1;
+                $val->url = $check['url'];
+                $val->filename = $check['namefile'];
+            }else{
+                $val->status_gh = 2;
+            }
+        }
+        $datas['datas'] = $data;
+        
+        return view('client.AppointmentAtHome.Indications.indexLichhen',$datas);
+    }
+
 
 
 
@@ -648,6 +676,22 @@ class AppointmentAtHomeController extends Controller
     {
         $input = $request->all();
         $data = $this->AppointmentAtHomeService->where('id', $input['id'])->delete(); 
+        return response()->json(['success'=>true]);
+    }
+            /**
+     * delete
+     *
+     * @param Request $request
+     *
+     * @return view
+     */
+    public function nhapngayhen(Request $request)
+    {
+        $input = $request->all();
+        $arr = [
+            'appointment' => $input['appointment'],
+        ];
+        $data = $this->AppointmentAtHomeService->where('id', $input['id'])->update($arr); 
         return response()->json(['success'=>true]);
     }
 

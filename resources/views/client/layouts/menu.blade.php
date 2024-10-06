@@ -254,6 +254,11 @@
                                 <i class="fas fa-clipboard-list"></i> {{ __('Danh sách chỉ định') }}
                                 </p>
                             </a>
+                            <a class="dropdown-item" href="{{ URL::asset('client/appointmentathome/lichhen') }}">
+                                <p>
+                                <i class="fas fa-stopwatch"></i>{{ __('Lịch hẹn xét nghiệm') }}
+                                </p>
+                            </a>
                             <a class="dropdown-item" href="{{ URL::asset('client/appointmentathome/chart')}}">
                                 <p>
                                 <i class="fas fa-hand-holding-usd"></i> {{ __('Quản lý kinh doanh') }}
