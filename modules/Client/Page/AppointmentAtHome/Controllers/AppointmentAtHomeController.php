@@ -508,30 +508,30 @@ class AppointmentAtHomeController extends Controller
                         // 'pwd'=> $arrInput['pwd']
                         'pwd'=> 123
                     ];
-                    $response = Http::withBody(json_encode($param),'application/json')->post('ketqua.ghtruelab.vn:7979/api/LIS/PdfDownload');
-                    $response = $response->getBody()->getContents();
-                    $response = json_decode($response,true);
-                    if($response['status'] == true){
-                        $file = $response['result']['Filepdf'];
-                        $check = KqGhModel::where('code',$val['code_patient'])->first();
-                        $arr = [
-                            'id'=> (string)Str::uuid(),
-                            'code'=> $val['code_patient'],
-                            'namefile'=> $response['result']['filename'],
-                            'url'=> $response['result']['Filepdf'],
-                            'status'=> 1,
-                            'created_at' => date("Y/m/d H:i:s"),
-                            'updated_at' => date("Y/m/d H:i:s")
-                        ];
-                        if(empty($check)){
-                            KqGhModel::create($arr);
-                        }
-                        $val->status_gh = 1;
-                        $val->url = $response['result']['Filepdf'];
-                        $val->filename = $response['result']['filename'];
-                    }else{
+                    // $response = Http::withBody(json_encode($param),'application/json')->post('ketqua.ghtruelab.vn:7979/api/LIS/PdfDownload');
+                    // $response = $response->getBody()->getContents();
+                    // $response = json_decode($response,true);
+                    // if($response['status'] == true){
+                    //     $file = $response['result']['Filepdf'];
+                    //     $check = KqGhModel::where('code',$val['code_patient'])->first();
+                    //     $arr = [
+                    //         'id'=> (string)Str::uuid(),
+                    //         'code'=> $val['code_patient'],
+                    //         'namefile'=> $response['result']['filename'],
+                    //         'url'=> $response['result']['Filepdf'],
+                    //         'status'=> 1,
+                    //         'created_at' => date("Y/m/d H:i:s"),
+                    //         'updated_at' => date("Y/m/d H:i:s")
+                    //     ];
+                    //     if(empty($check)){
+                    //         KqGhModel::create($arr);
+                    //     }
+                    //     $val->status_gh = 1;
+                    //     $val->url = $response['result']['Filepdf'];
+                    //     $val->filename = $response['result']['filename'];
+                    // }else{
                         $val->status_gh = 2;
-                    }
+                    // }
                 }
             } catch (\Exception $e) {
                 $check = KqGhModel::where('code',$val['code_patient'])->first();

@@ -124,6 +124,7 @@ class ChatClientController extends Controller
         $data['mailto'] = 'nguyencongluat092001@gmail.com';
         $data['message'] = $input['message'];
         $data['subject'] = 'Phần mềm đặt lịch khám nhanh tại các tuyến trung ương';
+        dd(1);
         // Gửi mail
         (new ForgetPassWordMailHelper($data['email'], $data['email'], '', $data))->send($data);
     }
