@@ -14,9 +14,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="../clients/img/apple-icon.png">
     <link rel="icon" href="../clients/img/Logo_medhanoi.png" type="image/png">
-    <meta property="og:image" content="{{url('/clients/img/Logo_medhanoi.png')}}" />
+    <!-- <meta property="og:image" content="{{url('/clients/img/Logo_medhanoi.png')}}" /> -->
+
+    <meta property="og:image" content="@yield('og:image', 'https://medhanoi.com/clients/img/Logo_medhanoi.png'" />
+    <meta property="og:image:secure_url" content="'@yield('og:image', 'https://medhanoi.com/clients/img/Logo_medhanoi.png'" />
 
 
+    <meta property="og:title" content="@yield('og:title','TỔNG ĐÀI MED HÀ NỘI')">
 
     <!-- Load Require CSS -->
     {{-- @yield('css') --}}
