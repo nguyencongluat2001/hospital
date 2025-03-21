@@ -9,7 +9,7 @@
     <meta property="og:image" content="@yield('og:image', 'https://medhanoi.com/clients/img/Logo_medhanoi.png')" />
     <meta property="og:image:secure_url" content="'@yield('og:image', 'https://medhanoi.com/clients/img/Logo_medhanoi.png')" />
     <meta property="og:title" content="@yield('og:title','TỔNG ĐÀI MED HÀ NỘI')">
-
+    <meta property="og:description" content="@yield('og:title','Tổng đài xét nghiệm tại nhà - nhanh chóng tiện lợi tiết kiệm. Lấy mẫu xét nghiệm tại nhà ở Hà Nội. Có kết quả sau 90 phút chạy máy. Hỗ trợ khách hàng 24/7 chi phí hợp lý. Lấy ven không đau. Nhiệt tình - chu đáo')">
     @if(request()->isSecure())
     <span></span>
 @else
