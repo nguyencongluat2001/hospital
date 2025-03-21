@@ -6,8 +6,8 @@
     <title>TỔNG ĐÀI MED HÀ NỘI</title>
     <meta charset="utf-8">
     <base href="{{ asset('') }}">
-    <meta property="og:image" content="@yield('og:image', 'https://medhanoi.com/clients/img/Logo_medhanoi.png'" />
-    <meta property="og:image:secure_url" content="'@yield('og:image', 'https://medhanoi.com/clients/img/Logo_medhanoi.png'" />
+    <meta property="og:image" content="@yield('og:image', 'https://medhanoi.com/clients/img/Logo_medhanoi.png')" />
+    <meta property="og:image:secure_url" content="'@yield('og:image', 'https://medhanoi.com/clients/img/Logo_medhanoi.png')" />
     @if(request()->isSecure())
     <span></span>
 @else
