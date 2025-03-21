@@ -15,6 +15,13 @@
     <link rel="apple-touch-icon" href="../clients/img/apple-icon.png">
     <link rel="icon" href="../clients/img/Logo_medhanoi.png" type="image/png">
     <meta property="og:image" content="{{url('/clients/img/Logo_medhanoi.png')}}" />
+
+    <meta property="og:image" content="@yield('og:image', {{url('/clients/img/Logo_medhanoi.png')}}" />
+    <meta property="og:image:secure_url" content="@yield('og:image', {{url('/clients/img/Logo_medhanoi.png')}}" />
+
+
+    <meta property="og:title" content="@yield('og:title','TỔNG ĐÀI MED HÀ NỘI')">
+
     <!-- Load Require CSS -->
     {{-- @yield('css') --}}
     <!-- <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script> -->
