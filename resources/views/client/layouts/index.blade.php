@@ -16,8 +16,8 @@
     <link rel="icon" href="../clients/img/Logo_medhanoi.png" type="image/png">
     <meta property="og:image" content="{{url('/clients/img/Logo_medhanoi.png')}}" />
 
-    <meta property="og:image" content="@yield('og:image', {{url('/clients/img/Logo_medhanoi.png')}}" />
-    <meta property="og:image:secure_url" content="@yield('og:image', {{url('/clients/img/Logo_medhanoi.png')}}" />
+    <meta property="og:image" content="@yield('og:image', '{{url('/clients/img/Logo_medhanoi.png')}}'" />
+    <meta property="og:image:secure_url" content="'@yield('og:image', {{url('/clients/img/Logo_medhanoi.png')'}}" />
 
 
     <meta property="og:title" content="@yield('og:title','TỔNG ĐÀI MED HÀ NỘI')">
