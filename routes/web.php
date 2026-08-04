@@ -167,6 +167,7 @@ Route::prefix('/client')->group(function () {
             //danh sách lịch chỉ định
             Route::get('/list_Indications', [AppointmentAtHomeController::class,'list_Indications']);
             Route::get('/loadList_Indications', [AppointmentAtHomeController::class,'loadList_Indications']);
+            Route::get('/show-detail/{id}', [AppointmentAtHomeController::class,'showDetail']);
             Route::get('/showDetail', [AppointmentAtHomeController::class,'showDetail']);
             Route::get('/nhapngayhen', [AppointmentAtHomeController::class,'nhapngayhen']);
             Route::get('/pdf', [AppointmentAtHomeController::class,'pdf']);
@@ -268,5 +269,4 @@ Route::prefix('/client')->group(function () {
     //     Route::get('/reader/{id}', [AboutController::class, 'reader']);
     // });
 });
-
 

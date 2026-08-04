@@ -293,13 +293,11 @@ JS_listIndications.prototype.nhapngayhen = function(id,appointment) {
  * @return void
  */
 JS_listIndications.prototype.showDetail = function(id) {
-    var url = this.urlPath + '/showDetail';
+    var url = this.urlPath + '/show-detail/' + id;
     var myClass = this;
-    var data = 'id=' + id;
     $.ajax({
         url: url,
         type: "GET",
-        data: data,
         success: function(arrResult) {
             if (arrResult['success'] == false) {
                 NclLib.alertMessageBackend('danger', 'Lỗi', arrResult['message']);

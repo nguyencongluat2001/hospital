@@ -552,9 +552,12 @@ class AppointmentAtHomeController extends Controller
     /**
      * Form sửa
      */
-    public function showDetail(Request $request)
+    public function showDetail(Request $request, $id = null)
     {
         $input = $request->all();
+        if (!empty($id)) {
+            $input['id'] = $id;
+        }
         $data = $this->AppointmentAtHomeService->showDetail($input); 
         // dd($data);
         return view('client.AppointmentAtHome.Indications.showDetail', $data);
