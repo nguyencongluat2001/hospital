@@ -191,19 +191,23 @@ JS_listIndications.prototype.loadList = function (oForm = '#frmIndications', num
  */
 JS_listIndications.prototype.edit = function (id) {
     var url = this.urlPath + '/appointmentathome/'+ id;
-    // var myClass = this;
-    var data = '_token=' + $('#frmIndications #_token').val();
-    data += '&id=' + id;
-    var i = 0;
-    $.ajax({
-        url: url,
-        type: "GET",
-        data: data,
-        success: function (arrResult) {
-            window.location.replace(url);
-        }
-    });
+    window.location.replace(url);
 }
+// JS_listIndications.prototype.edit = function (id) {
+//     var url = this.urlPath + '/appointmentathome/'+ id;
+//     // var myClass = this;
+//     var data = '_token=' + $('#frmIndications #_token').val();
+//     data += '&id=' + id;
+//     var i = 0;
+//     $.ajax({
+//         url: url,
+//         type: "GET",
+//         data: data,
+//         success: function (arrResult) {
+//             window.location.replace(url);
+//         }
+//     });
+// }
 // Xoa mot doi tuong
 JS_listIndications.prototype.delete = function (id) {
     var myClass = this;
@@ -291,8 +295,7 @@ JS_listIndications.prototype.nhapngayhen = function(id,appointment) {
 JS_listIndications.prototype.showDetail = function(id) {
     var url = this.urlPath + '/showDetail';
     var myClass = this;
-    var data = '_token=' + $('#frmIndications #_token').val();
-    data += '&id=' + id;
+    var data = 'id=' + id;
     $.ajax({
         url: url,
         type: "GET",
