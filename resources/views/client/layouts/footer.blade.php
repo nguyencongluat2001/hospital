@@ -76,10 +76,10 @@
                     <h2 class="h4 pb-lg-3 text-light light-300">LIÊN HỆ</h2>
                     <ul class="list-unstyled text-light light-300">
                          <li class="pb-2">
-                            <i class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-light py-1" href="tel:02439935556">CÔNG TY TNHH DỊCH VỤ Y TẾ <br> MEDHANOI </a>
+                            <i class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-light py-1" href="tel:02439036555">CÔNG TY TNHH DỊCH VỤ Y TẾ <br> MEDHANOI </a>
                         </li>
                         <li class="pb-2">
-                            <i class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-light py-1" href="tel:02439935556">02439935556</a>
+                            <i class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-light py-1" href="tel:02439036555">02439036555</a>
                         </li>
                         <li class="pb-2">
                             <i class='bx-fw bx bx-mail-send bx-xs'></i><a class="text-decoration-none text-light py-1" href="mailto:medhanoi6555@gmail.com">medhanoi6555@gmail.com</a>
