@@ -81,6 +81,9 @@
                         <li class="pb-2">
                             <i class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-light py-1" href="tel:02439036555">02439036555</a>
                         </li>
+                         <li class="pb-2">
+                            <i class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-light py-1" href="tel:0973661250">0973661250</a>
+                        </li>
                         <li class="pb-2">
                             <i class='bx-fw bx bx-mail-send bx-xs'></i><a class="text-decoration-none text-light py-1" href="mailto:medhanoi6555@gmail.com">medhanoi6555@gmail.com</a>
                         </li>
